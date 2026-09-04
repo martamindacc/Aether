@@ -4,7 +4,7 @@ export default function Home() {
       <div className="relative h-screen w-full overflow-hidden bg-[#fafafb]">
         <video
           className="absolute inset-0 h-full w-full object-cover"
-          src="/marta-morawska-psychotherapy.mp4"
+          src="/morawska-marta-psychotherapy.mp4"
           autoPlay
           muted
           loop
@@ -19,7 +19,7 @@ export default function Home() {
           </span>
           <div className="flex items-center gap-2 sm:gap-3">
             <button className="border border-zinc-900/20 bg-white px-5 py-3 text-sm transition-colors hover:bg-zinc-100">
-              Get started
+              Book Now
             </button>
             <button
               className="flex h-11 w-11 items-center justify-center border border-zinc-900/20 bg-white/30 transition-colors hover:bg-white/65"
@@ -50,7 +50,7 @@ export default function Home() {
           ].map((pill) => (
             <span
               key={pill}
-              className="rounded-xl border border-pink-200 bg-pink-100 px-5 py-3 text-base text-zinc-700"
+              className="rounded-xl border border-[#dab7a2] bg-gradient-to-r from-[#dab7a2] to-[#efd8ca] px-5 py-3 text-base text-zinc-700"
             >
               {pill}
             </span>
