@@ -42,9 +42,13 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-black/10" />
 
+        <h2 className="absolute inset-x-0 bottom-16 z-10 px-6 text-center font-[Roboto,Arial,sans-serif] text-4xl font-medium tracking-tight text-white sm:bottom-20 sm:text-6xl">
+          Your Future is Yours to Shape
+        </h2>
+
         <nav className="fixed inset-x-4 top-4 z-20 flex items-center justify-between rounded-[1.5rem] border border-white/50 bg-white/50 px-4 py-3 shadow-lg shadow-zinc-900/5 backdrop-blur-xl sm:inset-x-6 sm:top-6 sm:px-6">
           <span className="text-lg font-medium tracking-[-0.04em] sm:text-xl">
-            Therapy
+            Aether Practice
           </span>
           <div className="flex items-center gap-2 sm:gap-3">
             <button className="border border-zinc-900/20 bg-white px-[30px] py-3 text-sm transition-colors hover:bg-zinc-100">
@@ -65,7 +69,7 @@ export default function Home() {
       </div>
 
       <section className="flex flex-col items-center px-6 pb-12 pt-[104px] text-center font-[Inter,-apple-system,BlinkMacSystemFont,'SF_Pro_Text',system-ui,sans-serif] text-[19px] font-normal leading-[1.5] text-[#383838]">
-        <h1 className="max-w-6xl text-balance text-[90px] font-bold leading-[0.95] tracking-[-0.075em] text-zinc-900">
+        <h1 className="max-w-6xl text-balance font-[Roboto,Arial,sans-serif] text-[90px] font-medium leading-[0.95] tracking-tight text-zinc-900">
           Better life starts with better understanding
         </h1>
         <div className="mt-[70px] flex max-w-7xl flex-wrap items-center justify-center gap-3">
@@ -92,19 +96,26 @@ export default function Home() {
               href={section.href}
               className="group rounded-2xl border border-zinc-300/80 bg-[#fafafb] p-8 transition-colors hover:bg-white sm:p-14"
             >
-              <h2 className="inline-block origin-left font-[Roboto,Arial,sans-serif] text-5xl font-normal tracking-tight text-zinc-900 transition-transform duration-300 ease-out group-hover:translate-x-2 group-hover:scale-x-105 sm:text-7xl">
+              <h2 className="inline-block origin-left font-[Roboto,Arial,sans-serif] text-5xl font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out group-hover:translate-x-2 group-hover:scale-x-105 sm:text-7xl">
                 {section.title}
               </h2>
               <p className="mt-8 max-w-5xl text-[20px] leading-[1.5] text-[#383838]">
                 {section.description}
               </p>
-              <span className="mt-10 inline-block border-b border-zinc-900 pb-2 text-base text-[#383838]">
+              <span className="mt-10 inline-block text-base text-[#383838]">
                 Learn more →
               </span>
             </Link>
           ))}
         </div>
       </section>
+
+      <footer className="flex flex-col items-center gap-4 border-t border-zinc-200 px-6 py-10 text-center font-[Roboto,Arial,sans-serif] text-sm text-[#383838]">
+        <span className="text-lg font-medium tracking-tight text-zinc-900">
+          Aether Practice
+        </span>
+        <p>© {new Date().getFullYear()} Aether Practice. All rights reserved.</p>
+      </footer>
     </main>
   );
 }
