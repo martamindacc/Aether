@@ -1,10 +1,9 @@
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#fafafb] px-4 py-4 font-sans text-zinc-900 sm:px-6 sm:py-6">
-      <div className="relative min-h-[calc(100vh-2rem)] overflow-hidden rounded-[2rem] bg-zinc-200 shadow-sm sm:min-h-[calc(100vh-3rem)]">
+    <main className="min-h-screen bg-[#fafafb] font-sans text-zinc-900">
+      <div className="relative h-screen w-full overflow-hidden bg-[#fafafb]">
         <video
           className="absolute inset-0 h-full w-full object-cover"
-          poster="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-09-04%20at%2010.00.23%E2%80%AFPM.png-bu1DVtYbZSzrW2nMai74CoIQxpIyAK.jpeg"
           autoPlay
           muted
           loop
@@ -18,9 +17,6 @@ export default function Home() {
             Therapy
           </span>
           <div className="flex items-center gap-2 sm:gap-3">
-            <button className="hidden border border-zinc-900/20 bg-white/30 px-5 py-3 text-sm transition-colors hover:bg-white/65 sm:block">
-              Log in
-            </button>
             <button className="bg-white px-5 py-3 text-sm transition-colors hover:bg-zinc-100">
               Get started
             </button>
@@ -37,6 +33,12 @@ export default function Home() {
           </div>
         </nav>
       </div>
+
+      <section className="flex min-h-screen flex-col items-center justify-center px-6 py-24 text-center">
+        <h1 className="max-w-6xl text-balance text-6xl font-bold leading-[0.95] tracking-[-0.075em] sm:text-8xl lg:text-[10rem]">
+          Better teamwork starts with better understanding
+        </h1>
+      </section>
     </main>
   );
 }
