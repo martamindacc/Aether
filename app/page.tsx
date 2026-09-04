@@ -64,11 +64,11 @@ export default function Home() {
         </nav>
       </div>
 
-      <section className="flex flex-col items-center px-6 py-12 text-center font-[Inter,-apple-system,BlinkMacSystemFont,'SF_Pro_Text',system-ui,sans-serif] text-[19px] font-normal leading-[1.5] text-[#383838]">
+      <section className="flex flex-col items-center px-6 pb-12 pt-[104px] text-center font-[Inter,-apple-system,BlinkMacSystemFont,'SF_Pro_Text',system-ui,sans-serif] text-[19px] font-normal leading-[1.5] text-[#383838]">
         <h1 className="max-w-6xl text-balance text-[90px] font-bold leading-[0.95] tracking-[-0.075em] text-zinc-900">
           Better teamwork starts with better understanding
         </h1>
-        <div className="mt-10 flex max-w-7xl flex-wrap items-center justify-center gap-3">
+        <div className="mt-[70px] flex max-w-7xl flex-wrap items-center justify-center gap-3">
           {[
             "Emotional Wellness",
             "Individual Therapy",
@@ -85,21 +85,20 @@ export default function Home() {
             </span>
           ))}
         </div>
-        <div className="mt-20 flex w-full max-w-6xl flex-col gap-6 text-left">
+        <div className="mt-[136px] flex w-full max-w-6xl flex-col gap-6 text-left">
           {supportSections.map((section) => (
             <Link
               key={section.href}
               href={section.href}
               className="group rounded-2xl border border-zinc-300/80 bg-[#fafafb] p-8 transition-colors hover:bg-white sm:p-14"
             >
-              <p className={`text-xl ${section.color}`}>{section.eyebrow}</p>
-              <h2 className="mt-10 font-serif text-4xl font-semibold tracking-tight text-zinc-900 sm:text-5xl">
+              <h2 className="font-sans text-5xl font-bold tracking-[-0.06em] text-zinc-900 sm:text-7xl">
                 {section.title}
               </h2>
-              <p className="mt-8 max-w-5xl text-2xl leading-relaxed text-zinc-600">
+              <p className="mt-8 max-w-5xl text-base leading-[1.5] text-[#383838]">
                 {section.description}
               </p>
-              <span className="mt-10 inline-block border-b border-zinc-900 pb-2 text-2xl text-zinc-900">
+              <span className="mt-10 inline-block border-b border-zinc-900 pb-2 text-base text-[#383838]">
                 Learn more →
               </span>
             </Link>
