@@ -4,6 +4,7 @@ export default function Home() {
       <div className="relative h-screen w-full overflow-hidden bg-[#fafafb]">
         <video
           className="absolute inset-0 h-full w-full object-cover"
+          src="/marta-morawska-psychotherapy.mp4"
           autoPlay
           muted
           loop
@@ -17,7 +18,7 @@ export default function Home() {
             Therapy
           </span>
           <div className="flex items-center gap-2 sm:gap-3">
-            <button className="bg-white px-5 py-3 text-sm transition-colors hover:bg-zinc-100">
+            <button className="border border-zinc-900/20 bg-white px-5 py-3 text-sm transition-colors hover:bg-zinc-100">
               Get started
             </button>
             <button
