@@ -7,57 +7,217 @@ const languages = [
   { code: "en", label: "EN" },
   { code: "no", label: "NO" },
   { code: "pl", label: "PL" },
-];
+] as const;
 
-const menuSections = [
-  {
-    heading: "Services",
-    links: [
-      { label: "Individual Therapy", href: "/individual-therapy" },
-      { label: "Couples Therapy", href: "/couples-therapy" },
-      { label: "Executive & Founder Work", href: "/executive-founder-work" },
-    ],
-  },
-  {
-    heading: "Company",
-    links: [
-      { label: "About", href: "#" },
-      { label: "Contact", href: "#" },
-    ],
-  },
-];
+type LanguageCode = (typeof languages)[number]["code"];
 
-const supportSections = [
+const content: Record<
+  LanguageCode,
   {
-    eyebrow: "Individual support",
-    title: "Individual Therapy",
-    description:
-      "Support in your own life situations — anxiety, grief, identity, transitions, and the weight you carry alone.",
-    href: "/individual-therapy",
-    color: "text-[#7b4037]",
+    videoOverlay: string;
+    heroTitle: string;
+    subtext: string;
+    bookNow: string;
+    pills: string[];
+    menuSections: { heading: string; links: { label: string; href: string }[] }[];
+    supportSections: {
+      eyebrow: string;
+      title: string;
+      description: string;
+      href: string;
+      color: string;
+    }[];
+    learnMore: string;
+    footerTagline: string;
+  }
+> = {
+  en: {
+    videoOverlay: "Your Future is Yours to Shape",
+    heroTitle: "Better life starts with better understanding",
+    subtext:
+      "Because we believe in your potential, we want to guide you towards a life filled with meaning, balance, and lasting renewal. Expect exceptional care grounded in science.",
+    bookNow: "Book Now",
+    pills: [
+      "Emotional Wellness",
+      "Individual Therapy",
+      "Couples Counseling",
+      "Stress Support",
+      "Personal Growth",
+      "Mindful Living",
+    ],
+    menuSections: [
+      {
+        heading: "Services",
+        links: [
+          { label: "Individual Therapy", href: "/individual-therapy" },
+          { label: "Couples Therapy", href: "/couples-therapy" },
+          { label: "Executive & Founder Work", href: "/executive-founder-work" },
+        ],
+      },
+      {
+        heading: "Company",
+        links: [
+          { label: "About", href: "#" },
+          { label: "Contact", href: "#" },
+        ],
+      },
+    ],
+    supportSections: [
+      {
+        eyebrow: "Individual support",
+        title: "Individual Therapy",
+        description:
+          "Support in your own life situations — anxiety, grief, identity, transitions, and the weight you carry alone.",
+        href: "/individual-therapy",
+        color: "text-[#7b4037]",
+      },
+      {
+        eyebrow: "Relationship support",
+        title: "Couples Therapy",
+        description:
+          "Understand how you work together as a couple — improve communication, rebuild trust, and repair the pattern underneath the conflict.",
+        href: "/couples-therapy",
+        color: "text-[#66755c]",
+      },
+      {
+        eyebrow: "Leadership support",
+        title: "Executive & Founder Work",
+        description:
+          "Support at the level decisions and isolation actually happen — for founders and executives carrying weight the role doesn't make space for.",
+        href: "/executive-founder-work",
+        color: "text-[#496171]",
+      },
+    ],
+    learnMore: "Learn more →",
+    footerTagline: "All rights reserved.",
   },
-  {
-    eyebrow: "Relationship support",
-    title: "Couples Therapy",
-    description:
-      "Understand how you work together as a couple — improve communication, rebuild trust, and repair the pattern underneath the conflict.",
-    href: "/couples-therapy",
-    color: "text-[#66755c]",
+  no: {
+    videoOverlay: "Din Fremtid Er Din Å Forme",
+    heroTitle: "Et bedre liv starter med bedre forståelse",
+    subtext:
+      "Fordi vi tror på ditt potensial, vil vi guide deg mot et liv fylt med mening, balanse og varig fornyelse. Forvent eksepsjonell omsorg forankret i vitenskap.",
+    bookNow: "Bestill Nå",
+    pills: [
+      "Emosjonell Velvære",
+      "Individualterapi",
+      "Parterapi",
+      "Stressstøtte",
+      "Personlig Vekst",
+      "Bevisst Liv",
+    ],
+    menuSections: [
+      {
+        heading: "Tjenester",
+        links: [
+          { label: "Individualterapi", href: "/individual-therapy" },
+          { label: "Parterapi", href: "/couples-therapy" },
+          { label: "Leder- og Grunnleggerarbeid", href: "/executive-founder-work" },
+        ],
+      },
+      {
+        heading: "Selskap",
+        links: [
+          { label: "Om Oss", href: "#" },
+          { label: "Kontakt", href: "#" },
+        ],
+      },
+    ],
+    supportSections: [
+      {
+        eyebrow: "Individuell støtte",
+        title: "Individualterapi",
+        description:
+          "Støtte i dine egne livssituasjoner — angst, sorg, identitet, overganger, og vekten du bærer alene.",
+        href: "/individual-therapy",
+        color: "text-[#7b4037]",
+      },
+      {
+        eyebrow: "Relasjonsstøtte",
+        title: "Parterapi",
+        description:
+          "Forstå hvordan dere fungerer som par — forbedre kommunikasjon, gjenoppbygg tillit, og reparer mønsteret under konflikten.",
+        href: "/couples-therapy",
+        color: "text-[#66755c]",
+      },
+      {
+        eyebrow: "Ledelsesstøtte",
+        title: "Leder- og Grunnleggerarbeid",
+        description:
+          "Støtte på nivået der beslutninger og isolasjon faktisk skjer — for gründere og ledere som bærer vekten rollen ikke gir plass til.",
+        href: "/executive-founder-work",
+        color: "text-[#496171]",
+      },
+    ],
+    learnMore: "Les mer →",
+    footerTagline: "Alle rettigheter reservert.",
   },
-  {
-    eyebrow: "Leadership support",
-    title: "Executive & Founder Work",
-    description:
-      "Support at the level decisions and isolation actually happen — for founders and executives carrying weight the role doesn't make space for.",
-    href: "/executive-founder-work",
-    color: "text-[#496171]",
+  pl: {
+    videoOverlay: "Twoja Przyszłość Jest Twoja do Kształtowania",
+    heroTitle: "Lepsze życie zaczyna się od lepszego zrozumienia",
+    subtext:
+      "Ponieważ wierzymy w Twój potencjał, chcemy poprowadzić Cię do życia pełnego sensu, równowagi i trwałej odnowy. Oczekuj wyjątkowej opieki opartej na nauce.",
+    bookNow: "Zarezerwuj",
+    pills: [
+      "Dobrostan Emocjonalny",
+      "Terapia Indywidualna",
+      "Terapia Par",
+      "Wsparcie w Stresie",
+      "Rozwój Osobisty",
+      "Uważne Życie",
+    ],
+    menuSections: [
+      {
+        heading: "Usługi",
+        links: [
+          { label: "Terapia Indywidualna", href: "/individual-therapy" },
+          { label: "Terapia Par", href: "/couples-therapy" },
+          { label: "Praca z Liderami i Założycielami", href: "/executive-founder-work" },
+        ],
+      },
+      {
+        heading: "Firma",
+        links: [
+          { label: "O Nas", href: "#" },
+          { label: "Kontakt", href: "#" },
+        ],
+      },
+    ],
+    supportSections: [
+      {
+        eyebrow: "Wsparcie indywidualne",
+        title: "Terapia Indywidualna",
+        description:
+          "Wsparcie w Twoich własnych sytuacjach życiowych — lęk, żałoba, tożsamość, zmiany i ciężar, który niesiesz samotnie.",
+        href: "/individual-therapy",
+        color: "text-[#7b4037]",
+      },
+      {
+        eyebrow: "Wsparcie relacyjne",
+        title: "Terapia Par",
+        description:
+          "Zrozumcie, jak funkcjonujecie jako para — poprawcie komunikację, odbudujcie zaufanie i naprawcie wzorzec leżący u podstaw konfliktu.",
+        href: "/couples-therapy",
+        color: "text-[#66755c]",
+      },
+      {
+        eyebrow: "Wsparcie liderów",
+        title: "Praca z Liderami i Założycielami",
+        description:
+          "Wsparcie na poziomie, na którym faktycznie zachodzą decyzje i izolacja — dla założycieli i liderów niosących ciężar, na który rola nie daje miejsca.",
+        href: "/executive-founder-work",
+        color: "text-[#496171]",
+      },
+    ],
+    learnMore: "Dowiedz się więcej →",
+    footerTagline: "Wszelkie prawa zastrzeżone.",
   },
-];
+};
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
-  const [language, setLanguage] = useState(languages[0]);
+  const [language, setLanguage] = useState<(typeof languages)[number]>(languages[0]);
+  const t = content[language.code];
 
   return (
     <main className="min-h-screen bg-[#fafafb] font-[NeueHaasDisplayRoman,Arial,sans-serif] text-zinc-900">
@@ -73,8 +233,8 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-black/10" />
 
-        <h2 className="absolute inset-0 z-10 flex items-center justify-center px-6 text-center font-[NeueHaasDisplayRoman,Arial,sans-serif] text-4xl font-medium tracking-tight text-white sm:text-6xl">
-          Your Future is Yours to Shape
+        <h2 className="absolute inset-x-0 bottom-16 z-10 px-6 text-center font-[NeueHaasDisplayRoman,Arial,sans-serif] text-4xl font-medium tracking-tight text-white sm:bottom-20 sm:text-6xl">
+          {t.videoOverlay}
         </h2>
 
         <nav className="fixed inset-x-4 top-4 z-20 flex items-center justify-between rounded-[1.5rem] border border-white/50 bg-white/50 px-4 py-3 shadow-lg shadow-zinc-900/5 backdrop-blur-xl sm:inset-x-6 sm:top-6 sm:px-6">
@@ -83,7 +243,7 @@ export default function Home() {
           </span>
           <div className="flex items-center gap-2 sm:gap-3">
             <button className="border border-zinc-900/20 bg-white px-[30px] py-3 text-sm transition-colors hover:bg-zinc-100">
-              Book Now
+              {t.bookNow}
             </button>
             <div className="relative">
               <button
@@ -111,7 +271,7 @@ export default function Home() {
                 </svg>
               </button>
               {isLangOpen && (
-                <div className="absolute right-0 top-full mt-2 flex min-w-24 flex-col rounded-xl border border-zinc-900/10 bg-white py-1 shadow-lg">
+                <div className="absolute right-0 top-full mt-2 flex w-12 flex-col rounded-xl border border-zinc-900/10 bg-white py-1 shadow-lg">
                   {languages.map((lang) => (
                     <button
                       key={lang.code}
@@ -119,7 +279,7 @@ export default function Home() {
                         setLanguage(lang);
                         setIsLangOpen(false);
                       }}
-                      className="px-4 py-2 text-left text-sm text-zinc-900 transition-colors hover:bg-zinc-100"
+                      className="px-3 py-2 text-center text-sm text-zinc-900 transition-colors hover:bg-zinc-100"
                     >
                       {lang.label}
                     </button>
@@ -142,7 +302,7 @@ export default function Home() {
         </nav>
 
         {isMenuOpen && (
-          <div className="fixed inset-0 z-30 flex justify-end">
+          <div className="fixed inset-0 z-30 flex justify-start">
             <div
               className="absolute inset-0 bg-zinc-900/20"
               onClick={() => setIsMenuOpen(false)}
@@ -169,7 +329,7 @@ export default function Home() {
                   />
                 </svg>
               </button>
-              {menuSections.map((section) => (
+              {t.menuSections.map((section) => (
                 <div key={section.heading} className="flex flex-col gap-6">
                   <p className="text-sm uppercase tracking-wide text-zinc-500">
                     {section.heading}
@@ -180,7 +340,7 @@ export default function Home() {
                         key={link.label}
                         href={link.href}
                         onClick={() => setIsMenuOpen(false)}
-                        className="font-[Roboto,Arial,sans-serif] text-3xl font-medium tracking-tight text-zinc-900 transition-colors hover:text-zinc-600"
+                        className="inline-block origin-left font-[Roboto,Arial,sans-serif] text-3xl font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out hover:translate-x-2 hover:scale-x-105"
                       >
                         {link.label}
                       </Link>
@@ -195,22 +355,13 @@ export default function Home() {
 
       <section className="flex flex-col items-center px-6 pb-12 pt-[104px] text-center font-[Inter,-apple-system,BlinkMacSystemFont,'SF_Pro_Text',system-ui,sans-serif] text-[19px] font-normal leading-[1.5] text-[#383838]">
         <h1 className="max-w-6xl text-balance font-[Roboto,Arial,sans-serif] text-[90px] font-medium leading-[0.95] tracking-tight text-zinc-900">
-          Better life starts with better understanding
+          {t.heroTitle}
         </h1>
-        <p className="mt-8 max-w-2xl text-sm leading-[1.5] text-zinc-700">
-          Because we believe in your potential, we want to guide you towards
-          a life filled with meaning, balance, and lasting renewal. Expect
-          exceptional care grounded in science.
+        <p className="mt-8 max-w-2xl text-base leading-[1.5] text-zinc-700">
+          {t.subtext}
         </p>
         <div className="mt-[70px] flex max-w-7xl flex-wrap items-center justify-center gap-3">
-          {[
-            "Emotional Wellness",
-            "Individual Therapy",
-            "Couples Counseling",
-            "Stress Support",
-            "Personal Growth",
-            "Mindful Living",
-          ].map((pill) => (
+          {t.pills.map((pill) => (
             <span
               key={pill}
               className="rounded-xl border border-[#e1c2af] bg-gradient-to-r from-[#e1c2af] to-[#f0ddd2] px-5 py-3 text-base text-zinc-700"
@@ -220,7 +371,7 @@ export default function Home() {
           ))}
         </div>
         <div className="mt-[136px] flex w-full max-w-6xl flex-col gap-6 text-left">
-          {supportSections.map((section) => (
+          {t.supportSections.map((section) => (
             <Link
               key={section.href}
               href={section.href}
@@ -233,7 +384,7 @@ export default function Home() {
                 {section.description}
               </p>
               <span className="mt-10 inline-block text-base text-[#383838]">
-                Learn more →
+                {t.learnMore}
               </span>
             </Link>
           ))}
@@ -244,7 +395,7 @@ export default function Home() {
         <span className="text-lg font-medium tracking-tight text-zinc-900">
           Aether Practice
         </span>
-        <p>© {new Date().getFullYear()} Aether Practice. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} Aether Practice. {t.footerTagline}</p>
       </footer>
     </main>
   );
