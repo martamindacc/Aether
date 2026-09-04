@@ -2,6 +2,18 @@
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
 
+@font-face {
+  font-family: 'NeueHaasDisplayRoman';
+  src: url('/fonts/NeueHaasDisplayRoman.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'NeueHaasDisplayBold';
+  src: url('/fonts/NeueHaasDisplayBold.ttf') format('truetype');
+  font-weight: 700;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {

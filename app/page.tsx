@@ -29,7 +29,7 @@ const supportSections = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#fafafb] font-sans text-zinc-900">
+    <main className="min-h-screen bg-[#fafafb] font-[NeueHaasDisplayRoman,Arial,sans-serif] text-zinc-900">
       <div className="relative h-screen w-full overflow-hidden bg-[#fafafb]">
         <video
           className="absolute inset-0 h-full w-full object-cover"
@@ -92,7 +92,7 @@ export default function Home() {
               href={section.href}
               className="group rounded-2xl border border-zinc-300/80 bg-[#fafafb] p-8 transition-colors hover:bg-white sm:p-14"
             >
-              <h2 className="font-sans text-5xl font-bold tracking-[-0.06em] text-zinc-900 sm:text-7xl">
+              <h2 className="font-[NeueHaasDisplayBold,Arial,sans-serif] text-5xl font-bold tracking-[-0.06em] text-zinc-900 sm:text-7xl">
                 {section.title}
               </h2>
               <p className="mt-8 max-w-5xl text-base leading-[1.5] text-[#383838]">
