@@ -42,7 +42,7 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-black/10" />
 
-        <h2 className="absolute inset-x-0 bottom-16 z-10 px-6 text-center font-[Roboto,Arial,sans-serif] text-4xl font-medium tracking-tight text-white sm:bottom-20 sm:text-6xl">
+        <h2 className="absolute inset-0 z-10 flex items-center justify-center px-6 text-center font-[NeueHaasDisplayRoman,Arial,sans-serif] text-4xl font-medium tracking-tight text-white sm:text-6xl">
           Your Future is Yours to Shape
         </h2>
 
@@ -54,6 +54,15 @@ export default function Home() {
             <button className="border border-zinc-900/20 bg-white px-[30px] py-3 text-sm transition-colors hover:bg-zinc-100">
               Book Now
             </button>
+            <select
+              aria-label="Select language"
+              className="border border-zinc-900/20 bg-white/30 px-3 py-3 text-sm text-zinc-900 transition-colors hover:bg-white/65 focus:outline-none"
+              defaultValue="en"
+            >
+              <option value="en">English</option>
+              <option value="no">Norwegian</option>
+              <option value="pl">Polish</option>
+            </select>
             <button
               className="flex h-11 w-11 items-center justify-center border border-zinc-900/20 bg-white/30 transition-colors hover:bg-white/65"
               aria-label="Open menu"
@@ -72,6 +81,11 @@ export default function Home() {
         <h1 className="max-w-6xl text-balance font-[Roboto,Arial,sans-serif] text-[90px] font-medium leading-[0.95] tracking-tight text-zinc-900">
           Better life starts with better understanding
         </h1>
+        <p className="mt-8 max-w-2xl text-sm leading-[1.5] text-zinc-700">
+          Because we believe in your potential, we want to guide you towards
+          a life filled with meaning, balance, and lasting renewal. Expect
+          exceptional care grounded in science.
+        </p>
         <div className="mt-[70px] flex max-w-7xl flex-wrap items-center justify-center gap-3">
           {[
             "Emotional Wellness",
@@ -110,7 +124,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="flex flex-col items-center gap-4 border-t border-zinc-200 px-6 py-10 text-center font-[Roboto,Arial,sans-serif] text-sm text-[#383838]">
+      <footer className="flex flex-col items-center gap-4 px-6 py-10 text-center font-[Roboto,Arial,sans-serif] text-sm text-[#383838]">
         <span className="text-lg font-medium tracking-tight text-zinc-900">
           Aether Practice
         </span>
