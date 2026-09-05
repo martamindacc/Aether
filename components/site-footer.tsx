@@ -6,7 +6,7 @@ const taglines: Record<string, string> = {
 
 export function SiteFooter({ language }: { language: "en" | "no" | "pl" }) {
   return (
-    <footer className="flex flex-col items-center gap-4 border-t border-zinc-300/80 px-6 py-10 text-center font-[Roboto,Arial,sans-serif] text-sm text-[#383838]">
+    <footer className="flex flex-col items-center gap-4 px-6 py-10 text-center font-[Roboto,Arial,sans-serif] text-sm text-[#383838]">
       <span className="flex items-center gap-2 text-lg font-medium tracking-tight text-zinc-900">
         <img src="/logo-a.svg" alt="Aether Practice logo" className="h-5 w-5" />
         Aether Practice

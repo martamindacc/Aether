@@ -1,7 +1,9 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { languages, navContent, type LanguageCode } from "@/lib/service-content";
+import { BookingModal } from "@/components/booking-modal";
 
 export function FloatingNav({
   language,
@@ -20,6 +22,7 @@ export function FloatingNav({
 }) {
   const t = navContent[language];
   const currentLabel = languages.find((lang) => lang.code === language)?.label ?? "EN";
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
 
   return (
     <>
@@ -32,12 +35,12 @@ export function FloatingNav({
           Aether Practice
         </Link>
         <div className="flex items-center gap-2 sm:gap-3">
-          <Link
-            href="/"
+          <button
+            onClick={() => setIsBookingOpen(true)}
             className="border border-zinc-900/20 bg-white px-[30px] py-3 text-sm transition-colors hover:bg-zinc-100"
           >
             {t.bookNow}
-          </Link>
+          </button>
           <div className="relative">
             <button
               onClick={() => onLangOpenChange(!isLangOpen)}
@@ -131,9 +134,26 @@ export function FloatingNav({
                 ))}
               </div>
             </div>
+            <div className="flex flex-col gap-6">
+              <p className="text-sm uppercase tracking-wide text-zinc-500">{t.companyHeading}</p>
+              <div className="flex flex-col gap-6">
+                {t.companyLinks.map((link) => (
+                  <Link
+                    key={link.label}
+                    href={link.href}
+                    onClick={() => onMenuOpenChange(false)}
+                    className="inline-block origin-left font-[Roboto,Arial,sans-serif] text-3xl font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out hover:translate-x-2 hover:scale-x-105"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       )}
+
+      <BookingModal isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
     </>
   );
 }

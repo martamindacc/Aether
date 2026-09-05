@@ -1,15 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { FloatingNav } from "@/components/floating-nav";
 import { SiteFooter } from "@/components/site-footer";
+import { BookingModal } from "@/components/booking-modal";
 import { individualTherapyContent, type LanguageCode } from "@/lib/service-content";
 
 export default function IndividualTherapyPage() {
   const [language, setLanguage] = useState<LanguageCode>("en");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
   const t = individualTherapyContent[language];
 
   return (
@@ -94,15 +95,16 @@ export default function IndividualTherapyPage() {
           <p className="max-w-2xl font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-[#383838]">
             {t.ctaSubtext}
           </p>
-          <Link
-            href="/"
+          <button
+            onClick={() => setIsBookingOpen(true)}
             className="border border-zinc-900/20 bg-white px-8 py-4 text-base font-medium text-zinc-900 transition-colors hover:bg-zinc-100"
           >
             {t.ctaButton}
-          </Link>
+          </button>
         </div>
       </section>
       <SiteFooter language={language} />
+      <BookingModal isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
     </main>
   );
 }

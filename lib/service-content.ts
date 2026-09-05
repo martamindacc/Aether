@@ -24,7 +24,13 @@ export type ServicePageContent = {
 
 export const navContent: Record<
   LanguageCode,
-  { bookNow: string; menuHeading: string; menuLinks: { label: string; href: string }[] }
+  {
+    bookNow: string;
+    menuHeading: string;
+    menuLinks: { label: string; href: string }[];
+    companyHeading: string;
+    companyLinks: { label: string; href: string }[];
+  }
 > = {
   en: {
     bookNow: "Book Now",
@@ -33,6 +39,11 @@ export const navContent: Record<
       { label: "Individual Therapy", href: "/individual-therapy" },
       { label: "Couples Therapy", href: "/couples-therapy" },
       { label: "Executive & Founder Work", href: "/executive-founder-work" },
+    ],
+    companyHeading: "Company",
+    companyLinks: [
+      { label: "About", href: "/#about" },
+      { label: "Contact", href: "/#contact" },
     ],
   },
   no: {
@@ -43,6 +54,11 @@ export const navContent: Record<
       { label: "Parterapi", href: "/couples-therapy" },
       { label: "Leder- og Grunnleggerarbeid", href: "/executive-founder-work" },
     ],
+    companyHeading: "Selskap",
+    companyLinks: [
+      { label: "Om Oss", href: "/#about" },
+      { label: "Kontakt", href: "/#contact" },
+    ],
   },
   pl: {
     bookNow: "Zarezerwuj",
@@ -51,6 +67,11 @@ export const navContent: Record<
       { label: "Terapia Indywidualna", href: "/individual-therapy" },
       { label: "Terapia Par", href: "/couples-therapy" },
       { label: "Praca z Liderami i Założycielami", href: "/executive-founder-work" },
+    ],
+    companyHeading: "Firma",
+    companyLinks: [
+      { label: "O Nas", href: "/#about" },
+      { label: "Kontakt", href: "/#contact" },
     ],
   },
 };
