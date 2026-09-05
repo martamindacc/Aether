@@ -89,7 +89,7 @@ const content: Record<
     supportSections: [
       {
         eyebrow: "Individual support",
-        title: "Individual Therapy",
+        title: "Individual",
         description:
           "Support in your own life situations — anxiety, grief, identity, transitions, and the weight you carry alone.",
         href: "/individual-therapy",
@@ -97,11 +97,19 @@ const content: Record<
       },
       {
         eyebrow: "Relationship support",
-        title: "Couples Therapy",
+        title: "Couples",
         description:
           "Understand how you work together as a couple — improve communication, rebuild trust, and repair the pattern underneath the conflict.",
         href: "/couples-therapy",
         color: "text-[#66755c]",
+      },
+      {
+        eyebrow: "Family support",
+        title: "Family",
+        description:
+          "Create a steadier family rhythm — with clearer communication, stronger connection, and practical support for the moments that shape life together.",
+        href: "/family-support",
+        color: "text-[#8a6558]",
       },
       {
         eyebrow: "Leadership support",
@@ -149,7 +157,7 @@ const content: Record<
     supportSections: [
       {
         eyebrow: "Individuell støtte",
-        title: "Individualterapi",
+        title: "Individuell",
         description:
           "Støtte i dine egne livssituasjoner — angst, sorg, identitet, overganger, og vekten du bærer alene.",
         href: "/individual-therapy",
@@ -157,11 +165,19 @@ const content: Record<
       },
       {
         eyebrow: "Relasjonsstøtte",
-        title: "Parterapi",
+        title: "Par",
         description:
           "Forstå hvordan dere fungerer som par — forbedre kommunikasjon, gjenoppbygg tillit, og reparer mønsteret under konflikten.",
         href: "/couples-therapy",
         color: "text-[#66755c]",
+      },
+      {
+        eyebrow: "Familiestøtte",
+        title: "Familie",
+        description:
+          "Skap en stødigere familierytme — med tydeligere kommunikasjon, sterkere tilknytning og praktisk støtte for øyeblikkene som former livet sammen.",
+        href: "/family-support",
+        color: "text-[#8a6558]",
       },
       {
         eyebrow: "Ledelsesstøtte",
@@ -209,22 +225,30 @@ const content: Record<
     supportSections: [
       {
         eyebrow: "Wsparcie indywidualne",
-        title: "Terapia Indywidualna",
+        title: "Indywidualne",
         description:
-          "Wsparcie w Twoich własnych sytuacjach życiowych — lęk, żałoba, tożsamość, zmiany i ciężar, który niesiesz samotnie.",
+          "Wsparcie w Twoich sytuacjach życiowych — w zmianach, przejściach i ciężarze, który niesiesz samodzielnie.",
         href: "/individual-therapy",
         color: "text-[#7b4037]",
       },
       {
-        eyebrow: "Wsparcie relacyjne",
-        title: "Terapia Par",
+        eyebrow: "Wsparcie relacji",
+        title: "Pary",
         description:
-          "Zrozumcie, jak funkcjonujecie jako para — poprawcie komunikację, odbudujcie zaufanie i naprawcie wzorzec leżący u podstaw konfliktu.",
+          "Zrozumcie, jak funkcjonujecie razem — poprawcie komunikację, odbudujcie zaufanie i naprawcie wzorzec stojący za konfliktem.",
         href: "/couples-therapy",
         color: "text-[#66755c]",
       },
       {
-        eyebrow: "Wsparcie liderów",
+        eyebrow: "Wsparcie rodzinne",
+        title: "Rodzina",
+        description:
+          "Zbuduj stabilniejszy rytm rodzinny — z jaśniejszą komunikacją, silniejszą więzią i praktycznym wsparciem dla chwil, które kształtują wspólne życie.",
+        href: "/family-support",
+        color: "text-[#8a6558]",
+      },
+      {
+        eyebrow: "Wsparcie przywódcze",
         title: "Praca z Liderami i Założycielami",
         description:
           "Wsparcie na poziomie, na którym faktycznie zachodzą decyzje i izolacja — dla założycieli i liderów niosących ciężar, na który rola nie daje miejsca.",
@@ -465,7 +489,7 @@ export default function Home() {
             <Link
               key={section.href}
               href={section.href}
-              className="group rounded-2xl border border-zinc-300/80 bg-[#fafafb] p-8 transition-colors duration-300 hover:bg-[#e2c3b2]/65 sm:p-14"
+              className="group rounded-2xl border border-zinc-300/80 bg-[#fafafb] p-8 transition-colors duration-300 hover:bg-[#e2c3b2]/60 sm:p-14"
             >
               <h2 className="inline-block origin-left font-[NeueHaasDisplayRoman,Arial,sans-serif] text-5xl font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out group-hover:translate-x-2 group-hover:scale-x-105 sm:text-7xl">
                 {section.title}

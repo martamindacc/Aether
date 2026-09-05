@@ -78,7 +78,7 @@ export const navContent: Record<
 
 export const individualTherapyContent: Record<LanguageCode, ServicePageContent> = {
   en: {
-    title: "Individual Therapy",
+    title: "Individual",
     intro:
       "A dedicated space to think clearly, understand your own patterns, and move forward with intention. This is coaching built for people who are already capable — and want a sharper, more deliberate version of the life they're building.",
     panels: [
@@ -144,7 +144,7 @@ export const individualTherapyContent: Record<LanguageCode, ServicePageContent> 
     ctaButton: "Book your first session",
   },
   no: {
-    title: "Individualterapi",
+    title: "Individuell",
     intro:
       "Et dedikert rom for å tenke klart, forstå dine egne mønstre, og gå fremover med hensikt. Dette er coaching bygget for mennesker som allerede er kapable — og vil ha en skarpere, mer bevisst versjon av livet de bygger.",
     panels: [
@@ -210,7 +210,7 @@ export const individualTherapyContent: Record<LanguageCode, ServicePageContent> 
     ctaButton: "Book din første time",
   },
   pl: {
-    title: "Terapia Indywidualna",
+    title: "Indywidualne",
     intro:
       "Dedykowana przestrzeń, by myśleć jasno, rozumieć własne wzorce i poruszać się naprzód z intencją. To coaching stworzony dla ludzi, którzy są już zdolni — i chcą bardziej świadomej wersji życia, które budują.",
     panels: [
@@ -279,7 +279,7 @@ export const individualTherapyContent: Record<LanguageCode, ServicePageContent> 
 
 export const couplesTherapyContent: Record<LanguageCode, ServicePageContent> = {
   en: {
-    title: "Couples Therapy",
+    title: "Couples",
     intro:
       "A dedicated space for two people to understand how they truly work together — repair the pattern underneath the conflict, and rebuild a partnership that feels steady, honest, and shared.",
     panels: [
@@ -345,7 +345,7 @@ export const couplesTherapyContent: Record<LanguageCode, ServicePageContent> = {
     ctaButton: "Book your first session",
   },
   no: {
-    title: "Parterapi",
+    title: "Par",
     intro:
       "Et dedikert rom for to mennesker til å forstå hvordan de virkelig fungerer sammen — reparere mønsteret under konflikten, og gjenoppbygge et partnerskap som føles stødig, ærlig og delt.",
     panels: [
@@ -411,7 +411,7 @@ export const couplesTherapyContent: Record<LanguageCode, ServicePageContent> = {
     ctaButton: "Book din første time",
   },
   pl: {
-    title: "Terapia Par",
+    title: "Pary",
     intro:
       "Dedykowana przestrzeń dla dwóch osób, by zrozumieć, jak naprawdę funkcjonują razem — naprawić wzorzec leżący u podstaw konfliktu i odbudować partnerstwo, które jest stabilne, szczere i wspólne.",
     panels: [
