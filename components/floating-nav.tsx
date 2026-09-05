@@ -1,20 +1,25 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { languages, navContent, type LanguageCode } from "@/lib/service-content";
 
-const languages = ["EN", "NO", "PL"] as const;
-
-const menuLinks = [
-  { label: "Individual Therapy", href: "/individual-therapy" },
-  { label: "Couples Therapy", href: "/couples-therapy" },
-  { label: "Executive & Founder Work", href: "/executive-founder-work" },
-];
-
-export function FloatingNav() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isLangOpen, setIsLangOpen] = useState(false);
-  const [language, setLanguage] = useState<(typeof languages)[number]>("EN");
+export function FloatingNav({
+  language,
+  onLanguageChange,
+  isMenuOpen,
+  onMenuOpenChange,
+  isLangOpen,
+  onLangOpenChange,
+}: {
+  language: LanguageCode;
+  onLanguageChange: (code: LanguageCode) => void;
+  isMenuOpen: boolean;
+  onMenuOpenChange: (open: boolean) => void;
+  isLangOpen: boolean;
+  onLangOpenChange: (open: boolean) => void;
+}) {
+  const t = navContent[language];
+  const currentLabel = languages.find((lang) => lang.code === language)?.label ?? "EN";
 
   return (
     <>
@@ -31,16 +36,16 @@ export function FloatingNav() {
             href="/"
             className="border border-zinc-900/20 bg-white px-[30px] py-3 text-sm transition-colors hover:bg-zinc-100"
           >
-            Book Now
+            {t.bookNow}
           </Link>
           <div className="relative">
             <button
-              onClick={() => setIsLangOpen((open) => !open)}
+              onClick={() => onLangOpenChange(!isLangOpen)}
               aria-label="Select language"
               aria-expanded={isLangOpen}
               className="flex items-center gap-2 px-2 py-3 text-sm text-zinc-900"
             >
-              {language}
+              {currentLabel}
               <svg
                 width="10"
                 height="6"
@@ -62,21 +67,21 @@ export function FloatingNav() {
               <div className="absolute right-0 top-full mt-2 flex w-12 flex-col rounded-xl border border-zinc-900/10 bg-white py-1 shadow-lg">
                 {languages.map((lang) => (
                   <button
-                    key={lang}
+                    key={lang.code}
                     onClick={() => {
-                      setLanguage(lang);
-                      setIsLangOpen(false);
+                      onLanguageChange(lang.code);
+                      onLangOpenChange(false);
                     }}
                     className="px-3 py-2 text-center text-sm text-zinc-900 transition-colors hover:bg-zinc-100"
                   >
-                    {lang}
+                    {lang.label}
                   </button>
                 ))}
               </div>
             )}
           </div>
           <button
-            onClick={() => setIsMenuOpen(true)}
+            onClick={() => onMenuOpenChange(true)}
             className="flex h-11 w-11 items-center justify-center border border-zinc-900/20 bg-white/30 transition-colors hover:bg-white/65"
             aria-label="Open menu"
           >
@@ -93,12 +98,12 @@ export function FloatingNav() {
         <div className="fixed inset-0 z-30 flex justify-end">
           <div
             className="absolute inset-0 animate-in fade-in bg-zinc-900/20 duration-300"
-            onClick={() => setIsMenuOpen(false)}
+            onClick={() => onMenuOpenChange(false)}
             aria-hidden="true"
           />
           <div className="relative flex h-full w-full max-w-md flex-col gap-12 overflow-y-auto bg-[#fafafb] px-8 py-24 shadow-2xl animate-in slide-in-from-right duration-300 ease-out sm:px-12">
             <button
-              onClick={() => setIsMenuOpen(false)}
+              onClick={() => onMenuOpenChange(false)}
               aria-label="Close menu"
               className="absolute right-6 top-6 flex h-11 w-11 items-center justify-center border border-zinc-900/20 bg-white transition-colors hover:bg-zinc-100"
             >
@@ -112,13 +117,13 @@ export function FloatingNav() {
               </svg>
             </button>
             <div className="flex flex-col gap-6">
-              <p className="text-sm uppercase tracking-wide text-zinc-500">Services</p>
+              <p className="text-sm uppercase tracking-wide text-zinc-500">{t.menuHeading}</p>
               <div className="flex flex-col gap-6">
-                {menuLinks.map((link) => (
+                {t.menuLinks.map((link) => (
                   <Link
                     key={link.label}
                     href={link.href}
-                    onClick={() => setIsMenuOpen(false)}
+                    onClick={() => onMenuOpenChange(false)}
                     className="inline-block origin-left font-[Roboto,Arial,sans-serif] text-3xl font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out hover:translate-x-2 hover:scale-x-105"
                   >
                     {link.label}
