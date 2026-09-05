@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FloatingNav } from "@/components/floating-nav";
 
 const process = [
@@ -27,19 +28,36 @@ const process = [
   },
 ];
 
+const outcomes = [
+  {
+    title: "Decisions made with less noise",
+    description:
+      "Cut through the pressure and second-guessing to reach the same conclusion faster, with more conviction behind it.",
+  },
+  {
+    title: "A confidential thinking partner",
+    description:
+      "A space to say the unfiltered version of what's actually going on — without it becoming office politics or a liability.",
+  },
+  {
+    title: "Sustainable at the pace you're growing",
+    description:
+      "Build the internal steadiness to keep performing at a high level without the role quietly costing you everything else.",
+  },
+];
+
 export default function ExecutiveFounderWorkPage() {
   return (
     <main className="min-h-screen bg-[#fafafb] font-[NeueHaasDisplayRoman,Arial,sans-serif] text-zinc-900">
       <FloatingNav />
       <section className="mx-auto flex max-w-6xl flex-col px-6 pb-24 pt-48">
-        <p className="text-lg text-[#496171]">Leadership support</p>
-        <h1 className="mt-8 max-w-5xl font-[NeueHaasDisplayRoman,Arial,sans-serif] text-6xl font-medium leading-[0.95] tracking-tight sm:text-8xl">
+        <h1 className="max-w-5xl font-[NeueHaasDisplayRoman,Arial,sans-serif] text-6xl font-medium leading-[0.95] tracking-tight text-[#74382f] sm:text-8xl">
           Executive &amp; Founder Work
         </h1>
         <p className="mt-12 max-w-4xl font-[Roboto,Arial,sans-serif] text-xl leading-[1.5] text-[#383838] sm:text-2xl">
-          Support at the level decisions and isolation actually happen — for
-          founders and executives carrying weight the role doesn&apos;t make
-          space for.
+          Confidential, high-caliber support at the level where decisions and
+          isolation actually happen — built for founders and executives
+          carrying weight the role was never designed to make space for.
         </p>
 
         <div className="mt-20 grid gap-6 sm:grid-cols-2">
@@ -48,9 +66,9 @@ export default function ExecutiveFounderWorkPage() {
               A space built for the role
             </h2>
             <p className="mt-6 font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-[#383838]">
-              Bring the pressure, the pace, and the decisions you can&apos;t
-              talk through anywhere else. Sessions are direct, confidential,
-              and built around your reality.
+              Bring the pressure, the pace, and the decisions you can't talk
+              through anywhere else. Sessions are direct, strictly
+              confidential, and built entirely around your reality.
             </p>
           </div>
           <div className="rounded-2xl border border-zinc-300/80 p-8 sm:p-10">
@@ -58,8 +76,9 @@ export default function ExecutiveFounderWorkPage() {
               Sharper judgment, faster
             </h2>
             <p className="mt-6 font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-[#383838]">
-              We work on the thinking behind your decisions, so you carry more
-              clarity and steadiness into the moments that matter most.
+              We work on the thinking behind your decisions, so you carry
+              more clarity, composure, and precision into the moments that
+              matter most for your business and your people.
             </p>
           </div>
         </div>
@@ -74,7 +93,7 @@ export default function ExecutiveFounderWorkPage() {
                 key={step.number}
                 className="flex flex-col gap-4 border-t border-zinc-300/80 py-10 sm:flex-row sm:items-start sm:gap-12"
               >
-                <span className="font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-medium text-[#496171] sm:w-20 sm:shrink-0">
+                <span className="font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-medium text-[#74382f] sm:w-20 sm:shrink-0">
                   {step.number}
                 </span>
                 <div>
@@ -88,6 +107,40 @@ export default function ExecutiveFounderWorkPage() {
               </div>
             ))}
           </div>
+        </div>
+
+        <div className="mt-24">
+          <h2 className="font-[NeueHaasDisplayRoman,Arial,sans-serif] text-4xl font-medium tracking-tight sm:text-5xl">
+            What changes for you
+          </h2>
+          <div className="mt-12 grid gap-6 sm:grid-cols-3">
+            {outcomes.map((outcome) => (
+              <div key={outcome.title} className="rounded-2xl border border-zinc-300/80 p-8">
+                <h3 className="font-[NeueHaasDisplayRoman,Arial,sans-serif] text-xl font-medium">
+                  {outcome.title}
+                </h3>
+                <p className="mt-4 font-[Roboto,Arial,sans-serif] text-[17px] leading-[1.5] text-[#383838]">
+                  {outcome.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-24 flex flex-col items-start gap-8 rounded-2xl border border-zinc-300/80 bg-gradient-to-br from-[#fff5ef] to-[#fffbf8] p-10 sm:p-14">
+          <h2 className="max-w-2xl font-[NeueHaasDisplayRoman,Arial,sans-serif] text-3xl font-medium leading-[1.1] tracking-tight sm:text-4xl">
+            The best leaders build in a thinking partner. Start here.
+          </h2>
+          <p className="max-w-2xl font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-[#383838]">
+            Start with a confidential context session to see if this is the
+            right fit — no pressure, no commitment beyond that first hour.
+          </p>
+          <Link
+            href="/"
+            className="border border-zinc-900/20 bg-white px-8 py-4 text-base font-medium text-zinc-900 transition-colors hover:bg-zinc-100"
+          >
+            Book your first session
+          </Link>
         </div>
       </section>
     </main>
