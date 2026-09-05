@@ -28,19 +28,19 @@ export const PRODUCTS: Product[] = [
     calendlyUrl: "https://calendly.com/martamindacc",
   },
   {
-    id: "founder-session",
-    name: "Founder Session",
-    description: "A 50 minute session for founders and executives.",
-    duration: "50 min",
-    priceInCents: 10000,
-    calendlyUrl: "https://calendly.com/martamindacc",
-  },
-  {
     id: "family-session",
     name: "Family Session",
     description: "A 60 minute session for families.",
     duration: "60 min",
     priceInCents: 15000,
+    calendlyUrl: "https://calendly.com/martamindacc",
+  },
+  {
+    id: "founder-session",
+    name: "Founder Session",
+    description: "A 50 minute session for founders and executives.",
+    duration: "50 min",
+    priceInCents: 10000,
     calendlyUrl: "https://calendly.com/martamindacc",
   },
   {

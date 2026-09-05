@@ -16,13 +16,13 @@ const bookingServices = [
     calendlyUrl: "https://calendly.com/martamindacc",
   },
   {
-    label: "Founder Session",
-    duration: "50 min",
+    label: "Family Session",
+    duration: "60 min",
     calendlyUrl: "https://calendly.com/martamindacc",
   },
   {
-    label: "Family Session",
-    duration: "60 min",
+    label: "Founder Session",
+    duration: "50 min",
     calendlyUrl: "https://calendly.com/martamindacc",
   },
   {
