@@ -297,7 +297,7 @@ export default function Home() {
                 onClick={() => setIsLangOpen((open) => !open)}
                 aria-label="Select language"
                 aria-expanded={isLangOpen}
-                className="flex items-center gap-1 px-2 py-3 text-sm text-zinc-900"
+                className="flex items-center gap-2 px-2 py-3 text-sm text-zinc-900"
               >
                 {language.label}
                 <svg
@@ -305,7 +305,7 @@ export default function Home() {
                   height="6"
                   viewBox="0 0 10 6"
                   fill="none"
-                  className={`transition-transform ${isLangOpen ? "rotate-180" : ""}`}
+                  className={`shrink-0 self-center transition-transform ${isLangOpen ? "rotate-180" : ""}`}
                   aria-hidden="true"
                 >
                   <path
@@ -465,7 +465,7 @@ export default function Home() {
             <Link
               key={section.href}
               href={section.href}
-              className="group rounded-2xl border border-zinc-300/80 bg-[#fafafb] p-8 transition-colors hover:bg-[#f1dad0] sm:p-14"
+              className="group rounded-2xl border border-zinc-300/80 bg-[#fafafb] p-8 transition-colors hover:bg-[#f5e5dc] sm:p-14"
             >
               <h2 className="inline-block origin-left font-[NeueHaasDisplayRoman,Arial,sans-serif] text-5xl font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out group-hover:translate-x-2 group-hover:scale-x-105 sm:text-7xl">
                 {section.title}
