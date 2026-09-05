@@ -21,7 +21,7 @@ const bookingServices = [
     calendlyUrl: "https://calendly.com/martamindacc",
   },
   {
-    label: "Founder Session",
+    label: "Founder&Executive Session",
     duration: "50 min",
     calendlyUrl: "https://calendly.com/martamindacc",
   },
