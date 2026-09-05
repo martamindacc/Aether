@@ -1,7 +1,31 @@
 "use client";
 
 import Link from "next/link";
+import Script from "next/script";
 import { useState } from "react";
+
+const bookingServices = [
+  {
+    label: "Individual Session",
+    duration: "50 min",
+    calendlyUrl: "https://calendly.com/aether-practice/individual-session",
+  },
+  {
+    label: "Couples Session",
+    duration: "60 min",
+    calendlyUrl: "https://calendly.com/aether-practice/couples-session",
+  },
+  {
+    label: "Founder Session",
+    duration: "50 min",
+    calendlyUrl: "https://calendly.com/aether-practice/founder-session",
+  },
+  {
+    label: "Initial Consultation",
+    duration: "15 min",
+    calendlyUrl: "https://calendly.com/aether-practice/initial-consultation",
+  },
+];
 
 const languages = [
   { code: "en", label: "EN" },
@@ -216,11 +240,28 @@ const content: Record<
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [language, setLanguage] = useState<(typeof languages)[number]>(languages[0]);
   const t = content[language.code];
 
+  const openCalendly = (url: string) => {
+    const calendly = (window as any).Calendly;
+    if (calendly) {
+      calendly.initPopupWidget({ url });
+    }
+    setIsBookingOpen(false);
+  };
+
   return (
     <main className="min-h-screen bg-[#fafafb] font-[NeueHaasDisplayRoman,Arial,sans-serif] text-zinc-900">
+      <link
+        rel="stylesheet"
+        href="https://assets.calendly.com/assets/external/widget.css"
+      />
+      <Script
+        src="https://assets.calendly.com/assets/external/widget.js"
+        strategy="afterInteractive"
+      />
       <div className="relative h-screen w-full overflow-hidden bg-[#fafafb]">
         <video
           className="absolute inset-0 h-full w-full object-cover"
@@ -238,11 +279,17 @@ export default function Home() {
         </h2>
 
         <nav className="fixed inset-x-4 top-4 z-20 flex items-center justify-between rounded-[1.5rem] border border-white/50 bg-white/50 px-4 py-3 shadow-lg shadow-zinc-900/5 backdrop-blur-xl sm:inset-x-6 sm:top-6 sm:px-6">
-          <span className="text-lg font-medium tracking-[-0.04em] sm:text-xl">
-            Aether Practice
+          <span className="flex items-center gap-2">
+            <img src="/logo-a.svg" alt="Aether Practice logo" className="h-6 w-6" />
+            <span className="text-lg font-medium tracking-[-0.04em] sm:text-xl">
+              Aether Practice
+            </span>
           </span>
           <div className="flex items-center gap-2 sm:gap-3">
-            <button className="border border-zinc-900/20 bg-white px-[30px] py-3 text-sm transition-colors hover:bg-zinc-100">
+            <button
+              onClick={() => setIsBookingOpen(true)}
+              className="border border-zinc-900/20 bg-white px-[30px] py-3 text-sm transition-colors hover:bg-zinc-100"
+            >
               {t.bookNow}
             </button>
             <div className="relative">
@@ -302,13 +349,13 @@ export default function Home() {
         </nav>
 
         {isMenuOpen && (
-          <div className="fixed inset-0 z-30 flex justify-start">
+          <div className="fixed inset-0 z-30 flex justify-end">
             <div
-              className="absolute inset-0 bg-zinc-900/20"
+              className="absolute inset-0 animate-in fade-in bg-zinc-900/20 duration-300"
               onClick={() => setIsMenuOpen(false)}
               aria-hidden="true"
             />
-            <div className="relative flex h-full w-full max-w-md flex-col gap-12 overflow-y-auto bg-[#fafafb] px-8 py-24 shadow-2xl sm:px-12">
+            <div className="relative flex h-full w-full max-w-md flex-col gap-12 overflow-y-auto bg-[#fafafb] px-8 py-24 shadow-2xl animate-in slide-in-from-right duration-300 ease-out sm:px-12">
               <button
                 onClick={() => setIsMenuOpen(false)}
                 aria-label="Close menu"
@@ -351,6 +398,49 @@ export default function Home() {
             </div>
           </div>
         )}
+
+        {isBookingOpen && (
+          <div className="fixed inset-0 z-30 flex items-center justify-center px-6">
+            <div
+              className="absolute inset-0 animate-in fade-in bg-zinc-900/20 duration-300"
+              onClick={() => setIsBookingOpen(false)}
+              aria-hidden="true"
+            />
+            <div className="relative flex w-full max-w-md flex-col gap-6 rounded-3xl bg-[#fafafb] p-8 shadow-2xl animate-in fade-in zoom-in-95 duration-300 ease-out sm:p-10">
+              <button
+                onClick={() => setIsBookingOpen(false)}
+                aria-label="Close booking"
+                className="absolute right-6 top-6 flex h-11 w-11 items-center justify-center border border-zinc-900/20 bg-white transition-colors hover:bg-zinc-100"
+              >
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path
+                    d="M1 1L15 15M15 1L1 15"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </button>
+              <p className="text-sm uppercase tracking-wide text-zinc-500">
+                Choose your session
+              </p>
+              <div className="flex flex-col gap-3">
+                {bookingServices.map((service) => (
+                  <button
+                    key={service.label}
+                    onClick={() => openCalendly(service.calendlyUrl)}
+                    className="flex items-center justify-between border border-zinc-900/15 bg-white px-5 py-4 text-left transition-colors hover:bg-zinc-100"
+                  >
+                    <span className="font-[Roboto,Arial,sans-serif] text-lg font-medium text-zinc-900">
+                      {service.label}
+                    </span>
+                    <span className="text-sm text-zinc-500">{service.duration}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
       </div>
 
       <section className="flex flex-col items-center px-6 pb-12 pt-[104px] text-center font-[Inter,-apple-system,BlinkMacSystemFont,'SF_Pro_Text',system-ui,sans-serif] text-[19px] font-normal leading-[1.5] text-[#383838]">
@@ -377,7 +467,7 @@ export default function Home() {
               href={section.href}
               className="group rounded-2xl border border-zinc-300/80 bg-[#fafafb] p-8 transition-colors hover:bg-white sm:p-14"
             >
-              <h2 className="inline-block origin-left font-[Roboto,Arial,sans-serif] text-5xl font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out group-hover:translate-x-2 group-hover:scale-x-105 sm:text-7xl">
+              <h2 className="inline-block origin-left font-[NeueHaasDisplayRoman,Arial,sans-serif] text-5xl font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out group-hover:translate-x-2 group-hover:scale-x-105 sm:text-7xl">
                 {section.title}
               </h2>
               <p className="mt-8 max-w-5xl text-[20px] leading-[1.5] text-[#383838]">
