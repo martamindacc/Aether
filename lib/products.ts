@@ -16,7 +16,7 @@ export const PRODUCTS: Product[] = [
     name: "Individual Session",
     description: "A 50 minute one-on-one session.",
     duration: "50 min",
-    priceInCents: 15000,
+    priceInCents: 10000,
     calendlyUrl: "https://calendly.com/aether-practice/individual-session",
   },
   {
@@ -24,7 +24,7 @@ export const PRODUCTS: Product[] = [
     name: "Couples Session",
     description: "A 60 minute session for two.",
     duration: "60 min",
-    priceInCents: 22000,
+    priceInCents: 15000,
     calendlyUrl: "https://calendly.com/aether-practice/couples-session",
   },
   {
@@ -32,7 +32,7 @@ export const PRODUCTS: Product[] = [
     name: "Founder Session",
     description: "A 50 minute session for founders and executives.",
     duration: "50 min",
-    priceInCents: 25000,
+    priceInCents: 10000,
     calendlyUrl: "https://calendly.com/aether-practice/founder-session",
   },
   {

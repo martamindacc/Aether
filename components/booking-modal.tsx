@@ -53,13 +53,13 @@ export function BookingModal({
       <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css" />
       <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="afterInteractive" />
 
-      <div className="fixed inset-0 z-40 flex items-center justify-center px-6">
+      <div className="fixed inset-0 z-40 flex items-center justify-center overflow-y-auto px-6 py-6">
         <div
-          className="absolute inset-0 animate-in fade-in bg-zinc-900/20 duration-300"
+          className="fixed inset-0 animate-in fade-in bg-zinc-900/20 duration-300"
           onClick={handleClose}
           aria-hidden="true"
         />
-        <div className="relative flex w-full max-w-md flex-col gap-6 rounded-3xl bg-[#fafafb] p-8 shadow-2xl animate-in fade-in zoom-in-95 duration-300 ease-out sm:p-10">
+        <div className="relative my-auto flex max-h-[90vh] w-full max-w-md flex-col gap-6 overflow-y-auto rounded-3xl bg-[#fafafb] p-8 shadow-2xl animate-in fade-in zoom-in-95 duration-300 ease-out sm:p-10">
           <button
             onClick={handleClose}
             aria-label="Close booking"
