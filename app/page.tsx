@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Script from "next/script";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const bookingServices = [
   {
@@ -63,8 +63,8 @@ const content: Record<
     bookNow: "Book Now",
     pills: [
       "Emotional Wellness",
-      "Individual Therapy",
-      "Couples Counseling",
+      "Individual Sessions",
+      "Couples Sessions",
       "Stress Support",
       "Personal Growth",
       "Mindful Living",
@@ -269,6 +269,7 @@ export default function Home() {
   const [isLangOpen, setIsLangOpen] = useState(false);
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [selectedBookingLabel, setSelectedBookingLabel] = useState<string | null>(null);
+  const languageMenuRef = useRef<HTMLDivElement>(null);
   const [language, setLanguage] = useState<(typeof languages)[number]>(languages[0]);
   const t = content[language.code];
 
@@ -280,6 +281,16 @@ export default function Home() {
     setIsBookingOpen(false);
     setSelectedBookingLabel(null);
   };
+
+  useEffect(() => {
+    const handlePointerDown = (event: PointerEvent) => {
+      if (languageMenuRef.current && !languageMenuRef.current.contains(event.target as Node)) {
+        setIsLangOpen(false);
+      }
+    };
+    document.addEventListener("pointerdown", handlePointerDown);
+    return () => document.removeEventListener("pointerdown", handlePointerDown);
+  }, []);
 
   return (
     <main className="min-h-screen bg-[#fafafb] font-[NeueHaasDisplayRoman,Arial,sans-serif] text-zinc-900">
@@ -321,9 +332,9 @@ export default function Home() {
             >
               {t.bookNow}
             </button>
-            <div className="relative">
-              <button
-                onClick={() => setIsLangOpen((open) => !open)}
+  <div ref={languageMenuRef} className="relative">
+  <button
+  onClick={() => setIsLangOpen((open) => !open)}
                 aria-label="Select language"
                 aria-expanded={isLangOpen}
                 className="flex items-center gap-2 px-2 py-3 text-sm text-zinc-900"
@@ -536,10 +547,11 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="flex flex-col items-center gap-4 px-6 py-10 text-center font-[Roboto,Arial,sans-serif] text-sm text-[#383838]">
-        <span className="text-lg font-medium tracking-tight text-zinc-900">
-          Aether Practice
-        </span>
+  <footer className="flex flex-col items-center gap-4 px-6 py-10 text-center font-[Roboto,Arial,sans-serif] text-sm text-[#383838]">
+  <span className="flex items-center gap-2 text-lg font-medium tracking-tight text-zinc-900">
+  <img src="/logo-a.svg" alt="Aether Practice logo" className="h-5 w-5" />
+  Aether Practice
+  </span>
         <p>© {new Date().getFullYear()} Aether Practice. {t.footerTagline}</p>
       </footer>
     </main>

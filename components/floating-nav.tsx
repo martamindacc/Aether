@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { languages, navContent, type LanguageCode } from "@/lib/service-content";
 import { BookingModal } from "@/components/booking-modal";
@@ -23,6 +23,17 @@ export function FloatingNav({
   const t = navContent[language];
   const currentLabel = languages.find((lang) => lang.code === language)?.label ?? "EN";
   const [isBookingOpen, setIsBookingOpen] = useState(false);
+  const languageMenuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handlePointerDown = (event: PointerEvent) => {
+      if (languageMenuRef.current && !languageMenuRef.current.contains(event.target as Node)) {
+        onLangOpenChange(false);
+      }
+    };
+    document.addEventListener("pointerdown", handlePointerDown);
+    return () => document.removeEventListener("pointerdown", handlePointerDown);
+  }, [onLangOpenChange]);
 
   return (
     <>
@@ -41,7 +52,7 @@ export function FloatingNav({
           >
             {t.bookNow}
           </button>
-          <div className="relative">
+          <div ref={languageMenuRef} className="relative">
             <button
               onClick={() => onLangOpenChange(!isLangOpen)}
               aria-label="Select language"
