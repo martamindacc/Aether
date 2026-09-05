@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import Script from "next/script"
 import { Checkout } from "@/components/checkout"
 import { PRODUCTS } from "@/lib/products"
 
@@ -17,20 +16,12 @@ export function BookingModal({
 
   const selectedProduct = PRODUCTS.find((product) => product.id === selectedId)
 
-  const openCalendly = (url: string) => {
-    const calendly = (window as any).Calendly
-    if (calendly) {
-      calendly.initPopupWidget({ url })
-    }
-    handleClose()
-  }
-
   const handleSelect = (productId: string) => {
     const product = PRODUCTS.find((p) => p.id === productId)
     if (!product) return
     setSelectedId(productId)
     if (product.priceInCents === 0) {
-      openCalendly(product.calendlyUrl)
+      setStep("schedule")
       return
     }
     setStep("payment")
@@ -50,9 +41,6 @@ export function BookingModal({
 
   return (
     <>
-      <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css" />
-      <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="afterInteractive" />
-
       <div className="fixed inset-0 z-40 flex items-center justify-center overflow-y-auto px-6 py-6">
         <div
           className="fixed inset-0 animate-in fade-in bg-zinc-900/20 duration-300"
@@ -111,16 +99,19 @@ export function BookingModal({
 
           {step === "schedule" && selectedProduct && (
             <>
-              <p className="text-sm uppercase tracking-wide text-zinc-500">Payment received</p>
-              <p className="font-[Roboto,Arial,sans-serif] text-base leading-[1.5] text-[#383838]">
-                Thank you. Now choose a time for your {selectedProduct.name.toLowerCase()}.
+              <p className="text-sm uppercase tracking-wide text-zinc-500">
+                {selectedProduct.priceInCents === 0
+                  ? "Choose a time"
+                  : "Payment received — choose a time"}
               </p>
-              <button
-                onClick={() => openCalendly(selectedProduct.calendlyUrl)}
-                className="border border-zinc-900/20 bg-white px-8 py-4 text-base font-medium text-zinc-900 transition-colors hover:bg-zinc-100"
-              >
-                Schedule your session
-              </button>
+              <div className="overflow-hidden rounded-2xl border border-zinc-900/10">
+                <iframe
+                  key={selectedProduct.calendlyUrl}
+                  src={`${selectedProduct.calendlyUrl}?hide_gdpr_banner=1`}
+                  title="Schedule your session"
+                  className="h-[70vh] min-h-[500px] w-full"
+                />
+              </div>
             </>
           )}
         </div>

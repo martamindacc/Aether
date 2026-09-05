@@ -22,6 +22,28 @@ export type ServicePageContent = {
   ctaButton: string;
 };
 
+export type AboutContent = {
+  title: string;
+  intro: string;
+  panels: { title: string; description: string }[];
+  valuesHeading: string;
+  values: { title: string; description: string }[];
+  ctaHeading: string;
+  ctaSubtext: string;
+  ctaButton: string;
+};
+
+export type ContactContent = {
+  title: string;
+  intro: string;
+  details: { label: string; value: string }[];
+  hoursHeading: string;
+  hours: string;
+  ctaHeading: string;
+  ctaSubtext: string;
+  ctaButton: string;
+};
+
 export const navContent: Record<
   LanguageCode,
   {
@@ -36,42 +58,45 @@ export const navContent: Record<
     bookNow: "Book Now",
     menuHeading: "Services",
     menuLinks: [
-      { label: "Individual Therapy", href: "/individual-therapy" },
-      { label: "Couples Therapy", href: "/couples-therapy" },
+      { label: "Individual", href: "/individual-therapy" },
+      { label: "Couples", href: "/couples-therapy" },
+      { label: "Family", href: "/family-support" },
       { label: "Executive & Founder Work", href: "/executive-founder-work" },
     ],
     companyHeading: "Company",
     companyLinks: [
-      { label: "About", href: "/#about" },
-      { label: "Contact", href: "/#contact" },
+      { label: "About", href: "/about" },
+      { label: "Contact", href: "/contact" },
     ],
   },
   no: {
     bookNow: "Bestill Nå",
     menuHeading: "Tjenester",
     menuLinks: [
-      { label: "Individualterapi", href: "/individual-therapy" },
-      { label: "Parterapi", href: "/couples-therapy" },
+      { label: "Individuell", href: "/individual-therapy" },
+      { label: "Par", href: "/couples-therapy" },
+      { label: "Familie", href: "/family-support" },
       { label: "Leder- og Grunnleggerarbeid", href: "/executive-founder-work" },
     ],
     companyHeading: "Selskap",
     companyLinks: [
-      { label: "Om Oss", href: "/#about" },
-      { label: "Kontakt", href: "/#contact" },
+      { label: "Om Oss", href: "/about" },
+      { label: "Kontakt", href: "/contact" },
     ],
   },
   pl: {
     bookNow: "Zarezerwuj",
     menuHeading: "Usługi",
     menuLinks: [
-      { label: "Terapia Indywidualna", href: "/individual-therapy" },
-      { label: "Terapia Par", href: "/couples-therapy" },
+      { label: "Indywidualne", href: "/individual-therapy" },
+      { label: "Pary", href: "/couples-therapy" },
+      { label: "Rodzina", href: "/family-support" },
       { label: "Praca z Liderami i Założycielami", href: "/executive-founder-work" },
     ],
     companyHeading: "Firma",
     companyLinks: [
-      { label: "O Nas", href: "/#about" },
-      { label: "Kontakt", href: "/#contact" },
+      { label: "O Nas", href: "/about" },
+      { label: "Kontakt", href: "/contact" },
     ],
   },
 };
@@ -676,5 +701,164 @@ export const executiveFounderContent: Record<LanguageCode, ServicePageContent> =
     ctaSubtext:
       "Zacznij od poufnej sesji kontekstowej, by sprawdzić, czy to odpowiednie rozwiązanie — bez presji, bez zobowiązań poza tą pierwszą godziną.",
     ctaButton: "Zarezerwuj pierwszą sesję",
+  },
+};
+
+export const aboutContent: Record<LanguageCode, AboutContent> = {
+  en: {
+    title: "About Aether Practice",
+    intro:
+      "Aether Practice was built on a simple belief: real change happens when care is grounded in both science and genuine human understanding. We work with individuals, couples, families, and leaders who are ready to face what's underneath the surface.",
+    panels: [
+      {
+        title: "Our approach",
+        description:
+          "We combine evidence-based methods with an unhurried, relational style of care. Every session is tailored to where you actually are — not a script we run regardless of who's in front of us.",
+      },
+      {
+        title: "Who we work with",
+        description:
+          "People carrying real weight: anxiety, grief, relationship strain, family friction, or the isolation that comes with leading. You don't need a crisis to start — you need a reason.",
+      },
+    ],
+    valuesHeading: "What guides the work",
+    values: [
+      {
+        title: "Grounded in evidence",
+        description: "Methods drawn from clinical research, not trends.",
+      },
+      {
+        title: "Genuinely confidential",
+        description: "A space where the unfiltered version of things is safe to say.",
+      },
+      {
+        title: "Built around you",
+        description: "No fixed formula — the pace and focus follow your actual life.",
+      },
+    ],
+    ctaHeading: "Ready to start the conversation?",
+    ctaSubtext:
+      "Book an initial session and see if it's the right fit — no pressure, no commitment beyond that first hour.",
+    ctaButton: "Book a session",
+  },
+  no: {
+    title: "Om Aether Practice",
+    intro:
+      "Aether Practice ble bygget på en enkel tro: reell endring skjer når omsorg er forankret i både vitenskap og genuin menneskelig forståelse. Vi arbeider med enkeltpersoner, par, familier og ledere som er klare for å møte det som ligger under overflaten.",
+    panels: [
+      {
+        title: "Vår tilnærming",
+        description:
+          "Vi kombinerer evidensbaserte metoder med en avslappet, relasjonell omsorgsstil. Hver sesjon er skreddersydd til hvor du faktisk er — ikke et manus vi kjører uansett hvem som sitter foran oss.",
+      },
+      {
+        title: "Hvem vi arbeider med",
+        description:
+          "Mennesker som bærer reell vekt: angst, sorg, relasjonsbelastning, familiefriksjon, eller isolasjonen som følger med å lede. Du trenger ikke en krise for å starte — du trenger en grunn.",
+      },
+    ],
+    valuesHeading: "Hva som styrer arbeidet",
+    values: [
+      {
+        title: "Forankret i evidens",
+        description: "Metoder hentet fra klinisk forskning, ikke trender.",
+      },
+      {
+        title: "Genuint konfidensielt",
+        description: "Et rom hvor den ufiltrerte versjonen av ting er trygg å si.",
+      },
+      {
+        title: "Bygget rundt deg",
+        description: "Ingen fast formel — tempoet og fokuset følger ditt faktiske liv.",
+      },
+    ],
+    ctaHeading: "Klar til å starte samtalen?",
+    ctaSubtext:
+      "Bestill en innledende sesjon og se om det er riktig for deg — uten press, uten forpliktelse utover den første timen.",
+    ctaButton: "Bestill en sesjon",
+  },
+  pl: {
+    title: "O Aether Practice",
+    intro:
+      "Aether Practice powstało z prostego przekonania: prawdziwa zmiana dzieje się, gdy opieka jest zakorzeniona zarówno w nauce, jak i w autentycznym ludzkim zrozumieniu. Pracujemy z osobami indywidualnymi, parami, rodzinami i liderami gotowymi zmierzyć się z tym, co jest pod powierzchnią.",
+    panels: [
+      {
+        title: "Nasze podejście",
+        description:
+          "Łączymy metody oparte na dowodach z niespieszonym, relacyjnym stylem opieki. Każda sesja jest dostosowana do tego, gdzie faktycznie jesteś — nie jest to scenariusz, który stosujemy niezależnie od tego, kto jest przed nami.",
+      },
+      {
+        title: "Z kim pracujemy",
+        description:
+          "Z ludźmi noszącymi realny ciężar: lęk, żal, napięcie w relacji, tarcia rodzinne lub izolację, która towarzyszy przywództwu. Nie musisz mieć kryzysu, aby zacząć — potrzebujesz powodu.",
+      },
+    ],
+    valuesHeading: "Co kieruje naszą pracą",
+    values: [
+      {
+        title: "Zakorzenione w dowodach",
+        description: "Metody zaczerpnięte z badań klinicznych, nie z trendów.",
+      },
+      {
+        title: "Naprawdę poufne",
+        description: "Miejsce, w którym bezpiecznie można powiedzieć niefiltrowaną wersję rzeczy.",
+      },
+      {
+        title: "Zbudowane wokół Ciebie",
+        description: "Brak stałej formuły — tempo i skupienie wynikają z Twojego rzeczywistego życia.",
+      },
+    ],
+    ctaHeading: "Gotowy zacząć rozmowę?",
+    ctaSubtext:
+      "Zarezerwuj pierwszą sesję i sprawdź, czy to odpowiednie rozwiązanie — bez presji, bez zobowiązań poza tą pierwszą godziną.",
+    ctaButton: "Zarezerwuj sesję",
+  },
+};
+
+export const contactContent: Record<LanguageCode, ContactContent> = {
+  en: {
+    title: "Contact",
+    intro:
+      "Have a question before booking, or want to talk through which service is the right fit? Reach out — we respond to every message.",
+    details: [
+      { label: "Email", value: "hello@aetherpractice.com" },
+      { label: "Phone", value: "+1 (555) 012-3456" },
+      { label: "Location", value: "Sessions held in person and online" },
+    ],
+    hoursHeading: "Availability",
+    hours: "Monday – Friday, 9:00 – 18:00",
+    ctaHeading: "Prefer to just get started?",
+    ctaSubtext: "Skip the email and book your first session directly.",
+    ctaButton: "Book a session",
+  },
+  no: {
+    title: "Kontakt",
+    intro:
+      "Har du et spørsmål før du bestiller, eller vil du snakke om hvilken tjeneste som passer best? Ta kontakt — vi svarer på alle meldinger.",
+    details: [
+      { label: "E-post", value: "hello@aetherpractice.com" },
+      { label: "Telefon", value: "+1 (555) 012-3456" },
+      { label: "Sted", value: "Sesjoner holdes fysisk og digitalt" },
+    ],
+    hoursHeading: "Tilgjengelighet",
+    hours: "Mandag – fredag, 09:00 – 18:00",
+    ctaHeading: "Vil du bare komme i gang?",
+    ctaSubtext: "Hopp over e-posten og bestill din første sesjon direkte.",
+    ctaButton: "Bestill en sesjon",
+  },
+  pl: {
+    title: "Kontakt",
+    intro:
+      "Masz pytanie przed rezerwacją lub chcesz porozmawiać, która usługa będzie odpowiednia? Napisz do nas — odpowiadamy na każdą wiadomość.",
+    details: [
+      { label: "E-mail", value: "hello@aetherpractice.com" },
+      { label: "Telefon", value: "+1 (555) 012-3456" },
+      { label: "Lokalizacja", value: "Sesje odbywają się osobiście i online" },
+    ],
+    hoursHeading: "Dostępność",
+    hours: "Poniedziałek – piątek, 9:00 – 18:00",
+    ctaHeading: "Chcesz po prostu zacząć?",
+    ctaSubtext: "Pomiń e-mail i zarezerwuj pierwszą sesję bezpośrednio.",
+    ctaButton: "Zarezerwuj sesję",
   },
 };

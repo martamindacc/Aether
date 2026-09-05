@@ -8,22 +8,22 @@ const bookingServices = [
   {
     label: "Individual Session",
     duration: "50 min",
-    calendlyUrl: "https://calendly.com/aether-practice/individual-session",
+    calendlyUrl: "https://calendly.com/martamindacc",
   },
   {
     label: "Couples Session",
     duration: "60 min",
-    calendlyUrl: "https://calendly.com/aether-practice/couples-session",
+    calendlyUrl: "https://calendly.com/martamindacc",
   },
   {
     label: "Founder Session",
     duration: "50 min",
-    calendlyUrl: "https://calendly.com/aether-practice/founder-session",
+    calendlyUrl: "https://calendly.com/martamindacc",
   },
   {
     label: "Initial Consultation",
     duration: "15 min",
-    calendlyUrl: "https://calendly.com/aether-practice/initial-consultation",
+    calendlyUrl: "https://calendly.com/martamindacc",
   },
 ];
 
@@ -73,16 +73,17 @@ const content: Record<
       {
         heading: "Services",
         links: [
-          { label: "Individual Therapy", href: "/individual-therapy" },
-          { label: "Couples Therapy", href: "/couples-therapy" },
+          { label: "Individual", href: "/individual-therapy" },
+          { label: "Couples", href: "/couples-therapy" },
+          { label: "Family", href: "/family-support" },
           { label: "Executive & Founder Work", href: "/executive-founder-work" },
         ],
       },
       {
         heading: "Company",
         links: [
-          { label: "About", href: "#" },
-          { label: "Contact", href: "#" },
+          { label: "About", href: "/about" },
+          { label: "Contact", href: "/contact" },
         ],
       },
     ],
@@ -141,16 +142,17 @@ const content: Record<
       {
         heading: "Tjenester",
         links: [
-          { label: "Individualterapi", href: "/individual-therapy" },
-          { label: "Parterapi", href: "/couples-therapy" },
+          { label: "Individuell", href: "/individual-therapy" },
+          { label: "Par", href: "/couples-therapy" },
+          { label: "Familie", href: "/family-support" },
           { label: "Leder- og Grunnleggerarbeid", href: "/executive-founder-work" },
         ],
       },
       {
         heading: "Selskap",
         links: [
-          { label: "Om Oss", href: "#" },
-          { label: "Kontakt", href: "#" },
+          { label: "Om Oss", href: "/about" },
+          { label: "Kontakt", href: "/contact" },
         ],
       },
     ],
@@ -209,16 +211,17 @@ const content: Record<
       {
         heading: "Usługi",
         links: [
-          { label: "Terapia Indywidualna", href: "/individual-therapy" },
-          { label: "Terapia Par", href: "/couples-therapy" },
+          { label: "Indywidualne", href: "/individual-therapy" },
+          { label: "Pary", href: "/couples-therapy" },
+          { label: "Rodzina", href: "/family-support" },
           { label: "Praca z Liderami i Założycielami", href: "/executive-founder-work" },
         ],
       },
       {
         heading: "Firma",
         links: [
-          { label: "O Nas", href: "#" },
-          { label: "Kontakt", href: "#" },
+          { label: "O Nas", href: "/about" },
+          { label: "Kontakt", href: "/contact" },
         ],
       },
     ],
@@ -265,15 +268,17 @@ export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
   const [isBookingOpen, setIsBookingOpen] = useState(false);
+  const [selectedBookingLabel, setSelectedBookingLabel] = useState<string | null>(null);
   const [language, setLanguage] = useState<(typeof languages)[number]>(languages[0]);
   const t = content[language.code];
 
-  const openCalendly = (url: string) => {
-    const calendly = (window as any).Calendly;
-    if (calendly) {
-      calendly.initPopupWidget({ url });
-    }
+  const selectedBookingService = bookingServices.find(
+    (service) => service.label === selectedBookingLabel,
+  );
+
+  const closeBooking = () => {
     setIsBookingOpen(false);
+    setSelectedBookingLabel(null);
   };
 
   return (
@@ -424,15 +429,15 @@ export default function Home() {
         )}
 
         {isBookingOpen && (
-          <div className="fixed inset-0 z-30 flex items-center justify-center px-6">
+          <div className="fixed inset-0 z-30 flex items-center justify-center overflow-y-auto px-6 py-6">
             <div
-              className="absolute inset-0 animate-in fade-in bg-zinc-900/20 duration-300"
-              onClick={() => setIsBookingOpen(false)}
+              className="fixed inset-0 animate-in fade-in bg-zinc-900/20 duration-300"
+              onClick={closeBooking}
               aria-hidden="true"
             />
-            <div className="relative flex w-full max-w-md flex-col gap-6 rounded-3xl bg-[#fafafb] p-8 shadow-2xl animate-in fade-in zoom-in-95 duration-300 ease-out sm:p-10">
+            <div className="relative my-auto flex max-h-[90vh] w-full max-w-md flex-col gap-6 overflow-y-auto rounded-3xl bg-[#fafafb] p-8 shadow-2xl animate-in fade-in zoom-in-95 duration-300 ease-out sm:p-10">
               <button
-                onClick={() => setIsBookingOpen(false)}
+                onClick={closeBooking}
                 aria-label="Close booking"
                 className="absolute right-6 top-6 flex h-11 w-11 items-center justify-center border border-zinc-900/20 bg-white transition-colors hover:bg-zinc-100"
               >
@@ -445,23 +450,49 @@ export default function Home() {
                   />
                 </svg>
               </button>
-              <p className="text-sm uppercase tracking-wide text-zinc-500">
-                Choose your session
-              </p>
-              <div className="flex flex-col gap-3">
-                {bookingServices.map((service) => (
-                  <button
-                    key={service.label}
-                    onClick={() => openCalendly(service.calendlyUrl)}
-                    className="flex items-center justify-between border border-zinc-900/15 bg-white px-5 py-4 text-left transition-colors hover:bg-zinc-100"
-                  >
-                    <span className="font-[Roboto,Arial,sans-serif] text-lg font-medium text-zinc-900">
-                      {service.label}
-                    </span>
-                    <span className="text-sm text-zinc-500">{service.duration}</span>
-                  </button>
-                ))}
-              </div>
+              {!selectedBookingService ? (
+                <>
+                  <p className="text-sm uppercase tracking-wide text-zinc-500">
+                    Choose your session
+                  </p>
+                  <div className="flex flex-col gap-3">
+                    {bookingServices.map((service) => (
+                      <button
+                        key={service.label}
+                        onClick={() => setSelectedBookingLabel(service.label)}
+                        className="flex items-center justify-between border border-zinc-900/15 bg-white px-5 py-4 text-left transition-colors hover:bg-zinc-100"
+                      >
+                        <span className="font-[Roboto,Arial,sans-serif] text-lg font-medium text-zinc-900">
+                          {service.label}
+                        </span>
+                        <span className="text-sm text-zinc-500">{service.duration}</span>
+                      </button>
+                    ))}
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="flex items-center justify-between">
+                    <p className="text-sm uppercase tracking-wide text-zinc-500">
+                      {selectedBookingService.label}
+                    </p>
+                    <button
+                      onClick={() => setSelectedBookingLabel(null)}
+                      className="text-sm text-zinc-500 underline-offset-4 hover:text-zinc-900 hover:underline"
+                    >
+                      Back
+                    </button>
+                  </div>
+                  <div className="overflow-hidden rounded-2xl border border-zinc-900/10">
+                    <iframe
+                      key={selectedBookingService.calendlyUrl}
+                      src={`${selectedBookingService.calendlyUrl}?hide_gdpr_banner=1`}
+                      title="Schedule your session"
+                      className="h-[70vh] min-h-[500px] w-full"
+                    />
+                  </div>
+                </>
+              )}
             </div>
           </div>
         )}

@@ -17,7 +17,7 @@ export const PRODUCTS: Product[] = [
     description: "A 50 minute one-on-one session.",
     duration: "50 min",
     priceInCents: 10000,
-    calendlyUrl: "https://calendly.com/aether-practice/individual-session",
+    calendlyUrl: "https://calendly.com/martamindacc",
   },
   {
     id: "couples-session",
@@ -25,7 +25,7 @@ export const PRODUCTS: Product[] = [
     description: "A 60 minute session for two.",
     duration: "60 min",
     priceInCents: 15000,
-    calendlyUrl: "https://calendly.com/aether-practice/couples-session",
+    calendlyUrl: "https://calendly.com/martamindacc",
   },
   {
     id: "founder-session",
@@ -33,7 +33,7 @@ export const PRODUCTS: Product[] = [
     description: "A 50 minute session for founders and executives.",
     duration: "50 min",
     priceInCents: 10000,
-    calendlyUrl: "https://calendly.com/aether-practice/founder-session",
+    calendlyUrl: "https://calendly.com/martamindacc",
   },
   {
     id: "initial-consultation",
@@ -41,6 +41,6 @@ export const PRODUCTS: Product[] = [
     description: "A free 15 minute introductory call.",
     duration: "15 min",
     priceInCents: 0,
-    calendlyUrl: "https://calendly.com/aether-practice/initial-consultation",
+    calendlyUrl: "https://calendly.com/martamindacc",
   },
 ]
