@@ -80,7 +80,7 @@ export function BookingModal({
               <div className="overflow-hidden rounded-2xl border border-zinc-900/10">
                 <iframe
                   key={selectedProduct.calendlyUrl}
-                  src={`${selectedProduct.calendlyUrl}?hide_gdpr_banner=1`}
+                  src={`${selectedProduct.calendlyUrl}?hide_gdpr_banner=1&primary_color=e1c4b1`}
                   title="Schedule your session"
                   className="h-[70vh] min-h-[500px] w-full"
                 />
