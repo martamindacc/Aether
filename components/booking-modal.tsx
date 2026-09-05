@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import { Checkout } from "@/components/checkout"
 import { PRODUCTS } from "@/lib/products"
 
 export function BookingModal({
@@ -12,7 +11,7 @@ export function BookingModal({
   onClose: () => void
 }) {
   const [selectedId, setSelectedId] = useState<string | null>(null)
-  const [step, setStep] = useState<"select" | "payment" | "schedule">("select")
+  const [step, setStep] = useState<"select" | "schedule">("select")
 
   const selectedProduct = PRODUCTS.find((product) => product.id === selectedId)
 
@@ -20,14 +19,6 @@ export function BookingModal({
     const product = PRODUCTS.find((p) => p.id === productId)
     if (!product) return
     setSelectedId(productId)
-    if (product.priceInCents === 0) {
-      setStep("schedule")
-      return
-    }
-    setStep("payment")
-  }
-
-  const handlePaymentComplete = () => {
     setStep("schedule")
   }
 
@@ -76,34 +67,16 @@ export function BookingModal({
                     <span className="font-[Roboto,Arial,sans-serif] text-lg font-medium text-zinc-900">
                       {product.name}
                     </span>
-                    <span className="text-sm text-zinc-500">
-                      {product.duration} ·{" "}
-                      {product.priceInCents === 0
-                        ? "Free"
-                        : `$${(product.priceInCents / 100).toFixed(0)}`}
-                    </span>
+                    <span className="text-sm text-zinc-500">{product.duration}</span>
                   </button>
                 ))}
               </div>
             </>
           )}
 
-          {step === "payment" && selectedProduct && (
-            <>
-              <p className="text-sm uppercase tracking-wide text-zinc-500">
-                Pay for your {selectedProduct.name.toLowerCase()}
-              </p>
-              <Checkout productId={selectedProduct.id} onComplete={handlePaymentComplete} />
-            </>
-          )}
-
           {step === "schedule" && selectedProduct && (
             <>
-              <p className="text-sm uppercase tracking-wide text-zinc-500">
-                {selectedProduct.priceInCents === 0
-                  ? "Choose a time"
-                  : "Payment received — choose a time"}
-              </p>
+              <p className="text-sm uppercase tracking-wide text-zinc-500">Choose a time</p>
               <div className="overflow-hidden rounded-2xl border border-zinc-900/10">
                 <iframe
                   key={selectedProduct.calendlyUrl}

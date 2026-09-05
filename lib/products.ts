@@ -36,6 +36,14 @@ export const PRODUCTS: Product[] = [
     calendlyUrl: "https://calendly.com/martamindacc",
   },
   {
+    id: "family-session",
+    name: "Family Session",
+    description: "A 60 minute session for families.",
+    duration: "60 min",
+    priceInCents: 15000,
+    calendlyUrl: "https://calendly.com/martamindacc",
+  },
+  {
     id: "initial-consultation",
     name: "Initial Consultation",
     description: "A free 15 minute introductory call.",
