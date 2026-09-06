@@ -83,7 +83,10 @@ export function BookingModal({
                     <span className="font-[Roboto,Arial,sans-serif] text-lg font-medium text-zinc-900">
                       {product.name}
                     </span>
-                    <span className="text-sm text-zinc-500">{product.duration}</span>
+                    <span className="text-sm text-zinc-500">
+                      {product.duration}
+                      {product.priceInCents > 0 && ` · $${(product.priceInCents / 100).toFixed(0)}`}
+                    </span>
                   </button>
                 ))}
               </div>

@@ -8,26 +8,31 @@ const bookingServices = [
   {
     label: "Individual Session",
     duration: "50 min",
+    priceInCents: 10000,
     calendlyUrl: "https://calendly.com/martamindacc",
   },
   {
     label: "Couples Session",
     duration: "60 min",
+    priceInCents: 12000,
     calendlyUrl: "https://calendly.com/martamindacc",
   },
   {
     label: "Family Session",
     duration: "60 min",
+    priceInCents: 15000,
     calendlyUrl: "https://calendly.com/martamindacc",
   },
   {
     label: "Executive&Founder Session",
     duration: "50 min",
+    priceInCents: 10000,
     calendlyUrl: "https://calendly.com/martamindacc",
   },
   {
     label: "Initial Consultation",
     duration: "15 min",
+    priceInCents: 0,
     calendlyUrl: "https://calendly.com/martamindacc",
   },
 ];
@@ -57,6 +62,19 @@ const content: Record<
       color: string;
     }[];
     learnMore: string;
+    testimonialsEyebrow: string;
+    testimonialsHeading: string;
+    testimonials: {
+      quote: string;
+      name: string;
+      context: string;
+      initials: string;
+      accentText: string;
+      accentBg: string;
+    }[];
+    finalCtaHeading: string;
+    finalCtaSubtext: string;
+    finalCtaButton: string;
     footerTagline: string;
   }
 > = {
@@ -127,6 +145,41 @@ const content: Record<
       },
     ],
     learnMore: "Learn more →",
+    testimonialsEyebrow: "Client Stories",
+    testimonialsHeading: "Trusted by people who expect more from their care",
+    testimonials: [
+      {
+        quote:
+          "For the first time in years, I understand why I react the way I do. The work here didn't just calm me down — it gave me a framework for the rest of my life.",
+        name: "M. R.",
+        context: "Individual client",
+        initials: "MR",
+        accentText: "text-[#7b4037]",
+        accentBg: "bg-[#7b4037]/10",
+      },
+      {
+        quote:
+          "We came in on the edge of separating. What we found was a way to actually hear each other again — not just survive the conversation, but want to have it.",
+        name: "J. & A.",
+        context: "Couples clients",
+        initials: "JA",
+        accentText: "text-[#66755c]",
+        accentBg: "bg-[#66755c]/10",
+      },
+      {
+        quote:
+          "As a founder, I'd never had a space where the weight of the decisions was actually welcome. This is the only hour of my week I don't perform.",
+        name: "K. T.",
+        context: "Founder, Executive work",
+        initials: "KT",
+        accentText: "text-[#496171]",
+        accentBg: "bg-[#496171]/10",
+      },
+    ],
+    finalCtaHeading: "The clarity you're looking for begins today.",
+    finalCtaSubtext:
+      "A practice built for those who expect the same rigor from their inner life as they do from their work.",
+    finalCtaButton: "Book Your Session",
     footerTagline: "All rights reserved.",
   },
   no: {
@@ -196,6 +249,41 @@ const content: Record<
       },
     ],
     learnMore: "Les mer →",
+    testimonialsEyebrow: "Klienthistorier",
+    testimonialsHeading: "Betrodd av mennesker som forventer mer av omsorgen sin",
+    testimonials: [
+      {
+        quote:
+          "For første gang på flere år forstår jeg hvorfor jeg reagerer som jeg gjør. Arbeidet her roet meg ikke bare ned — det ga meg et rammeverk for resten av livet.",
+        name: "M. R.",
+        context: "Individuell klient",
+        initials: "MR",
+        accentText: "text-[#7b4037]",
+        accentBg: "bg-[#7b4037]/10",
+      },
+      {
+        quote:
+          "Vi kom inn på randen av å skilles. Det vi fant var en måte å faktisk høre hverandre igjen — ikke bare overleve samtalen, men ønske å ha den.",
+        name: "J. & A.",
+        context: "Par-klienter",
+        initials: "JA",
+        accentText: "text-[#66755c]",
+        accentBg: "bg-[#66755c]/10",
+      },
+      {
+        quote:
+          "Som gründer hadde jeg aldri hatt et rom der vekten av beslutningene faktisk var velkommen. Dette er den eneste timen i uken jeg ikke presterer.",
+        name: "K. T.",
+        context: "Gründer, lederarbeid",
+        initials: "KT",
+        accentText: "text-[#496171]",
+        accentBg: "bg-[#496171]/10",
+      },
+    ],
+    finalCtaHeading: "Klarheten du søker begynner med én samtale.",
+    finalCtaSubtext:
+      "En praksis bygget for dem som forventer samme presisjon i sitt innerliv som i arbeidet sitt.",
+    finalCtaButton: "Bestill Din Økt",
     footerTagline: "Alle rettigheter reservert.",
   },
   pl: {
@@ -265,6 +353,41 @@ const content: Record<
       },
     ],
     learnMore: "Dowiedz się więcej →",
+    testimonialsEyebrow: "Historie Klientów",
+    testimonialsHeading: "Zaufali nam ludzie, którzy oczekują więcej od swojej opieki",
+    testimonials: [
+      {
+        quote:
+          "Po raz pierwszy od lat rozumiem, czemu reaguję tak, jak reaguję. Ta praca nie tylko mnie uspokoiła — dała mi ramy na resztę życia.",
+        name: "M. R.",
+        context: "Klient indywidualny",
+        initials: "MR",
+        accentText: "text-[#7b4037]",
+        accentBg: "bg-[#7b4037]/10",
+      },
+      {
+        quote:
+          "Przyszliśmy na granicy rozstania. To, co znaleźliśmy, to sposób, by naprawdę siebie usłyszeć — nie tylko przetrwać rozmowę, ale chcieć ją prowadzić.",
+        name: "J. i A.",
+        context: "Klienci, terapia par",
+        initials: "JA",
+        accentText: "text-[#66755c]",
+        accentBg: "bg-[#66755c]/10",
+      },
+      {
+        quote:
+          "Jako założyciel nigdy nie miałem miejsca, w którym ciężar decyzji był naprawdę mile widziany. To jedyna godzina w tygodniu, w której nie muszę odgrywać roli.",
+        name: "K. T.",
+        context: "Założyciel, praca liderska",
+        initials: "KT",
+        accentText: "text-[#496171]",
+        accentBg: "bg-[#496171]/10",
+      },
+    ],
+    finalCtaHeading: "Jasność, której szukasz, zaczyna się od jednej rozmowy.",
+    finalCtaSubtext:
+      "Praktyka stworzona dla tych, którzy oczekują tej samej precyzji w swoim życiu wewnętrznym, jak w pracy.",
+    finalCtaButton: "Zarezerwuj Sesję",
     footerTagline: "Wszelkie prawa zastrzeżone.",
   },
 };
@@ -492,7 +615,10 @@ export default function Home() {
                         <span className="font-[Roboto,Arial,sans-serif] text-lg font-medium text-zinc-900">
 {bookingLabel(service.label)}
                         </span>
-                        <span className="text-sm text-zinc-500">{service.duration}</span>
+                        <span className="text-sm text-zinc-500">
+                          {service.duration}
+                          {service.priceInCents > 0 && ` · $${(service.priceInCents / 100).toFixed(0)}`}
+                        </span>
                       </button>
                     ))}
                   </div>
@@ -560,6 +686,60 @@ export default function Home() {
               </span>
             </Link>
           ))}
+        </div>
+
+        <div className="mt-32 flex w-full max-w-6xl flex-col items-center gap-4">
+          <p className="text-sm uppercase tracking-wide text-zinc-500">
+            {t.testimonialsEyebrow}
+          </p>
+          <h2 className="max-w-3xl text-balance text-center font-[NeueHaasDisplayRoman,Arial,sans-serif] text-5xl font-medium tracking-tight text-zinc-900 sm:text-6xl">
+            {t.testimonialsHeading}
+          </h2>
+        </div>
+        <div className="mt-16 grid w-full max-w-6xl gap-6 sm:grid-cols-3">
+          {t.testimonials.map((item) => (
+            <div
+              key={item.name}
+              className="flex flex-col gap-8 rounded-2xl border border-zinc-300/80 bg-gradient-to-br from-[#eee2db]/75 to-[#eee2db]/40 p-8 transition-colors duration-300 hover:bg-[#e2c3b2]/60 sm:p-10"
+            >
+              <div className={`flex gap-1 ${item.accentText}`} aria-hidden="true">
+                {Array.from({ length: 5 }).map((_, index) => (
+                  <svg key={index} width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M10 1.5l2.7 6.06 6.6.63-5 4.4 1.5 6.46L10 15.9l-5.8 3.15 1.5-6.46-5-4.4 6.6-.63L10 1.5z" />
+                  </svg>
+                ))}
+              </div>
+              <p className="flex-1 font-[Roboto,Arial,sans-serif] text-lg leading-[1.6] text-[#383838]">
+                &ldquo;{item.quote}&rdquo;
+              </p>
+              <div className="flex items-center gap-4">
+                <span
+                  className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-base font-medium ${item.accentText} ${item.accentBg}`}
+                >
+                  {item.initials}
+                </span>
+                <div className="flex flex-col">
+                  <span className="font-[Roboto,Arial,sans-serif] text-base font-medium text-zinc-900">
+                    {item.name}
+                  </span>
+                  <span className="text-sm text-zinc-500">{item.context}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-[-30px] flex w-full max-w-6xl flex-col items-center gap-8 rounded-[2rem] px-8 pb-10 pt-20 text-center sm:px-20 sm:pb-16 sm:pt-28">
+          <div className="h-px w-24 bg-[#c9a688]" />
+          <h2 className="max-w-3xl text-balance font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-semibold leading-[1.1] tracking-wide text-zinc-900 sm:text-4xl">
+            {t.finalCtaHeading}
+          </h2>
+          <button
+            onClick={() => setIsBookingOpen(true)}
+            className="mt-2 bg-zinc-900 px-10 py-5 text-sm font-medium uppercase tracking-[0.2em] text-white transition-colors duration-300 hover:bg-zinc-800"
+          >
+            {t.finalCtaButton}
+          </button>
         </div>
       </section>
 
