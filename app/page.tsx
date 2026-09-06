@@ -729,14 +729,11 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="mt-32 flex w-full max-w-6xl flex-col items-center gap-8 rounded-[2rem] border border-zinc-300/80 bg-gradient-to-br from-[#eee2db] to-white px-8 py-20 text-center sm:px-20 sm:py-28">
-          <div className="h-px w-16 bg-[#c9a688]" />
-          <h2 className="max-w-3xl text-balance font-[NeueHaasDisplayRoman,Arial,sans-serif] text-4xl font-medium leading-[1.1] tracking-tight text-zinc-900 sm:text-6xl">
+        <div className="mt-32 flex w-full max-w-6xl flex-col items-center gap-8 rounded-[2rem] border border-zinc-300/80 px-8 py-20 text-center sm:px-20 sm:py-28">
+          <div className="h-px w-24 bg-[#c9a688]" />
+          <h2 className="max-w-3xl text-balance font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-semibold leading-[1.1] tracking-tight text-zinc-900 sm:text-4xl">
             {t.finalCtaHeading}
           </h2>
-          <p className="max-w-xl text-balance font-[Roboto,Arial,sans-serif] text-lg leading-[1.6] text-[#383838]">
-            {t.finalCtaSubtext}
-          </p>
           <button
             onClick={() => setIsBookingOpen(true)}
             className="mt-2 bg-zinc-900 px-10 py-5 text-sm font-medium uppercase tracking-[0.2em] text-white transition-colors duration-300 hover:bg-zinc-800"
