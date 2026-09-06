@@ -96,9 +96,9 @@ const content: Record<
       {
         heading: "Services",
         links: [
-          { label: "Individual", href: "/individual-therapy" },
-          { label: "Couples", href: "/couples-therapy" },
-          { label: "Family", href: "/family-support" },
+          { label: "Individual Session", href: "/individual-therapy" },
+          { label: "Couples Session", href: "/couples-therapy" },
+          { label: "Family Session", href: "/family-support" },
           { label: "Executive & Founder Work", href: "/executive-founder-work" },
         ],
       },
@@ -113,7 +113,7 @@ const content: Record<
     supportSections: [
       {
         eyebrow: "Individual support",
-        title: "Individual",
+        title: "Individual Session",
         description:
           "Support in your own life situations — anxiety, grief, identity, transitions, and the weight you carry alone.",
         href: "/individual-therapy",
@@ -121,7 +121,7 @@ const content: Record<
       },
       {
         eyebrow: "Relationship support",
-        title: "Couples",
+        title: "Couples Session",
         description:
           "Understand how you work together as a couple — improve communication, rebuild trust, and repair the pattern underneath the conflict.",
         href: "/couples-therapy",
@@ -129,7 +129,7 @@ const content: Record<
       },
       {
         eyebrow: "Family support",
-        title: "Family",
+        title: "Family Session",
         description:
           "Create a steadier family rhythm — with clearer communication, stronger connection, and practical support for the moments that shape life together.",
         href: "/family-support",
@@ -304,9 +304,9 @@ const content: Record<
       {
         heading: "Usługi",
         links: [
-          { label: "Indywidualne", href: "/individual-therapy" },
-          { label: "Pary", href: "/couples-therapy" },
-          { label: "Rodzina", href: "/family-support" },
+          { label: "Sesja Indywidualna", href: "/individual-therapy" },
+          { label: "Sesja dla Par", href: "/couples-therapy" },
+          { label: "Sesja Rodzinna", href: "/family-support" },
           { label: "Praca z Liderami i Założycielami", href: "/executive-founder-work" },
         ],
       },
@@ -321,7 +321,7 @@ const content: Record<
     supportSections: [
       {
         eyebrow: "Wsparcie indywidualne",
-        title: "Indywidualne",
+        title: "Sesja Indywidualna",
         description:
           "Wsparcie w Twoich sytuacjach życiowych — w zmianach, przejściach i ciężarze, który niesiesz samodzielnie.",
         href: "/individual-therapy",
@@ -329,7 +329,7 @@ const content: Record<
       },
       {
         eyebrow: "Wsparcie relacji",
-        title: "Pary",
+        title: "Sesja dla Par",
         description:
           "Zrozumcie, jak funkcjonujecie razem — poprawcie komunikację, odbudujcie zaufanie i naprawcie wzorzec stojący za konfliktem.",
         href: "/couples-therapy",
@@ -337,7 +337,7 @@ const content: Record<
       },
       {
         eyebrow: "Wsparcie rodzinne",
-        title: "Rodzina",
+        title: "Sesja Rodzinna",
         description:
           "Zbuduj stabilniejszy rytm rodzinny — z jaśniejszą komunikacją, silniejszą więzią i praktycznym wsparciem dla chwil, które kształtują wspólne życie.",
         href: "/family-support",

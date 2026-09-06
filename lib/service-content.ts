@@ -55,9 +55,9 @@ export const navContent: Record<
     bookNow: "Book Now",
     menuHeading: "Services",
     menuLinks: [
-      { label: "Individual", href: "/individual-therapy" },
-      { label: "Couples", href: "/couples-therapy" },
-      { label: "Family", href: "/family-support" },
+      { label: "Individual Session", href: "/individual-therapy" },
+      { label: "Couples Session", href: "/couples-therapy" },
+      { label: "Family Session", href: "/family-support" },
       { label: "Executive & Founder Work", href: "/executive-founder-work" },
     ],
     companyHeading: "Company",
@@ -85,9 +85,9 @@ export const navContent: Record<
     bookNow: "Zarezerwuj",
     menuHeading: "Usługi",
     menuLinks: [
-      { label: "Indywidualne", href: "/individual-therapy" },
-      { label: "Pary", href: "/couples-therapy" },
-      { label: "Rodzina", href: "/family-support" },
+      { label: "Sesja Indywidualna", href: "/individual-therapy" },
+      { label: "Sesja dla Par", href: "/couples-therapy" },
+      { label: "Sesja Rodzinna", href: "/family-support" },
       { label: "Praca z Liderami i Założycielami", href: "/executive-founder-work" },
     ],
     companyHeading: "Firma",
@@ -102,7 +102,7 @@ export const individualTherapyContent: Record<LanguageCode, ServicePageContent> 
   en: {
     title: "Individual",
     intro:
-      "A dedicated space to think clearly, understand your own patterns, and move forward with intention. This is coaching built for people who are already capable — and want a sharper, more deliberate version of the life they're building.",
+      "A dedicated one-on-one session to think clearly, map your own patterns, and set a deliberate direction forward. Built for people who are already capable — and want a sharper, more intentional version of the life they're building.",
     panels: [
       {
         title: "A space built around you",
@@ -234,7 +234,7 @@ export const individualTherapyContent: Record<LanguageCode, ServicePageContent> 
   pl: {
     title: "Indywidualne",
     intro:
-      "Dedykowana przestrzeń, by myśleć jasno, rozumieć własne wzorce i poruszać się naprzód z intencją. To coaching stworzony dla ludzi, którzy są już zdolni — i chcą bardziej świadomej wersji życia, które budują.",
+      "Dedykowana sesja jeden na jeden, by myśleć jasno, zmapować własne wzorce i wyznaczyć świadomy kierunek działania. Stworzona dla ludzi, którzy są już zdolni — i chcą bardziej precyzyjnej wersji życia, które budują.",
     panels: [
       {
         title: "Przestrzeń zbudowana wokół Ciebie",
