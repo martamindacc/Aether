@@ -176,9 +176,9 @@ const content: Record<
         accentBg: "bg-[#496171]/10",
       },
     ],
-    finalCtaHeading: "Your life won't change by thinking about it.",
+    finalCtaHeading: "The clarity you're looking for begins with one conversation.",
     finalCtaSubtext:
-      "Every person you just read about started the same way you can start today — with one session. Stop carrying it alone.",
+      "A practice built for those who expect the same rigor from their inner life as they do from their work.",
     finalCtaButton: "Book Your Session",
     footerTagline: "All rights reserved.",
   },
@@ -280,9 +280,9 @@ const content: Record<
         accentBg: "bg-[#496171]/10",
       },
     ],
-    finalCtaHeading: "Livet ditt endres ikke av å tenke på det.",
+    finalCtaHeading: "Klarheten du søker begynner med én samtale.",
     finalCtaSubtext:
-      "Hver person du nettopp leste om startet på samme måte som du kan starte i dag — med én økt. Slutt å bære det alene.",
+      "En praksis bygget for dem som forventer samme presisjon i sitt innerliv som i arbeidet sitt.",
     finalCtaButton: "Bestill Din Økt",
     footerTagline: "Alle rettigheter reservert.",
   },
@@ -384,9 +384,9 @@ const content: Record<
         accentBg: "bg-[#496171]/10",
       },
     ],
-    finalCtaHeading: "Twoje życie nie zmieni się przez samo myślenie o tym.",
+    finalCtaHeading: "Jasność, której szukasz, zaczyna się od jednej rozmowy.",
     finalCtaSubtext:
-      "Każda osoba, o której właśnie przeczytałeś, zaczęła tak samo, jak Ty możesz zacząć dziś — od jednej sesji. Przestań nieść to sam.",
+      "Praktyka stworzona dla tych, którzy oczekują tej samej precyzji w swoim życiu wewnętrznym, jak w pracy.",
     finalCtaButton: "Zarezerwuj Sesję",
     footerTagline: "Wszelkie prawa zastrzeżone.",
   },
@@ -729,20 +729,17 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="-mx-6 mt-32 flex w-[calc(100%+3rem)] flex-col items-center gap-9 bg-zinc-950 px-6 py-28 text-center sm:py-36">
-          <span className="text-sm uppercase tracking-[0.3em] text-[#e1c2af]">
-            {t.testimonialsEyebrow}
-          </span>
-          <h2 className="max-w-3xl text-balance font-[NeueHaasDisplayRoman,Arial,sans-serif] text-4xl font-medium leading-[1.1] tracking-tight text-white sm:text-6xl">
+        <div className="mt-32 flex w-full max-w-6xl flex-col items-center gap-8 rounded-[2rem] border border-zinc-300/80 bg-gradient-to-br from-[#eee2db] to-white px-8 py-20 text-center sm:px-20 sm:py-28">
+          <div className="h-px w-16 bg-[#c9a688]" />
+          <h2 className="max-w-3xl text-balance font-[NeueHaasDisplayRoman,Arial,sans-serif] text-4xl font-medium leading-[1.1] tracking-tight text-zinc-900 sm:text-6xl">
             {t.finalCtaHeading}
           </h2>
-          <div className="h-px w-16 bg-zinc-700" />
-          <p className="max-w-xl text-balance font-[Roboto,Arial,sans-serif] text-lg leading-[1.6] text-zinc-400">
+          <p className="max-w-xl text-balance font-[Roboto,Arial,sans-serif] text-lg leading-[1.6] text-[#383838]">
             {t.finalCtaSubtext}
           </p>
           <button
             onClick={() => setIsBookingOpen(true)}
-            className="mt-2 border border-white/30 px-10 py-5 text-sm font-medium uppercase tracking-[0.2em] text-white transition-colors duration-300 hover:bg-white hover:text-zinc-950"
+            className="mt-2 bg-zinc-900 px-10 py-5 text-sm font-medium uppercase tracking-[0.2em] text-white transition-colors duration-300 hover:bg-zinc-800"
           >
             {t.finalCtaButton}
           </button>
