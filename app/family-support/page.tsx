@@ -19,7 +19,7 @@ const content: Record<LanguageCode, {
   ctaButton: string;
 }> = {
   en: {
-    title: "Family",
+    title: "Family Session",
     intro: "Family work creates a steadier way of being together — making room for honest conversations, clearer boundaries, and connection that can hold through change.",
     panels: [
       { title: "For the family you are", description: "Whether you are moving through conflict, a transition, grief, or a new chapter, we begin with the patterns your family is actually living with." },
@@ -65,7 +65,7 @@ const content: Record<LanguageCode, {
     ctaButton: "Bestill familiesesjon",
   },
   pl: {
-    title: "Rodzina",
+    title: "Sesja Rodzinna",
     intro: "Praca z rodziną tworzy stabilniejszy sposób bycia razem — z miejscem na szczere rozmowy, jaśniejsze granice i więź, która może trwać mimo zmian.",
     panels: [
       { title: "Dla rodziny, którą jesteście", description: "Niezależnie od tego, czy przechodzicie przez konflikt, zmianę, żałobę czy nowy rozdział, zaczynamy od wzorców, w których rodzina naprawdę żyje." },

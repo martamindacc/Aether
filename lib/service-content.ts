@@ -100,7 +100,7 @@ export const navContent: Record<
 
 export const individualTherapyContent: Record<LanguageCode, ServicePageContent> = {
   en: {
-    title: "Individual",
+    title: "Individual Session",
     intro:
       "A dedicated one-on-one session to think clearly, map your own patterns, and set a deliberate direction forward. Built for people who are already capable — and want a sharper, more intentional version of the life they're building.",
     panels: [
@@ -232,7 +232,7 @@ export const individualTherapyContent: Record<LanguageCode, ServicePageContent> 
     ctaButton: "Book din første time",
   },
   pl: {
-    title: "Indywidualne",
+    title: "Sesja Indywidualna",
     intro:
       "Dedykowana sesja jeden na jeden, by myśleć jasno, zmapować własne wzorce i wyznaczyć świadomy kierunek działania. Stworzona dla ludzi, którzy są już zdolni — i chcą bardziej precyzyjnej wersji życia, które budują.",
     panels: [
@@ -301,7 +301,7 @@ export const individualTherapyContent: Record<LanguageCode, ServicePageContent> 
 
 export const couplesTherapyContent: Record<LanguageCode, ServicePageContent> = {
   en: {
-    title: "Couples",
+    title: "Couples Session",
     intro:
       "A dedicated space for two people to understand how they truly work together — repair the pattern underneath the conflict, and rebuild a partnership that feels steady, honest, and shared.",
     panels: [
@@ -433,7 +433,7 @@ export const couplesTherapyContent: Record<LanguageCode, ServicePageContent> = {
     ctaButton: "Book din første time",
   },
   pl: {
-    title: "Pary",
+    title: "Sesja dla Par",
     intro:
       "Dedykowana przestrzeń dla dwóch osób, by zrozumieć, jak naprawdę funkcjonują razem — naprawić wzorzec leżący u podstaw konfliktu i odbudować partnerstwo, które jest stabilne, szczere i wspólne.",
     panels: [
