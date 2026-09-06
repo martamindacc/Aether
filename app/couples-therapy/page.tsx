@@ -104,7 +104,7 @@ export default function CouplesTherapyPage() {
         </div>
       </section>
       <SiteFooter language={language} />
-      <BookingModal isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
+      <BookingModal language={language} isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
     </main>
   );
 }

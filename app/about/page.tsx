@@ -78,7 +78,7 @@ export default function AboutPage() {
         </div>
       </section>
       <SiteFooter language={language} />
-      <BookingModal isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
+      <BookingModal language={language} isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
     </main>
   );
 }

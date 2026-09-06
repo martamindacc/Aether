@@ -42,7 +42,7 @@ const content: Record<LanguageCode, {
     ctaButton: "Book a family session",
   },
   no: {
-    title: "Familie",
+    title: "Familieterapi",
     intro: "Familiearbeid skaper en stødigere måte å være sammen på — med rom for ærlige samtaler, tydeligere grenser og en tilknytning som tåler endring.",
     panels: [
       { title: "For familien dere er", description: "Enten dere går gjennom konflikt, en overgang, sorg eller et nytt kapittel, begynner vi med mønstrene familien faktisk lever med." },
@@ -110,7 +110,7 @@ export default function FamilySupportPage() {
         <div className="mt-24 flex flex-col items-start gap-8 rounded-2xl border border-zinc-300/80 bg-[#eee2db]/80 p-10 sm:p-14"><h2 className="max-w-2xl font-[NeueHaasDisplayRoman,Arial,sans-serif] text-3xl font-medium leading-[1.1] tracking-tight sm:text-4xl">{t.ctaHeading}</h2><p className="max-w-2xl font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-[#383838]">{t.ctaSubtext}</p><button onClick={() => setIsBookingOpen(true)} className="border border-zinc-900/20 bg-white px-8 py-4 text-base font-medium text-zinc-900 transition-colors hover:bg-zinc-100">{t.ctaButton}</button></div>
       </section>
       <SiteFooter language={language} />
-      <BookingModal isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
+      <BookingModal language={language} isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
     </main>
   );
 }

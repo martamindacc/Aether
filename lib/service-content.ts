@@ -73,9 +73,9 @@ export const navContent: Record<
     bookNow: "Bestill Nå",
     menuHeading: "Tjenester",
     menuLinks: [
-      { label: "Individuell", href: "/individual-therapy" },
-      { label: "Par", href: "/couples-therapy" },
-      { label: "Familie", href: "/family-support" },
+      { label: "Individuell terapi", href: "/individual-therapy" },
+      { label: "Parterapi", href: "/couples-therapy" },
+      { label: "Familieterapi", href: "/family-support" },
       { label: "Leder- og Grunnleggerarbeid", href: "/executive-founder-work" },
     ],
     companyHeading: "Selskap",
@@ -169,7 +169,7 @@ export const individualTherapyContent: Record<LanguageCode, ServicePageContent> 
     ctaButton: "Book your first session",
   },
   no: {
-    title: "Individuell",
+    title: "Individuell terapi",
     intro:
       "Et dedikert rom for å tenke klart, forstå dine egne mønstre, og gå fremover med hensikt. Dette er coaching bygget for mennesker som allerede er kapable — og vil ha en skarpere, mer bevisst versjon av livet de bygger.",
     panels: [
@@ -370,7 +370,7 @@ export const couplesTherapyContent: Record<LanguageCode, ServicePageContent> = {
     ctaButton: "Book your first session",
   },
   no: {
-    title: "Par",
+    title: "Parterapi",
     intro:
       "Et dedikert rom for to mennesker til å forstå hvordan de virkelig fungerer sammen — reparere mønsteret under konflikten, og gjenoppbygge et partnerskap som føles stødig, ærlig og delt.",
     panels: [
