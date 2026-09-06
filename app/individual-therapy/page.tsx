@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FloatingNav } from "@/components/floating-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { BookingModal } from "@/components/booking-modal";
@@ -13,11 +13,21 @@ export default function IndividualTherapyPage() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const t = individualTherapyContent[language];
 
+  useEffect(() => {
+    const stored = localStorage.getItem("site-language") as LanguageCode | null;
+    if (stored) setLanguage(stored);
+  }, []);
+
+  const handleLanguageChange = (lang: LanguageCode) => {
+    setLanguage(lang);
+    localStorage.setItem("site-language", lang);
+  };
+
   return (
     <main className="min-h-screen bg-[#fafafb] font-[NeueHaasDisplayRoman,Arial,sans-serif] text-zinc-900">
       <FloatingNav
         language={language}
-        onLanguageChange={setLanguage}
+        onLanguageChange={handleLanguageChange}
         isMenuOpen={isMenuOpen}
         onMenuOpenChange={setIsMenuOpen}
         isLangOpen={isLangOpen}

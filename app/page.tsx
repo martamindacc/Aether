@@ -164,7 +164,7 @@ const content: Record<
     supportSections: [
       {
         eyebrow: "Individuell støtte",
-        title: "Individuell",
+        title: "Individuell terapi",
         description:
           "Støtte i dine egne livssituasjoner — angst, sorg, identitet, overganger, og vekten du bærer alene.",
         href: "/individual-therapy",
@@ -172,7 +172,7 @@ const content: Record<
       },
       {
         eyebrow: "Relasjonsstøtte",
-        title: "Par",
+        title: "Parterapi",
         description:
           "Forstå hvordan dere fungerer som par — forbedre kommunikasjon, gjenoppbygg tillit, og reparer mønsteret under konflikten.",
         href: "/couples-therapy",
@@ -180,7 +180,7 @@ const content: Record<
       },
       {
         eyebrow: "Familiestøtte",
-        title: "Familie",
+        title: "Familieterapi",
         description:
           "Skap en stødigere familierytme — med tydeligere kommunikasjon, sterkere tilknytning og praktisk støtte for øyeblikkene som former livet sammen.",
         href: "/family-support",
@@ -278,6 +278,12 @@ export default function Home() {
   const [language, setLanguage] = useState<(typeof languages)[number]>(languages[0]);
   const t = content[language.code];
 
+  useEffect(() => {
+    const stored = localStorage.getItem("site-language");
+    const match = languages.find((lang) => lang.code === stored);
+    if (match) setLanguage(match);
+  }, []);
+
   const selectedBookingService = bookingServices.find(
     (service) => service.label === selectedBookingLabel,
   );
@@ -373,6 +379,7 @@ export default function Home() {
                       key={lang.code}
                       onClick={() => {
                         setLanguage(lang);
+                        localStorage.setItem("site-language", lang.code);
                         setIsLangOpen(false);
                       }}
                       className="px-3 py-2 text-center text-sm text-zinc-900 transition-colors hover:bg-zinc-100"
