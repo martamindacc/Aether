@@ -72,6 +72,9 @@ const content: Record<
       accentText: string;
       accentBg: string;
     }[];
+    finalCtaHeading: string;
+    finalCtaSubtext: string;
+    finalCtaButton: string;
     footerTagline: string;
   }
 > = {
@@ -173,6 +176,10 @@ const content: Record<
         accentBg: "bg-[#496171]/10",
       },
     ],
+    finalCtaHeading: "Your life won't change by thinking about it.",
+    finalCtaSubtext:
+      "Every person you just read about started the same way you can start today — with one session. Stop carrying it alone.",
+    finalCtaButton: "Book Your Session",
     footerTagline: "All rights reserved.",
   },
   no: {
@@ -273,6 +280,10 @@ const content: Record<
         accentBg: "bg-[#496171]/10",
       },
     ],
+    finalCtaHeading: "Livet ditt endres ikke av å tenke på det.",
+    finalCtaSubtext:
+      "Hver person du nettopp leste om startet på samme måte som du kan starte i dag — med én økt. Slutt å bære det alene.",
+    finalCtaButton: "Bestill Din Økt",
     footerTagline: "Alle rettigheter reservert.",
   },
   pl: {
@@ -373,6 +384,10 @@ const content: Record<
         accentBg: "bg-[#496171]/10",
       },
     ],
+    finalCtaHeading: "Twoje życie nie zmieni się przez samo myślenie o tym.",
+    finalCtaSubtext:
+      "Każda osoba, o której właśnie przeczytałeś, zaczęła tak samo, jak Ty możesz zacząć dziś — od jednej sesji. Przestań nieść to sam.",
+    finalCtaButton: "Zarezerwuj Sesję",
     footerTagline: "Wszelkie prawa zastrzeżone.",
   },
 };
@@ -712,6 +727,21 @@ export default function Home() {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="mt-32 flex w-full max-w-6xl flex-col items-center gap-8 rounded-[2rem] bg-zinc-900 px-8 py-20 text-center sm:px-20 sm:py-28">
+          <h2 className="max-w-3xl text-balance font-[NeueHaasDisplayRoman,Arial,sans-serif] text-5xl font-medium leading-[1.05] tracking-tight text-white sm:text-6xl">
+            {t.finalCtaHeading}
+          </h2>
+          <p className="max-w-xl text-balance font-[Roboto,Arial,sans-serif] text-lg leading-[1.6] text-zinc-400">
+            {t.finalCtaSubtext}
+          </p>
+          <button
+            onClick={() => setIsBookingOpen(true)}
+            className="mt-2 border border-white bg-white px-10 py-5 text-base font-medium text-zinc-900 transition-colors hover:bg-zinc-200"
+          >
+            {t.finalCtaButton}
+          </button>
         </div>
       </section>
 
