@@ -176,7 +176,7 @@ const content: Record<
         accentBg: "bg-[#496171]/10",
       },
     ],
-    finalCtaHeading: "The clarity you're looking for begins with one conversation.",
+    finalCtaHeading: "The clarity you're looking for begins today.",
     finalCtaSubtext:
       "A practice built for those who expect the same rigor from their inner life as they do from their work.",
     finalCtaButton: "Book Your Session",
