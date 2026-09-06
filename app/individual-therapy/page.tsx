@@ -42,8 +42,8 @@ export default function IndividualTherapyPage() {
         </p>
 
         <div className="mt-20 grid gap-6 sm:grid-cols-2">
-          {t.panels.map((panel) => (
-            <div key={panel.title} className="rounded-2xl border border-zinc-300/80 p-8 sm:p-10">
+          {t.panels.map((panel, index) => (
+            <div key={panel.title} className={`rounded-2xl border border-zinc-300/80 p-8 sm:p-10 ${index < 2 ? "bg-gradient-to-br from-[#eee2db]/40 to-[#eee2db]/20" : ""}`}>
               <h2 className="font-[NeueHaasDisplayRoman,Arial,sans-serif] text-3xl font-medium">
                 {panel.title}
               </h2>
