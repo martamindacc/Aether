@@ -152,7 +152,7 @@ const content: Record<
         quote:
           "For the first time in years, I understand why I react the way I do. The work here didn't just calm me down — it gave me a framework for the rest of my life.",
         name: "M. R.",
-        context: "Individual client, 8 months",
+        context: "Individual client",
         initials: "MR",
         accentText: "text-[#7b4037]",
         accentBg: "bg-[#7b4037]/10",
@@ -161,7 +161,7 @@ const content: Record<
         quote:
           "We came in on the edge of separating. What we found was a way to actually hear each other again — not just survive the conversation, but want to have it.",
         name: "J. & A.",
-        context: "Couples clients, 1 year",
+        context: "Couples clients",
         initials: "JA",
         accentText: "text-[#66755c]",
         accentBg: "bg-[#66755c]/10",
@@ -256,7 +256,7 @@ const content: Record<
         quote:
           "For første gang på flere år forstår jeg hvorfor jeg reagerer som jeg gjør. Arbeidet her roet meg ikke bare ned — det ga meg et rammeverk for resten av livet.",
         name: "M. R.",
-        context: "Individuell klient, 8 måneder",
+        context: "Individuell klient",
         initials: "MR",
         accentText: "text-[#7b4037]",
         accentBg: "bg-[#7b4037]/10",
@@ -265,7 +265,7 @@ const content: Record<
         quote:
           "Vi kom inn på randen av å skilles. Det vi fant var en måte å faktisk høre hverandre igjen — ikke bare overleve samtalen, men ønske å ha den.",
         name: "J. & A.",
-        context: "Par-klienter, 1 år",
+        context: "Par-klienter",
         initials: "JA",
         accentText: "text-[#66755c]",
         accentBg: "bg-[#66755c]/10",
@@ -360,7 +360,7 @@ const content: Record<
         quote:
           "Po raz pierwszy od lat rozumiem, czemu reaguję tak, jak reaguję. Ta praca nie tylko mnie uspokoiła — dała mi ramy na resztę życia.",
         name: "M. R.",
-        context: "Klient indywidualny, 8 miesięcy",
+        context: "Klient indywidualny",
         initials: "MR",
         accentText: "text-[#7b4037]",
         accentBg: "bg-[#7b4037]/10",
@@ -369,7 +369,7 @@ const content: Record<
         quote:
           "Przyszliśmy na granicy rozstania. To, co znaleźliśmy, to sposób, by naprawdę siebie usłyszeć — nie tylko przetrwać rozmowę, ale chcieć ją prowadzić.",
         name: "J. i A.",
-        context: "Klienci, terapia par, 1 rok",
+        context: "Klienci, terapia par",
         initials: "JA",
         accentText: "text-[#66755c]",
         accentBg: "bg-[#66755c]/10",
@@ -729,7 +729,7 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="mt-10 flex w-full max-w-6xl flex-col items-center gap-8 rounded-[2rem] px-8 py-20 text-center sm:px-20 sm:py-28">
+        <div className="mt-[-30px] flex w-full max-w-6xl flex-col items-center gap-8 rounded-[2rem] px-8 pb-10 pt-20 text-center sm:px-20 sm:pb-16 sm:pt-28">
           <div className="h-px w-24 bg-[#c9a688]" />
           <h2 className="max-w-3xl text-balance font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-semibold leading-[1.1] tracking-wide text-zinc-900 sm:text-4xl">
             {t.finalCtaHeading}
