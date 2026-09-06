@@ -729,16 +729,20 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="mt-32 flex w-full max-w-6xl flex-col items-start gap-8 rounded-2xl border border-zinc-300/80 bg-[#eee2db]/80 p-10 sm:p-14">
-          <h2 className="max-w-2xl font-[NeueHaasDisplayRoman,Arial,sans-serif] text-3xl font-medium leading-[1.1] tracking-tight sm:text-4xl">
+        <div className="-mx-6 mt-32 flex w-[calc(100%+3rem)] flex-col items-center gap-9 bg-zinc-950 px-6 py-28 text-center sm:py-36">
+          <span className="text-sm uppercase tracking-[0.3em] text-[#e1c2af]">
+            {t.testimonialsEyebrow}
+          </span>
+          <h2 className="max-w-3xl text-balance font-[NeueHaasDisplayRoman,Arial,sans-serif] text-4xl font-medium leading-[1.1] tracking-tight text-white sm:text-6xl">
             {t.finalCtaHeading}
           </h2>
-          <p className="max-w-2xl font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-[#383838]">
+          <div className="h-px w-16 bg-zinc-700" />
+          <p className="max-w-xl text-balance font-[Roboto,Arial,sans-serif] text-lg leading-[1.6] text-zinc-400">
             {t.finalCtaSubtext}
           </p>
           <button
             onClick={() => setIsBookingOpen(true)}
-            className="border border-zinc-900/20 bg-white px-8 py-4 text-base font-medium text-zinc-900 transition-colors hover:bg-zinc-100"
+            className="mt-2 border border-white/30 px-10 py-5 text-sm font-medium uppercase tracking-[0.2em] text-white transition-colors duration-300 hover:bg-white hover:text-zinc-950"
           >
             {t.finalCtaButton}
           </button>
