@@ -98,7 +98,7 @@ export default function IndividualTherapyPage() {
           </div>
         </div>
 
-        <div className="mt-24 flex flex-col items-start gap-8 rounded-2xl border border-zinc-300/80 bg-[#eee2db]/80 p-10 sm:p-14">
+        <div className="mt-24 flex flex-col items-start gap-8 rounded-2xl border border-zinc-300/80 bg-gradient-to-br from-[#f2ebe5] via-[#eee2db]/85 to-[#e6d3c2]/70 p-10 sm:p-14">
           <h2 className="max-w-2xl font-[NeueHaasDisplayRoman,Arial,sans-serif] text-3xl font-medium leading-[1.1] tracking-tight sm:text-4xl">
             {t.ctaHeading}
           </h2>
