@@ -18,8 +18,18 @@ export function BookingModal({
 
   const selectedProduct = PRODUCTS.find((product) => product.id === selectedId)
   const labels = language === "no"
-    ? { chooseSession: "Velg din økt", chooseTime: "Velg et tidspunkt", scheduleTitle: "Bestill din økt" }
-    : { chooseSession: "Choose your session", chooseTime: "Choose a time", scheduleTitle: "Schedule your session" }
+    ? {
+        chooseSession: "Velg din økt",
+        chooseTime: "Velg et tidspunkt",
+        scheduleTitle: "Bestill din økt",
+        paymentNotice: "Betaling forfaller etter sesjonen.",
+      }
+    : {
+        chooseSession: "Choose your session",
+        chooseTime: "Choose a time",
+        scheduleTitle: "Schedule your session",
+        paymentNotice: "Payment is due after the session.",
+      }
 
   const handleSelect = (productId: string) => {
     const product = PRODUCTS.find((p) => p.id === productId)
@@ -83,6 +93,7 @@ export function BookingModal({
           {step === "schedule" && selectedProduct && (
             <>
               <p className="text-sm uppercase tracking-wide text-zinc-500">{labels.chooseTime}</p>
+              <p className="text-sm text-zinc-500">{labels.paymentNotice}</p>
               <div className="overflow-hidden rounded-2xl border border-zinc-900/10">
                 <iframe
                   key={selectedProduct.calendlyUrl}

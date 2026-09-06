@@ -43,21 +43,38 @@ export default function ContactPage() {
           action="mailto:martamindacc@gmail.com"
           method="post"
           encType="text/plain"
-          className="mt-20 flex max-w-3xl flex-col gap-6 rounded-2xl border border-zinc-300/80 bg-[#eee2db]/80 p-10 sm:p-14"
+          className="mt-20 flex max-w-xl flex-col gap-5 rounded-2xl border border-zinc-300/80 bg-[#eee2db]/80 p-8 sm:p-10"
         >
-          <label className="flex flex-col gap-2 font-[Roboto,Arial,sans-serif] text-base text-zinc-900">
-            Name
-            <input name="name" required className="border border-zinc-300 bg-white px-4 py-3 outline-none focus:border-zinc-900" />
+          <label className="flex flex-col gap-2">
+            <span className="text-sm uppercase tracking-wide text-zinc-500">Name</span>
+            <input
+              name="name"
+              required
+              className="border-b border-zinc-900/20 bg-transparent py-2 font-[Roboto,Arial,sans-serif] text-base text-zinc-900 outline-none transition-colors placeholder:text-zinc-400 focus:border-zinc-900"
+            />
           </label>
-          <label className="flex flex-col gap-2 font-[Roboto,Arial,sans-serif] text-base text-zinc-900">
-            Email
-            <input type="email" name="email" required className="border border-zinc-300 bg-white px-4 py-3 outline-none focus:border-zinc-900" />
+          <label className="flex flex-col gap-2">
+            <span className="text-sm uppercase tracking-wide text-zinc-500">Email</span>
+            <input
+              type="email"
+              name="email"
+              required
+              className="border-b border-zinc-900/20 bg-transparent py-2 font-[Roboto,Arial,sans-serif] text-base text-zinc-900 outline-none transition-colors placeholder:text-zinc-400 focus:border-zinc-900"
+            />
           </label>
-          <label className="flex flex-col gap-2 font-[Roboto,Arial,sans-serif] text-base text-zinc-900">
-            Message
-            <textarea name="message" required rows={6} className="resize-y border border-zinc-300 bg-white px-4 py-3 outline-none focus:border-zinc-900" />
+          <label className="flex flex-col gap-2">
+            <span className="text-sm uppercase tracking-wide text-zinc-500">Message</span>
+            <textarea
+              name="message"
+              required
+              rows={4}
+              className="resize-none border-b border-zinc-900/20 bg-transparent py-2 font-[Roboto,Arial,sans-serif] text-base leading-[1.5] text-zinc-900 outline-none transition-colors placeholder:text-zinc-400 focus:border-zinc-900"
+            />
           </label>
-          <button type="submit" className="self-start border border-zinc-900/20 bg-white px-8 py-4 text-base font-medium text-zinc-900 transition-colors hover:bg-zinc-100">
+          <button
+            type="submit"
+            className="mt-2 self-start border border-zinc-900/20 bg-white px-8 py-4 text-base font-medium text-zinc-900 transition-colors hover:bg-zinc-100"
+          >
             Send message
           </button>
         </form>
