@@ -19,7 +19,7 @@ const content: Record<LanguageCode, {
   ctaButton: string;
 }> = {
   en: {
-    title: "Family",
+    title: "Family Session",
     intro: "Family work creates a steadier way of being together — making room for honest conversations, clearer boundaries, and connection that can hold through change.",
     panels: [
       { title: "For the family you are", description: "Whether you are moving through conflict, a transition, grief, or a new chapter, we begin with the patterns your family is actually living with." },
@@ -65,7 +65,7 @@ const content: Record<LanguageCode, {
     ctaButton: "Bestill familiesesjon",
   },
   pl: {
-    title: "Rodzina",
+    title: "Sesja Rodzinna",
     intro: "Praca z rodziną tworzy stabilniejszy sposób bycia razem — z miejscem na szczere rozmowy, jaśniejsze granice i więź, która może trwać mimo zmian.",
     panels: [
       { title: "Dla rodziny, którą jesteście", description: "Niezależnie od tego, czy przechodzicie przez konflikt, zmianę, żałobę czy nowy rozdział, zaczynamy od wzorców, w których rodzina naprawdę żyje." },
@@ -117,7 +117,7 @@ export default function FamilySupportPage() {
         </div>
         <div className="mt-24"><h2 className="font-[NeueHaasDisplayRoman,Arial,sans-serif] text-4xl font-medium tracking-tight sm:text-5xl">{t.processHeading}</h2><div className="mt-12 flex flex-col">{t.process.map((step) => <div key={step.number} className="flex flex-col gap-4 border-t border-zinc-300/80 py-10 sm:flex-row sm:items-start sm:gap-12"><span className="font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-medium text-[#74382f] sm:w-20 sm:shrink-0">{step.number}</span><div><h3 className="font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-medium sm:text-3xl">{step.title}</h3><p className="mt-4 max-w-3xl font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-[#383838]">{step.description}</p></div></div>)}</div></div>
         <div className="mt-24"><h2 className="font-[NeueHaasDisplayRoman,Arial,sans-serif] text-4xl font-medium tracking-tight sm:text-5xl">{t.outcomesHeading}</h2><div className="mt-12 grid gap-6 sm:grid-cols-3">{t.outcomes.map((outcome) => <div key={outcome.title} className="rounded-2xl border border-zinc-300/80 p-8"><h3 className="font-[NeueHaasDisplayRoman,Arial,sans-serif] text-xl font-medium">{outcome.title}</h3><p className="mt-4 font-[Roboto,Arial,sans-serif] text-[17px] leading-[1.5] text-[#383838]">{outcome.description}</p></div>)}</div></div>
-        <div className="mt-24 flex flex-col items-start gap-8 rounded-2xl border border-zinc-300/80 bg-[#eee2db]/80 p-10 sm:p-14"><h2 className="max-w-2xl font-[NeueHaasDisplayRoman,Arial,sans-serif] text-3xl font-medium leading-[1.1] tracking-tight sm:text-4xl">{t.ctaHeading}</h2><p className="max-w-2xl font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-[#383838]">{t.ctaSubtext}</p><button onClick={() => setIsBookingOpen(true)} className="border border-zinc-900/20 bg-white px-8 py-4 text-base font-medium text-zinc-900 transition-colors hover:bg-zinc-100">{t.ctaButton}</button></div>
+        <div className="mt-24 flex flex-col items-start gap-8 rounded-2xl border border-zinc-300/80 bg-gradient-to-br from-[#eee2db]/75 to-[#eee2db]/40 p-10 sm:p-14"><h2 className="max-w-2xl font-[NeueHaasDisplayRoman,Arial,sans-serif] text-3xl font-medium leading-[1.1] tracking-tight sm:text-4xl">{t.ctaHeading}</h2><p className="max-w-2xl font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-[#383838]">{t.ctaSubtext}</p><button onClick={() => setIsBookingOpen(true)} className="border border-zinc-900/20 bg-white px-8 py-4 text-base font-medium text-zinc-900 transition-colors hover:bg-zinc-100">{t.ctaButton}</button></div>
       </section>
       <SiteFooter language={language} />
       <BookingModal language={language} isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
