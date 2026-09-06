@@ -729,7 +729,7 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="mt-20 flex w-full max-w-6xl flex-col items-center gap-8 rounded-[2rem] px-8 py-20 text-center sm:px-20 sm:py-28">
+        <div className="mt-10 flex w-full max-w-6xl flex-col items-center gap-8 rounded-[2rem] px-8 py-20 text-center sm:px-20 sm:py-28">
           <div className="h-px w-24 bg-[#c9a688]" />
           <h2 className="max-w-3xl text-balance font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-semibold leading-[1.1] tracking-wide text-zinc-900 sm:text-4xl">
             {t.finalCtaHeading}
