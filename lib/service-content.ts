@@ -36,9 +36,6 @@ export type AboutContent = {
 export type ContactContent = {
   title: string;
   intro: string;
-  details: { label: string; value: string }[];
-  hoursHeading: string;
-  hours: string;
   ctaHeading: string;
   ctaSubtext: string;
   ctaButton: string;
@@ -819,14 +816,7 @@ export const contactContent: Record<LanguageCode, ContactContent> = {
   en: {
     title: "Contact",
     intro:
-      "Have a question before booking, or want to talk through which service is the right fit? Reach out — we respond to every message.",
-    details: [
-      { label: "Email", value: "hello@aetherpractice.com" },
-      { label: "Phone", value: "+1 (555) 012-3456" },
-      { label: "Location", value: "Sessions held in person and online" },
-    ],
-    hoursHeading: "Availability",
-    hours: "Monday – Friday, 9:00 – 18:00",
+      "Have a question before booking, or want to talk through which service is the right fit? Reach out.",
     ctaHeading: "Prefer to just get started?",
     ctaSubtext: "Skip the email and book your first session directly.",
     ctaButton: "Book a session",
@@ -834,14 +824,7 @@ export const contactContent: Record<LanguageCode, ContactContent> = {
   no: {
     title: "Kontakt",
     intro:
-      "Har du et spørsmål før du bestiller, eller vil du snakke om hvilken tjeneste som passer best? Ta kontakt — vi svarer på alle meldinger.",
-    details: [
-      { label: "E-post", value: "hello@aetherpractice.com" },
-      { label: "Telefon", value: "+1 (555) 012-3456" },
-      { label: "Sted", value: "Sesjoner holdes fysisk og digitalt" },
-    ],
-    hoursHeading: "Tilgjengelighet",
-    hours: "Mandag – fredag, 09:00 – 18:00",
+      "Har du et spørsmål før du bestiller, eller vil du snakke om hvilken tjeneste som passer best? Ta kontakt.",
     ctaHeading: "Vil du bare komme i gang?",
     ctaSubtext: "Hopp over e-posten og bestill din første sesjon direkte.",
     ctaButton: "Bestill en sesjon",
@@ -849,14 +832,7 @@ export const contactContent: Record<LanguageCode, ContactContent> = {
   pl: {
     title: "Kontakt",
     intro:
-      "Masz pytanie przed rezerwacją lub chcesz porozmawiać, która usługa będzie odpowiednia? Napisz do nas — odpowiadamy na każdą wiadomość.",
-    details: [
-      { label: "E-mail", value: "hello@aetherpractice.com" },
-      { label: "Telefon", value: "+1 (555) 012-3456" },
-      { label: "Lokalizacja", value: "Sesje odbywają się osobiście i online" },
-    ],
-    hoursHeading: "Dostępność",
-    hours: "Poniedziałek – piątek, 9:00 – 18:00",
+      "Masz pytanie przed rezerwacją lub chcesz porozmawiać, która usługa będzie odpowiednia? Napisz do nas.",
     ctaHeading: "Chcesz po prostu zacząć?",
     ctaSubtext: "Pomiń e-mail i zarezerwuj pierwszą sesję bezpośrednio.",
     ctaButton: "Zarezerwuj sesję",
