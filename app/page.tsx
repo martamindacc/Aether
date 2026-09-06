@@ -8,26 +8,31 @@ const bookingServices = [
   {
     label: "Individual Session",
     duration: "50 min",
+    priceInCents: 10000,
     calendlyUrl: "https://calendly.com/martamindacc",
   },
   {
     label: "Couples Session",
     duration: "60 min",
+    priceInCents: 12000,
     calendlyUrl: "https://calendly.com/martamindacc",
   },
   {
     label: "Family Session",
     duration: "60 min",
+    priceInCents: 15000,
     calendlyUrl: "https://calendly.com/martamindacc",
   },
   {
     label: "Executive&Founder Session",
     duration: "50 min",
+    priceInCents: 10000,
     calendlyUrl: "https://calendly.com/martamindacc",
   },
   {
     label: "Initial Consultation",
     duration: "15 min",
+    priceInCents: 0,
     calendlyUrl: "https://calendly.com/martamindacc",
   },
 ];
@@ -492,7 +497,10 @@ export default function Home() {
                         <span className="font-[Roboto,Arial,sans-serif] text-lg font-medium text-zinc-900">
 {bookingLabel(service.label)}
                         </span>
-                        <span className="text-sm text-zinc-500">{service.duration}</span>
+                        <span className="text-sm text-zinc-500">
+                          {service.duration}
+                          {service.priceInCents > 0 && ` · $${(service.priceInCents / 100).toFixed(0)}`}
+                        </span>
                       </button>
                     ))}
                   </div>

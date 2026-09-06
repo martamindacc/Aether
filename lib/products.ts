@@ -24,7 +24,7 @@ export const PRODUCTS: Product[] = [
     name: "Couples Session",
     description: "A 60 minute session for two.",
     duration: "60 min",
-    priceInCents: 15000,
+    priceInCents: 12000,
     calendlyUrl: "https://calendly.com/martamindacc",
   },
   {
