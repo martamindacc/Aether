@@ -2,18 +2,24 @@
 
 import { useState } from "react"
 import { PRODUCTS } from "@/lib/products"
+import type { LanguageCode } from "@/lib/service-content"
 
 export function BookingModal({
   isOpen,
   onClose,
+  language = "en",
 }: {
   isOpen: boolean
   onClose: () => void
+  language?: LanguageCode
 }) {
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [step, setStep] = useState<"select" | "schedule">("select")
 
   const selectedProduct = PRODUCTS.find((product) => product.id === selectedId)
+  const labels = language === "no"
+    ? { chooseSession: "Velg din økt", chooseTime: "Velg et tidspunkt", scheduleTitle: "Bestill din økt" }
+    : { chooseSession: "Choose your session", chooseTime: "Choose a time", scheduleTitle: "Schedule your session" }
 
   const handleSelect = (productId: string) => {
     const product = PRODUCTS.find((p) => p.id === productId)
@@ -56,7 +62,7 @@ export function BookingModal({
 
           {step === "select" && (
             <>
-              <p className="text-sm uppercase tracking-wide text-zinc-500">Choose your session</p>
+              <p className="text-sm uppercase tracking-wide text-zinc-500">{labels.chooseSession}</p>
               <div className="flex flex-col gap-3">
                 {PRODUCTS.map((product) => (
                   <button
@@ -76,12 +82,12 @@ export function BookingModal({
 
           {step === "schedule" && selectedProduct && (
             <>
-              <p className="text-sm uppercase tracking-wide text-zinc-500">Choose a time</p>
+              <p className="text-sm uppercase tracking-wide text-zinc-500">{labels.chooseTime}</p>
               <div className="overflow-hidden rounded-2xl border border-zinc-900/10">
                 <iframe
                   key={selectedProduct.calendlyUrl}
                   src={`${selectedProduct.calendlyUrl}?hide_gdpr_banner=1&primary_color=e1c4b1`}
-                  title="Schedule your session"
+                  title={labels.scheduleTitle}
                   className="h-[70vh] min-h-[500px] w-full"
                 />
               </div>

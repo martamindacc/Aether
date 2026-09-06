@@ -164,7 +164,7 @@ export function FloatingNav({
         </div>
       )}
 
-      <BookingModal isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
+      <BookingModal language={language} isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
     </>
   );
 }

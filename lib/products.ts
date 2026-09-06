@@ -37,7 +37,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: "founder-session",
-    name: "Founder&Executive Session",
+    name: "Executive&Founder Session",
     description: "A 50 minute session for founders and executives.",
     duration: "50 min",
     priceInCents: 10000,

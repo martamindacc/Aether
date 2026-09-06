@@ -21,7 +21,7 @@ const bookingServices = [
     calendlyUrl: "https://calendly.com/martamindacc",
   },
   {
-    label: "Founder&Executive Session",
+    label: "Executive&Founder Session",
     duration: "50 min",
     calendlyUrl: "https://calendly.com/martamindacc",
   },
@@ -147,9 +147,9 @@ const content: Record<
       {
         heading: "Tjenester",
         links: [
-          { label: "Individuell", href: "/individual-therapy" },
-          { label: "Par", href: "/couples-therapy" },
-          { label: "Familie", href: "/family-support" },
+{ label: "Individuell terapi", href: "/individual-therapy" },
+      { label: "Parterapi", href: "/couples-therapy" },
+      { label: "Familieterapi", href: "/family-support" },
           { label: "Leder- og Grunnleggerarbeid", href: "/executive-founder-work" },
         ],
       },
@@ -164,7 +164,7 @@ const content: Record<
     supportSections: [
       {
         eyebrow: "Individuell støtte",
-        title: "Individuell",
+        title: "Individuell terapi",
         description:
           "Støtte i dine egne livssituasjoner — angst, sorg, identitet, overganger, og vekten du bærer alene.",
         href: "/individual-therapy",
@@ -172,7 +172,7 @@ const content: Record<
       },
       {
         eyebrow: "Relasjonsstøtte",
-        title: "Par",
+        title: "Parterapi",
         description:
           "Forstå hvordan dere fungerer som par — forbedre kommunikasjon, gjenoppbygg tillit, og reparer mønsteret under konflikten.",
         href: "/couples-therapy",
@@ -180,7 +180,7 @@ const content: Record<
       },
       {
         eyebrow: "Familiestøtte",
-        title: "Familie",
+        title: "Familieterapi",
         description:
           "Skap en stødigere familierytme — med tydeligere kommunikasjon, sterkere tilknytning og praktisk støtte for øyeblikkene som former livet sammen.",
         href: "/family-support",
@@ -278,9 +278,19 @@ export default function Home() {
   const [language, setLanguage] = useState<(typeof languages)[number]>(languages[0]);
   const t = content[language.code];
 
+  useEffect(() => {
+    const stored = localStorage.getItem("site-language");
+    const match = languages.find((lang) => lang.code === stored);
+    if (match) setLanguage(match);
+  }, []);
+
   const selectedBookingService = bookingServices.find(
     (service) => service.label === selectedBookingLabel,
   );
+  const bookingLabel = (label: string) =>
+    language.code === "no"
+      ? { "Individual Session": "Individuell terapi", "Couples Session": "Parterapi", "Family Session": "Familieterapi", "Executive&Founder Session": "Leder- og grunnleggerterapi", "Initial Consultation": "Innledende konsultasjon" }[label] ?? label
+      : label;
 
   const closeBooking = () => {
     setIsBookingOpen(false);
@@ -369,6 +379,7 @@ export default function Home() {
                       key={lang.code}
                       onClick={() => {
                         setLanguage(lang);
+                        localStorage.setItem("site-language", lang.code);
                         setIsLangOpen(false);
                       }}
                       className="px-3 py-2 text-center text-sm text-zinc-900 transition-colors hover:bg-zinc-100"
@@ -469,7 +480,7 @@ export default function Home() {
               {!selectedBookingService ? (
                 <>
                   <p className="text-sm uppercase tracking-wide text-zinc-500">
-                    Choose your session
+                    {language.code === "no" ? "Velg din økt" : "Choose your session"}
                   </p>
                   <div className="flex flex-col gap-3">
                     {bookingServices.map((service) => (
@@ -479,7 +490,7 @@ export default function Home() {
                         className="flex items-center justify-between border border-zinc-900/15 bg-white px-5 py-4 text-left transition-colors hover:bg-zinc-100"
                       >
                         <span className="font-[Roboto,Arial,sans-serif] text-lg font-medium text-zinc-900">
-                          {service.label}
+{bookingLabel(service.label)}
                         </span>
                         <span className="text-sm text-zinc-500">{service.duration}</span>
                       </button>
@@ -490,20 +501,20 @@ export default function Home() {
                 <>
                   <div className="flex items-center justify-between">
                     <p className="text-sm uppercase tracking-wide text-zinc-500">
-                      {selectedBookingService.label}
+                      {bookingLabel(selectedBookingService.label)}
                     </p>
                     <button
                       onClick={() => setSelectedBookingLabel(null)}
                       className="text-sm text-zinc-500 underline-offset-4 hover:text-zinc-900 hover:underline"
                     >
-                      Back
+                      {language.code === "no" ? "Tilbake" : "Back"}
                     </button>
                   </div>
                   <div className="overflow-hidden rounded-2xl border border-zinc-900/10">
                     <iframe
                       key={selectedBookingService.calendlyUrl}
                       src={`${selectedBookingService.calendlyUrl}?hide_gdpr_banner=1`}
-                      title="Schedule your session"
+                      title={language.code === "no" ? "Bestill din økt" : "Schedule your session"}
                       className="h-[70vh] min-h-[500px] w-full"
                     />
                   </div>
