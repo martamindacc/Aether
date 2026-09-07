@@ -1,9 +1,25 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { FloatingNav } from "@/components/floating-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { contactContent, type LanguageCode } from "@/lib/service-content";
+
+const privacyNotice: Record<LanguageCode, { text: string; linkLabel: string }> = {
+  en: {
+    text: "Information submitted through this form is used only to respond to your message. Details:",
+    linkLabel: "Privacy Policy",
+  },
+  no: {
+    text: "Opplysninger sendt inn via skjemaet brukes kun til å svare på meldingen din. Detaljer:",
+    linkLabel: "Personvernerklæring",
+  },
+  pl: {
+    text: "Dane z formularza wykorzystujemy wyłącznie do odpowiedzi na Twoją wiadomość. Szczegóły:",
+    linkLabel: "Polityka prywatności",
+  },
+};
 
 export default function ContactPage() {
   const [language, setLanguage] = useState<LanguageCode>("en");
@@ -78,6 +94,13 @@ export default function ContactPage() {
             Send message
           </button>
         </form>
+        <p className="mt-4 max-w-xl font-[Roboto,Arial,sans-serif] text-sm leading-[1.5] text-zinc-500">
+          {privacyNotice[language].text}{" "}
+          <Link href="/privacy" className="underline underline-offset-2 hover:text-zinc-900">
+            {privacyNotice[language].linkLabel}
+          </Link>
+          .
+        </p>
       </section>
       <SiteFooter language={language} />
     </main>
