@@ -3,9 +3,8 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Aether Practice | Therapy & Executive Coaching',
-  description:
-    'Individual, couples, and family therapy, plus executive and founder coaching. Sessions available in English, Norwegian, and Polish.',
+  title: 'Aether Practice | Cognitive Wellbeing',
+  description: 'Individual, couples, executive and family sessions.',
   generator: 'v0.app',
   icons: {
     icon: [
