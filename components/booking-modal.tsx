@@ -24,12 +24,19 @@ export function BookingModal({
         scheduleTitle: "Bestill din økt",
         paymentNotice: "Betaling forfaller etter sesjonen.",
       }
-    : {
-        chooseSession: "Choose your session",
-        chooseTime: "Choose a time",
-        scheduleTitle: "Schedule your session",
-        paymentNotice: "Payment is due after the session.",
-      }
+    : language === "pl"
+      ? {
+          chooseSession: "Wybierz swoją sesję",
+          chooseTime: "Wybierz termin",
+          scheduleTitle: "Umów swoją sesję",
+          paymentNotice: "Płatność następuje po sesji.",
+        }
+      : {
+          chooseSession: "Choose your session",
+          chooseTime: "Choose a time",
+          scheduleTitle: "Schedule your session",
+          paymentNotice: "Payment is due after the session.",
+        }
 
   const handleSelect = (productId: string) => {
     const product = PRODUCTS.find((p) => p.id === productId)
