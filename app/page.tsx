@@ -702,7 +702,7 @@ export default function Home() {
               key={item.name}
               className="flex flex-col gap-8 rounded-2xl border border-zinc-300/80 bg-gradient-to-br from-[#eee2db]/75 to-[#eee2db]/40 p-8 transition-colors duration-300 hover:bg-[#e2c3b2]/60 sm:p-10"
             >
-              <div className={`flex gap-1 ${item.accentText}`} aria-hidden="true">
+              <div className={`flex justify-center gap-1 ${item.accentText}`} aria-hidden="true">
                 {Array.from({ length: 5 }).map((_, index) => (
                   <svg key={index} width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
                     <path d="M10 1.5l2.7 6.06 6.6.63-5 4.4 1.5 6.46L10 15.9l-5.8 3.15 1.5-6.46-5-4.4 6.6-.63L10 1.5z" />
