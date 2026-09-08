@@ -452,21 +452,31 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-black/10" />
 
-        <h2 className="absolute inset-x-0 bottom-16 z-10 px-6 text-center font-[NeueHaasDisplayRoman,Arial,sans-serif] text-4xl font-medium tracking-tight text-white sm:bottom-20 sm:text-6xl">
+        <h2 className="absolute inset-x-0 top-1/2 z-10 -translate-y-1/2 px-6 text-center font-[NeueHaasDisplayRoman,Arial,sans-serif] text-4xl font-medium tracking-tight text-white sm:text-6xl">
           {t.videoOverlay}
         </h2>
 
-        <nav className="fixed inset-x-4 top-4 z-20 flex items-center justify-between rounded-[1.5rem] border border-white/50 bg-white/50 px-4 py-3 shadow-lg shadow-zinc-900/5 backdrop-blur-xl sm:inset-x-6 sm:top-6 sm:px-6">
-          <span className="flex items-center gap-2">
+        <nav className="fixed inset-x-4 top-4 z-20 flex items-center justify-between rounded-[1.5rem] border border-white/50 bg-white/50 px-3 py-3 shadow-lg shadow-zinc-900/5 backdrop-blur-xl sm:inset-x-6 sm:top-6 sm:px-6">
+          <button
+            onClick={() => setIsBookingOpen(true)}
+            className="border border-zinc-900/20 bg-white/30 px-3 py-3 text-sm transition-colors hover:bg-white/65 sm:hidden"
+          >
+            {t.bookNow}
+          </button>
+          <span className="hidden items-center gap-2 sm:flex">
             <img src="/logo-a.svg" alt="Aether Practice logo" className="h-6 w-6" />
             <span className="text-lg font-medium tracking-[-0.04em] sm:text-xl">
               Aether Practice
             </span>
           </span>
+          <span className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center gap-2 sm:hidden">
+            <img src="/logo-a.svg" alt="Aether Practice logo" className="h-6 w-6" />
+            <span className="text-lg font-medium tracking-[-0.04em]">Aether Practice</span>
+          </span>
           <div className="flex items-center gap-2 sm:gap-3">
             <button
               onClick={() => setIsBookingOpen(true)}
-              className="border border-zinc-900/20 bg-white px-[30px] py-3 text-sm transition-colors hover:bg-zinc-100"
+              className="hidden border border-zinc-900/20 bg-white px-[30px] py-3 text-sm transition-colors hover:bg-zinc-100 sm:inline-block"
             >
               {t.bookNow}
             </button>
