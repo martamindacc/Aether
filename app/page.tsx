@@ -84,8 +84,7 @@ const content: Record<
     heroTitle: "Better life starts with better understanding",
     heroSubtitle:
       "Online sessions for individuals, couples, families, executives, and founders in New York City, California, and Norway.",
-    subtext:
-      "Because we believe in your potential, we want to guide you towards a life filled with meaning, balance, and lasting renewal. Expect exceptional care grounded in science.",
+    subtext: "Expect exceptional care grounded in science.",
     bookNow: "Book Now",
     pills: [
       "Emotional Wellness",
@@ -190,8 +189,7 @@ const content: Record<
     heroTitle: "Et bedre liv starter med bedre forståelse",
     heroSubtitle:
       "Online samtaler for enkeltpersoner, par, familier, ledere og grunnleggere i New York City, California og Norge.",
-    subtext:
-      "Fordi vi tror på ditt potensial, vil vi guide deg mot et liv fylt med mening, balanse og varig fornyelse. Forvent eksepsjonell omsorg forankret i vitenskap.",
+    subtext: "Forvent eksepsjonell omsorg forankret i vitenskap.",
     bookNow: "Bestill Nå",
     pills: [
       "Emosjonell Velvære",
@@ -296,8 +294,7 @@ const content: Record<
     heroTitle: "Lepsze życie zaczyna się od lepszego zrozumienia",
     heroSubtitle:
       "Sesje online dla osób indywidualnych, par, rodzin, kadry kierowniczej i założycieli firm w Nowym Jorku, Kalifornii i Norwegii.",
-    subtext:
-      "Ponieważ wierzymy w Twój potencjał, chcemy poprowadzić Cię do życia pełnego sensu, równowagi i trwałej odnowy. Oczekuj wyjątkowej opieki opartej na nauce.",
+    subtext: "Oczekuj wyjątkowej opieki opartej na nauce.",
     bookNow: "Zarezerwuj",
     pills: [
       "Dobrostan Emocjonalny",
@@ -674,7 +671,7 @@ export default function Home() {
   <h1 className="max-w-6xl text-balance font-[Roboto,Arial,sans-serif] text-[44px] font-medium leading-[0.95] tracking-tight text-zinc-900 sm:text-[64px] lg:text-[90px]">
           {t.heroTitle}
   </h1>
-  <p className="mt-5 max-w-2xl text-sm leading-[1.5] text-zinc-600 sm:text-base">
+  <p className="mt-5 max-w-2xl text-base leading-[1.5] text-zinc-700">
     {t.heroSubtitle}
   </p>
   <p className="mt-4 max-w-2xl text-base leading-[1.5] text-zinc-700">
