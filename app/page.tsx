@@ -97,12 +97,12 @@ const content: Record<
     menuSections: [
       {
         heading: "Services",
-        links: [
-          { label: "Individual Session", href: "/individual-therapy" },
-          { label: "Couples Session", href: "/couples-therapy" },
-          { label: "Family Session", href: "/family-support" },
-          { label: "Executive & Founder Work", href: "/executive-founder-work" },
-        ],
+          links: [
+            { label: "Couples Session", href: "/couples-therapy" },
+            { label: "Individual Session", href: "/individual-therapy" },
+            { label: "Family Session", href: "/family-support" },
+            { label: "Executive & Founder Work", href: "/executive-founder-work" },
+          ],
       },
       {
         heading: "Company",
@@ -203,9 +203,9 @@ const content: Record<
       {
         heading: "Tjenester",
         links: [
-{ label: "Individuell terapi", href: "/individual-therapy" },
-      { label: "Parterapi", href: "/couples-therapy" },
-      { label: "Familieterapi", href: "/family-support" },
+          { label: "Parterapi", href: "/couples-therapy" },
+          { label: "Individuell terapi", href: "/individual-therapy" },
+          { label: "Familieterapi", href: "/family-support" },
           { label: "Leder- og Grunnleggerarbeid", href: "/executive-founder-work" },
         ],
       },
@@ -308,8 +308,8 @@ const content: Record<
       {
         heading: "Usługi",
         links: [
-          { label: "Sesja Indywidualna", href: "/individual-therapy" },
           { label: "Sesja dla Par", href: "/couples-therapy" },
+          { label: "Sesja Indywidualna", href: "/individual-therapy" },
           { label: "Sesja Rodzinna", href: "/family-support" },
           { label: "Praca z Liderami i Założycielami", href: "/executive-founder-work" },
         ],

@@ -7,8 +7,9 @@ import { BookingModal } from "@/components/booking-modal";
 import type { LanguageCode } from "@/lib/service-content";
 
 const content: Record<LanguageCode, {
-  title: string;
-  intro: string;
+    title: string;
+    subtitle?: string;
+    intro: string;
   panels: { title: string; description: string }[];
   processHeading: string;
   process: { number: string; title: string; description: string }[];
@@ -20,6 +21,7 @@ const content: Record<LanguageCode, {
 }> = {
   en: {
     title: "Family Session",
+    subtitle: "Online family support sessions for families in New York City and California.",
     intro: "Family work creates a steadier way of being together — making room for honest conversations, clearer boundaries, and connection that can hold through change.",
     panels: [
       { title: "For the family you are", description: "Whether you are moving through conflict, a transition, grief, or a new chapter, we begin with the patterns your family is actually living with." },
@@ -43,6 +45,7 @@ const content: Record<LanguageCode, {
   },
   no: {
     title: "Familieterapi",
+    subtitle: "Familiesamtaler på nett for familier i Norge.",
     intro: "Familiearbeid skaper en stødigere måte å være sammen på — med rom for ærlige samtaler, tydeligere grenser og en tilknytning som tåler endring.",
     panels: [
       { title: "For familien dere er", description: "Enten dere går gjennom konflikt, en overgang, sorg eller et nytt kapittel, begynner vi med mønstrene familien faktisk lever med." },
@@ -66,6 +69,7 @@ const content: Record<LanguageCode, {
   },
   pl: {
     title: "Sesja Rodzinna",
+    subtitle: "Sesje wsparcia rodzinnego online dla rodzin w Polsce.",
     intro: "Praca z rodziną tworzy stabilniejszy sposób bycia razem — z miejscem na szczere rozmowy, jaśniejsze granice i więź, która może trwać mimo zmian.",
     panels: [
       { title: "Dla rodziny, którą jesteście", description: "Niezależnie od tego, czy przechodzicie przez konflikt, zmianę, żałobę czy nowy rozdział, zaczynamy od wzorców, w których rodzina naprawdę żyje." },
@@ -111,6 +115,7 @@ export default function FamilySupportPage() {
       <FloatingNav language={language} onLanguageChange={handleLanguageChange} isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen} isLangOpen={isLangOpen} onLangOpenChange={setIsLangOpen} />
       <section className="mx-auto flex max-w-6xl flex-col px-6 pb-24 pt-48">
         <h1 className="max-w-5xl font-[NeueHaasDisplayRoman,Arial,sans-serif] text-6xl font-medium leading-[0.95] tracking-tight text-[#74382f] sm:text-8xl">{t.title}</h1>
+        {t.subtitle && <p className="mt-5 max-w-2xl text-base leading-[1.5] text-zinc-700">{t.subtitle}</p>}
         <p className="mt-12 max-w-4xl font-[Roboto,Arial,sans-serif] text-xl leading-[1.5] text-[#383838] sm:text-2xl">{t.intro}</p>
         <div className="mt-20 grid gap-6 sm:grid-cols-2">
           {t.panels.map((panel, index) => <div key={panel.title} className={`rounded-2xl border border-zinc-300/80 p-8 sm:p-10 ${index < 2 ? "bg-gradient-to-br from-[#eee2db]/40 to-[#eee2db]/20" : ""}`}><h2 className="font-[NeueHaasDisplayRoman,Arial,sans-serif] text-3xl font-medium">{panel.title}</h2><p className="mt-6 font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-[#383838]">{panel.description}</p></div>)}
