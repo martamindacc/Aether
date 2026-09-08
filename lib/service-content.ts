@@ -102,7 +102,7 @@ export const navContent: Record<
 export const individualTherapyContent: Record<LanguageCode, ServicePageContent> = {
   en: {
     title: "Individual Session",
-    subtitle: "Online individual sessions for clients in New York City, California, and Norway.",
+    subtitle: "Online individual sessions for clients in New York City and California.",
     intro:
       "A dedicated one-on-one session to think clearly, map your own patterns, and set a deliberate direction forward. Built for people who are already capable — and want a sharper, more intentional version of the life they're building.",
     panels: [
@@ -169,7 +169,7 @@ export const individualTherapyContent: Record<LanguageCode, ServicePageContent> 
   },
   no: {
     title: "Individuell terapi",
-    subtitle: "Online individuelle samtaler for klienter i New York City, California og Norge.",
+    subtitle: "Individuelle samtaler på nett for personer i Norge.",
     intro:
       "Et dedikert rom for å tenke klart, forstå dine egne mønstre, og gå fremover med hensikt. Dette er coaching bygget for mennesker som allerede er kapable — og vil ha en skarpere, mer bevisst versjon av livet de bygger.",
     panels: [
@@ -236,7 +236,7 @@ export const individualTherapyContent: Record<LanguageCode, ServicePageContent> 
   },
   pl: {
     title: "Sesja Indywidualna",
-    subtitle: "Sesje indywidualne online dla klientów w Nowym Jorku, Kalifornii i Norwegii.",
+    subtitle: "Sesje indywidualne online dla osób w Polsce.",
     intro:
       "Dedykowana sesja jeden na jeden, by myśleć jasno, zmapować własne wzorce i wyznaczyć świadomy kierunek działania. Stworzona dla ludzi, którzy są już zdolni — i chcą bardziej precyzyjnej wersji życia, które budują.",
     panels: [
@@ -306,7 +306,7 @@ export const individualTherapyContent: Record<LanguageCode, ServicePageContent> 
 export const couplesTherapyContent: Record<LanguageCode, ServicePageContent> = {
   en: {
     title: "Couples Session",
-    subtitle: "Online couples sessions for partners in New York City, California, and Norway.",
+    subtitle: "Online couples sessions for partners in New York City and California.",
     intro:
       "A dedicated space for two people to understand how they truly work together — repair the pattern underneath the conflict, and rebuild a partnership that feels steady, honest, and shared.",
     panels: [
@@ -373,7 +373,7 @@ export const couplesTherapyContent: Record<LanguageCode, ServicePageContent> = {
   },
   no: {
     title: "Parterapi",
-    subtitle: "Online parsamtaler for partnere i New York City, California og Norge.",
+    subtitle: "Parsamtaler på nett for par i Norge.",
     intro:
       "Et dedikert rom for to mennesker til å forstå hvordan de virkelig fungerer sammen — reparere mønsteret under konflikten, og gjenoppbygge et partnerskap som føles stødig, ærlig og delt.",
     panels: [
@@ -440,7 +440,7 @@ export const couplesTherapyContent: Record<LanguageCode, ServicePageContent> = {
   },
   pl: {
     title: "Sesja dla Par",
-    subtitle: "Sesje online dla par w Nowym Jorku, Kalifornii i Norwegii.",
+    subtitle: "Sesje dla par online w Polsce.",
     intro:
       "Dedykowana przestrzeń dla dwóch osób, by zrozumieć, jak naprawdę funkcjonują razem — naprawić wzorzec leżący u podstaw konfliktu i odbudować partnerstwo, które jest stabilne, szczere i wspólne.",
     panels: [
@@ -510,7 +510,7 @@ export const couplesTherapyContent: Record<LanguageCode, ServicePageContent> = {
 export const executiveFounderContent: Record<LanguageCode, ServicePageContent> = {
   en: {
     title: "Executive & Founder Work",
-    subtitle: "Online executive and founder coaching sessions for clients in New York City, California, and Norway.",
+    subtitle: "Online executive and founder coaching sessions for clients in New York City and California.",
     intro:
       "Confidential, high-caliber support at the level where decisions and isolation actually happen — built for founders and executives carrying weight the role was never designed to make space for.",
     panels: [
@@ -577,7 +577,7 @@ export const executiveFounderContent: Record<LanguageCode, ServicePageContent> =
   },
   no: {
     title: "Leder- og Grunnleggerarbeid",
-    subtitle: "Online coaching for ledere og gründere i New York City, California og Norge.",
+    subtitle: "Coaching på nett for ledere og gründere i Norge.",
     intro:
       "Konfidensiell støtte av høy kaliber på nivået der beslutninger og isolasjon faktisk skjer — bygget for gründere og ledere som bærer en vekt rollen aldri var designet for å gi plass til.",
     panels: [
@@ -644,7 +644,7 @@ export const executiveFounderContent: Record<LanguageCode, ServicePageContent> =
   },
   pl: {
     title: "Praca z Liderami i Założycielami",
-    subtitle: "Coaching online dla liderów i założycieli w Nowym Jorku, Kalifornii i Norwegii.",
+    subtitle: "Coaching online dla liderów i założycieli firm w Polsce.",
     intro:
       "Poufne wsparcie najwyższej klasy na poziomie, na którym faktycznie zachodzą decyzje i izolacja — stworzone dla założycieli i liderów niosących ciężar, na który rola nigdy nie została zaprojektowana, by dać miejsce.",
     panels: [

@@ -21,7 +21,7 @@ const content: Record<LanguageCode, {
 }> = {
   en: {
     title: "Family Session",
-    subtitle: "Online family support sessions for families in New York City, California, and Norway.",
+    subtitle: "Online family support sessions for families in New York City and California.",
     intro: "Family work creates a steadier way of being together — making room for honest conversations, clearer boundaries, and connection that can hold through change.",
     panels: [
       { title: "For the family you are", description: "Whether you are moving through conflict, a transition, grief, or a new chapter, we begin with the patterns your family is actually living with." },
@@ -45,7 +45,7 @@ const content: Record<LanguageCode, {
   },
   no: {
     title: "Familieterapi",
-    subtitle: "Online familiesamtaler for familier i New York City, California og Norge.",
+    subtitle: "Familiesamtaler på nett for familier i Norge.",
     intro: "Familiearbeid skaper en stødigere måte å være sammen på — med rom for ærlige samtaler, tydeligere grenser og en tilknytning som tåler endring.",
     panels: [
       { title: "For familien dere er", description: "Enten dere går gjennom konflikt, en overgang, sorg eller et nytt kapittel, begynner vi med mønstrene familien faktisk lever med." },
@@ -69,7 +69,7 @@ const content: Record<LanguageCode, {
   },
   pl: {
     title: "Sesja Rodzinna",
-    subtitle: "Sesje wsparcia rodzinnego online dla rodzin w Nowym Jorku, Kalifornii i Norwegii.",
+    subtitle: "Sesje wsparcia rodzinnego online dla rodzin w Polsce.",
     intro: "Praca z rodziną tworzy stabilniejszy sposób bycia razem — z miejscem na szczere rozmowy, jaśniejsze granice i więź, która może trwać mimo zmian.",
     panels: [
       { title: "Dla rodziny, którą jesteście", description: "Niezależnie od tego, czy przechodzicie przez konflikt, zmianę, żałobę czy nowy rozdział, zaczynamy od wzorców, w których rodzina naprawdę żyje." },
