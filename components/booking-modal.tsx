@@ -79,13 +79,13 @@ export function BookingModal({
 
           {step === "select" && (
             <>
-              <p className="text-sm uppercase tracking-wide text-zinc-500">{labels.chooseSession}</p>
+              <p className="pr-14 text-sm uppercase tracking-wide text-zinc-500">{labels.chooseSession}</p>
               <div className="flex flex-col gap-3">
                 {PRODUCTS.map((product) => (
                   <button
                     key={product.id}
                     onClick={() => handleSelect(product.id)}
-                    className="flex items-center justify-between border border-zinc-900/15 bg-white px-5 py-4 text-left transition-colors hover:bg-zinc-100"
+                    className="flex flex-col items-start gap-1 border border-zinc-900/15 bg-white px-5 py-4 text-left transition-colors hover:bg-zinc-100 sm:flex-row sm:items-center sm:justify-between sm:gap-0"
                   >
                     <span className="font-[Roboto,Arial,sans-serif] text-lg font-medium text-zinc-900">
                       {product.name}
@@ -102,7 +102,7 @@ export function BookingModal({
 
           {step === "schedule" && selectedProduct && (
             <>
-              <p className="text-sm uppercase tracking-wide text-zinc-500">{labels.chooseTime}</p>
+              <p className="pr-14 text-sm uppercase tracking-wide text-zinc-500">{labels.chooseTime}</p>
               <p className="text-sm text-zinc-500">{labels.paymentNotice}</p>
               <div className="overflow-hidden rounded-2xl border border-zinc-900/10">
                 <iframe

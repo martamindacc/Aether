@@ -461,7 +461,7 @@ export default function Home() {
         <nav className="fixed inset-x-4 top-4 z-20 flex items-center justify-between rounded-[1.5rem] border border-white/50 bg-white/50 px-2.5 py-2.5 shadow-lg shadow-zinc-900/5 backdrop-blur-xl sm:inset-x-6 sm:top-6 sm:px-6 sm:py-3">
           <button
             onClick={() => setIsBookingOpen(true)}
-            className="whitespace-nowrap border border-zinc-900/20 bg-white/30 px-2.5 py-2 text-xs transition-colors hover:bg-white/65 sm:hidden"
+            className="flex w-14 flex-col items-center justify-center whitespace-normal border border-zinc-900/20 bg-white/30 px-1 py-1.5 text-center text-[11px] leading-tight transition-colors hover:bg-white/65 sm:hidden"
           >
             {t.bookNow}
           </button>
@@ -527,10 +527,10 @@ export default function Home() {
             </div>
             <button
               onClick={() => setIsMenuOpen(true)}
-              className="flex h-11 w-11 items-center justify-center border border-zinc-900/20 bg-white/30 transition-colors hover:bg-white/65"
+              className="flex h-9 w-9 items-center justify-center border border-zinc-900/20 bg-white/30 transition-colors hover:bg-white/65 sm:h-11 sm:w-11"
               aria-label="Open menu"
             >
-              <span className="flex w-5 flex-col gap-1.5">
+              <span className="flex w-4 flex-col gap-1 sm:w-5 sm:gap-1.5">
                 <span className="h-px w-full bg-zinc-900" />
                 <span className="h-px w-full bg-zinc-900" />
                 <span className="h-px w-full bg-zinc-900" />
