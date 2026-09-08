@@ -83,7 +83,7 @@ const content: Record<
     videoOverlay: "Your Future is Yours to Shape",
     heroTitle: "Better life starts with better understanding",
     heroSubtitle:
-      "Online sessions for individuals, couples, families, executives, and founders in New York City, California, and Norway.",
+      "Online sessions for couples, individuals, families, executives, and founders in New York City, California, and Norway.",
     subtext: "",
     bookNow: "Book Now",
     pills: [
@@ -188,7 +188,7 @@ const content: Record<
     videoOverlay: "Din Fremtid Er Din Å Forme",
     heroTitle: "Et bedre liv starter med bedre forståelse",
     heroSubtitle:
-      "Online samtaler for enkeltpersoner, par, familier, ledere og grunnleggere i New York City, California og Norge.",
+      "Online samtaler for par, enkeltpersoner, familier, ledere og grunnleggere i New York City, California og Norge.",
     subtext: "",
     bookNow: "Bestill Nå",
     pills: [
@@ -293,7 +293,7 @@ const content: Record<
     videoOverlay: "Twoja Przyszłość Jest Twoja do Kształtowania",
     heroTitle: "Lepsze życie zaczyna się od lepszego zrozumienia",
     heroSubtitle:
-      "Sesje online dla osób indywidualnych, par, rodzin, kadry kierowniczej i założycieli firm w Nowym Jorku, Kalifornii i Norwegii.",
+      "Sesje online dla par, osób indywidualnych, rodzin, kadry kierowniczej i założycieli firm w Nowym Jorku, Kalifornii i Norwegii.",
     subtext: "",
     bookNow: "Zarezerwuj",
     pills: [
