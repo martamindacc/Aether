@@ -3,6 +3,10 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://aetherpractice.com'),
+  alternates: {
+    canonical: 'https://aetherpractice.com/',
+  },
   title: 'Aether Practice | Online Counseling & Coaching in NYC & California',
   description:
     'Online counseling and coaching for individuals, couples, families, executives, and founders in New York City, California, and Norway.',
