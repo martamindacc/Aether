@@ -11,6 +11,7 @@ export type Outcome = { title: string; description: string };
 
 export type ServicePageContent = {
   title: string;
+  subtitle?: string;
   intro: string;
   panels: { title: string; description: string }[];
   processHeading: string;
@@ -302,6 +303,7 @@ export const individualTherapyContent: Record<LanguageCode, ServicePageContent> 
 export const couplesTherapyContent: Record<LanguageCode, ServicePageContent> = {
   en: {
     title: "Couples Session",
+    subtitle: "Online couples sessions for partners in New York City, California, and Norway.",
     intro:
       "A dedicated space for two people to understand how they truly work together — repair the pattern underneath the conflict, and rebuild a partnership that feels steady, honest, and shared.",
     panels: [
@@ -368,6 +370,7 @@ export const couplesTherapyContent: Record<LanguageCode, ServicePageContent> = {
   },
   no: {
     title: "Parterapi",
+    subtitle: "Online parsamtaler for partnere i New York City, California og Norge.",
     intro:
       "Et dedikert rom for to mennesker til å forstå hvordan de virkelig fungerer sammen — reparere mønsteret under konflikten, og gjenoppbygge et partnerskap som føles stødig, ærlig og delt.",
     panels: [
@@ -434,6 +437,7 @@ export const couplesTherapyContent: Record<LanguageCode, ServicePageContent> = {
   },
   pl: {
     title: "Sesja dla Par",
+    subtitle: "Sesje online dla par w Nowym Jorku, Kalifornii i Norwegii.",
     intro:
       "Dedykowana przestrzeń dla dwóch osób, by zrozumieć, jak naprawdę funkcjonują razem — naprawić wzorzec leżący u podstaw konfliktu i odbudować partnerstwo, które jest stabilne, szczere i wspólne.",
     panels: [
