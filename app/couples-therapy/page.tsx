@@ -40,7 +40,20 @@ export default function CouplesTherapyPage() {
         </h1>
         {t.subtitle && (
           <p className="mt-5 max-w-2xl text-base leading-[1.5] text-zinc-700">
-            {t.subtitle}
+            {language === "en" ? (
+              <>
+                Online couples sessions for partners in{" "}
+                <Link
+                  href="/couples-therapy-new-york-city"
+                  className="underline underline-offset-4 hover:text-zinc-600"
+                >
+                  New York City
+                </Link>{" "}
+                and California.
+              </>
+            ) : (
+              t.subtitle
+            )}
           </p>
         )}
         <p className="mt-12 max-w-4xl font-[Roboto,Arial,sans-serif] text-xl leading-[1.5] text-[#383838] sm:text-2xl">
@@ -117,16 +130,6 @@ export default function CouplesTherapyPage() {
           >
             {t.ctaButton}
           </button>
-          {language === "en" && (
-            <p className="font-[Roboto,Arial,sans-serif] text-base leading-[1.5] text-[#383838]">
-              <Link
-                href="/couples-therapy-new-york-city"
-                className="underline underline-offset-4 hover:text-zinc-600"
-              >
-                Online couples sessions for clients in New York City
-              </Link>
-            </p>
-          )}
         </div>
       </section>
       <SiteFooter language={language} />
