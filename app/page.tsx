@@ -6,15 +6,15 @@ import { useEffect, useRef, useState } from "react";
 
 const bookingServices = [
   {
-    label: "Individual Session",
-    duration: "50 min",
-    priceInCents: 10000,
-    calendlyUrl: "https://calendly.com/martamindacc",
-  },
-  {
     label: "Couples Session",
     duration: "60 min",
     priceInCents: 12000,
+    calendlyUrl: "https://calendly.com/martamindacc",
+  },
+  {
+    label: "Individual Session",
+    duration: "50 min",
+    priceInCents: 10000,
     calendlyUrl: "https://calendly.com/martamindacc",
   },
   {
@@ -83,7 +83,7 @@ const content: Record<
     videoOverlay: "Your Future is Yours to Shape",
     heroTitle: "Better life starts with better understanding",
     heroSubtitle:
-      "Online sessions for individuals, couples, families, executives, and founders in New York City, California, and Norway.",
+      "Online sessions for couples, individuals, families, executives, and founders in New York City, California, and Norway.",
     subtext: "",
     bookNow: "Book Now",
     pills: [
@@ -114,20 +114,20 @@ const content: Record<
     ],
     supportSections: [
       {
-        eyebrow: "Individual support",
-        title: "Individual Session",
-        description:
-          "Support in your own life situations — anxiety, grief, identity, transitions, and the weight you carry alone.",
-        href: "/individual-therapy",
-        color: "text-[#7b4037]",
-      },
-      {
         eyebrow: "Relationship support",
         title: "Couples Session",
         description:
           "Understand how you work together as a couple — improve communication, rebuild trust, and repair the pattern underneath the conflict.",
         href: "/couples-therapy",
         color: "text-[#66755c]",
+      },
+      {
+        eyebrow: "Individual support",
+        title: "Individual Session",
+        description:
+          "Support in your own life situations — anxiety, grief, identity, transitions, and the weight you carry alone.",
+        href: "/individual-therapy",
+        color: "text-[#7b4037]",
       },
       {
         eyebrow: "Family support",
@@ -188,7 +188,7 @@ const content: Record<
     videoOverlay: "Din Fremtid Er Din Å Forme",
     heroTitle: "Et bedre liv starter med bedre forståelse",
     heroSubtitle:
-      "Online samtaler for enkeltpersoner, par, familier, ledere og grunnleggere i New York City, California og Norge.",
+      "Online samtaler for par, enkeltpersoner, familier, ledere og grunnleggere i New York City, California og Norge.",
     subtext: "",
     bookNow: "Bestill Nå",
     pills: [
@@ -219,20 +219,20 @@ const content: Record<
     ],
     supportSections: [
       {
-        eyebrow: "Individuell støtte",
-        title: "Individuell terapi",
-        description:
-          "Støtte i dine egne livssituasjoner — angst, sorg, identitet, overganger, og vekten du bærer alene.",
-        href: "/individual-therapy",
-        color: "text-[#7b4037]",
-      },
-      {
         eyebrow: "Relasjonsstøtte",
         title: "Parterapi",
         description:
           "Forstå hvordan dere fungerer som par — forbedre kommunikasjon, gjenoppbygg tillit, og reparer mønsteret under konflikten.",
         href: "/couples-therapy",
         color: "text-[#66755c]",
+      },
+      {
+        eyebrow: "Individuell støtte",
+        title: "Individuell terapi",
+        description:
+          "Støtte i dine egne livssituasjoner — angst, sorg, identitet, overganger, og vekten du bærer alene.",
+        href: "/individual-therapy",
+        color: "text-[#7b4037]",
       },
       {
         eyebrow: "Familiestøtte",
@@ -293,7 +293,7 @@ const content: Record<
     videoOverlay: "Twoja Przyszłość Jest Twoja do Kształtowania",
     heroTitle: "Lepsze życie zaczyna się od lepszego zrozumienia",
     heroSubtitle:
-      "Sesje online dla osób indywidualnych, par, rodzin, kadry kierowniczej i założycieli firm w Nowym Jorku, Kalifornii i Norwegii.",
+      "Sesje online dla par, osób indywidualnych, rodzin, kadry kierowniczej i założycieli firm w Nowym Jorku, Kalifornii i Norwegii.",
     subtext: "",
     bookNow: "Zarezerwuj",
     pills: [
@@ -324,20 +324,20 @@ const content: Record<
     ],
     supportSections: [
       {
-        eyebrow: "Wsparcie indywidualne",
-        title: "Sesja Indywidualna",
-        description:
-          "Wsparcie w Twoich sytuacjach życiowych — w zmianach, przejściach i ciężarze, który niesiesz samodzielnie.",
-        href: "/individual-therapy",
-        color: "text-[#7b4037]",
-      },
-      {
         eyebrow: "Wsparcie relacji",
         title: "Sesja dla Par",
         description:
           "Zrozumcie, jak funkcjonujecie razem — poprawcie komunikację, odbudujcie zaufanie i naprawcie wzorzec stojący za konfliktem.",
         href: "/couples-therapy",
         color: "text-[#66755c]",
+      },
+      {
+        eyebrow: "Wsparcie indywidualne",
+        title: "Sesja Indywidualna",
+        description:
+          "Wsparcie w Twoich sytuacjach życiowych — w zmianach, przejściach i ciężarze, który niesiesz samodzielnie.",
+        href: "/individual-therapy",
+        color: "text-[#7b4037]",
       },
       {
         eyebrow: "Wsparcie rodzinne",
