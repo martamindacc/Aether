@@ -664,9 +664,9 @@ export default function Home() {
       </div>
 
       <section className="flex flex-col items-center px-6 pb-12 pt-[104px] text-center font-[Inter,-apple-system,BlinkMacSystemFont,'SF_Pro_Text',system-ui,sans-serif] text-[19px] font-normal leading-[1.5] text-[#383838]">
-        <h1 className="max-w-6xl text-balance font-[Roboto,Arial,sans-serif] text-[90px] font-medium leading-[0.95] tracking-tight text-zinc-900">
-          {t.heroTitle}
-        </h1>
+  <h1 className="max-w-6xl text-balance font-[Roboto,Arial,sans-serif] text-[44px] font-medium leading-[0.95] tracking-tight text-zinc-900 sm:text-[64px] lg:text-[90px]">
+> {t.heroTitle}
+  </h1>
         <p className="mt-8 max-w-2xl text-base leading-[1.5] text-zinc-700">
           {t.subtext}
         </p>
