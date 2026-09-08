@@ -471,9 +471,9 @@ export default function Home() {
               Aether Practice
             </span>
           </span>
-          <span className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center gap-1.5 whitespace-nowrap sm:hidden">
+          <span className="flex min-w-0 flex-1 items-center justify-center gap-1.5 px-2 sm:hidden">
             <img src="/logo-a.svg" alt="Aether Practice logo" className="h-5 w-5 shrink-0" />
-            <span className="text-sm font-medium tracking-[-0.04em]">Aether Practice</span>
+            <span className="truncate text-sm font-medium tracking-[-0.04em]">Aether Practice</span>
           </span>
           <div className="flex items-center gap-1 sm:gap-3">
             <button
