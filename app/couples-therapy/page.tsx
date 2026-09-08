@@ -38,7 +38,7 @@ export default function CouplesTherapyPage() {
           {t.title}
         </h1>
         {t.subtitle && (
-          <p className="mt-5 max-w-4xl font-[Roboto,Arial,sans-serif] text-base leading-[1.5] text-[#5c5c5c] sm:text-lg">
+          <p className="mt-5 max-w-2xl text-base leading-[1.5] text-zinc-700">
             {t.subtitle}
           </p>
         )}
