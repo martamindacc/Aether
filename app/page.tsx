@@ -6,15 +6,15 @@ import { useEffect, useRef, useState } from "react";
 
 const bookingServices = [
   {
-    label: "Individual Session",
-    duration: "50 min",
-    priceInCents: 10000,
-    calendlyUrl: "https://calendly.com/martamindacc",
-  },
-  {
     label: "Couples Session",
     duration: "60 min",
     priceInCents: 12000,
+    calendlyUrl: "https://calendly.com/martamindacc",
+  },
+  {
+    label: "Individual Session",
+    duration: "50 min",
+    priceInCents: 10000,
     calendlyUrl: "https://calendly.com/martamindacc",
   },
   {
