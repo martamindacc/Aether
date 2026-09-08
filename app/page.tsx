@@ -24,7 +24,7 @@ const bookingServices = [
     calendlyUrl: "https://calendly.com/martamindacc",
   },
   {
-    label: "Executive&Founder Session",
+    label: "Exec&Founder Session",
     duration: "50 min",
     priceInCents: 10000,
     calendlyUrl: "https://calendly.com/martamindacc",
@@ -412,7 +412,7 @@ export default function Home() {
   );
   const bookingLabel = (label: string) =>
     language.code === "no"
-      ? { "Individual Session": "Individuell terapi", "Couples Session": "Parterapi", "Family Session": "Familieterapi", "Executive&Founder Session": "Leder- og grunnleggerterapi", "Initial Consultation": "Innledende konsultasjon" }[label] ?? label
+      ? { "Individual Session": "Individuell terapi", "Couples Session": "Parterapi", "Family Session": "Familieterapi", "Exec&Founder Session": "Leder- og grunnleggerterapi", "Initial Consultation": "Innledende konsultasjon" }[label] ?? label
       : label;
 
   const closeBooking = () => {
@@ -597,11 +597,11 @@ export default function Home() {
               onClick={closeBooking}
               aria-hidden="true"
             />
-            <div className="relative my-auto flex max-h-[90vh] w-full max-w-md flex-col gap-6 overflow-y-auto rounded-3xl bg-[#fafafb] p-8 shadow-2xl animate-in fade-in zoom-in-95 duration-300 ease-out sm:p-10">
+            <div className="relative my-auto flex max-h-[90vh] w-full max-w-md flex-col gap-6 overflow-y-auto rounded-3xl bg-[#fafafb] p-6 shadow-2xl animate-in fade-in zoom-in-95 duration-300 ease-out sm:p-10">
               <button
                 onClick={closeBooking}
                 aria-label="Close booking"
-                className="absolute right-6 top-6 flex h-11 w-11 items-center justify-center border border-zinc-900/20 bg-white transition-colors hover:bg-zinc-100"
+                className="absolute right-5 top-5 flex h-9 w-9 shrink-0 items-center justify-center border border-zinc-900/20 bg-white transition-colors hover:bg-zinc-100 sm:right-6 sm:top-6 sm:h-11 sm:w-11"
               >
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                   <path
@@ -614,7 +614,7 @@ export default function Home() {
               </button>
               {!selectedBookingService ? (
                 <>
-                  <p className="text-sm uppercase tracking-wide text-zinc-500">
+                  <p className="pr-12 text-xs uppercase tracking-wide text-zinc-500 sm:text-sm">
                     {language.code === "no" ? "Velg din økt" : "Choose your session"}
                   </p>
                   <div className="flex flex-col gap-3">
@@ -622,12 +622,12 @@ export default function Home() {
                       <button
                         key={service.label}
                         onClick={() => setSelectedBookingLabel(service.label)}
-                        className="flex items-center justify-between border border-zinc-900/15 bg-white px-5 py-4 text-left transition-colors hover:bg-zinc-100"
+                        className="flex items-center justify-between gap-3 border border-zinc-900/15 bg-white px-5 py-4 text-left transition-colors hover:bg-zinc-100"
                       >
-                        <span className="font-[Roboto,Arial,sans-serif] text-lg font-medium text-zinc-900">
+                        <span className="min-w-0 font-[Roboto,Arial,sans-serif] text-base font-medium text-zinc-900 sm:text-lg">
 {bookingLabel(service.label)}
                         </span>
-                        <span className="text-sm text-zinc-500">
+                        <span className="shrink-0 whitespace-nowrap text-right text-sm text-zinc-500">
                           {service.duration}
                           {service.priceInCents > 0 && ` · $${(service.priceInCents / 100).toFixed(0)}`}
                         </span>
@@ -637,13 +637,13 @@ export default function Home() {
                 </>
               ) : (
                 <>
-                  <div className="flex items-center justify-between">
-                    <p className="text-sm uppercase tracking-wide text-zinc-500">
+                  <div className="flex items-center justify-between gap-3 pr-12">
+                    <p className="text-xs uppercase tracking-wide text-zinc-500 sm:text-sm">
                       {bookingLabel(selectedBookingService.label)}
                     </p>
                     <button
                       onClick={() => setSelectedBookingLabel(null)}
-                      className="text-sm text-zinc-500 underline-offset-4 hover:text-zinc-900 hover:underline"
+                      className="shrink-0 text-sm text-zinc-500 underline-offset-4 hover:text-zinc-900 hover:underline"
                     >
                       {language.code === "no" ? "Tilbake" : "Back"}
                     </button>
@@ -724,8 +724,8 @@ export default function Home() {
               <p className="flex-1 font-[Roboto,Arial,sans-serif] text-lg leading-[1.6] text-[#383838]">
                 &ldquo;{item.quote}&rdquo;
               </p>
-              <div className="flex items-center gap-4">
-                <div className="flex flex-col">
+              <div className="flex items-center justify-center gap-4">
+                <div className="flex flex-col items-center text-center">
                   <span className="font-[Roboto,Arial,sans-serif] text-base font-medium text-zinc-900">
                     {item.name}
                   </span>
