@@ -102,6 +102,7 @@ export const navContent: Record<
 export const individualTherapyContent: Record<LanguageCode, ServicePageContent> = {
   en: {
     title: "Individual Session",
+    subtitle: "Online individual sessions for clients in New York City, California, and Norway.",
     intro:
       "A dedicated one-on-one session to think clearly, map your own patterns, and set a deliberate direction forward. Built for people who are already capable — and want a sharper, more intentional version of the life they're building.",
     panels: [
@@ -168,6 +169,7 @@ export const individualTherapyContent: Record<LanguageCode, ServicePageContent> 
   },
   no: {
     title: "Individuell terapi",
+    subtitle: "Online individuelle samtaler for klienter i New York City, California og Norge.",
     intro:
       "Et dedikert rom for å tenke klart, forstå dine egne mønstre, og gå fremover med hensikt. Dette er coaching bygget for mennesker som allerede er kapable — og vil ha en skarpere, mer bevisst versjon av livet de bygger.",
     panels: [
@@ -234,6 +236,7 @@ export const individualTherapyContent: Record<LanguageCode, ServicePageContent> 
   },
   pl: {
     title: "Sesja Indywidualna",
+    subtitle: "Sesje indywidualne online dla klientów w Nowym Jorku, Kalifornii i Norwegii.",
     intro:
       "Dedykowana sesja jeden na jeden, by myśleć jasno, zmapować własne wzorce i wyznaczyć świadomy kierunek działania. Stworzona dla ludzi, którzy są już zdolni — i chcą bardziej precyzyjnej wersji życia, które budują.",
     panels: [
@@ -507,6 +510,7 @@ export const couplesTherapyContent: Record<LanguageCode, ServicePageContent> = {
 export const executiveFounderContent: Record<LanguageCode, ServicePageContent> = {
   en: {
     title: "Executive & Founder Work",
+    subtitle: "Online executive and founder coaching sessions for clients in New York City, California, and Norway.",
     intro:
       "Confidential, high-caliber support at the level where decisions and isolation actually happen — built for founders and executives carrying weight the role was never designed to make space for.",
     panels: [
@@ -573,6 +577,7 @@ export const executiveFounderContent: Record<LanguageCode, ServicePageContent> =
   },
   no: {
     title: "Leder- og Grunnleggerarbeid",
+    subtitle: "Online coaching for ledere og gründere i New York City, California og Norge.",
     intro:
       "Konfidensiell støtte av høy kaliber på nivået der beslutninger og isolasjon faktisk skjer — bygget for gründere og ledere som bærer en vekt rollen aldri var designet for å gi plass til.",
     panels: [
@@ -639,6 +644,7 @@ export const executiveFounderContent: Record<LanguageCode, ServicePageContent> =
   },
   pl: {
     title: "Praca z Liderami i Założycielami",
+    subtitle: "Coaching online dla liderów i założycieli w Nowym Jorku, Kalifornii i Norwegii.",
     intro:
       "Poufne wsparcie najwyższej klasy na poziomie, na którym faktycznie zachodzą decyzje i izolacja — stworzone dla założycieli i liderów niosących ciężar, na który rola nigdy nie została zaprojektowana, by dać miejsce.",
     panels: [
