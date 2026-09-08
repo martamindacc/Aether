@@ -84,7 +84,7 @@ const content: Record<
     heroTitle: "Better life starts with better understanding",
     heroSubtitle:
       "Online sessions for individuals, couples, families, executives, and founders in New York City, California, and Norway.",
-    subtext: "Expect exceptional care grounded in science.",
+    subtext: "",
     bookNow: "Book Now",
     pills: [
       "Emotional Wellness",
@@ -189,7 +189,7 @@ const content: Record<
     heroTitle: "Et bedre liv starter med bedre forståelse",
     heroSubtitle:
       "Online samtaler for enkeltpersoner, par, familier, ledere og grunnleggere i New York City, California og Norge.",
-    subtext: "Forvent eksepsjonell omsorg forankret i vitenskap.",
+    subtext: "",
     bookNow: "Bestill Nå",
     pills: [
       "Emosjonell Velvære",
@@ -294,7 +294,7 @@ const content: Record<
     heroTitle: "Lepsze życie zaczyna się od lepszego zrozumienia",
     heroSubtitle:
       "Sesje online dla osób indywidualnych, par, rodzin, kadry kierowniczej i założycieli firm w Nowym Jorku, Kalifornii i Norwegii.",
-    subtext: "Oczekuj wyjątkowej opieki opartej na nauce.",
+    subtext: "",
     bookNow: "Zarezerwuj",
     pills: [
       "Dobrostan Emocjonalny",
@@ -673,9 +673,6 @@ export default function Home() {
   </h1>
   <p className="mt-5 max-w-2xl text-base leading-[1.5] text-zinc-700">
     {t.heroSubtitle}
-  </p>
-  <p className="mt-4 max-w-2xl text-base leading-[1.5] text-zinc-700">
-    {t.subtext}
   </p>
         <div className="mt-[70px] flex max-w-7xl flex-wrap items-center justify-center gap-3">
           {t.pills.map((pill) => (
