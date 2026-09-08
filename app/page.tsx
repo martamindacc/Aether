@@ -725,11 +725,6 @@ export default function Home() {
                 &ldquo;{item.quote}&rdquo;
               </p>
               <div className="flex items-center gap-4">
-                <span
-                  className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-base font-medium ${item.accentText} ${item.accentBg}`}
-                >
-                  {item.initials}
-                </span>
                 <div className="flex flex-col">
                   <span className="font-[Roboto,Arial,sans-serif] text-base font-medium text-zinc-900">
                     {item.name}
