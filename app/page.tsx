@@ -50,6 +50,7 @@ const content: Record<
   {
     videoOverlay: string;
     heroTitle: string;
+    heroSubtitle: string;
     subtext: string;
     bookNow: string;
     pills: string[];
@@ -81,8 +82,9 @@ const content: Record<
   en: {
     videoOverlay: "Your Future is Yours to Shape",
     heroTitle: "Better life starts with better understanding",
-    subtext:
-      "Because we believe in your potential, we want to guide you towards a life filled with meaning, balance, and lasting renewal. Expect exceptional care grounded in science.",
+    heroSubtitle:
+      "Online sessions for individuals, couples, families, executives, and founders in New York City, California, and Norway.",
+    subtext: "",
     bookNow: "Book Now",
     pills: [
       "Emotional Wellness",
@@ -185,8 +187,9 @@ const content: Record<
   no: {
     videoOverlay: "Din Fremtid Er Din Å Forme",
     heroTitle: "Et bedre liv starter med bedre forståelse",
-    subtext:
-      "Fordi vi tror på ditt potensial, vil vi guide deg mot et liv fylt med mening, balanse og varig fornyelse. Forvent eksepsjonell omsorg forankret i vitenskap.",
+    heroSubtitle:
+      "Online samtaler for enkeltpersoner, par, familier, ledere og grunnleggere i New York City, California og Norge.",
+    subtext: "",
     bookNow: "Bestill Nå",
     pills: [
       "Emosjonell Velvære",
@@ -254,7 +257,7 @@ const content: Record<
     testimonials: [
       {
         quote:
-          "For første gang på flere år forstår jeg hvorfor jeg reagerer som jeg gjør. Arbeidet her roet meg ikke bare ned — det ga meg et rammeverk for resten av livet.",
+          "For første gang på flere år forst��r jeg hvorfor jeg reagerer som jeg gjør. Arbeidet her roet meg ikke bare ned — det ga meg et rammeverk for resten av livet.",
         name: "M. R.",
         context: "Individuell klient",
         initials: "MR",
@@ -289,8 +292,9 @@ const content: Record<
   pl: {
     videoOverlay: "Twoja Przyszłość Jest Twoja do Kształtowania",
     heroTitle: "Lepsze życie zaczyna się od lepszego zrozumienia",
-    subtext:
-      "Ponieważ wierzymy w Twój potencjał, chcemy poprowadzić Cię do życia pełnego sensu, równowagi i trwałej odnowy. Oczekuj wyjątkowej opieki opartej na nauce.",
+    heroSubtitle:
+      "Sesje online dla osób indywidualnych, par, rodzin, kadry kierowniczej i założycieli firm w Nowym Jorku, Kalifornii i Norwegii.",
+    subtext: "",
     bookNow: "Zarezerwuj",
     pills: [
       "Dobrostan Emocjonalny",
@@ -667,9 +671,9 @@ export default function Home() {
   <h1 className="max-w-6xl text-balance font-[Roboto,Arial,sans-serif] text-[44px] font-medium leading-[0.95] tracking-tight text-zinc-900 sm:text-[64px] lg:text-[90px]">
           {t.heroTitle}
   </h1>
-        <p className="mt-8 max-w-2xl text-base leading-[1.5] text-zinc-700">
-          {t.subtext}
-        </p>
+  <p className="mt-5 max-w-2xl text-base leading-[1.5] text-zinc-700">
+    {t.heroSubtitle}
+  </p>
         <div className="mt-[70px] flex max-w-7xl flex-wrap items-center justify-center gap-3">
           {t.pills.map((pill) => (
             <span
