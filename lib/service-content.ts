@@ -56,8 +56,8 @@ export const navContent: Record<
     bookNow: "Book Now",
     menuHeading: "Services",
     menuLinks: [
-      { label: "Individual Session", href: "/individual-therapy" },
       { label: "Couples Session", href: "/couples-therapy" },
+      { label: "Individual Session", href: "/individual-therapy" },
       { label: "Family Session", href: "/family-support" },
       { label: "Executive & Founder Work", href: "/executive-founder-work" },
     ],
@@ -71,8 +71,8 @@ export const navContent: Record<
     bookNow: "Bestill Nå",
     menuHeading: "Tjenester",
     menuLinks: [
-      { label: "Individuell terapi", href: "/individual-therapy" },
       { label: "Parterapi", href: "/couples-therapy" },
+      { label: "Individuell terapi", href: "/individual-therapy" },
       { label: "Familieterapi", href: "/family-support" },
       { label: "Leder- og Grunnleggerarbeid", href: "/executive-founder-work" },
     ],
@@ -86,8 +86,8 @@ export const navContent: Record<
     bookNow: "Zarezerwuj",
     menuHeading: "Usługi",
     menuLinks: [
-      { label: "Sesja Indywidualna", href: "/individual-therapy" },
       { label: "Sesja dla Par", href: "/couples-therapy" },
+      { label: "Sesja Indywidualna", href: "/individual-therapy" },
       { label: "Sesja Rodzinna", href: "/family-support" },
       { label: "Praca z Liderami i Założycielami", href: "/executive-founder-work" },
     ],
