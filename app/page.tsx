@@ -452,7 +452,7 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-black/10" />
 
-        <div className="absolute inset-0 z-10 flex items-center justify-center px-6">
+        <div className="absolute inset-0 z-10 flex items-center justify-center px-6 sm:items-end sm:justify-center sm:pb-16">
           <h2 className="text-center font-[NeueHaasDisplayRoman,Arial,sans-serif] text-4xl font-medium tracking-tight text-white sm:text-6xl">
             {t.videoOverlay}
           </h2>
