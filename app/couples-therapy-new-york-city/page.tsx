@@ -70,28 +70,28 @@ export default function CouplesTherapyNewYorkCityPage() {
           <h2 className="font-[NeueHaasDisplayRoman,Arial,sans-serif] text-4xl font-medium tracking-tight sm:text-5xl">
             Frequently asked questions
           </h2>
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
-            <div className="rounded-2xl border border-zinc-300/80 bg-gradient-to-br from-[#eee2db]/75 to-[#eee2db]/40 p-8 sm:p-10">
+          <div className="mt-8 flex flex-col">
+            <div className="border-t border-zinc-300/80 py-6">
               <h3 className="font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-medium">
                 Are Couples Sessions held online?
               </h3>
-              <p className="mt-6 font-[Roboto,Arial,sans-serif] text-[17px] leading-[1.5] text-[#383838]">
+              <p className="mt-3 max-w-3xl font-[Roboto,Arial,sans-serif] text-[17px] leading-[1.5] text-[#383838]">
                 Yes. Sessions are held entirely online, making it easier to meet consistently from New York City.
               </p>
             </div>
-            <div className="rounded-2xl border border-zinc-300/80 bg-gradient-to-br from-[#e4eadf]/80 to-[#e4eadf]/45 p-8 sm:p-10">
+            <div className="border-t border-zinc-300/80 py-6">
               <h3 className="font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-medium">
                 What can we bring to the first session?
               </h3>
-              <p className="mt-6 font-[Roboto,Arial,sans-serif] text-[17px] leading-[1.5] text-[#383838]">
+              <p className="mt-3 max-w-3xl font-[Roboto,Arial,sans-serif] text-[17px] leading-[1.5] text-[#383838]">
                 Bring the concerns, conversations, or patterns you would like to understand together. The first session is a place to begin.
               </p>
             </div>
-            <div className="rounded-2xl border border-zinc-300/80 bg-gradient-to-br from-[#e2e8ef]/80 to-[#e2e8ef]/45 p-8 sm:p-10">
+            <div className="border-t border-zinc-300/80 py-6">
               <h3 className="font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-medium">
                 How do we book a Couples Session?
               </h3>
-              <p className="mt-6 font-[Roboto,Arial,sans-serif] text-[17px] leading-[1.5] text-[#383838]">
+              <p className="mt-3 max-w-3xl font-[Roboto,Arial,sans-serif] text-[17px] leading-[1.5] text-[#383838]">
                 Use the Book your first session button below to choose a session and continue with online booking.
               </p>
             </div>
@@ -103,7 +103,7 @@ export default function CouplesTherapyNewYorkCityPage() {
               Ready to take the next step together?
           </h2>
           <p className="max-w-2xl font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-[#383838]">
-            Start with a joint discovery conversation to see if this is the right fit for you both — no pressure, no commitment beyond that first hour. When you are ready, book your first Couples Session online.
+            When you are ready, book your first Couples Session online.
           </p>
           <button
             onClick={() => setIsBookingOpen(true)}
