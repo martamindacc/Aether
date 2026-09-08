@@ -37,18 +37,31 @@ export function FloatingNav({
 
   return (
     <>
-      <nav className="fixed inset-x-4 top-4 z-20 flex items-center justify-between rounded-[1.5rem] border border-white/50 bg-white/50 px-4 py-3 shadow-lg shadow-zinc-900/5 backdrop-blur-xl sm:inset-x-6 sm:top-6 sm:px-6">
+      <nav className="fixed inset-x-4 top-4 z-20 flex items-center justify-between rounded-[1.5rem] border border-white/50 bg-white/50 px-2.5 py-2.5 shadow-lg shadow-zinc-900/5 backdrop-blur-xl sm:inset-x-6 sm:top-6 sm:px-6 sm:py-3">
+        <button
+          onClick={() => setIsBookingOpen(true)}
+          className="flex w-14 flex-col items-center justify-center whitespace-normal border border-zinc-900/20 bg-white/30 px-1 py-1.5 text-center text-[11px] leading-tight transition-colors hover:bg-white/65 sm:hidden"
+        >
+          {t.bookNow}
+        </button>
         <Link
           href="/"
-          className="flex items-center gap-2 text-lg font-medium tracking-[-0.04em] sm:text-xl"
+          className="hidden items-center gap-2 text-lg font-medium tracking-[-0.04em] sm:flex sm:text-xl"
         >
           <img src="/logo-a.svg" alt="Aether Practice logo" className="h-6 w-6" />
           Aether Practice
         </Link>
-        <div className="flex items-center gap-2 sm:gap-3">
+        <Link
+          href="/"
+          className="flex min-w-0 flex-1 items-center justify-center gap-1.5 px-2 sm:hidden"
+        >
+          <img src="/logo-a.svg" alt="Aether Practice logo" className="h-5 w-5 shrink-0" />
+          <span className="truncate text-sm font-medium tracking-[-0.04em]">Aether Practice</span>
+        </Link>
+        <div className="flex items-center gap-1 sm:gap-3">
           <button
             onClick={() => setIsBookingOpen(true)}
-            className="border border-zinc-900/20 bg-white px-[30px] py-3 text-sm transition-colors hover:bg-zinc-100"
+            className="hidden border border-zinc-900/20 bg-white px-[30px] py-3 text-sm transition-colors hover:bg-zinc-100 sm:inline-block"
           >
             {t.bookNow}
           </button>
@@ -57,7 +70,7 @@ export function FloatingNav({
               onClick={() => onLangOpenChange(!isLangOpen)}
               aria-label="Select language"
               aria-expanded={isLangOpen}
-              className="flex items-center gap-2 px-2 py-3 text-sm text-zinc-900"
+              className="flex items-center gap-1 whitespace-nowrap px-1.5 py-3 text-sm text-zinc-900 sm:gap-2 sm:px-2"
             >
               {currentLabel}
               <svg
@@ -96,10 +109,10 @@ export function FloatingNav({
           </div>
           <button
             onClick={() => onMenuOpenChange(true)}
-            className="flex h-11 w-11 items-center justify-center border border-zinc-900/20 bg-white/30 transition-colors hover:bg-white/65"
+            className="flex h-9 w-9 items-center justify-center border border-zinc-900/20 bg-white/30 transition-colors hover:bg-white/65 sm:h-11 sm:w-11"
             aria-label="Open menu"
           >
-            <span className="flex w-5 flex-col gap-1.5">
+            <span className="flex w-4 flex-col gap-1 sm:w-5 sm:gap-1.5">
               <span className="h-px w-full bg-zinc-900" />
               <span className="h-px w-full bg-zinc-900" />
               <span className="h-px w-full bg-zinc-900" />
