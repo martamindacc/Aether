@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/privacy",
     "/individual-therapy",
     "/couples-therapy",
+    "/couples-therapy-new-york-city",
     "/family-support",
     "/executive-founder-work",
   ]

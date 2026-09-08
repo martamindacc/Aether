@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { FloatingNav } from "@/components/floating-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { BookingModal } from "@/components/booking-modal";
@@ -116,6 +117,16 @@ export default function CouplesTherapyPage() {
           >
             {t.ctaButton}
           </button>
+          {language === "en" && (
+            <p className="font-[Roboto,Arial,sans-serif] text-base leading-[1.5] text-[#383838]">
+              <Link
+                href="/couples-therapy-new-york-city"
+                className="underline underline-offset-4 hover:text-zinc-600"
+              >
+                Online couples sessions for clients in New York City
+              </Link>
+            </p>
+          )}
         </div>
       </section>
       <SiteFooter language={language} />
