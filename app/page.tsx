@@ -672,7 +672,19 @@ export default function Home() {
           {t.heroTitle}
   </h1>
   <p className="mt-5 max-w-2xl text-base leading-[1.5] text-zinc-700">
-    {t.heroSubtitle}
+  {language === "en" ? (
+  <>
+  Online sessions for couples, individuals, families, executives, and founders in New York City, California, and <Link href="/online-therapy-norway" className="underline decoration-transparent underline-offset-4 transition-colors hover:decoration-current">Norway</Link>.
+  </>
+  ) : language === "no" ? (
+  <>
+  Online samtaler for par, enkeltpersoner, familier, ledere og grunnleggere i New York City, California og <Link href="/online-therapy-norway" className="underline decoration-transparent underline-offset-4 transition-colors hover:decoration-current">Norge</Link>.
+  </>
+  ) : language === "pl" ? (
+  <>
+  Sesje online dla par, osób indywidualnych, rodzin, kadry kierowniczej i założycieli firm w Nowym Jorku, Kalifornii i <Link href="/online-therapy-norway" className="underline decoration-transparent underline-offset-4 transition-colors hover:decoration-current">Norwegii</Link>.
+  </>
+  ) : t.heroSubtitle}
   </p>
         <div className="mt-[70px] flex max-w-7xl flex-wrap items-center justify-center gap-3">
           {t.pills.map((pill) => (
