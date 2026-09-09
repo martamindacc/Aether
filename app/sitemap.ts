@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/couples-therapy-new-york-city",
     "/family-support",
     "/executive-founder-work",
+    "/online-therapy-norway",
   ]
 
   return routes.map((route) => ({
