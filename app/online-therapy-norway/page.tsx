@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { FloatingNav } from "@/components/floating-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { BookingModal } from "@/components/booking-modal";
@@ -11,6 +12,8 @@ const content: Record<
   {
     heroTitle: string;
     heroSubtitle: string;
+    servicesTitle: string;
+    services: { label: string; href: string }[];
     whoTitle: string;
     whoBody: string;
     firstConvoTitle: string;
@@ -29,6 +32,13 @@ const content: Record<
     heroTitle: "Online terapi og coaching for klienter i Norge",
     heroSubtitle:
       "Dette rommet er for enkeltpersoner, par og familier i Norge som arbeider med kommunikasjonsutfordringer, livsoverganger, eller et ønske om en roligere og mer forbundet måte å forholde seg til hverandre på. Samtalene skjer helt digitalt, slik at støtten passer inn i norsk arbeidstid og tidssone.",
+    servicesTitle: "Hva ønsker du støtte med?",
+    services: [
+      { label: "Parterapi", href: "/couples-therapy" },
+      { label: "Individuell terapi", href: "/individual-therapy" },
+      { label: "Familieterapi og familiestøtte", href: "/family-support" },
+      { label: "Coaching for ledere og gründere", href: "/executive-founder-work" },
+    ],
     whoTitle: "Hvem dette er for",
     whoBody:
       "Enkeltpersoner, par og familier i Norge som navigerer kommunikasjonsutfordringer, tilbakevendende konflikter, livsoverganger, eller et ønske om å bygge et sterkere fundament sammen.",
@@ -82,6 +92,13 @@ const content: Record<
     heroTitle: "Online Therapy and Coaching for Clients in Norway",
     heroSubtitle:
       "This space is for individuals, couples, and families in Norway working through communication difficulties, life transitions, or a desire for a calmer, more connected way of relating. Sessions happen entirely online, so support fits around Norwegian working hours and time zones.",
+    servicesTitle: "What kind of support are you looking for?",
+    services: [
+      { label: "Couples Sessions", href: "/couples-therapy" },
+      { label: "Individual Sessions", href: "/individual-therapy" },
+      { label: "Family Sessions and support", href: "/family-support" },
+      { label: "Executive and founder coaching", href: "/executive-founder-work" },
+    ],
     whoTitle: "Who this is for",
     whoBody:
       "Individuals, couples, and families in Norway navigating communication difficulties, recurring conflict, life transitions, or a desire to build a stronger foundation together.",
@@ -134,6 +151,13 @@ const content: Record<
     heroTitle: "Terapia i coaching online dla klientów w Norwegii",
     heroSubtitle:
       "To miejsce jest dla osób indywidualnych, par i rodzin w Norwegii pracujących nad trudnościami komunikacyjnymi, zmianami życiowymi lub chcących budować spokojniejszy i bardziej połączony sposób relacji. Sesje odbywają się w całości online, dzięki czemu wsparcie dopasowuje się do norweskich godzin pracy i strefy czasowej.",
+    servicesTitle: "Jakiego wsparcia szukasz?",
+    services: [
+      { label: "Sesje par", href: "/couples-therapy" },
+      { label: "Sesja indywidualna", href: "/individual-therapy" },
+      { label: "Wsparcie rodzinne", href: "/family-support" },
+      { label: "Coaching dla liderów i założycieli firm", href: "/executive-founder-work" },
+    ],
     whoTitle: "Dla kogo jest ta przestrzeń",
     whoBody:
       "Osoby indywidualne, pary i rodziny w Norwegii radzące sobie z trudnościami komunikacyjnymi, powtarzającymi się konfliktami, zmianami życiowymi lub chcące zbudować silniejszy fundament razem.",
@@ -218,6 +242,23 @@ export default function OnlineTherapyNorwayPage() {
         <p className="mt-12 max-w-4xl font-[Roboto,Arial,sans-serif] text-xl leading-[1.5] text-[#383838] sm:text-2xl">
           {t.heroSubtitle}
         </p>
+
+        <div className="mt-14">
+          <h2 className="font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-medium tracking-tight text-zinc-900 sm:text-3xl">
+            {t.servicesTitle}
+          </h2>
+          <nav aria-label={t.servicesTitle} className="mt-6 flex flex-wrap gap-x-10 gap-y-4">
+            {t.services.map((service) => (
+              <Link
+                key={service.href}
+                href={service.href}
+                className="font-[Roboto,Arial,sans-serif] text-lg text-[#74382f] underline decoration-[#74382f]/30 underline-offset-4 transition-colors hover:decoration-[#74382f]"
+              >
+                {service.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
 
         <div className="mt-20 grid gap-6 sm:grid-cols-2">
           <div className="rounded-2xl border border-zinc-300/80 bg-gradient-to-br from-[#eee2db]/40 to-[#eee2db]/20 p-8 sm:p-10">
