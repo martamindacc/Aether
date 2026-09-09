@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   },
   title: 'Aether Practice | Online Counseling & Coaching in NYC & California',
   description:
-    'Online counseling and coaching for individuals, couples, families, executives, and founders in New York City, California, and Norway.',
+    'Online counseling & coaching for couples, individuals, families, executives, and founders in New York City, California, and Norway.',
   generator: 'v0.app',
   icons: {
     icon: [
