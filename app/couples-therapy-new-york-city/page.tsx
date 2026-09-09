@@ -123,21 +123,21 @@ export default function CouplesTherapyNewYorkCityPage() {
               name: "J. & A.",
               context: "Couples clients",
               accentText: "text-[#66755c]",
-              accentBg: "from-[#d9e2d1]/75 to-[#d9e2d1]/40",
+              accentBg: "from-[#d9e2d1]/55 to-[#d9e2d1]/20",
             },
             {
               quote: "The sessions helped us listen differently and feel more connected again.",
               name: "M. & R.",
               context: "Couples clients",
               accentText: "text-[#7b4037]",
-              accentBg: "from-[#e8d6ce]/75 to-[#e8d6ce]/40",
+              accentBg: "from-[#e8d6ce]/55 to-[#e8d6ce]/20",
             },
             {
               quote: "We learned how to repair the pattern instead of repeating the same argument.",
               name: "S. & D.",
               context: "Couples clients",
               accentText: "text-[#496171]",
-              accentBg: "from-[#d8e2e8]/75 to-[#d8e2e8]/40",
+              accentBg: "from-[#d8e2e8]/55 to-[#d8e2e8]/20",
             },
           ].map((item) => (
             <div
