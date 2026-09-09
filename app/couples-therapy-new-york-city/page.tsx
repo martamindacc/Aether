@@ -36,9 +36,6 @@ export default function CouplesTherapyNewYorkCityPage() {
         <h1 className="max-w-5xl font-[NeueHaasDisplayRoman,Arial,sans-serif] text-6xl font-medium leading-[0.95] tracking-tight text-[#74382f] sm:text-8xl">
           Couples Sessions for Clients in New York City
         </h1>
-        <p className="mt-5 max-w-2xl text-base leading-[1.5] text-zinc-700">
-          Sessions are held entirely online.
-        </p>
         <p className="mt-12 max-w-4xl font-[Roboto,Arial,sans-serif] text-xl leading-[1.5] text-[#383838] sm:text-2xl">
           This space is for couples working through communication difficulties, recurring conflict, trust concerns,
           emotional distance, or a relationship transition. Sessions happen online, so scheduling around New York
@@ -113,9 +110,33 @@ export default function CouplesTherapyNewYorkCityPage() {
           </div>
         </div>
 
+        <div className="mt-24">
+          <h2 className="font-[NeueHaasDisplayRoman,Arial,sans-serif] text-4xl font-medium tracking-tight sm:text-5xl">
+            A space to reconnect
+          </h2>
+          <div className="mt-10 grid gap-6 sm:grid-cols-2">
+            <blockquote className="rounded-2xl border border-zinc-300/80 bg-gradient-to-br from-[#eee2db]/60 to-[#eee2db]/25 p-8 sm:p-10">
+              <p className="font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-[#383838]">
+                “We found a calmer way to talk about the things we had been avoiding.”
+              </p>
+              <footer className="mt-6 font-[Roboto,Arial,sans-serif] text-sm text-zinc-600">
+                — Couple in New York City
+              </footer>
+            </blockquote>
+            <blockquote className="rounded-2xl border border-zinc-300/80 bg-gradient-to-br from-[#e4eadf]/70 to-[#e4eadf]/30 p-8 sm:p-10">
+              <p className="font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-[#383838]">
+                “The sessions helped us listen differently and feel more connected again.”
+              </p>
+              <footer className="mt-6 font-[Roboto,Arial,sans-serif] text-sm text-zinc-600">
+                — Couple working online
+              </footer>
+            </blockquote>
+          </div>
+        </div>
+
         <div className="mt-24 flex flex-col items-start gap-8 rounded-2xl border border-zinc-300/80 bg-gradient-to-br from-[#eee2db]/75 to-[#eee2db]/40 p-10 sm:p-14">
           <h2 className="max-w-2xl font-[NeueHaasDisplayRoman,Arial,sans-serif] text-3xl font-medium leading-[1.1] tracking-tight sm:text-4xl">
-              Ready to take the next step together?
+              The strongest relationships are the ones that get worked on.
           </h2>
           <p className="max-w-2xl font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-[#383838]">
             Start with a joint discovery conversation to see if this is the right fit for you both — no pressure, no commitment beyond that first hour.
