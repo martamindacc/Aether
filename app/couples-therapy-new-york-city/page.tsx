@@ -110,10 +110,10 @@ export default function CouplesTherapyNewYorkCityPage() {
           </div>
         </div>
 
-        <div className="mt-32 flex w-full max-w-6xl flex-col items-center gap-4">
+        <div className="mt-[78px] flex w-full max-w-6xl flex-col items-center gap-4">
           <p className="text-sm uppercase tracking-wide text-zinc-500">Client Stories</p>
           <h2 className="max-w-3xl text-balance text-center font-[NeueHaasDisplayRoman,Arial,sans-serif] text-5xl font-medium tracking-tight text-zinc-900 sm:text-6xl">
-            The strongest relationships are the ones that get worked on.
+            Trusted by people who expect more from their care
           </h2>
         </div>
         <div className="mt-16 grid w-full max-w-6xl gap-6 sm:grid-cols-3">
@@ -123,23 +123,26 @@ export default function CouplesTherapyNewYorkCityPage() {
               name: "J. & A.",
               context: "Couples clients",
               accentText: "text-[#66755c]",
+              accentBg: "from-[#d9e2d1]/75 to-[#d9e2d1]/40",
             },
             {
               quote: "The sessions helped us listen differently and feel more connected again.",
               name: "M. & R.",
               context: "Couples clients",
               accentText: "text-[#7b4037]",
+              accentBg: "from-[#e8d6ce]/75 to-[#e8d6ce]/40",
             },
             {
               quote: "We learned how to repair the pattern instead of repeating the same argument.",
               name: "S. & D.",
               context: "Couples clients",
               accentText: "text-[#496171]",
+              accentBg: "from-[#d8e2e8]/75 to-[#d8e2e8]/40",
             },
           ].map((item) => (
             <div
               key={item.name}
-              className="flex flex-col gap-8 rounded-2xl border border-zinc-300/80 bg-gradient-to-br from-[#eee2db]/75 to-[#eee2db]/40 p-8 transition-colors duration-300 hover:bg-[#e2c3b2]/60 sm:p-10"
+              className={`flex flex-col gap-8 rounded-2xl border border-zinc-300/80 bg-gradient-to-br ${item.accentBg} p-8 transition-colors duration-300 sm:p-10`}
             >
               <div className={`flex justify-center gap-1 ${item.accentText}`} aria-hidden="true">
                 {Array.from({ length: 5 }).map((_, index) => (
