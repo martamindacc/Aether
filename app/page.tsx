@@ -674,15 +674,15 @@ export default function Home() {
   <p className="mt-5 max-w-2xl text-base leading-[1.5] text-zinc-700">
   {language.code === "en" ? (
   <>
-  Online sessions for couples, individuals, families, executives, and founders in New York City, California, and <Link href="/online-therapy-norway" className="underline decoration-transparent underline-offset-4 transition-colors hover:decoration-current">Norway</Link>.
+  Online sessions for couples, individuals, families, executives, and founders in New York City, California, and <Link href="/online-therapy-norway" className="underline underline-offset-4">Norway</Link>.
   </>
   ) : language.code === "no" ? (
   <>
-  Online samtaler for par, enkeltpersoner, familier, ledere og grunnleggere i New York City, California og <Link href="/online-therapy-norway" className="underline decoration-transparent underline-offset-4 transition-colors hover:decoration-current">Norge</Link>.
+  Online samtaler for par, enkeltpersoner, familier, ledere og grunnleggere i New York City, California og <Link href="/online-therapy-norway" className="underline underline-offset-4">Norge</Link>.
   </>
   ) : language.code === "pl" ? (
   <>
-  Sesje online dla par, osób indywidualnych, rodzin, kadry kierowniczej i założycieli firm w Nowym Jorku, Kalifornii i <Link href="/online-therapy-norway" className="underline decoration-transparent underline-offset-4 transition-colors hover:decoration-current">Norwegii</Link>.
+  Sesje online dla par, osób indywidualnych, rodzin, kadry kierowniczej i założycieli firm w Nowym Jorku, Kalifornii i <Link href="/online-therapy-norway" className="underline underline-offset-4">Norwegii</Link>.
   </>
   ) : t.heroSubtitle}
   </p>
