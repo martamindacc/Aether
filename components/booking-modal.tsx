@@ -17,6 +17,11 @@ export function BookingModal({
   const [step, setStep] = useState<"select" | "schedule">("select")
 
   const selectedProduct = PRODUCTS.find((product) => product.id === selectedId)
+  const bookingProducts = [...PRODUCTS].sort((a, b) => {
+    if (a.id === "couples-session") return -1
+    if (b.id === "couples-session") return 1
+    return 0
+  })
   const labels = language === "no"
     ? {
         chooseSession: "Velg din økt",
@@ -81,7 +86,7 @@ export function BookingModal({
             <>
               <p className="pr-12 text-xs uppercase tracking-wide text-zinc-500 sm:text-sm">{labels.chooseSession}</p>
               <div className="flex flex-col gap-3">
-                {PRODUCTS.map((product) => (
+                {bookingProducts.map((product) => (
                   <button
                     key={product.id}
                     onClick={() => handleSelect(product.id)}
