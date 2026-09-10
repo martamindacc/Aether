@@ -43,8 +43,19 @@ function loadGoogleTag() {
 
 /** Sends a GA4 event, but only if the visitor has given analytics consent. */
 export function sendGAEvent(eventName: string, params?: Record<string, string>) {
-  if (typeof window === "undefined" || !hasAnalyticsConsent() || !window.gtag) return
-  window.gtag("event", eventName, params)
+  if (typeof window === "undefined" || !hasAnalyticsConsent()) return
+  if (!window.gtag) {
+    // Consent is present but the tag hasn't finished initializing yet (e.g. a page
+    // effect fired before GoogleAnalytics' effect ran). Load it now so the event isn't dropped.
+    loadGoogleTag()
+  }
+  window.gtag?.("event", eventName, params)
+}
+
+// Evaluate consent as early as possible on the client (module load, not just in an effect)
+// so window.gtag is ready before other components' effects try to send events.
+if (typeof window !== "undefined" && hasAnalyticsConsent()) {
+  loadGoogleTag()
 }
 
 /** Loads the Google tag only when analytics consent is present, and reacts live to consent changes. */

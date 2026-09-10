@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react"
 import { track } from "@vercel/analytics"
 import { sendGAEvent } from "@/components/google-analytics"
+import { buildCalendlyBookingUrl } from "@/lib/booking-url"
 import { PRODUCTS } from "@/lib/products"
 import type { LanguageCode } from "@/lib/service-content"
 
@@ -74,7 +75,7 @@ export function BookingModal({
     sendGAEvent("booking_service_selected", params)
     setSelectedId(productId)
     setStep("schedule")
-    window.open(product.calendlyUrl, "_blank", "noopener,noreferrer")
+    window.open(buildCalendlyBookingUrl(product.calendlyUrl), "_blank", "noopener,noreferrer")
     track("booking_calendar_opened", params)
     sendGAEvent("booking_calendar_opened", params)
   }
@@ -148,7 +149,7 @@ export function BookingModal({
               <p className="text-sm text-zinc-500">{labels.paymentNotice}</p>
               <p className="text-sm text-zinc-500">{labels.openedNotice}</p>
               <a
-                href={selectedProduct.calendlyUrl}
+                href={buildCalendlyBookingUrl(selectedProduct.calendlyUrl)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="border border-zinc-900/20 bg-white px-5 py-3 text-center text-sm font-medium text-zinc-900 transition-colors hover:bg-zinc-100"
