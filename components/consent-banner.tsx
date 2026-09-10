@@ -76,32 +76,25 @@ export function ConsentBanner() {
     <div
       role="region"
       aria-label="Privacy consent"
-      className="fixed inset-x-0 bottom-0 z-50 border-t border-zinc-300/80 bg-[#f7f4f1] px-4 py-5 sm:px-6"
+      className="fixed inset-x-0 bottom-0 z-50 w-full border-t border-zinc-300/80 bg-[#f7f4f1] px-4 py-4 sm:px-8"
     >
-      <div className="mx-auto flex max-w-5xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <p className="font-[Roboto,Arial,sans-serif] text-sm leading-[1.5] text-[#383838]">
-          We use essential cookies to run this site. With your consent, we would also like to use analytics and
-          marketing cookies in the future to understand site usage and improve our services.
+      <div className="mx-auto flex max-w-6xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-8">
+        <p className="font-[Roboto,Arial,sans-serif] text-sm leading-[1.5] text-[#1c1c1c]">
+          We use essential cookies to run this site. With your consent, we may also use analytics and marketing
+          cookies to understand site usage and improve our services.
         </p>
-        <div className="flex flex-wrap items-center gap-3 sm:shrink-0">
+        <div className="flex shrink-0 flex-wrap items-center gap-x-6 gap-y-3">
           <button
             type="button"
             onClick={handleOpenManage}
-            className="whitespace-nowrap text-sm font-medium text-[#383838] underline underline-offset-4 transition-colors hover:text-zinc-900"
+            className="whitespace-nowrap font-[Roboto,Arial,sans-serif] text-sm font-medium text-[#1c1c1c] underline underline-offset-4 transition-colors hover:text-zinc-600"
           >
-            Manage preferences
-          </button>
-          <button
-            type="button"
-            onClick={handleRejectOptional}
-            className="whitespace-nowrap border border-zinc-900/20 bg-white px-5 py-2.5 text-sm font-medium text-zinc-900 transition-colors hover:bg-zinc-100"
-          >
-            Reject optional
+            Cookie Settings
           </button>
           <button
             type="button"
             onClick={handleAcceptAll}
-            className="whitespace-nowrap bg-zinc-900 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-zinc-800"
+            className="whitespace-nowrap border border-zinc-900 bg-transparent px-5 py-2.5 font-[Roboto,Arial,sans-serif] text-sm font-medium text-[#1c1c1c] transition-colors hover:bg-zinc-900 hover:text-white"
           >
             Accept all
           </button>
@@ -170,10 +163,10 @@ export function ConsentBanner() {
             <div className="mt-8 flex flex-wrap justify-end gap-3">
               <button
                 type="button"
-                onClick={() => setShowManage(false)}
+                onClick={handleRejectOptional}
                 className="whitespace-nowrap border border-zinc-900/20 bg-white px-5 py-2.5 text-sm font-medium text-zinc-900 transition-colors hover:bg-zinc-100"
               >
-                Cancel
+                Reject optional
               </button>
               <button
                 type="button"
