@@ -34,6 +34,7 @@ function readStoredConsent(): ConsentPreferences | null {
 
 function saveConsent(preferences: ConsentPreferences) {
   window.localStorage.setItem(STORAGE_KEY, JSON.stringify(preferences))
+  window.dispatchEvent(new Event("aether-consent-change"))
 }
 
 export function ConsentBanner() {

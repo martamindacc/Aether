@@ -1,6 +1,7 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { ConsentBanner } from '@/components/consent-banner'
+import { GoogleAnalytics } from '@/components/google-analytics'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -73,6 +74,7 @@ export default function RootLayout({
         />
         {children}
         <ConsentBanner />
+        <GoogleAnalytics />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

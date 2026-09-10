@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react"
 import { track } from "@vercel/analytics"
+import { sendGAEvent } from "@/components/google-analytics"
 import { PRODUCTS } from "@/lib/products"
 import type { LanguageCode } from "@/lib/service-content"
 
@@ -21,9 +22,9 @@ export function BookingModal({
   useEffect(() => {
     if (isOpen && !hasTrackedOpenRef.current) {
       hasTrackedOpenRef.current = true
-      track("booking_modal_opened", {
-        page: window.location.pathname,
-      })
+      const params = { page: window.location.pathname }
+      track("booking_modal_opened", params)
+      sendGAEvent("booking_modal_opened", params)
     } else if (!isOpen) {
       hasTrackedOpenRef.current = false
     }
@@ -59,10 +60,9 @@ export function BookingModal({
   const handleSelect = (productId: string) => {
     const product = PRODUCTS.find((p) => p.id === productId)
     if (!product) return
-    track("booking_service_selected", {
-      service: product.name,
-      page: window.location.pathname,
-    })
+    const params = { service: product.name, page: window.location.pathname }
+    track("booking_service_selected", params)
+    sendGAEvent("booking_service_selected", params)
     setSelectedId(productId)
     setStep("schedule")
   }
