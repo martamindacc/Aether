@@ -5,39 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { track } from "@vercel/analytics";
 import { sendGAEvent } from "@/components/google-analytics";
 import { buildCalendlyBookingUrl } from "@/lib/booking-url";
-
-const bookingServices = [
-  {
-    label: "Couples Session",
-    duration: "60 min",
-    priceInCents: 12000,
-    calendlyUrl: "https://calendly.com/martamindacc/couples-session",
-  },
-  {
-    label: "Individual Session",
-    duration: "50 min",
-    priceInCents: 10000,
-    calendlyUrl: "https://calendly.com/martamindacc/individual-session",
-  },
-  {
-    label: "Family Session",
-    duration: "60 min",
-    priceInCents: 15000,
-    calendlyUrl: "https://calendly.com/martamindacc/family-session",
-  },
-  {
-    label: "Exec&Founder Session",
-    duration: "50 min",
-    priceInCents: 10000,
-    calendlyUrl: "https://calendly.com/martamindacc/exec-founder-session",
-  },
-  {
-    label: "Initial Consultation",
-    duration: "15 min",
-    priceInCents: 0,
-    calendlyUrl: "https://calendly.com/martamindacc/initial-consultation",
-  },
-];
+import { PRODUCTS, type Product } from "@/lib/products";
 
 const languages = [
   { code: "en", label: "EN" },
@@ -402,7 +370,7 @@ export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
   const [isBookingOpen, setIsBookingOpen] = useState(false);
-  const [selectedBookingLabel, setSelectedBookingLabel] = useState<string | null>(null);
+  const [selectedBookingName, setSelectedBookingName] = useState<string | null>(null);
   const languageMenuRef = useRef<HTMLDivElement>(null);
   const [language, setLanguage] = useState<(typeof languages)[number]>(languages[0]);
   const t = content[language.code];
@@ -414,13 +382,13 @@ export default function Home() {
     if (match) setLanguage(match);
   }, []);
 
-  const selectedBookingService = bookingServices.find(
-    (service) => service.label === selectedBookingLabel,
+  const selectedBookingService = PRODUCTS.find(
+    (product) => product.name === selectedBookingName,
   );
-  const bookingLabel = (label: string) =>
+  const bookingLabel = (name: string) =>
     language.code === "no"
-      ? { "Individual Session": "Individuell terapi", "Couples Session": "Parterapi", "Family Session": "Familieterapi", "Exec&Founder Session": "Leder- og grunnleggerterapi", "Initial Consultation": "Innledende konsultasjon" }[label] ?? label
-      : label;
+      ? { "Individual Session": "Individuell terapi", "Couples Session": "Parterapi", "Family Session": "Familieterapi", "Exec&Founder Session": "Leder- og grunnleggerterapi", "Initial Consultation": "Innledende konsultasjon" }[name] ?? name
+      : name;
 
   const openBooking = () => {
     setIsBookingOpen(true);
@@ -434,15 +402,15 @@ export default function Home() {
 
   const closeBooking = () => {
     setIsBookingOpen(false);
-    setSelectedBookingLabel(null);
+    setSelectedBookingName(null);
     hasTrackedBookingOpenRef.current = false;
   };
 
-  const selectBookingService = (service: (typeof bookingServices)[number]) => {
-    const params = { service: service.label, page: window.location.pathname };
+  const selectBookingService = (service: Product) => {
+    const params = { service: service.name, page: window.location.pathname };
     track("booking_service_selected", params);
     sendGAEvent("booking_service_selected", params);
-    setSelectedBookingLabel(service.label);
+    setSelectedBookingName(service.name);
     window.open(buildCalendlyBookingUrl(service.calendlyUrl), "_blank", "noopener,noreferrer");
     track("booking_calendar_opened", params);
     sendGAEvent("booking_calendar_opened", params);
@@ -638,14 +606,14 @@ export default function Home() {
                     {language.code === "no" ? "Velg din økt" : "Choose your session"}
                   </p>
                   <div className="flex flex-col gap-3">
-                    {bookingServices.map((service) => (
+                    {PRODUCTS.map((service) => (
                       <button
-                        key={service.label}
+                        key={service.id}
                         onClick={() => selectBookingService(service)}
                         className="flex items-center justify-between gap-3 border border-zinc-900/15 bg-white px-5 py-4 text-left transition-colors hover:bg-zinc-100"
                       >
                         <span className="min-w-0 font-[Roboto,Arial,sans-serif] text-base font-medium text-zinc-900 sm:text-lg">
-{bookingLabel(service.label)}
+{bookingLabel(service.name)}
                         </span>
                         <span className="shrink-0 whitespace-nowrap text-right text-sm text-zinc-500">
                           {service.duration}
@@ -659,10 +627,10 @@ export default function Home() {
                 <>
                   <div className="flex items-center justify-between gap-3 pr-12">
                     <p className="text-xs uppercase tracking-wide text-zinc-500 sm:text-sm">
-                      {bookingLabel(selectedBookingService.label)}
+                      {bookingLabel(selectedBookingService.name)}
                     </p>
                     <button
-                      onClick={() => setSelectedBookingLabel(null)}
+                      onClick={() => setSelectedBookingName(null)}
                       className="shrink-0 text-sm text-zinc-500 underline-offset-4 hover:text-zinc-900 hover:underline"
                     >
                       {language.code === "no" ? "Tilbake" : "Back"}

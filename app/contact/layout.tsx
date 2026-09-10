@@ -1,10 +1,11 @@
-import type { Metadata } from "next"
+import { pageMetadata } from "@/lib/seo"
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "https://aetherpractice.com/contact",
-  },
-}
+export const metadata = pageMetadata({
+  title: "Aether Practice | Contact",
+  description:
+    "Get in touch with Aether Practice to ask a question or arrange an individual, couples, family, or executive session online.",
+  path: "/contact",
+})
 
 export default function ContactLayout({
   children,

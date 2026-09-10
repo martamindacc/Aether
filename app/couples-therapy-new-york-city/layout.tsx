@@ -1,13 +1,11 @@
-import type { Metadata } from "next"
+import { pageMetadata } from "@/lib/seo"
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Aether Practice | Online Couples Counseling in New York City",
   description:
     "Online couples sessions for partners in New York City, focused on communication, trust, conflict, and shared understanding.",
-  alternates: {
-    canonical: "https://aetherpractice.com/couples-therapy-new-york-city",
-  },
-}
+  path: "/couples-therapy-new-york-city",
+})
 
 export default function CouplesTherapyNewYorkCityLayout({
   children,

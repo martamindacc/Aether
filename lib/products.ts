@@ -10,15 +10,8 @@ export interface Product {
 // This is the source of truth for all bookable sessions.
 // All UI to display sessions should pull from this array.
 // IDs passed to the checkout session should be the same as IDs from this array.
+// Ordered for display in the booking flow (Couples Session first).
 export const PRODUCTS: Product[] = [
-  {
-    id: "individual-session",
-    name: "Individual Session",
-    description: "A 50 minute one-on-one session.",
-    duration: "50 min",
-    priceInCents: 10000,
-    calendlyUrl: "https://calendly.com/martamindacc/individual-session",
-  },
   {
     id: "couples-session",
     name: "Couples Session",
@@ -26,6 +19,14 @@ export const PRODUCTS: Product[] = [
     duration: "60 min",
     priceInCents: 12000,
     calendlyUrl: "https://calendly.com/martamindacc/couples-session",
+  },
+  {
+    id: "individual-session",
+    name: "Individual Session",
+    description: "A 50 minute one-on-one session.",
+    duration: "50 min",
+    priceInCents: 10000,
+    calendlyUrl: "https://calendly.com/martamindacc/individual-session",
   },
   {
     id: "family-session",

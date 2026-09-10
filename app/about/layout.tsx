@@ -1,18 +1,16 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo"
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Aether Practice | Our Approach to Counseling & Coaching",
   description:
     "Learn about Aether Practice’s thoughtful approach to individual, couples, family, and executive sessions online.",
-  alternates: {
-    canonical: "https://aetherpractice.com/about",
-  },
-};
+  path: "/about",
+})
 
 export default function AboutLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
-  return children;
+  return children
 }

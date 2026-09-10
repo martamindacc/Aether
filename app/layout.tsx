@@ -13,7 +13,21 @@ export const metadata: Metadata = {
   title: 'Aether Practice | Online Counseling & Coaching in NYC & California',
   description:
     'Online counseling & coaching for couples, individuals, families, executives, and founders in New York City, California, and Norway.',
-  generator: 'v0.app',
+  openGraph: {
+    type: 'website',
+    siteName: 'Aether Practice',
+    locale: 'en_US',
+    url: 'https://aetherpractice.com/',
+    title: 'Aether Practice | Online Counseling & Coaching in NYC & California',
+    description:
+      'Online counseling & coaching for couples, individuals, families, executives, and founders in New York City, California, and Norway.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Aether Practice | Online Counseling & Coaching in NYC & California',
+    description:
+      'Online counseling & coaching for couples, individuals, families, executives, and founders in New York City, California, and Norway.',
+  },
   icons: {
     icon: [
       {

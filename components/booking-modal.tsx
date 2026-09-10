@@ -32,11 +32,7 @@ export function BookingModal({
   }, [isOpen])
 
   const selectedProduct = PRODUCTS.find((product) => product.id === selectedId)
-  const bookingProducts = [...PRODUCTS].sort((a, b) => {
-    if (a.id === "couples-session") return -1
-    if (b.id === "couples-session") return 1
-    return 0
-  })
+  const bookingProducts = PRODUCTS
   const labels = language === "no"
     ? {
         chooseSession: "Velg din økt",

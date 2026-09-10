@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { track } from "@vercel/analytics";
 import { FloatingNav } from "@/components/floating-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { sendGAEvent } from "@/components/google-analytics";
@@ -40,7 +41,9 @@ export default function BookingConfirmedPage() {
   useEffect(() => {
     if (hasTrackedRef.current) return;
     hasTrackedRef.current = true;
-    sendGAEvent("booking_completed");
+    const params = { page: window.location.pathname };
+    track("booking_completed", params);
+    sendGAEvent("booking_completed", params);
   }, []);
 
   const handleLanguageChange = (lang: LanguageCode) => {
