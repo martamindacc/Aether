@@ -7,7 +7,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "/about",
     "/contact",
-    "/privacy",
     "/individual-therapy",
     "/couples-therapy",
     "/couples-therapy-new-york-city",
