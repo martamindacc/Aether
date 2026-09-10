@@ -84,6 +84,12 @@ export function ConsentBanner() {
           cookies to understand site usage and improve our services.
         </p>
         <div className="flex shrink-0 flex-wrap items-center gap-x-6 gap-y-3">
+          <a
+            href="/privacy#cookies"
+            className="whitespace-nowrap font-[Roboto,Arial,sans-serif] text-sm font-medium text-[#1c1c1c] underline underline-offset-4 transition-colors hover:text-zinc-600"
+          >
+            Cookie Policy
+          </a>
           <button
             type="button"
             onClick={handleOpenManage}
