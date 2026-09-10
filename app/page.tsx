@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Script from "next/script";
 import { useEffect, useRef, useState } from "react";
 import { track } from "@vercel/analytics";
 import { sendGAEvent } from "@/components/google-analytics";
@@ -365,7 +364,7 @@ const content: Record<
     testimonials: [
       {
         quote:
-          "Po raz pierwszy od lat rozumiem, czemu reaguję tak, jak reaguję. Ta praca nie tylko mnie uspokoiła — dała mi ramy na resztę życia.",
+          "Po raz pierwszy od lat rozumiem, czemu reaguj�� tak, jak reaguję. Ta praca nie tylko mnie uspokoiła — dała mi ramy na resztę życia.",
         name: "M. R.",
         context: "Klient indywidualny",
         initials: "MR",
@@ -461,14 +460,6 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-[#fafafb] font-[NeueHaasDisplayRoman,Arial,sans-serif] text-zinc-900">
-      <link
-        rel="stylesheet"
-        href="https://assets.calendly.com/assets/external/widget.css"
-      />
-      <Script
-        src="https://assets.calendly.com/assets/external/widget.js"
-        strategy="afterInteractive"
-      />
       <div className="relative h-screen w-full overflow-hidden bg-[#fafafb]">
         <video
           className="absolute inset-0 h-full w-full object-cover"
