@@ -37,6 +37,9 @@ export default function CouplesTherapyNewYorkCityPage() {
           Couples Sessions for Clients in New York City
         </h1>
         <p className="mt-12 max-w-4xl font-[Roboto,Arial,sans-serif] text-xl leading-[1.5] text-[#383838] sm:text-2xl">
+          Online couples sessions for partners in New York City, focused on communication, trust, conflict, and shared understanding.
+        </p>
+        <p className="mt-12 max-w-4xl font-[Roboto,Arial,sans-serif] text-xl leading-[1.5] text-[#383838] sm:text-2xl">
           This space is for couples working through communication difficulties, recurring conflict, trust concerns,
           emotional distance, or a relationship transition. Sessions happen online, so scheduling around New York
           City life doesn&apos;t mean sacrificing consistent support.
