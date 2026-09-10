@@ -1,5 +1,6 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
+import { ConsentBanner } from '@/components/consent-banner'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -71,6 +72,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchema) }}
         />
         {children}
+        <ConsentBanner />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
