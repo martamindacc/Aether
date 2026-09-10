@@ -35,6 +35,29 @@ export const viewport: Viewport = {
   ],
 }
 
+const jsonLdSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': 'https://aetherpractice.com/#organization',
+      name: 'Aether Practice',
+      url: 'https://aetherpractice.com/',
+      logo: 'https://aetherpractice.com/logo-a.svg',
+      sameAs: ['https://www.instagram.com/aetherpractice/'],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': 'https://aetherpractice.com/#website',
+      url: 'https://aetherpractice.com/',
+      name: 'Aether Practice',
+      publisher: {
+        '@id': 'https://aetherpractice.com/#organization',
+      },
+    },
+  ],
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -43,6 +66,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="overflow-x-hidden antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchema) }}
+        />
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
