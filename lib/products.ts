@@ -17,7 +17,7 @@ export const PRODUCTS: Product[] = [
     description: "A 50 minute one-on-one session.",
     duration: "50 min",
     priceInCents: 10000,
-    calendlyUrl: "https://calendly.com/martamindacc",
+    calendlyUrl: "https://calendly.com/martamindacc/individual-session",
   },
   {
     id: "couples-session",
@@ -25,7 +25,7 @@ export const PRODUCTS: Product[] = [
     description: "A 60 minute session for two.",
     duration: "60 min",
     priceInCents: 12000,
-    calendlyUrl: "https://calendly.com/martamindacc",
+    calendlyUrl: "https://calendly.com/martamindacc/couples-session",
   },
   {
     id: "family-session",
@@ -33,7 +33,7 @@ export const PRODUCTS: Product[] = [
     description: "A 60 minute session for families.",
     duration: "60 min",
     priceInCents: 15000,
-    calendlyUrl: "https://calendly.com/martamindacc",
+    calendlyUrl: "https://calendly.com/martamindacc/family-session",
   },
   {
     id: "founder-session",
@@ -41,7 +41,7 @@ export const PRODUCTS: Product[] = [
     description: "A 50 minute session for founders and executives.",
     duration: "50 min",
     priceInCents: 10000,
-    calendlyUrl: "https://calendly.com/martamindacc",
+    calendlyUrl: "https://calendly.com/martamindacc/exec-founder-session",
   },
   {
     id: "initial-consultation",
@@ -49,6 +49,6 @@ export const PRODUCTS: Product[] = [
     description: "A free 15 minute introductory call.",
     duration: "15 min",
     priceInCents: 0,
-    calendlyUrl: "https://calendly.com/martamindacc",
+    calendlyUrl: "https://calendly.com/martamindacc/initial-consultation",
   },
 ]

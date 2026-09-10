@@ -3,37 +3,39 @@
 import Link from "next/link";
 import Script from "next/script";
 import { useEffect, useRef, useState } from "react";
+import { track } from "@vercel/analytics";
+import { sendGAEvent } from "@/components/google-analytics";
 
 const bookingServices = [
   {
     label: "Couples Session",
     duration: "60 min",
     priceInCents: 12000,
-    calendlyUrl: "https://calendly.com/martamindacc",
+    calendlyUrl: "https://calendly.com/martamindacc/couples-session",
   },
   {
     label: "Individual Session",
     duration: "50 min",
     priceInCents: 10000,
-    calendlyUrl: "https://calendly.com/martamindacc",
+    calendlyUrl: "https://calendly.com/martamindacc/individual-session",
   },
   {
     label: "Family Session",
     duration: "60 min",
     priceInCents: 15000,
-    calendlyUrl: "https://calendly.com/martamindacc",
+    calendlyUrl: "https://calendly.com/martamindacc/family-session",
   },
   {
     label: "Exec&Founder Session",
     duration: "50 min",
     priceInCents: 10000,
-    calendlyUrl: "https://calendly.com/martamindacc",
+    calendlyUrl: "https://calendly.com/martamindacc/exec-founder-session",
   },
   {
     label: "Initial Consultation",
     duration: "15 min",
     priceInCents: 0,
-    calendlyUrl: "https://calendly.com/martamindacc",
+    calendlyUrl: "https://calendly.com/martamindacc/initial-consultation",
   },
 ];
 
@@ -404,6 +406,7 @@ export default function Home() {
   const languageMenuRef = useRef<HTMLDivElement>(null);
   const [language, setLanguage] = useState<(typeof languages)[number]>(languages[0]);
   const t = content[language.code];
+  const hasTrackedBookingOpenRef = useRef(false);
 
   useEffect(() => {
     const stored = localStorage.getItem("site-language");
@@ -419,9 +422,30 @@ export default function Home() {
       ? { "Individual Session": "Individuell terapi", "Couples Session": "Parterapi", "Family Session": "Familieterapi", "Exec&Founder Session": "Leder- og grunnleggerterapi", "Initial Consultation": "Innledende konsultasjon" }[label] ?? label
       : label;
 
+  const openBooking = () => {
+    setIsBookingOpen(true);
+    if (!hasTrackedBookingOpenRef.current) {
+      hasTrackedBookingOpenRef.current = true;
+      const params = { page: window.location.pathname };
+      track("booking_modal_opened", params);
+      sendGAEvent("booking_modal_opened", params);
+    }
+  };
+
   const closeBooking = () => {
     setIsBookingOpen(false);
     setSelectedBookingLabel(null);
+    hasTrackedBookingOpenRef.current = false;
+  };
+
+  const selectBookingService = (service: (typeof bookingServices)[number]) => {
+    const params = { service: service.label, page: window.location.pathname };
+    track("booking_service_selected", params);
+    sendGAEvent("booking_service_selected", params);
+    setSelectedBookingLabel(service.label);
+    window.open(service.calendlyUrl, "_blank", "noopener,noreferrer");
+    track("booking_calendar_opened", params);
+    sendGAEvent("booking_calendar_opened", params);
   };
 
   useEffect(() => {
@@ -463,9 +487,9 @@ export default function Home() {
         </div>
 
         <nav className="fixed inset-x-4 top-4 z-20 flex items-center justify-between rounded-[1.5rem] border border-white/50 bg-white/50 px-2.5 py-2.5 shadow-lg shadow-zinc-900/5 backdrop-blur-xl sm:inset-x-6 sm:top-6 sm:px-6 sm:py-3">
-          <button
-            onClick={() => setIsBookingOpen(true)}
-            className="flex w-14 flex-col items-center justify-center whitespace-normal border border-zinc-900/20 bg-white/30 px-1 py-1.5 text-center text-[11px] leading-tight transition-colors hover:bg-white/65 sm:hidden"
+              <button
+                onClick={openBooking}
+                className="flex w-14 flex-col items-center justify-center whitespace-normal border border-zinc-900/20 bg-white/30 px-1 py-1.5 text-center text-[11px] leading-tight transition-colors hover:bg-white/65 sm:hidden"
           >
             {t.bookNow}
           </button>
@@ -480,9 +504,9 @@ export default function Home() {
             <span className="truncate text-sm font-medium tracking-[-0.04em]">Aether Practice</span>
           </span>
           <div className="flex items-center gap-1 sm:gap-3">
-            <button
-              onClick={() => setIsBookingOpen(true)}
-              className="hidden border border-zinc-900/20 bg-white px-[30px] py-3 text-sm transition-colors hover:bg-zinc-100 sm:inline-block"
+              <button
+                onClick={openBooking}
+                className="hidden border border-zinc-900/20 bg-white px-[30px] py-3 text-sm transition-colors hover:bg-zinc-100 sm:inline-block"
             >
               {t.bookNow}
             </button>
@@ -625,7 +649,7 @@ export default function Home() {
                     {bookingServices.map((service) => (
                       <button
                         key={service.label}
-                        onClick={() => setSelectedBookingLabel(service.label)}
+                        onClick={() => selectBookingService(service)}
                         className="flex items-center justify-between gap-3 border border-zinc-900/15 bg-white px-5 py-4 text-left transition-colors hover:bg-zinc-100"
                       >
                         <span className="min-w-0 font-[Roboto,Arial,sans-serif] text-base font-medium text-zinc-900 sm:text-lg">
@@ -652,14 +676,21 @@ export default function Home() {
                       {language.code === "no" ? "Tilbake" : "Back"}
                     </button>
                   </div>
-                  <div className="overflow-hidden rounded-2xl border border-zinc-900/10">
-                    <iframe
-                      key={selectedBookingService.calendlyUrl}
-                      src={`${selectedBookingService.calendlyUrl}?hide_gdpr_banner=1`}
-                      title={language.code === "no" ? "Bestill din økt" : "Schedule your session"}
-                      className="h-[70vh] min-h-[500px] w-full"
-                    />
-                  </div>
+                  <p className="text-sm text-zinc-500">
+                    {language.code === "no"
+                      ? "Kalendly-bookingsiden din har åpnet i en ny fane."
+                      : language.code === "pl"
+                        ? "Twoja strona rezerwacji Calendly otworzyła się w nowej karcie."
+                        : "Your Calendly booking page has opened in a new tab."}
+                  </p>
+                  <a
+                    href={selectedBookingService.calendlyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="border border-zinc-900/20 bg-white px-5 py-3 text-center text-sm font-medium text-zinc-900 transition-colors hover:bg-zinc-100"
+                  >
+                    {language.code === "no" ? "Åpne Calendly" : language.code === "pl" ? "Otwórz Calendly" : "Open Calendly"}
+                  </a>
                 </>
               )}
             </div>
@@ -757,9 +788,9 @@ export default function Home() {
           <h2 className="max-w-3xl text-balance font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-semibold leading-[1.1] tracking-wide text-zinc-900 sm:text-4xl">
             {t.finalCtaHeading}
           </h2>
-          <button
-            onClick={() => setIsBookingOpen(true)}
-            className="mt-2 bg-zinc-900 px-10 py-5 text-sm font-medium uppercase tracking-[0.2em] text-white transition-colors duration-300 hover:bg-zinc-800"
+              <button
+                onClick={openBooking}
+                className="mt-2 bg-zinc-900 px-10 py-5 text-sm font-medium uppercase tracking-[0.2em] text-white transition-colors duration-300 hover:bg-zinc-800"
           >
             {t.finalCtaButton}
           </button>

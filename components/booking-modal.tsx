@@ -42,6 +42,9 @@ export function BookingModal({
         chooseTime: "Velg et tidspunkt",
         scheduleTitle: "Bestill din økt",
         paymentNotice: "Betaling forfaller etter sesjonen.",
+        openedNotice: "Kalendly-bookingsiden din har åpnet i en ny fane.",
+        openCalendly: "Åpne Calendly",
+        back: "Tilbake",
       }
     : language === "pl"
       ? {
@@ -49,12 +52,18 @@ export function BookingModal({
           chooseTime: "Wybierz termin",
           scheduleTitle: "Umów swoją sesję",
           paymentNotice: "Płatność następuje po sesji.",
+          openedNotice: "Twoja strona rezerwacji Calendly otworzyła się w nowej karcie.",
+          openCalendly: "Otwórz Calendly",
+          back: "Wstecz",
         }
       : {
           chooseSession: "Choose your session",
           chooseTime: "Choose a time",
           scheduleTitle: "Schedule your session",
           paymentNotice: "Payment is due after the session.",
+          openedNotice: "Your Calendly booking page has opened in a new tab.",
+          openCalendly: "Open Calendly",
+          back: "Back",
         }
 
   const handleSelect = (productId: string) => {
@@ -65,6 +74,9 @@ export function BookingModal({
     sendGAEvent("booking_service_selected", params)
     setSelectedId(productId)
     setStep("schedule")
+    window.open(product.calendlyUrl, "_blank", "noopener,noreferrer")
+    track("booking_calendar_opened", params)
+    sendGAEvent("booking_calendar_opened", params)
   }
 
   const handleClose = () => {
@@ -124,16 +136,25 @@ export function BookingModal({
 
           {step === "schedule" && selectedProduct && (
             <>
-              <p className="pr-12 text-xs uppercase tracking-wide text-zinc-500 sm:text-sm">{labels.chooseTime}</p>
-              <p className="text-sm text-zinc-500">{labels.paymentNotice}</p>
-              <div className="overflow-hidden rounded-2xl border border-zinc-900/10">
-                <iframe
-                  key={selectedProduct.calendlyUrl}
-                  src={`${selectedProduct.calendlyUrl}?hide_gdpr_banner=1&primary_color=e1c4b1`}
-                  title={labels.scheduleTitle}
-                  className="h-[70vh] min-h-[500px] w-full"
-                />
+              <div className="flex items-center justify-between gap-3 pr-12">
+                <p className="text-xs uppercase tracking-wide text-zinc-500 sm:text-sm">{labels.chooseTime}</p>
+                <button
+                  onClick={() => setStep("select")}
+                  className="shrink-0 text-sm text-zinc-500 underline-offset-4 hover:text-zinc-900 hover:underline"
+                >
+                  {labels.back}
+                </button>
               </div>
+              <p className="text-sm text-zinc-500">{labels.paymentNotice}</p>
+              <p className="text-sm text-zinc-500">{labels.openedNotice}</p>
+              <a
+                href={selectedProduct.calendlyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border border-zinc-900/20 bg-white px-5 py-3 text-center text-sm font-medium text-zinc-900 transition-colors hover:bg-zinc-100"
+              >
+                {labels.openCalendly}
+              </a>
             </>
           )}
         </div>
