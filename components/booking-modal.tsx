@@ -32,7 +32,6 @@ export function BookingModal({
   }, [isOpen])
 
   const selectedProduct = PRODUCTS.find((product) => product.id === selectedId)
-  const bookingProducts = PRODUCTS
   const labels = language === "no"
     ? {
         chooseSession: "Velg din økt",
@@ -112,7 +111,7 @@ export function BookingModal({
             <>
               <p className="pr-12 text-xs uppercase tracking-wide text-zinc-500 sm:text-sm">{labels.chooseSession}</p>
               <div className="flex flex-col gap-3">
-                {bookingProducts.map((product) => (
+                {PRODUCTS.map((product) => (
                   <button
                     key={product.id}
                     onClick={() => handleSelect(product.id)}

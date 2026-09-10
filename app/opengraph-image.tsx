@@ -1,8 +1,9 @@
 import { ImageResponse } from "next/og"
+import { OG_IMAGE_ALT } from "@/lib/seo"
 
 // Site-wide social preview image. Next.js attaches this to og:image and
 // twitter:image for every route automatically.
-export const alt = "Aether Practice — Online counseling & coaching"
+export const alt = OG_IMAGE_ALT
 export const size = { width: 1200, height: 630 }
 export const contentType = "image/png"
 
