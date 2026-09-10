@@ -252,6 +252,7 @@ export default function OnlineTherapyNorwayPage() {
               <Link
                 key={service.href}
                 href={service.href}
+                onClick={() => localStorage.setItem("site-language", language)}
                 className="font-[Roboto,Arial,sans-serif] text-lg text-[#74382f] underline decoration-[#74382f]/30 underline-offset-4 transition-colors hover:decoration-[#74382f]"
               >
                 {service.label}
