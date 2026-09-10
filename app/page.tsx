@@ -5,6 +5,7 @@ import Script from "next/script";
 import { useEffect, useRef, useState } from "react";
 import { track } from "@vercel/analytics";
 import { sendGAEvent } from "@/components/google-analytics";
+import { buildCalendlyBookingUrl } from "@/lib/booking-url";
 
 const bookingServices = [
   {
@@ -443,7 +444,7 @@ export default function Home() {
     track("booking_service_selected", params);
     sendGAEvent("booking_service_selected", params);
     setSelectedBookingLabel(service.label);
-    window.open(service.calendlyUrl, "_blank", "noopener,noreferrer");
+    window.open(buildCalendlyBookingUrl(service.calendlyUrl), "_blank", "noopener,noreferrer");
     track("booking_calendar_opened", params);
     sendGAEvent("booking_calendar_opened", params);
   };
@@ -684,7 +685,7 @@ export default function Home() {
                         : "Your Calendly booking page has opened in a new tab."}
                   </p>
                   <a
-                    href={selectedBookingService.calendlyUrl}
+                    href={buildCalendlyBookingUrl(selectedBookingService.calendlyUrl)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="border border-zinc-900/20 bg-white px-5 py-3 text-center text-sm font-medium text-zinc-900 transition-colors hover:bg-zinc-100"
