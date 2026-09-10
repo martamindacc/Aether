@@ -1,6 +1,7 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
+import { track } from "@vercel/analytics"
 import { PRODUCTS } from "@/lib/products"
 import type { LanguageCode } from "@/lib/service-content"
 
@@ -15,6 +16,18 @@ export function BookingModal({
 }) {
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [step, setStep] = useState<"select" | "schedule">("select")
+  const hasTrackedOpenRef = useRef(false)
+
+  useEffect(() => {
+    if (isOpen && !hasTrackedOpenRef.current) {
+      hasTrackedOpenRef.current = true
+      track("booking_modal_opened", {
+        page: window.location.pathname,
+      })
+    } else if (!isOpen) {
+      hasTrackedOpenRef.current = false
+    }
+  }, [isOpen])
 
   const selectedProduct = PRODUCTS.find((product) => product.id === selectedId)
   const bookingProducts = [...PRODUCTS].sort((a, b) => {
@@ -46,6 +59,10 @@ export function BookingModal({
   const handleSelect = (productId: string) => {
     const product = PRODUCTS.find((p) => p.id === productId)
     if (!product) return
+    track("booking_service_selected", {
+      service: product.name,
+      page: window.location.pathname,
+    })
     setSelectedId(productId)
     setStep("schedule")
   }
