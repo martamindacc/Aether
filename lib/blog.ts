@@ -54,11 +54,12 @@ export function getAllSlugs(): string[] {
 export function getPostBySlug(slug: string): BlogPost | null {
   if (!fs.existsSync(BLOG_DIR)) return null;
 
-  const fileName = fs
-    .readdirSync(BLOG_DIR)
-    .find((name) => name.endsWith(".mdx") && name.replace(/\.mdx$/, "") === slug);
+  for (const name of fs.readdirSync(BLOG_DIR)) {
+    if (name.endsWith(".mdx")) {
+      const post = readPostFile(name);
+      if (post.slug === slug) return post;
+    }
+  }
 
-  if (!fileName) return null;
-
-  return readPostFile(fileName);
+  return null;
 }

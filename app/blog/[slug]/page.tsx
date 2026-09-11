@@ -20,11 +20,7 @@ export async function generateMetadata({
   const post = getPostBySlug(slug);
 
   if (!post) {
-    return pageMetadata({
-      title: "Aether Practice | Blog",
-      description: "Insights from the Aether Practice team.",
-      path: `/blog/${slug}`,
-    });
+    notFound();
   }
 
   return pageMetadata({
