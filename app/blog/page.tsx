@@ -38,15 +38,16 @@ export default function BlogIndexPage() {
               <p className="font-[Roboto,Arial,sans-serif] text-sm uppercase tracking-wide text-zinc-500">
                 {formatDate(post.date)}
               </p>
-              <h2 className="mt-3 font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-medium tracking-tight text-zinc-900 group-hover:underline sm:text-3xl">
+              <h2 className="mt-3 font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-medium tracking-tight text-zinc-900 decoration-1 underline-offset-4 group-hover:underline sm:text-3xl">
                 {post.title}
               </h2>
               <p
                 className={`mt-4 max-w-3xl font-[Roboto,Arial,sans-serif] text-[17px] leading-[1.5] text-[#383838] ${
-                  index === 0 ? "line-clamp-1 border-b border-zinc-300/80 pb-4" : ""
+                  index === 0 ? "line-clamp-2" : ""
                 }`}
               >
                 {post.description}
+                {index === 0 && "…"}
               </p>
             </Link>
           ))}
