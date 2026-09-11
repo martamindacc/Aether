@@ -29,7 +29,7 @@ export default function BlogIndexPage() {
               New posts are on the way — check back soon.
             </p>
           )}
-          {posts.map((post) => (
+          {posts.map((post, index) => (
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
@@ -41,7 +41,11 @@ export default function BlogIndexPage() {
               <h2 className="mt-3 font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-medium tracking-tight text-zinc-900 group-hover:underline sm:text-3xl">
                 {post.title}
               </h2>
-              <p className="mt-4 max-w-3xl font-[Roboto,Arial,sans-serif] text-[17px] leading-[1.5] text-[#383838]">
+              <p
+                className={`mt-4 max-w-3xl font-[Roboto,Arial,sans-serif] text-[17px] leading-[1.5] text-[#383838] ${
+                  index === 0 ? "line-clamp-3" : ""
+                }`}
+              >
                 {post.description}
               </p>
             </Link>
