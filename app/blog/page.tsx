@@ -43,7 +43,7 @@ export default function BlogIndexPage() {
               </h2>
               <p
                 className={`mt-4 max-w-3xl font-[Roboto,Arial,sans-serif] text-[17px] leading-[1.5] text-[#383838] ${
-                  index === 0 ? "line-clamp-3" : ""
+                  index === 0 ? "line-clamp-1 border-b border-zinc-300/80 pb-4" : ""
                 }`}
               >
                 {post.description}
