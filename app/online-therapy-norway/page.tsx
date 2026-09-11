@@ -6,6 +6,7 @@ import { FloatingNav } from "@/components/floating-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { BookingModal } from "@/components/booking-modal";
 import { type LanguageCode } from "@/lib/service-content";
+import { norwayFaq } from "./faq-data";
 
 const content: Record<
   LanguageCode,
@@ -46,23 +47,7 @@ const content: Record<
     firstConvoBody:
       "Den første sesjonen er en samtale, ikke en vurdering. Du deler hva som bringer deg hit, og vi begynner å kartlegge en vei videre sammen, digitalt, uansett hvor du er i Norge.",
     faqTitle: "Ofte stilte spørsmål",
-    faq: [
-      {
-        question: "Holdes sesjonene online?",
-        answer:
-          "Ja. Sesjonene holdes helt digitalt, noe som gjør det lettere å møtes jevnlig uansett hvor du er i Norge.",
-      },
-      {
-        question: "Hva kan jeg ta med til den første sesjonen?",
-        answer:
-          "Ta med det du ønsker å forstå bedre — bekymringer, samtaler eller mønstre. Den første sesjonen er ganske enkelt et sted å begynne.",
-      },
-      {
-        question: "Hvordan bestiller jeg en sesjon fra Norge?",
-        answer:
-          "Bruk knappen Book din første sesjon nedenfor for å velge en sesjon og fortsette med digital booking.",
-      },
-    ],
+    faq: norwayFaq.no,
     storiesEyebrow: "Klienthistorier",
     storiesTitle: "Betrodd av mennesker som forventer mer av omsorgen sin",
     stories: [
@@ -106,23 +91,7 @@ const content: Record<
     firstConvoBody:
       "The first session is a conversation, not an assessment. You share what brought you here, and we start mapping a path forward together, online, wherever you are in Norway.",
     faqTitle: "Frequently asked questions",
-    faq: [
-      {
-        question: "Are sessions held online?",
-        answer:
-          "Yes. Sessions are held entirely online, making it easier to meet consistently no matter where you are in Norway.",
-      },
-      {
-        question: "What can I bring to the first session?",
-        answer:
-          "Bring the concerns, conversations, or patterns you would like to understand better. The first session is simply a place to begin.",
-      },
-      {
-        question: "How do I book a session from Norway?",
-        answer:
-          "Use the Book your first session button below to choose a session and continue with online booking.",
-      },
-    ],
+    faq: norwayFaq.en,
     storiesEyebrow: "Client Stories",
     storiesTitle: "Trusted by people who expect more from their care",
     stories: [
@@ -165,23 +134,7 @@ const content: Record<
     firstConvoBody:
       "Pierwsza sesja to rozmowa, nie ocena. Dzielisz się tym, co Cię tu przywiodło, a my zaczynamy razem wytyczać dalszą ścieżkę, online, gdziekolwiek jesteś w Norwegii.",
     faqTitle: "Najczęściej zadawane pytania",
-    faq: [
-      {
-        question: "Czy sesje odbywają się online?",
-        answer:
-          "Tak. Sesje odbywają się w całości online, co pozwala łatwiej spotykać się regularnie, niezależnie od miejsca pobytu w Norwegii.",
-      },
-      {
-        question: "Co mogę przynieść na pierwszą sesję?",
-        answer:
-          "Przynieś sprawy, rozmowy lub wzorce, które chciałbyś lepiej zrozumieć. Pierwsza sesja jest po prostu miejscem, w którym zaczynamy.",
-      },
-      {
-        question: "Jak zarezerwować sesję z Norwegii?",
-        answer:
-          "Użyj przycisku Zarezerwuj pierwszą sesję poniżej, aby wybrać sesję i przejść do rezerwacji online.",
-      },
-    ],
+    faq: norwayFaq.pl,
     storiesEyebrow: "Historie klientów",
     storiesTitle: "Zaufali nam ludzie, którzy oczekują więcej od swojej opieki",
     stories: [
