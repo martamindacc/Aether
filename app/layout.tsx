@@ -3,12 +3,18 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import type { Metadata, Viewport } from 'next'
 import { ConsentBanner } from '@/components/consent-banner'
 import { GoogleAnalytics } from '@/components/google-analytics'
+import { PRODUCTS } from '@/lib/products'
 import './globals.css'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://aetherpractice.com'),
   alternates: {
     canonical: 'https://aetherpractice.com/',
+    languages: {
+      en: 'https://aetherpractice.com/',
+      no: 'https://aetherpractice.com/online-therapy-norway',
+      'x-default': 'https://aetherpractice.com/',
+    },
   },
   title: 'Aether Practice | Online Counseling & Coaching in NYC & California',
   description:
@@ -52,16 +58,38 @@ export const viewport: Viewport = {
   ],
 }
 
+const productPrices = PRODUCTS.map((product) => product.priceInCents / 100)
+const priceRange = `$${Math.min(...productPrices)}-$${Math.max(...productPrices)}`
+
 const jsonLdSchema = {
   '@context': 'https://schema.org',
   '@graph': [
     {
-      '@type': 'Organization',
+      '@type': ['LocalBusiness', 'ProfessionalService'],
       '@id': 'https://aetherpractice.com/#organization',
       name: 'Aether Practice',
       url: 'https://aetherpractice.com/',
       logo: 'https://aetherpractice.com/logo-a.svg',
+      image: 'https://aetherpractice.com/logo-a.svg',
       sameAs: ['https://www.instagram.com/aetherpractice/'],
+      description:
+        'Online counseling & coaching for couples, individuals, families, executives, and founders in New York City, California, and Norway.',
+      areaServed: [
+        { '@type': 'City', name: 'New York City' },
+        { '@type': 'State', name: 'California' },
+        { '@type': 'Country', name: 'Norway' },
+      ],
+      priceRange,
+      makesOffer: PRODUCTS.map((product) => ({
+        '@type': 'Offer',
+        price: (product.priceInCents / 100).toFixed(2),
+        priceCurrency: 'USD',
+        itemOffered: {
+          '@type': 'Service',
+          name: product.name,
+          description: product.description,
+        },
+      })),
     },
     {
       '@type': 'WebSite',

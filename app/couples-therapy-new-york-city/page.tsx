@@ -5,6 +5,7 @@ import { FloatingNav } from "@/components/floating-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { BookingModal } from "@/components/booking-modal";
 import { type LanguageCode } from "@/lib/service-content";
+import { nycCouplesFaq } from "./faq-data";
 
 export default function CouplesTherapyNewYorkCityPage() {
   const [language, setLanguage] = useState<LanguageCode>("en");
@@ -71,45 +72,24 @@ export default function CouplesTherapyNewYorkCityPage() {
             Frequently asked questions
           </h2>
           <div className="mt-12 flex flex-col">
-            <div className="flex flex-col gap-4 border-t border-zinc-300/80 py-10 sm:flex-row sm:items-start sm:gap-12">
-              <span className="font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-medium text-[#74382f] sm:w-20 sm:shrink-0">
-                01
-              </span>
-              <div>
-                <h3 className="font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-medium sm:text-3xl">
-                  Are Couples Sessions held online?
-                </h3>
-                <p className="mt-4 max-w-3xl font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-[#383838]">
-                  Yes. Sessions are held entirely online, making it easier to meet consistently from New York City.
-                </p>
+            {nycCouplesFaq.map((item, index) => (
+              <div
+                key={item.question}
+                className="flex flex-col gap-4 border-t border-zinc-300/80 py-10 sm:flex-row sm:items-start sm:gap-12"
+              >
+                <span className="font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-medium text-[#74382f] sm:w-20 sm:shrink-0">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <div>
+                  <h3 className="font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-medium sm:text-3xl">
+                    {item.question}
+                  </h3>
+                  <p className="mt-4 max-w-3xl font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-[#383838]">
+                    {item.answer}
+                  </p>
+                </div>
               </div>
-            </div>
-            <div className="flex flex-col gap-4 border-t border-zinc-300/80 py-10 sm:flex-row sm:items-start sm:gap-12">
-              <span className="font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-medium text-[#74382f] sm:w-20 sm:shrink-0">
-                02
-              </span>
-              <div>
-                <h3 className="font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-medium sm:text-3xl">
-                  What can we bring to the first session?
-                </h3>
-                <p className="mt-4 max-w-3xl font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-[#383838]">
-                  Bring the concerns, conversations, or patterns you would like to understand together. The first session is a place to begin.
-                </p>
-              </div>
-            </div>
-            <div className="flex flex-col gap-4 border-t border-zinc-300/80 py-10 sm:flex-row sm:items-start sm:gap-12">
-              <span className="font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-medium text-[#74382f] sm:w-20 sm:shrink-0">
-                03
-              </span>
-              <div>
-                <h3 className="font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-medium sm:text-3xl">
-                  How do we book a Couples Session?
-                </h3>
-                <p className="mt-4 max-w-3xl font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-[#383838]">
-                  Use the Book your first session button below to choose a session and continue with online booking.
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
 

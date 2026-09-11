@@ -19,6 +19,7 @@ export function pageMetadata({
   description,
   path,
   locale = "en_US",
+  languages,
 }: {
   title: string
   description: string
@@ -26,6 +27,13 @@ export function pageMetadata({
   path: string
   /** Open Graph locale, e.g. "en_US" or "nb_NO". */
   locale?: string
+  /**
+   * hreflang alternates, e.g. { en: "/", no: "/online-therapy-norway" }.
+   * Paths starting with "/" are resolved against BASE_URL. Only set this on
+   * pages that have a real alternate-language counterpart elsewhere on the
+   * site — it must be reciprocated on that other page or Google ignores it.
+   */
+  languages?: Record<string, string>
 }): Metadata {
   const url = `${BASE_URL}${path}`
 
@@ -34,6 +42,14 @@ export function pageMetadata({
     description,
     alternates: {
       canonical: url,
+      ...(languages && {
+        languages: Object.fromEntries(
+          Object.entries(languages).map(([lang, href]) => [
+            lang,
+            href.startsWith("/") ? `${BASE_URL}${href}` : href,
+          ]),
+        ),
+      }),
     },
     openGraph: {
       type: "website",
