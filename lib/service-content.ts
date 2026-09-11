@@ -64,6 +64,7 @@ export const navContent: Record<
     companyHeading: "Company",
     companyLinks: [
       { label: "About", href: "/about" },
+      { label: "Blog", href: "/blog" },
       { label: "Contact", href: "/contact" },
     ],
   },
@@ -79,6 +80,7 @@ export const navContent: Record<
     companyHeading: "Selskap",
     companyLinks: [
       { label: "Om Oss", href: "/about" },
+      { label: "Blogg", href: "/blog" },
       { label: "Kontakt", href: "/contact" },
     ],
   },
@@ -94,6 +96,7 @@ export const navContent: Record<
     companyHeading: "Firma",
     companyLinks: [
       { label: "O Nas", href: "/about" },
+      { label: "Blog", href: "/blog" },
       { label: "Kontakt", href: "/contact" },
     ],
   },
