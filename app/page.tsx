@@ -229,7 +229,7 @@ const content: Record<
     testimonials: [
       {
         quote:
-          "For første gang på flere år forst��r jeg hvorfor jeg reagerer som jeg gjør. Arbeidet her roet meg ikke bare ned — det ga meg et rammeverk for resten av livet.",
+          "For første gang på flere år forstår jeg hvorfor jeg reagerer som jeg gjør. Arbeidet her roet meg ikke bare ned — det ga meg et rammeverk for resten av livet.",
         name: "M. R.",
         context: "Individuell klient",
         initials: "MR",
@@ -335,7 +335,7 @@ const content: Record<
     testimonials: [
       {
         quote:
-          "Po raz pierwszy od lat rozumiem, czemu reaguj�� tak, jak reaguję. Ta praca nie tylko mnie uspokoiła — dała mi ramy na resztę życia.",
+          "Po raz pierwszy od lat rozumiem, czemu reaguję tak, jak reaguję. Ta praca nie tylko mnie uspokoiła — dała mi ramy na resztę życia.",
         name: "M. R.",
         context: "Klient indywidualny",
         initials: "MR",
