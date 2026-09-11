@@ -78,6 +78,7 @@ const content: Record<
         heading: "Company",
         links: [
           { label: "About", href: "/about" },
+          { label: "Blog", href: "/blog" },
           { label: "Contact", href: "/contact" },
         ],
       },
@@ -183,6 +184,7 @@ const content: Record<
         heading: "Selskap",
         links: [
           { label: "Om Oss", href: "/about" },
+          { label: "Blogg", href: "/blog" },
           { label: "Kontakt", href: "/contact" },
         ],
       },
@@ -288,6 +290,7 @@ const content: Record<
         heading: "Firma",
         links: [
           { label: "O Nas", href: "/about" },
+          { label: "Blog", href: "/blog" },
           { label: "Kontakt", href: "/contact" },
         ],
       },
