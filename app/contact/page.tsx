@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { track } from "@vercel/analytics";
+import { sendGAEvent } from "@/components/google-analytics";
 import { FloatingNav } from "@/components/floating-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { contactContent, type LanguageCode } from "@/lib/service-content";
@@ -37,6 +39,17 @@ export default function ContactPage() {
     localStorage.setItem("site-language", lang);
   };
 
+  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const formData = new FormData(e.currentTarget);
+    const hasAllFields = formData.get("name") && formData.get("email") && formData.get("message");
+
+    if (hasAllFields) {
+      const params = { page: window.location.pathname };
+      track("contact_form_submit", params);
+      sendGAEvent("contact_form_submit", params);
+    }
+  };
+
   return (
     <main className="min-h-screen bg-[#fafafb] font-[NeueHaasDisplayRoman,Arial,sans-serif] text-zinc-900">
       <FloatingNav
@@ -59,6 +72,7 @@ export default function ContactPage() {
           action="mailto:martamindacc@gmail.com"
           method="post"
           encType="text/plain"
+          onSubmit={handleFormSubmit}
           className="mt-20 flex max-w-xl flex-col gap-5 rounded-2xl border border-zinc-300/80 bg-[#eee2db]/80 p-8 sm:p-10"
         >
           <label className="flex flex-col gap-2">

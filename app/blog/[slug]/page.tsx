@@ -4,6 +4,7 @@ import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { BlogShell } from "@/components/blog-shell";
 import { BlogCta } from "@/components/blog-cta";
+import { BlogViewTracker } from "@/components/blog-view-tracker";
 import { getAllSlugs, getPostBySlug } from "@/lib/blog";
 import { pageMetadata } from "@/lib/seo";
 
@@ -117,6 +118,7 @@ export default async function BlogPostPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <BlogViewTracker slug={post.slug} title={post.title} />
       <article className="mx-auto flex max-w-3xl flex-col px-6 pb-24 pt-48">
         <Link
           href="/blog"

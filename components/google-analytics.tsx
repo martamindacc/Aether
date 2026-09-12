@@ -28,28 +28,47 @@ function hasAnalyticsConsent(): boolean {
 function loadGoogleTag() {
   if (typeof window === "undefined" || window.gtag) return
 
-  const script = document.createElement("script")
-  script.async = true
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`
-  document.head.appendChild(script)
+  try {
+    const script = document.createElement("script")
+    script.async = true
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`
 
-  window.dataLayer = window.dataLayer || []
-  window.gtag = (...args: unknown[]) => {
-    window.dataLayer?.push(args)
+    script.onerror = () => {
+      if (typeof window !== "undefined" && window.console) {
+        console.warn("[Aether Analytics] Failed to load Google Analytics script")
+      }
+    }
+
+    document.head.appendChild(script)
+
+    window.dataLayer = window.dataLayer || []
+    window.gtag = (...args: unknown[]) => {
+      window.dataLayer?.push(args)
+    }
+    window.gtag("js", new Date())
+    window.gtag("config", GA_MEASUREMENT_ID)
+  } catch (error) {
+    if (typeof window !== "undefined" && window.console) {
+      console.warn("[Aether Analytics] Error initializing Google Analytics:", error)
+    }
   }
-  window.gtag("js", new Date())
-  window.gtag("config", GA_MEASUREMENT_ID)
 }
 
 /** Sends a GA4 event, but only if the visitor has given analytics consent. */
 export function sendGAEvent(eventName: string, params?: Record<string, string>) {
   if (typeof window === "undefined" || !hasAnalyticsConsent()) return
-  if (!window.gtag) {
-    // Consent is present but the tag hasn't finished initializing yet (e.g. a page
-    // effect fired before GoogleAnalytics' effect ran). Load it now so the event isn't dropped.
-    loadGoogleTag()
+  try {
+    if (!window.gtag) {
+      // Consent is present but the tag hasn't finished initializing yet (e.g. a page
+      // effect fired before GoogleAnalytics' effect ran). Load it now so the event isn't dropped.
+      loadGoogleTag()
+    }
+    window.gtag?.("event", eventName, params)
+  } catch (error) {
+    if (typeof window !== "undefined" && window.console) {
+      console.warn(`[Aether Analytics] Error sending event "${eventName}":`, error)
+    }
   }
-  window.gtag?.("event", eventName, params)
 }
 
 // Evaluate consent as early as possible on the client (module load, not just in an effect)
