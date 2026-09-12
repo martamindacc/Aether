@@ -5,7 +5,7 @@ import Link from "next/link";
 import { FloatingNav } from "@/components/floating-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { BookingModal } from "@/components/booking-modal";
-import { couplesTherapyContent, type LanguageCode } from "@/lib/service-content";
+import { couplesTherapyContent, navContent, relatedServicesHeading, type LanguageCode } from "@/lib/service-content";
 
 export default function CouplesTherapyPage() {
   const [language, setLanguage] = useState<LanguageCode>("en");
@@ -130,6 +130,25 @@ export default function CouplesTherapyPage() {
           >
             {t.ctaButton}
           </button>
+        </div>
+
+        <div className="mt-24">
+          <h2 className="font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-medium tracking-tight">
+            {relatedServicesHeading[language]}
+          </h2>
+          <div className="mt-6 flex flex-wrap gap-4">
+            {navContent[language].menuLinks
+              .filter((link) => link.href !== "/couples-therapy")
+              .map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="rounded-full border border-zinc-300/80 px-5 py-2.5 text-sm font-medium text-zinc-800 transition-colors hover:bg-zinc-100"
+                >
+                  {link.label}
+                </Link>
+              ))}
+          </div>
         </div>
       </section>
       <SiteFooter language={language} />

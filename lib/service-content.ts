@@ -102,6 +102,12 @@ export const navContent: Record<
   },
 };
 
+export const relatedServicesHeading: Record<LanguageCode, string> = {
+  en: "Related Services",
+  no: "Relaterte Tjenester",
+  pl: "Powiązane Usługi",
+};
+
 export const individualTherapyContent: Record<LanguageCode, ServicePageContent> = {
   en: {
     title: "Individual Session",

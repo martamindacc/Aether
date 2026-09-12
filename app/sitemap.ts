@@ -9,6 +9,7 @@ const routes: { path: string; lastModified: string }[] = [
   { path: "/about", lastModified: "2026-09-06" },
   { path: "/blog", lastModified: "2026-09-11" },
   { path: "/contact", lastModified: "2026-09-07" },
+  { path: "/privacy", lastModified: "2026-09-11" },
   { path: "/individual-therapy", lastModified: "2026-09-08" },
   { path: "/couples-therapy", lastModified: "2026-09-08" },
   { path: "/couples-therapy-new-york-city", lastModified: "2026-09-11" },

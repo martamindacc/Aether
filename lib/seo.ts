@@ -70,3 +70,45 @@ export function pageMetadata({
     },
   }
 }
+
+/**
+ * Service JSON-LD tying a service page to the root Organization (via @id) so
+ * AI/search systems can resolve "who provides this" without re-declaring the
+ * organization on every page.
+ */
+export function serviceJsonLd({
+  name,
+  description,
+  path,
+  areaServed,
+}: {
+  name: string
+  description: string
+  /** Path starting with "/", e.g. "/couples-therapy". */
+  path: string
+  areaServed: string[]
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name,
+    description,
+    url: `${BASE_URL}${path}`,
+    provider: { "@id": `${BASE_URL}/#organization` },
+    areaServed: areaServed.map((place) => ({ "@type": "AdministrativeArea", name: place })),
+  }
+}
+
+/** BreadcrumbList JSON-LD. First item should usually be Home. */
+export function breadcrumbJsonLd(items: { name: string; path: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: item.path.startsWith("http") ? item.path : `${BASE_URL}${item.path}`,
+    })),
+  }
+}

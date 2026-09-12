@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { FloatingNav } from "@/components/floating-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { BookingModal } from "@/components/booking-modal";
@@ -43,7 +44,12 @@ export default function CouplesTherapyNewYorkCityPage() {
         <p className="mt-12 max-w-4xl font-[Roboto,Arial,sans-serif] text-xl leading-[1.5] text-[#383838] sm:text-2xl">
           This space is for couples working through communication difficulties, recurring conflict, trust concerns,
           emotional distance, or a relationship transition. Sessions happen online, so scheduling around New York
-          City life doesn&apos;t mean sacrificing consistent support.
+          City life doesn&apos;t mean sacrificing consistent support. This page covers what to expect for couples
+          based in NYC specifically — for the full overview of how sessions work, see our{" "}
+          <Link href="/couples-therapy" className="underline underline-offset-4 hover:text-zinc-600">
+            Couples Therapy
+          </Link>{" "}
+          page.
         </p>
 
         <div className="mt-20 grid gap-6 sm:grid-cols-2">

@@ -1,4 +1,4 @@
-import { pageMetadata } from "@/lib/seo"
+import { breadcrumbJsonLd, pageMetadata, serviceJsonLd } from "@/lib/seo"
 import { nycCouplesFaq } from "./faq-data"
 
 export const metadata = pageMetadata({
@@ -7,6 +7,20 @@ export const metadata = pageMetadata({
     "Online couples sessions for partners in New York City, focused on communication, trust, conflict, and shared understanding.",
   path: "/couples-therapy-new-york-city",
 })
+
+const serviceLd = serviceJsonLd({
+  name: "Couples Therapy in New York City",
+  description:
+    "Online couples sessions for partners in New York City, focused on communication, trust, conflict, and shared understanding.",
+  path: "/couples-therapy-new-york-city",
+  areaServed: ["New York City"],
+})
+
+const breadcrumbLd = breadcrumbJsonLd([
+  { name: "Home", path: "/" },
+  { name: "Couples Therapy", path: "/couples-therapy" },
+  { name: "New York City", path: "/couples-therapy-new-york-city" },
+])
 
 const faqJsonLd = {
   "@context": "https://schema.org",
@@ -28,6 +42,8 @@ export default function CouplesTherapyNewYorkCityLayout({
 }>) {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}

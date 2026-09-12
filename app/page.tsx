@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { track } from "@vercel/analytics";
 import { sendGAEvent } from "@/components/google-analytics";
+import { SiteFooter } from "@/components/site-footer";
 import { buildCalendlyBookingUrl } from "@/lib/booking-url";
 import { PRODUCTS, type Product } from "@/lib/products";
 
@@ -760,13 +761,7 @@ export default function Home() {
         </div>
       </section>
 
-  <footer className="flex flex-col items-center gap-4 px-6 py-10 text-center font-[Roboto,Arial,sans-serif] text-sm text-[#383838]">
-  <span className="flex items-center gap-2 text-lg font-medium tracking-tight text-zinc-900">
-  <img src="/logo-a.svg" alt="Aether Practice logo" className="h-5 w-5" />
-  Aether Practice
-  </span>
-        <p>© {new Date().getFullYear()} Aether Practice. {t.footerTagline}</p>
-      </footer>
+      <SiteFooter language={language.code} />
     </main>
   );
 }

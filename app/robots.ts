@@ -5,6 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
+      disallow: ["/booking-confirmed", "/api/"],
     },
     sitemap: "https://aetherpractice.com/sitemap.xml",
   }
