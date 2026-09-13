@@ -15,10 +15,20 @@ const copy = {
     intro: "Artikler om relasjoner, personlig utvikling, familieliv og hvordan du kan fungere godt under press — fra teamet i Aether Practice.",
     empty: "Nye artikler kommer snart — følg med.",
   },
+  pl: {
+    heading: "Blog",
+    intro: "Notatki dotyczące relacji, osobistego rozwoju, życia rodzinnego i efektywnej pracy pod presją — od zespołu Aether Practice.",
+    empty: "Nowe artykuły już wkrótce — zapraszamy wkrótce.",
+  },
 } as const;
 
-function formatDate(date: string, language: "en" | "no") {
-  return new Date(date).toLocaleDateString(language === "no" ? "nb-NO" : "en-US", {
+function formatDate(date: string, language: "en" | "no" | "pl") {
+  const localeMap: Record<string, string> = {
+    no: "nb-NO",
+    pl: "pl-PL",
+    en: "en-US",
+  };
+  return new Date(date).toLocaleDateString(localeMap[language] || "en-US", {
     year: "numeric",
     month: "long",
     day: "numeric",
@@ -27,7 +37,7 @@ function formatDate(date: string, language: "en" | "no") {
 
 export function BlogIndexContent({ posts }: { posts: BlogPostMeta[] }) {
   const language = useSiteLanguage();
-  const t = copy[language === "no" ? "no" : "en"];
+  const t = copy[language as keyof typeof copy] || copy.en;
   const visiblePosts = posts.filter((post) => post.lang === language || post.lang === "en");
 
   return (

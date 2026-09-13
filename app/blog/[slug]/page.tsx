@@ -24,11 +24,16 @@ export async function generateMetadata({
     notFound();
   }
 
+  const localeMap: Record<string, string> = {
+    no: "nb_NO",
+    pl: "pl_PL",
+    en: "en_US",
+  };
   return pageMetadata({
     title: `${post.title} | Aether Practice`,
     description: post.description,
     path: `/blog/${post.slug}`,
-    locale: post.lang === "no" ? "nb_NO" : "en_US",
+    locale: localeMap[post.lang] || "en_US",
     type: "article",
     publishedTime: post.date,
     modifiedTime: post.modifiedDate,
@@ -37,9 +42,10 @@ export async function generateMetadata({
   });
 }
 
-const backToBlogLabel: Record<"en" | "no", string> = {
+const backToBlogLabel: Record<"en" | "no" | "pl", string> = {
   en: "← Back to Blog",
   no: "← Tilbake til bloggen",
+  pl: "← Powrót do bloga",
 };
 
 const norwegianTocBySlug: Record<string, ReadonlyArray<readonly [string, string]>> = {
@@ -81,8 +87,13 @@ function headingId(children: React.ReactNode) {
     : undefined;
 }
 
-function formatDate(date: string, lang: "en" | "no") {
-  return new Date(date).toLocaleDateString(lang === "no" ? "nb-NO" : "en-US", {
+function formatDate(date: string, lang: "en" | "no" | "pl") {
+  const localeMap: Record<string, string> = {
+    no: "nb-NO",
+    pl: "pl-PL",
+    en: "en-US",
+  };
+  return new Date(date).toLocaleDateString(localeMap[lang] || "en-US", {
     year: "numeric",
     month: "long",
     day: "numeric",

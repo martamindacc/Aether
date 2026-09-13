@@ -11,7 +11,7 @@ export type BlogPostMeta = {
   date: string;
   tags: string[];
   relatedService: string;
-  lang: "en" | "no";
+  lang: "en" | "no" | "pl";
   keywords?: string[];
   author?: string;
   modifiedDate?: string;
