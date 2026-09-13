@@ -100,6 +100,24 @@ const norwegianTocBySlug: Record<string, ReadonlyArray<readonly [string, string]
   ],
 };
 
+const polishTocBySlug: Record<string, ReadonlyArray<readonly [string, string]>> = {
+  "8-znakow-potrzeba-terapii-par": [
+    ["Macie te same konflikty znowu i znowu", "1. Macie te same konflikty znowu i znowu"],
+    ["Nie potraficie rozmawiać o trudnych sprawach bez eskalacji", "2. Nie potraficie rozmawiać o trudnych sprawach bez eskalacji"],
+    ["Czujecie się bardziej jak wrogowie niż drużyna", "3. Czujecie się bardziej jak wrogowie niż drużyna"],
+    ["Jeden z was (lub oboje) zaczął się wycofywać emocjonalnie", "4. Jeden z was (lub oboje) zaczął się wycofywać emocjonalnie"],
+    ["Bliskość, seks lub intymność stały się źródłem konfliktu", "5. Bliskość, seks lub intymność stały się źródłem konfliktu"],
+    ["Zaufanie zostało złamane", "6. Zaufanie zostało złamane"],
+    ["Funkcjonujecie na zewnątrz, ale macie problemy razem", "7. Funkcjonujecie na zewnątrz, ale macie problemy razem"],
+    ["Już się zastanawiacie, czy powinniście się rozstać", "8. Już się zastanawiacie, czy powinniście się rozstać"],
+    ["Czy potrzebujecie terapii par?", "Czy potrzebujecie terapii par?"],
+    ["Kiedy szukać terapii par?", "Kiedy szukać terapii par?"],
+    ["Co jeśli tylko jedno z was chce terapii par?", "Co jeśli tylko jedno z was chce terapii par?"],
+    ["Kiedy terapia par nie jest właściwym pierwszym krokiem", "Kiedy terapia par nie jest właściwym pierwszym krokiem"],
+    ["Częste pytania o terapię par", "Częste pytania o terapię par"],
+  ],
+};
+
 const norwegianLedeBySlug: Record<string, React.ReactNode> = {
   "parterapi-i-oslo": (
     <>
@@ -297,6 +315,23 @@ export default async function BlogPostPage({
             </h2>
             <ol className="mt-4 grid gap-1.5 font-[Roboto,Arial,sans-serif] text-base leading-[1.5] text-[#6f5a46] sm:grid-cols-2">
               {norwegianTocBySlug[post.slug].map(([label, headingText], index) => (
+                <li key={headingText}>
+                  <a href={`#${headingId(headingText) ?? ""}`} className="text-[#74382f] underline underline-offset-2 hover:no-underline">
+                    {index + 1}. {label}
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </nav>
+        )}
+
+        {post.lang === "pl" && polishTocBySlug[post.slug] && (
+          <nav aria-label="Spis treści" className="mt-10 border-l-4 border-[#c9a87d] px-6 py-5 sm:px-8 sm:py-6">
+            <h2 className="mt-0 font-[Roboto,Arial,sans-serif] text-sm font-medium uppercase tracking-[0.18em] text-[#74382f]">
+              Spis Treści
+            </h2>
+            <ol className="mt-4 grid gap-1.5 font-[Roboto,Arial,sans-serif] text-base leading-[1.5] text-[#6f5a46] sm:grid-cols-2">
+              {polishTocBySlug[post.slug].map(([label, headingText], index) => (
                 <li key={headingText}>
                   <a href={`#${headingId(headingText) ?? ""}`} className="text-[#74382f] underline underline-offset-2 hover:no-underline">
                     {index + 1}. {label}
