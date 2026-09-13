@@ -82,7 +82,7 @@ const mdxComponents = {
   ),
   h3: (props: React.ComponentProps<"h3">) => (
     <h3
-      className="mt-8 font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-bold text-zinc-900"
+      className="mt-8 font-[Roboto,Arial,sans-serif] text-2xl font-medium text-zinc-900"
       {...props}
     />
   ),
@@ -112,7 +112,7 @@ const mdxComponents = {
     <a className="text-[#74382f] underline underline-offset-2 hover:no-underline" {...props} />
   ),
   strong: (props: React.ComponentProps<"strong">) => (
-    <strong className="font-[Roboto,Arial,sans-serif] font-bold" {...props} />
+    <strong className="font-[Roboto,Arial,sans-serif] font-medium" {...props} />
   ),
   table: (props: React.ComponentProps<"table">) => (
     <div className="mt-8 overflow-x-auto">
@@ -226,11 +226,11 @@ export default async function BlogPostPage({
         )}
 
         {post.lang === "no" && (
-          <nav aria-label="Innhold" className="mt-10 rounded-2xl border border-zinc-300/80 bg-[#eee2db]/35 p-6 sm:p-8">
-            <h2 className="mt-0 font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-medium tracking-tight text-[#74382f]">
+          <nav aria-label="Innhold" className="mt-10 border-l-4 border-[#c9a87d] bg-[#eee2db]/20 px-6 py-5 sm:px-8 sm:py-6">
+            <h2 className="mt-0 font-[Roboto,Arial,sans-serif] text-sm font-medium uppercase tracking-[0.18em] text-[#74382f]">
               Innhold
             </h2>
-            <ol className="mt-4 grid gap-2 font-[Roboto,Arial,sans-serif] text-[17px] leading-[1.5] text-[#383838] sm:grid-cols-2">
+            <ol className="mt-4 grid gap-1.5 font-[Roboto,Arial,sans-serif] text-base leading-[1.5] text-[#6f5a46] sm:grid-cols-2">
               {norwegianToc.map(([label, id], index) => (
                 <li key={id}>
                   <a href={`#${id}`} className="text-[#74382f] underline underline-offset-2 hover:no-underline">
