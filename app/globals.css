@@ -182,6 +182,7 @@
 
 .blog-table {
   width: 100%;
+  max-width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
   margin-top: 2rem;
@@ -208,6 +209,14 @@
 
 @media (max-width: 640px) {
   .blog-table {
-    min-width: 42rem;
+    font-size: 0.875rem;
+    line-height: 1.4;
+  }
+
+  .blog-table th,
+  .blog-table td {
+    padding: 0.625rem 0.5rem;
+    overflow-wrap: anywhere;
+    word-break: break-word;
   }
 }

@@ -42,6 +42,28 @@ const backToBlogLabel: Record<"en" | "no", string> = {
   no: "← Tilbake til bloggen",
 };
 
+const norwegianToc = [
+  ["Hva Er Parterapi Egentlig?", "hva-er-parterapi-egentlig"],
+  ["Hvorfor Parterapi Er Annerledes Enn Individualterapi", "hvorfor-parterapi-er-annerledes-enn-individualterapi"],
+  ["Tegn på At Dere Trenger Parterapi", "tegn-pa-at-dere-trenger-parterapi"],
+  ["Når Skal Du Søke Parterapi?", "nar-skal-du-soke-parterapi"],
+  ["Typer Parterapi", "typer-parterapi"],
+  ["Hvordan Velge En Parterapeut i Oslo", "hvordan-velge-en-parterapeut-i-oslo"],
+  ["Hva Forventer Du Fra Parterapi?", "hva-forventer-du-fra-parterapi"],
+  ["Kostnad Av Parterapi i Oslo", "kostnad-av-parterapi-i-oslo"],
+  ["Tegn På At En Terapeut IKKE Er Riktig", "tegn-pa-at-en-terapeut-ikke-er-riktig"],
+  ["FAQ: Parterapi i Oslo", "faq-parterapi-i-oslo"],
+  ["Om Aether Practice", "om-aether-practice"],
+  ["Ta Neste Steg", "ta-neste-steg"],
+  ["Forskning og Videre Lesning", "forskning-og-videre-lesning"],
+] as const;
+
+function headingId(children: React.ReactNode) {
+  return typeof children === "string"
+    ? children.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")
+    : undefined;
+}
+
 function formatDate(date: string, lang: "en" | "no") {
   return new Date(date).toLocaleDateString(lang === "no" ? "nb-NO" : "en-US", {
     year: "numeric",
@@ -53,13 +75,14 @@ function formatDate(date: string, lang: "en" | "no") {
 const mdxComponents = {
   h2: (props: React.ComponentProps<"h2">) => (
     <h2
-      className="mt-12 font-[NeueHaasDisplayRoman,Arial,sans-serif] text-3xl font-medium tracking-tight text-zinc-900 sm:text-4xl"
+      id={headingId(props.children)}
+      className="mt-12 font-[NeueHaasDisplayRoman,Arial,sans-serif] text-3xl font-medium tracking-tight text-[#74382f] sm:text-4xl"
       {...props}
     />
   ),
   h3: (props: React.ComponentProps<"h3">) => (
     <h3
-      className="mt-8 font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-medium text-[#74382f]"
+      className="mt-8 font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-bold text-zinc-900"
       {...props}
     />
   ),
@@ -71,7 +94,11 @@ const mdxComponents = {
   ),
   ul: (props: React.ComponentProps<"ul">) => (
     <ul
-      className="mt-6 list-disc space-y-3 pl-6 font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.6] text-[#383838]"
+      className={`mt-6 space-y-3 font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.6] text-[#383838] ${
+        JSON.stringify(props.children).includes("☐") || JSON.stringify(props.children).includes("✓")
+          ? "list-none pl-0"
+          : "list-disc pl-6 marker:text-[#74382f]"
+      }`}
       {...props}
     />
   ),
@@ -83,6 +110,9 @@ const mdxComponents = {
   ),
   a: (props: React.ComponentProps<"a">) => (
     <a className="text-[#74382f] underline underline-offset-2 hover:no-underline" {...props} />
+  ),
+  strong: (props: React.ComponentProps<"strong">) => (
+    <strong className="font-[Roboto,Arial,sans-serif] font-bold" {...props} />
   ),
   table: (props: React.ComponentProps<"table">) => (
     <div className="mt-8 overflow-x-auto">
@@ -193,6 +223,23 @@ export default async function BlogPostPage({
               </span>
             ))}
           </div>
+        )}
+
+        {post.lang === "no" && (
+          <nav aria-label="Innhold" className="mt-10 rounded-2xl border border-zinc-300/80 bg-[#eee2db]/35 p-6 sm:p-8">
+            <h2 className="mt-0 font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-medium tracking-tight text-[#74382f]">
+              Innhold
+            </h2>
+            <ol className="mt-4 grid gap-2 font-[Roboto,Arial,sans-serif] text-[17px] leading-[1.5] text-[#383838] sm:grid-cols-2">
+              {norwegianToc.map(([label, id], index) => (
+                <li key={id}>
+                  <a href={`#${id}`} className="text-[#74382f] underline underline-offset-2 hover:no-underline">
+                    {index + 1}. {label}
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </nav>
         )}
 
         <div className="mt-4">
