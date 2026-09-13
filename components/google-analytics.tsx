@@ -1,6 +1,8 @@
 "use client"
 
 import { useEffect } from "react"
+import { useState } from "react"
+import Script from "next/script"
 
 const GA_MEASUREMENT_ID = "G-0DEP95KV30"
 const STORAGE_KEY = "aether-consent"
@@ -25,32 +27,20 @@ function hasAnalyticsConsent(): boolean {
   }
 }
 
+function initializeGoogleTag() {
+  if (typeof window === "undefined" || window.gtag) return
+
+  window.dataLayer = window.dataLayer || []
+  window.gtag = (...args: unknown[]) => {
+    window.dataLayer?.push(args)
+  }
+  window.gtag("js", new Date())
+  window.gtag("config", GA_MEASUREMENT_ID)
+}
+
 function loadGoogleTag() {
-  if (typeof window === "undefined") return
-
   try {
-    window.dataLayer = window.dataLayer || []
-
-    if (!window.gtag) {
-      window.gtag = (...args: unknown[]) => {
-        window.dataLayer?.push(args)
-      }
-      window.gtag("js", new Date())
-      window.gtag("config", GA_MEASUREMENT_ID)
-    }
-
-    if (document.getElementById("aether-google-analytics")) return
-
-    const script = document.createElement("script")
-    script.id = "aether-google-analytics"
-    script.async = true
-    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`
-    script.onerror = () => {
-      console.warn("[Aether Analytics] Failed to load Google Analytics script")
-      script.remove()
-      delete window.gtag
-    }
-    document.head.appendChild(script)
+    initializeGoogleTag()
   } catch (error) {
     if (typeof window !== "undefined" && window.console) {
       console.warn("[Aether Analytics] Error initializing Google Analytics:", error)
@@ -83,11 +73,11 @@ if (typeof window !== "undefined" && hasAnalyticsConsent()) {
 
 /** Loads the Google tag only when analytics consent is present, and reacts live to consent changes. */
 export function GoogleAnalytics() {
+  const [analyticsEnabled, setAnalyticsEnabled] = useState(hasAnalyticsConsent)
+
   useEffect(() => {
     const evaluateConsent = () => {
-      if (hasAnalyticsConsent()) {
-        loadGoogleTag()
-      }
+      setAnalyticsEnabled(hasAnalyticsConsent())
     }
 
     evaluateConsent()
@@ -101,5 +91,17 @@ export function GoogleAnalytics() {
     }
   }, [])
 
-  return null
+  useEffect(() => {
+    if (analyticsEnabled) loadGoogleTag()
+  }, [analyticsEnabled])
+
+  if (!analyticsEnabled) return null
+
+  return (
+    <Script
+      id="aether-google-analytics"
+      src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+      strategy="afterInteractive"
+    />
+  )
 }
