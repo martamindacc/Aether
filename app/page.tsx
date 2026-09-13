@@ -381,13 +381,11 @@ export default function Home() {
   const hasTrackedBookingOpenRef = useRef(false);
 
   useEffect(() => {
-    const stored = localStorage.getItem("site-language");
-    if (!stored) {
-      localStorage.setItem("site-language", "en");
-      return;
-    }
-    const match = languages.find((lang) => lang.code === stored);
-    if (match) setLanguage(match);
+    // The homepage always lands in English regardless of a language stored
+    // from browsing other pages (e.g. a Norwegian blog article) — it does
+    // not restore a stored preference on mount, only a manual switch below
+    // updates storage.
+    localStorage.setItem("site-language", "en");
   }, []);
 
   const selectedBookingService = PRODUCTS.find(
