@@ -17,9 +17,17 @@ export function SiteFooter({ language }: { language: LanguageCode }) {
   const t = navContent[language];
 
   return (
-    <footer className="border-t border-zinc-300/80 px-6 py-16 font-[Roboto,Arial,sans-serif] text-sm text-[#383838]">
-      <div className="mx-auto flex max-w-6xl flex-col gap-12 sm:flex-row sm:justify-between">
-        <div className="flex flex-col gap-4">
+    <footer className="px-6 py-16 font-[Roboto,Arial,sans-serif] text-sm text-[#383838]">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-12 md:grid-cols-3 md:items-start">
+        <nav aria-label={t.menuHeading} className="flex flex-col gap-3 md:justify-self-start">
+            <p className="text-xs uppercase tracking-wide text-zinc-500">{t.menuHeading}</p>
+            {t.menuLinks.map((link) => (
+              <Link key={link.href} href={link.href} className="text-zinc-700 hover:text-zinc-900">
+                {link.label}
+              </Link>
+            ))}
+        </nav>
+        <div className="flex flex-col items-center gap-4 text-center md:justify-self-center">
           <Link
             href="/"
             className="flex items-center gap-2 text-lg font-medium tracking-tight text-zinc-900"
@@ -31,16 +39,7 @@ export function SiteFooter({ language }: { language: LanguageCode }) {
             © {new Date().getFullYear()} Aether Practice. {taglines[language]}
           </p>
         </div>
-        <div className="grid grid-cols-2 gap-10 sm:flex sm:gap-16">
-          <nav aria-label={t.menuHeading} className="flex flex-col gap-3">
-            <p className="text-xs uppercase tracking-wide text-zinc-500">{t.menuHeading}</p>
-            {t.menuLinks.map((link) => (
-              <Link key={link.href} href={link.href} className="text-zinc-700 hover:text-zinc-900">
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-          <nav aria-label={t.companyHeading} className="flex flex-col gap-3">
+        <nav aria-label={t.companyHeading} className="flex flex-col gap-3 md:justify-self-end">
             <p className="text-xs uppercase tracking-wide text-zinc-500">{t.companyHeading}</p>
             {t.companyLinks.map((link) => (
               <Link key={link.href} href={link.href} className="text-zinc-700 hover:text-zinc-900">
@@ -50,8 +49,7 @@ export function SiteFooter({ language }: { language: LanguageCode }) {
             <Link href="/privacy" className="text-zinc-700 hover:text-zinc-900">
               {privacyLabel[language]}
             </Link>
-          </nav>
-        </div>
+        </nav>
       </div>
     </footer>
   );

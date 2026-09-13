@@ -59,7 +59,7 @@ const mdxComponents = {
   ),
   h3: (props: React.ComponentProps<"h3">) => (
     <h3
-      className="mt-8 font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-medium text-zinc-900"
+      className="mt-8 font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-medium text-[#74382f]"
       {...props}
     />
   ),
