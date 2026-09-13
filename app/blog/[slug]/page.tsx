@@ -42,21 +42,38 @@ const backToBlogLabel: Record<"en" | "no", string> = {
   no: "← Tilbake til bloggen",
 };
 
-const norwegianToc = [
-  ["Hva Er Parterapi Egentlig?", "hva-er-parterapi-egentlig"],
-  ["Hvorfor Parterapi Er Annerledes Enn Individualterapi", "hvorfor-parterapi-er-annerledes-enn-individualterapi"],
-  ["Tegn på At Dere Trenger Parterapi", "tegn-pa-at-dere-trenger-parterapi"],
-  ["Når Skal Du Søke Parterapi?", "nar-skal-du-soke-parterapi"],
-  ["Typer Parterapi", "typer-parterapi"],
-  ["Hvordan Velge En Parterapeut i Oslo", "hvordan-velge-en-parterapeut-i-oslo"],
-  ["Hva Forventer Du Fra Parterapi?", "hva-forventer-du-fra-parterapi"],
-  ["Kostnad Av Parterapi i Oslo", "kostnad-av-parterapi-i-oslo"],
-  ["Tegn På At En Terapeut IKKE Er Riktig", "tegn-pa-at-en-terapeut-ikke-er-riktig"],
-  ["FAQ: Parterapi i Oslo", "faq-parterapi-i-oslo"],
-  ["Om Aether Practice", "om-aether-practice"],
-  ["Ta Neste Steg", "ta-neste-steg"],
-  ["Forskning og Videre Lesning", "forskning-og-videre-lesning"],
-] as const;
+const norwegianTocBySlug: Record<string, ReadonlyArray<readonly [string, string]>> = {
+  "parterapi-i-oslo": [
+    ["Hva Er Parterapi Egentlig?", "Hva Er Parterapi Egentlig?"],
+    ["Hvorfor Parterapi Er Annerledes Enn Individualterapi", "Hvorfor Parterapi Er Annerledes Enn Individualterapi"],
+    ["Tegn på At Dere Trenger Parterapi", "Tegn på At Dere Trenger Parterapi"],
+    ["Når Skal Du Søke Parterapi?", "Når Skal Du Søke Parterapi?"],
+    ["Typer Parterapi", "Typer Parterapi"],
+    ["Hvordan Velge En Parterapeut i Oslo", "Hvordan Velge En Parterapeut i Oslo"],
+    ["Hva Forventer Du Fra Parterapi?", "Hva Forventer Du Fra Parterapi?"],
+    ["Kostnad Av Parterapi i Oslo", "Kostnad Av Parterapi i Oslo"],
+    ["Tegn På At En Terapeut IKKE Er Riktig", "Tegn På At En Terapeut IKKE Er Riktig"],
+    ["FAQ: Parterapi i Oslo", "FAQ: Parterapi i Oslo"],
+    ["Om Aether Practice", "Om Aether Practice"],
+    ["Ta Neste Steg", "Ta Neste Steg"],
+    ["Forskning og Videre Lesning", "Forskning og Videre Lesning"],
+  ],
+  "parterapi-i-oslo-tegn": [
+    ["Dere har de samme konfliktene om og om igjen", "1. Dere har de samme konfliktene om og om igjen"],
+    ["Dere klarer ikke å snakke om vanskelige ting uten at det eskalerer", "2. Dere klarer ikke å snakke om vanskelige ting uten at det eskalerer"],
+    ["Dere føler dere mer som motstandere enn som et team", "3. Dere føler dere mer som motstandere enn som et team"],
+    ["Én eller begge har begynt å trekke seg følelsesmessig unna", "4. Én eller begge har begynt å trekke seg følelsesmessig unna"],
+    ["Nærhet, sex eller intimitet har blitt et konfliktområde", "5. Nærhet, sex eller intimitet har blitt et konfliktområde"],
+    ["Tilliten er svekket", "6. Tilliten er svekket"],
+    ["Dere fungerer på utsiden, men har det dårlig sammen", "7. Dere fungerer på utsiden, men har det dårlig sammen"],
+    ["Dere vurderer allerede om dere skal gå fra hverandre", "8. Dere vurderer allerede om dere skal gå fra hverandre"],
+    ["Trenger vi parterapi?", "Trenger vi parterapi?"],
+    ["Når bør man gå i parterapi?", "Når bør man gå i parterapi?"],
+    ["Hva hvis bare én av dere ønsker parterapi?", "Hva hvis bare én av dere ønsker parterapi?"],
+    ["Når parterapi ikke er riktig første steg", "Når parterapi ikke er riktig første steg"],
+    ["Vanlige spørsmål om parterapi", "Vanlige spørsmål om parterapi"],
+  ],
+};
 
 function headingId(children: React.ReactNode) {
   return typeof children === "string"
@@ -225,15 +242,15 @@ export default async function BlogPostPage({
           </div>
         )}
 
-        {post.lang === "no" && (
+        {post.lang === "no" && norwegianTocBySlug[post.slug] && (
           <nav aria-label="Innhold" className="mt-10 border-l-4 border-[#c9a87d] px-6 py-5 sm:px-8 sm:py-6">
             <h2 className="mt-0 font-[Roboto,Arial,sans-serif] text-sm font-medium uppercase tracking-[0.18em] text-[#74382f]">
               Innhold
             </h2>
             <ol className="mt-4 grid gap-1.5 font-[Roboto,Arial,sans-serif] text-base leading-[1.5] text-[#6f5a46] sm:grid-cols-2">
-              {norwegianToc.map(([label, id], index) => (
-                <li key={id}>
-                  <a href={`#${id}`} className="text-[#74382f] underline underline-offset-2 hover:no-underline">
+              {norwegianTocBySlug[post.slug].map(([label, headingText], index) => (
+                <li key={headingText}>
+                  <a href={`#${headingId(headingText) ?? ""}`} className="text-[#74382f] underline underline-offset-2 hover:no-underline">
                     {index + 1}. {label}
                   </a>
                 </li>
