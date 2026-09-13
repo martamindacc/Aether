@@ -15,6 +15,13 @@ export type BlogPostMeta = {
   keywords?: string[];
   author?: string;
   modifiedDate?: string;
+  /**
+   * Shared identifier linking genuine translations of the same article across
+   * languages (e.g. all three language versions of "8 signs you need couples
+   * therapy" share one translationKey). Omit it on a standalone article that
+   * has no translated counterpart.
+   */
+  translationKey?: string;
 };
 
 export type BlogPost = BlogPostMeta & {
@@ -34,10 +41,11 @@ function readPostFile(fileName: string): BlogPost {
     date: data.date as string,
     tags: (data.tags as string[]) ?? [],
     relatedService: data.relatedService as string,
-    lang: (data.lang as "en" | "no") ?? "en",
+    lang: (data.lang as "en" | "no" | "pl") ?? "en",
     keywords: (data.keywords as string[]) ?? [],
     author: (data.author as string) ?? "Aether Practice",
     modifiedDate: (data.modifiedDate as string) ?? (data.date as string),
+    translationKey: data.translationKey as string | undefined,
     content,
   };
 }
@@ -70,4 +78,21 @@ export function getPostBySlug(slug: string): BlogPost | null {
   }
 
   return null;
+}
+
+/**
+ * Returns the genuine translated versions of a post, including the post
+ * itself. Posts are only linked when they share a `translationKey` — a post
+ * without one (no real translation exists) resolves to just itself.
+ */
+export function getTranslationsForPost(post: BlogPostMeta): BlogPostMeta[] {
+  if (!post.translationKey) return [post];
+  return getAllPosts().filter((p) => p.translationKey === post.translationKey);
+}
+
+/** The site's html-lang convention for a post's language (Norwegian uses "nb", per the project's existing convention). */
+export function htmlLangFor(lang: BlogPostMeta["lang"]): string {
+  if (lang === "no") return "nb";
+  if (lang === "pl") return "pl";
+  return "en";
 }

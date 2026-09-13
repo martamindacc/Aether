@@ -12,6 +12,7 @@ export function FloatingNav({
   onMenuOpenChange,
   isLangOpen,
   onLangOpenChange,
+  articleLanguages,
 }: {
   language: LanguageCode;
   onLanguageChange: (code: LanguageCode) => void;
@@ -19,6 +20,8 @@ export function FloatingNav({
   onMenuOpenChange: (open: boolean) => void;
   isLangOpen: boolean;
   onLangOpenChange: (open: boolean) => void;
+  /** When set, the language menu offers only these actual translations and navigates to them, instead of toggling the site-wide language. */
+  articleLanguages?: { code: LanguageCode; href: string }[];
 }) {
   const t = navContent[language];
   const currentLabel = languages.find((lang) => lang.code === language)?.label ?? "EN";
@@ -92,18 +95,29 @@ export function FloatingNav({
             </button>
             {isLangOpen && (
               <div className="absolute right-0 top-full mt-2 flex w-12 flex-col rounded-xl border border-zinc-900/10 bg-white py-1 shadow-lg">
-                {languages.map((lang) => (
-                  <button
-                    key={lang.code}
-                    onClick={() => {
-                      onLanguageChange(lang.code);
-                      onLangOpenChange(false);
-                    }}
-                    className="px-3 py-2 text-center text-sm text-zinc-900 transition-colors hover:bg-zinc-100"
-                  >
-                    {lang.label}
-                  </button>
-                ))}
+                {articleLanguages
+                  ? articleLanguages.map((option) => (
+                      <Link
+                        key={option.code}
+                        href={option.href}
+                        onClick={() => onLangOpenChange(false)}
+                        className="px-3 py-2 text-center text-sm text-zinc-900 transition-colors hover:bg-zinc-100"
+                      >
+                        {languages.find((lang) => lang.code === option.code)?.label ?? option.code.toUpperCase()}
+                      </Link>
+                    ))
+                  : languages.map((lang) => (
+                      <button
+                        key={lang.code}
+                        onClick={() => {
+                          onLanguageChange(lang.code);
+                          onLangOpenChange(false);
+                        }}
+                        className="px-3 py-2 text-center text-sm text-zinc-900 transition-colors hover:bg-zinc-100"
+                      >
+                        {lang.label}
+                      </button>
+                    ))}
               </div>
             )}
           </div>

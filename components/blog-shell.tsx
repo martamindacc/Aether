@@ -12,7 +12,21 @@ export function useSiteLanguage() {
   return useContext(SiteLanguageContext);
 }
 
-export function BlogShell({ children, language: initialLanguage = "en" }: { children: React.ReactNode; language?: LanguageCode }) {
+export function BlogShell({
+  children,
+  language: initialLanguage = "en",
+  articleLanguages,
+}: {
+  children: React.ReactNode;
+  language?: LanguageCode;
+  /**
+   * Restricts the language switcher to genuine translations of the current
+   * article and navigates to them, instead of the site-wide language
+   * toggle. Omit on the blog index (and everywhere else) to keep that
+   * default toggle behavior.
+   */
+  articleLanguages?: { code: LanguageCode; href: string }[];
+}) {
   const [language, setLanguage] = useState<LanguageCode>(initialLanguage);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
@@ -42,6 +56,7 @@ export function BlogShell({ children, language: initialLanguage = "en" }: { chil
         onMenuOpenChange={setIsMenuOpen}
         isLangOpen={isLangOpen}
         onLangOpenChange={setIsLangOpen}
+        articleLanguages={articleLanguages}
       />
       {children}
       <SiteFooter language={language} />

@@ -5,6 +5,7 @@ import { headers } from 'next/headers'
 import { ConsentBanner } from '@/components/consent-banner'
 import { GoogleAnalytics } from '@/components/google-analytics'
 import { PRODUCTS } from '@/lib/products'
+import { getPostBySlug, htmlLangFor } from '@/lib/blog'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -110,10 +111,12 @@ export default async function RootLayout({
   children: React.ReactNode
 }>) {
   const pathname = (await headers()).get('x-pathname') ?? ''
-  const isNorwegianArticle = pathname === '/blog/parterapi-i-oslo'
+  const blogSlug = pathname.match(/^\/blog\/([^/]+)\/?$/)?.[1]
+  const blogPost = blogSlug ? getPostBySlug(blogSlug) : null
+  const htmlLang = blogPost ? htmlLangFor(blogPost.lang) : 'en'
 
   return (
-    <html lang={isNorwegianArticle ? 'nb' : 'en'}>
+    <html lang={htmlLang}>
       <body className="overflow-x-hidden antialiased">
         <script
           type="application/ld+json"

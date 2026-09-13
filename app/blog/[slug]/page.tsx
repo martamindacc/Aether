@@ -5,7 +5,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import { BlogShell } from "@/components/blog-shell";
 import { BlogCta } from "@/components/blog-cta";
 import { BlogViewTracker } from "@/components/blog-view-tracker";
-import { getAllSlugs, getPostBySlug } from "@/lib/blog";
+import { getAllSlugs, getPostBySlug, getTranslationsForPost, htmlLangFor } from "@/lib/blog";
 import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
@@ -29,11 +29,19 @@ export async function generateMetadata({
     pl: "pl_PL",
     en: "en_US",
   };
+
+  const translations = getTranslationsForPost(post);
+  const languages =
+    translations.length > 1
+      ? Object.fromEntries(translations.map((t) => [t.lang, `/blog/${t.slug}`]))
+      : undefined;
+
   return pageMetadata({
     title: `${post.title} | Aether Practice`,
     description: post.description,
     path: `/blog/${post.slug}`,
     locale: localeMap[post.lang] || "en_US",
+    languages,
     type: "article",
     publishedTime: post.date,
     modifiedTime: post.modifiedDate,
@@ -185,8 +193,11 @@ export default async function BlogPostPage({
     notFound();
   }
 
-  const htmlLangByLang: Record<typeof post.lang, string> = { en: "en", no: "nb", pl: "pl" };
   const schemaLangByLang: Record<typeof post.lang, string> = { en: "en-US", no: "nb-NO", pl: "pl-PL" };
+  const articleLanguages = getTranslationsForPost(post).map((t) => ({
+    code: t.lang,
+    href: `/blog/${t.slug}`,
+  }));
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -232,7 +243,7 @@ export default async function BlogPostPage({
   ]);
 
   return (
-    <BlogShell language={post.lang}>
+    <BlogShell language={post.lang} articleLanguages={articleLanguages}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -242,7 +253,7 @@ export default async function BlogPostPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
       <BlogViewTracker slug={post.slug} title={post.title} />
-      <article lang={htmlLangByLang[post.lang]} className="mx-auto flex max-w-3xl flex-col px-6 pb-24 pt-48">
+      <article lang={htmlLangFor(post.lang)} className="mx-auto flex max-w-3xl flex-col px-6 pb-24 pt-48">
         <Link
           href="/blog"
           className="font-[Roboto,Arial,sans-serif] text-sm text-zinc-500 hover:text-zinc-900"
