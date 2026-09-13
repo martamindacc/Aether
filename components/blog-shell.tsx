@@ -53,12 +53,13 @@ export function BlogShell({
     setLanguage(lang);
     localStorage.setItem("site-language", lang);
   };
+  const displayedLanguage = articleLanguages ? initialLanguage : language;
 
   return (
-    <SiteLanguageContext.Provider value={language}>
+    <SiteLanguageContext.Provider value={displayedLanguage}>
       <main className="min-h-screen bg-[#fafafb] font-[NeueHaasDisplayRoman,Arial,sans-serif] text-zinc-900">
       <FloatingNav
-        language={language}
+        language={displayedLanguage}
         onLanguageChange={handleLanguageChange}
         isMenuOpen={isMenuOpen}
         onMenuOpenChange={setIsMenuOpen}
@@ -67,7 +68,7 @@ export function BlogShell({
         articleLanguages={articleLanguages}
       />
       {children}
-      <SiteFooter language={language} />
+      <SiteFooter language={displayedLanguage} />
       </main>
     </SiteLanguageContext.Provider>
   );
