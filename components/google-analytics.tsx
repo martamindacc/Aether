@@ -26,27 +26,31 @@ function hasAnalyticsConsent(): boolean {
 }
 
 function loadGoogleTag() {
-  if (typeof window === "undefined" || window.gtag) return
+  if (typeof window === "undefined") return
 
   try {
+    window.dataLayer = window.dataLayer || []
+
+    if (!window.gtag) {
+      window.gtag = (...args: unknown[]) => {
+        window.dataLayer?.push(args)
+      }
+      window.gtag("js", new Date())
+      window.gtag("config", GA_MEASUREMENT_ID)
+    }
+
+    if (document.getElementById("aether-google-analytics")) return
+
     const script = document.createElement("script")
+    script.id = "aether-google-analytics"
     script.async = true
     script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`
-
     script.onerror = () => {
-      if (typeof window !== "undefined" && window.console) {
-        console.warn("[Aether Analytics] Failed to load Google Analytics script")
-      }
+      console.warn("[Aether Analytics] Failed to load Google Analytics script")
+      script.remove()
+      delete window.gtag
     }
-
     document.head.appendChild(script)
-
-    window.dataLayer = window.dataLayer || []
-    window.gtag = (...args: unknown[]) => {
-      window.dataLayer?.push(args)
-    }
-    window.gtag("js", new Date())
-    window.gtag("config", GA_MEASUREMENT_ID)
   } catch (error) {
     if (typeof window !== "undefined" && window.console) {
       console.warn("[Aether Analytics] Error initializing Google Analytics:", error)
