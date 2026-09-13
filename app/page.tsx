@@ -382,6 +382,10 @@ export default function Home() {
 
   useEffect(() => {
     const stored = localStorage.getItem("site-language");
+    if (!stored) {
+      localStorage.setItem("site-language", "en");
+      return;
+    }
     const match = languages.find((lang) => lang.code === stored);
     if (match) setLanguage(match);
   }, []);
