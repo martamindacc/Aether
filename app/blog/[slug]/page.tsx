@@ -147,6 +147,7 @@ const polishTocBySlug: Record<string, ReadonlyArray<readonly [string, string]>> 
 };
 
 const norwegianLedeBySlug: Record<string, React.ReactNode> = {
+  "parterapi-i-oslo-tegn": "Vurderer dere parterapi fordi dere har gjentatte konflikter, kommunikasjonsproblemer eller økende avstand i forholdet? Dere trenger ikke å vente til dere står på randen av et samlivsbrudd før dere søker profesjonell hjelp. Her er 8 tegn på at dere trenger parterapi, hva de kan bety for parforholdet, og når det kan være riktig å søke hjelp.",
   "parterapi-i-oslo": (
     <>
       Denne guiden til parterapi i Oslo forklarer når parterapi kan være nyttig, hvilke terapiformer som finnes, og
@@ -397,6 +398,14 @@ export default async function BlogPostPage({
               ))}
             </ol>
           </nav>
+        )}
+
+        {post.lang === "no" && post.slug === "parterapi-i-oslo-tegn" && (
+          <div className="mt-10 space-y-6 font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.6] text-[#383838]">
+            <p>Mange par merker problemene lenge før de blir en krise. De samme konfliktene kan gjenta seg, kommunikasjonen kan bli vanskeligere, og nærheten kan gradvis forsvinne.</p>
+            <p>Ofte handler det ikke om én stor hendelse, men om mønstre som utvikler seg over tid. Én trekker seg unna, mens den andre prøver stadig hardere å få kontakt. Begge kan sitte igjen med følelsen av å ikke bli forstått.</p>
+            <p>Jo tidligere dere oppdager slike mønstre, desto lettere kan det være å ta tak i dem.</p>
+          </div>
         )}
 
         {post.lang === "en" && englishLedeBySlug[post.slug] && (
