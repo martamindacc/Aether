@@ -37,8 +37,8 @@ export async function generateMetadata({
       : undefined;
 
   return pageMetadata({
-    title: `${post.title} | Aether Practice`,
-    description: post.description,
+    title: post.seoTitle || `${post.title} | Aether Practice`,
+    description: post.seoDescription || post.description,
     path: `/blog/${post.slug}`,
     locale: localeMap[post.lang] || "en_US",
     languages,

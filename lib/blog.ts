@@ -13,6 +13,8 @@ export type BlogPostMeta = {
   relatedService: string;
   lang: "en" | "no" | "pl";
   keywords?: string[];
+  seoTitle?: string;
+  seoDescription?: string;
   author?: string;
   modifiedDate?: string;
   /**
@@ -43,6 +45,8 @@ function readPostFile(fileName: string): BlogPost {
     relatedService: data.relatedService as string,
     lang: (data.lang as "en" | "no" | "pl") ?? "en",
     keywords: (data.keywords as string[]) ?? [],
+    seoTitle: data.seoTitle as string | undefined,
+    seoDescription: data.seoDescription as string | undefined,
     author: (data.author as string) ?? "Aether Practice",
     modifiedDate: (data.modifiedDate as string) ?? (data.date as string),
     translationKey: data.translationKey as string | undefined,
