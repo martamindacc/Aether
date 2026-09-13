@@ -226,7 +226,7 @@ export default async function BlogPostPage({
         )}
 
         {post.lang === "no" && (
-          <nav aria-label="Innhold" className="mt-10 border-l-4 border-[#c9a87d] bg-[#eee2db]/20 px-6 py-5 sm:px-8 sm:py-6">
+          <nav aria-label="Innhold" className="mt-10 border-l-4 border-[#c9a87d] px-6 py-5 sm:px-8 sm:py-6">
             <h2 className="mt-0 font-[Roboto,Arial,sans-serif] text-sm font-medium uppercase tracking-[0.18em] text-[#74382f]">
               Innhold
             </h2>
