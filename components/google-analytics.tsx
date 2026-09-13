@@ -3,6 +3,7 @@
 import { useEffect } from "react"
 import { useState } from "react"
 import Script from "next/script"
+import { ANALYTICS_REQUIRE_CONSENT } from "@/lib/analytics-config"
 
 const GA_MEASUREMENT_ID = "G-0DEP95KV30"
 const STORAGE_KEY = "aether-consent"
@@ -50,7 +51,7 @@ function loadGoogleTag() {
 
 /** Sends a GA4 event, but only if the visitor has given analytics consent. */
 export function sendGAEvent(eventName: string, params?: Record<string, string>) {
-  if (typeof window === "undefined" || !hasAnalyticsConsent()) return
+  if (typeof window === "undefined" || (ANALYTICS_REQUIRE_CONSENT && !hasAnalyticsConsent())) return
   try {
     if (!window.gtag) {
       // Consent is present but the tag hasn't finished initializing yet (e.g. a page
@@ -67,17 +68,19 @@ export function sendGAEvent(eventName: string, params?: Record<string, string>) 
 
 // Evaluate consent as early as possible on the client (module load, not just in an effect)
 // so window.gtag is ready before other components' effects try to send events.
-if (typeof window !== "undefined" && hasAnalyticsConsent()) {
+if (typeof window !== "undefined" && (!ANALYTICS_REQUIRE_CONSENT || hasAnalyticsConsent())) {
   loadGoogleTag()
 }
 
 /** Loads the Google tag only when analytics consent is present, and reacts live to consent changes. */
 export function GoogleAnalytics() {
-  const [analyticsEnabled, setAnalyticsEnabled] = useState(hasAnalyticsConsent)
+  const [analyticsEnabled, setAnalyticsEnabled] = useState(
+    ANALYTICS_REQUIRE_CONSENT ? hasAnalyticsConsent() : true,
+  )
 
   useEffect(() => {
     const evaluateConsent = () => {
-      setAnalyticsEnabled(hasAnalyticsConsent())
+      setAnalyticsEnabled(ANALYTICS_REQUIRE_CONSENT ? hasAnalyticsConsent() : true)
     }
 
     evaluateConsent()

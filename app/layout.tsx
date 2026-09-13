@@ -4,6 +4,7 @@ import type { Metadata, Viewport } from 'next'
 import { headers } from 'next/headers'
 import { ConsentBanner } from '@/components/consent-banner'
 import { GoogleAnalytics } from '@/components/google-analytics'
+import { ANALYTICS_REQUIRE_CONSENT } from '@/lib/analytics-config'
 import { PRODUCTS } from '@/lib/products'
 import { getPostBySlug, htmlLangFor } from '@/lib/blog'
 import './globals.css'
@@ -123,7 +124,7 @@ export default async function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchema) }}
         />
         {children}
-        <ConsentBanner />
+        {ANALYTICS_REQUIRE_CONSENT && <ConsentBanner />}
         <GoogleAnalytics />
         {process.env.NODE_ENV === 'production' && <Analytics />}
         <SpeedInsights />
