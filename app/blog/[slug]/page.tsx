@@ -173,6 +173,9 @@ export default async function BlogPostPage({
     notFound();
   }
 
+  const htmlLangByLang: Record<typeof post.lang, string> = { en: "en", no: "nb", pl: "pl" };
+  const schemaLangByLang: Record<typeof post.lang, string> = { en: "en-US", no: "nb-NO", pl: "pl-PL" };
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -181,7 +184,7 @@ export default async function BlogPostPage({
     description: post.description,
     datePublished: post.date,
     dateModified: post.modifiedDate,
-    inLanguage: post.lang === "no" ? "nb-NO" : "en-US",
+    inLanguage: schemaLangByLang[post.lang],
     isAccessibleForFree: true,
     keywords: post.keywords,
     author: {
@@ -227,7 +230,7 @@ export default async function BlogPostPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
       <BlogViewTracker slug={post.slug} title={post.title} />
-      <article lang={post.lang === "no" ? "nb" : "en"} className="mx-auto flex max-w-3xl flex-col px-6 pb-24 pt-48">
+      <article lang={htmlLangByLang[post.lang]} className="mx-auto flex max-w-3xl flex-col px-6 pb-24 pt-48">
         <Link
           href="/blog"
           className="font-[Roboto,Arial,sans-serif] text-sm text-zinc-500 hover:text-zinc-900"

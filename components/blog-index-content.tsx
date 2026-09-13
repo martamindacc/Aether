@@ -38,7 +38,7 @@ function formatDate(date: string, language: "en" | "no" | "pl") {
 export function BlogIndexContent({ posts }: { posts: BlogPostMeta[] }) {
   const language = useSiteLanguage();
   const t = copy[language as keyof typeof copy] || copy.en;
-  const visiblePosts = posts.filter((post) => post.lang === language || post.lang === "en");
+  const visiblePosts = posts.filter((post) => post.lang === language);
 
   return (
     <section className="mx-auto flex max-w-6xl flex-col px-6 pb-24 pt-48">

@@ -38,16 +38,16 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: '/logo-a.svg',
+        url: '/favicon.svg',
         type: 'image/svg+xml',
       },
       {
-        url: '/icon.svg',
+        url: '/favicon.svg',
         type: 'image/svg+xml',
       },
     ],
-    shortcut: '/logo-a.svg',
-    apple: '/apple-icon.png',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
   },
 }
 
