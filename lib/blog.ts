@@ -17,6 +17,7 @@ export type BlogPostMeta = {
   seoDescription?: string;
   author?: string;
   modifiedDate?: string;
+  wordCount: number;
   /**
    * Shared identifier linking genuine translations of the same article across
    * languages (e.g. all three language versions of "8 signs you need couples
@@ -29,6 +30,18 @@ export type BlogPostMeta = {
 export type BlogPost = BlogPostMeta & {
   content: string;
 };
+
+function countWords(content: string): number {
+  const text = content
+    .replace(/```[\s\S]*?```/g, " ")
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, " ")
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, "$1")
+    .replace(/https?:\/\/\S+/g, " ")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/[#>*_`~]/g, " ");
+
+  return text.match(/[\p{L}\p{N}]+(?:['’–-][\p{L}\p{N}]+)*/gu)?.length ?? 0;
+}
 
 function readPostFile(fileName: string): BlogPost {
   const filePath = path.join(BLOG_DIR, fileName);
@@ -49,6 +62,7 @@ function readPostFile(fileName: string): BlogPost {
     seoDescription: data.seoDescription as string | undefined,
     author: (data.author as string) ?? "Aether Practice",
     modifiedDate: (data.modifiedDate as string) ?? (data.date as string),
+    wordCount: countWords(content),
     translationKey: data.translationKey as string | undefined,
     content,
   };

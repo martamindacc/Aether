@@ -35,6 +35,20 @@ function formatDate(date: string, language: "en" | "no" | "pl") {
   });
 }
 
+function formatWordCount(wordCount: number, language: "en" | "no" | "pl") {
+  const localeMap: Record<string, string> = {
+    no: "nb-NO",
+    pl: "pl-PL",
+    en: "en-US",
+  };
+  const labelMap: Record<string, string> = {
+    no: "ord",
+    pl: "słów",
+    en: "words",
+  };
+  return `${new Intl.NumberFormat(localeMap[language] || "en-US").format(wordCount)} ${labelMap[language] || "words"}`;
+}
+
 export function BlogIndexContent({ posts }: { posts: BlogPostMeta[] }) {
   const language = useSiteLanguage();
   const t = copy[language as keyof typeof copy] || copy.en;
@@ -55,7 +69,7 @@ export function BlogIndexContent({ posts }: { posts: BlogPostMeta[] }) {
         {visiblePosts.map((post, index) => (
           <Link key={post.slug} href={`/blog/${post.slug}`} className="group rounded-2xl border border-zinc-300/80 bg-gradient-to-br from-[#eee2db]/40 to-[#eee2db]/20 p-8 transition-colors hover:from-[#eee2db]/60 hover:to-[#eee2db]/30 sm:p-10">
             <p className="font-[Roboto,Arial,sans-serif] text-sm uppercase tracking-wide text-zinc-500">
-              {formatDate(post.date, post.lang)}
+              {formatDate(post.date, post.lang)} <span aria-hidden="true">·</span> {formatWordCount(post.wordCount, post.lang)}
             </p>
             <h2 className="mt-3 origin-left font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out group-hover:translate-x-2 group-hover:scale-x-105 sm:text-3xl">
               {post.title}
@@ -66,6 +80,22 @@ export function BlogIndexContent({ posts }: { posts: BlogPostMeta[] }) {
           </Link>
         ))}
       </div>
+      {language !== "no" && posts.some((post) => post.lang === "no") && (
+        <nav aria-label="Norwegian articles" className="mt-16 border-t border-zinc-300/80 pt-8">
+          <h2 className="font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-medium tracking-tight text-[#74382f]">
+            Norwegian articles
+          </h2>
+          <ul className="mt-4 grid gap-2 font-[Roboto,Arial,sans-serif] text-base leading-[1.5] text-[#6f5a46] sm:grid-cols-2">
+            {posts.filter((post) => post.lang === "no").map((post) => (
+              <li key={post.slug}>
+                <Link href={`/blog/${post.slug}`} className="text-[#74382f] underline underline-offset-2 hover:no-underline">
+                  {post.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
     </section>
   );
 }

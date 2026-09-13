@@ -177,6 +177,20 @@ function formatDate(date: string, lang: "en" | "no" | "pl") {
   });
 }
 
+function formatWordCount(wordCount: number, lang: "en" | "no" | "pl") {
+  const localeMap: Record<string, string> = {
+    no: "nb-NO",
+    pl: "pl-PL",
+    en: "en-US",
+  };
+  const labelMap: Record<string, string> = {
+    no: "ord",
+    pl: "słów",
+    en: "words",
+  };
+  return `${new Intl.NumberFormat(localeMap[lang] || "en-US").format(wordCount)} ${labelMap[lang] || "words"}`;
+}
+
 const mdxComponents = {
   h2: (props: React.ComponentProps<"h2">) => (
     <h2
@@ -313,9 +327,11 @@ export default async function BlogPostPage({
         >
           {backToBlogLabel[post.lang]}
         </Link>
-        <time dateTime={post.date} className="mt-6 font-[Roboto,Arial,sans-serif] text-sm uppercase tracking-wide text-zinc-500">
-          {formatDate(post.date, post.lang)}
-        </time>
+        <div className="mt-6 flex items-center gap-2 font-[Roboto,Arial,sans-serif] text-sm uppercase tracking-wide text-zinc-500">
+          <time dateTime={post.date}>{formatDate(post.date, post.lang)}</time>
+          <span aria-hidden="true">·</span>
+          <span>{formatWordCount(post.wordCount, post.lang)}</span>
+        </div>
         <h1 className="mt-3 font-[NeueHaasDisplayRoman,Arial,sans-serif] text-5xl font-medium leading-[1.05] tracking-tight text-[#74382f] sm:text-6xl">
           {post.title}
         </h1>
