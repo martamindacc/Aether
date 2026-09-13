@@ -45,7 +45,6 @@ export async function generateMetadata({
     type: "article",
     publishedTime: post.date,
     modifiedTime: post.modifiedDate,
-    section: "Parterapi",
     tags: post.tags,
   });
 }
@@ -230,10 +229,6 @@ export default async function BlogPostPage({
       "@type": "WebPage",
       "@id": `https://aetherpractice.com/blog/${post.slug}`,
     },
-    about: [
-      { "@type": "Thing", name: "Parterapi" },
-      { "@type": "Place", name: "Oslo" },
-    ],
   };
 
   const breadcrumbLd = breadcrumbJsonLd([
