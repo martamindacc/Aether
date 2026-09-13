@@ -73,6 +73,11 @@ const englishTocBySlug: Record<string, ReadonlyArray<readonly [string, string]>>
   ],
 };
 
+const englishLedeBySlug: Record<string, string> = {
+  "8-signs-need-couples-therapy":
+    "Are you considering couples therapy because you have repeated conflicts, communication problems, or feel increasingly distant from each other? You do not have to wait until your relationship is on the verge of breaking down before seeking professional help. Here are 8 signs that you may need couples therapy, what they can mean for your relationship, and when it may be the right time to seek help.",
+};
+
 const norwegianTocBySlug: Record<string, ReadonlyArray<readonly [string, string]>> = {
   "parterapi-i-oslo": [
     ["Hva Er Parterapi Egentlig?", "Hva Er Parterapi Egentlig?"],
@@ -326,6 +331,12 @@ export default async function BlogPostPage({
           </p>
         )}
 
+        {post.lang === "en" && englishLedeBySlug[post.slug] && (
+          <p className="mt-6 font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.6] text-[#383838]">
+            {englishLedeBySlug[post.slug]}
+          </p>
+        )}
+
         {post.lang === "en" && englishTocBySlug[post.slug] && (
           <nav aria-label="Table of Contents" className="mt-10 border-l-4 border-[#c9a87d] px-6 py-5 sm:px-8 sm:py-6">
             <h2 className="mt-0 font-[Roboto,Arial,sans-serif] text-sm font-medium uppercase tracking-[0.18em] text-[#74382f]">
@@ -375,6 +386,14 @@ export default async function BlogPostPage({
               ))}
             </ol>
           </nav>
+        )}
+
+        {post.lang === "en" && englishLedeBySlug[post.slug] && (
+          <div className="mt-10 space-y-6 font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.6] text-[#383838]">
+            <p>Many couples notice the problems long before they become a crisis. The same conflicts can repeat themselves, communication can become more difficult, and closeness can gradually fade.</p>
+            <p>Often it&apos;s not about one big event, but about patterns that develop over time. One person withdraws while the other tries harder and harder to reconnect. Both can end up feeling misunderstood.</p>
+            <p>The earlier you recognize these patterns, the easier it can be to address them.</p>
+          </div>
         )}
 
         <div className="mt-4">
