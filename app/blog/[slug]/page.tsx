@@ -55,6 +55,24 @@ const backToBlogLabel: Record<"en" | "no" | "pl", string> = {
   pl: "← Powrót do bloga",
 };
 
+const englishTocBySlug: Record<string, ReadonlyArray<readonly [string, string]>> = {
+  "8-signs-need-couples-therapy": [
+    ["You have the same conflicts over and over again", "1. You have the same conflicts over and over again"],
+    ["You can't talk about difficult things without escalation", "2. You can't talk about difficult things without escalation"],
+    ["You feel more like adversaries than teammates", "3. You feel more like adversaries than teammates"],
+    ["One or both of you has started withdrawing emotionally", "4. One or both of you has started withdrawing emotionally"],
+    ["Intimacy, sex, or closeness has become a conflict zone", "5. Intimacy, sex, or closeness has become a conflict zone"],
+    ["Trust has been broken", "6. Trust has been broken"],
+    ["You function on the surface, but struggle together", "7. You function on the surface, but struggle together"],
+    ["You're already wondering if you should separate", "8. You're already wondering if you should separate"],
+    ["Do you need couples therapy?", "Do you need couples therapy?"],
+    ["When should you go to couples therapy?", "When should you go to couples therapy?"],
+    ["What if only one of you wants couples therapy?", "What if only one of you wants couples therapy?"],
+    ["When couples therapy isn't the right first step", "When couples therapy isn't the right first step"],
+    ["Common questions about couples therapy", "Common questions about couples therapy"],
+  ],
+};
+
 const norwegianTocBySlug: Record<string, ReadonlyArray<readonly [string, string]>> = {
   "parterapi-i-oslo": [
     ["Hva Er Parterapi Egentlig?", "Hva Er Parterapi Egentlig?"],
@@ -306,6 +324,23 @@ export default async function BlogPostPage({
           <p className="mt-6 font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.6] text-[#383838]">
             {norwegianLedeBySlug[post.slug]}
           </p>
+        )}
+
+        {post.lang === "en" && englishTocBySlug[post.slug] && (
+          <nav aria-label="Table of Contents" className="mt-10 border-l-4 border-[#c9a87d] px-6 py-5 sm:px-8 sm:py-6">
+            <h2 className="mt-0 font-[Roboto,Arial,sans-serif] text-sm font-medium uppercase tracking-[0.18em] text-[#74382f]">
+              Table of Contents
+            </h2>
+            <ol className="mt-4 grid gap-1.5 font-[Roboto,Arial,sans-serif] text-base leading-[1.5] text-[#6f5a46] sm:grid-cols-2">
+              {englishTocBySlug[post.slug].map(([label, headingText], index) => (
+                <li key={headingText}>
+                  <a href={`#${headingId(headingText) ?? ""}`} className="text-[#74382f] underline underline-offset-2 hover:no-underline">
+                    {index + 1}. {label}
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </nav>
         )}
 
         {post.lang === "no" && norwegianTocBySlug[post.slug] && (
