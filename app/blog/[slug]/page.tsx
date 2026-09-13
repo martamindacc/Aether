@@ -100,6 +100,16 @@ const norwegianTocBySlug: Record<string, ReadonlyArray<readonly [string, string]
   ],
 };
 
+const norwegianLedeBySlug: Record<string, React.ReactNode> = {
+  "parterapi-i-oslo": (
+    <>
+      Denne guiden til parterapi i Oslo forklarer når parterapi kan være nyttig, hvilke terapiformer som finnes, og
+      hvordan dere velger riktig parterapeut. Du får også vite hva dere kan forvente av parterapi, hva det koster i
+      Oslo, og når det kan være riktig å søke hjelp.
+    </>
+  ),
+};
+
 function headingId(children: React.ReactNode) {
   return typeof children === "string"
     ? children.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")
@@ -272,6 +282,12 @@ export default async function BlogPostPage({
               </span>
             ))}
           </div>
+        )}
+
+        {post.lang === "no" && norwegianLedeBySlug[post.slug] && (
+          <p className="mt-6 font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.6] text-[#383838]">
+            {norwegianLedeBySlug[post.slug]}
+          </p>
         )}
 
         {post.lang === "no" && norwegianTocBySlug[post.slug] && (
