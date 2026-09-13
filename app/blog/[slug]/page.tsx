@@ -79,6 +79,18 @@ const norwegianTocBySlug: Record<string, ReadonlyArray<readonly [string, string]
     ["Når parterapi ikke er riktig første steg", "Når parterapi ikke er riktig første steg"],
     ["Vanlige spørsmål om parterapi", "Vanlige spørsmål om parterapi"],
   ],
+  "nar-friluftsliv-blir-viktigere-enn-forholdet": [
+    ["Når friluftsliv blir en erstatning for intimitet", "Når friluftsliv blir en erstatning for intimitet"],
+    ["Tegn på at aktivitet har tatt plassen til intimitet", "Tegn på at aktivitet har tatt plassen til intimitet"],
+    ["Hvorfor dette kan være spesielt relevant i Norge", "Hvorfor dette kan være spesielt relevant i Norge"],
+    ["Hva forskningen sier om friluftsliv, fritid og parforhold", "Hva forskningen sier om friluftsliv, fritid og parforhold"],
+    ["Slik kan dere finne tilbake til intimiteten hjemme", "Slik kan dere finne tilbake til intimiteten hjemme"],
+    ["Hva hvis partneren din ikke ser problemet?", "Hva hvis partneren din ikke ser problemet?"],
+    ["Når kan parterapi være nyttig?", "Når kan parterapi være nyttig?"],
+    ["FAQ: Friluftsliv og intimitet i parforhold", "FAQ: Friluftsliv og intimitet i parforhold"],
+    ["Friluftslivet trenger ikke forsvinne. Men forholdet trenger mer enn turen.", "Friluftslivet trenger ikke forsvinne. Men forholdet trenger mer enn turen."],
+    ["Klare for å finne tilbake til nærheten?", "Klare for å finne tilbake til nærheten?"],
+  ],
 };
 
 function headingId(children: React.ReactNode) {
