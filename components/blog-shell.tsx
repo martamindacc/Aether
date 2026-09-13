@@ -32,6 +32,14 @@ export function BlogShell({
   const [isLangOpen, setIsLangOpen] = useState(false);
 
   useEffect(() => {
+    // Article pages are locked to the article's own language (only its real
+    // translations, via articleLanguages, may switch it) — never fall back
+    // to a site-wide language stored from browsing other pages, or the nav
+    // language ends up out of sync with the static article content.
+    if (articleLanguages) {
+      setLanguage(initialLanguage);
+      return;
+    }
     if (initialLanguage === "no") {
       setLanguage("no");
       localStorage.setItem("site-language", "no");
@@ -39,7 +47,7 @@ export function BlogShell({
     }
     const stored = localStorage.getItem("site-language") as LanguageCode | null;
     if (stored) setLanguage(stored);
-  }, [initialLanguage]);
+  }, [initialLanguage, articleLanguages]);
 
   const handleLanguageChange = (lang: LanguageCode) => {
     setLanguage(lang);
