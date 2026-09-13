@@ -147,6 +147,7 @@ const polishTocBySlug: Record<string, ReadonlyArray<readonly [string, string]>> 
 };
 
 const norwegianLedeBySlug: Record<string, React.ReactNode> = {
+  "nar-friluftsliv-blir-viktigere-enn-forholdet": "Friluftsliv kan være en sterk kilde til nærhet i et parforhold. Men hva skjer når aktiviteter blir viktigere enn kontakten hjemme? For mange par er turer, ski, hytta, trening og andre friluftsaktiviteter en viktig del av livet sammen. Det kan gi glede, mestring, opplevelser og tid sammen. Men noen ganger kan det også oppstå et mønster der aktivitetene blir stedet dere fortsatt fungerer godt sammen – mens nærheten, samtalene og intimiteten hjemme gradvis forsvinner.",
   "parterapi-i-oslo-tegn": "Vurderer dere parterapi fordi dere har gjentatte konflikter, kommunikasjonsproblemer eller økende avstand i forholdet? Dere trenger ikke å vente til dere står på randen av et samlivsbrudd før dere søker profesjonell hjelp. Her er 8 tegn på at dere trenger parterapi, hva de kan bety for parforholdet, og når det kan være riktig å søke hjelp.",
   "parterapi-i-oslo": (
     <>
@@ -398,6 +399,13 @@ export default async function BlogPostPage({
               ))}
             </ol>
           </nav>
+        )}
+
+        {post.lang === "no" && post.slug === "nar-friluftsliv-blir-viktigere-enn-forholdet" && (
+          <div className="mt-10 space-y-6 font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.6] text-[#383838]">
+            <p>Da kan dere ende opp som aktivitetskompanjonger snarere enn kjærester.</p>
+            <p>Det betyr ikke at friluftslivet er problemet. Spørsmålet er hva som skjer i forholdet når turen er over, og dere ikke lenger har aktiviteten til å holde kontakten i gang.</p>
+          </div>
         )}
 
         {post.lang === "no" && post.slug === "parterapi-i-oslo-tegn" && (
