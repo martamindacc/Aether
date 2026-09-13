@@ -6,7 +6,7 @@ import { BlogShell } from "@/components/blog-shell";
 import { BlogCta } from "@/components/blog-cta";
 import { BlogViewTracker } from "@/components/blog-view-tracker";
 import { getAllSlugs, getPostBySlug } from "@/lib/blog";
-import { pageMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }));
@@ -25,14 +25,25 @@ export async function generateMetadata({
   }
 
   return pageMetadata({
-    title: `Aether Practice | ${post.title}`,
+    title: `${post.title} | Aether Practice`,
     description: post.description,
     path: `/blog/${post.slug}`,
+    locale: post.lang === "no" ? "nb_NO" : "en_US",
+    type: "article",
+    publishedTime: post.date,
+    modifiedTime: post.modifiedDate,
+    section: "Parterapi",
+    tags: post.tags,
   });
 }
 
-function formatDate(date: string) {
-  return new Date(date).toLocaleDateString("en-US", {
+const backToBlogLabel: Record<"en" | "no", string> = {
+  en: "← Back to Blog",
+  no: "← Tilbake til bloggen",
+};
+
+function formatDate(date: string, lang: "en" | "no") {
+  return new Date(date).toLocaleDateString(lang === "no" ? "nb-NO" : "en-US", {
     year: "numeric",
     month: "long",
     day: "numeric",
@@ -73,6 +84,23 @@ const mdxComponents = {
   a: (props: React.ComponentProps<"a">) => (
     <a className="text-[#74382f] underline underline-offset-2 hover:no-underline" {...props} />
   ),
+  table: (props: React.ComponentProps<"table">) => (
+    <div className="mt-8 overflow-x-auto">
+      <table className="w-full border-collapse text-left font-[Roboto,Arial,sans-serif] text-[16px] leading-[1.5] text-[#383838]" {...props} />
+    </div>
+  ),
+  thead: (props: React.ComponentProps<"thead">) => (
+    <thead className="border-b border-zinc-300/80 font-[NeueHaasDisplayRoman,Arial,sans-serif] text-zinc-900" {...props} />
+  ),
+  tr: (props: React.ComponentProps<"tr">) => (
+    <tr className="border-b border-zinc-300/80 align-top" {...props} />
+  ),
+  th: (props: React.ComponentProps<"th">) => (
+    <th className="px-4 py-3 font-medium" {...props} />
+  ),
+  td: (props: React.ComponentProps<"td">) => (
+    <td className="px-4 py-3" {...props} />
+  ),
 };
 
 export default async function BlogPostPage({
@@ -91,16 +119,24 @@ export default async function BlogPostPage({
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: post.title,
+    url: `https://aetherpractice.com/blog/${post.slug}`,
     description: post.description,
     datePublished: post.date,
-    dateModified: post.date,
+    dateModified: post.modifiedDate,
+    inLanguage: post.lang === "no" ? "nb-NO" : "en-US",
+    isAccessibleForFree: true,
+    keywords: post.keywords,
     author: {
       "@type": "Organization",
       name: "Aether Practice",
+      url: "https://aetherpractice.com/",
+      "@id": "https://aetherpractice.com/#organization",
     },
     publisher: {
       "@type": "Organization",
       name: "Aether Practice",
+      "@id": "https://aetherpractice.com/#organization",
+      url: "https://aetherpractice.com/",
       logo: {
         "@type": "ImageObject",
         url: "https://aetherpractice.com/logo-a.svg",
@@ -110,25 +146,39 @@ export default async function BlogPostPage({
       "@type": "WebPage",
       "@id": `https://aetherpractice.com/blog/${post.slug}`,
     },
+    about: [
+      { "@type": "Thing", name: "Parterapi" },
+      { "@type": "Place", name: "Oslo" },
+    ],
   };
 
+  const breadcrumbLd = breadcrumbJsonLd([
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog" },
+    { name: post.title, path: `/blog/${post.slug}` },
+  ]);
+
   return (
-    <BlogShell>
+    <BlogShell language={post.lang}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
       <BlogViewTracker slug={post.slug} title={post.title} />
-      <article className="mx-auto flex max-w-3xl flex-col px-6 pb-24 pt-48">
+      <article lang={post.lang === "no" ? "nb" : "en"} className="mx-auto flex max-w-3xl flex-col px-6 pb-24 pt-48">
         <Link
           href="/blog"
           className="font-[Roboto,Arial,sans-serif] text-sm text-zinc-500 hover:text-zinc-900"
         >
-          ← Back to Blog
+          {backToBlogLabel[post.lang]}
         </Link>
-        <p className="mt-6 font-[Roboto,Arial,sans-serif] text-sm uppercase tracking-wide text-zinc-500">
-          {formatDate(post.date)}
-        </p>
+        <time dateTime={post.date} className="mt-6 font-[Roboto,Arial,sans-serif] text-sm uppercase tracking-wide text-zinc-500">
+          {formatDate(post.date, post.lang)}
+        </time>
         <h1 className="mt-3 font-[NeueHaasDisplayRoman,Arial,sans-serif] text-5xl font-medium leading-[1.05] tracking-tight text-[#74382f] sm:text-6xl">
           {post.title}
         </h1>
@@ -149,7 +199,7 @@ export default async function BlogPostPage({
           <MDXRemote source={post.content} components={mdxComponents} />
         </div>
 
-        {post.relatedService && <BlogCta relatedService={post.relatedService} />}
+        {post.relatedService && <BlogCta relatedService={post.relatedService} language={post.lang} />}
       </article>
     </BlogShell>
   );

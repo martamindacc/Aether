@@ -1,6 +1,7 @@
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import type { Metadata, Viewport } from 'next'
+import { headers } from 'next/headers'
 import { ConsentBanner } from '@/components/consent-banner'
 import { GoogleAnalytics } from '@/components/google-analytics'
 import { PRODUCTS } from '@/lib/products'
@@ -103,13 +104,16 @@ const jsonLdSchema = {
   ],
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const pathname = (await headers()).get('x-pathname') ?? ''
+  const isNorwegianArticle = pathname === '/blog/parterapi-i-oslo'
+
   return (
-    <html lang="en">
+    <html lang={isNorwegianArticle ? 'nb' : 'en'}>
       <body className="overflow-x-hidden antialiased">
         <script
           type="application/ld+json"

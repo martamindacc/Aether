@@ -20,6 +20,11 @@ export function pageMetadata({
   path,
   locale = "en_US",
   languages,
+  type = "website",
+  publishedTime,
+  modifiedTime,
+  section,
+  tags,
 }: {
   title: string
   description: string
@@ -34,6 +39,11 @@ export function pageMetadata({
    * site — it must be reciprocated on that other page or Google ignores it.
    */
   languages?: Record<string, string>
+  type?: "website" | "article"
+  publishedTime?: string
+  modifiedTime?: string
+  section?: string
+  tags?: string[]
 }): Metadata {
   const url = `${BASE_URL}${path}`
 
@@ -52,7 +62,7 @@ export function pageMetadata({
       }),
     },
     openGraph: {
-      type: "website",
+      type,
       siteName: SITE_NAME,
       locale,
       url,
@@ -61,6 +71,12 @@ export function pageMetadata({
       images: [
         { url: "/opengraph-image", width: 1200, height: 630, alt: OG_IMAGE_ALT },
       ],
+      ...(type === "article" && {
+        publishedTime,
+        modifiedTime,
+        section,
+        tags,
+      }),
     },
     twitter: {
       card: "summary_large_image",

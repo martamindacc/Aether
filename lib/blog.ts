@@ -11,6 +11,10 @@ export type BlogPostMeta = {
   date: string;
   tags: string[];
   relatedService: string;
+  lang: "en" | "no";
+  keywords?: string[];
+  author?: string;
+  modifiedDate?: string;
 };
 
 export type BlogPost = BlogPostMeta & {
@@ -30,6 +34,10 @@ function readPostFile(fileName: string): BlogPost {
     date: data.date as string,
     tags: (data.tags as string[]) ?? [],
     relatedService: data.relatedService as string,
+    lang: (data.lang as "en" | "no") ?? "en",
+    keywords: (data.keywords as string[]) ?? [],
+    author: (data.author as string) ?? "Aether Practice",
+    modifiedDate: (data.modifiedDate as string) ?? (data.date as string),
     content,
   };
 }
