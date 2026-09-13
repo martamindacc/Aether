@@ -78,6 +78,11 @@ const englishLedeBySlug: Record<string, string> = {
     "Are you considering couples therapy because you have repeated conflicts, communication problems, or feel increasingly distant from each other? You do not have to wait until your relationship is on the verge of breaking down before seeking professional help. Here are 8 signs that you may need couples therapy, what they can mean for your relationship, and when it may be the right time to seek help.",
 };
 
+const polishLedeBySlug: Record<string, string> = {
+  "8-znakow-potrzeba-terapii-par":
+    "Zastanawiacie się nad terapią par, ponieważ wciąż wracacie do tych samych konfliktów, macie problemy z komunikacją albo czujecie, że coraz bardziej się od siebie oddalacie? Nie musicie czekać, aż wasz związek znajdzie się na skraju rozpadu, żeby poszukać profesjonalnej pomocy. Oto 8 oznak, że możecie potrzebować terapii par, co mogą oznaczać dla waszej relacji i kiedy warto poszukać pomocy.",
+};
+
 const norwegianTocBySlug: Record<string, ReadonlyArray<readonly [string, string]>> = {
   "parterapi-i-oslo": [
     ["Hva Er Parterapi Egentlig?", "Hva Er Parterapi Egentlig?"],
@@ -337,6 +342,12 @@ export default async function BlogPostPage({
           </p>
         )}
 
+        {post.lang === "pl" && polishLedeBySlug[post.slug] && (
+          <p className="mt-6 font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.6] text-[#383838]">
+            {polishLedeBySlug[post.slug]}
+          </p>
+        )}
+
         {post.lang === "en" && englishTocBySlug[post.slug] && (
           <nav aria-label="Table of Contents" className="mt-10 border-l-4 border-[#c9a87d] px-6 py-5 sm:px-8 sm:py-6">
             <h2 className="mt-0 font-[Roboto,Arial,sans-serif] text-sm font-medium uppercase tracking-[0.18em] text-[#74382f]">
@@ -393,6 +404,14 @@ export default async function BlogPostPage({
             <p>Many couples notice the problems long before they become a crisis. The same conflicts can repeat themselves, communication can become more difficult, and closeness can gradually fade.</p>
             <p>Often it&apos;s not about one big event, but about patterns that develop over time. One person withdraws while the other tries harder and harder to reconnect. Both can end up feeling misunderstood.</p>
             <p>The earlier you recognize these patterns, the easier it can be to address them.</p>
+          </div>
+        )}
+
+        {post.lang === "pl" && polishLedeBySlug[post.slug] && (
+          <div className="mt-10 space-y-6 font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.6] text-[#383838]">
+            <p>Wiele par zauważa problemy na długo zanim staną się kryzysem. Te same konflikty mogą się powtarzać, komunikacja może stawać się coraz trudniejsza, a bliskość może stopniowo zanikać.</p>
+            <p>Często nie chodzi o jedno duże wydarzenie, lecz o wzorce, które rozwijają się z czasem. Jedna osoba się wycofuje, podczas gdy druga coraz mocniej stara się nawiązać kontakt. Obie strony mogą czuć się niezrozumiane.</p>
+            <p>Im wcześniej rozpoznacie takie wzorce, tym łatwiej może być się nimi zająć.</p>
           </div>
         )}
 
