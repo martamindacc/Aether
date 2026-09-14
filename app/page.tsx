@@ -52,7 +52,7 @@ const content: Record<
 > = {
   en: {
     videoOverlay: "Your Future is Yours to Shape",
-    heroTitle: "Better life starts with better understanding",
+    heroTitle: "Clarity for the high-stakes life",
     heroSubtitle:
       "Private online sessions for couples, individuals, families, executives, and founders in New York City, California, and Norway.",
     subtext: "",
@@ -158,7 +158,7 @@ const content: Record<
   },
   no: {
     videoOverlay: "Din Fremtid Er Din Å Forme",
-    heroTitle: "Et bedre liv starter med bedre forståelse",
+    heroTitle: "Klarhet for et liv med høy innsats",
     heroSubtitle:
       "Private online samtaler for par, enkeltpersoner, familier, ledere og grunnleggere i New York City, California og Norge.",
     subtext: "",
@@ -264,7 +264,7 @@ const content: Record<
   },
   pl: {
     videoOverlay: "Twoja Przyszłość Jest Twoja do Kształtowania",
-    heroTitle: "Lepsze życie zaczyna się od lepszego zrozumienia",
+    heroTitle: "Jasność dla życia wysokiej stawki",
     heroSubtitle:
       "Prywatne sesje online dla par, osób indywidualnych, rodzin, kadry kierowniczej i założycieli firm w Nowym Jorku, Kalifornii i Norwegii.",
     subtext: "",
@@ -472,7 +472,7 @@ export default function Home() {
           <div className="flex items-center gap-1 sm:gap-3">
               <button
                 onClick={openBooking}
-                className="hidden border border-zinc-900/20 bg-white px-[30px] py-3 text-sm transition-colors hover:bg-zinc-100 sm:inline-block"
+                className="hidden border border-zinc-900/20 bg-white/30 px-[30px] py-3 text-sm transition-colors hover:bg-white/65 sm:inline-block"
             >
               {t.bookNow}
             </button>

@@ -64,7 +64,7 @@ export function FloatingNav({
         <div className="flex items-center gap-1 sm:gap-3">
           <button
             onClick={() => setIsBookingOpen(true)}
-            className="hidden border border-zinc-900/20 bg-white px-[30px] py-3 text-sm transition-colors hover:bg-zinc-100 sm:inline-block"
+            className="hidden border border-zinc-900/20 bg-white/30 px-[30px] py-3 text-sm transition-colors hover:bg-white/65 sm:inline-block"
           >
             {t.bookNow}
           </button>
