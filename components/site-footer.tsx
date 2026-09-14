@@ -17,7 +17,7 @@ export function SiteFooter({ language }: { language: LanguageCode }) {
   const t = navContent[language];
 
   return (
-    <footer className="px-6 py-16 font-[Roboto,Arial,sans-serif] text-sm text-[#383838]">
+    <footer className="px-6 py-[99px] font-[Roboto,Arial,sans-serif] text-sm text-[#383838]">
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-12 md:grid-cols-3 md:items-start">
         <nav aria-label={t.menuHeading} className="flex flex-col gap-3 md:justify-self-start">
             <p className="text-xs uppercase tracking-wide text-zinc-500">{t.menuHeading}</p>

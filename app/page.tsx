@@ -54,17 +54,17 @@ const content: Record<
     videoOverlay: "Your Future is Yours to Shape",
     heroTitle: "Better life starts with better understanding",
     heroSubtitle:
-      "Online sessions for couples, individuals, families, executives, and founders in New York City, California, and Norway.",
+      "Private online sessions for couples, individuals, families, executives, and founders in New York City, California, and Norway.",
     subtext: "",
     bookNow: "Book Now",
-    pills: [
-      "Emotional Wellness",
-      "Individual Sessions",
-      "Couples Sessions",
-      "Stress Support",
-      "Personal Growth",
-      "Mindful Living",
-    ],
+  pills: [
+    "Couples Sessions",
+    "Emotional Wellness",
+    "Individual Sessions",
+    "Stress Support",
+    "Personal Growth",
+    "Mindful Living",
+  ],
     menuSections: [
       {
         heading: "Services",
@@ -160,13 +160,13 @@ const content: Record<
     videoOverlay: "Din Fremtid Er Din Å Forme",
     heroTitle: "Et bedre liv starter med bedre forståelse",
     heroSubtitle:
-      "Online samtaler for par, enkeltpersoner, familier, ledere og grunnleggere i New York City, California og Norge.",
+      "Private online samtaler for par, enkeltpersoner, familier, ledere og grunnleggere i New York City, California og Norge.",
     subtext: "",
     bookNow: "Bestill Nå",
     pills: [
+      "Parterapi",
       "Emosjonell Velvære",
       "Individualterapi",
-      "Parterapi",
       "Stressstøtte",
       "Personlig Vekst",
       "Bevisst Liv",
@@ -266,17 +266,17 @@ const content: Record<
     videoOverlay: "Twoja Przyszłość Jest Twoja do Kształtowania",
     heroTitle: "Lepsze życie zaczyna się od lepszego zrozumienia",
     heroSubtitle:
-      "Sesje online dla par, osób indywidualnych, rodzin, kadry kierowniczej i założycieli firm w Nowym Jorku, Kalifornii i Norwegii.",
+      "Prywatne sesje online dla par, osób indywidualnych, rodzin, kadry kierowniczej i założycieli firm w Nowym Jorku, Kalifornii i Norwegii.",
     subtext: "",
     bookNow: "Zarezerwuj",
-    pills: [
-      "Dobrostan Emocjonalny",
-      "Terapia Indywidualna",
-      "Terapia Par",
-      "Wsparcie w Stresie",
-      "Rozwój Osobisty",
-      "Uważne Życie",
-    ],
+  pills: [
+    "Terapia Par",
+    "Dobrostan Emocjonalny",
+    "Terapia Indywidualna",
+    "Wsparcie w Stresie",
+    "Rozwój Osobisty",
+    "Uważne Życie",
+  ],
     menuSections: [
       {
         heading: "Usługi",
@@ -345,7 +345,7 @@ const content: Record<
       },
       {
         quote:
-          "Przyszliśmy na granicy rozstania. To, co znaleźliśmy, to sposób, by naprawdę siebie usłyszeć — nie tylko przetrwać rozmowę, ale chcieć ją prowadzić.",
+          "Przyszliśmy na granicy rozstania. To, co znaleźliśmy, to sposób, by naprawd�� siebie usłyszeć — nie tylko przetrwać rozmowę, ale chcieć ją prowadzić.",
         name: "J. i A.",
         context: "Klienci, terapia par",
         initials: "JA",
@@ -669,19 +669,19 @@ export default function Home() {
           {t.heroTitle}
   </h1>
   <p className="mt-5 max-w-2xl text-base leading-[1.5] text-zinc-700">
-  {language.code === "en" ? (
-  <>
-  Online sessions for couples, individuals, families, executives, and founders in New York City, California, and <Link href="/online-therapy-norway" className="underline underline-offset-4">Norway</Link>.
-  </>
-  ) : language.code === "no" ? (
-  <>
-  Online samtaler for par, enkeltpersoner, familier, ledere og grunnleggere i New York City, California og <Link href="/online-therapy-norway" className="underline underline-offset-4">Norge</Link>.
-  </>
-  ) : language.code === "pl" ? (
-  <>
-  Sesje online dla par, osób indywidualnych, rodzin, kadry kierowniczej i założycieli firm w Nowym Jorku, Kalifornii i <Link href="/online-therapy-norway" className="underline underline-offset-4">Norwegii</Link>.
-  </>
-  ) : t.heroSubtitle}
+            {language.code === "en" ? (
+            <>
+            Private online sessions for couples, individuals, families, executives, and founders in New York City, California, and <Link href="/online-therapy-norway" className="underline underline-offset-4">Norway</Link>.
+            </>
+            ) : language.code === "no" ? (
+            <>
+            Private online samtaler for par, enkeltpersoner, familier, ledere og grunnleggere i New York City, California og <Link href="/online-therapy-norway" className="underline underline-offset-4">Norge</Link>.
+            </>
+            ) : language.code === "pl" ? (
+            <>
+            Prywatne sesje online dla par, osób indywidualnych, rodzin, kadry kierowniczej i założycieli firm w Nowym Jorku, Kalifornii i <Link href="/online-therapy-norway" className="underline underline-offset-4">Norwegii</Link>.
+            </>
+            ) : t.heroSubtitle}
   </p>
         <div className="mt-[70px] flex max-w-7xl flex-wrap items-center justify-center gap-3">
           {t.pills.map((pill) => (
