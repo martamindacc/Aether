@@ -80,22 +80,6 @@ export function BlogIndexContent({ posts }: { posts: BlogPostMeta[] }) {
           </Link>
         ))}
       </div>
-      {language !== "no" && posts.some((post) => post.lang === "no") && (
-        <nav aria-label="Norwegian articles" className="mt-16 border-t border-zinc-300/80 pt-8">
-          <h2 className="font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-medium tracking-tight text-[#74382f]">
-            Norwegian articles
-          </h2>
-          <ul className="mt-4 grid gap-2 font-[Roboto,Arial,sans-serif] text-base leading-[1.5] text-[#6f5a46] sm:grid-cols-2">
-            {posts.filter((post) => post.lang === "no").map((post) => (
-              <li key={post.slug}>
-                <Link href={`/blog/${post.slug}`} className="text-[#74382f] underline underline-offset-2 hover:no-underline">
-                  {post.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      )}
     </section>
   );
 }
