@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 
 const SITE_NAME = "Aether Practice"
 const BASE_URL = "https://aetherpractice.com"
-export const OG_IMAGE_ALT = "Aether Practice — Online counseling & coaching"
+export const OG_IMAGE_ALT = "Aether Practice — Cognitive wellbeing and online counseling"
 
 /**
  * Builds a page's Metadata: title, description, canonical URL, and matching

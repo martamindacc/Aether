@@ -22,7 +22,7 @@ export default function OpenGraphImage() {
           padding: "80px",
         }}
       >
-        <div style={{ fontSize: 40, letterSpacing: "0.02em" }}>Aether Practice</div>
+        <div style={{ fontSize: 40, letterSpacing: "0.02em" }}>Aether Practice · Cognitive Wellbeing</div>
         <div
           style={{
             display: "flex",

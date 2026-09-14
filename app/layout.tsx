@@ -19,7 +19,7 @@ export const metadata: Metadata = {
       'x-default': 'https://aetherpractice.com/',
     },
   },
-  title: 'Aether Practice | Online Counseling & Coaching in NYC & California',
+  title: 'Aether Practice | Cognitive Wellbeing',
   description:
     'Online counseling & coaching for couples, individuals, families, executives, and founders in New York City, California, and Norway.',
   openGraph: {
@@ -27,29 +27,26 @@ export const metadata: Metadata = {
     siteName: 'Aether Practice',
     locale: 'en_US',
     url: 'https://aetherpractice.com/',
-    title: 'Aether Practice | Online Counseling & Coaching in NYC & California',
+    title: 'Aether Practice | Cognitive Wellbeing',
     description:
       'Online counseling & coaching for couples, individuals, families, executives, and founders in New York City, California, and Norway.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Aether Practice | Online Counseling & Coaching in NYC & California',
+    title: 'Aether Practice | Cognitive Wellbeing',
     description:
       'Online counseling & coaching for couples, individuals, families, executives, and founders in New York City, California, and Norway.',
   },
   icons: {
     icon: [
       {
-        url: '/favicon.svg',
-        type: 'image/svg+xml',
-      },
-      {
-        url: '/favicon.svg',
-        type: 'image/svg+xml',
+        url: '/icon',
+        type: 'image/png',
+        sizes: '64x64',
       },
     ],
-    shortcut: '/favicon.svg',
-    apple: '/favicon.svg',
+    shortcut: '/icon',
+    apple: [{ url: '/apple-icon', type: 'image/png', sizes: '180x180' }],
   },
 }
 
