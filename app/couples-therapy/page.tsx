@@ -7,6 +7,92 @@ import { SiteFooter } from "@/components/site-footer";
 import { BookingModal } from "@/components/booking-modal";
 import { couplesTherapyContent, navContent, relatedServicesHeading, type LanguageCode } from "@/lib/service-content";
 
+const testimonialsContent: Record<
+  LanguageCode,
+  {
+    eyebrow: string;
+    heading: string;
+    context: string;
+    items: { quote: string; name: string; accentText: string; accentBg: string }[];
+  }
+> = {
+  en: {
+    eyebrow: "Client Stories",
+    heading: "Trusted by people who expect more from their care",
+    context: "Couples clients",
+    items: [
+      {
+        quote: "We found a calmer way to talk about the things we had been avoiding.",
+        name: "J. & A.",
+        accentText: "text-[#66755c]",
+        accentBg: "from-[#d9e2d1]/55 to-[#d9e2d1]/20",
+      },
+      {
+        quote: "The sessions helped us listen differently and feel more connected again.",
+        name: "M. & R.",
+        accentText: "text-[#7b4037]",
+        accentBg: "from-[#e8d6ce]/55 to-[#e8d6ce]/20",
+      },
+      {
+        quote: "We learned how to repair the pattern instead of repeating the same argument.",
+        name: "S. & D.",
+        accentText: "text-[#496171]",
+        accentBg: "from-[#d8e2e8]/55 to-[#d8e2e8]/20",
+      },
+    ],
+  },
+  no: {
+    eyebrow: "Kundehistorier",
+    heading: "Betrodd av folk som forventer mer av behandlingen sin",
+    context: "Parterapiklienter",
+    items: [
+      {
+        quote: "Vi fant en roligere måte å snakke om det vi hadde unngått.",
+        name: "J. & A.",
+        accentText: "text-[#66755c]",
+        accentBg: "from-[#d9e2d1]/55 to-[#d9e2d1]/20",
+      },
+      {
+        quote: "Samtalene hjalp oss å lytte annerledes og føle oss knyttet til hverandre igjen.",
+        name: "M. & R.",
+        accentText: "text-[#7b4037]",
+        accentBg: "from-[#e8d6ce]/55 to-[#e8d6ce]/20",
+      },
+      {
+        quote: "Vi lærte å reparere mønsteret i stedet for å gjenta den samme konflikten.",
+        name: "S. & D.",
+        accentText: "text-[#496171]",
+        accentBg: "from-[#d8e2e8]/55 to-[#d8e2e8]/20",
+      },
+    ],
+  },
+  pl: {
+    eyebrow: "Historie klientów",
+    heading: "Zaufany przez ludzi, którzy oczekują więcej od swojej opieki",
+    context: "Klienci terapii par",
+    items: [
+      {
+        quote: "Znaleźliśmy spokojniejszy sposób rozmawiania o tym, czego wcześniej unikaliśmy.",
+        name: "J. & A.",
+        accentText: "text-[#66755c]",
+        accentBg: "from-[#d9e2d1]/55 to-[#d9e2d1]/20",
+      },
+      {
+        quote: "Sesje pomogły nam inaczej słuchać i na nowo poczuć bliskość.",
+        name: "M. & R.",
+        accentText: "text-[#7b4037]",
+        accentBg: "from-[#e8d6ce]/55 to-[#e8d6ce]/20",
+      },
+      {
+        quote: "Nauczyliśmy się naprawiać wzorzec, zamiast powtarzać ten sam konflikt.",
+        name: "S. & D.",
+        accentText: "text-[#496171]",
+        accentBg: "from-[#d8e2e8]/55 to-[#d8e2e8]/20",
+      },
+    ],
+  },
+};
+
 export default function CouplesTherapyPage() {
   const [language, setLanguage] = useState<LanguageCode>("en");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -115,6 +201,38 @@ export default function CouplesTherapyPage() {
               </div>
             ))}
           </div>
+        </div>
+
+        <div className="mt-24 flex w-full flex-col items-center gap-4">
+          <p className="text-sm uppercase tracking-wide text-zinc-500">{testimonialsContent[language].eyebrow}</p>
+          <h2 className="max-w-3xl text-balance text-center font-[NeueHaasDisplayRoman,Arial,sans-serif] text-5xl font-medium tracking-tight text-zinc-900 sm:text-6xl">
+            {testimonialsContent[language].heading}
+          </h2>
+        </div>
+        <div className="mt-16 grid w-full gap-6 sm:grid-cols-3">
+          {testimonialsContent[language].items.map((item) => (
+            <div
+              key={item.name}
+              className={`flex flex-col gap-8 rounded-2xl border border-zinc-300/80 bg-gradient-to-br ${item.accentBg} p-8 transition-colors duration-300 sm:p-10`}
+            >
+              <div className={`flex justify-center gap-1 ${item.accentText}`} aria-hidden="true">
+                {Array.from({ length: 5 }).map((_, index) => (
+                  <svg key={index} width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M10 1.5l2.7 6.06 6.6.63-5 4.4 1.5 6.46L10 15.9l-5.8 3.15 1.5-6.46-5-4.4 6.6-.63L10 1.5z" />
+                  </svg>
+                ))}
+              </div>
+              <p className="flex-1 font-[Roboto,Arial,sans-serif] text-lg leading-[1.6] text-[#383838]">
+                &ldquo;{item.quote}&rdquo;
+              </p>
+              <div className="flex items-center justify-center gap-4">
+                <div className="flex flex-col items-center text-center">
+                  <span className="font-[Roboto,Arial,sans-serif] text-base font-medium text-zinc-900">{item.name}</span>
+                  <span className="text-sm text-zinc-500">{testimonialsContent[language].context}</span>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
 
         <div className="mt-24 flex flex-col items-start gap-8 rounded-2xl border border-zinc-300/80 bg-gradient-to-br from-[#eee2db]/75 to-[#eee2db]/40 p-10 sm:p-14">
