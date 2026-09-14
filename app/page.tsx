@@ -52,7 +52,7 @@ const content: Record<
 > = {
   en: {
     videoOverlay: "Your Future is Yours to Shape",
-    heroTitle: "Clarity for the high-stakes life",
+    heroTitle: "Better life starts with better understanding",
     heroSubtitle:
       "Private online sessions for couples, individuals, families, executives, and founders in New York City, California, and Norway.",
     subtext: "",
