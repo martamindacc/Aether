@@ -56,6 +56,19 @@ const backToBlogLabel: Record<"en" | "no" | "pl", string> = {
 };
 
 const englishTocBySlug: Record<string, ReadonlyArray<readonly [string, string]>> = {
+  "couples-therapy-founders-executives": [
+    ["The Founder and Executive Relationship Crisis: What the Research Shows", "The Founder and Executive Relationship Crisis: What the Research Shows"],
+    ["Why This Matters: The Research on Outcomes", "Why This Matters: The Research on Outcomes"],
+    ["The Real Barriers: Why Founders and Executives Resist Couples Therapy", "The Real Barriers: Why Founders and Executives Resist Couples Therapy"],
+    ["How Couples Therapy Actually Works for Founders and Executives", "How Couples Therapy Actually Works for Founders and Executives"],
+    ["Finding Time: How Founders Actually Prioritize Couples Therapy", "Finding Time: How Founders Actually Prioritize Couples Therapy"],
+    ["What to Look for in a Couples Therapist for Founders and Executives", "What to Look for in a Couples Therapist for Founders and Executives"],
+    ["The Founder/Executive Decision Tree", "The Founder/Executive Decision Tree"],
+    ["FAQ: Couples Therapy for Founders and Executives", "FAQ: Couples Therapy for Founders and Executives"],
+    ["The Bottom Line", "The Bottom Line"],
+    ["Ready to Invest in Your Relationship?", "Ready to Invest in Your Relationship?"],
+    ["References & Further Reading", "References & Further Reading"],
+  ],
   "8-signs-need-couples-therapy": [
     ["You have the same conflicts over and over again", "1. You have the same conflicts over and over again"],
     ["You can't talk about difficult things without escalation", "2. You can't talk about difficult things without escalation"],
@@ -74,16 +87,63 @@ const englishTocBySlug: Record<string, ReadonlyArray<readonly [string, string]>>
 };
 
 const englishLedeBySlug: Record<string, string> = {
+  "couples-therapy-founders-executives":
+    "Couples therapy for founders, CEOs, executives, and entrepreneurs helps address relationship problems caused by startup stress, long hours, leadership pressure, financial uncertainty, and work-life imbalance. This guide explains how executive relationship stress affects a partnership, when therapy can help, and how high-achieving couples can protect their connection while building a demanding career.",
   "8-signs-need-couples-therapy":
     "Are you considering couples therapy because you have repeated conflicts, communication problems, or feel increasingly distant from each other? You do not have to wait until your relationship is on the verge of breaking down before seeking professional help. Here are 8 signs that you may need couples therapy, what they can mean for your relationship, and when it may be the right time to seek help.",
 };
 
+const faqBySlug: Record<string, ReadonlyArray<readonly [string, string]>> = {
+  "couples-therapy-founders-executives": [
+    ["My partner brought up therapy, but I think we're fine. Should I go?", "When one partner brings up therapy and the other doesn't see the need, that is a signal that therapy could help. A neutral third party can help both partners hear the concern clearly and understand the patterns affecting the relationship."],
+    ["What if I'm worried the therapist will blame me?", "A good couples therapist will not blame one person. They will help both partners see the patterns they are creating together. If a therapist is blaming you, they may not be the right fit."],
+    ["Can therapy help if I'm determined to stay focused on the company?", "Therapy can help you stay focused on the company while maintaining a partnership, but it requires giving the relationship intentional attention."],
+    ["What if my partner is the one in high-intensity work?", "Therapy can help the partner of a founder or executive express the impact of work intensity, negotiate what partnership means during demanding periods, and prevent resentment from accumulating."],
+    ["How do I know if we can actually repair this?", "If both partners genuinely want to repair the relationship and are willing to invest, repair is often possible. Therapy can also provide clarity when one partner is unsure about continuing."],
+    ["What if I'm afraid therapy will reveal that we're fundamentally incompatible?", "Couples therapy may reveal differences or patterns that need attention, but it can also show that relational distance—not fundamental incompatibility—is creating the current strain."],
+    ["Is couples therapy confidential if I have a public profile as a founder or executive?", "Standard confidentiality protections apply regardless of professional visibility. A therapist experienced with high-profile clients can also account for discretion, flexible scheduling, and secure virtual sessions."],
+  ],
+  "parterapi-grundere-ledere": [
+    ["Partneren min tok opp terapi, men jeg synes vi har det fint. Bør jeg bli med?", "Når én partner tar opp terapi og den andre ikke ser behovet, kan det være et signal om at terapi kan hjelpe. En nøytral tredjepart kan hjelpe dere å høre bekymringen tydelig og forstå mønstrene som påvirker forholdet."],
+    ["Hva om jeg er redd for at terapeuten skal skylde på meg?", "En god parterapeut skylder ikke på én person. Terapeuten hjelper begge med å se mønstrene dere skaper sammen. Hvis terapeuten legger skylden på deg, er det kanskje ikke riktig terapeut."],
+    ["Kan terapi hjelpe hvis jeg er bestemt på å holde fokus på selskapet?", "Terapi kan hjelpe deg med å holde fokus på selskapet og samtidig ta vare på parforholdet, men det krever at forholdet får bevisst oppmerksomhet."],
+    ["Hva om det er partneren min som jobber med høy intensitet?", "Terapi kan hjelpe partneren til en gründer eller leder med å uttrykke hvordan arbeidspresset påvirker dem, forhandle om partnerskap i intense perioder og hindre at bitterhet bygger seg opp."],
+    ["Hvordan vet vi om vi faktisk kan reparere forholdet?", "Hvis begge virkelig ønsker å reparere forholdet og er villige til å investere, er reparasjon ofte mulig. Terapi kan også gi klarhet når én partner er usikker på om forholdet skal fortsette."],
+    ["Hva om jeg er redd for at terapi vil vise at vi egentlig ikke passer sammen?", "Parterapi kan avdekke forskjeller og mønstre som trenger oppmerksomhet, men kan også vise at det er avstand i relasjonen – ikke grunnleggende inkompatibilitet – som skaper belastningen."],
+    ["Er parterapi konfidensielt hvis jeg har en offentlig rolle som gründer eller leder?", "Vanlige regler for konfidensialitet gjelder uansett hvor synlig du er profesjonelt. En terapeut med erfaring med offentlige personer kan også ta hensyn til diskresjon, fleksible tider og sikre digitale samtaler."],
+  ],
+  "terapia-par-dla-founderow-dyrektorow": [
+    ["Partner wspomniał o terapii, ale uważam, że wszystko jest w porządku. Czy powinienem iść?", "Kiedy jedna osoba proponuje terapię, a druga nie widzi takiej potrzeby, może to być sygnał, że terapia pomoże. Neutralna osoba trzecia może pomóc wam jasno usłyszeć obawy i zrozumieć wzorce wpływające na związek."],
+    ["A jeśli boję się, że terapeuta będzie mnie obwiniał?", "Dobry terapeuta par nie obwinia jednej osoby. Pomaga obojgu partnerom zobaczyć wzorce, które tworzą razem. Jeśli terapeuta obwinia ciebie, prawdopodobnie nie jest właściwą osobą."],
+    ["Czy terapia może pomóc, jeśli jestem zdecydowany nadal skupiać się na firmie?", "Terapia może pomóc skupić się na firmie i jednocześnie dbać o związek, ale wymaga poświęcenia relacji świadomej uwagi."],
+    ["A jeśli to mój partner pracuje z wysoką intensywnością?", "Terapia może pomóc partnerowi foundera lub lidera wyrazić wpływ intensywnej pracy, ustalić znaczenie partnerstwa w wymagających okresach i zapobiegać narastaniu urazy."],
+    ["Skąd będziemy wiedzieć, czy naprawdę możemy to naprawić?", "Jeśli oboje naprawdę chcecie naprawić związek i jesteście gotowi się zaangażować, naprawa jest często możliwa. Terapia może też przynieść jasność, gdy jedna osoba nie wie, czy chce kontynuować relację."],
+    ["A jeśli boję się, że terapia pokaże, iż fundamentalnie do siebie nie pasujemy?", "Terapia par może ujawnić różnice lub wzorce wymagające uwagi, ale może też pokazać, że obecne trudności wynikają z dystansu w relacji, a nie z fundamentalnej niezgodności."],
+    ["Czy terapia par jest poufna, jeśli mam publiczny profil foundera lub lidera?", "Standardowe zasady poufności obowiązują niezależnie od widoczności zawodowej. Terapeuta doświadczony w pracy z osobami publicznymi może również uwzględnić dyskrecję, elastyczny grafik i bezpieczne sesje online."],
+  ],
+};
+
 const polishLedeBySlug: Record<string, string> = {
+  "terapia-par-dla-founderow-dyrektorow":
+    "Terapia par dla founderów, CEO i osób na stanowiskach kierowniczych może pomóc, gdy stres związany ze startupem, długie godziny pracy, presja przywództwa i brak równowagi między pracą a życiem prywatnym tworzą dystans w związku. Ten przewodnik wyjaśnia, jak stres zawodowy wpływa na relację, kiedy terapia par może pomóc i jak pary wysoko funkcjonujące mogą chronić bliskość podczas budowania wymagającej kariery.",
   "8-znakow-potrzeba-terapii-par":
     "Zastanawiacie się nad terapią par, ponieważ wciąż wracacie do tych samych konfliktów, macie problemy z komunikacją albo czujecie, że coraz bardziej się od siebie oddalacie? Nie musicie czekać, aż wasz związek znajdzie się na skraju rozpadu, żeby poszukać profesjonalnej pomocy. Oto 8 oznak, że możecie potrzebować terapii par, co mogą oznaczać dla waszej relacji i kiedy warto poszukać pomocy.",
 };
 
 const norwegianTocBySlug: Record<string, ReadonlyArray<readonly [string, string]>> = {
+  "parterapi-grundere-ledere": [
+    ["Krise i parforholdet hos gründere og ledere: Hva forskningen viser", "Krise i parforholdet hos gründere og ledere: Hva forskningen viser"],
+    ["Hvorfor dette betyr noe: Forskning på konsekvensene", "Hvorfor dette betyr noe: Forskning på konsekvensene"],
+    ["De virkelige hindrene: Hvorfor gründere og ledere motsetter seg parterapi", "De virkelige hindrene: Hvorfor gründere og ledere motsetter seg parterapi"],
+    ["Slik fungerer parterapi for gründere og ledere", "Slik fungerer parterapi for gründere og ledere"],
+    ["Å finne tid: Slik prioriterer gründere parterapi", "Å finne tid: Slik prioriterer gründere parterapi"],
+    ["Hva du bør se etter hos en parterapeut for gründere og ledere", "Hva du bør se etter hos en parterapeut for gründere og ledere"],
+    ["Gründerens og lederens beslutningstre", "Gründerens og lederens beslutningstre"],
+    ["FAQ: Parterapi for gründere og ledere", "FAQ: Parterapi for gründere og ledere"],
+    ["Hovedpoenget", "Hovedpoenget"],
+    ["Klar for å investere i forholdet?", "Klar for å investere i forholdet?"],
+    ["Referanser og videre lesning", "Referanser og videre lesning"],
+  ],
   "parterapi-i-oslo": [
     ["Hva Er Parterapi Egentlig?", "Hva Er Parterapi Egentlig?"],
     ["Hvorfor Parterapi Er Annerledes Enn Individualterapi", "Hvorfor Parterapi Er Annerledes Enn Individualterapi"],
@@ -129,6 +189,19 @@ const norwegianTocBySlug: Record<string, ReadonlyArray<readonly [string, string]
 };
 
 const polishTocBySlug: Record<string, ReadonlyArray<readonly [string, string]>> = {
+  "terapia-par-dla-founderow-dyrektorow": [
+    ["Kryzys związku founderów i liderów: Co pokazują badania", "Kryzys związku founderów i liderów: Co pokazują badania"],
+    ["Dlaczego to ma znaczenie: Badania nad skutkami", "Dlaczego to ma znaczenie: Badania nad skutkami"],
+    ["Prawdziwe bariery: Dlaczego founderzy i liderzy unikają terapii par", "Prawdziwe bariery: Dlaczego founderzy i liderzy unikają terapii par"],
+    ["Jak działa terapia par dla founderów i liderów", "Jak działa terapia par dla founderów i liderów"],
+    ["Znalezienie czasu: Jak founderzy ustalają priorytet terapii par", "Znalezienie czasu: Jak founderzy ustalają priorytet terapii par"],
+    ["Czego szukać u terapeuty par dla founderów i liderów", "Czego szukać u terapeuty par dla founderów i liderów"],
+    ["Drzewo decyzji foundera i lidera", "Drzewo decyzji foundera i lidera"],
+    ["FAQ: Terapia par dla founderów i liderów", "FAQ: Terapia par dla founderów i liderów"],
+    ["Najważniejsze", "Najważniejsze"],
+    ["Gotowi zainwestować w swój związek?", "Gotowi zainwestować w swój związek?"],
+    ["Źródła i dalsza lektura", "Źródła i dalsza lektura"],
+  ],
   "8-znakow-potrzeba-terapii-par": [
     ["Macie te same konflikty znowu i znowu", "1. Macie te same konflikty znowu i znowu"],
     ["Nie potraficie rozmawiać o trudnych sprawach bez eskalacji", "2. Nie potraficie rozmawiać o trudnych sprawach bez eskalacji"],
@@ -147,6 +220,7 @@ const polishTocBySlug: Record<string, ReadonlyArray<readonly [string, string]>> 
 };
 
 const norwegianLedeBySlug: Record<string, React.ReactNode> = {
+  "parterapi-grundere-ledere": "Parterapi for gründere, ledere og entreprenører kan hjelpe når lange arbeidsdager, lederstress, økonomisk usikkerhet og høyt arbeidspress skaper avstand i parforholdet. Denne guiden forklarer hvordan jobbrelatert stress påvirker forholdet, når parterapi kan være nyttig, og hvordan høytpresterende par kan beskytte nærheten mens de bygger en krevende karriere.",
   "nar-friluftsliv-blir-viktigere-enn-forholdet": "Friluftsliv kan være en sterk kilde til nærhet i et parforhold. Men hva skjer når aktiviteter blir viktigere enn kontakten hjemme? For mange par er turer, ski, hytta, trening og andre friluftsaktiviteter en viktig del av livet sammen. Det kan gi glede, mestring, opplevelser og tid sammen. Men noen ganger kan det også oppstå et mønster der aktivitetene blir stedet dere fortsatt fungerer godt sammen – mens nærheten, samtalene og intimiteten hjemme gradvis forsvinner.",
   "parterapi-i-oslo-tegn": "Vurderer dere parterapi fordi dere har gjentatte konflikter, kommunikasjonsproblemer eller økende avstand i forholdet? Dere trenger ikke å vente til dere står på randen av et samlivsbrudd før dere søker profesjonell hjelp. Her er 8 tegn på at dere trenger parterapi, hva de kan bety for parforholdet, og når det kan være riktig å søke hjelp.",
   "parterapi-i-oslo": (
@@ -303,6 +377,22 @@ export default async function BlogPostPage({
     },
   };
 
+  const faqItems = faqBySlug[post.slug];
+  const faqJsonLd = faqItems
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faqItems.map(([question, answer]) => ({
+          "@type": "Question",
+          name: question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: answer,
+          },
+        })),
+      }
+    : null;
+
   const breadcrumbLd = breadcrumbJsonLd([
     { name: "Home", path: "/" },
     { name: "Blog", path: "/blog" },
@@ -315,6 +405,12 @@ export default async function BlogPostPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
