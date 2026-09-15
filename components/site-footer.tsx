@@ -44,7 +44,7 @@ export function SiteFooter({ language }: { language: LanguageCode }) {
         </nav>
         <nav
           aria-label={t.companyHeading}
-          className="order-3 flex flex-col gap-3 md:col-span-1 md:justify-self-end"
+          className="order-3 flex flex-col gap-3 justify-self-end md:col-span-1 md:justify-self-end"
         >
             <p className="text-xs uppercase tracking-wide text-zinc-500">{t.companyHeading}</p>
             {t.companyLinks.map((link) => (

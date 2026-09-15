@@ -37,11 +37,6 @@ export const metadata: Metadata = {
     description:
       'Online counseling & coaching for couples, individuals, families, executives, and founders in New York City, California, and Norway.',
   },
-  icons: {
-    icon: '/favicon.svg',
-    shortcut: '/favicon.svg',
-    apple: '/favicon.svg',
-  },
 }
 
 export const viewport: Viewport = {
