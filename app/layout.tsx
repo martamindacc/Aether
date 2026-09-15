@@ -40,13 +40,18 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
+        url: '/favicon.svg?v=2',
+        type: 'image/svg+xml',
+      },
+      {
         url: '/icon',
         type: 'image/png',
         sizes: '64x64',
       },
     ],
-    shortcut: '/icon',
+    shortcut: '/favicon.svg?v=2',
     apple: [{ url: '/apple-icon', type: 'image/png', sizes: '180x180' }],
+    other: [{ rel: 'mask-icon', url: '/favicon.svg?v=2', color: '#74382f' }],
   },
 }
 
