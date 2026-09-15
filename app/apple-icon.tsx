@@ -13,7 +13,7 @@ export default function AppleIcon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "#ffffff",
+          background: "transparent",
         }}
       >
         <svg width="156" height="156" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
