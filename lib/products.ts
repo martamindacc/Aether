@@ -17,7 +17,7 @@ export const PRODUCTS: Product[] = [
     name: "Couples Session",
     description: "A 60 minute session for two.",
     duration: "60 min",
-    priceInCents: 12000,
+    priceInCents: 15000,
     calendlyUrl: "https://calendly.com/martamindacc/couples-session",
   },
   {
@@ -25,7 +25,7 @@ export const PRODUCTS: Product[] = [
     name: "Individual Session",
     description: "A 50 minute one-on-one session.",
     duration: "50 min",
-    priceInCents: 10000,
+    priceInCents: 12000,
     calendlyUrl: "https://calendly.com/martamindacc/individual-session",
   },
   {
@@ -33,7 +33,7 @@ export const PRODUCTS: Product[] = [
     name: "Family Session",
     description: "A 60 minute session for families.",
     duration: "60 min",
-    priceInCents: 15000,
+    priceInCents: 20000,
     calendlyUrl: "https://calendly.com/martamindacc/family-session",
   },
   {
@@ -41,7 +41,7 @@ export const PRODUCTS: Product[] = [
     name: "Exec&Founder Session",
     description: "A 50 minute session for founders and executives.",
     duration: "50 min",
-    priceInCents: 10000,
+    priceInCents: 12000,
     calendlyUrl: "https://calendly.com/martamindacc/exec-founder-session",
   },
   {
