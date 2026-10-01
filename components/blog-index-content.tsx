@@ -74,6 +74,7 @@ export function BlogIndexContent({ posts }: { posts: BlogPostMeta[] }) {
                   src={post.image}
                   alt={post.title}
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  style={post.imagePosition ? { objectPosition: post.imagePosition } : undefined}
                 />
               </div>
             )}

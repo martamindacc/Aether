@@ -27,6 +27,8 @@ export type BlogPostMeta = {
   translationKey?: string;
   /** Path to a hero/thumbnail image, e.g. "/images/my-post.jpg". */
   image?: string;
+  /** CSS object-position for the thumbnail crop, e.g. "bottom", "top", "center". Defaults to "center". */
+  imagePosition?: string;
 };
 
 export type BlogPost = BlogPostMeta & {
@@ -67,6 +69,7 @@ function readPostFile(fileName: string): BlogPost {
     wordCount: countWords(content),
     translationKey: data.translationKey as string | undefined,
     image: data.image as string | undefined,
+    imagePosition: data.imagePosition as string | undefined,
     content,
   };
 }
