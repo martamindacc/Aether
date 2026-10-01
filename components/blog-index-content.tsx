@@ -67,7 +67,17 @@ export function BlogIndexContent({ posts }: { posts: BlogPostMeta[] }) {
           <p className="font-[Roboto,Arial,sans-serif] text-lg text-[#383838]">{t.empty}</p>
         )}
         {visiblePosts.map((post, index) => (
-          <Link key={post.slug} href={`/blog/${post.slug}`} className="group rounded-2xl border border-zinc-300/80 bg-gradient-to-br from-[#eee2db]/40 to-[#eee2db]/20 p-8 transition-colors hover:from-[#eee2db]/60 hover:to-[#eee2db]/30 sm:p-10">
+          <Link key={post.slug} href={`/blog/${post.slug}`} className="group overflow-hidden rounded-2xl border border-zinc-300/80 bg-gradient-to-br from-[#eee2db]/40 to-[#eee2db]/20 transition-colors hover:from-[#eee2db]/60 hover:to-[#eee2db]/30">
+            {post.image && (
+              <div className="aspect-[16/9] w-full overflow-hidden">
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+            )}
+            <div className="p-8 sm:p-10">
             <p className="font-[Roboto,Arial,sans-serif] text-sm uppercase tracking-wide text-zinc-500">
               {formatDate(post.date, post.lang)} <span aria-hidden="true">·</span> {formatWordCount(post.wordCount, post.lang)}
             </p>
@@ -77,6 +87,7 @@ export function BlogIndexContent({ posts }: { posts: BlogPostMeta[] }) {
             <p className="mt-4 max-w-3xl font-[Roboto,Arial,sans-serif] text-[17px] leading-[1.5] text-[#383838]">
               {post.description}{index === 0 && "…"}
             </p>
+            </div>
           </Link>
         ))}
       </div>

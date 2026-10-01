@@ -25,6 +25,8 @@ export type BlogPostMeta = {
    * has no translated counterpart.
    */
   translationKey?: string;
+  /** Path to a hero/thumbnail image, e.g. "/images/my-post.jpg". */
+  image?: string;
 };
 
 export type BlogPost = BlogPostMeta & {
@@ -64,6 +66,7 @@ function readPostFile(fileName: string): BlogPost {
     modifiedDate: (data.modifiedDate as string) ?? (data.date as string),
     wordCount: countWords(content),
     translationKey: data.translationKey as string | undefined,
+    image: data.image as string | undefined,
     content,
   };
 }

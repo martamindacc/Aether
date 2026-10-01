@@ -160,7 +160,7 @@ const content: Record<
     videoOverlay: "Din Fremtid Er Din Å Forme",
     heroTitle: "Klarhet for et liv med høy innsats",
     heroSubtitle:
-      "Private online samtaler for par, enkeltpersoner, familier, ledere og grunnleggere i New York City, California og Norge.",
+      "Private online samtaler for par, enkeltpersoner, familier, ledere og grunnleggere i Oslo og hele Norge.",
     subtext: "",
     bookNow: "Bestill Nå",
     pills: [
