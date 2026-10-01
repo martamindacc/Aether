@@ -121,6 +121,13 @@ const faqBySlug: Record<string, ReadonlyArray<readonly [string, string]>> = {
     ["A jeśli boję się, że terapia pokaże, iż fundamentalnie do siebie nie pasujemy?", "Terapia par może ujawnić różnice lub wzorce wymagające uwagi, ale może też pokazać, że obecne trudności wynikają z dystansu w relacji, a nie z fundamentalnej niezgodności."],
     ["Czy terapia par jest poufna, jeśli mam publiczny profil foundera lub lidera?", "Standardowe zasady poufności obowiązują niezależnie od widoczności zawodowej. Terapeuta doświadczony w pracy z osobami publicznymi może również uwzględnić dyskrecję, elastyczny grafik i bezpieczne sesje online."],
   ],
+  "parterapi-i-oslo": [
+    ["Vi argumenterer ikke så mye. Trenger vi parterapi?", "Ja, muligens. Fraværet av argumenter betyr ikke nødvendigvis at forholdet er sunt. Noen par har svært lite konflikt, men mye følelsesmessig avstand eller nummenhet. Hvis du merker at noe har endret seg eller at intimitet mangler, er det verdt å utforske med en terapeut."],
+    ["Hva hvis bare jeg vil til terapi?", "Det er mulig å starte med å søke hjelp selv om bare én partner er motivert. En terapeut kan hjelpe med å forstå denne asymmetrien og utforske hvordan begge kan engasjere seg."],
+    ["Kan parterapi hjelpe etter utroskap?", "Ja. Parterapi etter utroskap kan gi paret et strukturert rom for å forstå hva som har skjedd, håndtere reaksjoner og arbeide med tillit og kommunikasjon. For noen par handler prosessen om å reparere forholdet; for andre handler den om å finne ut hva som skal til for å gå videre sammen eller hver for seg."],
+    ["Kan parterapi hjelpe hvis jeg vurderer skilsmisse?", "Ja. Parterapi kan hjelpe dere med å utforske hva dere ønsker, forstå mønstrene i forholdet og få et tydeligere grunnlag for å ta stilling til veien videre. For noen par handler det om å forsøke å gjenoppbygge forholdet; for andre kan prosessen bidra til å avklare om de ønsker å gå videre sammen eller hver for seg."],
+    ["Når er parterapi ikke riktig hjelp?", "Parterapi forutsetter at begge partnerne kan delta frivillig og på en trygg måte. Ved vold, trusler eller overgrep i forholdet er parterapi ikke riktig første steg. Da bør sikkerhet og individuell hjelp komme først."],
+  ],
 };
 
 const polishLedeBySlug: Record<string, string> = {
