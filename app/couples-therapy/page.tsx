@@ -185,6 +185,16 @@ export default function CouplesTherapyPage() {
           </div>
         </div>
 
+        {language === "no" && (
+          <p className="mt-10 font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-[#383838]">
+            Vil dere vite mer om parterapi i Oslo, hva dere kan forvente og hva det koster? Les vår{" "}
+            <Link href="/blog/parterapi-i-oslo" className="text-[#74382f] underline underline-offset-2 hover:no-underline">
+              komplette guide til parterapi i Oslo
+            </Link>
+            .
+          </p>
+        )}
+
         <div className="mt-24">
           <h2 className="font-[NeueHaasDisplayRoman,Arial,sans-serif] text-4xl font-medium tracking-tight sm:text-5xl">
             {t.outcomesHeading}
