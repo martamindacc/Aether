@@ -675,7 +675,7 @@ export default function Home() {
             </>
             ) : language.code === "no" ? (
             <>
-            Private online samtaler for par, enkeltpersoner, familier, ledere og grunnleggere i New York City, California og <Link href="/online-therapy-norway" className="underline underline-offset-4">Norge</Link>.
+            Private online samtaler for par, enkeltpersoner, familier, ledere og grunnleggere i Oslo og hele <Link href="/online-therapy-norway" className="underline underline-offset-4">Norge</Link>.
             </>
             ) : language.code === "pl" ? (
             <>
