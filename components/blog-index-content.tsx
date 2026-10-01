@@ -62,7 +62,7 @@ export function BlogIndexContent({ posts }: { posts: BlogPostMeta[] }) {
       <p className="mt-12 max-w-4xl font-[Roboto,Arial,sans-serif] text-xl leading-[1.5] text-[#383838] sm:text-2xl">
         {t.intro}
       </p>
-      <div className="mt-20 grid grid-cols-1 gap-6 md:grid-cols-2">
+      <div className="mt-20 grid grid-cols-1 gap-6 md:grid-cols-3">
         {visiblePosts.length === 0 && (
           <p className="font-[Roboto,Arial,sans-serif] text-lg text-[#383838]">{t.empty}</p>
         )}
