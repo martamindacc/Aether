@@ -82,7 +82,7 @@ export function BlogIndexContent({ posts }: { posts: BlogPostMeta[] }) {
             <p className="font-[Roboto,Arial,sans-serif] text-sm uppercase tracking-wide text-zinc-500">
               {formatDate(post.date, post.lang)} <span aria-hidden="true">·</span> {formatWordCount(post.wordCount, post.lang)}
             </p>
-            <h2 className="mt-3 origin-left font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out group-hover:translate-x-2 group-hover:scale-x-105 sm:text-3xl">
+            <h2 className="mt-3 break-words origin-left font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out group-hover:translate-x-2 group-hover:scale-x-105 sm:text-3xl">
               {post.title}
             </h2>
             <p className="mt-4 max-w-3xl font-[Roboto,Arial,sans-serif] text-[14.5px] leading-[1.45] text-[#383838]">
