@@ -116,6 +116,10 @@ const englishLedeBySlug: Record<string, string> = {
     "Couples therapy for founders, CEOs, executives, and entrepreneurs helps address relationship problems caused by startup stress, long hours, leadership pressure, financial uncertainty, and work-life imbalance. This guide explains how executive relationship stress affects a partnership, when therapy can help, and how high-achieving couples can protect their connection while building a demanding career.",
   "8-signs-need-couples-therapy":
     "Are you considering couples therapy because you have repeated conflicts, communication problems, or feel increasingly distant from each other? You do not have to wait until your relationship is on the verge of breaking down before seeking professional help. Here are 8 signs that you may need couples therapy, what they can mean for your relationship, and when it may be the right time to seek help.",
+  "online-couples-therapy":
+    "This guide explains what online couples therapy is, how it works in practice, and who it's right for — and why more and more couples are choosing to do this work over video rather than driving to a therapist's office.",
+  "couples-communication-problems":
+    "Communication problems in relationships can look like endless arguments, silence that stretches for days, criticism that never stops, or the feeling that no matter what you say, it never lands. For most couples, it's not about a lack of love — it's about patterns.",
 };
 
 const faqBySlug: Record<string, ReadonlyArray<readonly [string, string]>> = {
@@ -293,6 +297,9 @@ const polishTocBySlug: Record<string, ReadonlyArray<readonly [string, string]>> 
 
 const norwegianLedeBySlug: Record<string, React.ReactNode> = {
   "parterapi-grundere-ledere": "Parterapi for gründere, ledere og entreprenører kan hjelpe når lange arbeidsdager, lederstress, økonomisk usikkerhet og høyt arbeidspress skaper avstand i parforholdet. Denne guiden forklarer hvordan jobbrelatert stress påvirker forholdet, når parterapi kan være nyttig, og hvordan høytpresterende par kan beskytte nærheten mens de bygger en krevende karriere.",
+  "parterapi-pris-oslo": "Denne guiden gir deg en ærlig og oppdatert oversikt over hva parterapi koster i Oslo — hva som påvirker prisen, hvilke gratis alternativer som finnes, og hvordan du velger riktig tilbud for dere som par.",
+  "parterapi-pa-nett": "Denne guiden forklarer hva parterapi på nett er, hvordan det fungerer i praksis, hvem det passer for — og hvorfor stadig flere norske par velger å jobbe med forholdet via videosamtale fremfor å møte opp fysisk hos en terapeut.",
+  "kommunikasjonsproblemer-i-parforhold": "Kommunikasjonsproblemer i parforhold kan se ut som endeløse krangler, taushet som varer i dager, kritikk som aldri stopper, eller følelsen av at uansett hva du sier så når det ikke frem. For de fleste par handler det ikke om mangel på kjærlighet — det handler om mønstre.",
   "nar-friluftsliv-blir-viktigere-enn-forholdet": "Friluftsliv kan være en sterk kilde til nærhet i et parforhold. Men hva skjer når aktiviteter blir viktigere enn kontakten hjemme? For mange par er turer, ski, hytta, trening og andre friluftsaktiviteter en viktig del av livet sammen. Det kan gi glede, mestring, opplevelser og tid sammen. Men noen ganger kan det også oppstå et mønster der aktivitetene blir stedet dere fortsatt fungerer godt sammen – mens nærheten, samtalene og intimiteten hjemme gradvis forsvinner.",
   "parterapi-i-oslo-tegn": "Vurderer dere parterapi fordi dere har gjentatte konflikter, kommunikasjonsproblemer eller økende avstand i forholdet? Dere trenger ikke å vente til dere står på randen av et samlivsbrudd før dere søker profesjonell hjelp. Her er 8 tegn på at dere trenger parterapi, hva de kan bety for parforholdet, og når det kan være riktig å søke hjelp.",
   "parterapi-i-oslo": (
