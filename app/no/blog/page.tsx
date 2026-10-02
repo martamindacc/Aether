@@ -5,13 +5,14 @@ import { pageMetadata } from "@/lib/seo";
 import { BlogIndexContent } from "@/components/blog-index-content";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Blog | Aether Practice",
+  title: "Blogg | Aether Practice",
   description:
-    "Guides and perspectives from Aether Practice on relationships, parterapi, individual growth, family life, and working well under pressure.",
-  path: "/blog",
+    "Artikler om relasjoner, parterapi, personlig utvikling og familieliv fra teamet i Aether Practice.",
+  path: "/no/blog",
+  locale: "nb_NO",
   languages: {
-    en: "/blog",
     no: "/no/blog",
+    en: "/blog",
     "x-default": "/blog",
   },
 });
@@ -21,12 +22,12 @@ const blogIndexLanguages = [
   { code: "no" as const, href: "/no/blog" },
 ];
 
-export default function BlogIndexPage() {
-  const posts = getAllPosts().filter((p) => p.lang === "en");
+export default function NorwegianBlogIndexPage() {
+  const posts = getAllPosts().filter((p) => p.lang === "no");
   const itemListJsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Aether Practice Blog",
+    name: "Aether Practice Blogg",
     itemListElement: posts.map((post, index) => ({
       "@type": "ListItem",
       position: index + 1,
@@ -36,12 +37,12 @@ export default function BlogIndexPage() {
   };
 
   return (
-    <BlogShell language="en" articleLanguages={blogIndexLanguages}>
+    <BlogShell language="no" articleLanguages={blogIndexLanguages}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
       />
-      <BlogIndexContent posts={posts} language="en" />
+      <BlogIndexContent posts={posts} language="no" />
     </BlogShell>
   );
 }

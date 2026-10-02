@@ -38,7 +38,7 @@ export async function generateMetadata({
           ...Object.fromEntries(translations.map((t) => [t.lang, `/blog/${t.slug}`])),
           ...(enTranslation ? { "x-default": `/blog/${enTranslation.slug}` } : {}),
         }
-      : undefined;
+      : { [post.lang]: `/blog/${post.slug}` };
 
   return pageMetadata({
     title: post.seoTitle || `${post.title} | Aether Practice`,
@@ -571,9 +571,12 @@ export default async function BlogPostPage({
       }
     : null;
 
+  const blogIndexPath = post.lang === "no" ? "/no/blog" : "/blog";
+  const blogIndexLabel = post.lang === "no" ? "Blogg" : "Blog";
+
   const breadcrumbLd = breadcrumbJsonLd([
     { name: "Home", path: "/" },
-    { name: "Blog", path: "/blog" },
+    { name: blogIndexLabel, path: blogIndexPath },
     { name: post.title, path: `/blog/${post.slug}` },
   ]);
 
@@ -596,7 +599,7 @@ export default async function BlogPostPage({
       <BlogViewTracker slug={post.slug} title={post.title} />
       <article lang={htmlLangFor(post.lang)} className="mx-auto flex max-w-3xl flex-col px-6 pb-24 pt-48">
         <Link
-          href="/blog"
+          href={blogIndexPath}
           className="font-[Roboto,Arial,sans-serif] text-sm text-zinc-500 hover:text-zinc-900"
         >
           {backToBlogLabel[post.lang]}

@@ -8,6 +8,7 @@ const routes: { path: string; lastModified: string }[] = [
   { path: "", lastModified: "2026-09-11" },
   { path: "/about", lastModified: "2026-09-06" },
   { path: "/blog", lastModified: "2026-09-11" },
+  { path: "/no/blog", lastModified: "2026-09-11" },
   { path: "/contact", lastModified: "2026-09-07" },
   { path: "/privacy", lastModified: "2026-09-11" },
   { path: "/individual-therapy", lastModified: "2026-09-08" },

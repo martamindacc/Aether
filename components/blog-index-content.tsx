@@ -1,8 +1,4 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import Link from "next/link";
-import { useSiteLanguage } from "@/components/blog-shell";
 import type { BlogPostMeta } from "@/lib/blog";
 
 const copy = {
@@ -50,16 +46,14 @@ function formatWordCount(wordCount: number, language: "en" | "no" | "pl") {
   return `${new Intl.NumberFormat(localeMap[language] || "en-US").format(wordCount)} ${labelMap[language] || "words"}`;
 }
 
-export function BlogIndexContent({ posts }: { posts: BlogPostMeta[] }) {
-  const language = useSiteLanguage();
-  const t = copy[language as keyof typeof copy] || copy.en;
-
-  // After hydration, hide posts for other languages. Before hydration (server
-  // render / Googlebot), every post is visible so all URLs are in the HTML.
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
-
-  const visibleCount = mounted ? posts.filter((p) => p.lang === language).length : posts.length;
+export function BlogIndexContent({
+  posts,
+  language,
+}: {
+  posts: BlogPostMeta[];
+  language: "en" | "no" | "pl";
+}) {
+  const t = copy[language] ?? copy.en;
 
   return (
     <section className="mx-auto flex max-w-6xl flex-col px-6 pb-24 pt-48">
@@ -70,16 +64,11 @@ export function BlogIndexContent({ posts }: { posts: BlogPostMeta[] }) {
         {t.intro}
       </p>
       <div className="mt-20 grid grid-cols-1 gap-6 md:grid-cols-3">
-        {mounted && visibleCount === 0 && (
+        {posts.length === 0 && (
           <p className="font-[Roboto,Arial,sans-serif] text-lg text-[#383838]">{t.empty}</p>
         )}
         {posts.map((post) => (
-          <Link
-            key={post.slug}
-            href={`/blog/${post.slug}`}
-            data-lang={post.lang}
-            className={`group overflow-hidden rounded-2xl border border-zinc-300/80 bg-gradient-to-br from-[#eee2db]/40 to-[#eee2db]/20 transition-colors hover:from-[#eee2db]/60 hover:to-[#eee2db]/30${mounted && post.lang !== language ? " hidden" : ""}`}
-          >
+          <Link key={post.slug} href={`/blog/${post.slug}`} className="group overflow-hidden rounded-2xl border border-zinc-300/80 bg-gradient-to-br from-[#eee2db]/40 to-[#eee2db]/20 transition-colors hover:from-[#eee2db]/60 hover:to-[#eee2db]/30">
             {post.image && (
               <div className="aspect-[16/9] w-full overflow-hidden">
                 <img
