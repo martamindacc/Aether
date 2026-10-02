@@ -169,6 +169,17 @@ const englishTocBySlug: Record<string, ReadonlyArray<readonly [string, string]>>
     ["When couples therapy is the wrong first step", "When couples therapy is the wrong first step"],
     ["Frequently asked questions", "Frequently asked questions"],
   ],
+  "emotionally-focused-therapy-explained": [
+    ["The idea underneath it", "The idea underneath it"],
+    ["One couple, three stages", "One couple, three stages"],
+    ["What the therapist is actually doing", "What the therapist is actually doing"],
+    ["What the research says", "What the research says"],
+    ["Who EFT fits", "Who EFT fits"],
+    ["Who it fits less well", "Who it fits less well"],
+    ["EFT and the Gottman Method, briefly", "EFT and the Gottman Method, briefly"],
+    ["What EFT looks like at Aether Practice", "What EFT looks like at Aether Practice"],
+    ["Frequently asked questions", "Frequently asked questions"],
+  ],
 };
 
 const englishLedeBySlug: Record<string, string> = {
@@ -188,6 +199,8 @@ const englishLedeBySlug: Record<string, string> = {
     "Couples therapy appears to work when you gradually start handling conflicts differently — not necessarily less often, but differently. You recognize patterns a little earlier. Conflicts escalate more slowly. Repair attempts begin to land. The way back to connection gets shorter. Progress in couples therapy is rarely dramatic — it's most often quiet, cumulative, and felt as much between sessions as inside the therapy room.",
   "couples-therapy-guide":
     "Couples therapy (also called marriage counseling, couples counseling or relationship therapy) is structured work with a trained clinician in which both partners examine the pattern they are caught in, understand what drives it, and learn to reach each other differently. The best-evidenced approaches are Emotionally Focused Therapy and behavioural methods; most couples see meaningful change in 8–20 sessions; private fees run roughly US$150–450 per session in New York and California; and the strongest predictor of success is not the method but whether both partners feel equally held by the therapist.",
+  "emotionally-focused-therapy-explained":
+    "Emotionally Focused Therapy is a couples therapy approach built on attachment science. It treats relationship distress as a negative cycle in which each partner's protective moves trigger the other's, and works in three stages: de-escalating the cycle, restructuring how partners reach each other, and consolidating the new pattern. EFT has the strongest clinical-trial evidence of any couples method, including a 2024 meta-analysis and two-year follow-up data, and roughly 70–75% of couples in early trials moved from distressed to non-distressed.",
 };
 
 const faqBySlug: Record<string, ReadonlyArray<readonly [string, string]>> = {
@@ -243,6 +256,17 @@ const faqBySlug: Record<string, ReadonlyArray<readonly [string, string]>> = {
     ["What if my partner won't go to therapy after cheating?", "Individual therapy for you can still help you process what happened and decide what you want. Reluctance sometimes shifts when the unfaithful partner sees the seriousness of the situation, or when the betrayed partner stops waiting and starts getting help alone."],
     ["Does online couples therapy work for infidelity?", "Yes. Video-delivered couples therapy has comparable outcomes to in-person in direct comparisons, and the discretion of not attending a clinic is something many couples value during this period. Structured disclosure and intensive formats both work online."],
     ["What does couples therapy after infidelity cost?", "US$150–450 per session in New York and California, with intensives priced as packages. A free 15-minute consultation comes first. Our cost guide covers insurance and reimbursement."],
+  ],
+  "emotionally-focused-therapy-explained": [
+    ["What is Emotionally Focused Therapy?", "A couples therapy approach grounded in attachment science. It treats relationship distress as a negative cycle in which each partner's protective moves trigger the other's, and works in three stages: de-escalating the cycle, restructuring how partners reach each other, and consolidating the new pattern. It was developed by Sue Johnson and Les Greenberg in the 1980s and has the strongest clinical-trial evidence of any couples method."],
+    ["How many sessions does EFT take?", "Typically 8–20 sessions. Stage 1 usually takes four to six, Stage 2 is the longest at six to ten, and Stage 3 is two to four. Intensive formats compress Stages 1 and 2 into two consecutive days with follow-ups."],
+    ["What is the \"negative cycle\" in EFT?", "The repeating sequence of protective moves a couple falls into regardless of topic: most often one partner pursuing (criticising, pressing) and the other withdrawing (going quiet, leaving), each move triggering the other's. EFT's first stage is making this cycle visible so the couple can see it as a shared problem rather than as something one partner does to the other."],
+    ["What is a softening event?", "The moment in Stage 2 when the pursuing partner drops the protest and asks directly for what they need, and the re-engaged withdrawing partner is able to respond. In EFT research it's the change event most strongly linked to lasting improvement. From outside it's quiet; from inside, couples describe it as the first time in years they've reached each other."],
+    ["Does EFT work?", "Yes, with the best evidence of any couples method. A 2024 meta-analysis found large, consistent effects on satisfaction and attachment; early trials reported roughly 70–75% of couples moving from distressed to non-distressed; and two-year follow-up shows gains hold and sometimes continue to grow after therapy ends."],
+    ["Is EFT better than the Gottman Method?", "It has stronger clinical-trial evidence, but the two serve somewhat different couples. EFT suits distance, withdrawal and attachment injuries; Gottman-based work suits conflict-heavy couples who want structured tools. Most experienced therapists draw on both. Choose by your problem and your therapist, not by brand."],
+    ["Does EFT involve homework?", "Very little. Change is designed to happen in session, where the therapist can hold both partners through difficult moments, and then to be practised at home because it's been experienced rather than assigned. Couples who want structured exercises between sessions may prefer a different approach."],
+    ["Can EFT be done online?", "Yes. Video-delivered EFT has been compared directly with in-person EFT with comparable outcomes on satisfaction and attachment measures. The method's moment-by-moment tracking of both partners translates well to a format where both faces are visible at once."],
+    ["Can EFT help after an affair?", "Yes. EFT has a specific model for repairing attachment injuries, including infidelity, and research shows couples who complete the injury-resolution process have better outcomes than those who don't. It's used alongside stabilisation and disclosure work."],
   ],
   "parterapi-i-oslo": [
     ["Vi argumenterer ikke så mye. Trenger vi parterapi?", "Ja, muligens. Fraværet av argumenter betyr ikke nødvendigvis at forholdet er sunt. Noen par har svært lite konflikt, men mye følelsesmessig avstand eller nummenhet. Hvis du merker at noe har endret seg eller at intimitet mangler, er det verdt å utforske med en terapeut."],
