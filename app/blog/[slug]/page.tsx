@@ -31,9 +31,13 @@ export async function generateMetadata({
   };
 
   const translations = getTranslationsForPost(post);
+  const enTranslation = translations.find((t) => t.lang === "en");
   const languages =
     translations.length > 1
-      ? Object.fromEntries(translations.map((t) => [t.lang, `/blog/${t.slug}`]))
+      ? {
+          ...Object.fromEntries(translations.map((t) => [t.lang, `/blog/${t.slug}`])),
+          ...(enTranslation ? { "x-default": `/blog/${enTranslation.slug}` } : {}),
+        }
       : undefined;
 
   return pageMetadata({

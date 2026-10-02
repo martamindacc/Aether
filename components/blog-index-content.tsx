@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useSiteLanguage } from "@/components/blog-shell";
 import type { BlogPostMeta } from "@/lib/blog";
@@ -52,7 +53,13 @@ function formatWordCount(wordCount: number, language: "en" | "no" | "pl") {
 export function BlogIndexContent({ posts }: { posts: BlogPostMeta[] }) {
   const language = useSiteLanguage();
   const t = copy[language as keyof typeof copy] || copy.en;
-  const visiblePosts = posts.filter((post) => post.lang === language);
+
+  // After hydration, hide posts for other languages. Before hydration (server
+  // render / Googlebot), every post is visible so all URLs are in the HTML.
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
+  const visibleCount = mounted ? posts.filter((p) => p.lang === language).length : posts.length;
 
   return (
     <section className="mx-auto flex max-w-6xl flex-col px-6 pb-24 pt-48">
@@ -63,11 +70,16 @@ export function BlogIndexContent({ posts }: { posts: BlogPostMeta[] }) {
         {t.intro}
       </p>
       <div className="mt-20 grid grid-cols-1 gap-6 md:grid-cols-3">
-        {visiblePosts.length === 0 && (
+        {mounted && visibleCount === 0 && (
           <p className="font-[Roboto,Arial,sans-serif] text-lg text-[#383838]">{t.empty}</p>
         )}
-        {visiblePosts.map((post, index) => (
-          <Link key={post.slug} href={`/blog/${post.slug}`} className="group overflow-hidden rounded-2xl border border-zinc-300/80 bg-gradient-to-br from-[#eee2db]/40 to-[#eee2db]/20 transition-colors hover:from-[#eee2db]/60 hover:to-[#eee2db]/30">
+        {posts.map((post) => (
+          <Link
+            key={post.slug}
+            href={`/blog/${post.slug}`}
+            data-lang={post.lang}
+            className={`group overflow-hidden rounded-2xl border border-zinc-300/80 bg-gradient-to-br from-[#eee2db]/40 to-[#eee2db]/20 transition-colors hover:from-[#eee2db]/60 hover:to-[#eee2db]/30${mounted && post.lang !== language ? " hidden" : ""}`}
+          >
             {post.image && (
               <div className="aspect-[16/9] w-full overflow-hidden">
                 <img
@@ -79,15 +91,15 @@ export function BlogIndexContent({ posts }: { posts: BlogPostMeta[] }) {
               </div>
             )}
             <div className="p-8 sm:p-10">
-            <p className="font-[Roboto,Arial,sans-serif] text-sm uppercase tracking-wide text-zinc-500">
-              {formatDate(post.date, post.lang)} <span aria-hidden="true">·</span> {formatWordCount(post.wordCount, post.lang)}
-            </p>
-            <h2 className="mt-3 break-words origin-left font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out group-hover:translate-x-2 group-hover:scale-x-105 sm:text-3xl">
-              {post.title}
-            </h2>
-            <p className="mt-4 max-w-3xl font-[Roboto,Arial,sans-serif] text-[14.5px] leading-[1.45] text-[#383838]">
-              {post.description}{index === 0 && "…"}
-            </p>
+              <p className="font-[Roboto,Arial,sans-serif] text-sm uppercase tracking-wide text-zinc-500">
+                {formatDate(post.date, post.lang)} <span aria-hidden="true">·</span> {formatWordCount(post.wordCount, post.lang)}
+              </p>
+              <h2 className="mt-3 break-words origin-left font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out group-hover:translate-x-2 group-hover:scale-x-105 sm:text-3xl">
+                {post.title}
+              </h2>
+              <p className="mt-4 max-w-3xl font-[Roboto,Arial,sans-serif] text-[14.5px] leading-[1.45] text-[#383838]">
+                {post.description}
+              </p>
             </div>
           </Link>
         ))}
