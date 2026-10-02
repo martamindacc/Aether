@@ -125,6 +125,33 @@ const englishTocBySlug: Record<string, ReadonlyArray<readonly [string, string]>>
     ["When Should You Get Help?", "When Should You Get Help?"],
     ["FAQ: Couples Therapy After Infidelity", "FAQ: Couples Therapy After Infidelity"],
   ],
+  "how-many-sessions-couples-therapy": [
+    ["Quick Answer", "Quick Answer"],
+    ["What Research Actually Tells Us", "What Research Actually Tells Us"],
+    ["What Determines Length for You?", "What Determines Length for You?"],
+    ["How Often Should You Go?", "How Often Should You Go to Couples Therapy?"],
+    ["What Happens in the First Session?", "What Happens in the First Session?"],
+    ["When Do You Start Seeing Results?", "When Do You Start Seeing Results?"],
+    ["What If Therapy Isn't Working?", "What If Couples Therapy Isn't Working?"],
+    ["When Can You Stop?", "When Do You Know You Can Stop?"],
+    ["What Does It Cost?", "What Does a Typical Course of Therapy Cost?"],
+    ["Do You Have to Commit Upfront?", "Do You Have to Commit to 20 Sessions Upfront?"],
+    ["FAQ: Sessions in Couples Therapy", "FAQ: Sessions in Couples Therapy"],
+  ],
+  "signs-couples-therapy-is-working": [
+    ["Quick Answer: Does Couples Therapy Work?", "Quick Answer: Does Couples Therapy Work?"],
+    ["10 Signs Couples Therapy Is Working", "10 Signs Couples Therapy Is Working"],
+    ["What Does Progress Actually Mean?", "What Does Progress Actually Mean? — Before and After"],
+    ["How Long Does It Take?", "How Long Does It Take for Couples Therapy to Work?"],
+    ["Is Relief the Same as Progress?", "Is Relief the Same as Progress?"],
+    ["Does Progress Mean Stopping Arguing?", "Does Progress Mean You Stop Arguing?"],
+    ["In the Room vs. Between Sessions", "What Happens in the Therapy Room vs. Between Sessions"],
+    ["How Can You Measure Progress?", "How Can You Measure Progress?"],
+    ["What If Therapy Isn't Working?", "What If Couples Therapy Isn't Working?"],
+    ["Can Therapy Work Even If You Separate?", "Can Couples Therapy Work Even If You Choose to Separate?"],
+    ["When Should You Raise Something?", "When Should You Raise Something with Your Therapist?"],
+    ["FAQ: Does Couples Therapy Work?", "FAQ: Does Couples Therapy Work?"],
+  ],
 };
 
 const englishLedeBySlug: Record<string, string> = {
@@ -138,6 +165,10 @@ const englishLedeBySlug: Record<string, string> = {
     "Communication problems in relationships can look like endless arguments, silence that stretches for days, criticism that never stops, or the feeling that no matter what you say, it never lands. For most couples, it's not about a lack of love — it's about patterns.",
   "couples-therapy-after-infidelity":
     "You just found out — or you've known for a while, and now it's been said out loud. This guide explains what research actually says about recovery from infidelity, what happens in couples therapy session by session, and where to focus in the first days and weeks.",
+  "how-many-sessions-couples-therapy":
+    "There's no single right number. A shorter course might be 4–8 sessions. Couples with more entrenched patterns often need 12–20 or more. What determines length isn't a diagnosis — it's what you're actually working on, how long the problem has been going on, and how you both develop along the way.",
+  "signs-couples-therapy-is-working":
+    "Couples therapy appears to work when you gradually start handling conflicts differently — not necessarily less often, but differently. You recognize patterns a little earlier. Conflicts escalate more slowly. Repair attempts begin to land. The way back to connection gets shorter. Progress in couples therapy is rarely dramatic — it's most often quiet, cumulative, and felt as much between sessions as inside the therapy room.",
 };
 
 const faqBySlug: Record<string, ReadonlyArray<readonly [string, string]>> = {
@@ -296,6 +327,33 @@ const norwegianTocBySlug: Record<string, ReadonlyArray<readonly [string, string]
     ["Når Bør Dere Søke Hjelp?", "Når Bør Dere Søke Hjelp?"],
     ["FAQ: Parterapi Etter Utroskap", "FAQ: Parterapi Etter Utroskap"],
   ],
+  "hvor-mange-sesjoner-parterapi": [
+    ["Kort svar", "Kort svar"],
+    ["Hva Forskning Faktisk Kan Fortelle Oss", "Hva Forskning Faktisk Kan Fortelle Oss"],
+    ["Hva Avgjør Lengden for Akkurat Dere?", "Hva Avgjør Lengden for Akkurat Dere?"],
+    ["Hvor Ofte Bør Man Gå?", "Hvor Ofte Bør Man Gå i Parterapi?"],
+    ["Hva Skjer i Første Time?", "Hva Skjer i Første Time?"],
+    ["Når Merker Man Effekt?", "Når Merker Man Effekt av Parterapi?"],
+    ["Hva Hvis Det Ikke Fungerer?", "Hva Hvis Parterapi Ikke Fungerer?"],
+    ["Når Kan Man Avslutte?", "Når Vet Man at Man Kan Avslutte Parterapi?"],
+    ["Hva Koster et Vanlig Forløp?", "Hvor Mye Koster et Vanlig Forløp?"],
+    ["Må Vi Bestemme Oss med en Gang?", "Må Vi Bestemme Oss for 20 Timer med en Gang?"],
+    ["FAQ: Sesjoner i Parterapi", "FAQ: Sesjoner i Parterapi"],
+  ],
+  "tegn-pa-at-parterapi-virker": [
+    ["Kort Svar: Virker Parterapi?", "Kort Svar: Virker Parterapi?"],
+    ["10 Tegn på at Parterapi Virker", "10 Tegn på at Parterapi Virker"],
+    ["Hva Betyr Fremgang Egentlig?", "Hva Betyr Fremgang Egentlig? — Før og Etter"],
+    ["Hvor Lang Tid Tar Det?", "Hvor Lang Tid Tar Det Før Parterapi Virker?"],
+    ["Er Lettelse Det Samme Som Fremgang?", "Er Lettelse Det Samme Som Fremgang?"],
+    ["Betyr Fremgang at Dere Slutter å Krangle?", "Betyr Fremgang at Dere Slutter å Krangle?"],
+    ["Terapirommet vs. Mellom Timene", "Hva Skjer i Terapirommet vs. Mellom Timene"],
+    ["Hvordan Kan Dere Måle Fremgang?", "Hvordan Kan Dere Måle Fremgang?"],
+    ["Hva Hvis Parterapi Ikke Virker?", "Hva Hvis Parterapi Ikke Virker?"],
+    ["Kan Parterapi Virke Selv Om Dere Går Fra Hverandre?", "Kan Parterapi Virke Selv Om Dere Velger å Gå Fra Hverandre?"],
+    ["Når Bør Dere Ta Opp Noe?", "Når Bør Dere Ta Opp Noe Med Terapeuten?"],
+    ["FAQ: Virker Parterapi?", "FAQ: Virker Parterapi?"],
+  ],
 };
 
 const polishTocBySlug: Record<string, ReadonlyArray<readonly [string, string]>> = {
@@ -335,6 +393,8 @@ const norwegianLedeBySlug: Record<string, React.ReactNode> = {
   "parterapi-pa-nett": "Denne guiden forklarer hva parterapi på nett er, hvordan det fungerer i praksis, hvem det passer for — og hvorfor stadig flere norske par velger å jobbe med forholdet via videosamtale fremfor å møte opp fysisk hos en terapeut.",
   "kommunikasjonsproblemer-i-parforhold": "Kommunikasjonsproblemer i parforhold kan se ut som endeløse krangler, taushet som varer i dager, kritikk som aldri stopper, eller følelsen av at uansett hva du sier så når det ikke frem. For de fleste par handler det ikke om mangel på kjærlighet — det handler om mønstre.",
   "parterapi-etter-utroskap": "Du har nettopp funnet det ut — eller du har visst det lenge, men nå er det sagt høyt. Denne guiden forklarer hva forskning faktisk sier om recovery etter utroskap, hva som skjer i parterapi sesjon for sesjon, og hva dere bør fokusere på de første dagene og ukene.",
+  "hvor-mange-sesjoner-parterapi": "Det finnes ikke ett riktig antall. Et kortere forløp kan bestå av 4–8 sesjoner. Par med mer fastlåste mønstre trenger ofte 12–20 eller mer. Hva som avgjør lengden er ikke diagnosen — det er hva dere faktisk jobber med, hvor lenge problemet har vart, og hvordan dere utvikler dere underveis.",
+  "tegn-pa-at-parterapi-virker": "Parterapi ser ut til å virke når dere gradvis begynner å håndtere konflikter annerledes — ikke nødvendigvis sjeldnere, men annerledes. Dere gjenkjenner mønstrene litt tidligere. Konflikter eskalerer saktere. Reparasjonsforsøk begynner å lande. Veien tilbake til kontakt blir kortere. Fremgang i parterapi er sjelden dramatisk — den er oftest stille, kumulativ, og merkes like mye mellom timene som inne i terapirommet.",
   "nar-friluftsliv-blir-viktigere-enn-forholdet": "Friluftsliv kan være en sterk kilde til nærhet i et parforhold. Men hva skjer når aktiviteter blir viktigere enn kontakten hjemme? For mange par er turer, ski, hytta, trening og andre friluftsaktiviteter en viktig del av livet sammen. Det kan gi glede, mestring, opplevelser og tid sammen. Men noen ganger kan det også oppstå et mønster der aktivitetene blir stedet dere fortsatt fungerer godt sammen – mens nærheten, samtalene og intimiteten hjemme gradvis forsvinner.",
   "parterapi-i-oslo-tegn": "Vurderer dere parterapi fordi dere har gjentatte konflikter, kommunikasjonsproblemer eller økende avstand i forholdet? Dere trenger ikke å vente til dere står på randen av et samlivsbrudd før dere søker profesjonell hjelp. Her er 8 tegn på at dere trenger parterapi, hva de kan bety for parforholdet, og når det kan være riktig å søke hjelp.",
   "parterapi-i-oslo": (

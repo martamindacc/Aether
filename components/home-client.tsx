@@ -763,54 +763,6 @@ export default function HomeClient({ posts }: { posts: BlogPostMeta[] }) {
           ))}
         </div>
 
-        {/* Blog preview — only rendered when there are posts for this locale */}
-        {blogPosts.length > 0 && (
-          <div className="mt-24 w-full max-w-6xl pb-0">
-            <div className="mb-12 flex items-center justify-between">
-              <p className="text-sm uppercase tracking-wide text-zinc-500">
-                {t.blogEyebrow}
-              </p>
-              <Link
-                href="/blog"
-                className="text-sm text-zinc-500 transition-colors hover:text-zinc-900"
-              >
-                {t.blogAllLink}
-              </Link>
-            </div>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {blogPosts.map((post) => (
-                <Link
-                  key={post.slug}
-                  href={`/blog/${post.slug}`}
-                  className="group flex flex-col overflow-hidden rounded-2xl border border-zinc-300/80 bg-gradient-to-br from-[#eee2db]/75 to-[#eee2db]/40 transition-transform duration-[220ms] ease-out hover:-translate-y-[3px]"
-                >
-                  {post.image ? (
-                    <div className="aspect-[3/2] w-full overflow-hidden">
-                      <img
-                        src={post.image}
-                        alt={post.title}
-                        className="h-full w-full object-cover"
-                        style={post.imagePosition ? { objectPosition: post.imagePosition } : undefined}
-                      />
-                    </div>
-                  ) : null}
-                  <div className={`flex flex-col px-6 pb-6 ${post.image ? "pt-5" : "pt-8"}`}>
-                    <p className="text-[11px] uppercase tracking-wide text-zinc-500">
-                      {post.tags[0]} · {formatBlogDate(post.date, language.code)}
-                    </p>
-                    <h3 className="mt-2 line-clamp-2 font-[NeueHaasDisplayRoman,Arial,sans-serif] text-[18px] font-medium leading-[1.3] tracking-tight text-zinc-900">
-                      {post.title}
-                    </h3>
-                    <span className="mt-4 text-[13px] text-zinc-500 transition-colors group-hover:text-zinc-900">
-                      {t.blogReadMore}
-                    </span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        )}
-
         <div className="mt-24 flex w-full max-w-6xl flex-col items-center gap-8 rounded-[2rem] px-8 pb-10 pt-20 text-center sm:px-20 sm:pb-16 sm:pt-28">
           <div className="h-px w-24 bg-[#c9a688]" />
           <h2 className="max-w-3xl text-balance font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-semibold leading-[1.1] tracking-wide text-zinc-900 sm:text-4xl">
@@ -824,6 +776,55 @@ export default function HomeClient({ posts }: { posts: BlogPostMeta[] }) {
           </button>
         </div>
       </section>
+
+      {blogPosts.length > 0 && (
+        <section className="w-full bg-[#ede9e3]/40 py-24 sm:py-28">
+          <div className="mx-auto flex max-w-6xl flex-col px-6 sm:px-12">
+            <div className="flex items-center justify-between border-b border-zinc-300/50 pb-8">
+              <div className="flex items-center gap-5">
+                <div className="h-px w-8 bg-[#c9a688]" />
+                <p className="text-xs uppercase tracking-[0.18em] text-zinc-500">
+                  {t.blogEyebrow}
+                </p>
+              </div>
+              <Link
+                href="/blog"
+                className="text-xs uppercase tracking-[0.1em] text-zinc-400 transition-colors hover:text-zinc-900"
+              >
+                {t.blogAllLink}
+              </Link>
+            </div>
+            <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {blogPosts.map((post) => (
+                <Link
+                  key={post.slug}
+                  href={`/blog/${post.slug}`}
+                  className="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_2px_12px_rgba(0,0,0,0.06)] transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_8px_28px_rgba(0,0,0,0.10)]"
+                >
+                  {post.image ? (
+                    <div className="aspect-[3/2] w-full overflow-hidden">
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                        style={post.imagePosition ? { objectPosition: post.imagePosition } : undefined}
+                      />
+                    </div>
+                  ) : null}
+                  <div className={`flex flex-col px-6 pb-8 ${post.image ? "pt-5" : "pt-8"}`}>
+                    <p className="text-[10px] uppercase tracking-[0.14em] text-zinc-400">
+                      {post.tags[0]} · {formatBlogDate(post.date, language.code)}
+                    </p>
+                    <h3 className="mt-3 line-clamp-2 font-[NeueHaasDisplayRoman,Arial,sans-serif] text-[20px] font-medium leading-[1.25] tracking-tight text-zinc-900">
+                      {post.title}
+                    </h3>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <SiteFooter language={language.code} />
     </main>
