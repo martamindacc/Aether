@@ -109,6 +109,22 @@ const englishTocBySlug: Record<string, ReadonlyArray<readonly [string, string]>>
     ["Online Couples Therapy at Aether Practice", "Online Couples Therapy at Aether Practice"],
     ["FAQ: Online Couples Therapy", "FAQ: Online Couples Therapy"],
   ],
+  "couples-therapy-after-infidelity": [
+    ["The First 24–72 Hours", "The First 24–72 Hours"],
+    ["The First Weeks", "The First Weeks"],
+    ["Can a Relationship Survive Infidelity?", "Can a Relationship Survive Infidelity?"],
+    ["What Research Says About Recovery", "What Research Says About Recovery"],
+    ["Is Couples Therapy Right Now?", "Is Couples Therapy Right Now — or Too Soon?"],
+    ["What Happens in Therapy — Session by Session", "What Happens in Couples Therapy After Infidelity — Session by Session"],
+    ["What the Betrayed Partner Needs", "What the Betrayed Partner Needs"],
+    ["What the Unfaithful Partner Must Do", "What the Unfaithful Partner Must Do"],
+    ["Should All Details Be Disclosed?", "Should All Details Be Disclosed?"],
+    ["Special Situations", "Special Situations"],
+    ["Five Questions Before You Decide", "Five Questions Before You Decide"],
+    ["Signs the Relationship Can Be Repaired", "Signs the Relationship Can Be Repaired"],
+    ["When Should You Get Help?", "When Should You Get Help?"],
+    ["FAQ: Couples Therapy After Infidelity", "FAQ: Couples Therapy After Infidelity"],
+  ],
 };
 
 const englishLedeBySlug: Record<string, string> = {
@@ -120,6 +136,8 @@ const englishLedeBySlug: Record<string, string> = {
     "This guide explains what online couples therapy is, how it works in practice, and who it's right for — and why more and more couples are choosing to do this work over video rather than driving to a therapist's office.",
   "couples-communication-problems":
     "Communication problems in relationships can look like endless arguments, silence that stretches for days, criticism that never stops, or the feeling that no matter what you say, it never lands. For most couples, it's not about a lack of love — it's about patterns.",
+  "couples-therapy-after-infidelity":
+    "You just found out — or you've known for a while, and now it's been said out loud. This guide explains what research actually says about recovery from infidelity, what happens in couples therapy session by session, and where to focus in the first days and weeks.",
 };
 
 const faqBySlug: Record<string, ReadonlyArray<readonly [string, string]>> = {
@@ -262,6 +280,22 @@ const norwegianTocBySlug: Record<string, ReadonlyArray<readonly [string, string]
     ["Når Bør Dere Søke Hjelp?", "Når Bør Dere Søke Hjelp for Kommunikasjonsproblemer?"],
     ["FAQ: Kommunikasjonsproblemer", "FAQ: Kommunikasjonsproblemer i Parforhold"],
   ],
+  "parterapi-etter-utroskap": [
+    ["De Første 24–72 Timene", "De Første 24–72 Timene"],
+    ["De Første Ukene", "De Første Ukene"],
+    ["Kan Forholdet Overleve Utroskap?", "Kan Forholdet Overleve Utroskap?"],
+    ["Hva Forskning Sier Om Recovery", "Hva Forskning Sier Om Recovery"],
+    ["Er Parterapi Riktig Nå?", "Er Parterapi Riktig Nå — Eller For Tidlig?"],
+    ["Hva Skjer i Parterapi — Sesjon for Sesjon", "Hva Skjer i Parterapi Etter Utroskap — Sesjon for Sesjon"],
+    ["Hva Den Sveikede Trenger", "Hva Den Sveikede Trenger"],
+    ["Hva Den Utro Partneren Må Gjøre", "Hva Den Utro Partneren Må Gjøre"],
+    ["Bør Alle Detaljer Avsløres?", "Bør Alle Detaljer Avsløres?"],
+    ["Spesielle Situasjoner", "Spesielle Situasjoner"],
+    ["Fem Spørsmål Før Dere Bestemmer Dere", "Fem Spørsmål Før Dere Bestemmer Dere"],
+    ["Tegn på At Forholdet Kan Repareres", "Tegn på At Forholdet Kan Repareres"],
+    ["Når Bør Dere Søke Hjelp?", "Når Bør Dere Søke Hjelp?"],
+    ["FAQ: Parterapi Etter Utroskap", "FAQ: Parterapi Etter Utroskap"],
+  ],
 };
 
 const polishTocBySlug: Record<string, ReadonlyArray<readonly [string, string]>> = {
@@ -300,6 +334,7 @@ const norwegianLedeBySlug: Record<string, React.ReactNode> = {
   "parterapi-pris-oslo": "Denne guiden gir deg en ærlig og oppdatert oversikt over hva parterapi koster i Oslo — hva som påvirker prisen, hvilke gratis alternativer som finnes, og hvordan du velger riktig tilbud for dere som par.",
   "parterapi-pa-nett": "Denne guiden forklarer hva parterapi på nett er, hvordan det fungerer i praksis, hvem det passer for — og hvorfor stadig flere norske par velger å jobbe med forholdet via videosamtale fremfor å møte opp fysisk hos en terapeut.",
   "kommunikasjonsproblemer-i-parforhold": "Kommunikasjonsproblemer i parforhold kan se ut som endeløse krangler, taushet som varer i dager, kritikk som aldri stopper, eller følelsen av at uansett hva du sier så når det ikke frem. For de fleste par handler det ikke om mangel på kjærlighet — det handler om mønstre.",
+  "parterapi-etter-utroskap": "Du har nettopp funnet det ut — eller du har visst det lenge, men nå er det sagt høyt. Denne guiden forklarer hva forskning faktisk sier om recovery etter utroskap, hva som skjer i parterapi sesjon for sesjon, og hva dere bør fokusere på de første dagene og ukene.",
   "nar-friluftsliv-blir-viktigere-enn-forholdet": "Friluftsliv kan være en sterk kilde til nærhet i et parforhold. Men hva skjer når aktiviteter blir viktigere enn kontakten hjemme? For mange par er turer, ski, hytta, trening og andre friluftsaktiviteter en viktig del av livet sammen. Det kan gi glede, mestring, opplevelser og tid sammen. Men noen ganger kan det også oppstå et mønster der aktivitetene blir stedet dere fortsatt fungerer godt sammen – mens nærheten, samtalene og intimiteten hjemme gradvis forsvinner.",
   "parterapi-i-oslo-tegn": "Vurderer dere parterapi fordi dere har gjentatte konflikter, kommunikasjonsproblemer eller økende avstand i forholdet? Dere trenger ikke å vente til dere står på randen av et samlivsbrudd før dere søker profesjonell hjelp. Her er 8 tegn på at dere trenger parterapi, hva de kan bety for parforholdet, og når det kan være riktig å søke hjelp.",
   "parterapi-i-oslo": (
