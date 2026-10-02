@@ -84,6 +84,18 @@ const englishTocBySlug: Record<string, ReadonlyArray<readonly [string, string]>>
     ["When couples therapy isn't the right first step", "When couples therapy isn't the right first step"],
     ["Common questions about couples therapy", "Common questions about couples therapy"],
   ],
+  "couples-communication-problems": [
+    ["Signs of Poor Communication", "Signs of Poor Communication in a Relationship"],
+    ["Why Do Communication Problems Develop?", "Why Do Communication Problems Develop?"],
+    ["Gottman's Four Horsemen", "Gottman's Four Horsemen: The Patterns That Damage Relationships"],
+    ["69% of Conflicts Are Unsolvable", "69 Percent of Conflicts Are Unsolvable — And That's Okay"],
+    ["The Pursuer-Withdrawer Pattern", "The Pursuer-Withdrawer Pattern: When One Pushes and the Other Pulls Back"],
+    ["What Separates Couples Who Stay Together?", "What Separates Couples Who Stay Together From Those Who Don't?"],
+    ["What to Say Instead", "What to Say Instead: Concrete Examples"],
+    ["How to Communicate Better", "How to Communicate Better in Your Relationship"],
+    ["When to Get Help", "When Should You Get Help for Communication Problems?"],
+    ["FAQ: Communication Problems", "FAQ: Communication Problems in Relationships"],
+  ],
   "online-couples-therapy": [
     ["What Is Online Couples Therapy?", "What Is Online Couples Therapy?"],
     ["Is It as Effective as In-Person?", "Is Online Couples Therapy as Effective as In-Person?"],
