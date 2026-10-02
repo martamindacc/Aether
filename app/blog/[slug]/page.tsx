@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import remarkGfm from "remark-gfm";
 import { BlogShell } from "@/components/blog-shell";
 import { BlogCta } from "@/components/blog-cta";
 import { BlogViewTracker } from "@/components/blog-view-tracker";
@@ -156,6 +157,19 @@ const englishTocBySlug: Record<string, ReadonlyArray<readonly [string, string]>>
     ["When Should You Raise Something?", "When Should You Raise Something with Your Therapist?"],
     ["FAQ: Does Couples Therapy Work?", "FAQ: Does Couples Therapy Work?"],
   ],
+  "couples-therapy-guide": [
+    ["What couples therapy is, and three things it isn't", "What couples therapy is, and three things it isn't"],
+    ["Who it's for", "Who it's for"],
+    ["The four patterns nearly every couple falls into", "The four patterns nearly every couple falls into"],
+    ["What happens in the first session", "What happens in the first session"],
+    ["How long it takes", "How long it takes"],
+    ["Methods, and what the evidence actually says", "Methods, and what the evidence actually says"],
+    ["What it costs, and what insurance does", "What it costs, and what insurance does"],
+    ["Online or in person", "Online or in person"],
+    ["How to choose a therapist", "How to choose a therapist"],
+    ["When couples therapy is the wrong first step", "When couples therapy is the wrong first step"],
+    ["Frequently asked questions", "Frequently asked questions"],
+  ],
 };
 
 const englishLedeBySlug: Record<string, string> = {
@@ -173,6 +187,8 @@ const englishLedeBySlug: Record<string, string> = {
     "There's no single right number. A shorter course might be 4–8 sessions. Couples with more entrenched patterns often need 12–20 or more. What determines length isn't a diagnosis — it's what you're actually working on, how long the problem has been going on, and how you both develop along the way.",
   "signs-couples-therapy-is-working":
     "Couples therapy appears to work when you gradually start handling conflicts differently — not necessarily less often, but differently. You recognize patterns a little earlier. Conflicts escalate more slowly. Repair attempts begin to land. The way back to connection gets shorter. Progress in couples therapy is rarely dramatic — it's most often quiet, cumulative, and felt as much between sessions as inside the therapy room.",
+  "couples-therapy-guide":
+    "Couples therapy (also called marriage counseling, couples counseling or relationship therapy) is structured work with a trained clinician in which both partners examine the pattern they are caught in, understand what drives it, and learn to reach each other differently. The best-evidenced approaches are Emotionally Focused Therapy and behavioural methods; most couples see meaningful change in 8–20 sessions; private fees run roughly US$150–450 per session in New York and California; and the strongest predictor of success is not the method but whether both partners feel equally held by the therapist.",
 };
 
 const faqBySlug: Record<string, ReadonlyArray<readonly [string, string]>> = {
@@ -202,6 +218,19 @@ const faqBySlug: Record<string, ReadonlyArray<readonly [string, string]>> = {
     ["Skąd będziemy wiedzieć, czy naprawdę możemy to naprawić?", "Jeśli oboje naprawdę chcecie naprawić związek i jesteście gotowi się zaangażować, naprawa jest często możliwa. Terapia może też przynieść jasność, gdy jedna osoba nie wie, czy chce kontynuować relację."],
     ["A jeśli boję się, że terapia pokaże, iż fundamentalnie do siebie nie pasujemy?", "Terapia par może ujawnić różnice lub wzorce wymagające uwagi, ale może też pokazać, że obecne trudności wynikają z dystansu w relacji, a nie z fundamentalnej niezgodności."],
     ["Czy terapia par jest poufna, jeśli mam publiczny profil foundera lub lidera?", "Standardowe zasady poufności obowiązują niezależnie od widoczności zawodowej. Terapeuta doświadczony w pracy z osobami publicznymi może również uwzględnić dyskrecję, elastyczny grafik i bezpieczne sesje online."],
+  ],
+  "couples-therapy-guide": [
+    ["What is couples therapy?", "Structured work with a trained clinician in which both partners examine the pattern they're caught in, understand what drives it, and learn to reach each other differently. The relationship, not either individual, is the client. It's also called marriage counseling, couples counseling or relationship therapy; the terms are used interchangeably and don't indicate different methods."],
+    ["Is marriage counseling different from couples therapy?", "No. \"Marriage counseling\" is the older term and still the more common search in parts of the US; \"couples therapy\" is the term most clinicians use because it doesn't assume marriage. The work is the same."],
+    ["Does couples therapy actually work?", "For most couples, yes. Meta-analyses across decades show large improvements in relationship satisfaction, with gains holding at follow-up for a majority. Emotionally Focused Therapy has the strongest trial evidence, including two-year follow-up. Outcomes depend heavily on both partners being present and on the therapist holding both equally."],
+    ["How long does couples therapy take?", "Typically 8–20 sessions, with most measurable change in the first eight to twelve. Prevention and transition work often finishes in 4–8. Infidelity recovery takes months. Intensive formats compress the early phase into two days plus follow-ups."],
+    ["How much does couples therapy cost?", "US$150–450 per session in New York and California. A full course usually totals US$3,000–9,000. Two-day intensives run roughly US$2,500–7,500 as packages."],
+    ["Does insurance cover couples therapy?", "Rarely as couples therapy. Where it does, it's billed as family psychotherapy with one partner carrying a mental-health diagnosis. Out-of-network benefits often reimburse 50–80% of an allowed amount after a deductible. US insurance rules and reimbursement vary by plan and provider."],
+    ["What happens in the first session?", "How you met and the relationship at its best; what each of you sees as the problem; the last significant argument in detail; what you each hope for. Usually a short individual conversation with each partner. You leave with a sense of whether the therapist understood you both and a rough direction."],
+    ["What's the best type of couples therapy?", "There isn't one. EFT has the strongest trial evidence and suits distance and withdrawal; the Gottman approach suits conflict-heavy couples who want structured tools; IBCT suits perpetual-difference conflicts. Differences between therapists matter more than differences between methods."],
+    ["Can couples therapy be done online?", "Yes, with outcomes comparable to in-person in direct comparisons. It's a worse choice where there's intimidation or control at home, no private space, or a partner likely to disengage on a screen."],
+    ["What if my partner won't go to couples therapy?", "Very common. Reframe the invitation from \"we need therapy\" to \"I want to understand us better and I want you with me.\" Offer one session, not a course. And start alone if you must: individual work focused on the relationship frequently shifts the dynamic enough that the other partner joins."],
+    ["Is it too late for couples therapy?", "Rarely, if both partners are willing to be in the room. The signs that it may be: contempt rather than conflict, a partner who feels only relief at the thought of leaving, repeated betrayal without change, or a partner who has already decided. Even then, therapy can help you end well."],
   ],
   "parterapi-i-oslo": [
     ["Vi argumenterer ikke så mye. Trenger vi parterapi?", "Ja, muligens. Fraværet av argumenter betyr ikke nødvendigvis at forholdet er sunt. Noen par har svært lite konflikt, men mye følelsesmessig avstand eller nummenhet. Hvis du merker at noe har endret seg eller at intimitet mangler, er det verdt å utforske med en terapeut."],
@@ -726,7 +755,7 @@ export default async function BlogPostPage({
         )}
 
         <div className="mt-4">
-          <MDXRemote source={post.content} components={mdxComponents} />
+          <MDXRemote source={post.content} components={mdxComponents} options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }} />
         </div>
 
         {post.relatedService && <BlogCta relatedService={post.relatedService} language={post.lang} />}
