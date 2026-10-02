@@ -85,7 +85,7 @@ export function BlogIndexContent({ posts }: { posts: BlogPostMeta[] }) {
             <h2 className="mt-3 origin-left font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out group-hover:translate-x-2 group-hover:scale-x-105 sm:text-3xl">
               {post.title}
             </h2>
-            <p className="mt-4 max-w-3xl font-[Roboto,Arial,sans-serif] text-[17px] leading-[1.5] text-[#383838]">
+            <p className="mt-4 max-w-3xl font-[Roboto,Arial,sans-serif] text-[14.5px] leading-[1.45] text-[#383838]">
               {post.description}{index === 0 && "…"}
             </p>
             </div>
