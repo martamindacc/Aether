@@ -92,7 +92,7 @@ export const relatedServicesHeading: Record<LanguageCode, string> = {
 
 export const individualTherapyContent: Record<LanguageCode, ServicePageContent> = {
   en: {
-    title: "Individual Therapy Online",
+    title: "Individual Session",
     subtitle: "Online individual sessions for clients in New York City and California.",
     intro:
       "A dedicated one-on-one session to think clearly, map your own patterns, and set a deliberate direction forward. Built for people who are already capable — and want a sharper, more intentional version of the life they're building.",
@@ -229,7 +229,7 @@ export const individualTherapyContent: Record<LanguageCode, ServicePageContent> 
 
 export const couplesTherapyContent: Record<LanguageCode, ServicePageContent> = {
   en: {
-    title: "Couples Therapy Online",
+    title: "Couples Session",
     subtitle: "Online couples sessions for partners in New York City and California.",
     intro:
       "A dedicated space for two people to understand how they truly work together — repair the pattern underneath the conflict, and rebuild a partnership that feels steady, honest, and shared.",
@@ -366,7 +366,7 @@ export const couplesTherapyContent: Record<LanguageCode, ServicePageContent> = {
 
 export const executiveFounderContent: Record<LanguageCode, ServicePageContent> = {
   en: {
-    title: "Executive & Founder Coaching",
+    title: "Executive & Founder Work",
     subtitle: "Online executive and founder coaching sessions for clients in New York City and California.",
     intro:
       "Confidential, high-caliber support at the level where decisions and isolation actually happen — built for founders and executives carrying weight the role was never designed to make space for.",
@@ -433,7 +433,7 @@ export const executiveFounderContent: Record<LanguageCode, ServicePageContent> =
     ctaButton: "Book your first session",
   },
   no: {
-    title: "Coaching for ledere og gründere",
+    title: "Leder- og Grunnleggerarbeid",
     subtitle: "Coaching på nett for ledere og gründere i Norge.",
     intro:
       "Konfidensiell støtte av høy kaliber på nivået der beslutninger og isolasjon faktisk skjer — bygget for gründere og ledere som bærer en vekt rollen aldri var designet for å gi plass til.",

@@ -22,7 +22,7 @@ const content: Record<LanguageCode, {
   ctaButton: string;
 }> = {
   en: {
-    title: "Family Therapy Online",
+    title: "Family Session",
     subtitle: "Online family support sessions for families in New York City and California.",
     intro: "Family work creates a steadier way of being together — making room for honest conversations, clearer boundaries, and connection that can hold through change.",
     panels: [
