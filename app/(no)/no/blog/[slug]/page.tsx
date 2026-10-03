@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
 import { BlogPost, postMetadata } from "@/components/blog-post";
+import { pickRelatedPosts } from "@/components/related-posts";
 
 /** Only Norwegian posts live under /no/blog; English posts live under /blog. */
 export const dynamicParams = false;
@@ -25,5 +26,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function NorwegianBlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  return <BlogPost post={loadPost(slug)} />;
+  const post = loadPost(slug);
+  return <BlogPost post={post} related={pickRelatedPosts(post, getAllPosts())} />;
 }

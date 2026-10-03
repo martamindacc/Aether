@@ -101,21 +101,37 @@ export function serviceJsonLd({
   description,
   path,
   areaServed,
+  serviceType,
+  inLanguage = "en",
 }: {
   name: string
   description: string
   /** Path starting with "/", e.g. "/couples-therapy". */
   path: string
   areaServed: string[]
+  /** Category of service, e.g. "Couples therapy". Defaults to the name. */
+  serviceType?: string
+  /** BCP 47 language of the page, "en" or "nb". */
+  inLanguage?: "en" | "nb"
 }) {
+  const url = `${BASE_URL}${path}`
   return {
     "@context": "https://schema.org",
     "@type": "Service",
     name,
+    serviceType: serviceType ?? name,
     description,
-    url: `${BASE_URL}${path}`,
+    url,
+    inLanguage,
     provider: { "@id": `${BASE_URL}/#organization` },
     areaServed: areaServed.map((place) => ({ "@type": "AdministrativeArea", name: place })),
+    // Sessions are delivered online only.
+    availableChannel: {
+      "@type": "ServiceChannel",
+      name: inLanguage === "nb" ? "Videosamtale" : "Online video session",
+      serviceUrl: url,
+      availableLanguage: inLanguage === "nb" ? ["nb", "en"] : ["en", "nb"],
+    },
   }
 }
 

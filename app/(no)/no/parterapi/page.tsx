@@ -19,6 +19,7 @@ const serviceLd = serviceJsonLd({
   description,
   path,
   areaServed: ["Norge"],
+  inLanguage: "nb",
 })
 
 const breadcrumbLd = breadcrumbJsonLd([

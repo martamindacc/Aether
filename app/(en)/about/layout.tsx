@@ -1,4 +1,4 @@
-import { pageMetadata } from "@/lib/seo"
+import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo"
 import { hreflangFor } from "@/lib/locale-routes"
 
 export const metadata = pageMetadata({
@@ -9,10 +9,20 @@ export const metadata = pageMetadata({
   languages: hreflangFor("about"),
 })
 
+const breadcrumbLd = breadcrumbJsonLd([
+  { name: "Home", path: "/" },
+  { name: "About", path: "/about" },
+])
+
 export default function AboutLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  return children
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
+      {children}
+    </>
+  )
 }

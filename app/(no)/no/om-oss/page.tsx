@@ -1,4 +1,4 @@
-import { pageMetadata } from "@/lib/seo"
+import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo"
 import { hreflangFor, localizedPaths } from "@/lib/locale-routes"
 import AboutPage from "@/components/pages/about-page"
 
@@ -11,6 +11,16 @@ export const metadata = pageMetadata({
   languages: hreflangFor("about"),
 })
 
+const breadcrumbLd = breadcrumbJsonLd([
+  { name: "Hjem", path: localizedPaths.home.no },
+  { name: "Om oss", path: localizedPaths.about.no },
+])
+
 export default function Page() {
-  return <AboutPage language="no" />
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
+      <AboutPage language="no" />
+    </>
+  )
 }

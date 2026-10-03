@@ -1,4 +1,4 @@
-import { pageMetadata } from "@/lib/seo"
+import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo"
 import { hreflangFor, localizedPaths } from "@/lib/locale-routes"
 import ContactPage from "@/components/pages/contact-page"
 
@@ -11,6 +11,16 @@ export const metadata = pageMetadata({
   languages: hreflangFor("contact"),
 })
 
+const breadcrumbLd = breadcrumbJsonLd([
+  { name: "Hjem", path: localizedPaths.home.no },
+  { name: "Kontakt", path: localizedPaths.contact.no },
+])
+
 export default function Page() {
-  return <ContactPage language="no" />
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
+      <ContactPage language="no" />
+    </>
+  )
 }

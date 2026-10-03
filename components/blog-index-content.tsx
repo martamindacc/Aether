@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { BlogPostMeta } from "@/lib/blog";
 import type { LanguageCode } from "@/lib/service-content";
 import { postPath } from "@/lib/locale-routes";
+import { formatReadingTime } from "@/lib/reading-time";
 
 const copy = {
   en: {
@@ -78,7 +79,7 @@ export function BlogIndexContent({
             )}
             <div className="p-8 sm:p-10">
               <p className="font-[Roboto,Arial,sans-serif] text-sm uppercase tracking-wide text-zinc-500">
-                {formatDate(post.date, post.lang)} <span aria-hidden="true">·</span> {formatWordCount(post.wordCount, post.lang)}
+                {formatDate(post.date, post.lang)} <span aria-hidden="true">·</span> {formatReadingTime(post.wordCount, post.lang)}
               </p>
               <h2 className="mt-3 break-words origin-left font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out group-hover:translate-x-2 group-hover:scale-x-105 sm:text-3xl">
                 {post.title}

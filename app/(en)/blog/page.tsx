@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { BlogShell } from "@/components/blog-shell";
 import { getAllPosts } from "@/lib/blog";
-import { pageMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 import { hreflangFor, languageLinksFor, localizedPaths, postPath } from "@/lib/locale-routes";
 import { BlogIndexContent } from "@/components/blog-index-content";
 
@@ -17,6 +17,10 @@ const blogIndexLanguages = languageLinksFor("blog");
 
 export default function BlogIndexPage() {
   const posts = getAllPosts().filter((p) => p.lang === "en");
+  const breadcrumbLd = breadcrumbJsonLd([
+    { name: "Home", path: localizedPaths.home.en },
+    { name: "Blog", path: localizedPaths.blog.en },
+  ]);
   const itemListJsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -35,6 +39,7 @@ export default function BlogIndexPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
       />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <BlogIndexContent posts={posts} language="en" />
     </BlogShell>
   );

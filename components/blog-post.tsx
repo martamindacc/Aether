@@ -5,7 +5,10 @@ import remarkGfm from "remark-gfm";
 import { BlogShell } from "@/components/blog-shell";
 import { BlogCta } from "@/components/blog-cta";
 import { BlogViewTracker } from "@/components/blog-view-tracker";
-import { getTranslationsForPost, htmlLangFor, type BlogPost as BlogPostData } from "@/lib/blog";
+import { getTranslationsForPost, htmlLangFor, type BlogPost as BlogPostData, type BlogPostMeta } from "@/lib/blog";
+import { extractFaq } from "@/lib/blog-faq";
+import { formatReadingTime } from "@/lib/reading-time";
+import { RelatedPosts } from "@/components/related-posts";
 import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 import { localizedPaths, postPath } from "@/lib/locale-routes";
 import type { LanguageCode } from "@/lib/service-content";
@@ -257,15 +260,6 @@ const faqBySlug: Record<string, ReadonlyArray<readonly [string, string]>> = {
     ["Hva om jeg ikke har tid til å jobbe mindre?", "Da handler det ikke om å jobbe mindre, men om å være annerledes til stede i tiden som finnes. Ti minutter med reelt nærvær er verdt mer enn en kveld med fysisk tilstedeværelse og mentalt fravær. Terapien jobber med kvaliteten, ikke bare kvantiteten."],
     ["Er det diskret?", "Ja. Privat parterapi faktureres direkte, krever ingen henvisning, og går ikke gjennom fastlege, arbeidsgiver eller offentlige registre. Online-samtaler gjør det mulig å møtes uten å være sett på et venterom."],
     ["Hva hvis jeg egentlig ikke vil slutte å prioritere karrieren?", "Det trenger du ikke nødvendigvis. Målet er ikke å gjøre karrieren mindre viktig. Målet er å finne en måte å bygge karrieren på uten at forholdet systematisk får det som er igjen."],
-  ],
-  "terapia-par-dla-founderow-dyrektorow": [
-    ["Partner wspomniał o terapii, ale uważam, że wszystko jest w porządku. Czy powinienem iść?", "Kiedy jedna osoba proponuje terapię, a druga nie widzi takiej potrzeby, może to być sygnał, że terapia pomoże. Neutralna osoba trzecia może pomóc wam jasno usłyszeć obawy i zrozumieć wzorce wpływające na związek."],
-    ["A jeśli boję się, że terapeuta będzie mnie obwiniał?", "Dobry terapeuta par nie obwinia jednej osoby. Pomaga obojgu partnerom zobaczyć wzorce, które tworzą razem. Jeśli terapeuta obwinia ciebie, prawdopodobnie nie jest właściwą osobą."],
-    ["Czy terapia może pomóc, jeśli jestem zdecydowany nadal skupiać się na firmie?", "Terapia może pomóc skupić się na firmie i jednocześnie dbać o związek, ale wymaga poświęcenia relacji świadomej uwagi."],
-    ["A jeśli to mój partner pracuje z wysoką intensywnością?", "Terapia może pomóc partnerowi foundera lub lidera wyrazić wpływ intensywnej pracy, ustalić znaczenie partnerstwa w wymagających okresach i zapobiegać narastaniu urazy."],
-    ["Skąd będziemy wiedzieć, czy naprawdę możemy to naprawić?", "Jeśli oboje naprawdę chcecie naprawić związek i jesteście gotowi się zaangażować, naprawa jest często możliwa. Terapia może też przynieść jasność, gdy jedna osoba nie wie, czy chce kontynuować relację."],
-    ["A jeśli boję się, że terapia pokaże, iż fundamentalnie do siebie nie pasujemy?", "Terapia par może ujawnić różnice lub wzorce wymagające uwagi, ale może też pokazać, że obecne trudności wynikają z dystansu w relacji, a nie z fundamentalnej niezgodności."],
-    ["Czy terapia par jest poufna, jeśli mam publiczny profil foundera lub lidera?", "Standardowe zasady poufności obowiązują niezależnie od widoczności zawodowej. Terapeuta doświadczony w pracy z osobami publicznymi może również uwzględnić dyskrecję, elastyczny grafik i bezpieczne sesje online."],
   ],
   "couples-therapy-guide": [
     ["What is couples therapy?", "Structured work with a trained clinician in which both partners examine the pattern they're caught in, understand what drives it, and learn to reach each other differently. The relationship, not either individual, is the client. It's also called marriage counseling, couples counseling or relationship therapy; the terms are used interchangeably and don't indicate different methods."],
@@ -559,11 +553,6 @@ function formatDate(date: string, lang: LanguageCode) {
   });
 }
 
-function formatWordCount(wordCount: number, lang: LanguageCode) {
-  const localeMap: Record<LanguageCode, string> = { no: "nb-NO", en: "en-US" };
-  const labelMap: Record<LanguageCode, string> = { no: "ord", en: "words" };
-  return `${new Intl.NumberFormat(localeMap[lang]).format(wordCount)} ${labelMap[lang]}`;
-}
 
 const mdxComponents = {
   h2: (props: React.ComponentProps<"h2">) => (
@@ -631,7 +620,7 @@ const mdxComponents = {
 };
 
 /** Full article page body. The route decides which post to load; this renders it. */
-export function BlogPost({ post }: { post: BlogPostData }) {
+export function BlogPost({ post, related }: { post: BlogPostData; related: BlogPostMeta[] }) {
   const schemaLangByLang: Record<LanguageCode, string> = { en: "en-US", no: "nb-NO" };
   const languageLinks = getTranslationsForPost(post).map((t) => ({
     code: t.lang,
@@ -649,6 +638,9 @@ export function BlogPost({ post }: { post: BlogPostData }) {
     dateModified: post.modifiedDate,
     inLanguage: schemaLangByLang[post.lang],
     isAccessibleForFree: true,
+    wordCount: post.wordCount,
+    ...(post.image ? { image: `https://aetherpractice.com${post.image}` } : {}),
+    ...(post.tags.length ? { articleSection: post.tags[0] } : {}),
     keywords: post.keywords,
     author: {
       "@type": "Organization",
@@ -672,8 +664,9 @@ export function BlogPost({ post }: { post: BlogPostData }) {
     },
   };
 
-  const faqItems = faqBySlug[post.slug];
-  const faqJsonLd = faqItems
+  const faqItems: ReadonlyArray<readonly [string, string]> =
+    faqBySlug[post.slug] ?? extractFaq(post).map((item) => [item.question, item.answer] as const);
+  const faqJsonLd = faqItems.length
     ? {
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -724,7 +717,7 @@ export function BlogPost({ post }: { post: BlogPostData }) {
         <div className="mt-6 flex items-center gap-2 font-[Roboto,Arial,sans-serif] text-sm uppercase tracking-wide text-zinc-500">
           <time dateTime={post.date}>{formatDate(post.date, post.lang)}</time>
           <span aria-hidden="true">·</span>
-          <span>{formatWordCount(post.wordCount, post.lang)}</span>
+          <span>{formatReadingTime(post.wordCount, post.lang)}</span>
         </div>
         <h1 className="mt-3 font-[NeueHaasDisplayRoman,Arial,sans-serif] text-5xl font-medium leading-[1.05] tracking-tight text-[#74382f] sm:text-6xl">
           {post.title}
@@ -816,6 +809,8 @@ export function BlogPost({ post }: { post: BlogPostData }) {
         </div>
 
         {post.relatedService && <BlogCta relatedService={post.relatedService} language={post.lang} />}
+
+        <RelatedPosts posts={related} language={post.lang} />
       </article>
     </BlogShell>
   );
