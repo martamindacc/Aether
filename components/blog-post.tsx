@@ -213,18 +213,10 @@ const englishLedeBySlug: Record<string, string> = {
     "This guide explains what online couples therapy is, how it works in practice, and who it's right for — and why more and more couples are choosing to do this work over video rather than driving to a therapist's office.",
   "couples-communication-problems":
     "Communication problems in relationships can look like endless arguments, silence that stretches for days, criticism that never stops, or the feeling that no matter what you say, it never lands. For most couples, it's not about a lack of love — it's about patterns.",
-  "couples-therapy-after-infidelity":
-    "Most relationships can survive infidelity, and a meaningful share of couples who do the work describe themselves as closer afterwards than before. But recovery is not linear, measured in months rather than sessions, and depends on conditions that must be in place before couples therapy can help.",
   "how-many-sessions-couples-therapy":
     "There's no single right number. A shorter course might be 4–8 sessions. Couples with more entrenched patterns often need 12–20 or more. What determines length isn't a diagnosis — it's what you're actually working on, how long the problem has been going on, and how you both develop along the way.",
   "signs-couples-therapy-is-working":
     "Couples therapy appears to work when you gradually start handling conflicts differently — not necessarily less often, but differently. You recognize patterns a little earlier. Conflicts escalate more slowly. Repair attempts begin to land. The way back to connection gets shorter. Progress in couples therapy is rarely dramatic — it's most often quiet, cumulative, and felt as much between sessions as inside the therapy room.",
-  "couples-therapy-guide":
-    "Couples therapy (also called marriage counseling, couples counseling or relationship therapy) is structured work with a trained clinician in which both partners examine the pattern they are caught in, understand what drives it, and learn to reach each other differently. The best-evidenced approaches are Emotionally Focused Therapy and behavioural methods; most couples see meaningful change in 8–20 sessions; private fees run roughly US$150–450 per session in New York and California; and the strongest predictor of success is not the method but whether both partners feel equally held by the therapist.",
-  "emotionally-focused-therapy-explained":
-    "Emotionally Focused Therapy is a couples therapy approach built on attachment science. It treats relationship distress as a negative cycle in which each partner's protective moves trigger the other's, and works in three stages: de-escalating the cycle, restructuring how partners reach each other, and consolidating the new pattern. EFT has the strongest clinical-trial evidence of any couples method, including a 2024 meta-analysis and two-year follow-up data, and roughly 70–75% of couples in early trials moved from distressed to non-distressed.",
-  "two-careers-one-relationship":
-    "Both partners have demanding careers? The conflicts standard relationship advice doesn't cover: Whose job wins when both of you have a critical week? Who relocates for whom? How do you divide the household when neither of you has any slack? And how do you keep competition, resentment, and a silent score from taking over? This guide walks through the three phases dual-career couples typically move through, the most common conflicts, and how to build a relationship where both partners' ambitions have room.",
   "when-your-partner-is-burned-out":
     "Your partner is burned out and distant? Learn what burnout does to a relationship, the care–resentment–distance pattern that develops, what the partner and the burned-out person can each do, and when couples therapy helps alongside individual treatment.",
 };
@@ -532,12 +524,10 @@ const norwegianTocBySlug: Record<string, ReadonlyArray<readonly [string, string]
 };
 
 const norwegianLedeBySlug: Record<string, React.ReactNode> = {
-  "to-karrierer-ett-parforhold": "Par der begge har krevende karrierer møter utfordringer som ikke er dekket av vanlige parforholdsråd: Hvem sin jobb vinner når begge har en viktig uke? Hvem flytter for hvem? Hvordan fordeler dere hjemmet når ingen har «ledig» tid? Og hvordan unngår dere at konkurranse, bitterhet og usynlig regnskap tar over? Denne guiden går gjennom de tre fasene karrierepar typisk går gjennom, de vanligste konfliktene, og hvordan dere bygger et forhold der begges ambisjoner får plass.",
   "parterapi-grundere-ledere": "Parterapi for ledere og gründere handler om en bestemt dynamikk: Du er vant til å løse problemer, prestere under press og holde fasaden. Hjemme fungerer ikke noe av det. Partneren din trenger ikke løsninger, men nærvær. Du har ikke noe igjen å gi etter en dag der alle trengte noe av deg. Og forholdet, det eneste i livet ditt som ikke sender purringer, blir det som vike.",
   "parterapi-pris-oslo": "Denne guiden gir deg en ærlig og oppdatert oversikt over hva parterapi koster i Oslo — hva som påvirker prisen, hvilke gratis alternativer som finnes, og hvordan du velger riktig tilbud for dere som par.",
   "parterapi-pa-nett": "Denne guiden forklarer hva parterapi på nett er, hvordan det fungerer i praksis, hvem det passer for — og hvorfor stadig flere norske par velger å jobbe med forholdet via videosamtale fremfor å møte opp fysisk hos en terapeut.",
   "kommunikasjonsproblemer-i-parforhold": "Kommunikasjonsproblemer i parforhold kan se ut som endeløse krangler, taushet som varer i dager, kritikk som aldri stopper, eller følelsen av at uansett hva du sier så når det ikke frem. For de fleste par handler det ikke om mangel på kjærlighet — det handler om mønstre.",
-  "parterapi-etter-utroskap": "De fleste par kan overleve utroskap, og mange som gjennomgår prosessen beskriver at de er nærmere hverandre etterpå enn de var før. Men helbredelse er ikke lineær — den måles i måneder, ikke sesjoner — og den forutsetter betingelser som må være på plass før parterapi kan hjelpe.",
   "hvor-mange-sesjoner-parterapi": "Det finnes ikke ett riktig antall. Et kortere forløp kan bestå av 4–8 sesjoner. Par med mer fastlåste mønstre trenger ofte 12–20 eller mer. Hva som avgjør lengden er ikke diagnosen — det er hva dere faktisk jobber med, hvor lenge problemet har vart, og hvordan dere utvikler dere underveis.",
   "tegn-pa-at-parterapi-virker": "Parterapi ser ut til å virke når dere gradvis begynner å håndtere konflikter annerledes — ikke nødvendigvis sjeldnere, men annerledes. Dere gjenkjenner mønstrene litt tidligere. Konflikter eskalerer saktere. Reparasjonsforsøk begynner å lande. Veien tilbake til kontakt blir kortere. Fremgang i parterapi er sjelden dramatisk — den er oftest stille, kumulativ, og merkes like mye mellom timene som inne i terapirommet.",
   "nar-friluftsliv-blir-viktigere-enn-forholdet": "Friluftsliv kan være en sterk kilde til nærhet i et parforhold. Men hva skjer når aktiviteter blir viktigere enn kontakten hjemme? For mange par er turer, ski, hytta, trening og andre friluftsaktiviteter en viktig del av livet sammen. Det kan gi glede, mestring, opplevelser og tid sammen. Men noen ganger kan det også oppstå et mønster der aktivitetene blir stedet dere fortsatt fungerer godt sammen – mens nærheten, samtalene og intimiteten hjemme gradvis forsvinner.",
@@ -809,7 +799,7 @@ export function BlogPost({ post }: { post: BlogPostData }) {
           </div>
         )}
 
-        {post.lang === "en" && englishLedeBySlug[post.slug] && (
+        {post.lang === "en" && post.slug === "8-signs-need-couples-therapy" && (
           <div className="mt-10 space-y-6 font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.6] text-[#383838]">
             <p>Many couples notice the problems long before they become a crisis. The same conflicts can repeat themselves, communication can become more difficult, and closeness can gradually fade.</p>
             <p>Often it&apos;s not about one big event, but about patterns that develop over time. One person withdraws while the other tries harder and harder to reconnect. Both can end up feeling misunderstood.</p>
