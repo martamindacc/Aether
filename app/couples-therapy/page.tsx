@@ -228,12 +228,12 @@ export default function CouplesTherapyPage() {
               <span aria-hidden="true" className="text-center font-serif text-6xl leading-none text-[#bfa27f]">
                 &quot;
               </span>
-              <p className="flex-1 text-balance text-center font-serif text-xl italic leading-[1.6] text-[#2b2519]">
+              <p className="flex-1 text-balance text-center font-[Roboto,Arial,sans-serif] text-lg leading-[1.6] text-[#383838]">
                 {item.quote}
               </p>
               <div className="flex items-center justify-center gap-3">
                 <span className="h-px w-6 shrink-0 bg-[#c9a688]" />
-                <span className="text-center text-xs font-medium uppercase tracking-[0.18em] text-[#7a6347]">
+                <span className="text-center text-[10px] font-medium uppercase tracking-[0.16em] text-[#7a6347]">
                   {item.name} &middot; {testimonialsContent[language].context}
                 </span>
                 <span className="h-px w-6 shrink-0 bg-[#c9a688]" />
