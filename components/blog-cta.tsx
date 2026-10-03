@@ -3,9 +3,10 @@
 import { useState } from "react";
 import Link from "next/link";
 import { BookingModal } from "@/components/booking-modal";
+import type { LanguageCode } from "@/lib/service-content";
 
 const copy: Record<
-  "en" | "no" | "pl",
+  LanguageCode,
   { heading: string; body: string; learnMore: string; bookNow: string }
 > = {
   en: {
@@ -20,12 +21,6 @@ const copy: Record<
     learnMore: "Les mer",
     bookNow: "Bestill Nå",
   },
-  pl: {
-    heading: "Gotowi, aby o tym porozmawiać?",
-    body: "Jeśli się w tym rozpoznacie, Aether Practice oferuje sesje dedykowane dokładnie na ten temat.",
-    learnMore: "Dowiedz się więcej",
-    bookNow: "Umów się teraz",
-  },
 };
 
 export function BlogCta({
@@ -33,7 +28,7 @@ export function BlogCta({
   language = "en",
 }: {
   relatedService: string;
-  language?: "en" | "no" | "pl";
+  language?: LanguageCode;
 }) {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const t = copy[language];

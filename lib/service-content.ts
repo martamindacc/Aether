@@ -1,7 +1,6 @@
 export const languages = [
   { code: "en", label: "EN" },
   { code: "no", label: "NO" },
-  { code: "pl", label: "PL" },
 ] as const;
 
 export type LanguageCode = (typeof languages)[number]["code"];
@@ -72,32 +71,16 @@ export const navContent: Record<
     bookNow: "Bestill Nå",
     menuHeading: "Tjenester",
     menuLinks: [
-      { label: "Parterapi", href: "/couples-therapy" },
-      { label: "Individuell terapi", href: "/individual-therapy" },
-      { label: "Familieterapi", href: "/family-support" },
-      { label: "Leder- og Grunnleggerarbeid", href: "/executive-founder-work" },
+      { label: "Parterapi", href: "/no/parterapi" },
+      { label: "Individuell terapi", href: "/no/individuell-terapi" },
+      { label: "Familieterapi", href: "/no/familieterapi" },
+      { label: "Leder- og Grunnleggerarbeid", href: "/no/ledere-og-grundere" },
     ],
     companyHeading: "Selskap",
     companyLinks: [
-      { label: "Om Oss", href: "/about" },
-      { label: "Blogg", href: "/blog" },
-      { label: "Kontakt", href: "/contact" },
-    ],
-  },
-  pl: {
-    bookNow: "Zarezerwuj",
-    menuHeading: "Usługi",
-    menuLinks: [
-      { label: "Sesja dla Par", href: "/couples-therapy" },
-      { label: "Sesja Indywidualna", href: "/individual-therapy" },
-      { label: "Sesja Rodzinna", href: "/family-support" },
-      { label: "Praca z Liderami i Założycielami", href: "/executive-founder-work" },
-    ],
-    companyHeading: "Firma",
-    companyLinks: [
-      { label: "O Nas", href: "/about" },
-      { label: "Blog", href: "/blog" },
-      { label: "Kontakt", href: "/contact" },
+      { label: "Om Oss", href: "/no/om-oss" },
+      { label: "Blogg", href: "/no/blog" },
+      { label: "Kontakt", href: "/no/kontakt" },
     ],
   },
 };
@@ -105,7 +88,6 @@ export const navContent: Record<
 export const relatedServicesHeading: Record<LanguageCode, string> = {
   en: "Related Services",
   no: "Relaterte Tjenester",
-  pl: "Powiązane Usługi",
 };
 
 export const individualTherapyContent: Record<LanguageCode, ServicePageContent> = {
@@ -242,73 +224,6 @@ export const individualTherapyContent: Record<LanguageCode, ServicePageContent> 
     ctaSubtext:
       "Start med en kort, avslappet samtale for å se om dette er riktig for deg — ingen press, ingen forpliktelse utover den første timen.",
     ctaButton: "Book din første time",
-  },
-  pl: {
-    title: "Sesja Indywidualna",
-    subtitle: "Sesje indywidualne online dla osób w Polsce.",
-    intro:
-      "Dedykowana sesja jeden na jeden, by myśleć jasno, zmapować własne wzorce i wyznaczyć świadomy kierunek działania. Stworzona dla ludzi, którzy są już zdolni — i chcą bardziej precyzyjnej wersji życia, które budują.",
-    panels: [
-      {
-        title: "Przestrzeń zbudowana wokół Ciebie",
-        description:
-          "Przynieś pytania, zmiany i wzorce, które jesteś gotów zrozumieć. Każda sesja jest wspólna, spokojna i całkowicie ukształtowana wokół Twoich priorytetów i tempa.",
-      },
-      {
-        title: "Wgląd, który staje się działaniem",
-        description:
-          "Nie zatrzymujemy się na refleksji. Każda rozmowa jest połączona z praktycznymi krokami, dzięki czemu jasność, którą zyskujesz, przejawia się w tym, jak myślisz, decydujesz i żyjesz poza sesją.",
-      },
-    ],
-    processHeading: "Jak przebiega praca",
-    process: [
-      {
-        number: "01",
-        title: "Sesja Wprowadzająca",
-        description:
-          "Spokojna, pierwsza rozmowa, by zrozumieć, gdzie jesteś dzisiaj — czego chcesz więcej, co stało na przeszkodzie i jak wygląda dla Ciebie sensowny rezultat.",
-      },
-      {
-        number: "02",
-        title: "Osobista Mapa Drogowa",
-        description:
-          "Przekładamy tę rozmowę na jasny kierunek pracy — wzorce, które warto zbadać najpierw, i rezultaty, względem których będziemy mierzyć postępy.",
-      },
-      {
-        number: "03",
-        title: "Sesje Prowadzone",
-        description:
-          "Strukturyzowane, indywidualne sesje łączące refleksję z praktycznymi narzędziami, dzięki czemu każda rozmowa przybliża Cię do jasności i pewności, którą budujesz.",
-      },
-      {
-        number: "04",
-        title: "Trwały Rytm",
-        description:
-          "Zamykamy pracę zestawem narzędzi i nawyków dostosowanych do Twojego życia, dzięki czemu zbudowany impet rośnie długo po zakończeniu naszej współpracy.",
-      },
-    ],
-    outcomesHeading: "Co się dla Ciebie zmienia",
-    outcomes: [
-      {
-        title: "Jasność pod presją",
-        description:
-          "Nauczysz się odróżniać sygnał od szumu, dzięki czemu decyzje i porażki będą wydawać się możliwe do opanowania, a nie przytłaczające.",
-      },
-      {
-        title: "Pewność własnego osądu",
-        description:
-          "Zbuduj silniejsze, spokojniejsze poczucie zaufania do siebie — takie, które trwa w chwilach wątpliwości lub zmiany.",
-      },
-      {
-        title: "Życie, które pasuje, a nie tylko funkcjonuje",
-        description:
-          "Przejdź od zwykłego przetrwania dnia do kształtowania rytmu pracy, odpoczynku i relacji, który naprawdę wydaje się Twój.",
-      },
-    ],
-    ctaHeading: "Pierwsza sesja to miejsce, gdzie zaczyna się jasność.",
-    ctaSubtext:
-      "Zacznij od krótkiej, spokojnej rozmowy, by sprawdzić, czy to odpowiednie rozwiązanie — bez presji, bez zobowiązań poza tą pierwszą godziną.",
-    ctaButton: "Zarezerwuj pierwszą sesję",
   },
 };
 
@@ -447,73 +362,6 @@ export const couplesTherapyContent: Record<LanguageCode, ServicePageContent> = {
       "Start med en felles oppstartssamtale for å se om dette er riktig for dere begge — ingen press, ingen forpliktelse utover den første timen.",
     ctaButton: "Book din første time",
   },
-  pl: {
-    title: "Sesja dla Par",
-    subtitle: "Sesje dla par online w Polsce.",
-    intro:
-      "Dedykowana przestrzeń dla dwóch osób, by zrozumieć, jak naprawdę funkcjonują razem — naprawić wzorzec leżący u podstaw konfliktu i odbudować partnerstwo, które jest stabilne, szczere i wspólne.",
-    panels: [
-      {
-        title: "Przestrzeń dla was obu",
-        description:
-          "Każda sesja jest wspólna, zrównoważona i ustrukturyzowana tak, by oba głosy były słyszane równo — z jasnym skupieniem na tym, co przesuwa relację do przodu, a nie na tym, kto ma rację.",
-      },
-      {
-        title: "Budowanie wspólnego zrozumienia",
-        description:
-          "Pomagamy zobaczyć wzorzec kryjący się za niezgodą, dzięki czemu możecie odpowiadać sobie z większą jasnością, cierpliwością i trwałym zaufaniem — długo po zakończeniu rozmowy.",
-      },
-    ],
-    processHeading: "Jak przebiega praca",
-    process: [
-      {
-        number: "01",
-        title: "Rozmowa Wprowadzająca",
-        description:
-          "Spokojna, ustrukturyzowana rozmowa, by zrozumieć, gdzie oboje jesteście dzisiaj — co działa, co wydaje się zablokowane i co chcecie zbudować razem.",
-      },
-      {
-        number: "02",
-        title: "Wspólna Mapa Drogowa",
-        description:
-          "Mapujemy wzorce leżące pod napięciem i uzgadniamy jasny kierunek pracy — dzięki czemu każda sesja przesuwa was oboje w tym samym kierunku.",
-      },
-      {
-        number: "03",
-        title: "Sesje Prowadzone",
-        description:
-          "Strukturyzowane, wspólne sesje, w których ćwiczycie nowe sposoby komunikowania się, słuchania i rozwiązywania niezgody w czasie rzeczywistym.",
-      },
-      {
-        number: "04",
-        title: "Trwały Rytm",
-        description:
-          "Zamykamy pracę praktycznymi narzędziami i rytmem, który możecie zabrać ze sobą — dzięki czemu wspólny postęp rośnie długo po zakończeniu pracy.",
-      },
-    ],
-    outcomesHeading: "Co się zmienia dla was obu",
-    outcomes: [
-      {
-        title: "Komunikacja, która naprawdę trafia",
-        description:
-          "Naucz się mówić trudne rzeczy bez wywoływania kłótni i słyszeć się nawzajem bez stawania w defensywie.",
-      },
-      {
-        title: "Zaufanie odbudowane na solidnym gruncie",
-        description:
-          "Przejdźcie dalej od starych żali ze wspólnym zrozumieniem tego, co się stało i czemu — nie tylko zgodą, by iść dalej.",
-      },
-      {
-        title: "Partnerstwo, nie negocjacje",
-        description:
-          "Zastąpcie poczucie liczenia punktów rytmem, w którym rozwiązujecie problemy razem, a nie przeciwko sobie.",
-      },
-    ],
-    ctaHeading: "Najsilniejsze relacje to te, nad którymi się pracuje.",
-    ctaSubtext:
-      "Zacznijcie od wspólnej rozmowy wprowadzającej, by sprawdzić, czy to odpowiednie rozwiązanie dla was obu — bez presji, bez zobowiązań poza tą pierwszą godziną.",
-    ctaButton: "Zarezerwujcie pierwszą sesję",
-  },
 };
 
 export const executiveFounderContent: Record<LanguageCode, ServicePageContent> = {
@@ -651,73 +499,6 @@ export const executiveFounderContent: Record<LanguageCode, ServicePageContent> =
       "Start med en konfidensiell kontekstsamtale for å se om dette er riktig for deg — ingen press, ingen forpliktelse utover den første timen.",
     ctaButton: "Book din første time",
   },
-  pl: {
-    title: "Praca z Liderami i Założycielami",
-    subtitle: "Coaching online dla liderów i założycieli firm w Polsce.",
-    intro:
-      "Poufne wsparcie najwyższej klasy na poziomie, na którym faktycznie zachodzą decyzje i izolacja — stworzone dla założycieli i liderów niosących ciężar, na który rola nigdy nie została zaprojektowana, by dać miejsce.",
-    panels: [
-      {
-        title: "Przestrzeń zbudowana dla tej roli",
-        description:
-          "Przynieś presję, tempo i decyzje, o których nie możesz porozmawiać nigdzie indziej. Sesje są bezpośrednie, ściśle poufne i zbudowane całkowicie wokół Twojej rzeczywistości.",
-      },
-      {
-        title: "Ostrzejszy osąd, szybciej",
-        description:
-          "Pracujemy nad myśleniem stojącym za Twoimi decyzjami, dzięki czemu wnosisz więcej jasności, spokoju i precyzji w chwile, które mają największe znaczenie dla Twojej firmy i ludzi.",
-      },
-    ],
-    processHeading: "Jak przebiega praca",
-    process: [
-      {
-        number: "01",
-        title: "Sesja Kontekstowa",
-        description:
-          "Poufna, pierwsza rozmowa, by zrozumieć ciężar, który niesiesz — decyzje, izolację i martwe punkty roli.",
-      },
-      {
-        number: "02",
-        title: "Obszary Skupienia",
-        description:
-          "Identyfikujemy dwa lub trzy obszary, w których zmiana myślenia lub podejścia stworzy największy wpływ w Twojej roli.",
-      },
-      {
-        number: "03",
-        title: "Sesje Pracujące",
-        description:
-          "Ustrukturyzowane sesje o wysokim poziomie zaufania, zbudowane wokół rzeczywistych decyzji przed Tobą — nie teorii. Każda kończy się ostrzejszym osądem.",
-      },
-      {
-        number: "04",
-        title: "Trwałe Wsparcie",
-        description:
-          "Ciągły rytm, który daje Ci stabilną przestrzeń do myślenia na głos, testowania decyzji pod presją i pozostania zasobnym, gdy rola się rozwija.",
-      },
-    ],
-    outcomesHeading: "Co się dla Ciebie zmienia",
-    outcomes: [
-      {
-        title: "Decyzje podejmowane z mniejszym szumem",
-        description:
-          "Przebij się przez presję i wahanie, by szybciej dojść do tego samego wniosku, z większym przekonaniem za nim.",
-      },
-      {
-        title: "Poufny partner do myślenia",
-        description:
-          "Przestrzeń, by powiedzieć niefiltrowaną wersję tego, co faktycznie się dzieje — bez ryzyka, że stanie się to polityką biurową.",
-      },
-      {
-        title: "Trwałe tempo, w którym rośniesz",
-        description:
-          "Zbuduj wewnętrzną stabilność, by nadal działać na wysokim poziomie, bez tego, że rola po cichu kosztuje Cię wszystko inne.",
-      },
-    ],
-    ctaHeading: "Najlepsi liderzy budują w sobie partnera do myślenia. Zacznij tutaj.",
-    ctaSubtext:
-      "Zacznij od poufnej sesji kontekstowej, by sprawdzić, czy to odpowiednie rozwiązanie — bez presji, bez zobowiązań poza tą pierwszą godziną.",
-    ctaButton: "Zarezerwuj pierwszą sesję",
-  },
 };
 
 export const aboutContent: Record<LanguageCode, AboutContent> = {
@@ -793,42 +574,6 @@ export const aboutContent: Record<LanguageCode, AboutContent> = {
       "Bestill en innledende sesjon og se om det er riktig for deg — uten press, uten forpliktelse utover den første timen.",
     ctaButton: "Bestill en sesjon",
   },
-  pl: {
-    title: "O Aether Practice",
-    intro:
-      "Aether Practice powstało z prostego przekonania: prawdziwa zmiana dzieje się, gdy opieka jest zakorzeniona zarówno w nauce, jak i w autentycznym ludzkim zrozumieniu. Pracujemy z osobami indywidualnymi, parami, rodzinami i liderami gotowymi zmierzyć się z tym, co jest pod powierzchnią.",
-    panels: [
-      {
-        title: "Nasze podejście",
-        description:
-          "Łączymy metody oparte na dowodach z niespieszonym, relacyjnym stylem opieki. Każda sesja jest dostosowana do tego, gdzie faktycznie jesteś — nie jest to scenariusz, który stosujemy niezależnie od tego, kto jest przed nami.",
-      },
-      {
-        title: "Z kim pracujemy",
-        description:
-          "Z ludźmi noszącymi realny ciężar: lęk, żal, napięcie w relacji, tarcia rodzinne lub izolację, która towarzyszy przywództwu. Nie musisz mieć kryzysu, aby zacząć — potrzebujesz powodu.",
-      },
-    ],
-    valuesHeading: "Co kieruje naszą pracą",
-    values: [
-      {
-        title: "Zakorzenione w dowodach",
-        description: "Metody zaczerpnięte z badań klinicznych, nie z trendów.",
-      },
-      {
-        title: "Naprawdę poufne",
-        description: "Miejsce, w którym bezpiecznie można powiedzieć niefiltrowaną wersję rzeczy.",
-      },
-      {
-        title: "Zbudowane wokół Ciebie",
-        description: "Brak stałej formuły — tempo i skupienie wynikają z Twojego rzeczywistego życia.",
-      },
-    ],
-    ctaHeading: "Gotowy zacząć rozmowę?",
-    ctaSubtext:
-      "Zarezerwuj pierwszą sesję i sprawdź, czy to odpowiednie rozwiązanie — bez presji, bez zobowiązań poza tą pierwszą godziną.",
-    ctaButton: "Zarezerwuj sesję",
-  },
 };
 
 export const contactContent: Record<LanguageCode, ContactContent> = {
@@ -847,13 +592,5 @@ export const contactContent: Record<LanguageCode, ContactContent> = {
     ctaHeading: "Vil du bare komme i gang?",
     ctaSubtext: "Hopp over e-posten og bestill din første sesjon direkte.",
     ctaButton: "Bestill en sesjon",
-  },
-  pl: {
-    title: "Kontakt",
-    intro:
-      "Masz pytanie przed rezerwacją lub chcesz porozmawiać, która usługa będzie odpowiednia? Napisz do nas.",
-    ctaHeading: "Chcesz po prostu zacząć?",
-    ctaSubtext: "Pomiń e-mail i zarezerwuj pierwszą sesję bezpośrednio.",
-    ctaButton: "Zarezerwuj sesję",
   },
 };

@@ -3,25 +3,25 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { languages, navContent, type LanguageCode } from "@/lib/service-content";
+import { homePath, type LanguageLink } from "@/lib/locale-routes";
 import { BookingModal } from "@/components/booking-modal";
 
 export function FloatingNav({
   language,
-  onLanguageChange,
+  languageLinks,
   isMenuOpen,
   onMenuOpenChange,
   isLangOpen,
   onLangOpenChange,
-  articleLanguages,
 }: {
+  /** Language of the current page, decided by its URL. */
   language: LanguageCode;
-  onLanguageChange: (code: LanguageCode) => void;
+  /** Where each language option navigates: the same page in that language, or its closest equivalent. */
+  languageLinks: LanguageLink[];
   isMenuOpen: boolean;
   onMenuOpenChange: (open: boolean) => void;
   isLangOpen: boolean;
   onLangOpenChange: (open: boolean) => void;
-  /** When set, the language menu offers only these actual translations and navigates to them, instead of toggling the site-wide language. */
-  articleLanguages?: { code: LanguageCode; href: string }[];
 }) {
   const t = navContent[language];
   const currentLabel = languages.find((lang) => lang.code === language)?.label ?? "EN";
@@ -48,14 +48,14 @@ export function FloatingNav({
           {t.bookNow}
         </button>
         <Link
-          href="/"
+          href={homePath(language)}
           className="hidden items-center gap-2 text-lg font-medium tracking-[-0.04em] sm:flex sm:text-xl"
         >
           <img src="/logo-a.svg" alt="Aether Practice logo" className="h-6 w-6" />
           Aether Practice
         </Link>
         <Link
-          href="/"
+          href={homePath(language)}
           className="flex min-w-0 flex-1 items-center justify-center gap-1.5 px-2 sm:hidden"
         >
           <img src="/logo-a.svg" alt="Aether Practice logo" className="h-5 w-5 shrink-0" />
@@ -95,29 +95,16 @@ export function FloatingNav({
             </button>
             {isLangOpen && (
               <div className="absolute right-0 top-full mt-2 flex w-12 flex-col rounded-xl border border-zinc-900/10 bg-white py-1 shadow-lg">
-                {articleLanguages
-                  ? articleLanguages.map((option) => (
-                      <Link
-                        key={option.code}
-                        href={option.href}
-                        onClick={() => onLangOpenChange(false)}
-                        className="px-3 py-2 text-center text-sm text-zinc-900 transition-colors hover:bg-zinc-100"
-                      >
-                        {languages.find((lang) => lang.code === option.code)?.label ?? option.code.toUpperCase()}
-                      </Link>
-                    ))
-                  : languages.map((lang) => (
-                      <button
-                        key={lang.code}
-                        onClick={() => {
-                          onLanguageChange(lang.code);
-                          onLangOpenChange(false);
-                        }}
-                        className="px-3 py-2 text-center text-sm text-zinc-900 transition-colors hover:bg-zinc-100"
-                      >
-                        {lang.label}
-                      </button>
-                    ))}
+                {languageLinks.map((option) => (
+                  <Link
+                    key={option.code}
+                    href={option.href}
+                    onClick={() => onLangOpenChange(false)}
+                    className="px-3 py-2 text-center text-sm text-zinc-900 transition-colors hover:bg-zinc-100"
+                  >
+                    {languages.find((lang) => lang.code === option.code)?.label ?? option.code.toUpperCase()}
+                  </Link>
+                ))}
               </div>
             )}
           </div>

@@ -1,5 +1,7 @@
 import Link from "next/link";
 import type { BlogPostMeta } from "@/lib/blog";
+import type { LanguageCode } from "@/lib/service-content";
+import { postPath } from "@/lib/locale-routes";
 
 const copy = {
   en: {
@@ -12,17 +14,11 @@ const copy = {
     intro: "Artikler om relasjoner, personlig utvikling, familieliv og hvordan du kan fungere godt under press — fra teamet i Aether Practice.",
     empty: "Nye artikler kommer snart — følg med.",
   },
-  pl: {
-    heading: "Blog",
-    intro: "Notatki dotyczące relacji, osobistego rozwoju, życia rodzinnego i efektywnej pracy pod presją — od zespołu Aether Practice.",
-    empty: "Nowe artykuły już wkrótce — zapraszamy wkrótce.",
-  },
 } as const;
 
-function formatDate(date: string, language: "en" | "no" | "pl") {
+function formatDate(date: string, language: LanguageCode) {
   const localeMap: Record<string, string> = {
     no: "nb-NO",
-    pl: "pl-PL",
     en: "en-US",
   };
   return new Date(date).toLocaleDateString(localeMap[language] || "en-US", {
@@ -32,15 +28,13 @@ function formatDate(date: string, language: "en" | "no" | "pl") {
   });
 }
 
-function formatWordCount(wordCount: number, language: "en" | "no" | "pl") {
+function formatWordCount(wordCount: number, language: LanguageCode) {
   const localeMap: Record<string, string> = {
     no: "nb-NO",
-    pl: "pl-PL",
     en: "en-US",
   };
   const labelMap: Record<string, string> = {
     no: "ord",
-    pl: "słów",
     en: "words",
   };
   return `${new Intl.NumberFormat(localeMap[language] || "en-US").format(wordCount)} ${labelMap[language] || "words"}`;
@@ -51,7 +45,7 @@ export function BlogIndexContent({
   language,
 }: {
   posts: BlogPostMeta[];
-  language: "en" | "no" | "pl";
+  language: LanguageCode;
 }) {
   const t = copy[language] ?? copy.en;
 
@@ -68,7 +62,7 @@ export function BlogIndexContent({
           <p className="font-[Roboto,Arial,sans-serif] text-lg text-[#383838]">{t.empty}</p>
         )}
         {posts.map((post) => (
-          <Link key={post.slug} href={`/blog/${post.slug}`} className="group overflow-hidden rounded-2xl border border-zinc-300/80 bg-gradient-to-br from-[#eee2db]/40 to-[#eee2db]/20 transition-colors hover:from-[#eee2db]/60 hover:to-[#eee2db]/30">
+          <Link key={post.slug} href={postPath(post)} className="group overflow-hidden rounded-2xl border border-zinc-300/80 bg-gradient-to-br from-[#eee2db]/40 to-[#eee2db]/20 transition-colors hover:from-[#eee2db]/60 hover:to-[#eee2db]/30">
             {post.image && (
               <div className="aspect-[16/9] w-full overflow-hidden">
                 <img

@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { cache } from "react";
 
 const BLOG_DIR = path.join(process.cwd(), "content/blog");
 
@@ -11,7 +12,7 @@ export type BlogPostMeta = {
   date: string;
   tags: string[];
   relatedService: string;
-  lang: "en" | "no" | "pl";
+  lang: "en" | "no";
   keywords?: string[];
   seoTitle?: string;
   seoDescription?: string;
@@ -60,7 +61,7 @@ function readPostFile(fileName: string): BlogPost {
     date: data.date as string,
     tags: (data.tags as string[]) ?? [],
     relatedService: data.relatedService as string,
-    lang: (data.lang as "en" | "no" | "pl") ?? "en",
+    lang: (data.lang as "en" | "no") ?? "en",
     keywords: (data.keywords as string[]) ?? [],
     seoTitle: data.seoTitle as string | undefined,
     seoDescription: data.seoDescription as string | undefined,
@@ -74,7 +75,11 @@ function readPostFile(fileName: string): BlogPost {
   };
 }
 
-export function getAllPosts(): BlogPostMeta[] {
+/**
+ * All posts, newest first. Cached per request so layouts, metadata and pages
+ * that run for the same render share one read of the content directory.
+ */
+export const getAllPosts = cache((): BlogPostMeta[] => {
   if (!fs.existsSync(BLOG_DIR)) return [];
 
   return fs
@@ -85,13 +90,9 @@ export function getAllPosts(): BlogPostMeta[] {
       return meta;
     })
     .sort((a, b) => (a.date < b.date ? 1 : -1));
-}
+});
 
-export function getAllSlugs(): string[] {
-  return getAllPosts().map((post) => post.slug);
-}
-
-export function getPostBySlug(slug: string): BlogPost | null {
+export const getPostBySlug = cache((slug: string): BlogPost | null => {
   if (!fs.existsSync(BLOG_DIR)) return null;
 
   for (const name of fs.readdirSync(BLOG_DIR)) {
@@ -102,7 +103,7 @@ export function getPostBySlug(slug: string): BlogPost | null {
   }
 
   return null;
-}
+});
 
 /**
  * Returns the genuine translated versions of a post, including the post
@@ -114,9 +115,7 @@ export function getTranslationsForPost(post: BlogPostMeta): BlogPostMeta[] {
   return getAllPosts().filter((p) => p.translationKey === post.translationKey);
 }
 
-/** The site's html-lang convention for a post's language (Norwegian uses "nb", per the project's existing convention). */
+/** The html-lang value for a post language (Norwegian uses "nb", per the project convention). */
 export function htmlLangFor(lang: BlogPostMeta["lang"]): string {
-  if (lang === "no") return "nb";
-  if (lang === "pl") return "pl";
-  return "en";
+  return lang === "no" ? "nb" : "en";
 }

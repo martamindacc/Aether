@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next"
 import { getAllPosts } from "@/lib/blog"
+import { postPath } from "@/lib/locale-routes"
 
 const baseUrl = "https://aetherpractice.com"
 
@@ -17,6 +18,15 @@ const routes: { path: string; lastModified: string }[] = [
   { path: "/family-support", lastModified: "2026-09-08" },
   { path: "/executive-founder-work", lastModified: "2026-09-08" },
   { path: "/online-therapy-norway", lastModified: "2026-09-11" },
+  // Norwegian versions of the home, service, about and contact pages.
+  { path: "/no", lastModified: "2026-10-03" },
+  { path: "/no/parterapi", lastModified: "2026-10-03" },
+  { path: "/no/individuell-terapi", lastModified: "2026-10-03" },
+  { path: "/no/familieterapi", lastModified: "2026-10-03" },
+  { path: "/no/ledere-og-grundere", lastModified: "2026-10-03" },
+  { path: "/no/om-oss", lastModified: "2026-10-03" },
+  { path: "/no/kontakt", lastModified: "2026-10-03" },
+  { path: "/no/personvern", lastModified: "2026-10-03" },
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -26,7 +36,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }))
 
   const postEntries = getAllPosts().map((post) => ({
-    url: `${baseUrl}/blog/${post.slug}`,
+    url: `${baseUrl}${postPath(post)}`,
     lastModified: post.modifiedDate,
   }))
 

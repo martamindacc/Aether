@@ -42,25 +42,15 @@ export function BookingModal({
         openCalendly: "Åpne Calendly",
         back: "Tilbake",
       }
-    : language === "pl"
-      ? {
-          chooseSession: "Wybierz swoją sesję",
-          chooseTime: "Wybierz termin",
-          scheduleTitle: "Umów swoją sesję",
-          paymentNotice: "Płatność następuje po sesji.",
-          openedNotice: "Twoja strona rezerwacji Calendly otworzyła się w nowej karcie.",
-          openCalendly: "Otwórz Calendly",
-          back: "Wstecz",
-        }
-      : {
-          chooseSession: "Choose your session",
-          chooseTime: "Choose a time",
-          scheduleTitle: "Schedule your session",
-          paymentNotice: "Payment is due after the session.",
-          openedNotice: "Your Calendly booking page has opened in a new tab.",
-          openCalendly: "Open Calendly",
-          back: "Back",
-        }
+    : {
+        chooseSession: "Choose your session",
+        chooseTime: "Choose a time",
+        scheduleTitle: "Schedule your session",
+        paymentNotice: "Payment is due after the session.",
+        openedNotice: "Your Calendly booking page has opened in a new tab.",
+        openCalendly: "Open Calendly",
+        back: "Back",
+      }
 
   const handleSelect = (productId: string) => {
     const product = PRODUCTS.find((p) => p.id === productId)

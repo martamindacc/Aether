@@ -1,0 +1,37 @@
+import { breadcrumbJsonLd, pageMetadata, serviceJsonLd } from "@/lib/seo"
+import { hreflangFor, localizedPaths } from "@/lib/locale-routes"
+import ExecutiveFounderWorkPage from "@/components/pages/executive-founder-work-page"
+
+const path = localizedPaths.executive.no
+const description =
+  "Coaching på nett for ledere og gründere i Norge, med støtte ved press, beslutninger, lederskap og personlig utvikling."
+
+export const metadata = pageMetadata({
+  title: "Coaching for ledere og gründere i Norge | Aether Practice",
+  description,
+  path,
+  locale: "nb_NO",
+  languages: hreflangFor("executive"),
+})
+
+const serviceLd = serviceJsonLd({
+  name: "Leder- og gründercoaching",
+  description,
+  path,
+  areaServed: ["Norge"],
+})
+
+const breadcrumbLd = breadcrumbJsonLd([
+  { name: "Hjem", path: localizedPaths.home.no },
+  { name: "Leder- og Grunnleggerarbeid", path },
+])
+
+export default function Page() {
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
+      <ExecutiveFounderWorkPage language="no" />
+    </>
+  )
+}

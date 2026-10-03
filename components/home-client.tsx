@@ -8,14 +8,15 @@ import { SiteFooter } from "@/components/site-footer";
 import { buildCalendlyBookingUrl } from "@/lib/booking-url";
 import { PRODUCTS, type Product } from "@/lib/products";
 import type { BlogPostMeta } from "@/lib/blog";
+import type { LanguageCode } from "@/lib/service-content";
+import { languageLinksFor, localizedPaths, postPath } from "@/lib/locale-routes";
 
-const languages = [
+const languages: { code: LanguageCode; label: string }[] = [
   { code: "en", label: "EN" },
   { code: "no", label: "NO" },
-  { code: "pl", label: "PL" },
-] as const;
+];
 
-type LanguageCode = (typeof languages)[number]["code"];
+const languageLinks = languageLinksFor("home");
 
 const content: Record<
   LanguageCode,
@@ -182,18 +183,18 @@ const content: Record<
       {
         heading: "Tjenester",
         links: [
-          { label: "Parterapi", href: "/couples-therapy" },
-          { label: "Individuell terapi", href: "/individual-therapy" },
-          { label: "Familieterapi", href: "/family-support" },
-          { label: "Leder- og Grunnleggerarbeid", href: "/executive-founder-work" },
+          { label: "Parterapi", href: "/no/parterapi" },
+          { label: "Individuell terapi", href: "/no/individuell-terapi" },
+          { label: "Familieterapi", href: "/no/familieterapi" },
+          { label: "Leder- og Grunnleggerarbeid", href: "/no/ledere-og-grundere" },
         ],
       },
       {
         heading: "Selskap",
         links: [
-          { label: "Om Oss", href: "/about" },
-          { label: "Blogg", href: "/blog" },
-          { label: "Kontakt", href: "/contact" },
+          { label: "Om Oss", href: "/no/om-oss" },
+          { label: "Blogg", href: "/no/blog" },
+          { label: "Kontakt", href: "/no/kontakt" },
         ],
       },
     ],
@@ -203,7 +204,7 @@ const content: Record<
         title: "Parterapi",
         description:
           "Forstå hvordan dere fungerer som par — forbedre kommunikasjon, gjenoppbygg tillit, og reparer mønsteret under konflikten.",
-        href: "/couples-therapy",
+        href: "/no/parterapi",
         color: "text-[#66755c]",
       },
       {
@@ -211,7 +212,7 @@ const content: Record<
         title: "Individuell terapi",
         description:
           "Støtte i dine egne livssituasjoner — angst, sorg, identitet, overganger, og vekten du bærer alene.",
-        href: "/individual-therapy",
+        href: "/no/individuell-terapi",
         color: "text-[#7b4037]",
       },
       {
@@ -219,7 +220,7 @@ const content: Record<
         title: "Familieterapi",
         description:
           "Skap en stødigere familierytme — med tydeligere kommunikasjon, sterkere tilknytning og praktisk støtte for øyeblikkene som former livet sammen.",
-        href: "/family-support",
+        href: "/no/familieterapi",
         color: "text-[#8a6558]",
       },
       {
@@ -227,7 +228,7 @@ const content: Record<
         title: "Leder- og Grunnleggerarbeid",
         description:
           "Støtte på nivået der beslutninger og isolasjon faktisk skjer — for gründere og ledere som bærer vekten rollen ikke gir plass til.",
-        href: "/executive-founder-work",
+        href: "/no/ledere-og-grundere",
         color: "text-[#496171]",
       },
     ],
@@ -272,137 +273,31 @@ const content: Record<
     finalCtaButton: "Bestill Din Økt",
     footerTagline: "Alle rettigheter reservert.",
   },
-  pl: {
-    videoOverlay: "Twoja Przyszłość Jest Twoja do Kształtowania",
-    heroTitle: "Jasność dla życia wysokiej stawki",
-    heroSubtitle:
-      "Prywatne sesje online dla par, osób indywidualnych, rodzin, kadry kierowniczej i założycieli firm w Nowym Jorku, Kalifornii i Norwegii.",
-    subtext: "",
-    bookNow: "Zarezerwuj",
-    pills: [
-      "Terapia Par",
-      "Dobrostan Emocjonalny",
-      "Terapia Indywidualna",
-      "Wsparcie w Stresie",
-      "Rozwój Osobisty",
-      "Uważne Życie",
-    ],
-    menuSections: [
-      {
-        heading: "Usługi",
-        links: [
-          { label: "Sesja dla Par", href: "/couples-therapy" },
-          { label: "Sesja Indywidualna", href: "/individual-therapy" },
-          { label: "Sesja Rodzinna", href: "/family-support" },
-          { label: "Praca z Liderami i Założycielami", href: "/executive-founder-work" },
-        ],
-      },
-      {
-        heading: "Firma",
-        links: [
-          { label: "O Nas", href: "/about" },
-          { label: "Blog", href: "/blog" },
-          { label: "Kontakt", href: "/contact" },
-        ],
-      },
-    ],
-    supportSections: [
-      {
-        eyebrow: "Wsparcie relacji",
-        title: "Sesja dla Par",
-        description:
-          "Zrozumcie, jak funkcjonujecie razem — poprawcie komunikację, odbudujcie zaufanie i naprawcie wzorzec stojący za konfliktem.",
-        href: "/couples-therapy",
-        color: "text-[#66755c]",
-      },
-      {
-        eyebrow: "Wsparcie indywidualne",
-        title: "Sesja Indywidualna",
-        description:
-          "Wsparcie w Twoich sytuacjach życiowych — w zmianach, przejściach i ciężarze, który niesiesz samodzielnie.",
-        href: "/individual-therapy",
-        color: "text-[#7b4037]",
-      },
-      {
-        eyebrow: "Wsparcie rodzinne",
-        title: "Sesja Rodzinna",
-        description:
-          "Zbuduj stabilniejszy rytm rodzinny — z jaśniejszą komunikacją, silniejszą więzią i praktycznym wsparciem dla chwil, które kształtują wspólne życie.",
-        href: "/family-support",
-        color: "text-[#8a6558]",
-      },
-      {
-        eyebrow: "Wsparcie przywódcze",
-        title: "Praca z Liderami i Założycielami",
-        description:
-          "Wsparcie na poziomie, na którym faktycznie zachodzą decyzje i izolacja — dla założycieli i liderów niosących ciężar, na który rola nie daje miejsca.",
-        href: "/executive-founder-work",
-        color: "text-[#496171]",
-      },
-    ],
-    learnMore: "Dowiedz się więcej →",
-    testimonialsEyebrow: "Historie Klientów",
-    testimonialsHeading: "Zaufali nam ludzie, którzy oczekują więcej od swojej opieki",
-    testimonials: [
-      {
-        quote:
-          "Po raz pierwszy od lat rozumiem, czemu reaguję tak, jak reaguję. Ta praca nie tylko mnie uspokoiła — dała mi ramy na resztę życia.",
-        name: "M. R.",
-        context: "Klient indywidualny",
-        initials: "MR",
-        accentText: "text-[#7b4037]",
-        accentBg: "bg-[#7b4037]/10",
-      },
-      {
-        quote:
-          "Przyszliśmy na granicy rozstania. To, co znaleźliśmy, to sposób, by naprawdę siebie usłyszeć — nie tylko przetrwać rozmowę, ale chcieć ją prowadzić.",
-        name: "J. i A.",
-        context: "Klienci, terapia par",
-        initials: "JA",
-        accentText: "text-[#66755c]",
-        accentBg: "bg-[#66755c]/10",
-      },
-      {
-        quote:
-          "Jako założyciel nigdy nie miałem miejsca, w którym ciężar decyzji był naprawdę mile widziany. To jedyna godzina w tygodniu, w której nie muszę odgrywać roli.",
-        name: "K. T.",
-        context: "Założyciel, praca liderska",
-        initials: "KT",
-        accentText: "text-[#496171]",
-        accentBg: "bg-[#496171]/10",
-      },
-    ],
-    blogEyebrow: "FROM THE BLOG",
-    blogAllLink: "All articles →",
-    blogReadMore: "Read more →",
-    finalCtaHeading: "Jasność, której szukasz, zaczyna się od jednej rozmowy.",
-    finalCtaSubtext:
-      "Praktyka stworzona dla tych, którzy oczekują tej samej precyzji w swoim życiu wewnętrznym, jak w pracy.",
-    finalCtaButton: "Zarezerwuj Sesję",
-    footerTagline: "Wszelkie prawa zastrzeżone.",
-  },
 };
 
 function formatBlogDate(date: string, lang: string): string {
-  const localeMap: Record<string, string> = { no: "nb-NO", pl: "pl-PL", en: "en-US" };
+  const localeMap: Record<string, string> = { no: "nb-NO", en: "en-US" };
   return new Date(date)
     .toLocaleDateString(localeMap[lang] ?? "en-US", { month: "long", year: "numeric" })
     .toUpperCase();
 }
 
-export default function HomeClient({ posts }: { posts: BlogPostMeta[] }) {
+export default function HomeClient({
+  posts,
+  language: languageCode,
+}: {
+  posts: BlogPostMeta[];
+  /** Language this route renders in; the URL (/ or /no) decides it. */
+  language: LanguageCode;
+}) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [selectedBookingName, setSelectedBookingName] = useState<string | null>(null);
   const languageMenuRef = useRef<HTMLDivElement>(null);
-  const [language, setLanguage] = useState<(typeof languages)[number]>(languages[0]);
+  const language = languages.find((lang) => lang.code === languageCode) ?? languages[0];
   const t = content[language.code];
   const hasTrackedBookingOpenRef = useRef(false);
-
-  useEffect(() => {
-    localStorage.setItem("site-language", "en");
-  }, []);
 
   const selectedBookingService = PRODUCTS.find(
     (product) => product.name === selectedBookingName,
@@ -523,18 +418,15 @@ export default function HomeClient({ posts }: { posts: BlogPostMeta[] }) {
               </button>
               {isLangOpen && (
                 <div className="absolute right-0 top-full mt-2 flex w-12 flex-col rounded-xl border border-zinc-900/10 bg-white py-1 shadow-lg">
-                  {languages.map((lang) => (
-                    <button
-                      key={lang.code}
-                      onClick={() => {
-                        setLanguage(lang);
-                        localStorage.setItem("site-language", lang.code);
-                        setIsLangOpen(false);
-                      }}
+                  {languageLinks.map((option) => (
+                    <Link
+                      key={option.code}
+                      href={option.href}
+                      onClick={() => setIsLangOpen(false)}
                       className="px-3 py-2 text-center text-sm text-zinc-900 transition-colors hover:bg-zinc-100"
                     >
-                      {lang.label}
-                    </button>
+                      {languages.find((lang) => lang.code === option.code)?.label ?? option.code.toUpperCase()}
+                    </Link>
                   ))}
                 </div>
               )}
@@ -659,9 +551,7 @@ export default function HomeClient({ posts }: { posts: BlogPostMeta[] }) {
                   <p className="text-sm text-zinc-500">
                     {language.code === "no"
                       ? "Kalendly-bookingsiden din har åpnet i en ny fane."
-                      : language.code === "pl"
-                        ? "Twoja strona rezerwacji Calendly otworzyła się w nowej karcie."
-                        : "Your Calendly booking page has opened in a new tab."}
+                      : "Your Calendly booking page has opened in a new tab."}
                   </p>
                   <a
                     href={buildCalendlyBookingUrl(selectedBookingService.calendlyUrl)}
@@ -669,7 +559,7 @@ export default function HomeClient({ posts }: { posts: BlogPostMeta[] }) {
                     rel="noopener noreferrer"
                     className="border border-zinc-900/20 bg-white px-5 py-3 text-center text-sm font-medium text-zinc-900 transition-colors hover:bg-zinc-100"
                   >
-                    {language.code === "no" ? "Åpne Calendly" : language.code === "pl" ? "Otwórz Calendly" : "Open Calendly"}
+                    {language.code === "no" ? "Åpne Calendly" : "Open Calendly"}
                   </a>
                 </>
               )}
@@ -691,11 +581,9 @@ export default function HomeClient({ posts }: { posts: BlogPostMeta[] }) {
             <>
               Private online samtaler for par, enkeltpersoner, familier, ledere og grunnleggere i Oslo og hele <Link href="/online-therapy-norway" className="underline underline-offset-4">Norge</Link>.
             </>
-          ) : language.code === "pl" ? (
-            <>
-              Prywatne sesje online dla par, osób indywidualnych, rodzin, kadry kierowniczej i założycieli firm w Nowym Jorku, Kalifornii i <Link href="/online-therapy-norway" className="underline underline-offset-4">Norwegii</Link>.
-            </>
-          ) : t.heroSubtitle}
+          ) : (
+            t.heroSubtitle
+          )}
         </p>
         <div className="mt-[70px] flex max-w-7xl flex-wrap items-center justify-center gap-3">
           {t.pills.map((pill) => (
@@ -782,7 +670,7 @@ export default function HomeClient({ posts }: { posts: BlogPostMeta[] }) {
                 </p>
               </div>
               <Link
-                href="/blog"
+                href={language.code === "no" ? localizedPaths.blog.no : localizedPaths.blog.en}
                 className="text-xs uppercase tracking-[0.1em] text-zinc-400 transition-colors hover:text-zinc-900"
               >
                 {t.blogAllLink}
@@ -792,7 +680,7 @@ export default function HomeClient({ posts }: { posts: BlogPostMeta[] }) {
               {blogPosts.map((post) => (
                 <Link
                   key={post.slug}
-                  href={`/blog/${post.slug}`}
+                  href={postPath(post)}
                   className="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_2px_12px_rgba(0,0,0,0.06)] transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_8px_28px_rgba(0,0,0,0.10)]"
                 >
                   {post.image ? (
