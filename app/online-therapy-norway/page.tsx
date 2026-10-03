@@ -277,15 +277,18 @@ export default function OnlineTherapyNorwayPage() {
                 key={item.name}
                 className={`flex flex-col gap-8 rounded-2xl border border-zinc-300/80 bg-[#f4efea] p-8 sm:p-10`}
               >
-
-                <p className="flex-1 font-[Roboto,Arial,sans-serif] text-lg leading-[1.6] text-[#383838]">
-                  &ldquo;{item.quote}&rdquo;
+                <span aria-hidden="true" className="text-center font-serif text-6xl leading-none text-[#bfa27f]">
+                  &quot;
+                </span>
+                <p className="flex-1 text-balance text-center font-[Roboto,Arial,sans-serif] text-lg leading-[1.6] text-[#383838]">
+                  {item.quote}
                 </p>
-                <div className="flex items-center justify-center gap-4">
-                  <div className="flex flex-col items-center text-center">
-                    <span className="font-[Roboto,Arial,sans-serif] text-base font-medium text-zinc-900">{item.name}</span>
-                    <span className="text-sm text-zinc-500">{item.context}</span>
-                  </div>
+                <div className="flex items-center justify-center gap-3">
+                  <span className="h-px w-6 shrink-0 bg-[#c9a688]" />
+                  <span className="text-center text-[10px] font-medium uppercase tracking-[0.16em] text-[#7a6347]">
+                    {item.name} &middot; {item.context}
+                  </span>
+                  <span className="h-px w-6 shrink-0 bg-[#c9a688]" />
                 </div>
               </div>
             );
