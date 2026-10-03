@@ -33,6 +33,10 @@ export function BookingModal({
   }, [isOpen])
 
   const selectedProduct = PRODUCTS.find((product) => product.id === selectedId)
+  const productLabels: Record<string, string> = language === "no"
+    ? { "Individual Session": "Individuell terapi", "Couples Session": "Parterapi", "Family Session": "Familieterapi", "Exec&Founder Session": "Leder- og grunnleggerterapi", "Initial Consultation": "Innledende konsultasjon" }
+    : {}
+  const productLabel = (name: string) => productLabels[name] ?? name
   const labels = language === "no"
     ? {
         chooseSession: "Velg din økt",
@@ -119,7 +123,7 @@ export function BookingModal({
                     className="flex items-center justify-between gap-3 border border-zinc-900/15 bg-white px-5 py-4 text-left transition-colors hover:bg-zinc-100"
                   >
                     <span className="min-w-0 font-[Roboto,Arial,sans-serif] text-base font-medium text-zinc-900 sm:text-lg">
-                      {product.name}
+                      {productLabel(product.name)}
                     </span>
                     <span className="shrink-0 whitespace-nowrap text-right text-sm text-zinc-500">
                       {product.duration}

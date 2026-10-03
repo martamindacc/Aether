@@ -4,8 +4,8 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
       // Make the intended policy explicit for AI/search crawlers that support
-      // named user agents. Keep private/non-public routes blocked for each
-      // named group as well as the catch-all group.
+      // named user agents. The booking-confirmation pages are noindex rather than
+      // disallowed, so crawlers can see that directive.
       {
         userAgent: [
           "OAI-SearchBot",
@@ -21,12 +21,12 @@ export default function robots(): MetadataRoute.Robots {
           "cohere-ai",
         ],
         allow: "/",
-        disallow: ["/booking-confirmed", "/no/bestilling-bekreftet", "/api/"],
+        disallow: ["/api/"],
       },
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/booking-confirmed", "/no/bestilling-bekreftet", "/api/"],
+        disallow: ["/api/"],
       },
     ],
     sitemap: "https://aetherpractice.com/sitemap.xml",

@@ -14,7 +14,7 @@ const testimonialsContent: Record<
     eyebrow: string;
     heading: string;
     context: string;
-    items: { quote: string; name: string; accentText: string; accentBg: string }[];
+    items: { quote: string; name: string }[];
   }
 > = {
   en: {
@@ -25,20 +25,14 @@ const testimonialsContent: Record<
       {
         quote: "We found a calmer way to talk about the things we had been avoiding.",
         name: "J. & A.",
-        accentText: "text-[#66755c]",
-        accentBg: "from-[#d9e2d1]/55 to-[#d9e2d1]/20",
       },
       {
         quote: "The sessions helped us listen differently and feel more connected again.",
         name: "M. & R.",
-        accentText: "text-[#7b4037]",
-        accentBg: "from-[#e8d6ce]/55 to-[#e8d6ce]/20",
       },
       {
         quote: "We learned how to repair the pattern instead of repeating the same argument.",
         name: "S. & D.",
-        accentText: "text-[#496171]",
-        accentBg: "from-[#d8e2e8]/55 to-[#d8e2e8]/20",
       },
     ],
   },
@@ -50,20 +44,14 @@ const testimonialsContent: Record<
       {
         quote: "Vi fant en roligere måte å snakke om det vi hadde unngått.",
         name: "J. & A.",
-        accentText: "text-[#66755c]",
-        accentBg: "from-[#d9e2d1]/55 to-[#d9e2d1]/20",
       },
       {
         quote: "Samtalene hjalp oss å lytte annerledes og føle oss knyttet til hverandre igjen.",
         name: "M. & R.",
-        accentText: "text-[#7b4037]",
-        accentBg: "from-[#e8d6ce]/55 to-[#e8d6ce]/20",
       },
       {
         quote: "Vi lærte å reparere mønsteret i stedet for å gjenta den samme konflikten.",
         name: "S. & D.",
-        accentText: "text-[#496171]",
-        accentBg: "from-[#d8e2e8]/55 to-[#d8e2e8]/20",
       },
     ],
   },

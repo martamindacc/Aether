@@ -4,11 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { menuKeyHandler, useDialog } from "@/lib/use-dialog";
-import { track } from "@vercel/analytics";
-import { sendGAEvent } from "@/components/google-analytics";
 import { SiteFooter } from "@/components/site-footer";
-import { buildCalendlyBookingUrl } from "@/lib/booking-url";
-import { PRODUCTS, type Product } from "@/lib/products";
+import { BookingModal } from "@/components/booking-modal";
 import type { BlogPostMeta } from "@/lib/blog";
 import type { LanguageCode } from "@/lib/service-content";
 import { languageLinksFor, localizedPaths, postPath } from "@/lib/locale-routes";
@@ -26,7 +23,6 @@ const content: Record<
     videoOverlay: string;
     heroTitle: string;
     heroSubtitle: string;
-    subtext: string;
     bookNow: string;
     pills: string[];
     menuSections: { heading: string; links: { label: string; href: string }[] }[];
@@ -54,7 +50,6 @@ const content: Record<
     finalCtaHeading: string;
     finalCtaSubtext: string;
     finalCtaButton: string;
-    footerTagline: string;
   }
 > = {
   en: {
@@ -62,7 +57,6 @@ const content: Record<
     heroTitle: "Better life starts with better understanding",
     heroSubtitle:
       "Private online sessions for couples, individuals, families, executives, and founders in New York City, California, and Norway.",
-    subtext: "",
     bookNow: "Book Now",
     pills: [
       "Couples Sessions",
@@ -164,14 +158,12 @@ const content: Record<
     finalCtaSubtext:
       "A practice built for those who expect the same rigor from their inner life as they do from their work.",
     finalCtaButton: "Book Your Session",
-    footerTagline: "All rights reserved.",
   },
   no: {
     videoOverlay: "Din Fremtid Er Din Å Forme",
     heroTitle: "Klarhet for et liv med høy innsats",
     heroSubtitle:
       "Private online samtaler for par, enkeltpersoner, familier, ledere og grunnleggere i Oslo og hele Norge.",
-    subtext: "",
     bookNow: "Bestill Nå",
     pills: [
       "Parterapi",
@@ -273,7 +265,6 @@ const content: Record<
     finalCtaSubtext:
       "En praksis bygget for dem som forventer samme presisjon i sitt innerliv som i arbeidet sitt.",
     finalCtaButton: "Bestill Din Økt",
-    footerTagline: "Alle rettigheter reservert.",
   },
 };
 
@@ -295,10 +286,8 @@ export default function HomeClient({
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
   const [isBookingOpen, setIsBookingOpen] = useState(false);
-  const [selectedBookingName, setSelectedBookingName] = useState<string | null>(null);
   const languageMenuRef = useRef<HTMLDivElement>(null);
   const menuPanelRef = useRef<HTMLDivElement>(null);
-  const bookingPanelRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isVideoPaused, setIsVideoPaused] = useState(false);
   const toggleVideo = () => {
@@ -316,42 +305,10 @@ export default function HomeClient({
   useDialog(isMenuOpen, closeMenu, menuPanelRef);
   const language = languages.find((lang) => lang.code === languageCode) ?? languages[0];
   const t = content[language.code];
-  const hasTrackedBookingOpenRef = useRef(false);
 
-  const selectedBookingService = PRODUCTS.find(
-    (product) => product.name === selectedBookingName,
-  );
-  const bookingLabel = (name: string) =>
-    language.code === "no"
-      ? { "Individual Session": "Individuell terapi", "Couples Session": "Parterapi", "Family Session": "Familieterapi", "Exec&Founder Session": "Leder- og grunnleggerterapi", "Initial Consultation": "Innledende konsultasjon" }[name] ?? name
-      : name;
+  const openBooking = () => setIsBookingOpen(true);
 
-  const openBooking = () => {
-    setIsBookingOpen(true);
-    if (!hasTrackedBookingOpenRef.current) {
-      hasTrackedBookingOpenRef.current = true;
-      const params = { page: window.location.pathname };
-      track("booking_modal_opened", params);
-      sendGAEvent("booking_modal_opened", params);
-    }
-  };
-
-  const closeBooking = () => {
-    setIsBookingOpen(false);
-    setSelectedBookingName(null);
-    hasTrackedBookingOpenRef.current = false;
-  };
-  useDialog(isBookingOpen, closeBooking, bookingPanelRef);
-
-  const selectBookingService = (service: Product) => {
-    const params = { service: service.name, page: window.location.pathname };
-    track("booking_service_selected", params);
-    sendGAEvent("booking_service_selected", params);
-    setSelectedBookingName(service.name);
-    window.open(buildCalendlyBookingUrl(service.calendlyUrl), "_blank", "noopener,noreferrer");
-    track("booking_calendar_opened", params);
-    sendGAEvent("booking_calendar_opened", params);
-  };
+  const closeBooking = () => setIsBookingOpen(false);
 
   useEffect(() => {
     const handlePointerDown = (event: PointerEvent) => {
@@ -548,89 +505,7 @@ export default function HomeClient({
           </div>
         )}
 
-        {isBookingOpen && (
-          <div className="fixed inset-0 z-30 flex items-center justify-center overflow-y-auto px-6 py-6">
-            <div
-              className="fixed inset-0 animate-in fade-in bg-zinc-900/20 duration-300"
-              onClick={closeBooking}
-              aria-hidden="true"
-            />
-            <div
-              ref={bookingPanelRef}
-              role="dialog"
-              aria-modal="true"
-              aria-label={language.code === "no" ? "Bestill din økt" : "Schedule your session"}
-              tabIndex={-1}
-              className="relative my-auto flex max-h-[90vh] w-full max-w-md flex-col gap-6 overflow-y-auto rounded-3xl bg-[#fafafb] p-6 shadow-2xl outline-none animate-in fade-in zoom-in-95 duration-300 ease-out sm:p-10"
-            >
-              <button
-                onClick={closeBooking}
-                aria-label="Close booking"
-                className="absolute right-5 top-5 flex h-9 w-9 shrink-0 items-center justify-center border border-zinc-900/20 bg-white transition-colors hover:bg-zinc-100 sm:right-6 sm:top-6 sm:h-11 sm:w-11"
-              >
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                  <path
-                    d="M1 1L15 15M15 1L1 15"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </button>
-              {!selectedBookingService ? (
-                <>
-                  <p className="pr-12 text-xs uppercase tracking-wide text-zinc-500 sm:text-sm">
-                    {language.code === "no" ? "Velg din økt" : "Choose your session"}
-                  </p>
-                  <div className="flex flex-col gap-3">
-                    {PRODUCTS.map((service) => (
-                      <button
-                        key={service.id}
-                        onClick={() => selectBookingService(service)}
-                        className="flex items-center justify-between gap-3 border border-zinc-900/15 bg-white px-5 py-4 text-left transition-colors hover:bg-zinc-100"
-                      >
-                        <span className="min-w-0 font-[Roboto,Arial,sans-serif] text-base font-medium text-zinc-900 sm:text-lg">
-                          {bookingLabel(service.name)}
-                        </span>
-                        <span className="shrink-0 whitespace-nowrap text-right text-sm text-zinc-500">
-                          {service.duration}
-                          {service.priceInCents > 0 && ` · $${(service.priceInCents / 100).toFixed(0)}`}
-                        </span>
-                      </button>
-                    ))}
-                  </div>
-                </>
-              ) : (
-                <>
-                  <div className="flex items-center justify-between gap-3 pr-12">
-                    <p className="text-xs uppercase tracking-wide text-zinc-500 sm:text-sm">
-                      {bookingLabel(selectedBookingService.name)}
-                    </p>
-                    <button
-                      onClick={() => setSelectedBookingName(null)}
-                      className="shrink-0 text-sm text-zinc-500 underline-offset-4 hover:text-zinc-900 hover:underline"
-                    >
-                      {language.code === "no" ? "Tilbake" : "Back"}
-                    </button>
-                  </div>
-                  <p className="text-sm text-zinc-500">
-                    {language.code === "no"
-                      ? "Calendly-bookingsiden din har åpnet i en ny fane."
-                      : "Your Calendly booking page has opened in a new tab."}
-                  </p>
-                  <a
-                    href={buildCalendlyBookingUrl(selectedBookingService.calendlyUrl)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="border border-zinc-900/20 bg-white px-5 py-3 text-center text-sm font-medium text-zinc-900 transition-colors hover:bg-zinc-100"
-                  >
-                    {language.code === "no" ? "Åpne Calendly" : "Open Calendly"}
-                  </a>
-                </>
-              )}
-            </div>
-          </div>
-        )}
+        <BookingModal language={language.code} isOpen={isBookingOpen} onClose={closeBooking} />
       </div>
 
       <section className="flex flex-col items-center px-6 pb-12 pt-[104px] text-center font-[Inter,-apple-system,BlinkMacSystemFont,'SF_Pro_Text',system-ui,sans-serif] text-[19px] font-normal leading-[1.5] text-[#383838]">

@@ -9,7 +9,7 @@ export interface Product {
 
 // This is the source of truth for all bookable sessions.
 // All UI to display sessions should pull from this array.
-// IDs passed to the checkout session should be the same as IDs from this array.
+// Stable ids; the booking modal and analytics events refer to products by these.
 // Ordered for display in the booking flow (Couples Session first).
 export const PRODUCTS: Product[] = [
   {

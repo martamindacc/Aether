@@ -36,9 +36,6 @@ export type AboutContent = {
 export type ContactContent = {
   title: string;
   intro: string;
-  ctaHeading: string;
-  ctaSubtext: string;
-  ctaButton: string;
 };
 
 export const navContent: Record<
@@ -584,16 +581,10 @@ export const contactContent: Record<LanguageCode, ContactContent> = {
     title: "Contact",
     intro:
       "Have a question before booking, or want to talk through which service is the right fit? Reach out.",
-    ctaHeading: "Prefer to just get started?",
-    ctaSubtext: "Skip the email and book your first session directly.",
-    ctaButton: "Book a session",
   },
   no: {
     title: "Kontakt",
     intro:
       "Har du et spørsmål før du bestiller, eller vil du snakke om hvilken tjeneste som passer best? Ta kontakt.",
-    ctaHeading: "Vil du bare komme i gang?",
-    ctaSubtext: "Hopp over e-posten og bestill din første sesjon direkte.",
-    ctaButton: "Bestill en sesjon",
   },
 };
