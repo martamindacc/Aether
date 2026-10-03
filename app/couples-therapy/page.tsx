@@ -223,7 +223,7 @@ export default function CouplesTherapyPage() {
           {testimonialsContent[language].items.map((item) => (
             <div
               key={item.name}
-              className={`flex flex-col gap-8 rounded-2xl border border-zinc-300/80 bg-gradient-to-br ${item.accentBg} p-8 sm:p-10`}
+              className={`flex flex-col gap-8 rounded-2xl border border-zinc-300/80 bg-[#f1e7de] p-8 transition-colors duration-300 hover:bg-[#e7d8cb] sm:p-10`}
             >
               <div className={`flex justify-center gap-1 ${item.accentText}`} aria-hidden="true">
                 {Array.from({ length: 5 }).map((_, index) => (
