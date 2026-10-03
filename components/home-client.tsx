@@ -712,7 +712,7 @@ export default function HomeClient({ posts }: { posts: BlogPostMeta[] }) {
             <Link
               key={section.href}
               href={section.href}
-              className="group rounded-2xl border border-zinc-300/80 bg-[#fafafb] p-8 transition-colors duration-300 hover:bg-[#f1e7de] sm:p-14"
+              className="group rounded-2xl border border-zinc-300/80 bg-[#fafafb] p-8 transition-colors duration-300 hover:bg-[#F3EBE4] sm:p-14"
             >
               <h2 className="inline-block origin-left font-[NeueHaasDisplayRoman,Arial,sans-serif] text-5xl font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out group-hover:translate-x-2 group-hover:scale-x-105 sm:text-7xl">
                 {section.title}
@@ -741,18 +741,17 @@ export default function HomeClient({ posts }: { posts: BlogPostMeta[] }) {
               key={item.name}
               className="flex flex-col gap-8 rounded-2xl border border-zinc-300/80 bg-[#f4efea] p-8 sm:p-10"
             >
-              <span aria-hidden="true" className="text-center font-serif text-6xl leading-none text-[#bfa27f]">
-                &quot;
-              </span>
+              <span aria-hidden="true" className="-mb-3 flex justify-center gap-2">
+<span className="h-7 w-3 bg-[#bfa27f] [clip-path:polygon(0_0,100%_0,80%_100%,20%_100%)]" />
+<span className="h-7 w-3 bg-[#bfa27f] [clip-path:polygon(0_0,100%_0,80%_100%,20%_100%)]" />
+</span>
               <p className="flex-1 text-balance text-center font-[Roboto,Arial,sans-serif] text-lg leading-[1.6] text-[#383838]">
                 {item.quote}
               </p>
               <div className="flex items-center justify-center gap-3">
-                <span className="h-px w-6 shrink-0 bg-[#c9a688]" />
-                <span className="text-center text-[10px] font-medium uppercase tracking-[0.16em] text-[#7a6347]">
-                  {item.name} &middot; {item.context}
-                </span>
-                <span className="h-px w-6 shrink-0 bg-[#c9a688]" />
+  <span className="text-center text-[10px] font-medium uppercase tracking-[0.16em] text-[#7a6347]">
+  {item.name} &middot; {item.context}
+  </span>
               </div>
             </div>
           ))}

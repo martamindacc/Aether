@@ -225,18 +225,17 @@ export default function CouplesTherapyPage() {
               key={item.name}
               className={`flex flex-col gap-8 rounded-2xl border border-zinc-300/80 bg-[#f4efea] p-8 sm:p-10`}
             >
-              <span aria-hidden="true" className="text-center font-serif text-6xl leading-none text-[#bfa27f]">
-                &quot;
-              </span>
+              <span aria-hidden="true" className="-mb-3 flex justify-center gap-2">
+<span className="h-7 w-3 bg-[#bfa27f] [clip-path:polygon(0_0,100%_0,80%_100%,20%_100%)]" />
+<span className="h-7 w-3 bg-[#bfa27f] [clip-path:polygon(0_0,100%_0,80%_100%,20%_100%)]" />
+</span>
               <p className="flex-1 text-balance text-center font-[Roboto,Arial,sans-serif] text-lg leading-[1.6] text-[#383838]">
                 {item.quote}
               </p>
               <div className="flex items-center justify-center gap-3">
-                <span className="h-px w-6 shrink-0 bg-[#c9a688]" />
-                <span className="text-center text-[10px] font-medium uppercase tracking-[0.16em] text-[#7a6347]">
-                  {item.name} &middot; {testimonialsContent[language].context}
-                </span>
-                <span className="h-px w-6 shrink-0 bg-[#c9a688]" />
+  <span className="text-center text-[10px] font-medium uppercase tracking-[0.16em] text-[#7a6347]">
+  {item.name} &middot; {testimonialsContent[language].context}
+  </span>
               </div>
             </div>
           ))}
