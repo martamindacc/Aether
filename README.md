@@ -31,3 +31,15 @@ To learn more, take a look at the following resources:
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 - [v0 Documentation](https://v0.app/docs) - learn about v0 and how to use it.
+
+## Contact form
+
+Submissions are emailed from the server through [Resend](https://resend.com). Set these environment variables in Vercel (Settings → Environment Variables) for Production and Preview:
+
+| Variable | Required | Purpose |
+|---|---|---|
+| `RESEND_API_KEY` | yes | API key from https://resend.com/api-keys |
+| `CONTACT_TO_EMAIL` | no | Inbox that receives messages. Defaults to the practice Gmail address. |
+| `CONTACT_FROM_EMAIL` | no | Sender shown on the email, e.g. `Aether Practice <hello@aetherpractice.com>`. Needs the domain verified in Resend. Until then the default Resend onboarding sender is used, which only delivers to the Resend account owner's address. |
+
+Without `RESEND_API_KEY` the form shows a "could not be sent" message and logs the failure; nothing is silently dropped.

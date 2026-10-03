@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useActionState, useEffect, useState } from "react";
 import { languageLinksFor, localizedPaths } from "@/lib/locale-routes";
 import Link from "next/link";
 import { track } from "@vercel/analytics";
@@ -8,6 +8,32 @@ import { sendGAEvent } from "@/components/google-analytics";
 import { FloatingNav } from "@/components/floating-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { contactContent, type LanguageCode } from "@/lib/service-content";
+import { sendContactMessage, type ContactState } from "@/app/actions/contact";
+
+const formCopy: Record<LanguageCode, { name: string; email: string; message: string; send: string; sending: string; sent: string; invalid: string; unavailable: string }> = {
+  en: {
+    name: "Name",
+    email: "Email",
+    message: "Message",
+    send: "Send message",
+    sending: "Sending…",
+    sent: "Thank you. Your message has been sent and we will reply by email.",
+    invalid: "Please fill in your name, a valid email address and a message.",
+    unavailable: "The message could not be sent right now. Please try again shortly or email us directly.",
+  },
+  no: {
+    name: "Navn",
+    email: "E-post",
+    message: "Melding",
+    send: "Send melding",
+    sending: "Sender…",
+    sent: "Takk. Meldingen din er sendt, og vi svarer på e-post.",
+    invalid: "Fyll inn navn, en gyldig e-postadresse og en melding.",
+    unavailable: "Meldingen kunne ikke sendes akkurat nå. Prøv igjen om litt.",
+  },
+};
+
+const initialState: ContactState = { status: "idle" };
 
 const privacyNotice: Record<LanguageCode, { text: string; linkLabel: string }> = {
   en: {
@@ -27,16 +53,15 @@ export default function ContactPage({ language }: { language: LanguageCode }) {
   const [isLangOpen, setIsLangOpen] = useState(false);
   const t = contactContent[language];
 
-  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    const formData = new FormData(e.currentTarget);
-    const hasAllFields = formData.get("name") && formData.get("email") && formData.get("message");
+  const f = formCopy[language];
+  const [state, formAction, isPending] = useActionState(sendContactMessage, initialState);
 
-    if (hasAllFields) {
-      const params = { page: window.location.pathname };
-      track("contact_form_submit", params);
-      sendGAEvent("contact_form_submit", params);
-    }
-  };
+  useEffect(() => {
+    if (state.status !== "sent") return;
+    const params = { page: window.location.pathname };
+    track("contact_form_submit", params);
+    sendGAEvent("contact_form_submit", params);
+  }, [state]);
 
   return (
     <main className="min-h-screen bg-[#fafafb] font-[NeueHaasDisplayRoman,Arial,sans-serif] text-zinc-900">
@@ -56,46 +81,71 @@ export default function ContactPage({ language }: { language: LanguageCode }) {
           {t.intro}
         </p>
 
-        <form
-          action="mailto:martamindacc@gmail.com"
-          method="post"
-          encType="text/plain"
-          onSubmit={handleFormSubmit}
-          className="mt-20 flex max-w-xl flex-col gap-5 rounded-2xl border border-zinc-300/80 bg-[#eee2db]/80 p-8 sm:p-10"
-        >
-          <label className="flex flex-col gap-2">
-            <span className="text-sm uppercase tracking-wide text-zinc-500">Name</span>
-            <input
-              name="name"
-              required
-              className="border-b border-zinc-900/20 bg-transparent py-2 font-[Roboto,Arial,sans-serif] text-base text-zinc-900 outline-none transition-colors placeholder:text-zinc-400 focus:border-zinc-900"
-            />
-          </label>
-          <label className="flex flex-col gap-2">
-            <span className="text-sm uppercase tracking-wide text-zinc-500">Email</span>
-            <input
-              type="email"
-              name="email"
-              required
-              className="border-b border-zinc-900/20 bg-transparent py-2 font-[Roboto,Arial,sans-serif] text-base text-zinc-900 outline-none transition-colors placeholder:text-zinc-400 focus:border-zinc-900"
-            />
-          </label>
-          <label className="flex flex-col gap-2">
-            <span className="text-sm uppercase tracking-wide text-zinc-500">Message</span>
-            <textarea
-              name="message"
-              required
-              rows={4}
-              className="resize-none border-b border-zinc-900/20 bg-transparent py-2 font-[Roboto,Arial,sans-serif] text-base leading-[1.5] text-zinc-900 outline-none transition-colors placeholder:text-zinc-400 focus:border-zinc-900"
-            />
-          </label>
-          <button
-            type="submit"
-            className="mt-2 self-start border border-zinc-900/20 bg-white px-8 py-4 text-base font-medium text-zinc-900 transition-colors hover:bg-zinc-100"
+        {state.status === "sent" ? (
+          <div
+            role="status"
+            className="mt-20 flex max-w-xl flex-col gap-5 rounded-2xl border border-zinc-300/80 bg-[#eee2db]/80 p-8 sm:p-10"
           >
-            Send message
-          </button>
-        </form>
+            <p className="font-[Roboto,Arial,sans-serif] text-base leading-[1.5] text-zinc-900">{f.sent}</p>
+          </div>
+        ) : (
+          <form
+            action={formAction}
+            className="mt-20 flex max-w-xl flex-col gap-5 rounded-2xl border border-zinc-300/80 bg-[#eee2db]/80 p-8 sm:p-10"
+          >
+            <input type="hidden" name="language" value={language} />
+            {/* Honeypot: hidden from people, filled by bots. */}
+            <div className="hidden" aria-hidden="true">
+              <label>
+                Company
+                <input name="company" type="text" tabIndex={-1} autoComplete="off" />
+              </label>
+            </div>
+            <label className="flex flex-col gap-2">
+              <span className="text-sm uppercase tracking-wide text-zinc-500">{f.name}</span>
+              <input
+                name="name"
+                required
+                maxLength={200}
+                autoComplete="name"
+                className="border-b border-zinc-900/20 bg-transparent py-2 font-[Roboto,Arial,sans-serif] text-base text-zinc-900 outline-none transition-colors placeholder:text-zinc-400 focus:border-zinc-900"
+              />
+            </label>
+            <label className="flex flex-col gap-2">
+              <span className="text-sm uppercase tracking-wide text-zinc-500">{f.email}</span>
+              <input
+                type="email"
+                name="email"
+                required
+                maxLength={320}
+                autoComplete="email"
+                className="border-b border-zinc-900/20 bg-transparent py-2 font-[Roboto,Arial,sans-serif] text-base text-zinc-900 outline-none transition-colors placeholder:text-zinc-400 focus:border-zinc-900"
+              />
+            </label>
+            <label className="flex flex-col gap-2">
+              <span className="text-sm uppercase tracking-wide text-zinc-500">{f.message}</span>
+              <textarea
+                name="message"
+                required
+                maxLength={5000}
+                rows={4}
+                className="resize-none border-b border-zinc-900/20 bg-transparent py-2 font-[Roboto,Arial,sans-serif] text-base leading-[1.5] text-zinc-900 outline-none transition-colors placeholder:text-zinc-400 focus:border-zinc-900"
+              />
+            </label>
+            {state.status === "error" && (
+              <p role="alert" className="font-[Roboto,Arial,sans-serif] text-sm leading-[1.5] text-[#74382f]">
+                {state.reason === "invalid" ? f.invalid : f.unavailable}
+              </p>
+            )}
+            <button
+              type="submit"
+              disabled={isPending}
+              className="mt-2 self-start border border-zinc-900/20 bg-white px-8 py-4 text-base font-medium text-zinc-900 transition-colors hover:bg-zinc-100 disabled:cursor-wait disabled:opacity-60"
+            >
+              {isPending ? f.sending : f.send}
+            </button>
+          </form>
+        )}
         <p className="mt-4 max-w-xl font-[Roboto,Arial,sans-serif] text-sm leading-[1.5] text-zinc-500">
           {privacyNotice[language].text}{" "}
           <Link href={localizedPaths.privacy[language]} className="underline underline-offset-2 hover:text-zinc-900">
