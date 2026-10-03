@@ -184,6 +184,41 @@ const englishTocBySlug: Record<string, ReadonlyArray<readonly [string, string]>>
     ["What EFT looks like at Aether Practice", "What EFT looks like at Aether Practice"],
     ["Frequently asked questions", "Frequently asked questions"],
   ],
+  "two-careers-one-relationship": [
+    ["Quick Answer: Can Two Careers and One Relationship Actually Work?", "Quick Answer: Can Two Careers and One Relationship Actually Work?"],
+    ["Why Dual-Career Couples Have Different Problems", "Why Dual-Career Couples Have Different Problems"],
+    ["The Three Phases of a Dual-Career Relationship", "The Three Phases of a Dual-Career Relationship"],
+    ["Seven Conflicts That Repeat in Dual-Career Couples", "Seven Conflicts That Repeat in Dual-Career Couples"],
+    ["The Silent Ledger: Who Sacrificed More?", "The Silent Ledger: Who Sacrificed More?"],
+    ["Competition: When Your Partner's Success Hurts", "Competition: When Your Partner's Success Hurts"],
+    ["The Home Nobody Owns", "The Home Nobody Owns"],
+    ["Self-Check: Where Do You Stand?", "Self-Check: Where Do You Stand?"],
+    ["What Doesn't Help", "What Doesn't Help"],
+    ["What Does Help: Seven Moves for Dual-Career Couples", "What Does Help: Seven Moves for Dual-Career Couples"],
+    ["When You Need Outside Help", "When You Need Outside Help"],
+    ["FAQ: Two Careers, One Relationship", "FAQ: Two Careers, One Relationship"],
+    ["About Aether Practice", "About Aether Practice"],
+    ["Take the Next Step", "Take the Next Step"],
+    ["Research & Further Reading", "Research & Further Reading"],
+  ],
+  "when-your-partner-is-burned-out": [
+    ["Quick Answer: What Does Burnout Do to a Relationship?", "Quick Answer: What Does Burnout Do to a Relationship?"],
+    ["What Burnout Is, Briefly", "What Burnout Is, Briefly"],
+    ["How It Shows Up at Home: 10 Signs", "How It Shows Up at Home: 10 Signs Burnout Has Taken the Relationship"],
+    ["The Burned-Out Partner's Side", "The Burned-Out Partner's Side: Why Closeness Is So Hard"],
+    ["The Partner's Side: The Invisible Burden", "The Partner's Side: The Invisible Burden"],
+    ["The Pattern That Develops: Care, Resentment, Distance", "The Pattern That Develops: Care, Resentment, Distance"],
+    ["Why High-Achieving Couples Are Especially Vulnerable", "Why High-Achieving Couples Are Especially Vulnerable"],
+    ["Self-Check: Is This Us?", "Self-Check: Is This Us?"],
+    ["What Doesn't Help", "What Doesn't Help"],
+    ["What the Partner Can Do", "What the Partner Can Do"],
+    ["What the Burned-Out Person Can Do", "What the Burned-Out Person Can Do"],
+    ["Individual Treatment and Couples Therapy: Why Both?", "Individual Treatment and Couples Therapy: Why Both?"],
+    ["FAQ: Burnout and Relationships", "FAQ: Burnout and Relationships"],
+    ["About Aether Practice", "About Aether Practice"],
+    ["Take the Next Step", "Take the Next Step"],
+    ["Research & Further Reading", "Research & Further Reading"],
+  ],
 };
 
 const englishLedeBySlug: Record<string, string> = {
@@ -205,6 +240,10 @@ const englishLedeBySlug: Record<string, string> = {
     "Couples therapy (also called marriage counseling, couples counseling or relationship therapy) is structured work with a trained clinician in which both partners examine the pattern they are caught in, understand what drives it, and learn to reach each other differently. The best-evidenced approaches are Emotionally Focused Therapy and behavioural methods; most couples see meaningful change in 8–20 sessions; private fees run roughly US$150–450 per session in New York and California; and the strongest predictor of success is not the method but whether both partners feel equally held by the therapist.",
   "emotionally-focused-therapy-explained":
     "Emotionally Focused Therapy is a couples therapy approach built on attachment science. It treats relationship distress as a negative cycle in which each partner's protective moves trigger the other's, and works in three stages: de-escalating the cycle, restructuring how partners reach each other, and consolidating the new pattern. EFT has the strongest clinical-trial evidence of any couples method, including a 2024 meta-analysis and two-year follow-up data, and roughly 70–75% of couples in early trials moved from distressed to non-distressed.",
+  "two-careers-one-relationship":
+    "Both partners have demanding careers? The conflicts standard relationship advice doesn't cover: Whose job wins when both of you have a critical week? Who relocates for whom? How do you divide the household when neither of you has any slack? And how do you keep competition, resentment, and a silent score from taking over? This guide walks through the three phases dual-career couples typically move through, the most common conflicts, and how to build a relationship where both partners' ambitions have room.",
+  "when-your-partner-is-burned-out":
+    "Your partner is burned out and distant? Learn what burnout does to a relationship, the care–resentment–distance pattern that develops, what the partner and the burned-out person can each do, and when couples therapy helps alongside individual treatment.",
 };
 
 const faqBySlug: Record<string, ReadonlyArray<readonly [string, string]>> = {
@@ -225,6 +264,14 @@ const faqBySlug: Record<string, ReadonlyArray<readonly [string, string]>> = {
     ["Hvorfor krangler vi så mye om husarbeid når begge jobber fullt?", "Fordi husarbeid sjelden handler om husarbeid. Det handler om rettferdighet, om hvem sin tid som regnes som mest verdt, og om det usynlige arbeidet med å huske og planlegge, som oftest bæres skjevt. Fordel ansvar, ikke oppgaver, og snakk om det jevnlig."],
     ["Vi flyttet for min partners jobb, og jeg har aldri kommet meg igjen. Hva gjør vi?", "Si det til partneren, tydelig og uten anklage: hva det kostet, og hva du trenger nå. Mange partnere vet ikke hvor dypt det sitter. Dette er en av samtalene som ofte trenger en tredjepart, fordi skyld og bitterhet gjør den vanskelig å ha alene."],
     ["Når bør karrierepar søke parterapi?", "Når regnskapet har blitt bitterhet, når dere lever effektivt side om side uten nærhet, når beslutninger om fremtiden unngås, eller når misunnelse eller skyld har begynt å prege hvordan dere ser hverandre. Dere trenger ikke være i krise. Tidlig er bedre."],
+  ],
+  "two-careers-one-relationship": [
+    ["Can a relationship work when both partners have demanding careers?", "Yes, but it requires actively building it. Dual-career couples who make it work have talked explicitly about what they want, make big decisions together through an agreed process, and divide the household by responsibility rather than task. Couples who let things 'sort themselves out' tend to end up with one career winning—without anyone having chosen that."],
+    ["Whose career should take priority when both matter?", "There's no single right answer, but there is a right process: decide together, when nothing is on the table, how you'll prioritize when they collide. Some couples alternate. Some choose a primary career for a defined period, with a planned check-in. The important thing is that it's a decision—not a drift."],
+    ["How do we handle it when one of us is more successful than the other?", "Say it out loud. Unequal success creates envy, guilt, and distance when it's left unspoken. Acknowledge what your partner has contributed—including the invisible parts—and be honest about what the imbalance does to each of you."],
+    ["Why do we fight so much about housework when we both work full-time?", "Because housework is rarely about housework. It's about fairness, about whose time is worth more, and about the invisible labor of tracking and planning—which is usually distributed unevenly. Divide responsibility, not tasks. Revisit it regularly."],
+    ["We relocated for my partner's job, and I've never recovered. What do we do?", "Tell your partner directly—what it cost and what you need now—without accusation. Many partners genuinely don't know how deep it runs. This is one of the conversations that often needs a third party, because guilt and resentment make it hard to have alone."],
+    ["When should dual-career couples seek couples therapy?", "When the ledger has hardened into resentment, when you're living efficiently side by side without real closeness, when conversations about the future keep getting avoided, or when envy or guilt has started shaping how you see each other. You don't need to be in crisis. Earlier is better."],
   ],
   "parterapi-grundere-ledere": [
     ["Hvorfor tar jobben forholdet?", "Fordi følelsesmessig nærvær krever overskudd som en krevende jobb bruker opp, fordi ferdighetene som gjør deg god på jobb er det motsatte av det nærhet krever, og fordi forholdet er det eneste i livet som ikke har frister. Ingen velger å nedprioritere det. Det skjer likevel."],
@@ -301,6 +348,24 @@ const faqBySlug: Record<string, ReadonlyArray<readonly [string, string]>> = {
     ["Kan parterapi hjelpe etter utroskap?", "Ja. Parterapi etter utroskap kan gi paret et strukturert rom for å forstå hva som har skjedd, håndtere reaksjoner og arbeide med tillit og kommunikasjon. For noen par handler prosessen om å reparere forholdet; for andre handler den om å finne ut hva som skal til for å gå videre sammen eller hver for seg."],
     ["Kan parterapi hjelpe hvis jeg vurderer skilsmisse?", "Ja. Parterapi kan hjelpe dere med å utforske hva dere ønsker, forstå mønstrene i forholdet og få et tydeligere grunnlag for å ta stilling til veien videre. For noen par handler det om å forsøke å gjenoppbygge forholdet; for andre kan prosessen bidra til å avklare om de ønsker å gå videre sammen eller hver for seg."],
     ["Når er parterapi ikke riktig hjelp?", "Parterapi forutsetter at begge partnerne kan delta frivillig og på en trygg måte. Ved vold, trusler eller overgrep i forholdet er parterapi ikke riktig første steg. Da bør sikkerhet og individuell hjelp komme først."],
+  ],
+  "nar-partneren-er-utbrent": [
+    ["Hvordan påvirker utbrenthet parforholdet?", "Utbrenthet tapper den som rammes for kapasitet til nærhet, og hen blir fjern, irritabel eller nummen. Partneren tar over mer, demper egne behov og kjenner seg alene. Over tid oppstår et mønster av omsorg, bitterhet og avstand som rammer begge, og som kan vare lenger enn selve utbrentheten."],
+    ["Partneren min er utbrent og avviser meg. Hva gjør jeg?", "Skill mellom personen og tilstanden: avvisningen er mangel på kapasitet og skam, ikke manglende kjærlighet. Tilby nærvær i stedet for løsninger, si rolig hva du selv bærer, og ta vare på deg selv. Oppmuntre partneren til å få hjelp, og vurder parterapi for å unngå at avstanden setter seg."],
+    ["Er det normalt å bli sint på en partner som er utbrent?", "Ja. Du bærer mer, får mindre og lever med en person som ikke er tilgjengelig. Sinne er en naturlig reaksjon, og skammen over det gjør det bare tyngre. Si det høyt, rolig og uten anklage, i stedet for å la det bygge seg opp."],
+    ["Kan parterapi hjelpe ved utbrenthet?", "Ja, som supplement til individuell behandling. Parterapi hjelper dere å bryte mønsteret av omsorg, bitterhet og avstand, gir begge et sted å si det usagte, og forhindrer at utbrentheten blir forholdets form på lang sikt. Den utbrente bør samtidig få hjelp individuelt, med fastlege som første stopp."],
+    ["Hvor lenge varer utbrenthet?", "Det varierer mye, fra noen måneder til flere år, avhengig av alvorlighetsgrad, årsak og hvilke endringer som gjøres. Forholdet kan ikke settes på vent så lenge, og det er derfor det er viktig å ivareta det underveis."],
+    ["Hva om jeg selv begynner å bli utbrent av å bære partneren?", "Det er vanlig, og det er et varsel. Partnere til utbrente trenger egen støtte: venner, egen tid, og ofte noen å snakke med. Hvis dere begge går tomme, er det ingen igjen til å holde tråden. Søk hjelp før det skjer."],
+    ["Bør jeg bli hos en partner som er utbrent?", "Utbrenthet er en tilstand, ikke en person, og de fleste blir bedre med riktig hjelp. Men du har også rett til egne grenser. Hvis forholdet var vanskelig før utbrentheten, eller hvis partneren avviser all hjelp over lang tid, er det verdt å ta på alvor."],
+  ],
+  "when-your-partner-is-burned-out": [
+    ["How does burnout affect a relationship?", "Burnout drains the person it hits of the capacity closeness requires, making them distant, irritable, or numb. The partner takes over more, suppresses their own needs, and feels alone. Over time a pattern of care, resentment, and distance develops that affects both people — and can last longer than the burnout itself."],
+    ["My partner is burned out and rejecting me. What do I do?", "Separate the person from the state: the rejection is a lack of capacity and shame, not a lack of love. Offer presence instead of solutions, calmly say what you're carrying yourself, and take care of your own needs. Encourage your partner to get help, and consider couples therapy to keep the distance from hardening."],
+    ["Is it normal to be angry at a partner who is burned out?", "Yes. You're carrying more, getting less, and living with someone who isn't available. Anger is a natural response, and the shame about it only makes it heavier. Say it out loud — calmly, without accusation — instead of letting it build."],
+    ["Can couples therapy help with burnout?", "Yes, as a supplement to individual treatment. Couples therapy helps you break the care–resentment–distance pattern, gives both partners somewhere to say the unsaid, and keeps the burnout from becoming the relationship's permanent shape. The burned-out person should be getting individual help at the same time, starting with a doctor."],
+    ["How long does burnout last?", "It varies considerably — from a few months to several years — depending on severity, cause, and what changes are made. The relationship can't be put on hold that long, which is why it needs attention throughout."],
+    ["What if I'm starting to burn out from carrying my partner?", "This is common, and it's a warning sign. Partners of burned-out people need their own support: friends, time for themselves, often someone to talk to. If you both run empty, there's no one left to hold the thread. Get help before that happens."],
+    ["Should I stay with a partner who is burned out?", "Burnout is a state, not a person, and most people recover with the right help. But you also have the right to your own limits. If the relationship was struggling before the burnout, or if your partner refuses help over a sustained period, that's worth taking seriously."],
   ],
 };
 
@@ -470,6 +535,24 @@ const norwegianTocBySlug: Record<string, ReadonlyArray<readonly [string, string]
     ["Når Bør Dere Ta Opp Noe?", "Når Bør Dere Ta Opp Noe Med Terapeuten?"],
     ["FAQ: Virker Parterapi?", "FAQ: Virker Parterapi?"],
   ],
+  "nar-partneren-er-utbrent": [
+    ["Kort svar: Hva gjør utbrenthet med parforholdet?", "Kort svar: Hva gjør utbrenthet med parforholdet?"],
+    ["Hva utbrenthet er, kort forklart", "Hva utbrenthet er, kort forklart"],
+    ["Slik merkes det hjemme: 10 tegn", "Slik merkes det hjemme: 10 tegn på at utbrenthet har tatt forholdet"],
+    ["Den utbrentes side", "Den utbrentes side: Hvorfor det er så vanskelig å være nær"],
+    ["Partnerens side: Den usynlige belastningen", "Partnerens side: Den usynlige belastningen"],
+    ["Mønsteret som oppstår: Omsorg, bitterhet, avstand", "Mønsteret som oppstår: Omsorg, bitterhet, avstand"],
+    ["Hvorfor høytpresterende par er særlig utsatt", "Hvorfor høytpresterende par er særlig utsatt"],
+    ["Selvsjekk: Er dette oss?", "Selvsjekk: Er dette oss?"],
+    ["Hva som ikke hjelper", "Hva som ikke hjelper"],
+    ["Hva partneren kan gjøre", "Hva partneren kan gjøre"],
+    ["Hva den utbrente kan gjøre", "Hva den utbrente kan gjøre"],
+    ["Individuell behandling og parterapi: Hvorfor begge deler?", "Individuell behandling og parterapi: Hvorfor begge deler?"],
+    ["FAQ: Utbrenthet og parforhold", "FAQ: Utbrenthet og parforhold"],
+    ["Om Aether Practice", "Om Aether Practice"],
+    ["Ta neste steg", "Ta neste steg"],
+    ["Forskning og videre lesning", "Forskning og videre lesning"],
+  ],
 };
 
 const polishTocBySlug: Record<string, ReadonlyArray<readonly [string, string]>> = {
@@ -521,6 +604,8 @@ const norwegianLedeBySlug: Record<string, React.ReactNode> = {
       Oslo, og når det kan være riktig å søke hjelp.
     </>
   ),
+  "nar-partneren-er-utbrent":
+    "Når én i et parforhold blir utbrent, rammes begge. Den utbrente har ikke overskudd til nærhet, blir irritabel eller fjern, og trekker seg fra det som før ga glede. Partneren tar over mer, kjenner seg alene, og vet ikke om hen skal støtte eller stille krav. Over tid kan utbrentheten bli et mønster i forholdet, ikke bare en tilstand hos den ene. Denne guiden forklarer hva utbrenthet gjør med et parforhold, hva partneren kan gjøre, og når parterapi er riktig hjelp ved siden av individuell behandling.",
 };
 
 function headingId(children: React.ReactNode) {
