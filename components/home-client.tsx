@@ -712,7 +712,7 @@ export default function HomeClient({ posts }: { posts: BlogPostMeta[] }) {
             <Link
               key={section.href}
               href={section.href}
-              className="group rounded-2xl border border-zinc-300/80 bg-[#fafafb] p-8 transition-colors duration-300 hover:bg-[#e2c3b2]/60 sm:p-14"
+              className="group rounded-2xl border border-zinc-300/80 bg-[#fafafb] p-8 transition-colors duration-300 hover:bg-[#f1e7de] sm:p-14"
             >
               <h2 className="inline-block origin-left font-[NeueHaasDisplayRoman,Arial,sans-serif] text-5xl font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out group-hover:translate-x-2 group-hover:scale-x-105 sm:text-7xl">
                 {section.title}
@@ -778,9 +778,9 @@ export default function HomeClient({ posts }: { posts: BlogPostMeta[] }) {
       </section>
 
       {blogPosts.length > 0 && (
-        <section className="w-full bg-[#ede9e3]/40 py-24 sm:py-28">
+        <section className="w-full bg-[#f4efe9] py-28 sm:py-32">
           <div className="mx-auto flex max-w-6xl flex-col px-6 sm:px-12">
-            <div className="flex items-center justify-between border-b border-zinc-300/50 pb-8">
+            <div className="flex items-center justify-between">
               <div className="flex items-center gap-5">
                 <div className="h-px w-8 bg-[#c9a688]" />
                 <p className="text-xs uppercase tracking-[0.18em] text-zinc-500">
