@@ -739,7 +739,7 @@ export default function HomeClient({ posts }: { posts: BlogPostMeta[] }) {
           {t.testimonials.map((item) => (
             <div
               key={item.name}
-              className="flex flex-col gap-8 rounded-2xl border border-zinc-300/80 bg-gradient-to-br from-[#eee2db]/75 to-[#eee2db]/40 p-8 transition-colors duration-300 hover:bg-[#e2c3b2]/60 sm:p-10"
+              className="flex flex-col gap-8 rounded-2xl border border-zinc-300/80 bg-[#f1e7de] p-8 transition-colors duration-300 hover:bg-[#e7d8cb] sm:p-10"
             >
               <div className={`flex justify-center gap-1 ${item.accentText}`} aria-hidden="true">
                 {Array.from({ length: 5 }).map((_, index) => (
