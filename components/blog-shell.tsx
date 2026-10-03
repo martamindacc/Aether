@@ -57,7 +57,7 @@ export function BlogShell({
 
   return (
     <SiteLanguageContext.Provider value={displayedLanguage}>
-      <main className="min-h-screen bg-[#fafafb] font-[NeueHaasDisplayRoman,Arial,sans-serif] text-zinc-900">
+      <main className="min-h-screen bg-[#F3EBE4] font-[NeueHaasDisplayRoman,Arial,sans-serif] text-zinc-900">
       <FloatingNav
         language={displayedLanguage}
         onLanguageChange={handleLanguageChange}
