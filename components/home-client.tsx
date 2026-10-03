@@ -701,7 +701,7 @@ export default function HomeClient({ posts }: { posts: BlogPostMeta[] }) {
           {t.pills.map((pill) => (
             <span
               key={pill}
-              className="rounded-xl border border-[#e1c2af] bg-[#f1e7de] px-5 py-3 text-base text-zinc-700"
+              className="rounded-xl border border-[#f1e7de] bg-gradient-to-r from-[#f1e7de] to-[#f9f4ef] px-5 py-3 text-base text-zinc-700"
             >
               {pill}
             </span>
