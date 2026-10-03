@@ -27,6 +27,7 @@ export function pageMetadata({
   modifiedTime,
   section,
   tags,
+  image,
 }: {
   /** The page topic only, e.g. "Couples Therapy Online". The root layout prefixes the brand. */
   title: string
@@ -47,9 +48,14 @@ export function pageMetadata({
   modifiedTime?: string
   section?: string
   tags?: string[]
+  /** Page-specific social image path, e.g. a post's hero image. Falls back to the shared site image. */
+  image?: string
 }): Metadata {
   const url = `${BASE_URL}${path}`
   const fullTitle = TITLE_TEMPLATE.replace("%s", title)
+  const socialImage = image
+    ? { url: image, alt: title }
+    : { url: "/opengraph-image", width: 1200, height: 630, alt: OG_IMAGE_ALT }
 
   return {
     title,
@@ -72,9 +78,7 @@ export function pageMetadata({
       url,
       title: fullTitle,
       description,
-      images: [
-        { url: "/opengraph-image", width: 1200, height: 630, alt: OG_IMAGE_ALT },
-      ],
+      images: [socialImage],
       ...(type === "article" && {
         publishedTime,
         modifiedTime,
@@ -86,7 +90,7 @@ export function pageMetadata({
       card: "summary_large_image",
       title: fullTitle,
       description,
-      images: [{ url: "/opengraph-image", alt: OG_IMAGE_ALT }],
+      images: [{ url: socialImage.url, alt: socialImage.alt }],
     },
   }
 }

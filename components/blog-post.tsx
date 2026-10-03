@@ -38,6 +38,7 @@ export function postMetadata(post: BlogPostData): Metadata {
     publishedTime: post.date,
     modifiedTime: post.modifiedDate,
     tags: post.tags,
+    image: post.image,
   });
 }
 
