@@ -51,14 +51,14 @@ export function FloatingNav({
           href={homePath(language)}
           className="hidden items-center gap-2 text-lg font-medium tracking-[-0.04em] sm:flex sm:text-xl"
         >
-          <img src="/logo-a.svg" alt="Aether Practice logo" className="h-6 w-6" />
+          <img src="/logo-a.svg" alt="" width={24} height={24} className="h-6 w-6" />
           Aether Practice
         </Link>
         <Link
           href={homePath(language)}
           className="flex min-w-0 flex-1 items-center justify-center gap-1.5 px-2 sm:hidden"
         >
-          <img src="/logo-a.svg" alt="Aether Practice logo" className="h-5 w-5 shrink-0" />
+          <img src="/logo-a.svg" alt="" width={20} height={20} className="h-5 w-5 shrink-0" />
           <span className="truncate text-sm font-medium tracking-[-0.04em]">Aether Practice</span>
         </Link>
         <div className="flex items-center gap-1 sm:gap-3">

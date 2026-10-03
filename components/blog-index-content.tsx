@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { BlogPostMeta } from "@/lib/blog";
 import type { LanguageCode } from "@/lib/service-content";
@@ -64,11 +65,13 @@ export function BlogIndexContent({
         {posts.map((post) => (
           <Link key={post.slug} href={postPath(post)} className="group overflow-hidden rounded-2xl border border-zinc-300/80 bg-gradient-to-br from-[#eee2db]/40 to-[#eee2db]/20 transition-colors hover:from-[#eee2db]/60 hover:to-[#eee2db]/30">
             {post.image && (
-              <div className="aspect-[16/9] w-full overflow-hidden">
-                <img
+              <div className="relative aspect-[16/9] w-full overflow-hidden">
+                <Image
                   src={post.image}
-                  alt={post.title}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  alt=""
+                  fill
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
                   style={post.imagePosition ? { objectPosition: post.imagePosition } : undefined}
                 />
               </div>

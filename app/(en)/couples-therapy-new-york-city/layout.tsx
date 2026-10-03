@@ -2,7 +2,7 @@ import { breadcrumbJsonLd, pageMetadata, serviceJsonLd } from "@/lib/seo"
 import { nycCouplesFaq } from "./faq-data"
 
 export const metadata = pageMetadata({
-  title: "Aether Practice | Online Couples Counseling in New York City",
+  title: "Couples Therapy in New York City, Online | Aether Practice",
   description:
     "Online couples sessions for partners in New York City, focused on communication, trust, conflict, and shared understanding.",
   path: "/couples-therapy-new-york-city",

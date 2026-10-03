@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { track } from "@vercel/analytics";
@@ -350,21 +351,29 @@ export default function HomeClient({
   return (
     <main className="min-h-screen bg-[#fafafb] font-[NeueHaasDisplayRoman,Arial,sans-serif] text-zinc-900">
       <div className="relative h-screen w-full overflow-hidden bg-[#fafafb]">
+        {/* Poster paints immediately (the LCP element); the video streams in behind it. Reduced-motion users get the still only. */}
         <video
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover motion-reduce:hidden"
           src="/morawska-marta-psychotherapy.mp4"
+          poster="/hero-poster.webp"
+          preload="metadata"
           autoPlay
           muted
           loop
           playsInline
           aria-label="Therapy introduction video"
         />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 hidden bg-cover bg-center motion-reduce:block"
+          style={{ backgroundImage: "url(/hero-poster.webp)" }}
+        />
         <div className="absolute inset-0 bg-black/10" />
 
         <div className="absolute inset-0 z-10 flex items-center justify-center px-6 sm:items-end sm:justify-center sm:pb-16">
-          <h2 className="text-center font-[NeueHaasDisplayRoman,Arial,sans-serif] text-4xl font-medium tracking-tight text-white sm:text-6xl">
+          <p className="text-center font-[NeueHaasDisplayRoman,Arial,sans-serif] text-4xl font-medium tracking-tight text-white sm:text-6xl">
             {t.videoOverlay}
-          </h2>
+          </p>
         </div>
 
         <nav className="fixed inset-x-4 top-4 z-20 flex items-center justify-between rounded-[1.5rem] border border-white/50 bg-white/50 px-2.5 py-2.5 shadow-lg shadow-zinc-900/5 backdrop-blur-xl sm:inset-x-6 sm:top-6 sm:px-6 sm:py-3">
@@ -375,13 +384,13 @@ export default function HomeClient({
             {t.bookNow}
           </button>
           <span className="hidden items-center gap-2 sm:flex">
-            <img src="/logo-a.svg" alt="Aether Practice logo" className="h-6 w-6" />
+            <img src="/logo-a.svg" alt="" width={24} height={24} className="h-6 w-6" />
             <span className="text-lg font-medium tracking-[-0.04em] sm:text-xl">
               Aether Practice
             </span>
           </span>
           <span className="flex min-w-0 flex-1 items-center justify-center gap-1.5 px-2 sm:hidden">
-            <img src="/logo-a.svg" alt="Aether Practice logo" className="h-5 w-5 shrink-0" />
+            <img src="/logo-a.svg" alt="" width={20} height={20} className="h-5 w-5 shrink-0" />
             <span className="truncate text-sm font-medium tracking-[-0.04em]">Aether Practice</span>
           </span>
           <div className="flex items-center gap-1 sm:gap-3">
@@ -684,11 +693,13 @@ export default function HomeClient({
                   className="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_2px_12px_rgba(0,0,0,0.06)] transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_8px_28px_rgba(0,0,0,0.10)]"
                 >
                   {post.image ? (
-                    <div className="aspect-[3/2] w-full overflow-hidden">
-                      <img
+                    <div className="relative aspect-[3/2] w-full overflow-hidden">
+                      <Image
                         src={post.image}
-                        alt={post.title}
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                        alt=""
+                        fill
+                        sizes="(min-width: 1024px) 384px, (min-width: 640px) 50vw, 100vw"
+                        className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                         style={post.imagePosition ? { objectPosition: post.imagePosition } : undefined}
                       />
                     </div>

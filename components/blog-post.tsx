@@ -604,6 +604,10 @@ const mdxComponents = {
   a: (props: React.ComponentProps<"a">) => (
     <a className="text-[#74382f] underline underline-offset-2 hover:no-underline" {...props} />
   ),
+  img: (props: React.ComponentProps<"img">) => (
+    // eslint-disable-next-line @next/next/no-img-element -- MDX images have no known dimensions
+    <img loading="lazy" decoding="async" className="mt-8 h-auto w-full rounded-2xl" {...props} />
+  ),
   strong: (props: React.ComponentProps<"strong">) => (
     <strong className="font-[Roboto,Arial,sans-serif] font-medium" {...props} />
   ),

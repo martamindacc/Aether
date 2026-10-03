@@ -6,18 +6,21 @@
   font-family: 'NeueHaasDisplayRoman';
   src: url('/fonts/NeueHaasDisplayRoman.ttf') format('truetype');
   font-weight: 400;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'NeueHaasDisplayBold';
   src: url('/fonts/NeueHaasDisplayBold.ttf') format('truetype');
   font-weight: 700;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Roboto';
   src: url('/fonts/Roboto-VariableFont.ttf') format('truetype-variations');
   font-weight: 100 900;
+  font-display: swap;
 }
 
 @custom-variant dark (&:is(.dark *));

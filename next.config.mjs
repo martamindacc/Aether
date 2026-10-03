@@ -42,11 +42,21 @@ const nextConfig = {
     // One 404 page for the whole site; needed because each language has its own root layout.
     globalNotFound: true,
   },
-  images: {
-    unoptimized: true,
-  },
   async redirects() {
     return blogRedirects()
+  },
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: [
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "X-Frame-Options", value: "SAMEORIGIN" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
+        ],
+      },
+    ]
   },
 }
 

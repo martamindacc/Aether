@@ -30,12 +30,17 @@ const routes: { path: string; lastModified: string }[] = [
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const posts = getAllPosts()
+  // Listing pages change whenever a post does, so they take the newest post date.
+  const newestPost = posts.map((post) => post.modifiedDate).sort().at(-1)
+  const listingPaths = new Set(["", "/blog", "/no", "/no/blog"])
   const staticEntries = routes.map((route) => ({
     url: `${baseUrl}${route.path}`,
-    lastModified: route.lastModified,
+    lastModified:
+      listingPaths.has(route.path) && newestPost && newestPost > route.lastModified ? newestPost : route.lastModified,
   }))
 
-  const postEntries = getAllPosts().map((post) => ({
+  const postEntries = posts.map((post) => ({
     url: `${baseUrl}${postPath(post)}`,
     lastModified: post.modifiedDate,
   }))

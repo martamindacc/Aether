@@ -2,9 +2,9 @@ import { breadcrumbJsonLd, pageMetadata, serviceJsonLd } from "@/lib/seo"
 import { hreflangFor } from "@/lib/locale-routes"
 
 export const metadata = pageMetadata({
-  title: "Aether Practice | Executive & Founder Coaching in NYC & California",
+  title: "Executive & Founder Coaching Online | Aether Practice",
   description:
-    "Online executive and founder coaching for clients in New York City, California, and Norway, with thoughtful support for pressure, decision-making, leadership, and personal growth.",
+    "Online coaching for executives and founders in New York City, California and Norway: pressure, decision-making, leadership and personal growth.",
   path: "/executive-founder-work",
   languages: hreflangFor("executive"),
 })

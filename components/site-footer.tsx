@@ -23,7 +23,7 @@ export function SiteFooter({ language }: { language: LanguageCode }) {
             href={homePath(language)}
             className="flex items-center gap-2 text-lg font-medium tracking-tight text-zinc-900"
           >
-            <img src="/logo-a.svg" alt="Aether Practice logo" className="h-5 w-5" />
+            <img src="/logo-a.svg" alt="" width={20} height={20} className="h-5 w-5" />
             Aether Practice
           </Link>
           <p>

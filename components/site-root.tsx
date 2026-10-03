@@ -1,6 +1,7 @@
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import type { Metadata, Viewport } from 'next'
+import { preload } from 'react-dom'
 import { ConsentBanner } from '@/components/consent-banner'
 import { GoogleAnalytics } from '@/components/google-analytics'
 import { ANALYTICS_REQUIRE_CONSENT } from '@/lib/analytics-config'
@@ -22,7 +23,7 @@ export const rootMetadata: Metadata = {
       'x-default': 'https://aetherpractice.com/',
     },
   },
-  title: 'Aether Practice | Cognitive Wellbeing',
+  title: 'Online Couples & Individual Therapy | Aether Practice',
   description:
     'Online counseling & coaching for couples, individuals, families, executives, and founders in New York City, California, and Norway.',
   openGraph: {
@@ -30,13 +31,13 @@ export const rootMetadata: Metadata = {
     siteName: 'Aether Practice',
     locale: 'en_US',
     url: 'https://aetherpractice.com/',
-    title: 'Aether Practice | Cognitive Wellbeing',
+    title: 'Online Couples & Individual Therapy | Aether Practice',
     description:
       'Online counseling & coaching for couples, individuals, families, executives, and founders in New York City, California, and Norway.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Aether Practice | Cognitive Wellbeing',
+    title: 'Online Couples & Individual Therapy | Aether Practice',
     description:
       'Online counseling & coaching for couples, individuals, families, executives, and founders in New York City, California, and Norway.',
   },
@@ -107,6 +108,10 @@ export function SiteRoot({
   lang: 'en' | 'nb'
   children: React.ReactNode
 }>) {
+  // The two faces every page renders with; preloading them removes the font swap on first paint.
+  for (const font of ['/fonts/NeueHaasDisplayRoman.ttf', '/fonts/Roboto-VariableFont.ttf']) {
+    preload(font, { as: 'font', type: 'font/ttf', crossOrigin: 'anonymous' })
+  }
   return (
     <html lang={lang}>
       <body className="overflow-x-hidden antialiased">
