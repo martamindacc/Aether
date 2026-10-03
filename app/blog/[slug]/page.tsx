@@ -62,17 +62,21 @@ const backToBlogLabel: Record<"en" | "no" | "pl", string> = {
 
 const englishTocBySlug: Record<string, ReadonlyArray<readonly [string, string]>> = {
   "couples-therapy-founders-executives": [
-    ["The Founder and Executive Relationship Crisis: What the Research Shows", "The Founder and Executive Relationship Crisis: What the Research Shows"],
-    ["Why This Matters: The Research on Outcomes", "Why This Matters: The Research on Outcomes"],
-    ["The Real Barriers: Why Founders and Executives Resist Couples Therapy", "The Real Barriers: Why Founders and Executives Resist Couples Therapy"],
-    ["How Couples Therapy Actually Works for Founders and Executives", "How Couples Therapy Actually Works for Founders and Executives"],
-    ["Finding Time: How Founders Actually Prioritize Couples Therapy", "Finding Time: How Founders Actually Prioritize Couples Therapy"],
-    ["What to Look for in a Couples Therapist for Founders and Executives", "What to Look for in a Couples Therapist for Founders and Executives"],
-    ["The Founder/Executive Decision Tree", "The Founder/Executive Decision Tree"],
+    ["Quick Answer: Why Does Work Take the Relationship?", "Quick Answer: Why Does Work Take the Relationship?"],
+    ["What It Looks Like: Five Things We Hear Often", "What It Looks Like: Five Things We Hear Often"],
+    ["Why Standard Relationship Advice Misses the Mark", "Why Standard Relationship Advice Misses the Mark"],
+    ["Seven Patterns in Couples with High-Pressure Careers", "Seven Patterns in Couples with High-Pressure Careers"],
+    ["The Founder Couple: When the Company Is the Third Partner", "The Founder Couple: When the Company Is the Third Partner"],
+    ["The Executive Couple: When One Partner Carries a Weight the Other Can't See", "The Executive Couple: When One Partner Carries a Weight the Other Can't See"],
+    ["The Asymmetry: When One Partner Is Always \"On\" and the Other Carries the Rest", "The Asymmetry: When One Partner Is Always \"On\" and the Other Carries the Rest"],
+    ["Self-Check: Has Work Taken the Relationship?", "Self-Check: Has Work Taken the Relationship?"],
+    ["What Doesn't Help", "What Doesn't Help"],
+    ["What Does Help: Six Moves for Couples with High-Pressure Careers", "What Does Help: Six Moves for Couples with High-Pressure Careers"],
+    ["How Couples Therapy for Founders and Executives Differs from Standard Couples Therapy", "How Couples Therapy for Founders and Executives Differs from Standard Couples Therapy"],
     ["FAQ: Couples Therapy for Founders and Executives", "FAQ: Couples Therapy for Founders and Executives"],
-    ["The Bottom Line", "The Bottom Line"],
-    ["Ready to Invest in Your Relationship?", "Ready to Invest in Your Relationship?"],
-    ["References & Further Reading", "References & Further Reading"],
+    ["About Aether Practice", "About Aether Practice"],
+    ["Take the Next Step", "Take the Next Step"],
+    ["Research & Further Reading", "Research & Further Reading"],
   ],
   "8-signs-need-couples-therapy": [
     ["You have the same conflicts over and over again", "1. You have the same conflicts over and over again"],
@@ -184,7 +188,7 @@ const englishTocBySlug: Record<string, ReadonlyArray<readonly [string, string]>>
 
 const englishLedeBySlug: Record<string, string> = {
   "couples-therapy-founders-executives":
-    "Couples therapy for founders, CEOs, executives, and entrepreneurs helps address relationship problems caused by startup stress, long hours, leadership pressure, financial uncertainty, and work-life imbalance. This guide explains how executive relationship stress affects a partnership, when therapy can help, and how high-achieving couples can protect their connection while building a demanding career.",
+    "Couples therapy for founders, executives, and people in high-pressure careers addresses a specific dynamic: you're trained to solve problems, perform under pressure, and hold it together. At home, none of that works. Your partner doesn't need solutions—they need your presence. This guide explains why careers so often take relationships, the seven patterns that repeat in couples with demanding jobs, and how couples therapy designed for this reality actually works.",
   "8-signs-need-couples-therapy":
     "Are you considering couples therapy because you have repeated conflicts, communication problems, or feel increasingly distant from each other? You do not have to wait until your relationship is on the verge of breaking down before seeking professional help. Here are 8 signs that you may need couples therapy, what they can mean for your relationship, and when it may be the right time to seek help.",
   "online-couples-therapy":
@@ -205,22 +209,24 @@ const englishLedeBySlug: Record<string, string> = {
 
 const faqBySlug: Record<string, ReadonlyArray<readonly [string, string]>> = {
   "couples-therapy-founders-executives": [
-    ["My partner brought up therapy, but I think we're fine. Should I go?", "When one partner brings up therapy and the other doesn't see the need, that is a signal that therapy could help. A neutral third party can help both partners hear the concern clearly and understand the patterns affecting the relationship."],
-    ["What if I'm worried the therapist will blame me?", "A good couples therapist will not blame one person. They will help both partners see the patterns they are creating together. If a therapist is blaming you, they may not be the right fit."],
-    ["Can therapy help if I'm determined to stay focused on the company?", "Therapy can help you stay focused on the company while maintaining a partnership, but it requires giving the relationship intentional attention."],
-    ["What if my partner is the one in high-intensity work?", "Therapy can help the partner of a founder or executive express the impact of work intensity, negotiate what partnership means during demanding periods, and prevent resentment from accumulating."],
-    ["How do I know if we can actually repair this?", "If both partners genuinely want to repair the relationship and are willing to invest, repair is often possible. Therapy can also provide clarity when one partner is unsure about continuing."],
-    ["What if I'm afraid therapy will reveal that we're fundamentally incompatible?", "Couples therapy may reveal differences or patterns that need attention, but it can also show that relational distance—not fundamental incompatibility—is creating the current strain."],
-    ["Is couples therapy confidential if I have a public profile as a founder or executive?", "Standard confidentiality protections apply regardless of professional visibility. A therapist experienced with high-profile clients can also account for discretion, flexible scheduling, and secure virtual sessions."],
+    ["Why does work take the relationship?", "Because emotional presence requires surplus that a demanding job uses up, because the skills that make you effective at work are the opposite of what closeness requires, and because the relationship is the one thing in your life without deadlines. Nobody decides to deprioritize it. It happens anyway."],
+    ["Is couples therapy for founders and executives different from standard couples therapy?", "Yes, in form and context. It's more direct and efficient, calibrated for time pressure and travel, and assumes the therapist understands what a demanding leadership role or founder's life does to a person and a relationship. The methods are the same evidence-based approaches, but the application is adapted."],
+    ["My partner says I'm never present, but I'm home every evening. What do they mean?", "That you're physically present but emotionally elsewhere. You respond, but you're not listening. You fix, but you don't let anyone in. Presence isn't about hours in the house—it's about capacity to actually be with your partner in what they're experiencing."],
+    ["How do we find time for couples therapy with demanding schedules?", "Choose a therapist with evening and online sessions. Also consider intensive formats—a weekend, for example—instead of weekly sessions you'll keep rescheduling. Aether Practice offers all three."],
+    ["Can couples therapy help if we're co-founders or business partners?", "Yes, and it's often especially useful. Co-founder couples need help separating the roles, figuring out whose word is final in which context, and protecting the relationship from the company. Therapy creates a space to speak as partners rather than board members."],
+    ["What if I genuinely don't have time to work less?", "Then it's not about working less—it's about being differently present in the time that exists. Ten minutes of real presence is worth more than an evening of physical attendance and mental absence. Therapy works on quality, not just quantity."],
+    ["Is it confidential?", "Yes. Private couples therapy is billed directly, requires no referral, and doesn't go through an employer, an insurance provider, or any public record. Online sessions make it possible to meet without showing up in a waiting room."],
+    ["What if I don't actually want to stop prioritizing my career?", "You don't have to. The goal isn't to make the career less important. The goal is to find a way to build the career without the relationship systematically getting what's left over."],
   ],
   "parterapi-grundere-ledere": [
-    ["Partneren min tok opp terapi, men jeg synes vi har det fint. Bør jeg bli med?", "Når én partner tar opp terapi og den andre ikke ser behovet, kan det være et signal om at terapi kan hjelpe. En nøytral tredjepart kan hjelpe dere å høre bekymringen tydelig og forstå mønstrene som påvirker forholdet."],
-    ["Hva om jeg er redd for at terapeuten skal skylde på meg?", "En god parterapeut skylder ikke på én person. Terapeuten hjelper begge med å se mønstrene dere skaper sammen. Hvis terapeuten legger skylden på deg, er det kanskje ikke riktig terapeut."],
-    ["Kan terapi hjelpe hvis jeg er bestemt på å holde fokus på selskapet?", "Terapi kan hjelpe deg med å holde fokus på selskapet og samtidig ta vare på parforholdet, men det krever at forholdet får bevisst oppmerksomhet."],
-    ["Hva om det er partneren min som jobber med høy intensitet?", "Terapi kan hjelpe partneren til en gründer eller leder med å uttrykke hvordan arbeidspresset påvirker dem, forhandle om partnerskap i intense perioder og hindre at bitterhet bygger seg opp."],
-    ["Hvordan vet vi om vi faktisk kan reparere forholdet?", "Hvis begge virkelig ønsker å reparere forholdet og er villige til å investere, er reparasjon ofte mulig. Terapi kan også gi klarhet når én partner er usikker på om forholdet skal fortsette."],
-    ["Hva om jeg er redd for at terapi vil vise at vi egentlig ikke passer sammen?", "Parterapi kan avdekke forskjeller og mønstre som trenger oppmerksomhet, men kan også vise at det er avstand i relasjonen – ikke grunnleggende inkompatibilitet – som skaper belastningen."],
-    ["Er parterapi konfidensielt hvis jeg har en offentlig rolle som gründer eller leder?", "Vanlige regler for konfidensialitet gjelder uansett hvor synlig du er profesjonelt. En terapeut med erfaring med offentlige personer kan også ta hensyn til diskresjon, fleksible tider og sikre digitale samtaler."],
+    ["Hvorfor tar jobben forholdet?", "Fordi følelsesmessig nærvær krever overskudd som en krevende jobb bruker opp, fordi ferdighetene som gjør deg god på jobb er det motsatte av det nærhet krever, og fordi forholdet er det eneste i livet som ikke har frister. Ingen velger å nedprioritere det. Det skjer likevel."],
+    ["Er parterapi for ledere og gründere annerledes enn vanlig parterapi?", "Ja, i form og kontekst. Den er mer direkte og effektiv, tilpasset tidspress og reising, og forutsetter at terapeuten forstår hva krevende lederroller og gründerliv gjør med et menneske og et forhold. Metodene er de samme evidensbaserte, men anvendelsen er tilpasset."],
+    ["Partneren min sier jeg aldri er til stede, men jeg er jo hjemme hver kveld. Hva mener hen?", "At du er fysisk til stede, men ikke følelsesmessig. Du svarer, men du lytter ikke. Du løser, men du slipper ikke inn. Nærvær handler ikke om timer i huset, men om kapasitet til å være med partneren i det hen opplever."],
+    ["Hvordan finner vi tid til parterapi med krevende jobber?", "Velg en terapeut med kveldstimer og online-samtaler. Vurder også intensive formater, for eksempel en helg, i stedet for ukentlige timer dere uansett må flytte. Aether Practice tilbyr alle tre."],
+    ["Kan parterapi hjelpe hvis vi driver selskap sammen?", "Ja, og det er ofte særlig nyttig. Medgründerpar trenger hjelp til å skille mellom rollene, finne ut hvem som har siste ord i hvilket rom, og beskytte forholdet fra bedriften. Terapien gir et rom der dere kan snakke som partnere, ikke som styremedlemmer."],
+    ["Hva om jeg ikke har tid til å jobbe mindre?", "Da handler det ikke om å jobbe mindre, men om å være annerledes til stede i tiden som finnes. Ti minutter med reelt nærvær er verdt mer enn en kveld med fysisk tilstedeværelse og mentalt fravær. Terapien jobber med kvaliteten, ikke bare kvantiteten."],
+    ["Er det diskret?", "Ja. Privat parterapi faktureres direkte, krever ingen henvisning, og går ikke gjennom fastlege, arbeidsgiver eller offentlige registre. Online-samtaler gjør det mulig å møtes uten å være sett på et venterom."],
+    ["Hva hvis jeg egentlig ikke vil slutte å prioritere karrieren?", "Det trenger du ikke nødvendigvis. Målet er ikke å gjøre karrieren mindre viktig. Målet er å finne en måte å bygge karrieren på uten at forholdet systematisk får det som er igjen."],
   ],
   "terapia-par-dla-founderow-dyrektorow": [
     ["Partner wspomniał o terapii, ale uważam, że wszystko jest w porządku. Czy powinienem iść?", "Kiedy jedna osoba proponuje terapię, a druga nie widzi takiej potrzeby, może to być sygnał, że terapia pomoże. Neutralna osoba trzecia może pomóc wam jasno usłyszeć obawy i zrozumieć wzorce wpływające na związek."],
@@ -299,17 +305,21 @@ const polishLedeBySlug: Record<string, string> = {
 
 const norwegianTocBySlug: Record<string, ReadonlyArray<readonly [string, string]>> = {
   "parterapi-grundere-ledere": [
-    ["Krise i parforholdet hos gründere og ledere: Hva forskningen viser", "Krise i parforholdet hos gründere og ledere: Hva forskningen viser"],
-    ["Hvorfor dette betyr noe: Forskning på konsekvensene", "Hvorfor dette betyr noe: Forskning på konsekvensene"],
-    ["De virkelige hindrene: Hvorfor gründere og ledere motsetter seg parterapi", "De virkelige hindrene: Hvorfor gründere og ledere motsetter seg parterapi"],
-    ["Slik fungerer parterapi for gründere og ledere", "Slik fungerer parterapi for gründere og ledere"],
-    ["Å finne tid: Slik prioriterer gründere parterapi", "Å finne tid: Slik prioriterer gründere parterapi"],
-    ["Hva du bør se etter hos en parterapeut for gründere og ledere", "Hva du bør se etter hos en parterapeut for gründere og ledere"],
-    ["Gründerens og lederens beslutningstre", "Gründerens og lederens beslutningstre"],
-    ["FAQ: Parterapi for gründere og ledere", "FAQ: Parterapi for gründere og ledere"],
-    ["Hovedpoenget", "Hovedpoenget"],
-    ["Klar for å investere i forholdet?", "Klar for å investere i forholdet?"],
-    ["Referanser og videre lesning", "Referanser og videre lesning"],
+    ["Kort svar: Hvorfor tar jobben forholdet?", "Kort svar: Hvorfor tar jobben forholdet?"],
+    ["Slik ser det ut: Fem setninger vi hører ofte", "Slik ser det ut: Fem setninger vi hører ofte"],
+    ["Hvorfor vanlig relasjonsråd ikke treffer", "Hvorfor vanlig relasjonsråd ikke treffer"],
+    ["Sju mønstre hos par med krevende karrierer", "Sju mønstre hos par med krevende karrierer"],
+    ["Gründerparet: Når bedriften er den tredje i forholdet", "Gründerparet: Når bedriften er den tredje i forholdet"],
+    ["Lederparet: Når den ene bærer et ansvar den andre ikke ser", "Lederparet: Når den ene bærer et ansvar den andre ikke ser"],
+    ["Asymmetrien: Når den ene er «på» og den andre bærer resten", "Asymmetrien: Når den ene er «på» og den andre bærer resten"],
+    ["Selvsjekk: Har jobben tatt forholdet?", "Selvsjekk: Har jobben tatt forholdet?"],
+    ["Hva som ikke hjelper", "Hva som ikke hjelper"],
+    ["Hva som hjelper: Seks grep for par med krevende jobber", "Hva som hjelper: Seks grep for par med krevende jobber"],
+    ["Hvordan parterapi for ledere og gründere skiller seg fra vanlig parterapi", "Hvordan parterapi for ledere og gründere skiller seg fra vanlig parterapi"],
+    ["FAQ: Parterapi for ledere og gründere", "FAQ: Parterapi for ledere og gründere"],
+    ["Om Aether Practice", "Om Aether Practice"],
+    ["Ta neste steg", "Ta neste steg"],
+    ["Forskning og videre lesning", "Forskning og videre lesning"],
   ],
   "parterapi-i-oslo": [
     ["Hva Er Parterapi Egentlig?", "Hva Er Parterapi Egentlig?"],
@@ -469,7 +479,7 @@ const polishTocBySlug: Record<string, ReadonlyArray<readonly [string, string]>> 
 };
 
 const norwegianLedeBySlug: Record<string, React.ReactNode> = {
-  "parterapi-grundere-ledere": "Parterapi for gründere, ledere og entreprenører kan hjelpe når lange arbeidsdager, lederstress, økonomisk usikkerhet og høyt arbeidspress skaper avstand i parforholdet. Denne guiden forklarer hvordan jobbrelatert stress påvirker forholdet, når parterapi kan være nyttig, og hvordan høytpresterende par kan beskytte nærheten mens de bygger en krevende karriere.",
+  "parterapi-grundere-ledere": "Parterapi for ledere og gründere handler om en bestemt dynamikk: Du er vant til å løse problemer, prestere under press og holde fasaden. Hjemme fungerer ikke noe av det. Partneren din trenger ikke løsninger, men nærvær. Du har ikke noe igjen å gi etter en dag der alle trengte noe av deg. Og forholdet, det eneste i livet ditt som ikke sender purringer, blir det som vike.",
   "parterapi-pris-oslo": "Denne guiden gir deg en ærlig og oppdatert oversikt over hva parterapi koster i Oslo — hva som påvirker prisen, hvilke gratis alternativer som finnes, og hvordan du velger riktig tilbud for dere som par.",
   "parterapi-pa-nett": "Denne guiden forklarer hva parterapi på nett er, hvordan det fungerer i praksis, hvem det passer for — og hvorfor stadig flere norske par velger å jobbe med forholdet via videosamtale fremfor å møte opp fysisk hos en terapeut.",
   "kommunikasjonsproblemer-i-parforhold": "Kommunikasjonsproblemer i parforhold kan se ut som endeløse krangler, taushet som varer i dager, kritikk som aldri stopper, eller følelsen av at uansett hva du sier så når det ikke frem. For de fleste par handler det ikke om mangel på kjærlighet — det handler om mønstre.",
