@@ -218,6 +218,14 @@ const faqBySlug: Record<string, ReadonlyArray<readonly [string, string]>> = {
     ["Is it confidential?", "Yes. Private couples therapy is billed directly, requires no referral, and doesn't go through an employer, an insurance provider, or any public record. Online sessions make it possible to meet without showing up in a waiting room."],
     ["What if I don't actually want to stop prioritizing my career?", "You don't have to. The goal isn't to make the career less important. The goal is to find a way to build the career without the relationship systematically getting what's left over."],
   ],
+  "to-karrierer-ett-parforhold": [
+    ["Kan et forhold fungere når begge har krevende karrierer?", "Ja, men det krever at dere bygger det aktivt. Karrierepar som lykkes, har snakket eksplisitt om hva de vil, tar store beslutninger sammen etter en avtalt prosess, og fordeler hjemmet som ansvar, ikke oppgaver. Par som lar det «ordne seg», ender ofte med at én karriere vinner uten at det ble bestemt."],
+    ["Hvem sin karriere skal prioriteres når begge er viktige?", "Det finnes ikke ett riktig svar, men det finnes en riktig prosess: Bestem sammen, i fredstid, hvordan dere skal prioritere når det kolliderer. Noen par veksler. Noen velger én hovedkarriere for en periode, med en avtalt revurdering. Det viktige er at det er en beslutning, ikke en glidning."],
+    ["Hvordan håndterer vi det at den ene tjener mer eller lykkes mer?", "Si det høyt. Ulik suksess skaper misunnelse, skyld og distanse hvis det ikke snakkes om. Anerkjenn hva den andre har bidratt med, inkludert det usynlige, og vær ærlig om hva ulikheten gjør med hver av dere."],
+    ["Hvorfor krangler vi så mye om husarbeid når begge jobber fullt?", "Fordi husarbeid sjelden handler om husarbeid. Det handler om rettferdighet, om hvem sin tid som regnes som mest verdt, og om det usynlige arbeidet med å huske og planlegge, som oftest bæres skjevt. Fordel ansvar, ikke oppgaver, og snakk om det jevnlig."],
+    ["Vi flyttet for min partners jobb, og jeg har aldri kommet meg igjen. Hva gjør vi?", "Si det til partneren, tydelig og uten anklage: hva det kostet, og hva du trenger nå. Mange partnere vet ikke hvor dypt det sitter. Dette er en av samtalene som ofte trenger en tredjepart, fordi skyld og bitterhet gjør den vanskelig å ha alene."],
+    ["Når bør karrierepar søke parterapi?", "Når regnskapet har blitt bitterhet, når dere lever effektivt side om side uten nærhet, når beslutninger om fremtiden unngås, eller når misunnelse eller skyld har begynt å prege hvordan dere ser hverandre. Dere trenger ikke være i krise. Tidlig er bedre."],
+  ],
   "parterapi-grundere-ledere": [
     ["Hvorfor tar jobben forholdet?", "Fordi følelsesmessig nærvær krever overskudd som en krevende jobb bruker opp, fordi ferdighetene som gjør deg god på jobb er det motsatte av det nærhet krever, og fordi forholdet er det eneste i livet som ikke har frister. Ingen velger å nedprioritere det. Det skjer likevel."],
     ["Er parterapi for ledere og gründere annerledes enn vanlig parterapi?", "Ja, i form og kontekst. Den er mer direkte og effektiv, tilpasset tidspress og reising, og forutsetter at terapeuten forstår hva krevende lederroller og gründerliv gjør med et menneske og et forhold. Metodene er de samme evidensbaserte, men anvendelsen er tilpasset."],
@@ -317,6 +325,23 @@ const norwegianTocBySlug: Record<string, ReadonlyArray<readonly [string, string]
     ["Hva som hjelper: Seks grep for par med krevende jobber", "Hva som hjelper: Seks grep for par med krevende jobber"],
     ["Hvordan parterapi for ledere og gründere skiller seg fra vanlig parterapi", "Hvordan parterapi for ledere og gründere skiller seg fra vanlig parterapi"],
     ["FAQ: Parterapi for ledere og gründere", "FAQ: Parterapi for ledere og gründere"],
+    ["Om Aether Practice", "Om Aether Practice"],
+    ["Ta neste steg", "Ta neste steg"],
+    ["Forskning og videre lesning", "Forskning og videre lesning"],
+  ],
+  "to-karrierer-ett-parforhold": [
+    ["Kort svar: Kan to karrierer og ett forhold fungere?", "Kort svar: Kan to karrierer og ett forhold fungere?"],
+    ["Hvorfor karrierepar har andre problemer enn andre par", "Hvorfor karrierepar har andre problemer enn andre par"],
+    ["De tre fasene i et karriereparforhold", "De tre fasene i et karriereparforhold"],
+    ["Sju konflikter som går igjen hos karrierepar", "Sju konflikter som går igjen hos karrierepar"],
+    ["Det stille regnskapet: Hvem ofret mest?", "Det stille regnskapet: Hvem ofret mest?"],
+    ["Konkurranse: Når partnerens suksess gjør vondt", "Konkurranse: Når partnerens suksess gjør vondt"],
+    ["Hjemmet som ingen eier", "Hjemmet som ingen eier"],
+    ["Selvsjekk: Hvor står dere?", "Selvsjekk: Hvor står dere?"],
+    ["Hva som ikke hjelper", "Hva som ikke hjelper"],
+    ["Hva som hjelper: Sju grep for karrierepar", "Hva som hjelper: Sju grep for karrierepar"],
+    ["Når dere trenger hjelp utenfra", "Når dere trenger hjelp utenfra"],
+    ["FAQ: To karrierer, ett parforhold", "FAQ: To karrierer, ett parforhold"],
     ["Om Aether Practice", "Om Aether Practice"],
     ["Ta neste steg", "Ta neste steg"],
     ["Forskning og videre lesning", "Forskning og videre lesning"],
@@ -479,6 +504,7 @@ const polishTocBySlug: Record<string, ReadonlyArray<readonly [string, string]>> 
 };
 
 const norwegianLedeBySlug: Record<string, React.ReactNode> = {
+  "to-karrierer-ett-parforhold": "Par der begge har krevende karrierer møter utfordringer som ikke er dekket av vanlige parforholdsråd: Hvem sin jobb vinner når begge har en viktig uke? Hvem flytter for hvem? Hvordan fordeler dere hjemmet når ingen har «ledig» tid? Og hvordan unngår dere at konkurranse, bitterhet og usynlig regnskap tar over? Denne guiden går gjennom de tre fasene karrierepar typisk går gjennom, de vanligste konfliktene, og hvordan dere bygger et forhold der begges ambisjoner får plass.",
   "parterapi-grundere-ledere": "Parterapi for ledere og gründere handler om en bestemt dynamikk: Du er vant til å løse problemer, prestere under press og holde fasaden. Hjemme fungerer ikke noe av det. Partneren din trenger ikke løsninger, men nærvær. Du har ikke noe igjen å gi etter en dag der alle trengte noe av deg. Og forholdet, det eneste i livet ditt som ikke sender purringer, blir det som vike.",
   "parterapi-pris-oslo": "Denne guiden gir deg en ærlig og oppdatert oversikt over hva parterapi koster i Oslo — hva som påvirker prisen, hvilke gratis alternativer som finnes, og hvordan du velger riktig tilbud for dere som par.",
   "parterapi-pa-nett": "Denne guiden forklarer hva parterapi på nett er, hvordan det fungerer i praksis, hvem det passer for — og hvorfor stadig flere norske par velger å jobbe med forholdet via videosamtale fremfor å møte opp fysisk hos en terapeut.",
