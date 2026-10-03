@@ -30,6 +30,17 @@ export type BlogPostMeta = {
   image?: string;
   /** CSS object-position for the thumbnail crop, e.g. "bottom", "top", "center". Defaults to "center". */
   imagePosition?: string;
+  /** Short standfirst shown under the title, before the table of contents. */
+  lede?: string;
+  /** Extra introductory paragraphs shown after the table of contents, before the body. */
+  intro?: string[];
+  /** Table of contents: the label to show and the exact H2 text it links to. */
+  toc?: { label: string; heading: string }[];
+  /**
+   * Hand-written FAQ for the FAQPage schema. Only needed when the schema should
+   * differ from the post's own FAQ section, which is otherwise read automatically.
+   */
+  faq?: { question: string; answer: string }[];
 };
 
 export type BlogPost = BlogPostMeta & {
@@ -71,6 +82,10 @@ function readPostFile(fileName: string): BlogPost {
     translationKey: data.translationKey as string | undefined,
     image: data.image as string | undefined,
     imagePosition: data.imagePosition as string | undefined,
+    lede: data.lede as string | undefined,
+    intro: data.intro as string[] | undefined,
+    toc: data.toc as { label: string; heading: string }[] | undefined,
+    faq: data.faq as { question: string; answer: string }[] | undefined,
     content,
   };
 }

@@ -7,7 +7,7 @@ Marketing site and blog for Aether Practice, an online therapy and coaching prac
 - `app/(en)` — English site at the root (`/`, `/couples-therapy`, `/blog`, …).
 - `app/(no)` — Norwegian site under `/no` (`/no/parterapi`, `/no/blog`, …) plus the Norway landing page. Each group has its own root layout, which fixes the page language per URL.
 - `components/pages` — page bodies shared by both languages; the route passes `language`.
-- `content/blog` — one MDX file per post. Frontmatter: `title`, `description`, `date`, `lang` (`en` | `no`), `tags`, `relatedService`, optional `seoTitle`, `seoDescription`, `modifiedDate`, `image`, `translationKey` (shared by the translations of one article).
+- `content/blog` — one MDX file per post. Frontmatter: `title`, `description`, `date`, `lang` (`en` | `no`), `tags`, `relatedService`, optional `seoTitle`, `seoDescription`, `modifiedDate`, `image`, `translationKey` (shared by the translations of one article), `lede` (standfirst), `intro` (extra opening paragraphs), `toc` (label + exact H2 text per entry) and `faq` (only when the schema should differ from the post's own FAQ section, which is otherwise read automatically).
 - `lib/locale-routes.ts` — the EN/NO URL map, hreflang helpers and post paths.
 - `lib/blog.ts` — post loading; `lib/blog-faq.ts` derives FAQ schema from a post's FAQ section.
 
