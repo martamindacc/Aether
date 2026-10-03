@@ -1,4 +1,5 @@
-import { pageMetadata } from "@/lib/seo"
+import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo"
+import { JsonLd } from "@/components/json-ld"
 import { hreflangFor, localizedPaths } from "@/lib/locale-routes"
 import PrivacyPage from "@/components/pages/privacy-page"
 
@@ -11,6 +12,16 @@ export const metadata = pageMetadata({
   languages: hreflangFor("privacy"),
 })
 
+const breadcrumbLd = breadcrumbJsonLd([
+  { name: "Hjem", path: localizedPaths.home.no },
+  { name: "Personvern", path: localizedPaths.privacy.no },
+])
+
 export default function Page() {
-  return <PrivacyPage language="no" />
+  return (
+    <>
+      <JsonLd data={breadcrumbLd} />
+      <PrivacyPage language="no" />
+    </>
+  )
 }

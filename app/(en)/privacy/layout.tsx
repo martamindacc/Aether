@@ -1,4 +1,5 @@
-import { pageMetadata } from "@/lib/seo"
+import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo"
+import { JsonLd } from "@/components/json-ld"
 import { hreflangFor } from "@/lib/locale-routes"
 
 export const metadata = pageMetadata({
@@ -9,10 +10,20 @@ export const metadata = pageMetadata({
   languages: hreflangFor("privacy"),
 })
 
+const breadcrumbLd = breadcrumbJsonLd([
+  { name: "Home", path: "/" },
+  { name: "Privacy Policy", path: "/privacy" },
+])
+
 export default function PrivacyLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  return children
+  return (
+    <>
+      <JsonLd data={breadcrumbLd} />
+      {children}
+    </>
+  )
 }

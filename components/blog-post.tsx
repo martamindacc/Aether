@@ -12,6 +12,7 @@ import { RelatedPosts } from "@/components/related-posts";
 import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 import { localizedPaths, postPath } from "@/lib/locale-routes";
 import type { LanguageCode } from "@/lib/service-content";
+import { JsonLd } from "@/components/json-ld"
 
 const ogLocale: Record<LanguageCode, string> = { no: "nb_NO", en: "en_US" };
 
@@ -693,20 +694,11 @@ export function BlogPost({ post, related }: { post: BlogPostData; related: BlogP
 
   return (
     <BlogShell language={post.lang} languageLinks={languageLinks}>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLd data={jsonLd} />
       {faqJsonLd && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-        />
+        <JsonLd data={faqJsonLd} />
       )}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
-      />
+      <JsonLd data={breadcrumbLd} />
       <BlogViewTracker path={postPath(post)} title={post.title} />
       <article lang={htmlLangFor(post.lang)} className="mx-auto flex max-w-3xl flex-col px-6 pb-24 pt-48">
         <Link
@@ -717,6 +709,15 @@ export function BlogPost({ post, related }: { post: BlogPostData; related: BlogP
         </Link>
         <div className="mt-6 flex items-center gap-2 font-[Roboto,Arial,sans-serif] text-sm uppercase tracking-wide text-zinc-500">
           <time dateTime={post.date}>{formatDate(post.date, post.lang)}</time>
+          {post.modifiedDate && post.modifiedDate !== post.date && (
+            <>
+              <span aria-hidden="true">·</span>
+              <span>
+                {post.lang === "no" ? "Oppdatert" : "Updated"}{" "}
+                <time dateTime={post.modifiedDate}>{formatDate(post.modifiedDate, post.lang)}</time>
+              </span>
+            </>
+          )}
           <span aria-hidden="true">·</span>
           <span>{formatReadingTime(post.wordCount, post.lang)}</span>
         </div>

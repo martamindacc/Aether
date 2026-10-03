@@ -454,6 +454,14 @@ export default function HomeClient({
           </div>
         </nav>
 
+        <nav hidden aria-hidden="true">
+          {t.menuSections.flatMap((section) => section.links).map((link) => (
+            <Link key={link.href} href={link.href}>
+              {link.label}
+            </Link>
+          ))}
+        </nav>
+
         {isMenuOpen && (
           <div className="fixed inset-0 z-30 flex justify-end">
             <div

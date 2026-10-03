@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next"
-import { getAllPosts } from "@/lib/blog"
-import { postPath } from "@/lib/locale-routes"
+import { getAllPosts, getTranslationsForPost } from "@/lib/blog"
+import { localizedPaths, postPath } from "@/lib/locale-routes"
 
 const baseUrl = "https://aetherpractice.com"
 
@@ -29,6 +29,13 @@ const routes: { path: string; lastModified: string }[] = [
   { path: "/no/personvern", lastModified: "2026-10-03" },
 ]
 
+/** hreflang alternates for a static route that exists in both languages. */
+function routeAlternates(path: string) {
+  const pair = Object.values(localizedPaths).find((p) => p.en === path || p.no === path)
+  if (!pair) return undefined
+  return { languages: { en: `${baseUrl}${pair.en}`, no: `${baseUrl}${pair.no}`, "x-default": `${baseUrl}${pair.en}` } }
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const posts = getAllPosts()
   // Listing pages change whenever a post does, so they take the newest post date.
@@ -38,12 +45,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}${route.path}`,
     lastModified:
       listingPaths.has(route.path) && newestPost && newestPost > route.lastModified ? newestPost : route.lastModified,
+    alternates: routeAlternates(route.path === "" ? "/" : route.path),
   }))
 
-  const postEntries = posts.map((post) => ({
-    url: `${baseUrl}${postPath(post)}`,
-    lastModified: post.modifiedDate,
-  }))
+  const postEntries = posts.map((post) => {
+    const translations = getTranslationsForPost(post)
+    const en = translations.find((t) => t.lang === "en")
+    return {
+      url: `${baseUrl}${postPath(post)}`,
+      lastModified: post.modifiedDate,
+      ...(translations.length > 1 && en
+        ? {
+            alternates: {
+              languages: {
+                ...Object.fromEntries(translations.map((t) => [t.lang, `${baseUrl}${postPath(t)}`])),
+                "x-default": `${baseUrl}${postPath(en)}`,
+              },
+            },
+          }
+        : {}),
+    }
+  })
 
   return [...staticEntries, ...postEntries]
 }

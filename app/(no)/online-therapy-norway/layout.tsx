@@ -1,5 +1,7 @@
-import { pageMetadata } from "@/lib/seo"
+import { breadcrumbJsonLd, pageMetadata, serviceJsonLd } from "@/lib/seo"
+import { localizedPaths } from "@/lib/locale-routes"
 import { norwayFaq } from "./faq-data"
+import { JsonLd } from "@/components/json-ld"
 
 export const metadata = pageMetadata({
   title: "Online terapi og coaching i Norge",
@@ -8,6 +10,21 @@ export const metadata = pageMetadata({
   path: "/online-therapy-norway",
   locale: "nb_NO",
 })
+
+const serviceLd = serviceJsonLd({
+  name: "Online terapi og coaching i Norge",
+  serviceType: "Terapi og coaching på nett",
+  description:
+    "Online terapi, parterapi og coaching for enkeltpersoner, par, familier, ledere og gründere i Norge.",
+  path: "/online-therapy-norway",
+  areaServed: ["Norge"],
+  inLanguage: "nb",
+})
+
+const breadcrumbLd = breadcrumbJsonLd([
+  { name: "Hjem", path: localizedPaths.home.no },
+  { name: "Online terapi i Norge", path: "/online-therapy-norway" },
+])
 
 const faqJsonLd = {
   "@context": "https://schema.org",
@@ -30,10 +47,9 @@ export default function OnlineTherapyNorwayLayout({
 }>) {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
+      <JsonLd data={serviceLd} />
+      <JsonLd data={breadcrumbLd} />
+      <JsonLd data={faqJsonLd} />
       {children}
     </>
   )

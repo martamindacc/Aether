@@ -1,5 +1,6 @@
 import { breadcrumbJsonLd, pageMetadata, serviceJsonLd } from "@/lib/seo"
 import { nycCouplesFaq } from "./faq-data"
+import { JsonLd } from "@/components/json-ld"
 
 export const metadata = pageMetadata({
   title: "Couples Therapy in New York City, Online",
@@ -42,12 +43,9 @@ export default function CouplesTherapyNewYorkCityLayout({
 }>) {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
+      <JsonLd data={serviceLd} />
+      <JsonLd data={breadcrumbLd} />
+      <JsonLd data={faqJsonLd} />
       {children}
     </>
   )

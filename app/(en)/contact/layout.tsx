@@ -1,5 +1,6 @@
 import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo"
 import { hreflangFor } from "@/lib/locale-routes"
+import { JsonLd } from "@/components/json-ld"
 
 export const metadata = pageMetadata({
   title: "Contact",
@@ -21,7 +22,7 @@ export default function ContactLayout({
 }>) {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
+      <JsonLd data={breadcrumbLd} />
       {children}
     </>
   )

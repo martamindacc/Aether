@@ -1,6 +1,7 @@
 import { breadcrumbJsonLd, pageMetadata, serviceJsonLd } from "@/lib/seo"
 import { hreflangFor, localizedPaths } from "@/lib/locale-routes"
 import FamilySupportPage from "@/components/pages/family-support-page"
+import { JsonLd } from "@/components/json-ld"
 
 const path = localizedPaths.family.no
 const description =
@@ -30,8 +31,8 @@ const breadcrumbLd = breadcrumbJsonLd([
 export default function Page() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
+      <JsonLd data={serviceLd} />
+      <JsonLd data={breadcrumbLd} />
       <FamilySupportPage language="no" />
     </>
   )

@@ -4,6 +4,7 @@ import { getAllPosts } from "@/lib/blog";
 import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 import { hreflangFor, languageLinksFor, localizedPaths, postPath } from "@/lib/locale-routes";
 import { BlogIndexContent } from "@/components/blog-index-content";
+import { JsonLd } from "@/components/json-ld"
 
 export const metadata: Metadata = pageMetadata({
   title: "Blog",
@@ -35,11 +36,8 @@ export default function BlogIndexPage() {
 
   return (
     <BlogShell language="en" languageLinks={blogIndexLanguages}>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
-      />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
+      <JsonLd data={itemListJsonLd} />
+      <JsonLd data={breadcrumbLd} />
       <BlogIndexContent posts={posts} language="en" />
     </BlogShell>
   );

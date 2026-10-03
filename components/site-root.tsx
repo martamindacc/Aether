@@ -4,6 +4,7 @@ import type { Metadata, Viewport } from 'next'
 import { preload } from 'react-dom'
 import { ConsentBanner } from '@/components/consent-banner'
 import { GoogleAnalytics } from '@/components/google-analytics'
+import { JsonLd } from '@/components/json-ld'
 import { ANALYTICS_REQUIRE_CONSENT } from '@/lib/analytics-config'
 import { PRODUCTS } from '@/lib/products'
 import { TITLE_TEMPLATE } from '@/lib/seo'
@@ -119,10 +120,7 @@ export function SiteRoot({
   return (
     <html lang={lang}>
       <body className="overflow-x-hidden antialiased">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchema) }}
-        />
+        <JsonLd data={jsonLdSchema} />
         {children}
         {ANALYTICS_REQUIRE_CONSENT && <ConsentBanner />}
         <GoogleAnalytics />

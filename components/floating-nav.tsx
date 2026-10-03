@@ -122,6 +122,15 @@ export function FloatingNav({
         </div>
       </nav>
 
+      {/* Menu links are in the HTML even while the panel is closed, so crawlers can follow them; the panel below is the interactive copy. */}
+      <nav hidden aria-hidden="true">
+        {[...t.menuLinks, ...t.companyLinks].map((link) => (
+          <Link key={link.href} href={link.href}>
+            {link.label}
+          </Link>
+        ))}
+      </nav>
+
       {isMenuOpen && (
         <div className="fixed inset-0 z-30 flex justify-end">
           <div
