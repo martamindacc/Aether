@@ -307,19 +307,6 @@ export default function HomeClient({
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const languageMenuRef = useRef<HTMLDivElement>(null);
   const menuPanelRef = useRef<HTMLDivElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [isVideoPaused, setIsVideoPaused] = useState(false);
-  const toggleVideo = () => {
-    const video = videoRef.current;
-    if (!video) return;
-    if (video.paused) {
-      void video.play();
-      setIsVideoPaused(false);
-    } else {
-      video.pause();
-      setIsVideoPaused(true);
-    }
-  };
   const closeMenu = () => setIsMenuOpen(false);
   useDialog(isMenuOpen, closeMenu, menuPanelRef);
   const language = languages.find((lang) => lang.code === languageCode) ?? languages[0];
@@ -348,7 +335,6 @@ export default function HomeClient({
       <div className="relative h-screen w-full overflow-hidden bg-[#fafafb]">
         {/* Poster paints immediately (the LCP element); the video streams in behind it. Reduced-motion users get the still only. */}
         <video
-          ref={videoRef}
           className="absolute inset-0 h-full w-full object-cover motion-reduce:hidden"
           src="/morawska-marta-psychotherapy.mp4"
           poster="/hero-poster.webp"
@@ -364,19 +350,6 @@ export default function HomeClient({
           className="absolute inset-0 hidden bg-cover bg-center motion-reduce:block"
           style={{ backgroundImage: "url(/hero-poster.webp)" }}
         />
-        <button
-          type="button"
-          onClick={toggleVideo}
-          aria-pressed={isVideoPaused}
-          aria-label={isVideoPaused ? (language.code === "no" ? "Spill av bakgrunnsvideo" : "Play background video") : (language.code === "no" ? "Sett bakgrunnsvideo på pause" : "Pause background video")}
-          className="absolute bottom-4 right-4 z-10 flex h-9 w-9 items-center justify-center rounded-full border border-white/50 bg-white/50 text-zinc-900 backdrop-blur-xl transition-colors hover:bg-white/65 motion-reduce:hidden sm:bottom-6 sm:right-6"
-        >
-          {isVideoPaused ? (
-            <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1.5v9l7-4.5z" fill="currentColor" /></svg>
-          ) : (
-            <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 1.5h2.5v9H2.5zM7 1.5h2.5v9H7z" fill="currentColor" /></svg>
-          )}
-        </button>
         <div className="absolute inset-0 bg-black/10" />
 
         <div className="absolute inset-0 z-10 flex items-center justify-center px-6 sm:items-end sm:justify-center sm:pb-16">
