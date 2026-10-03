@@ -749,11 +749,9 @@ export default function HomeClient({ posts }: { posts: BlogPostMeta[] }) {
                 {item.quote}
               </p>
               <div className="flex items-center justify-center gap-3">
-                <span className="h-px w-6 shrink-0 bg-[#c9a688]" />
-                <span className="text-center text-[10px] font-medium uppercase tracking-[0.16em] text-[#7a6347]">
-                  {item.name} &middot; {item.context}
-                </span>
-                <span className="h-px w-6 shrink-0 bg-[#c9a688]" />
+  <span className="text-center text-[10px] font-medium uppercase tracking-[0.16em] text-[#7a6347]">
+  {item.name} &middot; {item.context}
+  </span>
               </div>
             </div>
           ))}
