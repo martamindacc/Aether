@@ -27,6 +27,7 @@ function formatDate(date: string, language: LanguageCode) {
     year: "numeric",
     month: "long",
     day: "numeric",
+    timeZone: "UTC",
   });
 }
 

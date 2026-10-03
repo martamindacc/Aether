@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { menuKeyHandler, useDialog } from "@/lib/use-dialog";
 import { track } from "@vercel/analytics";
 import { sendGAEvent } from "@/components/google-analytics";
 import { SiteFooter } from "@/components/site-footer";
@@ -279,7 +280,7 @@ const content: Record<
 function formatBlogDate(date: string, lang: string): string {
   const localeMap: Record<string, string> = { no: "nb-NO", en: "en-US" };
   return new Date(date)
-    .toLocaleDateString(localeMap[lang] ?? "en-US", { month: "long", year: "numeric" })
+    .toLocaleDateString(localeMap[lang] ?? "en-US", { month: "long", year: "numeric", timeZone: "UTC" })
     .toUpperCase();
 }
 
@@ -296,6 +297,23 @@ export default function HomeClient({
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [selectedBookingName, setSelectedBookingName] = useState<string | null>(null);
   const languageMenuRef = useRef<HTMLDivElement>(null);
+  const menuPanelRef = useRef<HTMLDivElement>(null);
+  const bookingPanelRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isVideoPaused, setIsVideoPaused] = useState(false);
+  const toggleVideo = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    if (video.paused) {
+      void video.play();
+      setIsVideoPaused(false);
+    } else {
+      video.pause();
+      setIsVideoPaused(true);
+    }
+  };
+  const closeMenu = () => setIsMenuOpen(false);
+  useDialog(isMenuOpen, closeMenu, menuPanelRef);
   const language = languages.find((lang) => lang.code === languageCode) ?? languages[0];
   const t = content[language.code];
   const hasTrackedBookingOpenRef = useRef(false);
@@ -323,6 +341,7 @@ export default function HomeClient({
     setSelectedBookingName(null);
     hasTrackedBookingOpenRef.current = false;
   };
+  useDialog(isBookingOpen, closeBooking, bookingPanelRef);
 
   const selectBookingService = (service: Product) => {
     const params = { service: service.name, page: window.location.pathname };
@@ -349,10 +368,11 @@ export default function HomeClient({
     .slice(0, 3);
 
   return (
-    <main className="min-h-screen bg-[#fafafb] font-[NeueHaasDisplayRoman,Arial,sans-serif] text-zinc-900">
+    <main id="main-content" className="min-h-screen bg-[#fafafb] font-[NeueHaasDisplayRoman,Arial,sans-serif] text-zinc-900">
       <div className="relative h-screen w-full overflow-hidden bg-[#fafafb]">
         {/* Poster paints immediately (the LCP element); the video streams in behind it. Reduced-motion users get the still only. */}
         <video
+          ref={videoRef}
           className="absolute inset-0 h-full w-full object-cover motion-reduce:hidden"
           src="/morawska-marta-psychotherapy.mp4"
           poster="/hero-poster.webp"
@@ -368,6 +388,19 @@ export default function HomeClient({
           className="absolute inset-0 hidden bg-cover bg-center motion-reduce:block"
           style={{ backgroundImage: "url(/hero-poster.webp)" }}
         />
+        <button
+          type="button"
+          onClick={toggleVideo}
+          aria-pressed={isVideoPaused}
+          aria-label={isVideoPaused ? (language.code === "no" ? "Spill av bakgrunnsvideo" : "Play background video") : (language.code === "no" ? "Sett bakgrunnsvideo på pause" : "Pause background video")}
+          className="absolute bottom-4 right-4 z-10 flex h-9 w-9 items-center justify-center rounded-full border border-white/50 bg-white/50 text-zinc-900 backdrop-blur-xl transition-colors hover:bg-white/65 motion-reduce:hidden sm:bottom-6 sm:right-6"
+        >
+          {isVideoPaused ? (
+            <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1.5v9l7-4.5z" fill="currentColor" /></svg>
+          ) : (
+            <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 1.5h2.5v9H2.5zM7 1.5h2.5v9H7z" fill="currentColor" /></svg>
+          )}
+        </button>
         <div className="absolute inset-0 bg-black/10" />
 
         <div className="absolute inset-0 z-10 flex items-center justify-center px-6 sm:items-end sm:justify-center sm:pb-16">
@@ -400,10 +433,11 @@ export default function HomeClient({
             >
               {t.bookNow}
             </button>
-            <div ref={languageMenuRef} className="relative">
+            <div ref={languageMenuRef} className="relative" onKeyDown={menuKeyHandler(() => setIsLangOpen(false))}>
               <button
                 onClick={() => setIsLangOpen((open) => !open)}
-                aria-label="Select language"
+                aria-label={`Language: ${language.label}`}
+                aria-haspopup="menu"
                 aria-expanded={isLangOpen}
                 className="flex items-center gap-1 whitespace-nowrap px-1.5 py-3 text-sm text-zinc-900 sm:gap-2 sm:px-2"
               >
@@ -426,7 +460,7 @@ export default function HomeClient({
                 </svg>
               </button>
               {isLangOpen && (
-                <div className="absolute right-0 top-full mt-2 flex w-12 flex-col rounded-xl border border-zinc-900/10 bg-white py-1 shadow-lg">
+                <div role="menu" className="absolute right-0 top-full mt-2 flex w-12 flex-col rounded-xl border border-zinc-900/10 bg-white py-1 shadow-lg">
                   {languageLinks.map((option) => (
                     <Link
                       key={option.code}
@@ -469,7 +503,14 @@ export default function HomeClient({
               onClick={() => setIsMenuOpen(false)}
               aria-hidden="true"
             />
-            <div className="relative flex h-full w-full max-w-md flex-col gap-12 overflow-y-auto bg-[#fafafb] px-8 py-24 shadow-2xl animate-in slide-in-from-right duration-300 ease-out sm:px-12">
+            <div
+              ref={menuPanelRef}
+              role="dialog"
+              aria-modal="true"
+              aria-label={t.menuSections[0]?.heading}
+              tabIndex={-1}
+              className="relative flex h-full w-full max-w-md flex-col gap-12 overflow-y-auto bg-[#fafafb] px-8 py-24 shadow-2xl outline-none animate-in slide-in-from-right duration-300 ease-out sm:px-12"
+            >
               <button
                 onClick={() => setIsMenuOpen(false)}
                 aria-label="Close menu"
@@ -514,7 +555,14 @@ export default function HomeClient({
               onClick={closeBooking}
               aria-hidden="true"
             />
-            <div className="relative my-auto flex max-h-[90vh] w-full max-w-md flex-col gap-6 overflow-y-auto rounded-3xl bg-[#fafafb] p-6 shadow-2xl animate-in fade-in zoom-in-95 duration-300 ease-out sm:p-10">
+            <div
+              ref={bookingPanelRef}
+              role="dialog"
+              aria-modal="true"
+              aria-label={language.code === "no" ? "Bestill din økt" : "Schedule your session"}
+              tabIndex={-1}
+              className="relative my-auto flex max-h-[90vh] w-full max-w-md flex-col gap-6 overflow-y-auto rounded-3xl bg-[#fafafb] p-6 shadow-2xl outline-none animate-in fade-in zoom-in-95 duration-300 ease-out sm:p-10"
+            >
               <button
                 onClick={closeBooking}
                 aria-label="Close booking"
@@ -567,7 +615,7 @@ export default function HomeClient({
                   </div>
                   <p className="text-sm text-zinc-500">
                     {language.code === "no"
-                      ? "Kalendly-bookingsiden din har åpnet i en ny fane."
+                      ? "Calendly-bookingsiden din har åpnet i en ny fane."
                       : "Your Calendly booking page has opened in a new tab."}
                   </p>
                   <a
@@ -654,7 +702,7 @@ export default function HomeClient({
                 {item.quote}
               </p>
               <div className="flex items-center justify-center gap-3">
-  <span className="text-center text-[10px] font-medium uppercase tracking-[0.16em] text-[#7a6347]">
+  <span className="text-center text-[11px] font-medium uppercase tracking-[0.16em] text-[#7a6347]">
   {item.name} &middot; {item.context}
   </span>
               </div>
@@ -688,7 +736,7 @@ export default function HomeClient({
               </div>
               <Link
                 href={language.code === "no" ? localizedPaths.blog.no : localizedPaths.blog.en}
-                className="text-xs uppercase tracking-[0.1em] text-zinc-400 transition-colors hover:text-zinc-900"
+                className="text-xs uppercase tracking-[0.1em] text-zinc-600 transition-colors hover:text-zinc-900"
               >
                 {t.blogAllLink}
               </Link>
@@ -713,8 +761,8 @@ export default function HomeClient({
                     </div>
                   ) : null}
                   <div className={`flex flex-col px-6 pb-8 ${post.image ? "pt-5" : "pt-8"}`}>
-                    <p className="text-[10px] uppercase tracking-[0.14em] text-zinc-400">
-                      {post.tags[0]} · {formatBlogDate(post.date, language.code)}
+                    <p className="text-[11px] uppercase tracking-[0.14em] text-zinc-600">
+                      {post.tags[0] ? `${post.tags[0]} · ` : ""}{formatBlogDate(post.date, language.code)}
                     </p>
                     <h3 className="mt-3 line-clamp-2 font-[NeueHaasDisplayRoman,Arial,sans-serif] text-[20px] font-medium leading-[1.25] tracking-tight text-zinc-900">
                       {post.title}

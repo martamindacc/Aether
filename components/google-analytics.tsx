@@ -74,9 +74,8 @@ if (typeof window !== "undefined" && (!ANALYTICS_REQUIRE_CONSENT || hasAnalytics
 
 /** Loads the Google tag only when analytics consent is present, and reacts live to consent changes. */
 export function GoogleAnalytics() {
-  const [analyticsEnabled, setAnalyticsEnabled] = useState(
-    ANALYTICS_REQUIRE_CONSENT ? hasAnalyticsConsent() : true,
-  )
+  // Starts false on both server and client; the effect below reads consent after hydration.
+  const [analyticsEnabled, setAnalyticsEnabled] = useState(false)
 
   useEffect(() => {
     const evaluateConsent = () => {

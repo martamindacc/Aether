@@ -78,7 +78,7 @@ export default function CouplesTherapyPage({ language }: { language: LanguageCod
   const t = couplesTherapyContent[language];
 
   return (
-    <main className="min-h-screen bg-[#fafafb] font-[NeueHaasDisplayRoman,Arial,sans-serif] text-zinc-900">
+    <main id="main-content" className="min-h-screen bg-[#fafafb] font-[NeueHaasDisplayRoman,Arial,sans-serif] text-zinc-900">
       <FloatingNav
         language={language}
         languageLinks={languageLinks}
@@ -200,7 +200,7 @@ export default function CouplesTherapyPage({ language }: { language: LanguageCod
                 {item.quote}
               </p>
               <div className="flex items-center justify-center gap-3">
-  <span className="text-center text-[10px] font-medium uppercase tracking-[0.16em] text-[#7a6347]">
+  <span className="text-center text-[11px] font-medium uppercase tracking-[0.16em] text-[#7a6347]">
   {item.name} &middot; {testimonialsContent[language].context}
   </span>
               </div>

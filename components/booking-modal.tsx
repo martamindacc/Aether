@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
+import { useDialog } from "@/lib/use-dialog"
 import { track } from "@vercel/analytics"
 import { sendGAEvent } from "@/components/google-analytics"
 import { buildCalendlyBookingUrl } from "@/lib/booking-url"
@@ -38,7 +39,7 @@ export function BookingModal({
         chooseTime: "Velg et tidspunkt",
         scheduleTitle: "Bestill din økt",
         paymentNotice: "Betaling forfaller etter sesjonen.",
-        openedNotice: "Kalendly-bookingsiden din har åpnet i en ny fane.",
+        openedNotice: "Calendly-bookingsiden din har åpnet i en ny fane.",
         openCalendly: "Åpne Calendly",
         back: "Tilbake",
       }
@@ -71,6 +72,9 @@ export function BookingModal({
     setSelectedId(null)
   }
 
+  const panelRef = useRef<HTMLDivElement>(null)
+  useDialog(isOpen, handleClose, panelRef)
+
   if (!isOpen) return null
 
   return (
@@ -81,7 +85,14 @@ export function BookingModal({
           onClick={handleClose}
           aria-hidden="true"
         />
-        <div className="relative my-auto flex max-h-[90vh] w-full max-w-md flex-col gap-6 overflow-y-auto rounded-3xl bg-[#fafafb] p-6 shadow-2xl animate-in fade-in zoom-in-95 duration-300 ease-out sm:p-10">
+        <div
+          ref={panelRef}
+          role="dialog"
+          aria-modal="true"
+          aria-label={labels.scheduleTitle}
+          tabIndex={-1}
+          className="relative my-auto flex max-h-[90vh] w-full max-w-md flex-col gap-6 overflow-y-auto rounded-3xl bg-[#fafafb] p-6 shadow-2xl outline-none animate-in fade-in zoom-in-95 duration-300 ease-out sm:p-10"
+        >
           <button
             onClick={handleClose}
             aria-label="Close booking"

@@ -27,7 +27,7 @@ export function SiteFooter({ language }: { language: LanguageCode }) {
             Aether Practice
           </Link>
           <p>
-            © {new Date().getFullYear()} Aether Practice. {taglines[language]}
+            © <span suppressHydrationWarning>{new Date().getFullYear()}</span> Aether Practice. {taglines[language]}
           </p>
         </div>
         <nav

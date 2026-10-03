@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { menuKeyHandler, useDialog } from "@/lib/use-dialog";
 import Link from "next/link";
 import { languages, navContent, type LanguageCode } from "@/lib/service-content";
 import { homePath, type LanguageLink } from "@/lib/locale-routes";
@@ -27,6 +28,9 @@ export function FloatingNav({
   const currentLabel = languages.find((lang) => lang.code === language)?.label ?? "EN";
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const languageMenuRef = useRef<HTMLDivElement>(null);
+  const menuPanelRef = useRef<HTMLDivElement>(null);
+  const closeMenu = () => onMenuOpenChange(false);
+  useDialog(isMenuOpen, closeMenu, menuPanelRef);
 
   useEffect(() => {
     const handlePointerDown = (event: PointerEvent) => {
@@ -68,10 +72,11 @@ export function FloatingNav({
           >
             {t.bookNow}
           </button>
-          <div ref={languageMenuRef} className="relative">
+          <div ref={languageMenuRef} className="relative" onKeyDown={menuKeyHandler(() => onLangOpenChange(false))}>
             <button
               onClick={() => onLangOpenChange(!isLangOpen)}
-              aria-label="Select language"
+              aria-label={`Language: ${currentLabel}`}
+              aria-haspopup="menu"
               aria-expanded={isLangOpen}
               className="flex items-center gap-1 whitespace-nowrap px-1.5 py-3 text-sm text-zinc-900 sm:gap-2 sm:px-2"
             >
@@ -94,7 +99,7 @@ export function FloatingNav({
               </svg>
             </button>
             {isLangOpen && (
-              <div className="absolute right-0 top-full mt-2 flex w-12 flex-col rounded-xl border border-zinc-900/10 bg-white py-1 shadow-lg">
+              <div role="menu" className="absolute right-0 top-full mt-2 flex w-12 flex-col rounded-xl border border-zinc-900/10 bg-white py-1 shadow-lg">
                 {languageLinks.map((option) => (
                   <Link
                     key={option.code}
@@ -138,7 +143,14 @@ export function FloatingNav({
             onClick={() => onMenuOpenChange(false)}
             aria-hidden="true"
           />
-          <div className="relative flex h-full w-full max-w-md flex-col gap-12 overflow-y-auto bg-[#fafafb] px-8 py-24 shadow-2xl animate-in slide-in-from-right duration-300 ease-out sm:px-12">
+          <div
+            ref={menuPanelRef}
+            role="dialog"
+            aria-modal="true"
+            aria-label={t.menuHeading}
+            tabIndex={-1}
+            className="relative flex h-full w-full max-w-md flex-col gap-12 overflow-y-auto bg-[#fafafb] px-8 py-24 shadow-2xl outline-none animate-in slide-in-from-right duration-300 ease-out sm:px-12"
+          >
             <button
               onClick={() => onMenuOpenChange(false)}
               aria-label="Close menu"

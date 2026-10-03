@@ -49,11 +49,9 @@ export const rootMetadata: Metadata = {
 }
 
 export const rootViewport: Viewport = {
-  colorScheme: 'light dark',
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: 'white' },
-    { media: '(prefers-color-scheme: dark)', color: 'black' },
-  ],
+  // The design is light only; native controls and the browser chrome should match.
+  colorScheme: 'light',
+  themeColor: '#fafafb',
 }
 
 const productPrices = PRODUCTS.map((product) => product.priceInCents / 100)
@@ -120,6 +118,12 @@ export function SiteRoot({
   return (
     <html lang={lang}>
       <body className="overflow-x-hidden antialiased">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:border focus:border-zinc-900/20 focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:text-zinc-900"
+        >
+          {lang === 'nb' ? 'Hopp til innhold' : 'Skip to content'}
+        </a>
         <JsonLd data={jsonLdSchema} />
         {children}
         {ANALYTICS_REQUIRE_CONSENT && <ConsentBanner />}

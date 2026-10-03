@@ -21,7 +21,7 @@ export default function CouplesTherapyNewYorkCityPage() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
 
   return (
-    <main className="min-h-screen bg-[#fafafb] font-[NeueHaasDisplayRoman,Arial,sans-serif] text-zinc-900">
+    <main id="main-content" className="min-h-screen bg-[#fafafb] font-[NeueHaasDisplayRoman,Arial,sans-serif] text-zinc-900">
       <FloatingNav
         language={language}
         languageLinks={languageLinks}

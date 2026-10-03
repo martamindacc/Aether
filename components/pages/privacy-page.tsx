@@ -127,7 +127,7 @@ export default function PrivacyPage({ language }: { language: LanguageCode }) {
   const t = privacyContent[language];
 
   return (
-    <main className="min-h-screen bg-[#fafafb] font-[NeueHaasDisplayRoman,Arial,sans-serif] text-zinc-900">
+    <main id="main-content" className="min-h-screen bg-[#fafafb] font-[NeueHaasDisplayRoman,Arial,sans-serif] text-zinc-900">
       <FloatingNav
         language={language}
         languageLinks={languageLinks}
