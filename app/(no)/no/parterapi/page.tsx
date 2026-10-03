@@ -7,7 +7,7 @@ const description =
   "Parterapi på nett for par i Oslo og hele Norge, med fokus på kommunikasjon, tillit, konflikt og gjensidig forståelse."
 
 export const metadata = pageMetadata({
-  title: "Parterapi på nett for par i Norge | Aether Practice",
+  title: "Parterapi på nett for par i Norge",
   description,
   path,
   locale: "nb_NO",

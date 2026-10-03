@@ -26,7 +26,7 @@ export function postMetadata(post: BlogPostData): Metadata {
       : { [post.lang]: postPath(post) };
 
   return pageMetadata({
-    title: post.seoTitle || `${post.title} | Aether Practice`,
+    title: post.seoTitle || post.title,
     description: post.seoDescription || post.description,
     path: postPath(post),
     locale: ogLocale[post.lang],

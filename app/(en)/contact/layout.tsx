@@ -2,7 +2,7 @@ import { pageMetadata } from "@/lib/seo"
 import { hreflangFor } from "@/lib/locale-routes"
 
 export const metadata = pageMetadata({
-  title: "Contact | Aether Practice",
+  title: "Contact",
   description:
     "Get in touch with Aether Practice to ask a question or arrange an individual, couples, family, or executive session online.",
   path: "/contact",

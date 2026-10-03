@@ -7,7 +7,7 @@ const description =
   "Familiesamtaler på nett for familier i Norge, med fokus på tydeligere kommunikasjon, sterkere tilknytning og praktisk støtte."
 
 export const metadata = pageMetadata({
-  title: "Familieterapi på nett i Norge | Aether Practice",
+  title: "Familieterapi på nett i Norge",
   description,
   path,
   locale: "nb_NO",

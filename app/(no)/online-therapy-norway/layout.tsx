@@ -2,7 +2,7 @@ import { pageMetadata } from "@/lib/seo"
 import { norwayFaq } from "./faq-data"
 
 export const metadata = pageMetadata({
-  title: "Online terapi og coaching i Norge | Aether Practice",
+  title: "Online terapi og coaching i Norge",
   description:
     "Online terapi, parterapi og coaching for enkeltpersoner, par, familier, ledere og gründere i Norge. Fokus på kommunikasjon, relasjoner og utvikling.",
   path: "/online-therapy-norway",

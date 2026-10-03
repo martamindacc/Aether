@@ -6,6 +6,7 @@ import { ConsentBanner } from '@/components/consent-banner'
 import { GoogleAnalytics } from '@/components/google-analytics'
 import { ANALYTICS_REQUIRE_CONSENT } from '@/lib/analytics-config'
 import { PRODUCTS } from '@/lib/products'
+import { TITLE_TEMPLATE } from '@/lib/seo'
 import '../app/globals.css'
 
 /**
@@ -23,7 +24,10 @@ export const rootMetadata: Metadata = {
       'x-default': 'https://aetherpractice.com/',
     },
   },
-  title: 'Online Couples & Individual Therapy | Aether Practice',
+  title: {
+    default: 'Aether Practice | Online Couples & Individual Therapy',
+    template: TITLE_TEMPLATE,
+  },
   description:
     'Online counseling & coaching for couples, individuals, families, executives, and founders in New York City, California, and Norway.',
   openGraph: {
@@ -31,13 +35,13 @@ export const rootMetadata: Metadata = {
     siteName: 'Aether Practice',
     locale: 'en_US',
     url: 'https://aetherpractice.com/',
-    title: 'Online Couples & Individual Therapy | Aether Practice',
+    title: 'Aether Practice | Online Couples & Individual Therapy',
     description:
       'Online counseling & coaching for couples, individuals, families, executives, and founders in New York City, California, and Norway.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Online Couples & Individual Therapy | Aether Practice',
+    title: 'Aether Practice | Online Couples & Individual Therapy',
     description:
       'Online counseling & coaching for couples, individuals, families, executives, and founders in New York City, California, and Norway.',
   },

@@ -2,7 +2,7 @@ import { breadcrumbJsonLd, pageMetadata, serviceJsonLd } from "@/lib/seo"
 import { hreflangFor } from "@/lib/locale-routes"
 
 export const metadata = pageMetadata({
-  title: "Online Couples Therapy in NYC & California | Aether Practice",
+  title: "Online Couples Therapy in NYC & California",
   description:
     "Online couples therapy for partners in New York City, California and Norway, focused on communication, trust, conflict and shared understanding.",
   path: "/couples-therapy",

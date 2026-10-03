@@ -7,7 +7,7 @@ const description =
   "Coaching på nett for ledere og gründere i Norge, med støtte ved press, beslutninger, lederskap og personlig utvikling."
 
 export const metadata = pageMetadata({
-  title: "Coaching for ledere og gründere i Norge | Aether Practice",
+  title: "Coaching for ledere og gründere i Norge",
   description,
   path,
   locale: "nb_NO",

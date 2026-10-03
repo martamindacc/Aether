@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Booking Confirmed | Aether Practice",
+  title: "Booking Confirmed",
   alternates: {
     canonical: "https://aetherpractice.com/booking-confirmed",
   },

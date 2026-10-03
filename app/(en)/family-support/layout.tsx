@@ -2,7 +2,7 @@ import { breadcrumbJsonLd, pageMetadata, serviceJsonLd } from "@/lib/seo"
 import { hreflangFor } from "@/lib/locale-routes"
 
 export const metadata = pageMetadata({
-  title: "Online Family Therapy in NYC & California | Aether Practice",
+  title: "Online Family Therapy in NYC & California",
   description:
     "Online family therapy sessions for families in New York City, California and Norway, focused on clearer communication and stronger connection.",
   path: "/family-support",

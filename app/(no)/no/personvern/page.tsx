@@ -3,7 +3,7 @@ import { hreflangFor, localizedPaths } from "@/lib/locale-routes"
 import PrivacyPage from "@/components/pages/privacy-page"
 
 export const metadata = pageMetadata({
-  title: "Personvern | Aether Practice",
+  title: "Personvern",
   description:
     "Hvordan Aether Practice behandler opplysninger sendt inn via kontaktskjemaet, og hvordan informasjonskapsler og analyse brukes på nettstedet.",
   path: localizedPaths.privacy.no,

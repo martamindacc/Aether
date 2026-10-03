@@ -1,6 +1,8 @@
 import type { Metadata } from "next"
 
 const SITE_NAME = "Aether Practice"
+/** Brand-first title pattern applied by both root layouts; pages pass only the topic. */
+export const TITLE_TEMPLATE = `${SITE_NAME} | %s`
 const BASE_URL = "https://aetherpractice.com"
 export const OG_IMAGE_ALT = "Aether Practice — Cognitive wellbeing and online counseling"
 
@@ -26,6 +28,7 @@ export function pageMetadata({
   section,
   tags,
 }: {
+  /** The page topic only, e.g. "Couples Therapy Online". The root layout prefixes the brand. */
   title: string
   description: string
   /** Path starting with "/", e.g. "/about". */
@@ -46,6 +49,7 @@ export function pageMetadata({
   tags?: string[]
 }): Metadata {
   const url = `${BASE_URL}${path}`
+  const fullTitle = TITLE_TEMPLATE.replace("%s", title)
 
   return {
     title,
@@ -66,7 +70,7 @@ export function pageMetadata({
       siteName: SITE_NAME,
       locale,
       url,
-      title,
+      title: fullTitle,
       description,
       images: [
         { url: "/opengraph-image", width: 1200, height: 630, alt: OG_IMAGE_ALT },
@@ -80,7 +84,7 @@ export function pageMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title,
+      title: fullTitle,
       description,
       images: [{ url: "/opengraph-image", alt: OG_IMAGE_ALT }],
     },

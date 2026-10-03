@@ -7,7 +7,7 @@ const description =
   "Individuelle samtaler på nett for personer i Norge, med støtte ved stress, sorg, identitet, livsoverganger og personlig utvikling."
 
 export const metadata = pageMetadata({
-  title: "Individuell terapi på nett i Norge | Aether Practice",
+  title: "Individuell terapi på nett i Norge",
   description,
   path,
   locale: "nb_NO",

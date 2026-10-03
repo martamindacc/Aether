@@ -3,7 +3,7 @@ import { localizedPaths } from "@/lib/locale-routes"
 import BookingConfirmedPage from "@/components/pages/booking-confirmed-page"
 
 export const metadata: Metadata = {
-  title: "Bestilling bekreftet | Aether Practice",
+  title: "Bestilling bekreftet",
   alternates: {
     canonical: `https://aetherpractice.com${localizedPaths.bookingConfirmed.no}`,
   },

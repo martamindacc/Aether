@@ -3,7 +3,7 @@ import { hreflangFor, localizedPaths } from "@/lib/locale-routes"
 import ContactPage from "@/components/pages/contact-page"
 
 export const metadata = pageMetadata({
-  title: "Kontakt | Aether Practice",
+  title: "Kontakt",
   description:
     "Ta kontakt med Aether Practice for å stille et spørsmål eller avtale individuell terapi, parterapi, familiesamtale eller coaching på nett.",
   path: localizedPaths.contact.no,

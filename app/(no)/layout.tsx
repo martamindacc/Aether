@@ -1,19 +1,22 @@
 import type { Metadata } from "next"
 import { rootViewport, SiteRoot } from "@/components/site-root"
-import { pageMetadata } from "@/lib/seo"
+import { pageMetadata, TITLE_TEMPLATE } from "@/lib/seo"
 import { hreflangFor, localizedPaths } from "@/lib/locale-routes"
 
 /** Norwegian site defaults; every page under /no overrides title and description through pageMetadata(). */
-export const metadata: Metadata = {
-  metadataBase: new URL("https://aetherpractice.com"),
-  ...pageMetadata({
-    title: "Terapi og coaching på nett i Norge | Aether Practice",
+const home = pageMetadata({
+    title: "Terapi og coaching på nett i Norge",
     description:
-      "Private samtaler på nett for par, enkeltpersoner, familier, ledere og gründere i Oslo og hele Norge. Parterapi, individuell terapi, familieterapi og coaching.",
+      "Private samtaler på nett for par, enkeltpersoner, familier, ledere og gründere i Oslo og hele Norge: parterapi, individuell terapi og coaching.",
     path: localizedPaths.home.no,
     locale: "nb_NO",
     languages: hreflangFor("home"),
-  }),
+})
+
+export const metadata: Metadata = {
+  ...home,
+  metadataBase: new URL("https://aetherpractice.com"),
+  title: { default: TITLE_TEMPLATE.replace("%s", "Terapi og coaching på nett i Norge"), template: TITLE_TEMPLATE },
 }
 export const viewport = rootViewport
 

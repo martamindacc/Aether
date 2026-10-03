@@ -6,7 +6,7 @@ import { hreflangFor, languageLinksFor, localizedPaths, postPath } from "@/lib/l
 import { BlogIndexContent } from "@/components/blog-index-content";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Blog | Aether Practice",
+  title: "Blog",
   description:
     "Guides and perspectives from Aether Practice on relationships, parterapi, individual growth, family life, and working well under pressure.",
   path: localizedPaths.blog.en,
