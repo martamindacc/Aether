@@ -701,7 +701,7 @@ export default function HomeClient({ posts }: { posts: BlogPostMeta[] }) {
           {t.pills.map((pill) => (
             <span
               key={pill}
-              className="rounded-xl border border-[#e1c2af] bg-gradient-to-r from-[#e1c2af] to-[#f0ddd2] px-5 py-3 text-base text-zinc-700"
+              className="rounded-xl border border-[#f1e7de] bg-gradient-to-r from-[#f1e7de] to-[#f9f4ef] px-5 py-3 text-base text-zinc-700"
             >
               {pill}
             </span>
@@ -778,7 +778,7 @@ export default function HomeClient({ posts }: { posts: BlogPostMeta[] }) {
       </section>
 
       {blogPosts.length > 0 && (
-        <section className="w-full bg-[#f4efe9] py-28 sm:py-32">
+        <section className="w-full bg-[#F3EBE4] py-28 sm:py-32">
           <div className="mx-auto flex max-w-6xl flex-col px-6 sm:px-12">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-5">
