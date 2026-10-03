@@ -3,7 +3,10 @@ export interface Product {
   name: string
   description: string
   duration: string
+  /** Price in US cents, shown on English pages and in the English schema. */
   priceInCents: number
+  /** Price in whole Norwegian kroner, shown on Norwegian pages and in the Norwegian schema. */
+  priceInNok: number
   calendlyUrl: string
 }
 
@@ -11,6 +14,13 @@ export interface Product {
 // All UI to display sessions should pull from this array.
 // Stable ids; the booking modal and analytics events refer to products by these.
 // Ordered for display in the booking flow (Couples Session first).
+
+/** Price label for the booking flow: "$170" on English pages, "1 700 kr" on Norwegian ones. */
+export function formatPrice(product: Product, lang: "en" | "no"): string | null {
+  if (product.priceInCents <= 0) return null
+  if (lang === "no") return new Intl.NumberFormat("nb-NO", { style: "currency", currency: "NOK", maximumFractionDigits: 0 }).format(product.priceInNok)
+  return `${(product.priceInCents / 100).toFixed(0)}`
+}
 export const PRODUCTS: Product[] = [
   {
     id: "couples-session",
@@ -18,6 +28,7 @@ export const PRODUCTS: Product[] = [
     description: "A 60 minute session for two.",
     duration: "60 min",
     priceInCents: 17000,
+    priceInNok: 1700,
     calendlyUrl: "https://calendly.com/martamindacc/couples-session",
   },
   {
@@ -26,6 +37,7 @@ export const PRODUCTS: Product[] = [
     description: "A 50 minute one-on-one session.",
     duration: "50 min",
     priceInCents: 13000,
+    priceInNok: 1300,
     calendlyUrl: "https://calendly.com/martamindacc/individual-session",
   },
   {
@@ -34,6 +46,7 @@ export const PRODUCTS: Product[] = [
     description: "A 60 minute session for families.",
     duration: "60 min",
     priceInCents: 20000,
+    priceInNok: 2000,
     calendlyUrl: "https://calendly.com/martamindacc/family-session",
   },
   {
@@ -42,6 +55,7 @@ export const PRODUCTS: Product[] = [
     description: "A 50 minute session for founders and executives.",
     duration: "50 min",
     priceInCents: 13000,
+    priceInNok: 1300,
     calendlyUrl: "https://calendly.com/martamindacc/exec-founder-session",
   },
   {
@@ -50,8 +64,8 @@ export const PRODUCTS: Product[] = [
     description: "A two-day online intensive for couples: twelve hours of focused work across two consecutive days.",
     duration: "2 days",
     priceInCents: 350000,
-    // Intensives start with a free consultation to confirm fit and plan the two days.
-    calendlyUrl: "https://calendly.com/martamindacc/initial-consultation",
+    priceInNok: 35000,
+    calendlyUrl: "https://calendly.com/martamindacc/couples-intensive",
   },
   {
     id: "initial-consultation",
@@ -59,6 +73,7 @@ export const PRODUCTS: Product[] = [
     description: "A free 15 minute introductory call.",
     duration: "15 min",
     priceInCents: 0,
+    priceInNok: 0,
     calendlyUrl: "https://calendly.com/martamindacc/initial-consultation",
   },
 ]

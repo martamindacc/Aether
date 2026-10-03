@@ -5,7 +5,7 @@ import { useDialog } from "@/lib/use-dialog"
 import { track } from "@vercel/analytics"
 import { sendGAEvent } from "@/components/google-analytics"
 import { buildCalendlyBookingUrl } from "@/lib/booking-url"
-import { PRODUCTS } from "@/lib/products"
+import { PRODUCTS, formatPrice } from "@/lib/products"
 import type { LanguageCode } from "@/lib/service-content"
 
 export function BookingModal({
@@ -37,6 +37,7 @@ export function BookingModal({
     ? { "Individual Session": "Individuell terapi", "Couples Session": "Parterapi", "Couples Intensive": "Parintensiv", "Family Session": "Familieterapi", "Exec&Founder Session": "Leder- og grunnleggerterapi", "Initial Consultation": "Innledende konsultasjon" }
     : {}
   const productLabel = (name: string) => productLabels[name] ?? name
+  const durationLabel = (duration: string) => (language === "no" ? duration.replace("days", "dager") : duration)
   const labels = language === "no"
     ? {
         chooseSession: "Velg din økt",
@@ -126,8 +127,8 @@ export function BookingModal({
                       {productLabel(product.name)}
                     </span>
                     <span className="shrink-0 whitespace-nowrap text-right text-sm text-zinc-500">
-                      {product.duration}
-                      {product.priceInCents > 0 && ` · $${(product.priceInCents / 100).toFixed(0)}`}
+                      {durationLabel(product.duration)}
+                      {formatPrice(product, language) && ` · ${formatPrice(product, language)}`}
                     </span>
                   </button>
                 ))}

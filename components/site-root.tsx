@@ -54,10 +54,13 @@ export const rootViewport: Viewport = {
   themeColor: '#fafafb',
 }
 
-const productPrices = PRODUCTS.map((product) => product.priceInCents / 100)
-const priceRange = `$${Math.min(...productPrices)}-$${Math.max(...productPrices)}`
-
-const jsonLdSchema = {
+/** Organization + WebSite schema. Offers are priced in USD for the English site and NOK for the Norwegian one. */
+function organizationJsonLd(lang: 'en' | 'nb') {
+  const nok = lang === 'nb'
+  const prices = PRODUCTS.map((product) => (nok ? product.priceInNok : product.priceInCents / 100))
+  const paid = prices.filter((price) => price > 0)
+  const priceRange = nok ? `${Math.min(...paid)}-${Math.max(...paid)} NOK` : `\$${Math.min(...paid)}-\$${Math.max(...paid)}`
+  return {
   '@context': 'https://schema.org',
   '@graph': [
     {
@@ -78,8 +81,8 @@ const jsonLdSchema = {
       priceRange,
       makesOffer: PRODUCTS.map((product) => ({
         '@type': 'Offer',
-        price: (product.priceInCents / 100).toFixed(2),
-        priceCurrency: 'USD',
+        price: nok ? product.priceInNok.toFixed(2) : (product.priceInCents / 100).toFixed(2),
+        priceCurrency: nok ? 'NOK' : 'USD',
         itemOffered: {
           '@type': 'Service',
           name: product.name,
@@ -97,6 +100,7 @@ const jsonLdSchema = {
       },
     },
   ],
+  }
 }
 
 /**
@@ -124,7 +128,7 @@ export function SiteRoot({
         >
           {lang === 'nb' ? 'Hopp til innhold' : 'Skip to content'}
         </a>
-        <JsonLd data={jsonLdSchema} />
+        <JsonLd data={organizationJsonLd(lang)} />
         {children}
         {ANALYTICS_REQUIRE_CONSENT && <ConsentBanner />}
         <GoogleAnalytics />
