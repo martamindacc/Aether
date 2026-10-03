@@ -37,7 +37,7 @@ export function pageMetadata({
   /** Open Graph locale, e.g. "en_US" or "nb_NO". */
   locale?: string
   /**
-   * hreflang alternates, e.g. { en: "/", no: "/online-therapy-norway" }.
+   * hreflang alternates, e.g. { en: "/couples-therapy", no: "/no/parterapi" }.
    * Paths starting with "/" are resolved against BASE_URL. Only set this on
    * pages that have a real alternate-language counterpart elsewhere on the
    * site — it must be reciprocated on that other page or Google ignores it.

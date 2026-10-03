@@ -34,7 +34,7 @@ export function BookingModal({
 
   const selectedProduct = PRODUCTS.find((product) => product.id === selectedId)
   const productLabels: Record<string, string> = language === "no"
-    ? { "Individual Session": "Individuell terapi", "Couples Session": "Parterapi", "Couples Intensive": "Parintensiv", "Family Session": "Familieterapi", "Exec&Founder Session": "Leder- og grunnleggerterapi", "Initial Consultation": "Innledende konsultasjon" }
+    ? { "Individual Session": "Individuell terapi", "Couples Session": "Parterapi", "Couples Intensive": "Parintensiv", "Family Session": "Familieterapi", "Exec&Founder Session": "Leder- og gründercoaching", "Initial Consultation": "Innledende konsultasjon" }
     : {}
   const productLabel = (name: string) => productLabels[name] ?? name
   const durationLabel = (duration: string) => (language === "no" ? duration.replace("days", "dager") : duration)
@@ -100,7 +100,7 @@ export function BookingModal({
         >
           <button
             onClick={handleClose}
-            aria-label="Close booking"
+            aria-label={language === "no" ? "Lukk bestilling" : "Close booking"}
             className="absolute right-5 top-5 flex h-9 w-9 items-center justify-center border border-zinc-900/20 bg-white transition-colors hover:bg-zinc-100 sm:right-6 sm:top-6 sm:h-11 sm:w-11"
           >
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">

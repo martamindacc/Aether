@@ -19,7 +19,7 @@ export interface Product {
 export function formatPrice(product: Product, lang: "en" | "no"): string | null {
   if (product.priceInCents <= 0) return null
   if (lang === "no") return new Intl.NumberFormat("nb-NO", { style: "currency", currency: "NOK", maximumFractionDigits: 0 }).format(product.priceInNok)
-  return `${(product.priceInCents / 100).toFixed(0)}`
+  return `$${(product.priceInCents / 100).toFixed(0)}`
 }
 export const PRODUCTS: Product[] = [
   {

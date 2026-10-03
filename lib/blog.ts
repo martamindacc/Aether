@@ -21,7 +21,7 @@ export type BlogPostMeta = {
   wordCount: number;
   /**
    * Shared identifier linking genuine translations of the same article across
-   * languages (e.g. all three language versions of "8 signs you need couples
+   * languages (e.g. the English and Norwegian versions of "8 signs you need couples
    * therapy" share one translationKey). Omit it on a standalone article that
    * has no translated counterpart.
    */

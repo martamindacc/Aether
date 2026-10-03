@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { menuKeyHandler, useDialog } from "@/lib/use-dialog";
+import { closeOnFocusOut, menuKeyHandler, useDialog } from "@/lib/use-dialog";
 import { SiteFooter } from "@/components/site-footer";
 import { BookingModal } from "@/components/booking-modal";
 import type { BlogPostMeta } from "@/lib/blog";
@@ -343,7 +343,7 @@ export default function HomeClient({
     .slice(0, 3);
 
   return (
-    <main id="main-content" className="min-h-screen bg-[#fafafb] font-[NeueHaasDisplayRoman,Arial,sans-serif] text-zinc-900">
+    <main className="min-h-screen bg-[#fafafb] font-[NeueHaasDisplayRoman,Arial,sans-serif] text-zinc-900">
       <div className="relative h-screen w-full overflow-hidden bg-[#fafafb]">
         {/* Poster paints immediately (the LCP element); the video streams in behind it. Reduced-motion users get the still only. */}
         <video
@@ -356,7 +356,7 @@ export default function HomeClient({
           muted
           loop
           playsInline
-          aria-label="Therapy introduction video"
+          aria-hidden="true"
         />
         <div
           aria-hidden="true"
@@ -408,10 +408,10 @@ export default function HomeClient({
             >
               {t.bookNow}
             </button>
-            <div ref={languageMenuRef} className="relative" onKeyDown={menuKeyHandler(() => setIsLangOpen(false))}>
+            <div ref={languageMenuRef} className="relative" onKeyDown={menuKeyHandler(() => setIsLangOpen(false))} onBlur={closeOnFocusOut(() => setIsLangOpen(false))}>
               <button
                 onClick={() => setIsLangOpen((open) => !open)}
-                aria-label={`Language: ${language.label}`}
+                aria-label={`${language.code === "no" ? "Språk" : "Language"}: ${language.label}`}
                 aria-haspopup="menu"
                 aria-expanded={isLangOpen}
                 className="flex items-center gap-1 whitespace-nowrap px-1.5 py-3 text-sm text-zinc-900 sm:gap-2 sm:px-2"
@@ -435,11 +435,12 @@ export default function HomeClient({
                 </svg>
               </button>
               {isLangOpen && (
-                <div role="menu" className="absolute right-0 top-full mt-2 flex w-12 flex-col rounded-xl border border-zinc-900/10 bg-white py-1 shadow-lg">
+                <div role="menu" aria-label={language.code === "no" ? "Språk" : "Language"} className="absolute right-0 top-full mt-2 flex w-12 flex-col rounded-xl border border-zinc-900/10 bg-white py-1 shadow-lg">
                   {languageLinks.map((option) => (
                     <Link
                       key={option.code}
                       href={option.href}
+                      role="menuitem"
                       onClick={() => setIsLangOpen(false)}
                       className="px-3 py-2 text-center text-sm text-zinc-900 transition-colors hover:bg-zinc-100"
                     >
@@ -452,7 +453,7 @@ export default function HomeClient({
             <button
               onClick={() => setIsMenuOpen(true)}
               className="flex h-9 w-9 items-center justify-center border border-zinc-900/20 bg-white/30 transition-colors hover:bg-white/65 sm:h-11 sm:w-11"
-              aria-label="Open menu"
+              aria-label={language.code === "no" ? "Åpne meny" : "Open menu"}
             >
               <span className="flex w-4 flex-col gap-1 sm:w-5 sm:gap-1.5">
                 <span className="h-px w-full bg-zinc-900" />
@@ -488,7 +489,7 @@ export default function HomeClient({
             >
               <button
                 onClick={() => setIsMenuOpen(false)}
-                aria-label="Close menu"
+                aria-label={language.code === "no" ? "Lukk meny" : "Close menu"}
                 className="absolute right-6 top-6 flex h-11 w-11 items-center justify-center border border-zinc-900/20 bg-white transition-colors hover:bg-zinc-100"
               >
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
@@ -526,7 +527,7 @@ export default function HomeClient({
         <BookingModal language={language.code} isOpen={isBookingOpen} onClose={closeBooking} />
       </div>
 
-      <section className="flex flex-col items-center px-6 pb-12 pt-[104px] text-center font-[Inter,-apple-system,BlinkMacSystemFont,'SF_Pro_Text',system-ui,sans-serif] text-[19px] font-normal leading-[1.5] text-[#383838]">
+      <section id="main-content" className="flex flex-col items-center px-6 pb-12 pt-[104px] text-center font-[Inter,-apple-system,BlinkMacSystemFont,'SF_Pro_Text',system-ui,sans-serif] text-[19px] font-normal leading-[1.5] text-[#383838]">
         <h1 className="max-w-6xl text-balance font-[Roboto,Arial,sans-serif] text-[44px] font-medium leading-[0.95] tracking-tight text-zinc-900 sm:text-[64px] lg:text-[90px]">
           {t.heroTitle}
         </h1>
@@ -623,7 +624,7 @@ export default function HomeClient({
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-5">
                 <div className="h-px w-8 bg-[#c9a688]" />
-                <p className="text-xs uppercase tracking-[0.18em] text-zinc-500">
+                <p className="text-xs uppercase tracking-[0.18em] text-zinc-600">
                   {t.blogEyebrow}
                 </p>
               </div>

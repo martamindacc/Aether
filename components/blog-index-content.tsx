@@ -31,17 +31,6 @@ function formatDate(date: string, language: LanguageCode) {
   });
 }
 
-function formatWordCount(wordCount: number, language: LanguageCode) {
-  const localeMap: Record<string, string> = {
-    no: "nb-NO",
-    en: "en-US",
-  };
-  const labelMap: Record<string, string> = {
-    no: "ord",
-    en: "words",
-  };
-  return `${new Intl.NumberFormat(localeMap[language] || "en-US").format(wordCount)} ${labelMap[language] || "words"}`;
-}
 
 export function BlogIndexContent({
   posts,
@@ -53,7 +42,7 @@ export function BlogIndexContent({
   const t = copy[language] ?? copy.en;
 
   return (
-    <section className="mx-auto flex max-w-6xl flex-col px-6 pb-24 pt-48">
+    <section id="main-content" className="mx-auto flex max-w-6xl flex-col px-6 pb-24 pt-48">
       <h1 className="max-w-5xl font-[NeueHaasDisplayRoman,Arial,sans-serif] text-6xl font-medium leading-[0.95] tracking-tight text-[#74382f] sm:text-8xl">
         {t.heading}
       </h1>
@@ -72,14 +61,14 @@ export function BlogIndexContent({
                   src={post.image}
                   alt=""
                   fill
-                  sizes="(min-width: 768px) 33vw, 100vw"
+                  sizes="(min-width: 768px) 384px, 100vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                   style={post.imagePosition ? { objectPosition: post.imagePosition } : undefined}
                 />
               </div>
             )}
             <div className="p-8 sm:p-10">
-              <p className="font-[Roboto,Arial,sans-serif] text-sm uppercase tracking-wide text-zinc-500">
+              <p className="font-[Roboto,Arial,sans-serif] text-sm uppercase tracking-wide text-zinc-600">
                 {formatDate(post.date, post.lang)} <span aria-hidden="true">·</span> {formatReadingTime(post.wordCount, post.lang)}
               </p>
               <h2 className="mt-3 break-words origin-left font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out group-hover:translate-x-2 group-hover:scale-x-105 sm:text-3xl">

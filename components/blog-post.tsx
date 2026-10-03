@@ -157,7 +157,7 @@ export function BlogPost({ post, related }: { post: BlogPostData; related: BlogP
     inLanguage: schemaLangByLang[post.lang],
     isAccessibleForFree: true,
     wordCount: post.wordCount,
-    ...(post.image ? { image: `https://aetherpractice.com${post.image}` } : {}),
+    image: `https://aetherpractice.com${post.image ?? "/opengraph-image"}`,
     ...(post.tags.length ? { articleSection: post.tags[0] } : {}),
     keywords: post.keywords,
     author: {
@@ -215,14 +215,14 @@ export function BlogPost({ post, related }: { post: BlogPostData; related: BlogP
       )}
       <JsonLd data={breadcrumbLd} />
       <BlogViewTracker path={postPath(post)} title={post.title} />
-      <article lang={htmlLangFor(post.lang)} className="mx-auto flex max-w-3xl flex-col px-6 pb-24 pt-48">
+      <article id="main-content" lang={htmlLangFor(post.lang)} className="mx-auto flex max-w-3xl flex-col px-6 pb-24 pt-48">
         <Link
           href={blogIndexPath}
-          className="font-[Roboto,Arial,sans-serif] text-sm text-zinc-500 hover:text-zinc-900"
+          className="font-[Roboto,Arial,sans-serif] text-sm text-zinc-600 hover:text-zinc-900"
         >
           {backToBlogLabel[post.lang]}
         </Link>
-        <div className="mt-6 flex items-center gap-2 font-[Roboto,Arial,sans-serif] text-sm uppercase tracking-wide text-zinc-500">
+        <div className="mt-6 flex items-center gap-2 font-[Roboto,Arial,sans-serif] text-sm uppercase tracking-wide text-zinc-600">
           <time dateTime={post.date}>{formatDate(post.date, post.lang)}</time>
           {post.modifiedDate && post.modifiedDate !== post.date && (
             <>

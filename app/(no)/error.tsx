@@ -4,8 +4,8 @@ import Link from "next/link"
 
 export default function ErrorPage({ reset }: { error: Error & { digest?: string }; reset: () => void }) {
   return (
-    <main id="main-content" className="min-h-screen bg-[#fafafb] font-[NeueHaasDisplayRoman,Arial,sans-serif] text-zinc-900">
-      <section className="mx-auto flex max-w-6xl flex-col px-6 pb-24 pt-48">
+    <main className="min-h-screen bg-[#fafafb] font-[NeueHaasDisplayRoman,Arial,sans-serif] text-zinc-900">
+      <section id="main-content" className="mx-auto flex max-w-6xl flex-col px-6 pb-24 pt-48">
         <h1 className="max-w-5xl font-[NeueHaasDisplayRoman,Arial,sans-serif] text-6xl font-medium leading-[0.95] tracking-tight text-[#74382f] sm:text-8xl">
           Noe gikk galt
         </h1>

@@ -9,7 +9,7 @@ import { JsonLd } from "@/components/json-ld"
 export const metadata: Metadata = pageMetadata({
   title: "Blog",
   description:
-    "Guides and perspectives from Aether Practice on relationships, parterapi, individual growth, family life, and working well under pressure.",
+    "Guides and perspectives from Aether Practice on relationships, couples therapy, individual growth, family life, and working well under pressure.",
   path: localizedPaths.blog.en,
   languages: hreflangFor("blog"),
 });

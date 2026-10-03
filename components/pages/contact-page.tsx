@@ -19,7 +19,7 @@ const formCopy: Record<LanguageCode, { name: string; email: string; message: str
     sending: "Sending…",
     sent: "Thank you. Your message has been sent and we will reply by email.",
     invalid: "Please fill in your name, a valid email address and a message.",
-    unavailable: "The message could not be sent right now. Please try again shortly or email us directly.",
+    unavailable: "The message could not be sent right now. Please try again in a moment.",
   },
   no: {
     name: "Navn",
@@ -64,7 +64,7 @@ export default function ContactPage({ language }: { language: LanguageCode }) {
   }, [state]);
 
   return (
-    <main id="main-content" className="min-h-screen bg-[#fafafb] font-[NeueHaasDisplayRoman,Arial,sans-serif] text-zinc-900">
+    <main className="min-h-screen bg-[#fafafb] font-[NeueHaasDisplayRoman,Arial,sans-serif] text-zinc-900">
       <FloatingNav
         language={language}
         languageLinks={languageLinks}
@@ -73,7 +73,7 @@ export default function ContactPage({ language }: { language: LanguageCode }) {
         isLangOpen={isLangOpen}
         onLangOpenChange={setIsLangOpen}
       />
-      <section className="mx-auto flex max-w-6xl flex-col px-6 pb-24 pt-48">
+      <section id="main-content" className="mx-auto flex max-w-6xl flex-col px-6 pb-24 pt-48">
         <h1 className="max-w-5xl font-[NeueHaasDisplayRoman,Arial,sans-serif] text-6xl font-medium leading-[0.95] tracking-tight text-[#74382f] sm:text-8xl">
           {t.title}
         </h1>
@@ -102,7 +102,7 @@ export default function ContactPage({ language }: { language: LanguageCode }) {
               </label>
             </div>
             <label className="flex flex-col gap-2">
-              <span className="text-sm uppercase tracking-wide text-zinc-500">{f.name}</span>
+              <span className="text-sm uppercase tracking-wide text-zinc-600">{f.name}</span>
               <input
                 name="name"
                 required
@@ -112,7 +112,7 @@ export default function ContactPage({ language }: { language: LanguageCode }) {
               />
             </label>
             <label className="flex flex-col gap-2">
-              <span className="text-sm uppercase tracking-wide text-zinc-500">{f.email}</span>
+              <span className="text-sm uppercase tracking-wide text-zinc-600">{f.email}</span>
               <input
                 type="email"
                 name="email"
@@ -123,7 +123,7 @@ export default function ContactPage({ language }: { language: LanguageCode }) {
               />
             </label>
             <label className="flex flex-col gap-2">
-              <span className="text-sm uppercase tracking-wide text-zinc-500">{f.message}</span>
+              <span className="text-sm uppercase tracking-wide text-zinc-600">{f.message}</span>
               <textarea
                 name="message"
                 required

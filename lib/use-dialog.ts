@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, type RefObject } from "react";
+import { useEffect, useRef, type RefObject } from "react";
 
 const FOCUSABLE = 'a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
@@ -10,6 +10,10 @@ const FOCUSABLE = 'a[href], button:not([disabled]), input:not([disabled]), texta
  * page behind it stops scrolling. Markup and styling are left to the caller.
  */
 export function useDialog(isOpen: boolean, onClose: () => void, panelRef: RefObject<HTMLElement | null>) {
+  // Callers usually pass a fresh function each render; keep the effect tied to isOpen only.
+  const onCloseRef = useRef(onClose);
+  onCloseRef.current = onClose;
+
   useEffect(() => {
     if (!isOpen) return;
     const panel = panelRef.current;
@@ -23,7 +27,7 @@ export function useDialog(isOpen: boolean, onClose: () => void, panelRef: RefObj
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         event.preventDefault();
-        onClose();
+        onCloseRef.current();
         return;
       }
       if (event.key !== "Tab" || !panel) return;
@@ -46,15 +50,16 @@ export function useDialog(isOpen: boolean, onClose: () => void, panelRef: RefObj
       document.body.style.overflow = previousOverflow;
       opener?.focus?.();
     };
-  }, [isOpen, onClose, panelRef]);
+  }, [isOpen, panelRef]);
 }
 
-/** Keyboard handling for a small dropdown: Escape closes, arrow keys move between items. */
+/** Keyboard handling for a small dropdown: Escape closes and returns focus to the toggle, arrow keys move between items. */
 export function menuKeyHandler(close: () => void) {
   return (event: React.KeyboardEvent<HTMLElement>) => {
     if (event.key === "Escape") {
       event.preventDefault();
       close();
+      event.currentTarget.querySelector<HTMLElement>("button")?.focus();
       return;
     }
     if (event.key !== "ArrowDown" && event.key !== "ArrowUp") return;
@@ -64,5 +69,11 @@ export function menuKeyHandler(close: () => void) {
     const index = items.indexOf(document.activeElement as HTMLElement);
     const next = event.key === "ArrowDown" ? (index + 1) % items.length : (index - 1 + items.length) % items.length;
     items[next].focus();
+  };
+}
+/** Closes a dropdown when focus leaves its container (e.g. tabbing past the last item). */
+export function closeOnFocusOut(close: () => void) {
+  return (event: React.FocusEvent<HTMLElement>) => {
+    if (!event.currentTarget.contains(event.relatedTarget as Node | null)) close();
   };
 }

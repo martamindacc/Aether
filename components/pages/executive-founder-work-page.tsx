@@ -17,7 +17,7 @@ export default function ExecutiveFounderWorkPage({ language }: { language: Langu
   const t = executiveFounderContent[language];
 
   return (
-    <main id="main-content" className="min-h-screen bg-[#fafafb] font-[NeueHaasDisplayRoman,Arial,sans-serif] text-zinc-900">
+    <main className="min-h-screen bg-[#fafafb] font-[NeueHaasDisplayRoman,Arial,sans-serif] text-zinc-900">
       <FloatingNav
         language={language}
         languageLinks={languageLinks}
@@ -26,7 +26,7 @@ export default function ExecutiveFounderWorkPage({ language }: { language: Langu
         isLangOpen={isLangOpen}
         onLangOpenChange={setIsLangOpen}
       />
-      <section className="mx-auto flex max-w-6xl flex-col px-6 pb-24 pt-48">
+      <section id="main-content" className="mx-auto flex max-w-6xl flex-col px-6 pb-24 pt-48">
         <h1 className="max-w-5xl font-[NeueHaasDisplayRoman,Arial,sans-serif] text-6xl font-medium leading-[0.95] tracking-tight text-[#74382f] sm:text-8xl">
           {t.title}
         </h1>

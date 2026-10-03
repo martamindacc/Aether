@@ -1,7 +1,6 @@
 "use client"
 
-import { useEffect } from "react"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Script from "next/script"
 import { ANALYTICS_REQUIRE_CONSENT } from "@/lib/analytics-config"
 
@@ -32,9 +31,11 @@ function initializeGoogleTag() {
   if (typeof window === "undefined" || window.gtag) return
 
   window.dataLayer = window.dataLayer || []
-  window.gtag = (...args: unknown[]) => {
-    window.dataLayer?.push(args)
-  }
+  window.gtag = function gtag() {
+      // gtag.js reads the `arguments` object, not an array.
+      // eslint-disable-next-line prefer-rest-params
+      window.dataLayer?.push(arguments)
+    }
   window.gtag("js", new Date())
   window.gtag("config", GA_MEASUREMENT_ID)
 }

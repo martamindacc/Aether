@@ -37,14 +37,14 @@ export function RelatedPosts({ posts, language }: { posts: BlogPostMeta[]; langu
                   src={post.image}
                   alt=""
                   fill
-                  sizes="(min-width: 640px) 33vw, 100vw"
+                  sizes="(min-width: 640px) 240px, 100vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                   style={post.imagePosition ? { objectPosition: post.imagePosition } : undefined}
                 />
               </div>
             )}
             <div className="p-6">
-              <p className="font-[Roboto,Arial,sans-serif] text-xs uppercase tracking-wide text-zinc-500">
+              <p className="font-[Roboto,Arial,sans-serif] text-xs uppercase tracking-wide text-zinc-600">
                 {formatReadingTime(post.wordCount, language)}
               </p>
               <h3 className="mt-2 font-[NeueHaasDisplayRoman,Arial,sans-serif] text-lg font-medium leading-[1.25] tracking-tight text-zinc-900">

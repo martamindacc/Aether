@@ -46,7 +46,7 @@ export async function sendContactMessage(_previous: ContactState, formData: Form
 
   const apiKey = process.env.RESEND_API_KEY
   if (!apiKey) {
-    console.error("[contact] RESEND_API_KEY is not set; message from", email, "was not delivered")
+    console.error("[contact] RESEND_API_KEY is not set; a message was not delivered")
     return { status: "error", reason: "unavailable" }
   }
 
@@ -64,7 +64,7 @@ export async function sendContactMessage(_previous: ContactState, formData: Form
         from,
         to: [to],
         reply_to: email,
-        subject: `Website contact from ${name}`,
+        subject: `Website contact from ${name.replace(/[\r\n]+/g, " ").slice(0, 120)}`,
         text,
         html,
       }),

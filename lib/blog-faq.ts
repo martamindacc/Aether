@@ -2,7 +2,9 @@ import type { BlogPost } from "@/lib/blog";
 
 export type FaqItem = { question: string; answer: string };
 
-const FAQ_HEADING = /^## .*(FAQ|frequently asked|common questions|vanlige spørsmål|spørsmål)/i;
+const FAQ_HEADING = /^## .*(FAQ|frequently asked|common questions|vanlige spørsmål|ofte stilte spørsmål)/i;
+/** Lines that end the FAQ body: a horizontal rule, a bold-only label such as "**References:**", or an italic "Last updated" note. */
+const FAQ_END = /^(---\s*|\*\*[^*]+\*\*\s*|\*[^*]+\*\s*)$/;
 
 /** Markdown → plain text for schema answers (links keep their text; emphasis markers drop). */
 function plain(markdown: string): string {
@@ -35,7 +37,7 @@ export function extractFaq(post: Pick<BlogPost, "content">): FaqItem[] {
   };
 
   for (const line of lines.slice(start + 1)) {
-    if (/^## /.test(line)) break;
+    if (/^## /.test(line) || FAQ_END.test(line)) break;
     if (/^### /.test(line)) {
       flush();
       current = { question: line.replace(/^### /, ""), answer: [] };

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { menuKeyHandler, useDialog } from "@/lib/use-dialog";
+import { closeOnFocusOut, menuKeyHandler, useDialog } from "@/lib/use-dialog";
 import Link from "next/link";
 import { languages, navContent, type LanguageCode } from "@/lib/service-content";
 import { homePath, type LanguageLink } from "@/lib/locale-routes";
@@ -72,10 +72,10 @@ export function FloatingNav({
           >
             {t.bookNow}
           </button>
-          <div ref={languageMenuRef} className="relative" onKeyDown={menuKeyHandler(() => onLangOpenChange(false))}>
+          <div ref={languageMenuRef} className="relative" onKeyDown={menuKeyHandler(() => onLangOpenChange(false))} onBlur={closeOnFocusOut(() => onLangOpenChange(false))}>
             <button
               onClick={() => onLangOpenChange(!isLangOpen)}
-              aria-label={`Language: ${currentLabel}`}
+              aria-label={`${language === "no" ? "Språk" : "Language"}: ${currentLabel}`}
               aria-haspopup="menu"
               aria-expanded={isLangOpen}
               className="flex items-center gap-1 whitespace-nowrap px-1.5 py-3 text-sm text-zinc-900 sm:gap-2 sm:px-2"
@@ -99,11 +99,12 @@ export function FloatingNav({
               </svg>
             </button>
             {isLangOpen && (
-              <div role="menu" className="absolute right-0 top-full mt-2 flex w-12 flex-col rounded-xl border border-zinc-900/10 bg-white py-1 shadow-lg">
+              <div role="menu" aria-label={language === "no" ? "Språk" : "Language"} className="absolute right-0 top-full mt-2 flex w-12 flex-col rounded-xl border border-zinc-900/10 bg-white py-1 shadow-lg">
                 {languageLinks.map((option) => (
                   <Link
                     key={option.code}
                     href={option.href}
+                    role="menuitem"
                     onClick={() => onLangOpenChange(false)}
                     className="px-3 py-2 text-center text-sm text-zinc-900 transition-colors hover:bg-zinc-100"
                   >
@@ -116,7 +117,7 @@ export function FloatingNav({
           <button
             onClick={() => onMenuOpenChange(true)}
             className="flex h-9 w-9 items-center justify-center border border-zinc-900/20 bg-white/30 transition-colors hover:bg-white/65 sm:h-11 sm:w-11"
-            aria-label="Open menu"
+            aria-label={language === "no" ? "Åpne meny" : "Open menu"}
           >
             <span className="flex w-4 flex-col gap-1 sm:w-5 sm:gap-1.5">
               <span className="h-px w-full bg-zinc-900" />
@@ -153,7 +154,7 @@ export function FloatingNav({
           >
             <button
               onClick={() => onMenuOpenChange(false)}
-              aria-label="Close menu"
+              aria-label={language === "no" ? "Lukk meny" : "Close menu"}
               className="absolute right-6 top-6 flex h-11 w-11 items-center justify-center border border-zinc-900/20 bg-white transition-colors hover:bg-zinc-100"
             >
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
