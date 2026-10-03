@@ -778,7 +778,7 @@ export default function HomeClient({ posts }: { posts: BlogPostMeta[] }) {
       </section>
 
       {blogPosts.length > 0 && (
-        <section className="w-full bg-[#f2eae3] py-28 sm:py-32">
+        <section className="w-full bg-[#F3EBE4] py-28 sm:py-32">
           <div className="mx-auto flex max-w-6xl flex-col px-6 sm:px-12">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-5">
