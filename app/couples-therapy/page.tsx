@@ -225,13 +225,7 @@ export default function CouplesTherapyPage() {
               key={item.name}
               className={`flex flex-col gap-8 rounded-2xl border border-zinc-300/80 bg-[#f4efea] p-8 sm:p-10`}
             >
-              <div className="flex justify-center gap-1 text-[#74382f]" aria-hidden="true">
-                {Array.from({ length: 5 }).map((_, index) => (
-                  <svg key={index} width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M10 1.5l2.7 6.06 6.6.63-5 4.4 1.5 6.46L10 15.9l-5.8 3.15 1.5-6.46-5-4.4 6.6-.63L10 1.5z" />
-                  </svg>
-                ))}
-              </div>
+
               <p className="flex-1 font-[Roboto,Arial,sans-serif] text-lg leading-[1.6] text-[#383838]">
                 &ldquo;{item.quote}&rdquo;
               </p>
