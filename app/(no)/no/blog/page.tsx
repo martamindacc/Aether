@@ -18,7 +18,7 @@ export const metadata: Metadata = pageMetadata({
 const blogIndexLanguages = languageLinksFor("blog");
 
 export default function NorwegianBlogIndexPage() {
-  const posts = getAllPosts().filter((p) => p.lang === "no");
+  const posts = getAllPosts().filter((p) => p.market === "norway");
   const breadcrumbLd = breadcrumbJsonLd([
     { name: "Hjem", path: localizedPaths.home.no },
     { name: "Blogg", path: localizedPaths.blog.no },

@@ -10,7 +10,7 @@ import { extractFaq } from "@/lib/blog-faq";
 import { formatReadingTime } from "@/lib/reading-time";
 import { RelatedPosts } from "@/components/related-posts";
 import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
-import { localizedPaths, postPath } from "@/lib/locale-routes";
+import { blogIndexPathFor, localizedPaths, postPath } from "@/lib/locale-routes";
 import type { LanguageCode } from "@/lib/service-content";
 import { JsonLd } from "@/components/json-ld"
 
@@ -198,7 +198,7 @@ export function BlogPost({ post, related }: { post: BlogPostData; related: BlogP
       }
     : null;
 
-  const blogIndexPath = localizedPaths.blog[post.lang];
+  const blogIndexPath = blogIndexPathFor(post);
   const blogIndexLabel = post.lang === "no" ? "Blogg" : "Blog";
 
   const breadcrumbLd = breadcrumbJsonLd([

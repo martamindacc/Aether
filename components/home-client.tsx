@@ -7,6 +7,7 @@ import { closeOnFocusOut, menuKeyHandler, useDialog } from "@/lib/use-dialog";
 import { SiteFooter } from "@/components/site-footer";
 import { BookingModal } from "@/components/booking-modal";
 import type { BlogPostMeta } from "@/lib/blog";
+import { defaultMarketFor } from "@/lib/blog-market";
 import type { LanguageCode } from "@/lib/service-content";
 import { languageLinksFor, localizedPaths, postPath } from "@/lib/locale-routes";
 
@@ -339,7 +340,7 @@ export default function HomeClient({
   }, []);
 
   const blogPosts = posts
-    .filter((p) => p.lang === language.code)
+    .filter((p) => p.market === defaultMarketFor(language.code))
     .slice(0, 3);
 
   return (

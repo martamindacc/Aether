@@ -63,6 +63,11 @@ export function isNorwegianPath(pathname: string): boolean {
   return pathname === "/no" || pathname.startsWith("/no/") || pathname === "/online-therapy-norway";
 }
 
+/** The blog index that lists a post: the Norwegian hub for market "norway", the English hub for "us". */
+export function blogIndexPathFor(post: Pick<BlogPostMeta, "market">): string {
+  return localizedPaths.blog[post.market === "norway" ? "no" : "en"];
+}
+
 /** URL path of a post: English posts live under /blog, Norwegian posts under /no/blog. */
 export function postPath(post: Pick<BlogPostMeta, "slug" | "lang">): string {
   return `${localizedPaths.blog[post.lang]}/${post.slug}`;

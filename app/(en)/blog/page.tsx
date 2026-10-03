@@ -17,7 +17,7 @@ export const metadata: Metadata = pageMetadata({
 const blogIndexLanguages = languageLinksFor("blog");
 
 export default function BlogIndexPage() {
-  const posts = getAllPosts().filter((p) => p.lang === "en");
+  const posts = getAllPosts().filter((p) => p.market === "us");
   const breadcrumbLd = breadcrumbJsonLd([
     { name: "Home", path: localizedPaths.home.en },
     { name: "Blog", path: localizedPaths.blog.en },

@@ -2,6 +2,9 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { cache } from "react";
+import { defaultMarketFor, type BlogMarket } from "@/lib/blog-market";
+
+export type { BlogMarket } from "@/lib/blog-market";
 
 const BLOG_DIR = path.join(process.cwd(), "content/blog");
 
@@ -13,6 +16,13 @@ export type BlogPostMeta = {
   tags: string[];
   relatedService: string;
   lang: "en" | "no";
+  /**
+   * Which hub lists the post: the Norwegian/Oslo hub or the US (New York and
+   * California) hub. Defaults from `lang`. Set it explicitly for a post whose
+   * language and audience differ, such as an English guide for expats in Oslo,
+   * which keeps its English URL but is listed in the Norwegian hub.
+   */
+  market: BlogMarket;
   keywords?: string[];
   seoTitle?: string;
   seoDescription?: string;
@@ -64,6 +74,7 @@ function readPostFile(fileName: string): BlogPost {
   const raw = fs.readFileSync(filePath, "utf8");
   const { data, content } = matter(raw);
   const slug = (data.slug as string) ?? fileName.replace(/\.mdx$/, "");
+  const lang = (data.lang as "en" | "no") ?? "en";
 
   return {
     slug,
@@ -72,7 +83,8 @@ function readPostFile(fileName: string): BlogPost {
     date: data.date as string,
     tags: (data.tags as string[]) ?? [],
     relatedService: data.relatedService as string,
-    lang: (data.lang as "en" | "no") ?? "en",
+    lang,
+    market: (data.market as BlogMarket | undefined) ?? defaultMarketFor(lang),
     keywords: (data.keywords as string[]) ?? [],
     seoTitle: data.seoTitle as string | undefined,
     seoDescription: data.seoDescription as string | undefined,
