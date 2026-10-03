@@ -45,6 +45,15 @@ export const PRODUCTS: Product[] = [
     calendlyUrl: "https://calendly.com/martamindacc/exec-founder-session",
   },
   {
+    id: "couples-intensive",
+    name: "Couples Intensive",
+    description: "A two-day online intensive for couples: twelve hours of focused work across two consecutive days.",
+    duration: "2 days",
+    priceInCents: 350000,
+    // Intensives start with a free consultation to confirm fit and plan the two days.
+    calendlyUrl: "https://calendly.com/martamindacc/initial-consultation",
+  },
+  {
     id: "initial-consultation",
     name: "Initial Consultation",
     description: "A free 15 minute introductory call.",

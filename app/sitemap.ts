@@ -14,6 +14,7 @@ const routes: { path: string; lastModified: string }[] = [
   { path: "/privacy", lastModified: "2026-09-11" },
   { path: "/individual-therapy", lastModified: "2026-09-08" },
   { path: "/couples-therapy", lastModified: "2026-09-08" },
+  { path: "/couples-intensive", lastModified: "2026-10-03" },
   { path: "/couples-therapy-new-york-city", lastModified: "2026-09-11" },
   { path: "/family-support", lastModified: "2026-09-08" },
   { path: "/executive-founder-work", lastModified: "2026-09-08" },
@@ -21,6 +22,7 @@ const routes: { path: string; lastModified: string }[] = [
   // Norwegian versions of the home, service, about and contact pages.
   { path: "/no", lastModified: "2026-10-03" },
   { path: "/no/parterapi", lastModified: "2026-10-03" },
+  { path: "/no/parintensiv", lastModified: "2026-10-03" },
   { path: "/no/individuell-terapi", lastModified: "2026-10-03" },
   { path: "/no/familieterapi", lastModified: "2026-10-03" },
   { path: "/no/ledere-og-grundere", lastModified: "2026-10-03" },

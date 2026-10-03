@@ -53,6 +53,7 @@ export const navContent: Record<
     menuHeading: "Services",
     menuLinks: [
       { label: "Couples Session", href: "/couples-therapy" },
+      { label: "Couples Intensive", href: "/couples-intensive" },
       { label: "Individual Session", href: "/individual-therapy" },
       { label: "Family Session", href: "/family-support" },
       { label: "Executive & Founder Work", href: "/executive-founder-work" },
@@ -71,6 +72,7 @@ export const navContent: Record<
     menuHeading: "Tjenester",
     menuLinks: [
       { label: "Parterapi", href: "/no/parterapi" },
+      { label: "Parintensiv", href: "/no/parintensiv" },
       { label: "Individuell terapi", href: "/no/individuell-terapi" },
       { label: "Familieterapi", href: "/no/familieterapi" },
       { label: "Leder- og Grunnleggerarbeid", href: "/no/ledere-og-grundere" },
@@ -361,6 +363,105 @@ export const couplesTherapyContent: Record<LanguageCode, ServicePageContent> = {
     ctaSubtext:
       "Start med en felles oppstartssamtale for å se om dette er riktig for dere begge — ingen press, ingen forpliktelse utover den første timen.",
     ctaButton: "Book din første time",
+  },
+};
+
+export const couplesIntensiveContent: Record<LanguageCode, ServicePageContent> = {
+  en: {
+    title: "Couples Intensive",
+    subtitle: "Two-day online intensives for partners in New York City and California.",
+    intro:
+      "A concentrated format for couples who need more than an hour a week. Twelve hours of focused work across two consecutive days, online, built to interrupt a stuck pattern and leave you with a clear way forward.",
+    panels: [
+      {
+        title: "When weekly isn't enough",
+        description:
+          "Some situations don't fit a weekly rhythm: a recent disclosure, a decision you can't keep postponing, or a pattern that resets before the next session. An intensive gives the work room to go deeper without losing the thread between meetings.",
+      },
+      {
+        title: "Built for a turning point",
+        description:
+          "Two days is long enough to understand the cycle you're caught in, say what has gone unsaid, and practice a different way of reaching each other — and short enough that you leave with momentum rather than a waiting list.",
+      },
+    ],
+    processHeading: "How the two days unfold",
+    process: [
+      {
+        number: "01",
+        title: "Prepare",
+        description:
+          "We begin with a free consultation to confirm the format fits, then each of you completes a short pre-work questionnaire so the two days start with the real material.",
+      },
+      {
+        number: "02",
+        title: "Two days of focused work",
+        description:
+          "Six hours each day with structured breaks. We map the pattern, work through the moments that hurt most, and rehearse new ways of turning toward each other while they are fresh.",
+      },
+      {
+        number: "03",
+        title: "Follow through",
+        description:
+          "You leave with a written summary and a plan. A follow-up session a few weeks later checks what has held and adjusts what hasn't.",
+      },
+    ],
+    outcomesHeading: "What couples leave with",
+    outcomes: [
+      { title: "Momentum you can feel", description: "Movement on the issue you came with, not a plan to start on it." },
+      { title: "A shared map", description: "A clear, shared understanding of the cycle and what each of you does inside it." },
+      { title: "A plan for the months ahead", description: "Concrete agreements and a way to repair when they slip." },
+    ],
+    ctaHeading: "Ready to go deeper, faster?",
+    ctaSubtext: "Start with a free consultation to see whether an intensive is the right format for you both.",
+    ctaButton: "Book a consultation",
+  },
+  no: {
+    title: "Parintensiv",
+    subtitle: "To dagers intensivforløp på nett for par i Norge.",
+    intro:
+      "Et konsentrert format for par som trenger mer enn en time i uken. Tolv timer med fokusert arbeid over to sammenhengende dager, på nett, bygget for å bryte et fastlåst mønster og gi dere en tydelig vei videre.",
+    panels: [
+      {
+        title: "Når ukentlig ikke er nok",
+        description:
+          "Noen situasjoner passer ikke en ukentlig rytme: en nylig avsløring, en beslutning dere ikke kan utsette lenger, eller et mønster som nullstilles før neste time. Et intensivforløp gir arbeidet rom til å gå dypere uten å miste tråden mellom møtene.",
+      },
+      {
+        title: "Bygget for et vendepunkt",
+        description:
+          "To dager er lenge nok til å forstå sirkelen dere sitter fast i, si det som har vært usagt, og øve på en annen måte å nå hverandre på — og kort nok til at dere drar med fremdrift, ikke en venteliste.",
+      },
+    ],
+    processHeading: "Slik forløper de to dagene",
+    process: [
+      {
+        number: "01",
+        title: "Forberedelse",
+        description:
+          "Vi starter med en gratis innledende samtale for å bekrefte at formatet passer, og hver av dere fyller ut et kort forarbeid slik at de to dagene starter med det som faktisk gjelder.",
+      },
+      {
+        number: "02",
+        title: "To dager med fokusert arbeid",
+        description:
+          "Seks timer hver dag med strukturerte pauser. Vi kartlegger mønsteret, arbeider gjennom øyeblikkene som gjør mest vondt, og øver på nye måter å vende dere mot hverandre mens det er ferskt.",
+      },
+      {
+        number: "03",
+        title: "Oppfølging",
+        description:
+          "Dere får en skriftlig oppsummering og en plan. En oppfølgingstime noen uker senere ser på hva som har holdt og justerer det som ikke har.",
+      },
+    ],
+    outcomesHeading: "Hva par tar med seg",
+    outcomes: [
+      { title: "Fremdrift dere kjenner", description: "Bevegelse i det dere kom med, ikke en plan om å begynne." },
+      { title: "Et felles kart", description: "En tydelig, felles forståelse av sirkelen og hva hver av dere gjør i den." },
+      { title: "En plan for månedene fremover", description: "Konkrete avtaler og en måte å reparere på når de glipper." },
+    ],
+    ctaHeading: "Klare for å gå dypere, raskere?",
+    ctaSubtext: "Start med en gratis innledende samtale for å se om et intensivforløp er riktig format for dere.",
+    ctaButton: "Bestill en samtale",
   },
 };
 

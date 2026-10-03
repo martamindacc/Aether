@@ -71,6 +71,7 @@ const content: Record<
         heading: "Services",
         links: [
           { label: "Couples Session", href: "/couples-therapy" },
+          { label: "Couples Intensive", href: "/couples-intensive" },
           { label: "Individual Session", href: "/individual-therapy" },
           { label: "Family Session", href: "/family-support" },
           { label: "Executive & Founder Work", href: "/executive-founder-work" },
@@ -92,6 +93,14 @@ const content: Record<
         description:
           "Understand how you work together as a couple — improve communication, rebuild trust, and repair the pattern underneath the conflict.",
         href: "/couples-therapy",
+        color: "text-[#66755c]",
+      },
+      {
+        eyebrow: "Intensive support",
+        title: "Couples Intensive",
+        description:
+          "Two days of focused work for couples who need more than an hour a week — break the stuck pattern and leave with a clear way forward.",
+        href: "/couples-intensive",
         color: "text-[#66755c]",
       },
       {
@@ -178,6 +187,7 @@ const content: Record<
         heading: "Tjenester",
         links: [
           { label: "Parterapi", href: "/no/parterapi" },
+          { label: "Parintensiv", href: "/no/parintensiv" },
           { label: "Individuell terapi", href: "/no/individuell-terapi" },
           { label: "Familieterapi", href: "/no/familieterapi" },
           { label: "Leder- og Grunnleggerarbeid", href: "/no/ledere-og-grundere" },
@@ -199,6 +209,14 @@ const content: Record<
         description:
           "Forstå hvordan dere fungerer som par — forbedre kommunikasjon, gjenoppbygg tillit, og reparer mønsteret under konflikten.",
         href: "/no/parterapi",
+        color: "text-[#66755c]",
+      },
+      {
+        eyebrow: "Intensivt forløp",
+        title: "Parintensiv",
+        description:
+          "To dager med fokusert arbeid for par som trenger mer enn en time i uken — bryt det fastlåste mønsteret og dra med en tydelig vei videre.",
+        href: "/no/parintensiv",
         color: "text-[#66755c]",
       },
       {
