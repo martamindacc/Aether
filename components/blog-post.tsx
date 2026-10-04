@@ -11,7 +11,7 @@ import { formatReadingTime } from "@/lib/reading-time";
 import { RelatedPosts } from "@/components/related-posts";
 import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 import { blogIndexPathFor, localizedPaths, postPath } from "@/lib/locale-routes";
-import type { LanguageCode } from "@/lib/service-content";
+import { languages, type LanguageCode } from "@/lib/service-content";
 import { JsonLd } from "@/components/json-ld"
 
 const ogLocale: Record<LanguageCode, string> = { no: "nb_NO", en: "en_US" };
@@ -140,10 +140,13 @@ const mdxComponents = {
 /** Full article page body. The route decides which post to load; this renders it. */
 export function BlogPost({ post, related }: { post: BlogPostData; related: BlogPostMeta[] }) {
   const schemaLangByLang: Record<LanguageCode, string> = { en: "en-US", no: "nb-NO" };
-  const languageLinks = getTranslationsForPost(post).map((t) => ({
-    code: t.lang,
-    href: postPath(t),
-  }));
+  // Each language gets a destination: the genuine translation when one exists,
+  // otherwise that language's blog index, so the menu never dead-ends.
+  const translations = getTranslationsForPost(post);
+  const languageLinks = languages.map(({ code }) => {
+    const translation = translations.find((t) => t.lang === code);
+    return { code, href: translation ? postPath(translation) : localizedPaths.blog[code] };
+  });
   const canonicalUrl = `https://aetherpractice.com${postPath(post)}`;
 
   const jsonLd = {

@@ -7,12 +7,16 @@ import { formatReadingTime } from "@/lib/reading-time";
 
 const heading: Record<LanguageCode, string> = { en: "Keep reading", no: "Les videre" };
 
-/** Up to three more articles in the same language, the ones sharing the most tags first. */
-export function pickRelatedPosts(current: Pick<BlogPostMeta, "slug" | "lang" | "tags">, all: BlogPostMeta[], count = 3): BlogPostMeta[] {
+/** Up to three more articles in the same language: same hub first, then the ones sharing the most cluster tags, then newest. */
+export function pickRelatedPosts(current: Pick<BlogPostMeta, "slug" | "lang" | "market" | "tags">, all: BlogPostMeta[], count = 3): BlogPostMeta[] {
   return all
     .filter((post) => post.lang === current.lang && post.slug !== current.slug)
-    .map((post) => ({ post, shared: post.tags.filter((tag) => current.tags.includes(tag)).length }))
-    .sort((a, b) => b.shared - a.shared || (a.post.date < b.post.date ? 1 : -1))
+    .map((post) => ({
+      post,
+      sameMarket: post.market === current.market ? 1 : 0,
+      shared: post.tags.filter((tag) => current.tags.includes(tag)).length,
+    }))
+    .sort((a, b) => b.sameMarket - a.sameMarket || b.shared - a.shared || (a.post.date < b.post.date ? 1 : -1))
     .slice(0, count)
     .map(({ post }) => post);
 }
