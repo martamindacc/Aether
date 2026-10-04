@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { getHubBySlug } from "@/lib/hubs";
 import { HubPage, hubMetadata } from "@/components/hub-page";
 
-const SLUG = "couples-therapy-new-york-city";
+const SLUG = "couples-therapy-california";
 
 function loadHub() {
   const hub = getHubBySlug(SLUG);
@@ -15,6 +15,6 @@ export function generateMetadata(): Metadata {
   return hubMetadata(loadHub());
 }
 
-export default function CouplesTherapyNewYorkCityPage() {
+export default function CouplesTherapyCaliforniaPage() {
   return <HubPage hub={loadHub()} />;
 }
