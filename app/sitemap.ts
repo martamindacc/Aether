@@ -18,6 +18,7 @@ const routes: { path: string; lastModified: string }[] = [
   { path: "/couples-therapy-new-york-city", lastModified: "2026-09-11" },
   { path: "/family-support", lastModified: "2026-09-08" },
   { path: "/executive-founder-work", lastModified: "2026-09-08" },
+  { path: "/couples-therapy-for-founders", lastModified: "2026-10-04" },
   { path: "/online-therapy-norway", lastModified: "2026-09-11" },
   // Norwegian versions of the home, service, about and contact pages.
   { path: "/no", lastModified: "2026-10-03" },
