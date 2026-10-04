@@ -24,7 +24,7 @@ export type LocalizedPageKey =
 export const localizedPaths: Record<LocalizedPageKey, Record<LanguageCode, string>> = {
   home: { en: "/", no: "/no" },
   couples: { en: "/couples-therapy", no: "/no/parterapi" },
-  intensive: { en: "/couples-intensive", no: "/no/parintensiv" },
+  intensive: { en: "/intensive-couples-therapy", no: "/no/parintensiv" },
   individual: { en: "/individual-therapy", no: "/no/individuell-terapi" },
   family: { en: "/family-support", no: "/no/familieterapi" },
   executive: { en: "/executive-founder-work", no: "/no/ledere-og-grundere" },

@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next"
 import { getAllPosts, getTranslationsForPost } from "@/lib/blog"
-import { getAllHubs, getHubTranslations } from "@/lib/hubs"
+import { getAllHubs } from "@/lib/hubs"
+import { hubLanguages } from "@/components/hub-page"
 import { localizedPaths, postPath } from "@/lib/locale-routes"
 
 const baseUrl = "https://aetherpractice.com"
@@ -15,7 +16,6 @@ const routes: { path: string; lastModified: string }[] = [
   { path: "/privacy", lastModified: "2026-09-11" },
   { path: "/individual-therapy", lastModified: "2026-09-08" },
   { path: "/couples-therapy", lastModified: "2026-09-08" },
-  { path: "/couples-intensive", lastModified: "2026-10-03" },
   { path: "/couples-therapy-new-york-city", lastModified: "2026-09-11" },
   { path: "/family-support", lastModified: "2026-09-08" },
   { path: "/executive-founder-work", lastModified: "2026-09-08" },
@@ -71,21 +71,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   })
 
   const hubEntries = getAllHubs().map((hub) => {
-    const translations = getHubTranslations(hub)
-    const en = translations.find((t) => t.lang === "en")
+    const languages = hubLanguages(hub)
     return {
       url: `${baseUrl}${hub.path}`,
       lastModified: hub.modifiedDate,
-      ...(translations.length > 1 && en
-        ? {
-            alternates: {
-              languages: {
-                ...Object.fromEntries(translations.map((t) => [t.lang, `${baseUrl}${t.path}`])),
-                "x-default": `${baseUrl}${en.path}`,
-              },
-            },
-          }
-        : {}),
+      ...(languages ? { alternates: { languages: Object.fromEntries(Object.entries(languages).map(([k, v]) => [k, `${baseUrl}${v}`])) } } : {}),
     }
   })
 

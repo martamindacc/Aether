@@ -72,7 +72,7 @@ const content: Record<
         heading: "Services",
         links: [
           { label: "Couples Session", href: "/couples-therapy" },
-          { label: "Couples Intensive", href: "/couples-intensive" },
+          { label: "Couples Intensive", href: "/intensive-couples-therapy" },
           { label: "Individual Session", href: "/individual-therapy" },
           { label: "Family Session", href: "/family-support" },
           { label: "Executive & Founder Work", href: "/executive-founder-work" },
@@ -101,7 +101,7 @@ const content: Record<
         title: "Couples Intensive",
         description:
           "Two days of focused work for couples who need more than an hour a week — break the stuck pattern and leave with a clear way forward.",
-        href: "/couples-intensive",
+        href: "/intensive-couples-therapy",
         color: "text-[#66755c]",
       },
       {

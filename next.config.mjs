@@ -33,7 +33,13 @@ function blogRedirects() {
     { source: "/blog/terapia-par-dla-founderow-dyrektorow", destination: "/blog/couples-therapy-founders-executives", permanent: true },
   ]
 
-  return [...moved, ...removedPolish]
+  // The couples intensive moved from a short service page and a blog article to one hub page.
+  const intensiveHub = [
+    { source: "/couples-intensive", destination: "/intensive-couples-therapy", permanent: true },
+    { source: "/blog/intensive-couples-therapy", destination: "/intensive-couples-therapy", permanent: true },
+  ]
+
+  return [...moved, ...removedPolish, ...intensiveHub]
 }
 
 /** @type {import('next').NextConfig} */

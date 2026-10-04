@@ -53,7 +53,7 @@ export const navContent: Record<
     menuHeading: "Services",
     menuLinks: [
       { label: "Couples Session", href: "/couples-therapy" },
-      { label: "Couples Intensive", href: "/couples-intensive" },
+      { label: "Couples Intensive", href: "/intensive-couples-therapy" },
       { label: "Individual Session", href: "/individual-therapy" },
       { label: "Family Session", href: "/family-support" },
       { label: "Executive & Founder Work", href: "/executive-founder-work" },

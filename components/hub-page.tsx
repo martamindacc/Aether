@@ -14,23 +14,25 @@ const homeLabel = { en: "Home", no: "Hjem" } as const;
 const serviceType = { en: "Couples therapy", no: "Parterapi" } as const;
 const ogLocale = { en: "en_US", no: "nb_NO" } as const;
 
+/**
+ * hreflang map for a hub: its hub translations, plus any hand-declared alternate
+ * (a service page in the other language). Undefined when the hub stands alone.
+ */
+export function hubLanguages(hub: HubPageData): Record<string, string> | undefined {
+  const paths: Partial<Record<"en" | "no", string>> = { ...(hub.alternates ?? {}) };
+  for (const t of getHubTranslations(hub)) paths[t.lang] = t.path;
+  if (Object.keys(paths).length < 2 || !paths.en) return undefined;
+  return { ...paths, "x-default": paths.en };
+}
+
 /** Metadata for a hub: canonical, and hreflang only when a genuine translation exists. */
 export function hubMetadata(hub: HubPageData): Metadata {
-  const translations = getHubTranslations(hub);
-  const en = translations.find((t) => t.lang === "en");
   return pageMetadata({
     title: hub.seoTitle || hub.title,
     description: hub.description,
     path: hub.path,
     locale: ogLocale[hub.lang],
-    ...(translations.length > 1 && en
-      ? {
-          languages: {
-            ...Object.fromEntries(translations.map((t) => [t.lang, t.path])),
-            "x-default": en.path,
-          },
-        }
-      : {}),
+    ...(hubLanguages(hub) ? { languages: hubLanguages(hub) } : {}),
   });
 }
 
@@ -65,11 +67,8 @@ export function HubPage({ hub }: { hub: HubPageData }) {
   ]);
   // Each language gets a destination: the translated hub when one exists,
   // otherwise that language's home page, so the menu never dead-ends.
-  const translations = getHubTranslations(hub);
-  const languageLinks = languages.map(({ code }) => {
-    const translation = translations.find((t) => t.lang === code);
-    return { code, href: translation ? translation.path : localizedPaths.home[code] };
-  });
+  const alternates = hubLanguages(hub);
+  const languageLinks = languages.map(({ code }) => ({ code, href: alternates?.[code] ?? localizedPaths.home[code] }));
 
   return (
     <BlogShell language={hub.lang} languageLinks={languageLinks}>

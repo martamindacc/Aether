@@ -18,6 +18,8 @@ export type HubPage = {
   path: string;
   lang: "en" | "no";
   translationKey?: string;
+  /** Alternate-language page paths when the twin is not a hub, e.g. { no: "/no/parintensiv" }. */
+  alternates?: Partial<Record<"en" | "no", string>>;
   title: string;
   seoTitle?: string;
   description: string;
@@ -38,6 +40,7 @@ function readHubFile(fileName: string): HubPage {
     path: (data.path as string) ?? `/${slug}`,
     lang: (data.lang as "en" | "no") ?? "en",
     translationKey: data.translationKey as string | undefined,
+    alternates: data.alternates as HubPage["alternates"],
     title: data.title as string,
     seoTitle: data.seoTitle as string | undefined,
     description: data.description as string,
