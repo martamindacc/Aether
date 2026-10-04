@@ -4,18 +4,18 @@ import { getAllPosts, getPostBySlug } from "@/lib/blog";
 import { BlogPost, postMetadata } from "@/components/blog-post";
 import { pickRelatedPosts } from "@/components/related-posts";
 
-/** Only English posts live under /blog; Norwegian posts live under /no/blog. */
+/** English long-form guides live under /guides; regular posts under /blog. */
 export const dynamicParams = false;
 
 export function generateStaticParams() {
   return getAllPosts()
-    .filter((post) => post.lang === "en" && post.kind === "post")
+    .filter((post) => post.lang === "en" && post.kind === "guide")
     .map((post) => ({ slug: post.slug }));
 }
 
 function loadPost(slug: string) {
   const post = getPostBySlug(slug);
-  if (!post || post.lang !== "en" || post.kind !== "post") notFound();
+  if (!post || post.lang !== "en" || post.kind !== "guide") notFound();
   return post;
 }
 
@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return postMetadata(loadPost(slug));
 }
 
-export default async function EnglishBlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function EnglishGuidePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const post = loadPost(slug);
   return <BlogPost post={post} related={pickRelatedPosts(post, getAllPosts())} />;

@@ -9,13 +9,13 @@ export const dynamicParams = false;
 
 export function generateStaticParams() {
   return getAllPosts()
-    .filter((post) => post.lang === "no")
+    .filter((post) => post.lang === "no" && post.kind === "post")
     .map((post) => ({ slug: post.slug }));
 }
 
 function loadPost(slug: string) {
   const post = getPostBySlug(slug);
-  if (!post || post.lang !== "no") notFound();
+  if (!post || post.lang !== "no" || post.kind !== "post") notFound();
   return post;
 }
 

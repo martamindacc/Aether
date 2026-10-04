@@ -18,7 +18,8 @@ export type LocalizedPageKey =
   | "contact"
   | "privacy"
   | "bookingConfirmed"
-  | "blog";
+  | "blog"
+  | "guides";
 
 export const localizedPaths: Record<LocalizedPageKey, Record<LanguageCode, string>> = {
   home: { en: "/", no: "/no" },
@@ -32,6 +33,7 @@ export const localizedPaths: Record<LocalizedPageKey, Record<LanguageCode, strin
   privacy: { en: "/privacy", no: "/no/personvern" },
   bookingConfirmed: { en: "/booking-confirmed", no: "/no/bestilling-bekreftet" },
   blog: { en: "/blog", no: "/no/blog" },
+  guides: { en: "/guides", no: "/no/guides" },
 };
 
 /** A link target per language, for the language menu. */
@@ -68,7 +70,7 @@ export function blogIndexPathFor(post: Pick<BlogPostMeta, "market">): string {
   return localizedPaths.blog[post.market === "norway" ? "no" : "en"];
 }
 
-/** URL path of a post: English posts live under /blog, Norwegian posts under /no/blog. */
-export function postPath(post: Pick<BlogPostMeta, "slug" | "lang">): string {
-  return `${localizedPaths.blog[post.lang]}/${post.slug}`;
+/** URL path of a post: English posts live under /blog (guides under /guides), Norwegian under /no/blog (/no/guides). */
+export function postPath(post: Pick<BlogPostMeta, "slug" | "lang" | "kind">): string {
+  return `${localizedPaths[post.kind === "guide" ? "guides" : "blog"][post.lang]}/${post.slug}`;
 }

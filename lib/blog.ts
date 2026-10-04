@@ -23,6 +23,12 @@ export type BlogPostMeta = {
    * which keeps its English URL but is listed in the Norwegian hub.
    */
   market: BlogMarket;
+  /**
+   * "guide" for a long-form reference piece served under /guides (English) or
+   * /no/guides (Norwegian) instead of /blog. Guides are listed in the blog
+   * index and take part in related posts and hreflang like any post.
+   */
+  kind: "post" | "guide";
   keywords?: string[];
   seoTitle?: string;
   seoDescription?: string;
@@ -90,6 +96,7 @@ function readPostFile(fileName: string): BlogPost {
     relatedService: data.relatedService as string,
     lang,
     market: (data.market as BlogMarket | undefined) ?? defaultMarketFor(lang),
+    kind: data.kind === "guide" ? "guide" : "post",
     keywords: (data.keywords as string[]) ?? [],
     seoTitle: data.seoTitle as string | undefined,
     seoDescription: data.seoDescription as string | undefined,
