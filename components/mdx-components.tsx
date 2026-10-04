@@ -54,6 +54,12 @@ export const mdxComponents = {
     // eslint-disable-next-line @next/next/no-img-element -- MDX images have no known dimensions
     <img loading="lazy" decoding="async" className="mt-8 h-auto w-full rounded-2xl" {...props} />
   ),
+  blockquote: (props: React.ComponentProps<"blockquote">) => (
+    <blockquote
+      className="mt-6 border-l-4 border-[#c9a87d] pl-6 font-[Roboto,Arial,sans-serif] text-[19px] italic leading-[1.6] text-[#4a3d33] [&>p]:mt-0"
+      {...props}
+    />
+  ),
   strong: (props: React.ComponentProps<"strong">) => (
     <strong className="font-[Roboto,Arial,sans-serif] font-medium" {...props} />
   ),

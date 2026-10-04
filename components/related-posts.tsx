@@ -7,16 +7,22 @@ import { formatReadingTime } from "@/lib/reading-time";
 
 const heading: Record<LanguageCode, string> = { en: "Keep reading", no: "Les videre" };
 
-/** Up to three more articles in the same language: same hub first, then the ones sharing the most cluster tags, then newest. */
-export function pickRelatedPosts(current: Pick<BlogPostMeta, "slug" | "lang" | "market" | "tags">, all: BlogPostMeta[], count = 3): BlogPostMeta[] {
+/**
+ * Up to three more articles in the same language: same market first, then the
+ * ones sharing the most cluster tags, then the same hub (posts whose CTA points
+ * at the same service page, so a general post does not fall back to a niche
+ * cluster's newest articles), then newest.
+ */
+export function pickRelatedPosts(current: Pick<BlogPostMeta, "slug" | "lang" | "market" | "tags" | "relatedService">, all: BlogPostMeta[], count = 3): BlogPostMeta[] {
   return all
     .filter((post) => post.lang === current.lang && post.slug !== current.slug)
     .map((post) => ({
       post,
       sameMarket: post.market === current.market ? 1 : 0,
       shared: post.tags.filter((tag) => current.tags.includes(tag)).length,
+      sameHub: post.relatedService === current.relatedService ? 1 : 0,
     }))
-    .sort((a, b) => b.sameMarket - a.sameMarket || b.shared - a.shared || (a.post.date < b.post.date ? 1 : -1))
+    .sort((a, b) => b.sameMarket - a.sameMarket || b.shared - a.shared || b.sameHub - a.sameHub || (a.post.date < b.post.date ? 1 : -1))
     .slice(0, count)
     .map(({ post }) => post);
 }
