@@ -37,6 +37,7 @@ function blogRedirects() {
   const intensiveHub = [
     { source: "/couples-intensive", destination: "/intensive-couples-therapy", permanent: true },
     { source: "/blog/intensive-couples-therapy", destination: "/intensive-couples-therapy", permanent: true },
+    { source: "/blog/online-couples-therapy", destination: "/online-couples-therapy", permanent: true },
   ]
 
   return [...moved, ...removedPolish, ...intensiveHub]
