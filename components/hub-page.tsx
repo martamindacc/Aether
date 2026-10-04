@@ -5,16 +5,32 @@ import { BlogShell } from "@/components/blog-shell";
 import { JsonLd } from "@/components/json-ld";
 import { mdxComponents } from "@/components/mdx-components";
 import { extractFaq } from "@/lib/blog-faq";
-import type { HubPage as HubPageData } from "@/lib/hubs";
+import { getHubTranslations, type HubPage as HubPageData } from "@/lib/hubs";
 import { localizedPaths } from "@/lib/locale-routes";
 import { breadcrumbJsonLd, pageMetadata, serviceJsonLd } from "@/lib/seo";
+import { languages } from "@/lib/service-content";
 
-/** Metadata for a hub: English only, no hreflang, since hubs have no translated counterpart. */
+const homeLabel = { en: "Home", no: "Hjem" } as const;
+const serviceType = { en: "Couples therapy", no: "Parterapi" } as const;
+const ogLocale = { en: "en_US", no: "nb_NO" } as const;
+
+/** Metadata for a hub: canonical, and hreflang only when a genuine translation exists. */
 export function hubMetadata(hub: HubPageData): Metadata {
+  const translations = getHubTranslations(hub);
+  const en = translations.find((t) => t.lang === "en");
   return pageMetadata({
     title: hub.seoTitle || hub.title,
     description: hub.description,
     path: hub.path,
+    locale: ogLocale[hub.lang],
+    ...(translations.length > 1 && en
+      ? {
+          languages: {
+            ...Object.fromEntries(translations.map((t) => [t.lang, t.path])),
+            "x-default": en.path,
+          },
+        }
+      : {}),
   });
 }
 
@@ -25,10 +41,11 @@ export function hubMetadata(hub: HubPageData): Metadata {
 export function HubPage({ hub }: { hub: HubPageData }) {
   const serviceLd = serviceJsonLd({
     name: hub.title,
-    serviceType: "Couples therapy",
+    serviceType: serviceType[hub.lang],
     description: hub.description,
     path: hub.path,
     areaServed: hub.areaServed,
+    inLanguage: hub.lang === "no" ? "nb" : "en",
   });
   const faqItems = extractFaq(hub);
   const faqLd = faqItems.length
@@ -43,21 +60,23 @@ export function HubPage({ hub }: { hub: HubPageData }) {
       }
     : null;
   const breadcrumbLd = breadcrumbJsonLd([
-    { name: "Home", path: localizedPaths.home.en },
+    { name: homeLabel[hub.lang], path: localizedPaths.home[hub.lang] },
     { name: hub.title, path: hub.path },
   ]);
-  // No Norwegian twin: the language menu falls back to the Norwegian home page.
-  const languageLinks = [
-    { code: "en" as const, href: hub.path },
-    { code: "no" as const, href: localizedPaths.home.no },
-  ];
+  // Each language gets a destination: the translated hub when one exists,
+  // otherwise that language's home page, so the menu never dead-ends.
+  const translations = getHubTranslations(hub);
+  const languageLinks = languages.map(({ code }) => {
+    const translation = translations.find((t) => t.lang === code);
+    return { code, href: translation ? translation.path : localizedPaths.home[code] };
+  });
 
   return (
-    <BlogShell language="en" languageLinks={languageLinks}>
+    <BlogShell language={hub.lang} languageLinks={languageLinks}>
       <JsonLd data={serviceLd} />
       {faqLd && <JsonLd data={faqLd} />}
       <JsonLd data={breadcrumbLd} />
-      <article id="main-content" lang="en" className="mx-auto flex max-w-3xl flex-col px-6 pb-24 pt-48">
+      <article id="main-content" lang={hub.lang === "no" ? "nb" : "en"} className="mx-auto flex max-w-3xl flex-col px-6 pb-24 pt-48">
         <h1 className="font-[NeueHaasDisplayRoman,Arial,sans-serif] text-5xl font-medium leading-[1.05] tracking-tight text-[#74382f] sm:text-6xl">
           {hub.title}
         </h1>

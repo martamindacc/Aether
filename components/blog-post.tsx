@@ -131,6 +131,22 @@ export function BlogPost({ post, related }: { post: BlogPostData; related: BlogP
       }
     : null;
 
+  const howToJsonLd = post.howTo
+    ? {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        name: post.howTo.name,
+        ...(post.howTo.description ? { description: post.howTo.description } : {}),
+        inLanguage: schemaLangByLang[post.lang],
+        step: post.howTo.steps.map((step, index) => ({
+          "@type": "HowToStep",
+          position: index + 1,
+          name: step.name,
+          text: step.text,
+        })),
+      }
+    : null;
+
   const blogIndexPath = blogIndexPathFor(post);
   const blogIndexLabel = post.lang === "no" ? "Blogg" : "Blog";
 
@@ -146,6 +162,7 @@ export function BlogPost({ post, related }: { post: BlogPostData; related: BlogP
       {faqJsonLd && (
         <JsonLd data={faqJsonLd} />
       )}
+      {howToJsonLd && <JsonLd data={howToJsonLd} />}
       <JsonLd data={breadcrumbLd} />
       <BlogViewTracker path={postPath(post)} title={post.title} />
       <article id="main-content" lang={htmlLangFor(post.lang)} className="mx-auto flex max-w-3xl flex-col px-6 pb-24 pt-48">

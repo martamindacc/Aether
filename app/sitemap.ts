@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next"
 import { getAllPosts, getTranslationsForPost } from "@/lib/blog"
+import { getAllHubs, getHubTranslations } from "@/lib/hubs"
 import { localizedPaths, postPath } from "@/lib/locale-routes"
 
 const baseUrl = "https://aetherpractice.com"
@@ -18,7 +19,6 @@ const routes: { path: string; lastModified: string }[] = [
   { path: "/couples-therapy-new-york-city", lastModified: "2026-09-11" },
   { path: "/family-support", lastModified: "2026-09-08" },
   { path: "/executive-founder-work", lastModified: "2026-09-08" },
-  { path: "/couples-therapy-for-founders", lastModified: "2026-10-04" },
   { path: "/online-therapy-norway", lastModified: "2026-09-11" },
   // Norwegian versions of the home, service, about and contact pages.
   { path: "/no", lastModified: "2026-10-03" },
@@ -70,5 +70,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   })
 
-  return [...staticEntries, ...postEntries]
+  const hubEntries = getAllHubs().map((hub) => {
+    const translations = getHubTranslations(hub)
+    const en = translations.find((t) => t.lang === "en")
+    return {
+      url: `${baseUrl}${hub.path}`,
+      lastModified: hub.modifiedDate,
+      ...(translations.length > 1 && en
+        ? {
+            alternates: {
+              languages: {
+                ...Object.fromEntries(translations.map((t) => [t.lang, `${baseUrl}${t.path}`])),
+                "x-default": `${baseUrl}${en.path}`,
+              },
+            },
+          }
+        : {}),
+    }
+  })
+
+  return [...staticEntries, ...hubEntries, ...postEntries]
 }

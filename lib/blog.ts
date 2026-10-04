@@ -51,6 +51,11 @@ export type BlogPostMeta = {
    * differ from the post's own FAQ section, which is otherwise read automatically.
    */
   faq?: { question: string; answer: string }[];
+  /**
+   * Optional HowTo schema for a post whose core is a step-by-step protocol.
+   * Steps are written by hand so the schema states each step plainly.
+   */
+  howTo?: { name: string; description?: string; steps: { name: string; text: string }[] };
 };
 
 export type BlogPost = BlogPostMeta & {
@@ -98,6 +103,7 @@ function readPostFile(fileName: string): BlogPost {
     intro: data.intro as string[] | undefined,
     toc: data.toc as { label: string; heading: string }[] | undefined,
     faq: data.faq as { question: string; answer: string }[] | undefined,
+    howTo: data.howTo as BlogPostMeta["howTo"],
     content,
   };
 }
