@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { BlogShell } from "@/components/blog-shell";
 import { getAllPosts } from "@/lib/blog";
+import { getAllHubs } from "@/lib/hubs";
 import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 import { hreflangFor, languageLinksFor, localizedPaths, postPath } from "@/lib/locale-routes";
 import { BlogIndexContent } from "@/components/blog-index-content";
@@ -38,7 +39,7 @@ export default function BlogIndexPage() {
     <BlogShell language="en" languageLinks={blogIndexLanguages}>
       <JsonLd data={itemListJsonLd} />
       <JsonLd data={breadcrumbLd} />
-      <BlogIndexContent posts={posts} language="en" />
+      <BlogIndexContent posts={posts} hubs={getAllHubs().filter((hub) => hub.lang === "en")} language="en" />
     </BlogShell>
   );
 }
