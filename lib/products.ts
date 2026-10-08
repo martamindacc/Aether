@@ -29,7 +29,7 @@ export const PRODUCTS: Product[] = [
     duration: "60 min",
     priceInCents: 17000,
     priceInNok: 1700,
-    calendlyUrl: "https://calendly.com/martamindacc/couples-session",
+    calendlyUrl: "https://cal.com/aetherpractice/couples-session",
   },
   {
     id: "individual-session",
@@ -38,7 +38,7 @@ export const PRODUCTS: Product[] = [
     duration: "50 min",
     priceInCents: 13000,
     priceInNok: 1300,
-    calendlyUrl: "https://calendly.com/martamindacc/individual-session",
+    calendlyUrl: "https://cal.com/aetherpractice/individual-session",
   },
   {
     id: "family-session",
@@ -47,7 +47,7 @@ export const PRODUCTS: Product[] = [
     duration: "60 min",
     priceInCents: 20000,
     priceInNok: 2000,
-    calendlyUrl: "https://calendly.com/martamindacc/family-session",
+    calendlyUrl: "https://cal.com/aetherpractice/family-session",
   },
   {
     id: "founder-session",
@@ -56,7 +56,7 @@ export const PRODUCTS: Product[] = [
     duration: "50 min",
     priceInCents: 13000,
     priceInNok: 1300,
-    calendlyUrl: "https://calendly.com/martamindacc/exec-founder-session",
+    calendlyUrl: "https://cal.com/aetherpractice/exec-founder-session",
   },
   {
     id: "couples-intensive",
@@ -65,7 +65,7 @@ export const PRODUCTS: Product[] = [
     duration: "2 days",
     priceInCents: 350000,
     priceInNok: 35000,
-    calendlyUrl: "https://calendly.com/martamindacc/couples-intensive",
+    calendlyUrl: "https://cal.com/aetherpractice/couples-intensive",
   },
   {
     id: "initial-consultation",
@@ -74,6 +74,6 @@ export const PRODUCTS: Product[] = [
     duration: "15 min",
     priceInCents: 0,
     priceInNok: 0,
-    calendlyUrl: "https://calendly.com/martamindacc/initial-consultation",
+    calendlyUrl: "https://cal.com/aetherpractice/initial-consultation",
   },
 ]
