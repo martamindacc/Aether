@@ -63,8 +63,6 @@ export const navContent: Record<
       { label: "About", href: "/about" },
       { label: "Blog", href: "/blog" },
       { label: "Contact", href: "/contact" },
-      { label: "Couples Therapy in New York City", href: "/couples-therapy-new-york-city" },
-      { label: "Therapy in Norway", href: "/online-therapy-norway" },
     ],
   },
   no: {
@@ -82,7 +80,6 @@ export const navContent: Record<
       { label: "Om Oss", href: "/no/om-oss" },
       { label: "Blogg", href: "/no/blog" },
       { label: "Kontakt", href: "/no/kontakt" },
-      { label: "Online terapi i Norge", href: "/online-therapy-norway" },
     ],
   },
 };
