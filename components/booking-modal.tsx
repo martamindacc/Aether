@@ -44,8 +44,8 @@ export function BookingModal({
         chooseTime: "Velg et tidspunkt",
         scheduleTitle: "Bestill din økt",
         paymentNotice: "Betaling forfaller etter sesjonen.",
-        openedNotice: "Calendly-bookingsiden din har åpnet i en ny fane.",
-        openCalendly: "Åpne Calendly",
+        openedNotice: "Bookingsiden har åpnet i en ny fane.",
+        openCalendly: "Åpne bookingsiden",
         back: "Tilbake",
       }
     : {
@@ -53,8 +53,8 @@ export function BookingModal({
         chooseTime: "Choose a time",
         scheduleTitle: "Schedule your session",
         paymentNotice: "Payment is due after the session.",
-        openedNotice: "Your Calendly booking page has opened in a new tab.",
-        openCalendly: "Open Calendly",
+        openedNotice: "Your booking page has opened in a new tab.",
+        openCalendly: "Open booking page",
         back: "Back",
       }
 
