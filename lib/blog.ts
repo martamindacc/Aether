@@ -44,6 +44,11 @@ export type BlogPostMeta = {
   translationKey?: string;
   /** Path to a hero/thumbnail image, e.g. "/images/my-post.jpg". */
   image?: string;
+  /**
+   * Alt text for the hero image, written in the post's language. Used by the
+   * thumbnails on listing pages, the social preview and the article schema.
+   */
+  imageAlt?: string;
   /** CSS object-position for the thumbnail crop, e.g. "bottom", "top", "center". Defaults to "center". */
   imagePosition?: string;
   /** Short standfirst shown under the title, before the table of contents. */
@@ -105,6 +110,7 @@ function readPostFile(fileName: string): BlogPost {
     wordCount: countWords(content),
     translationKey: data.translationKey as string | undefined,
     image: data.image as string | undefined,
+    imageAlt: data.imageAlt as string | undefined,
     imagePosition: data.imagePosition as string | undefined,
     lede: data.lede as string | undefined,
     intro: data.intro as string[] | undefined,

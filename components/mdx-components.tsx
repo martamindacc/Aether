@@ -4,11 +4,49 @@
  * a hub page reads exactly like an article.
  */
 
+import Image from "next/image";
+import { getImageDimensions } from "@/lib/image-meta";
+
 /** Slug for an H2 so tables of contents and in-page anchors can link to it. */
 export function headingId(children: React.ReactNode) {
   return typeof children === "string"
     ? children.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")
     : undefined;
+}
+
+/**
+ * Article images. `![alt](/images/file.jpg "caption")` renders a <figure>
+ * with the caption as <figcaption>, so the image carries its own context
+ * for readers, screen readers and search/answer engines. Local images get
+ * their intrinsic size read from disk and go through next/image, which
+ * serves responsive AVIF/WebP variants, reserves space (no layout shift)
+ * and lazy-loads by default.
+ */
+function MdxImage({ src, alt, title }: React.ComponentProps<"img">) {
+  if (typeof src !== "string") return null;
+  const dimensions = getImageDimensions(src);
+  const className = "h-auto w-full rounded-2xl";
+  const image = dimensions ? (
+    <Image
+      src={src}
+      alt={alt ?? ""}
+      width={dimensions.width}
+      height={dimensions.height}
+      sizes="(min-width: 816px) 720px, calc(100vw - 48px)"
+      className={className}
+    />
+  ) : (
+    // eslint-disable-next-line @next/next/no-img-element -- remote or unknown image without dimensions
+    <img src={src} alt={alt ?? ""} loading="lazy" decoding="async" className={className} />
+  );
+  return (
+    <figure className="mt-8">
+      {image}
+      {title && (
+        <figcaption className="mt-3 font-[Roboto,Arial,sans-serif] text-sm leading-[1.5] text-zinc-600">{title}</figcaption>
+      )}
+    </figure>
+  );
 }
 
 export const mdxComponents = {
@@ -25,12 +63,19 @@ export const mdxComponents = {
       {...props}
     />
   ),
-  p: (props: React.ComponentProps<"p">) => (
-    <p
-      className="mt-6 font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.6] text-[#383838]"
-      {...props}
-    />
-  ),
+  p: (props: React.ComponentProps<"p">) => {
+    // A paragraph holding only an image renders as the <figure> itself: <figure> inside <p> is invalid HTML.
+    const only = props.children as React.ReactElement<{ src?: string }> | undefined;
+    if (only && typeof only === "object" && "type" in only && only.type === MdxImage) {
+      return only;
+    }
+    return (
+      <p
+        className="mt-6 font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.6] text-[#383838]"
+        {...props}
+      />
+    );
+  },
   ul: (props: React.ComponentProps<"ul">) => (
     <ul
       className={`mt-6 space-y-3 font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.6] text-[#383838] ${
@@ -50,10 +95,7 @@ export const mdxComponents = {
   a: (props: React.ComponentProps<"a">) => (
     <a className="text-[#74382f] underline underline-offset-2 hover:no-underline" {...props} />
   ),
-  img: (props: React.ComponentProps<"img">) => (
-    // eslint-disable-next-line @next/next/no-img-element -- MDX images have no known dimensions
-    <img loading="lazy" decoding="async" className="mt-8 h-auto w-full rounded-2xl" {...props} />
-  ),
+  img: MdxImage,
   blockquote: (props: React.ComponentProps<"blockquote">) => (
     <blockquote
       className="mt-6 border-l-4 border-[#c9a87d] pl-6 font-[Roboto,Arial,sans-serif] text-[19px] italic leading-[1.6] text-[#4a3d33] [&>p]:mt-0"

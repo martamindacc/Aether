@@ -620,7 +620,7 @@ export default function HomeClient({
                     <div className="relative aspect-[3/2] w-full overflow-hidden">
                       <Image
                         src={post.image}
-                        alt=""
+                        alt={post.imageAlt ?? ""}
                         fill
                         sizes="(min-width: 1024px) 384px, (min-width: 640px) 50vw, 100vw"
                         className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"

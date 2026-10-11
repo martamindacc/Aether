@@ -48,7 +48,7 @@ function PostCard({ post, featured = false }: { post: BlogPostMeta; featured?: b
         <div className={`relative w-full overflow-hidden ${featured ? "aspect-[16/9] md:aspect-auto md:min-h-[320px]" : "aspect-[16/9]"}`}>
           <Image
             src={post.image}
-            alt=""
+            alt={post.imageAlt ?? ""}
             fill
             sizes={featured ? "(min-width: 768px) 576px, 100vw" : "(min-width: 768px) 384px, 100vw"}
             className="object-cover transition-transform duration-500 group-hover:scale-105"

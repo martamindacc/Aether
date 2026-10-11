@@ -45,7 +45,7 @@ export function RelatedPosts({ posts, language }: { posts: BlogPostMeta[]; langu
               <div className="relative aspect-[16/9] w-full overflow-hidden">
                 <Image
                   src={post.image}
-                  alt=""
+                  alt={post.imageAlt ?? ""}
                   fill
                   sizes="(min-width: 640px) 240px, 100vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"

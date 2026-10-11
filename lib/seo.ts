@@ -48,13 +48,13 @@ export function pageMetadata({
   modifiedTime?: string
   section?: string
   tags?: string[]
-  /** Page-specific social image path, e.g. a post's hero image. Falls back to the shared site image. */
-  image?: string
+  /** Page-specific social image, e.g. a post's hero image. Falls back to the shared site image. */
+  image?: { url: string; alt?: string; width?: number; height?: number }
 }): Metadata {
   const url = `${BASE_URL}${path}`
   const fullTitle = TITLE_TEMPLATE.replace("%s", title)
   const socialImage = image
-    ? { url: image, alt: title }
+    ? { ...image, alt: image.alt || title }
     : { url: "/opengraph-image", width: 1200, height: 630, alt: OG_IMAGE_ALT }
 
   return {

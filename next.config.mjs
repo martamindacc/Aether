@@ -40,11 +40,25 @@ function blogRedirects() {
     { source: "/blog/online-couples-therapy", destination: "/online-couples-therapy", permanent: true },
   ]
 
-  return [...moved, ...removedPolish, ...intensiveHub]
+  // Blog images renamed to descriptive, language-consistent filenames; old URLs may be indexed in image search.
+  const renamedImages = [
+    { source: "/images/couple-separate-rooms-eft.jpg", destination: "/images/emotionally-focused-therapy-woman-window-dusk.jpg", permanent: true },
+    { source: "/images/couple-separate-rooms-two-careers.jpg", destination: "/images/two-careers-couple-overlooking-san-francisco-bay.jpg", permanent: true },
+    { source: "/images/startup-stress-intimacy-night-city.jpg", destination: "/images/startup-stress-couple-walking-apart-street.jpg", permanent: true },
+  ]
+
+  return [...moved, ...removedPolish, ...intensiveHub, ...renamedImages]
 }
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    // Serve AVIF where supported, WebP otherwise; the JPEG originals stay as the social-preview source.
+    formats: ["image/avif", "image/webp"],
+    qualities: [75],
+    // Only blog images and the hero poster go through the optimizer.
+    localPatterns: [{ pathname: "/images/**" }, { pathname: "/hero-poster.webp" }],
+  },
   experimental: {
     // One 404 page for the whole site; needed because each language has its own root layout.
     globalNotFound: true,

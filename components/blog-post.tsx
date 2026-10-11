@@ -13,6 +13,7 @@ import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 import { blogIndexPathFor, localizedPaths, postPath } from "@/lib/locale-routes";
 import { languages, type LanguageCode } from "@/lib/service-content";
 import { headingId, mdxComponents } from "@/components/mdx-components";
+import { getImageDimensions } from "@/lib/image-meta";
 
 function formatDate(date: string, lang: LanguageCode) {
   const localeMap: Record<LanguageCode, string> = { no: "nb-NO", en: "en-US" };
@@ -50,7 +51,7 @@ export function postMetadata(post: BlogPostData): Metadata {
     publishedTime: post.date,
     modifiedTime: post.modifiedDate,
     tags: post.tags,
-    image: post.image,
+    image: post.image ? { url: post.image, alt: post.imageAlt, ...getImageDimensions(post.image) } : undefined,
   });
 }
 
@@ -90,7 +91,16 @@ export function BlogPost({ post, related }: { post: BlogPostData; related: BlogP
     inLanguage: schemaLangByLang[post.lang],
     isAccessibleForFree: true,
     wordCount: post.wordCount,
-    image: `https://aetherpractice.com${post.image ?? "/opengraph-image"}`,
+    image: post.image
+      ? {
+          "@type": "ImageObject",
+          url: `https://aetherpractice.com${post.image}`,
+          contentUrl: `https://aetherpractice.com${post.image}`,
+          ...getImageDimensions(post.image),
+          ...(post.imageAlt ? { caption: post.imageAlt, description: post.imageAlt } : {}),
+          inLanguage: schemaLangByLang[post.lang],
+        }
+      : `https://aetherpractice.com/opengraph-image`,
     ...(post.tags.length ? { articleSection: post.tags[0] } : {}),
     keywords: post.keywords,
     author: {

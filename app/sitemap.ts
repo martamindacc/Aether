@@ -56,6 +56,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     return {
       url: `${baseUrl}${postPath(post)}`,
       lastModified: post.modifiedDate,
+      ...(post.image ? { images: [`${baseUrl}${post.image}`] } : {}),
       ...(translations.length > 1 && en
         ? {
             alternates: {
