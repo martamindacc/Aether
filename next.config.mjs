@@ -45,6 +45,7 @@ function blogRedirects() {
     { source: "/images/couple-separate-rooms-eft.jpg", destination: "/images/emotionally-focused-therapy-woman-window-dusk.jpg", permanent: true },
     { source: "/images/couple-separate-rooms-two-careers.jpg", destination: "/images/two-careers-couple-overlooking-san-francisco-bay.jpg", permanent: true },
     { source: "/images/startup-stress-intimacy-night-city.jpg", destination: "/images/startup-stress-couple-walking-apart-street.jpg", permanent: true },
+    { source: "/images/startup-stress-two-people-desert-plain.jpg", destination: "/images/founder-partner-two-people-desert-plain.jpg", permanent: true },
   ]
 
   return [...moved, ...removedPolish, ...intensiveHub, ...renamedImages]
