@@ -49,9 +49,6 @@ function blogRedirects() {
     { source: "/images/founder-partner-two-people-desert-plain.jpg", destination: "/images/two-people-desert-plain-horizon.jpg", permanent: true },
     { source: "/images/relationship-after-exit-woman-window-city.jpg", destination: "/images/woman-alone-window-city-skyline.jpg", permanent: true },
     { source: "/images/founder-partner-opposite-ends-long-table.jpg", destination: "/images/couple-opposite-ends-long-table.jpg", permanent: true },
-    { source: "/images/signs-couples-therapy-is-working.jpg", destination: "/images/couple-sun-hats-desert-plain.jpg", permanent: true },
-    { source: "/images/two-mugs-marble-table-founder-partner.jpg", destination: "/images/two-mugs-marble-table-window-view.jpg", permanent: true },
-    { source: "/images/when-your-partner-is-burned-out.jpg", destination: "/images/woman-empty-house-moving-box.jpg", permanent: true },
     { source: "/images/startup-stress-couple-walking-apart-street.jpg", destination: "/images/couple-walking-apart-street.jpg", permanent: true },
     { source: "/images/two-careers-couple-overlooking-san-francisco-bay.jpg", destination: "/images/two-women-overlooking-san-francisco-bay.jpg", permanent: true },
   ]
