@@ -51,6 +51,7 @@ function blogRedirects() {
     { source: "/images/founder-partner-opposite-ends-long-table.jpg", destination: "/images/couple-opposite-ends-long-table.jpg", permanent: true },
     { source: "/images/startup-stress-couple-walking-apart-street.jpg", destination: "/images/couple-walking-apart-street.jpg", permanent: true },
     { source: "/images/two-careers-couple-overlooking-san-francisco-bay.jpg", destination: "/images/two-women-overlooking-san-francisco-bay.jpg", permanent: true },
+    { source: "/images/founder-marriage-couple-dock-lake-sunset.jpg", destination: "/images/couple-dock-lake-sunset.jpg", permanent: true },
   ]
 
   return [...moved, ...removedPolish, ...intensiveHub, ...renamedImages]
