@@ -43,14 +43,17 @@ function blogRedirects() {
   // Blog images renamed to descriptive, language-consistent filenames; old URLs may be indexed in image search.
   const renamedImages = [
     { source: "/images/couple-separate-rooms-eft.jpg", destination: "/images/emotionally-focused-therapy-woman-window-dusk.jpg", permanent: true },
-    { source: "/images/couple-separate-rooms-two-careers.jpg", destination: "/images/two-careers-couple-overlooking-san-francisco-bay.jpg", permanent: true },
-    { source: "/images/startup-stress-intimacy-night-city.jpg", destination: "/images/startup-stress-couple-walking-apart-street.jpg", permanent: true },
+    { source: "/images/couple-separate-rooms-two-careers.jpg", destination: "/images/two-women-overlooking-san-francisco-bay.jpg", permanent: true },
+    { source: "/images/startup-stress-intimacy-night-city.jpg", destination: "/images/couple-walking-apart-street.jpg", permanent: true },
     { source: "/images/startup-stress-two-people-desert-plain.jpg", destination: "/images/two-people-desert-plain-horizon.jpg", permanent: true },
     { source: "/images/founder-partner-two-people-desert-plain.jpg", destination: "/images/two-people-desert-plain-horizon.jpg", permanent: true },
     { source: "/images/relationship-after-exit-woman-window-city.jpg", destination: "/images/woman-alone-window-city-skyline.jpg", permanent: true },
     { source: "/images/founder-partner-opposite-ends-long-table.jpg", destination: "/images/couple-opposite-ends-long-table.jpg", permanent: true },
     { source: "/images/signs-couples-therapy-is-working.jpg", destination: "/images/couple-sun-hats-desert-plain.jpg", permanent: true },
     { source: "/images/two-mugs-marble-table-founder-partner.jpg", destination: "/images/two-mugs-marble-table-window-view.jpg", permanent: true },
+    { source: "/images/when-your-partner-is-burned-out.jpg", destination: "/images/woman-empty-house-moving-box.jpg", permanent: true },
+    { source: "/images/startup-stress-couple-walking-apart-street.jpg", destination: "/images/couple-walking-apart-street.jpg", permanent: true },
+    { source: "/images/two-careers-couple-overlooking-san-francisco-bay.jpg", destination: "/images/two-women-overlooking-san-francisco-bay.jpg", permanent: true },
   ]
 
   return [...moved, ...removedPolish, ...intensiveHub, ...renamedImages]
