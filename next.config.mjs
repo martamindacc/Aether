@@ -47,6 +47,8 @@ function blogRedirects() {
     { source: "/images/startup-stress-intimacy-night-city.jpg", destination: "/images/startup-stress-couple-walking-apart-street.jpg", permanent: true },
     { source: "/images/startup-stress-two-people-desert-plain.jpg", destination: "/images/two-people-desert-plain-horizon.jpg", permanent: true },
     { source: "/images/founder-partner-two-people-desert-plain.jpg", destination: "/images/two-people-desert-plain-horizon.jpg", permanent: true },
+    { source: "/images/relationship-after-exit-woman-window-city.jpg", destination: "/images/woman-alone-window-city-skyline.jpg", permanent: true },
+    { source: "/images/founder-partner-opposite-ends-long-table.jpg", destination: "/images/couple-opposite-ends-long-table.jpg", permanent: true },
   ]
 
   return [...moved, ...removedPolish, ...intensiveHub, ...renamedImages]
