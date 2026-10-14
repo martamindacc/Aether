@@ -12,40 +12,66 @@ const privacyLabel: Record<LanguageCode, string> = {
   no: "Personvern",
 };
 
-export function SiteFooter({ language }: { language: LanguageCode }) {
+export function SiteFooter({
+  language,
+  tone = "light",
+}: {
+  language: LanguageCode;
+  /**
+   * "dark" is for sections that paint their own dark background (Instruments).
+   * The footer stays transparent either way and only recolours its own type, so
+   * it sits on whatever the section behind it is painted with.
+   */
+  tone?: "light" | "dark";
+}) {
   const t = navContent[language];
+  const isDark = tone === "dark";
+  const heading = isDark
+    ? "text-xs uppercase tracking-wide text-[#6A635A]"
+    : "text-xs uppercase tracking-wide text-zinc-500";
+  const link = isDark
+    ? "text-[#A39A8C] hover:text-[#F3EBDD]"
+    : "text-zinc-700 hover:text-zinc-900";
 
   return (
-    <footer className="px-6 py-[99px] font-[Roboto,Arial,sans-serif] text-sm text-[#383838]">
+    <footer
+      className={
+        isDark
+          ? "px-6 py-[99px] font-[Roboto,Arial,sans-serif] text-sm text-[#6A635A]"
+          : "px-6 py-[99px] font-[Roboto,Arial,sans-serif] text-sm text-[#383838]"
+      }
+    >
       <div className="mx-auto grid max-w-6xl grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-3 md:gap-12 md:items-start">
         <div className="order-1 col-span-2 flex flex-col items-center gap-4 text-center md:order-2 md:col-span-1 md:justify-self-center">
           <Link
             href={homePath(language)}
-            className="flex items-center gap-2 text-lg font-medium tracking-tight text-zinc-900"
+            className={
+              isDark
+                ? "flex items-center gap-2 text-lg font-medium tracking-tight text-[#F3EBDD]"
+                : "flex items-center gap-2 text-lg font-medium tracking-tight text-zinc-900"
+            }
           >
-            <img src="/logo-a.svg" alt="" width={20} height={20} className="h-5 w-5" />
+            <img
+              src="/logo-a.svg"
+              alt=""
+              width={20}
+              height={20}
+              className={isDark ? "h-5 w-5 invert" : "h-5 w-5"}
+            />
             Aether Practice
           </Link>
           <p>
             © <span suppressHydrationWarning>{new Date().getFullYear()}</span> Aether Practice. {taglines[language]}
           </p>
-          <nav aria-label={t.instrumentsHeading} className="mt-2 flex flex-col items-center gap-3">
-            <p className="text-xs uppercase tracking-wide text-zinc-500">{t.instrumentsHeading}</p>
-            {t.instrumentsLinks.map((link) => (
-              <Link key={link.href} href={link.href} className="text-zinc-700 hover:text-zinc-900">
-                {link.label}
-              </Link>
-            ))}
-          </nav>
         </div>
         <nav
           aria-label={t.menuHeading}
           className="order-2 flex flex-col gap-3 md:order-1 md:col-span-1 md:justify-self-start"
         >
-            <p className="text-xs uppercase tracking-wide text-zinc-500">{t.menuHeading}</p>
-            {t.menuLinks.map((link) => (
-              <Link key={link.href} href={link.href} className="text-zinc-700 hover:text-zinc-900">
-                {link.label}
+            <p className={heading}>{t.menuHeading}</p>
+            {t.menuLinks.map((item) => (
+              <Link key={item.href} href={item.href} className={link}>
+                {item.label}
               </Link>
             ))}
         </nav>
@@ -53,16 +79,16 @@ export function SiteFooter({ language }: { language: LanguageCode }) {
           aria-label={t.companyHeading}
           className="order-3 flex flex-col gap-3 justify-self-end md:col-span-1 md:justify-self-end"
         >
-            <p className="text-xs uppercase tracking-wide text-zinc-500">{t.companyHeading}</p>
-            {t.companyLinks.map((link) => (
-              <Link key={link.href} href={link.href} className="text-zinc-700 hover:text-zinc-900">
-                {link.label}
+            <p className={heading}>{t.companyHeading}</p>
+            {t.companyLinks.map((item) => (
+              <Link key={item.href} href={item.href} className={link}>
+                {item.label}
               </Link>
             ))}
-            <Link href="/instruments" className="text-zinc-700 hover:text-zinc-900">
+            <Link href="/instruments" className={link}>
               Instruments
             </Link>
-            <Link href={localizedPaths.privacy[language]} className="text-zinc-700 hover:text-zinc-900">
+            <Link href={localizedPaths.privacy[language]} className={link}>
               {privacyLabel[language]}
             </Link>
         </nav>

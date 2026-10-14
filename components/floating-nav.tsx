@@ -12,25 +12,36 @@ export function FloatingNav({
   languageLinks,
   isMenuOpen,
   onMenuOpenChange,
-  isLangOpen,
+  isLangOpen = false,
   onLangOpenChange,
   brandLabel = "Aether Practice",
   showBooking = true,
+  showLanguage = true,
+  tone = "light",
 }: {
   /** Language of the current page, decided by its URL. */
   language: LanguageCode;
-  /** Where each language option navigates: the same page in that language, or its closest equivalent. */
-  languageLinks: LanguageLink[];
+  /** Where each language option navigates: the same page in that language, or its closest equivalent. Omitted when showLanguage is false. */
+  languageLinks?: LanguageLink[];
   isMenuOpen: boolean;
   onMenuOpenChange: (open: boolean) => void;
-  isLangOpen: boolean;
-  onLangOpenChange: (open: boolean) => void;
+  isLangOpen?: boolean;
+  onLangOpenChange?: (open: boolean) => void;
   /** Text next to the logo. */
   brandLabel?: string;
   /** Whether the booking button (and its modal) is part of the bar. */
   showBooking?: boolean;
+  /** Whether the language switcher is part of the bar. */
+  showLanguage?: boolean;
+  /**
+   * "dark" is for sections that paint their own dark background (Instruments):
+   * the bar goes near-transparent so the page scrolls through it, and every
+   * control that is dark-on-white in the light bar flips to light-on-dark.
+   */
+  tone?: "light" | "dark";
 }) {
   const t = navContent[language];
+  const isDark = tone === "dark";
   const currentLabel = languages.find((lang) => lang.code === language)?.label ?? "EN";
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const languageMenuRef = useRef<HTMLDivElement>(null);
@@ -39,6 +50,7 @@ export function FloatingNav({
   useDialog(isMenuOpen, closeMenu, menuPanelRef);
 
   useEffect(() => {
+    if (!onLangOpenChange) return;
     const handlePointerDown = (event: PointerEvent) => {
       if (languageMenuRef.current && !languageMenuRef.current.contains(event.target as Node)) {
         onLangOpenChange(false);
@@ -50,7 +62,13 @@ export function FloatingNav({
 
   return (
     <>
-      <nav className="fixed inset-x-4 top-4 z-20 flex items-center justify-between rounded-[1.5rem] border border-white/50 bg-white/50 px-2.5 py-2.5 shadow-lg shadow-zinc-900/5 backdrop-blur-xl sm:inset-x-6 sm:top-6 sm:px-6 sm:py-3">
+      <nav
+        className={
+          isDark
+            ? "fixed inset-x-4 top-4 z-20 flex items-center justify-between rounded-[1.5rem] border border-[#F3EBDD]/10 bg-[#141210]/30 px-2.5 py-2.5 backdrop-blur-md sm:inset-x-6 sm:top-6 sm:px-6 sm:py-3"
+            : "fixed inset-x-4 top-4 z-20 flex items-center justify-between rounded-[1.5rem] border border-white/50 bg-white/50 px-2.5 py-2.5 shadow-lg shadow-zinc-900/5 backdrop-blur-xl sm:inset-x-6 sm:top-6 sm:px-6 sm:py-3"
+        }
+      >
         {showBooking ? (
           <>
             <button
@@ -63,14 +81,20 @@ export function FloatingNav({
               href={homePath(language)}
               className="hidden items-center gap-2 text-lg font-medium tracking-[-0.04em] sm:flex sm:text-xl"
             >
-              <img src="/logo-a.svg" alt="" width={24} height={24} className="h-6 w-6" />
+              <img src="/logo-a.svg" alt="" width={24} height={24} className={isDark ? "h-6 w-6 invert" : "h-6 w-6"} />
               {brandLabel}
             </Link>
             <Link
               href={homePath(language)}
               className="flex min-w-0 flex-1 items-center justify-center gap-1.5 px-2 sm:hidden"
             >
-              <img src="/logo-a.svg" alt="" width={20} height={20} className="h-5 w-5 shrink-0" />
+              <img
+                src="/logo-a.svg"
+                alt=""
+                width={20}
+                height={20}
+                className={isDark ? "h-5 w-5 shrink-0 invert" : "h-5 w-5 shrink-0"}
+              />
               <span className="truncate text-sm font-medium tracking-[-0.04em]">{brandLabel}</span>
             </Link>
           </>
@@ -79,7 +103,13 @@ export function FloatingNav({
             href={homePath(language)}
             className="flex min-w-0 items-center gap-1.5 pl-1.5 sm:gap-2 sm:pl-0"
           >
-            <img src="/logo-a.svg" alt="" width={24} height={24} className="h-5 w-5 shrink-0 sm:h-6 sm:w-6" />
+            <img
+              src="/logo-a.svg"
+              alt=""
+              width={24}
+              height={24}
+              className={isDark ? "h-5 w-5 shrink-0 invert sm:h-6 sm:w-6" : "h-5 w-5 shrink-0 sm:h-6 sm:w-6"}
+            />
             <span className="truncate text-sm font-medium tracking-[-0.04em] sm:text-xl">{brandLabel}</span>
           </Link>
         )}
@@ -92,9 +122,10 @@ export function FloatingNav({
               {t.bookNow}
             </button>
           )}
-          <div ref={languageMenuRef} className="relative" onKeyDown={menuKeyHandler(() => onLangOpenChange(false))} onBlur={closeOnFocusOut(() => onLangOpenChange(false))}>
+          {showLanguage && (
+          <div ref={languageMenuRef} className="relative" onKeyDown={menuKeyHandler(() => onLangOpenChange?.(false))} onBlur={closeOnFocusOut(() => onLangOpenChange?.(false))}>
             <button
-              onClick={() => onLangOpenChange(!isLangOpen)}
+              onClick={() => onLangOpenChange?.(!isLangOpen)}
               aria-label={`${language === "no" ? "Språk" : "Language"}: ${currentLabel}`}
               aria-haspopup="menu"
               aria-expanded={isLangOpen}
@@ -120,12 +151,12 @@ export function FloatingNav({
             </button>
             {isLangOpen && (
               <div role="menu" aria-label={language === "no" ? "Språk" : "Language"} className="absolute right-0 top-full mt-2 flex w-12 flex-col rounded-xl border border-zinc-900/10 bg-white py-1 shadow-lg">
-                {languageLinks.map((option) => (
+                {languageLinks?.map((option) => (
                   <Link
                     key={option.code}
                     href={option.href}
                     role="menuitem"
-                    onClick={() => onLangOpenChange(false)}
+                    onClick={() => onLangOpenChange?.(false)}
                     className="px-3 py-2 text-center text-sm text-zinc-900 transition-colors hover:bg-zinc-100"
                   >
                     {languages.find((lang) => lang.code === option.code)?.label ?? option.code.toUpperCase()}
@@ -134,15 +165,20 @@ export function FloatingNav({
               </div>
             )}
           </div>
+          )}
           <button
             onClick={() => onMenuOpenChange(true)}
-            className="flex h-9 w-9 items-center justify-center border border-zinc-900/20 bg-white/30 transition-colors hover:bg-white/65 sm:h-11 sm:w-11"
+            className={
+              isDark
+                ? "flex h-9 w-9 items-center justify-center border border-[#F3EBDD]/25 bg-[#F3EBDD]/5 transition-colors hover:bg-[#F3EBDD]/15 sm:h-11 sm:w-11"
+                : "flex h-9 w-9 items-center justify-center border border-zinc-900/20 bg-white/30 transition-colors hover:bg-white/65 sm:h-11 sm:w-11"
+            }
             aria-label={language === "no" ? "Åpne meny" : "Open menu"}
           >
             <span className="flex w-4 flex-col gap-1 sm:w-5 sm:gap-1.5">
-              <span className="h-px w-full bg-zinc-900" />
-              <span className="h-px w-full bg-zinc-900" />
-              <span className="h-px w-full bg-zinc-900" />
+              <span className={isDark ? "h-px w-full bg-[#F3EBDD]" : "h-px w-full bg-zinc-900"} />
+              <span className={isDark ? "h-px w-full bg-[#F3EBDD]" : "h-px w-full bg-zinc-900"} />
+              <span className={isDark ? "h-px w-full bg-[#F3EBDD]" : "h-px w-full bg-zinc-900"} />
             </span>
           </button>
         </div>

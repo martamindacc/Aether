@@ -39,14 +39,12 @@ const label = "font-[Roboto,Arial,sans-serif] text-sm uppercase tracking-wide te
 export default function Page() {
   return (
     <div className="pb-24 pt-48">
-      <div className="h-[3px] w-[72px] bg-[#D99148]" />
-      <p className={`mt-10 ${label}`}>Aether Instruments</p>
-      <p className="mt-3 font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-[#6A635A]">
+      <h1 className="max-w-5xl font-[NeueHaasDisplayRoman,Arial,sans-serif] text-6xl font-medium leading-[0.95] tracking-tight text-[#F3EBDD] sm:text-8xl">
         Tools for the human condition.
-      </p>
-      <h1 className="mt-8 max-w-5xl font-[NeueHaasDisplayRoman,Arial,sans-serif] text-6xl font-medium leading-[0.95] tracking-tight text-[#F3EBDD] sm:text-8xl">
-        Nothing important should be improvised.
       </h1>
+      <p className="mt-6 max-w-4xl font-[Roboto,Arial,sans-serif] text-xl leading-[1.5] text-[#A39A8C] sm:text-2xl">
+        Purpose-built instruments for practicing the moments that matter.
+      </p>
       <div className="mt-12 max-w-4xl space-y-6">
         {body.map((paragraph) => (
           <p
