@@ -128,9 +128,6 @@ export default function Page() {
         <Link href="/instruments/conflict/privacy" className="transition-colors hover:text-[#A39A8C]">
           Privacy
         </Link>
-        <Link href="/instruments/conflict/support" className="transition-colors hover:text-[#A39A8C]">
-          Support
-        </Link>
       </div>
     </div>
   )

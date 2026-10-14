@@ -174,7 +174,7 @@ export function FloatingNav({
                     key={link.label}
                     href={link.href}
                     onClick={() => onMenuOpenChange(false)}
-                    className="inline-block origin-left font-[Roboto,Arial,sans-serif] text-3xl font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out hover:translate-x-2 hover:scale-x-105"
+                    className="inline-block origin-left font-[Roboto,Arial,sans-serif] text-2xl font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out hover:translate-x-2 hover:scale-x-105"
                   >
                     {link.label}
                   </Link>
@@ -189,7 +189,7 @@ export function FloatingNav({
                     key={link.label}
                     href={link.href}
                     onClick={() => onMenuOpenChange(false)}
-                    className="inline-block origin-left font-[Roboto,Arial,sans-serif] text-3xl font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out hover:translate-x-2 hover:scale-x-105"
+                    className="inline-block origin-left font-[Roboto,Arial,sans-serif] text-2xl font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out hover:translate-x-2 hover:scale-x-105"
                   >
                     {link.label}
                   </Link>
@@ -204,7 +204,7 @@ export function FloatingNav({
                     key={link.label}
                     href={link.href}
                     onClick={() => onMenuOpenChange(false)}
-                    className="inline-block origin-left font-[Roboto,Arial,sans-serif] text-3xl font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out hover:translate-x-2 hover:scale-x-105"
+                    className="inline-block origin-left font-[Roboto,Arial,sans-serif] text-2xl font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out hover:translate-x-2 hover:scale-x-105"
                   >
                     {link.label}
                   </Link>

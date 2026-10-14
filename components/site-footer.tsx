@@ -29,6 +29,14 @@ export function SiteFooter({ language }: { language: LanguageCode }) {
           <p>
             © <span suppressHydrationWarning>{new Date().getFullYear()}</span> Aether Practice. {taglines[language]}
           </p>
+          <nav aria-label={t.instrumentsHeading} className="mt-2 flex flex-col items-center gap-3">
+            <p className="text-xs uppercase tracking-wide text-zinc-500">{t.instrumentsHeading}</p>
+            {t.instrumentsLinks.map((link) => (
+              <Link key={link.href} href={link.href} className="text-zinc-700 hover:text-zinc-900">
+                {link.label}
+              </Link>
+            ))}
+          </nav>
         </div>
         <nav
           aria-label={t.menuHeading}
