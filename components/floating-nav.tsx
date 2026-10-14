@@ -14,6 +14,8 @@ export function FloatingNav({
   onMenuOpenChange,
   isLangOpen,
   onLangOpenChange,
+  brandLabel = "Aether Practice",
+  showBooking = true,
 }: {
   /** Language of the current page, decided by its URL. */
   language: LanguageCode;
@@ -23,6 +25,10 @@ export function FloatingNav({
   onMenuOpenChange: (open: boolean) => void;
   isLangOpen: boolean;
   onLangOpenChange: (open: boolean) => void;
+  /** Text next to the logo. */
+  brandLabel?: string;
+  /** Whether the booking button (and its modal) is part of the bar. */
+  showBooking?: boolean;
 }) {
   const t = navContent[language];
   const currentLabel = languages.find((lang) => lang.code === language)?.label ?? "EN";
@@ -45,33 +51,47 @@ export function FloatingNav({
   return (
     <>
       <nav className="fixed inset-x-4 top-4 z-20 flex items-center justify-between rounded-[1.5rem] border border-white/50 bg-white/50 px-2.5 py-2.5 shadow-lg shadow-zinc-900/5 backdrop-blur-xl sm:inset-x-6 sm:top-6 sm:px-6 sm:py-3">
-        <button
-          onClick={() => setIsBookingOpen(true)}
-          className="flex w-14 flex-col items-center justify-center whitespace-normal border border-zinc-900/20 bg-white/30 px-1 py-1.5 text-center text-[11px] leading-tight transition-colors hover:bg-white/65 sm:hidden"
-        >
-          {t.bookNow}
-        </button>
-        <Link
-          href={homePath(language)}
-          className="hidden items-center gap-2 text-lg font-medium tracking-[-0.04em] sm:flex sm:text-xl"
-        >
-          <img src="/logo-a.svg" alt="" width={24} height={24} className="h-6 w-6" />
-          Aether Practice
-        </Link>
-        <Link
-          href={homePath(language)}
-          className="flex min-w-0 flex-1 items-center justify-center gap-1.5 px-2 sm:hidden"
-        >
-          <img src="/logo-a.svg" alt="" width={20} height={20} className="h-5 w-5 shrink-0" />
-          <span className="truncate text-sm font-medium tracking-[-0.04em]">Aether Practice</span>
-        </Link>
-        <div className="flex items-center gap-1 sm:gap-3">
-          <button
-            onClick={() => setIsBookingOpen(true)}
-            className="hidden border border-zinc-900/20 bg-white/30 px-[30px] py-3 text-sm transition-colors hover:bg-white/65 sm:inline-block"
+        {showBooking ? (
+          <>
+            <button
+              onClick={() => setIsBookingOpen(true)}
+              className="flex w-14 flex-col items-center justify-center whitespace-normal border border-zinc-900/20 bg-white/30 px-1 py-1.5 text-center text-[11px] leading-tight transition-colors hover:bg-white/65 sm:hidden"
+            >
+              {t.bookNow}
+            </button>
+            <Link
+              href={homePath(language)}
+              className="hidden items-center gap-2 text-lg font-medium tracking-[-0.04em] sm:flex sm:text-xl"
+            >
+              <img src="/logo-a.svg" alt="" width={24} height={24} className="h-6 w-6" />
+              {brandLabel}
+            </Link>
+            <Link
+              href={homePath(language)}
+              className="flex min-w-0 flex-1 items-center justify-center gap-1.5 px-2 sm:hidden"
+            >
+              <img src="/logo-a.svg" alt="" width={20} height={20} className="h-5 w-5 shrink-0" />
+              <span className="truncate text-sm font-medium tracking-[-0.04em]">{brandLabel}</span>
+            </Link>
+          </>
+        ) : (
+          <Link
+            href={homePath(language)}
+            className="flex min-w-0 items-center gap-1.5 pl-1.5 sm:gap-2 sm:pl-0"
           >
-            {t.bookNow}
-          </button>
+            <img src="/logo-a.svg" alt="" width={24} height={24} className="h-5 w-5 shrink-0 sm:h-6 sm:w-6" />
+            <span className="truncate text-sm font-medium tracking-[-0.04em] sm:text-xl">{brandLabel}</span>
+          </Link>
+        )}
+        <div className="flex items-center gap-1 sm:gap-3">
+          {showBooking && (
+            <button
+              onClick={() => setIsBookingOpen(true)}
+              className="hidden border border-zinc-900/20 bg-white/30 px-[30px] py-3 text-sm transition-colors hover:bg-white/65 sm:inline-block"
+            >
+              {t.bookNow}
+            </button>
+          )}
           <div ref={languageMenuRef} className="relative" onKeyDown={menuKeyHandler(() => onLangOpenChange(false))} onBlur={closeOnFocusOut(() => onLangOpenChange(false))}>
             <button
               onClick={() => onLangOpenChange(!isLangOpen)}
@@ -150,7 +170,7 @@ export function FloatingNav({
             aria-modal="true"
             aria-label={t.menuHeading}
             tabIndex={-1}
-            className="relative flex h-full w-full max-w-md flex-col gap-12 overflow-y-auto bg-[#fafafb] px-8 pb-24 pt-9 shadow-2xl outline-none animate-in slide-in-from-right duration-300 ease-out sm:px-12"
+            className="relative flex h-full w-full max-w-[508px] flex-col justify-center gap-[clamp(1rem,3.5vh,2.5rem)] overflow-hidden bg-[#fafafb] px-8 pb-6 pt-20 shadow-2xl outline-none animate-in slide-in-from-right duration-300 ease-out sm:px-12"
           >
             <button
               onClick={() => onMenuOpenChange(false)}
@@ -166,45 +186,45 @@ export function FloatingNav({
                 />
               </svg>
             </button>
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-[clamp(0.5rem,2vh,1rem)]">
               <p className="text-sm uppercase tracking-wide text-zinc-500">{t.menuHeading}</p>
-              <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-[clamp(0.5rem,2.2vh,1.25rem)]">
                 {t.menuLinks.map((link) => (
                   <Link
                     key={link.label}
                     href={link.href}
                     onClick={() => onMenuOpenChange(false)}
-                    className="inline-block origin-left font-[Roboto,Arial,sans-serif] text-2xl font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out hover:translate-x-2 hover:scale-x-105"
+                    className="inline-block origin-left font-[Roboto,Arial,sans-serif] text-[clamp(1.125rem,3.6vh,1.5rem)] font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out hover:translate-x-2 hover:scale-x-105"
                   >
                     {link.label}
                   </Link>
                 ))}
               </div>
             </div>
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-[clamp(0.5rem,2vh,1rem)]">
               <p className="text-sm uppercase tracking-wide text-zinc-500">{t.instrumentsHeading}</p>
-              <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-[clamp(0.5rem,2.2vh,1.25rem)]">
                 {t.instrumentsLinks.map((link) => (
                   <Link
                     key={link.label}
                     href={link.href}
                     onClick={() => onMenuOpenChange(false)}
-                    className="inline-block origin-left font-[Roboto,Arial,sans-serif] text-2xl font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out hover:translate-x-2 hover:scale-x-105"
+                    className="inline-block origin-left font-[Roboto,Arial,sans-serif] text-[clamp(1.125rem,3.6vh,1.5rem)] font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out hover:translate-x-2 hover:scale-x-105"
                   >
                     {link.label}
                   </Link>
                 ))}
               </div>
             </div>
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-[clamp(0.5rem,2vh,1rem)]">
               <p className="text-sm uppercase tracking-wide text-zinc-500">{t.companyHeading}</p>
-              <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-[clamp(0.5rem,2.2vh,1.25rem)]">
                 {t.companyLinks.map((link) => (
                   <Link
                     key={link.label}
                     href={link.href}
                     onClick={() => onMenuOpenChange(false)}
-                    className="inline-block origin-left font-[Roboto,Arial,sans-serif] text-2xl font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out hover:translate-x-2 hover:scale-x-105"
+                    className="inline-block origin-left font-[Roboto,Arial,sans-serif] text-[clamp(1.125rem,3.6vh,1.5rem)] font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out hover:translate-x-2 hover:scale-x-105"
                   >
                     {link.label}
                   </Link>

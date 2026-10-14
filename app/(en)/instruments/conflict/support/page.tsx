@@ -25,28 +25,28 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <div className="pb-24 pt-20">
-      <h1 className="text-[44px] font-medium leading-[1.0] tracking-[-0.02em] text-[#F3EBDD] sm:text-[56px]">
+    <div className="pb-24 pt-48">
+      <h1 className="max-w-5xl font-[NeueHaasDisplayRoman,Arial,sans-serif] text-6xl font-medium leading-[0.95] tracking-tight text-[#F3EBDD] sm:text-8xl">
         Support
       </h1>
-      <p className="mt-6 font-[Roboto,Arial,sans-serif] text-[1.1rem] font-light leading-[1.7] text-[#A39A8C]">
+      <p className="mt-12 max-w-4xl font-[Roboto,Arial,sans-serif] text-xl leading-[1.5] text-[#A39A8C] sm:text-2xl">
         For AET01 Conflict.
       </p>
 
-      <div className="mt-14 border border-[#2E2A24] bg-[#28251F] p-8">
+      <div className="mt-12 rounded-2xl border border-[#2E2A24] bg-[#28251F] p-8 sm:p-10">
         <a
           href={`mailto:${SUPPORT_EMAIL}`}
-          className="font-[Roboto,Arial,sans-serif] text-[1.05rem] text-[#D99148] transition-colors hover:text-[#F3EBDD]"
+          className="font-[Roboto,Arial,sans-serif] text-[19px] font-medium text-[#D99148] transition-colors hover:text-[#F3EBDD]"
         >
           {SUPPORT_EMAIL}
         </a>
       </div>
 
-      <p className="mt-8 font-[Roboto,Arial,sans-serif] text-[15px] font-light leading-[1.7] text-[#A39A8C]">
+      <p className="mt-6 font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-[#A39A8C]">
         Replies within a few business days.
       </p>
 
-      <div className="mt-16 font-[Roboto,Arial,sans-serif] text-[13px] text-[#6A635A]">
+      <div className="mt-16 font-[Roboto,Arial,sans-serif] text-sm text-[#6A635A]">
         <Link href="/instruments/conflict" className="transition-colors hover:text-[#A39A8C]">
           ← AET01 Conflict
         </Link>

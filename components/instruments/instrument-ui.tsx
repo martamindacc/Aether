@@ -35,10 +35,10 @@ export function SpecList({ items }: { items: { label: string; value: string }[] 
     <dl className="grid grid-cols-2 gap-x-8 gap-y-6 sm:grid-cols-4">
       {items.map((item) => (
         <div key={item.label}>
-          <dt className="font-[Roboto,Arial,sans-serif] text-[11px] uppercase tracking-[0.18em] text-[#6A635A]">
+          <dt className="font-[Roboto,Arial,sans-serif] text-sm uppercase tracking-wide text-[#6A635A]">
             {item.label}
           </dt>
-          <dd className="mt-2 font-[Roboto,Arial,sans-serif] text-[15px] leading-[1.5] text-[#A39A8C]">
+          <dd className="mt-2 font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-[#A39A8C]">
             {item.value}
           </dd>
         </div>
@@ -50,7 +50,7 @@ export function SpecList({ items }: { items: { label: string; value: string }[] 
 /** The same line on every Instruments page. */
 export function InstrumentDisclosure() {
   return (
-    <p className="max-w-[60ch] font-[Roboto,Arial,sans-serif] text-[13px] font-light leading-[1.6] text-[#6A635A]">
+    <p className="max-w-4xl font-[Roboto,Arial,sans-serif] text-sm leading-[1.5] text-[#6A635A]">
       Instruments are communication practice tools. They are not therapy, treatment or diagnosis,
       and they do not replace care from a qualified professional.
     </p>
