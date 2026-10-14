@@ -34,24 +34,24 @@ const colophon = [
   },
 ]
 
+const label = "font-[Roboto,Arial,sans-serif] text-sm uppercase tracking-wide text-[#6A635A]"
+
 export default function Page() {
   return (
-    <div className="pb-24 pt-20">
+    <div className="pb-24 pt-48">
       <div className="h-[3px] w-[72px] bg-[#D99148]" />
-      <p className="mt-10 font-[Roboto,Arial,sans-serif] text-[11px] uppercase tracking-[0.18em] text-[#6A635A]">
-        Aether Instruments
-      </p>
-      <p className="mt-3 font-[Roboto,Arial,sans-serif] text-[13px] font-light text-[#6A635A]">
+      <p className={`mt-10 ${label}`}>Aether Instruments</p>
+      <p className="mt-3 font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-[#6A635A]">
         Tools for the human condition.
       </p>
-      <h1 className="mt-8 max-w-[23ch] text-balance text-[44px] font-medium leading-[1.0] tracking-[-0.02em] text-[#F3EBDD] sm:text-[64px] lg:text-[76px]">
+      <h1 className="mt-8 max-w-5xl font-[NeueHaasDisplayRoman,Arial,sans-serif] text-6xl font-medium leading-[0.95] tracking-tight text-[#F3EBDD] sm:text-8xl">
         Nothing important should be improvised.
       </h1>
-      <div className="mt-10 max-w-[46ch] space-y-5">
+      <div className="mt-12 max-w-4xl space-y-6">
         {body.map((paragraph) => (
           <p
             key={paragraph}
-            className="font-[Roboto,Arial,sans-serif] text-[1.1rem] font-light leading-[1.7] text-[#A39A8C]"
+            className="font-[Roboto,Arial,sans-serif] text-xl leading-[1.5] text-[#A39A8C] sm:text-2xl"
           >
             {paragraph}
           </p>
@@ -62,20 +62,18 @@ export default function Page() {
 
       <Link
         href="/instruments/conflict"
-        className="group flex flex-col gap-10 py-14 md:flex-row-reverse md:items-start md:justify-between md:gap-16"
+        className="group flex flex-col gap-10 py-20 md:flex-row-reverse md:items-start md:justify-between md:gap-16"
       >
         <InstrumentMark className="w-24 md:w-40" />
         <div className="md:flex-1">
-          <p className="font-[Roboto,Arial,sans-serif] text-[11px] uppercase tracking-[0.18em] text-[#6A635A]">
-            AET01 / 001
-          </p>
-          <h2 className="mt-4 text-4xl font-medium tracking-[-0.01em] text-[#F3EBDD] sm:text-5xl">
+          <p className={label}>AET01 / 001</p>
+          <h2 className="mt-4 font-[NeueHaasDisplayRoman,Arial,sans-serif] text-4xl font-medium tracking-tight text-[#F3EBDD] sm:text-5xl">
             Conflict
           </h2>
-          <p className="mt-6 max-w-[46ch] font-[Roboto,Arial,sans-serif] text-[1.05rem] font-light leading-[1.7] text-[#A39A8C]">
+          <p className="mt-6 max-w-4xl font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-[#A39A8C]">
             Rehearse the argument before you have it.
           </p>
-          <p className="mt-10 font-[Roboto,Arial,sans-serif] text-[13px] uppercase tracking-[0.18em] text-[#D99148] transition-colors group-hover:text-[#F3EBDD]">
+          <p className="mt-10 font-[Roboto,Arial,sans-serif] text-[19px] font-medium text-[#D99148] underline underline-offset-4 transition-colors group-hover:text-[#F3EBDD]">
             Open instrument ↗
           </p>
         </div>
@@ -83,13 +81,11 @@ export default function Page() {
 
       <div className="h-px w-full bg-[#2E2A24]" />
 
-      <div className="mt-14 grid gap-10 sm:grid-cols-2 sm:gap-16">
+      <div className="mt-20 grid gap-10 sm:grid-cols-2 sm:gap-12">
         {colophon.map((item) => (
           <div key={item.label}>
-            <p className="font-[Roboto,Arial,sans-serif] text-[11px] uppercase tracking-[0.18em] text-[#6A635A]">
-              {item.label}
-            </p>
-            <p className="mt-4 max-w-[46ch] font-[Roboto,Arial,sans-serif] text-[15px] font-light leading-[1.7] text-[#A39A8C]">
+            <p className={label}>{item.label}</p>
+            <p className="mt-4 max-w-4xl font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-[#A39A8C]">
               {item.note}
             </p>
           </div>

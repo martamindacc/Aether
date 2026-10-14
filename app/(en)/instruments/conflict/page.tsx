@@ -49,36 +49,37 @@ const session = [
   { label: "Account", value: "None" },
 ]
 
+const label = "font-[Roboto,Arial,sans-serif] text-sm uppercase tracking-wide text-[#6A635A]"
 const sectionHeading =
-  "font-[Roboto,Arial,sans-serif] text-[11px] uppercase tracking-[0.18em] text-[#6A635A]"
-const bodyText = "font-[Roboto,Arial,sans-serif] text-[1.05rem] font-light leading-[1.7] text-[#A39A8C]"
+  "font-[NeueHaasDisplayRoman,Arial,sans-serif] text-4xl font-medium tracking-tight text-[#F3EBDD] sm:text-5xl"
+const bodyText = "font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-[#A39A8C]"
 
 export default function Page() {
   return (
-    <div className="pb-24 pt-20">
+    <div className="pb-24 pt-48">
       <InstrumentMark className="w-20 sm:w-24" />
-      <p className={`mt-10 ${sectionHeading}`}>AET01 / 001</p>
-      <h1 className="mt-5 max-w-[23ch] text-balance text-[44px] font-medium leading-[1.0] tracking-[-0.02em] text-[#F3EBDD] sm:text-[64px] lg:text-[76px]">
+      <p className={`mt-10 ${label}`}>AET01 / 001</p>
+      <h1 className="mt-5 max-w-5xl font-[NeueHaasDisplayRoman,Arial,sans-serif] text-6xl font-medium leading-[0.95] tracking-tight text-[#F3EBDD] sm:text-8xl">
         Conflict
       </h1>
-      <p className="mt-8 max-w-[46ch] font-[Roboto,Arial,sans-serif] text-[1.1rem] font-light leading-[1.7] text-[#A39A8C]">
+      <p className="mt-12 max-w-4xl font-[Roboto,Arial,sans-serif] text-xl leading-[1.5] text-[#A39A8C] sm:text-2xl">
         Rehearse the argument before you have it.
       </p>
-      <p className={`mt-5 max-w-[46ch] ${bodyText}`}>
+      <p className="mt-6 max-w-4xl font-[Roboto,Arial,sans-serif] text-xl leading-[1.5] text-[#A39A8C] sm:text-2xl">
         A partner model argues back and doesn&rsquo;t fold. You find out which sentence cost you the
         room while it&rsquo;s still a rehearsal.
       </p>
 
       <section className="mt-20">
         <h2 className={sectionHeading}>Three protocols</h2>
-        <div className="mt-8 grid gap-4 sm:grid-cols-3">
+        <div className="mt-10 grid gap-6 sm:grid-cols-3">
           {protocols.map((protocol) => (
-            <div key={protocol.name} className="border border-[#2E2A24] bg-[#28251F] p-8">
-              <p className={sectionHeading}>{protocol.number}</p>
-              <h3 className="mt-4 text-2xl font-medium tracking-[-0.01em] text-[#F3EBDD]">
+            <div key={protocol.name} className="rounded-2xl border border-[#2E2A24] bg-[#28251F] p-8 sm:p-10">
+              <p className={label}>{protocol.number}</p>
+              <h3 className="mt-4 font-[NeueHaasDisplayRoman,Arial,sans-serif] text-3xl font-medium text-[#F3EBDD]">
                 {protocol.name}
               </h3>
-              <p className="mt-4 font-[Roboto,Arial,sans-serif] text-[15px] font-light leading-[1.7] text-[#A39A8C]">
+              <p className={`mt-4 ${bodyText}`}>
                 {protocol.description}
               </p>
             </div>
@@ -88,7 +89,7 @@ export default function Page() {
 
       <section className="mt-20">
         <h2 className={sectionHeading}>Firm is not a fail</h2>
-        <div className="mt-8 max-w-[46ch] space-y-5">
+        <div className="mt-6 max-w-4xl space-y-6">
           {firmIsNotAFail.map((paragraph) => (
             <p key={paragraph} className={bodyText}>
               {paragraph}
@@ -99,14 +100,14 @@ export default function Page() {
 
       <section className="mt-20">
         <h2 className={sectionHeading}>The session</h2>
-        <div className="mt-8 max-w-2xl">
+        <div className="mt-10 max-w-4xl">
           <SpecList items={session} />
         </div>
       </section>
 
       <section className="mt-20">
         <h2 className={sectionHeading}>Before you start</h2>
-        <p className={`mt-8 max-w-[46ch] ${bodyText}`}>
+        <p className={`mt-6 max-w-4xl ${bodyText}`}>
           If you are afraid of your partner, or of what follows when you hold a line, rehearsal is
           the wrong instrument. That needs a person.
         </p>
@@ -114,17 +115,17 @@ export default function Page() {
 
       <section className="mt-20">
         <h2 className={sectionHeading}>Availability</h2>
-        <p className={`mt-6 max-w-[46ch] ${bodyText}`}>
+        <p className={`mt-6 max-w-4xl ${bodyText}`}>
           Coming to the App Store and Google Play.
         </p>
       </section>
 
-      <p className="mt-20 max-w-[60ch] font-[Roboto,Arial,sans-serif] text-[13px] font-light leading-[1.6] text-[#6A635A]">
+      <p className="mt-20 max-w-4xl font-[Roboto,Arial,sans-serif] text-sm leading-[1.5] text-[#6A635A]">
         AET01 Conflict is a communication practice tool. Not psychotherapy, medical care or crisis
         support. Model feedback can be wrong.
       </p>
 
-      <div className="mt-10 flex gap-6 font-[Roboto,Arial,sans-serif] text-[13px] text-[#6A635A]">
+      <div className="mt-10 flex gap-6 font-[Roboto,Arial,sans-serif] text-sm text-[#6A635A]">
         <Link href="/instruments/conflict/privacy" className="transition-colors hover:text-[#A39A8C]">
           Privacy
         </Link>
