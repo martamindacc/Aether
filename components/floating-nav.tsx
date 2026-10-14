@@ -150,7 +150,7 @@ export function FloatingNav({
             aria-modal="true"
             aria-label={t.menuHeading}
             tabIndex={-1}
-            className="relative flex h-full w-full max-w-md flex-col gap-12 overflow-y-auto bg-[#fafafb] px-8 py-24 shadow-2xl outline-none animate-in slide-in-from-right duration-300 ease-out sm:px-12"
+            className="relative flex h-full w-full max-w-md flex-col gap-12 overflow-y-auto bg-[#fafafb] px-8 pb-24 pt-9 shadow-2xl outline-none animate-in slide-in-from-right duration-300 ease-out sm:px-12"
           >
             <button
               onClick={() => onMenuOpenChange(false)}
