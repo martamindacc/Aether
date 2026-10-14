@@ -51,6 +51,9 @@ export function SiteFooter({ language }: { language: LanguageCode }) {
                 {link.label}
               </Link>
             ))}
+            <Link href="/instruments" className="text-zinc-700 hover:text-zinc-900">
+              Instruments
+            </Link>
             <Link href={localizedPaths.privacy[language]} className="text-zinc-700 hover:text-zinc-900">
               {privacyLabel[language]}
             </Link>

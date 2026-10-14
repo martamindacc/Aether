@@ -1,0 +1,58 @@
+/**
+ * The pieces both Instruments pages share. Nothing here is used outside
+ * /instruments/**, and nothing here loads a font or a dependency the rest of
+ * the site does not already have.
+ */
+
+/**
+ * The mark every instrument shares: one sun, one horizon. The line never
+ * moves; only the disc colour changes between instruments, so a range of
+ * them reads as one range.
+ */
+export function InstrumentMark({
+  className = "",
+  discColor = "#D99148",
+}: {
+  className?: string
+  /** The disc colour for this instrument. The horizon stays #F3EBDD. */
+  discColor?: string
+}) {
+  return (
+    <div
+      className={`flex aspect-square shrink-0 items-center justify-center border border-[#2E2A24] bg-[#28251F] ${className}`}
+    >
+      <svg viewBox="0 0 100 100" className="h-[62%] w-[62%]" aria-hidden="true">
+        <circle cx="50" cy="50" r="26.5" fill={discColor} />
+        <rect x="20.5" y="62.25" width="59" height="2" rx="1" fill="#F3EBDD" />
+      </svg>
+    </div>
+  )
+}
+
+/** Label-above-value pairs: the spec block on the hub and the session facts on AET01. */
+export function SpecList({ items }: { items: { label: string; value: string }[] }) {
+  return (
+    <dl className="grid grid-cols-2 gap-x-8 gap-y-6 sm:grid-cols-4">
+      {items.map((item) => (
+        <div key={item.label}>
+          <dt className="font-[Roboto,Arial,sans-serif] text-[11px] uppercase tracking-[0.18em] text-[#6A635A]">
+            {item.label}
+          </dt>
+          <dd className="mt-2 font-[Roboto,Arial,sans-serif] text-[15px] leading-[1.5] text-[#A39A8C]">
+            {item.value}
+          </dd>
+        </div>
+      ))}
+    </dl>
+  )
+}
+
+/** The same line on every Instruments page. */
+export function InstrumentDisclosure() {
+  return (
+    <p className="max-w-[60ch] font-[Roboto,Arial,sans-serif] text-[13px] font-light leading-[1.6] text-[#6A635A]">
+      Instruments are communication practice tools. They are not therapy, treatment or diagnosis,
+      and they do not replace care from a qualified professional.
+    </p>
+  )
+}

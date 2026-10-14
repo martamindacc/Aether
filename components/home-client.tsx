@@ -79,6 +79,12 @@ const content: Record<
         ],
       },
       {
+        heading: "Instruments",
+        links: [
+          { label: "AET01 / Conflict", href: "/instruments/conflict" },
+        ],
+      },
+      {
         heading: "Company",
         links: [
           { label: "About", href: "/about" },
@@ -192,6 +198,12 @@ const content: Record<
           { label: "Individuell terapi", href: "/no/individuell-terapi" },
           { label: "Familieterapi", href: "/no/familieterapi" },
           { label: "Leder- og Grunnleggerarbeid", href: "/no/ledere-og-grundere" },
+        ],
+      },
+      {
+        heading: "Instruments",
+        links: [
+          { label: "AET01 / Conflict", href: "/instruments/conflict" },
         ],
       },
       {

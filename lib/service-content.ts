@@ -44,6 +44,8 @@ export const navContent: Record<
     bookNow: string;
     menuHeading: string;
     menuLinks: { label: string; href: string }[];
+    instrumentsHeading: string;
+    instrumentsLinks: { label: string; href: string }[];
     companyHeading: string;
     companyLinks: { label: string; href: string }[];
   }
@@ -57,6 +59,10 @@ export const navContent: Record<
       { label: "Individual Session", href: "/individual-therapy" },
       { label: "Family Session", href: "/family-support" },
       { label: "Executive & Founder Work", href: "/executive-founder-work" },
+    ],
+    instrumentsHeading: "Instruments",
+    instrumentsLinks: [
+      { label: "AET01 / Conflict", href: "/instruments/conflict" },
     ],
     companyHeading: "Company",
     companyLinks: [
@@ -74,6 +80,10 @@ export const navContent: Record<
       { label: "Individuell terapi", href: "/no/individuell-terapi" },
       { label: "Familieterapi", href: "/no/familieterapi" },
       { label: "Leder- og Grunnleggerarbeid", href: "/no/ledere-og-grundere" },
+    ],
+    instrumentsHeading: "Instruments",
+    instrumentsLinks: [
+      { label: "AET01 / Conflict", href: "/instruments/conflict" },
     ],
     companyHeading: "Selskap",
     companyLinks: [

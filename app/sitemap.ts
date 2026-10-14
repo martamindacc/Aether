@@ -19,6 +19,10 @@ const routes: { path: string; lastModified: string }[] = [
   { path: "/family-support", lastModified: "2026-09-08" },
   { path: "/executive-founder-work", lastModified: "2026-09-08" },
   { path: "/online-therapy-norway", lastModified: "2026-09-11" },
+  { path: "/instruments", lastModified: "2026-10-14" },
+  { path: "/instruments/conflict", lastModified: "2026-10-14" },
+  { path: "/instruments/conflict/privacy", lastModified: "2026-10-15" },
+  { path: "/instruments/conflict/support", lastModified: "2026-10-15" },
   // Norwegian versions of the home, service, about and contact pages.
   { path: "/no", lastModified: "2026-10-03" },
   { path: "/no/parterapi", lastModified: "2026-10-03" },

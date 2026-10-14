@@ -130,7 +130,7 @@ export function FloatingNav({
 
       {/* Menu links are in the HTML even while the panel is closed, so crawlers can follow them; the panel below is the interactive copy. */}
       <nav hidden aria-hidden="true">
-        {[...t.menuLinks, ...t.companyLinks].map((link) => (
+        {[...t.menuLinks, ...t.instrumentsLinks, ...t.companyLinks].map((link) => (
           <Link key={link.href} href={link.href}>
             {link.label}
           </Link>
@@ -170,6 +170,21 @@ export function FloatingNav({
               <p className="text-sm uppercase tracking-wide text-zinc-500">{t.menuHeading}</p>
               <div className="flex flex-col gap-6">
                 {t.menuLinks.map((link) => (
+                  <Link
+                    key={link.label}
+                    href={link.href}
+                    onClick={() => onMenuOpenChange(false)}
+                    className="inline-block origin-left font-[Roboto,Arial,sans-serif] text-3xl font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out hover:translate-x-2 hover:scale-x-105"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+            <div className="flex flex-col gap-6">
+              <p className="text-sm uppercase tracking-wide text-zinc-500">{t.instrumentsHeading}</p>
+              <div className="flex flex-col gap-6">
+                {t.instrumentsLinks.map((link) => (
                   <Link
                     key={link.label}
                     href={link.href}
