@@ -211,7 +211,7 @@ export function FloatingNav({
             <button
               onClick={() => onMenuOpenChange(false)}
               aria-label={language === "no" ? "Lukk meny" : "Close menu"}
-              className="absolute right-6 top-6 flex h-11 w-11 items-center justify-center border border-zinc-900/20 bg-white transition-colors hover:bg-zinc-100"
+              className="absolute right-6 top-6 flex h-11 w-11 items-center justify-center border border-zinc-900/20 bg-white text-zinc-900 transition-colors hover:bg-zinc-100"
             >
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <path

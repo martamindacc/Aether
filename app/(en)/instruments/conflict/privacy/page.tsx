@@ -5,7 +5,7 @@ export const metadata = {
   ...pageMetadata({
     title: "AET01 Conflict Privacy Policy",
     description:
-      "The privacy policy for AET01 Conflict is being finalised and will be published before the instrument is released.",
+      "The privacy policy for AET01 Conflict is being finalized and will be published before the instrument is released.",
     path: "/instruments/conflict/privacy",
     image: {
       url: "/opengraph-image",
@@ -48,7 +48,7 @@ export default function Page() {
 
       <div className={`mt-12 ${prose}`}>
         <p>
-          This policy is being finalised and will be published before AET01 Conflict is released.
+          This policy is being finalized and will be published before AET01 Conflict is released.
         </p>
       </div>
 

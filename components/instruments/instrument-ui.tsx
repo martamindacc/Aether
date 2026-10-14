@@ -6,7 +6,7 @@
 
 /**
  * The mark every instrument shares: one sun, one horizon. The line never
- * moves; only the disc colour changes between instruments, so a range of
+ * moves; only the disc color changes between instruments, so a range of
  * them reads as one range.
  */
 export function InstrumentMark({
@@ -14,7 +14,7 @@ export function InstrumentMark({
   discColor = "#D99148",
 }: {
   className?: string
-  /** The disc colour for this instrument. The horizon stays #F3EBDD. */
+  /** The disc color for this instrument. The horizon stays #F3EBDD. */
   discColor?: string
 }) {
   return (

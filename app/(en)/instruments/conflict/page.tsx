@@ -41,7 +41,7 @@ const protocols = [
 ]
 
 const firmIsNotAFail = [
-  "Every piece of advice about conflict optimises for one outcome: de-escalation. Soften it. Lead with empathy. Assume good intent.",
+  "Every piece of advice about conflict optimizes for one outcome: de-escalation. Soften it. Lead with empathy. Assume good intent.",
   "Follow that far enough and you have agreed, warmly, for years, to things you do not agree with. It looks like maturity. It compounds like debt.",
   "Peace at any price is still a price.",
   "So this scores both failures. Aggression is marked. So is the quiet trade — the apology that was not yours, the request withdrawn because the volume went up. Clear, respectful and immovable scores highest, which is a thing almost nothing else will tell you.",

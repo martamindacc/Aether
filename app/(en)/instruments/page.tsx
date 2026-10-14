@@ -5,7 +5,7 @@ import { pageMetadata } from "@/lib/seo"
 export const metadata = pageMetadata({
   title: "Instruments",
   description:
-    "Rehearsal tools for the conversations that decide how your life goes. Pilots use simulators and litigators run moots. Nothing important should be improvised.",
+    "Purpose-built instruments for practicing the moments that matter. Rehearsal tools for the conversations that decide how your life goes.",
   path: "/instruments",
   // The shared site image carries a site-wide alt describing the practice; these
   // pages are the Instruments range, so they name themselves instead.
@@ -13,12 +13,12 @@ export const metadata = pageMetadata({
     url: "/opengraph-image",
     width: 1200,
     height: 630,
-    alt: "Aether Instruments — nothing important should be improvised",
+    alt: "Aether Instruments — tools for the human condition",
   },
 })
 
 const body = [
-  "Pilots use simulators. Litigators run moots. Surgeons practise on cadavers before they practise on you.",
+  "Pilots use simulators. Litigators run moots. Surgeons practice on cadavers before they practice on you.",
   "The conversations that decide how your life goes are the only high-stakes performance anyone still walks into cold.",
   "Instruments are rehearsal tools for those.",
 ]
@@ -26,7 +26,7 @@ const body = [
 const colophon = [
   {
     label: "On the mark",
-    note: "One sun, one horizon. The line never moves. The colour changes with each instrument, so a range of them reads as one range.",
+    note: "One sun, one horizon. The line never moves. The color changes with each instrument, so a range of them reads as one range.",
   },
   {
     label: "On the numbering",
@@ -39,7 +39,8 @@ const label = "font-[Roboto,Arial,sans-serif] text-sm uppercase tracking-wide te
 export default function Page() {
   return (
     <div className="pb-24 pt-48">
-      <h1 className="max-w-5xl font-[NeueHaasDisplayRoman,Arial,sans-serif] text-6xl font-medium leading-[0.95] tracking-tight text-[#F3EBDD] sm:text-8xl">
+      <div className="h-[3px] w-[72px] bg-[#D99148]" />
+      <h1 className="mt-10 max-w-5xl font-[NeueHaasDisplayRoman,Arial,sans-serif] text-6xl font-medium leading-[0.95] tracking-tight text-[#F3EBDD] sm:text-8xl">
         Tools for the human condition.
       </h1>
       <p className="mt-6 max-w-4xl font-[Roboto,Arial,sans-serif] text-xl leading-[1.5] text-[#A39A8C] sm:text-2xl">
