@@ -9,7 +9,7 @@ import { formatReadingTime } from "@/lib/reading-time";
 const copy = {
   en: {
     heading: "Blog",
-    intro: "Guides and articles on couples therapy, organised by topic: start with the complete guide, go deep in a cluster, or jump to one of our specialised hubs.",
+    intro: "Guides and articles organised by topic: start with the complete guide, go deep in a cluster, or jump to one of our specialised hubs.",
     hubs: "Specialised hubs",
     pillar: "Start here",
     guides: "Long-form guides",
@@ -60,7 +60,7 @@ function PostCard({ post, featured = false }: { post: BlogPostMeta; featured?: b
         <p className="font-[Roboto,Arial,sans-serif] text-sm uppercase tracking-wide text-zinc-600">
           {formatDate(post.date, post.lang)} <span aria-hidden="true">·</span> {formatReadingTime(post.wordCount, post.lang)}
         </p>
-        <h3 className={`mt-3 break-words origin-left font-[NeueHaasDisplayRoman,Arial,sans-serif] font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out group-hover:translate-x-2 group-hover:scale-x-105 ${featured ? "text-3xl sm:text-4xl" : "text-2xl sm:text-3xl"}`}>
+        <h3 className={`mt-3 break-words origin-left font-[NeueHaasDisplayRoman,Arial,sans-serif] font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out group-hover:translate-x-2 group-hover:scale-x-105 ${featured ? "text-2xl sm:text-3xl" : "text-xl sm:text-2xl"}`}>
           {post.title}
         </h3>
         <p className="mt-4 max-w-3xl font-[Roboto,Arial,sans-serif] text-[14.5px] leading-[1.45] text-[#383838]">{post.description}</p>
