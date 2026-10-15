@@ -24,7 +24,7 @@ export function BlogShell({
   const [isLangOpen, setIsLangOpen] = useState(false);
 
   return (
-    <main className="min-h-screen bg-[#F3EBE4] font-[NeueHaasDisplayRoman,Arial,sans-serif] text-zinc-900">
+    <main className="min-h-screen bg-[#F1EAE6] font-[NeueHaasDisplayRoman,Arial,sans-serif] text-zinc-900">
       <FloatingNav
         language={language}
         languageLinks={languageLinks}

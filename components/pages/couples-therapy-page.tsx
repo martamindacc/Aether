@@ -178,7 +178,7 @@ export default function CouplesTherapyPage({ language }: { language: LanguageCod
           {testimonialsContent[language].items.map((item) => (
             <div
               key={item.name}
-              className={`flex flex-col gap-8 rounded-2xl border border-zinc-300/80 bg-[#f4efea] p-8 sm:p-10`}
+              className={`flex flex-col gap-8 rounded-2xl border border-zinc-300/80 bg-[#F3EEEB] p-8 sm:p-10`}
             >
               <span aria-hidden="true" className="-mb-3 flex justify-center gap-2">
 <span className="h-7 w-3 bg-[#bfa27f] [clip-path:polygon(0_0,100%_0,80%_100%,20%_100%)]" />

@@ -534,7 +534,7 @@ export default function HomeClient({
           {t.pills.map((pill) => (
             <span
               key={pill}
-              className="rounded-xl border border-[#f1e7de] bg-gradient-to-r from-[#f1e7de] to-[#f9f4ef] px-5 py-3 text-base text-zinc-700"
+              className="rounded-xl border border-[#EEE6E1] bg-gradient-to-r from-[#EEE6E1] to-[#F7F3F0] px-5 py-3 text-base text-zinc-700"
             >
               {pill}
             </span>
@@ -572,7 +572,7 @@ export default function HomeClient({
           {t.testimonials.map((item) => (
             <div
               key={item.name}
-              className="flex flex-col gap-8 rounded-2xl border border-zinc-300/80 bg-[#f4efea] p-8 sm:p-10"
+              className="flex flex-col gap-8 rounded-2xl border border-zinc-300/80 bg-[#F3EEEB] p-8 sm:p-10"
             >
               <span aria-hidden="true" className="-mb-3 flex justify-center gap-2">
 <span className="h-7 w-3 bg-[#bfa27f] [clip-path:polygon(0_0,100%_0,80%_100%,20%_100%)]" />
@@ -605,7 +605,7 @@ export default function HomeClient({
       </section>
 
       {blogPosts.length > 0 && (
-        <section className="w-full bg-[#F3EBE4] py-28 sm:py-32">
+        <section className="w-full bg-[#F1EAE6] py-28 sm:py-32">
           <div className="mx-auto flex max-w-6xl flex-col px-6 sm:px-12">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-5">
