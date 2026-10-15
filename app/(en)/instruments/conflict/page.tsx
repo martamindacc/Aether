@@ -113,14 +113,6 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="mt-20">
-        <h2 className={sectionHeading}>Before you start</h2>
-        <p className={`mt-6 max-w-4xl ${bodyText}`}>
-          If you are afraid of your partner, or of what follows when you hold a line, rehearsal is
-          the wrong instrument. That needs a person.
-        </p>
-      </section>
-
       <p className={`mt-20 max-w-4xl ${bodyText}`}>
         Coming to the App Store and Google Play.
       </p>
