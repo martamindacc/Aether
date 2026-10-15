@@ -463,22 +463,23 @@ export default function HomeClient({
       )}
 
       <section style={instrumentsField} className="w-full bg-[#141210] py-24 sm:py-28">
-        <div className="mx-auto flex max-w-6xl flex-col items-center px-6 text-center sm:px-12">
-          {/* Named the way Client Stories is: centred, the rule above rather than beside. */}
-          <div className="h-px w-24 bg-[#D99148]" />
-          <p className="mt-8 text-sm uppercase tracking-wide text-[#93857B]">
-            {t.instrumentsEyebrow}
-          </p>
-          <h2 className="mt-4 max-w-3xl text-balance font-[NeueHaasDisplayRoman,Arial,sans-serif] text-4xl font-medium leading-[1.05] tracking-tight text-[#F3E6DD] sm:text-5xl">
+        <div className="mx-auto flex max-w-6xl flex-col px-6 sm:px-12">
+          <div className="flex items-center gap-5">
+            <div className="h-px w-8 bg-[#D99148]" />
+            <p className="text-xs uppercase tracking-[0.18em] text-[#93857B]">
+              {t.instrumentsEyebrow}
+            </p>
+          </div>
+          <h2 className="mt-7 max-w-3xl font-[NeueHaasDisplayRoman,Arial,sans-serif] text-4xl font-medium leading-[1.05] tracking-tight text-[#F3E6DD] sm:text-5xl">
             {t.instrumentsHeading}
           </h2>
-          <p className="mt-5 max-w-2xl text-balance font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.6] text-[#A3968C]">
+          <p className="mt-5 max-w-2xl font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.6] text-[#A3968C]">
             {t.instrumentsBody}
           </p>
 
           <Link
             href="/instruments/conflict"
-            className="group mt-14 flex w-full flex-col gap-6 rounded-2xl border border-[#2E2824] bg-[#28231F] p-7 text-left transition-colors hover:border-[#D99148]/40 sm:flex-row sm:items-center sm:gap-10 sm:p-9"
+            className="group mt-12 flex flex-col gap-6 rounded-2xl border border-[#2E2824] bg-[#28231F] p-7 transition-colors hover:border-[#D99148]/40 sm:flex-row sm:items-center sm:gap-10 sm:p-9"
           >
             <InstrumentMark className="w-16 rounded-[22%] sm:w-20" />
             <div className="sm:flex-1">
@@ -497,7 +498,7 @@ export default function HomeClient({
 
           <Link
             href="/instruments"
-            className="mt-10 font-[Roboto,Arial,sans-serif] text-sm uppercase tracking-[0.18em] text-[#93857B] transition-colors hover:text-[#F3E6DD]"
+            className="mt-10 self-start font-[Roboto,Arial,sans-serif] text-sm uppercase tracking-[0.18em] text-[#93857B] transition-colors hover:text-[#F3E6DD]"
           >
             {t.instrumentsCta} →
           </Link>
