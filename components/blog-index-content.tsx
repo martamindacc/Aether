@@ -27,7 +27,7 @@ const copy = {
 
 /** Display order of clusters on each index; anything not listed follows alphabetically. */
 const clusterOrder: Record<LanguageCode, string[]> = {
-  en: ["When to Seek Help", "Communication", "Infidelity & Trust", "Separation", "What to Expect", "Methods", "Careers & Pressure", "Founder Couples", "Couples Intensive", "Online Couples Therapy", "Oslo", "Guides"],
+  en: ["When to Seek Help", "Communication", "Infidelity & Trust", "Separation", "What to Expect", "Methods", "Careers & Pressure", "Founder Couples", "Co-Founders", "Couples Intensive", "Online Couples Therapy", "Oslo", "Guides"],
   no: ["Veileder", "Når søke hjelp", "Kommunikasjon", "Nærhet", "Utroskap og tillit", "Samlivsbrudd", "Hva du kan forvente", "Metoder", "Livsfaser", "Karriere og press", "Gründerpar", "Formater", "Pris"],
 };
 
