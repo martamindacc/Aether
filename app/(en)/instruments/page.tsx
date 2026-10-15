@@ -23,17 +23,6 @@ const body = [
   "Instruments are rehearsal tools for those.",
 ]
 
-const colophon = [
-  {
-    label: "On the mark",
-    note: "One sun, one horizon. The line never moves. The color changes with each instrument, so a range of them reads as one range.",
-  },
-  {
-    label: "On the numbering",
-    note: "AET and an ordinal, assigned when work begins rather than when it ships. The name follows the number.",
-  },
-]
-
 const label = "font-[Roboto,Arial,sans-serif] text-sm uppercase tracking-wide text-[#93857B]"
 
 export default function Page() {
@@ -79,17 +68,6 @@ export default function Page() {
       </Link>
 
       <div className="h-px w-full bg-[#2E2824]" />
-
-      <div className="mt-20 grid gap-10 sm:grid-cols-2 sm:gap-12">
-        {colophon.map((item) => (
-          <div key={item.label}>
-            <p className={label}>{item.label}</p>
-            <p className="mt-4 max-w-4xl font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-[#A3968C]">
-              {item.note}
-            </p>
-          </div>
-        ))}
-      </div>
 
       <div className="mt-20">
         <InstrumentDisclosure />
