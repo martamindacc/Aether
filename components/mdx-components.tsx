@@ -98,7 +98,7 @@ export const mdxComponents = {
   img: MdxImage,
   blockquote: (props: React.ComponentProps<"blockquote">) => (
     <blockquote
-      className="mt-6 border-l-4 border-[#c9a87d] pl-6 font-[Roboto,Arial,sans-serif] text-[19px] italic leading-[1.6] text-[#4a3d33] [&>p]:mt-0"
+      className="mt-6 border-l-4 border-[#C9A67D] pl-6 font-[Roboto,Arial,sans-serif] text-[19px] italic leading-[1.6] text-[#4a3d33] [&>p]:mt-0"
       {...props}
     />
   ),

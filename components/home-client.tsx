@@ -575,8 +575,8 @@ export default function HomeClient({
               className="flex flex-col gap-8 rounded-2xl border border-zinc-300/80 bg-[#F7F1EB] p-8 sm:p-10"
             >
               <span aria-hidden="true" className="-mb-3 flex justify-center gap-2">
-<span className="h-7 w-3 bg-[#bfa27f] [clip-path:polygon(0_0,100%_0,80%_100%,20%_100%)]" />
-<span className="h-7 w-3 bg-[#bfa27f] [clip-path:polygon(0_0,100%_0,80%_100%,20%_100%)]" />
+<span className="h-7 w-3 bg-[#BFA17F] [clip-path:polygon(0_0,100%_0,80%_100%,20%_100%)]" />
+<span className="h-7 w-3 bg-[#BFA17F] [clip-path:polygon(0_0,100%_0,80%_100%,20%_100%)]" />
 </span>
               <p className="flex-1 text-balance text-center font-[Roboto,Arial,sans-serif] text-lg leading-[1.6] text-[#383838]">
                 {item.quote}
@@ -591,7 +591,7 @@ export default function HomeClient({
         </div>
 
         <div className="mt-24 flex w-full max-w-6xl flex-col items-center gap-8 rounded-[2rem] px-8 pb-10 pt-20 text-center sm:px-20 sm:pb-16 sm:pt-28">
-          <div className="h-px w-24 bg-[#c9a688]" />
+          <div className="h-px w-24 bg-[#C9AB88]" />
           <h2 className="max-w-3xl text-balance font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-semibold leading-[1.1] tracking-wide text-zinc-900 sm:text-4xl">
             {t.finalCtaHeading}
           </h2>
@@ -605,11 +605,11 @@ export default function HomeClient({
       </section>
 
       {blogPosts.length > 0 && (
-        <section className="w-full bg-[#F6F0E9] py-28 sm:py-32">
+        <section className="w-full bg-[#F7F2EC] py-28 sm:py-32">
           <div className="mx-auto flex max-w-6xl flex-col px-6 sm:px-12">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-5">
-                <div className="h-px w-8 bg-[#c9a688]" />
+                <div className="h-px w-8 bg-[#C9AB88]" />
                 <p className="text-xs uppercase tracking-[0.18em] text-zinc-600">
                   {t.blogEyebrow}
                 </p>

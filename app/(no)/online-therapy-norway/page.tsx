@@ -124,7 +124,7 @@ export default function OnlineTherapyNorwayPage() {
         </div>
 
         <div className="mt-20 grid gap-6 sm:grid-cols-2">
-          <div className="rounded-2xl border border-zinc-300/80 bg-gradient-to-br from-[#eee2db]/40 to-[#eee2db]/20 p-8 sm:p-10">
+          <div className="rounded-2xl border border-zinc-300/80 bg-gradient-to-br from-[#EEE5DB]/40 to-[#EEE5DB]/20 p-8 sm:p-10">
             <h2 className="font-[NeueHaasDisplayRoman,Arial,sans-serif] text-3xl font-medium">
               {t.whoTitle}
             </h2>
@@ -132,7 +132,7 @@ export default function OnlineTherapyNorwayPage() {
               {t.whoBody}
             </p>
           </div>
-          <div className="rounded-2xl border border-zinc-300/80 bg-gradient-to-br from-[#eee2db]/40 to-[#eee2db]/20 p-8 sm:p-10">
+          <div className="rounded-2xl border border-zinc-300/80 bg-gradient-to-br from-[#EEE5DB]/40 to-[#EEE5DB]/20 p-8 sm:p-10">
             <h2 className="font-[NeueHaasDisplayRoman,Arial,sans-serif] text-3xl font-medium">
               {t.firstConvoTitle}
             </h2>
@@ -182,8 +182,8 @@ export default function OnlineTherapyNorwayPage() {
                 className={`flex flex-col gap-8 rounded-2xl border border-zinc-300/80 bg-[#F7F1EB] p-8 sm:p-10`}
               >
                 <span aria-hidden="true" className="-mb-3 flex justify-center gap-2">
-<span className="h-7 w-3 bg-[#bfa27f] [clip-path:polygon(0_0,100%_0,80%_100%,20%_100%)]" />
-<span className="h-7 w-3 bg-[#bfa27f] [clip-path:polygon(0_0,100%_0,80%_100%,20%_100%)]" />
+<span className="h-7 w-3 bg-[#BFA17F] [clip-path:polygon(0_0,100%_0,80%_100%,20%_100%)]" />
+<span className="h-7 w-3 bg-[#BFA17F] [clip-path:polygon(0_0,100%_0,80%_100%,20%_100%)]" />
 </span>
                 <p className="flex-1 text-balance text-center font-[Roboto,Arial,sans-serif] text-lg leading-[1.6] text-[#383838]">
                   {item.quote}
@@ -198,7 +198,7 @@ export default function OnlineTherapyNorwayPage() {
           })}
         </div>
 
-        <div className="mt-24 flex flex-col items-start gap-8 rounded-2xl border border-zinc-300/80 bg-gradient-to-br from-[#eee2db]/75 to-[#eee2db]/40 p-10 sm:p-14">
+        <div className="mt-24 flex flex-col items-start gap-8 rounded-2xl border border-zinc-300/80 bg-gradient-to-br from-[#EEE5DB]/75 to-[#EEE5DB]/40 p-10 sm:p-14">
           <h2 className="max-w-2xl font-[NeueHaasDisplayRoman,Arial,sans-serif] text-3xl font-medium leading-[1.1] tracking-tight sm:text-4xl">
             {t.ctaTitle}
           </h2>

@@ -34,7 +34,7 @@ export function BlogCta({
   const t = copy[language];
 
   return (
-    <div className="mt-16 flex flex-col items-start gap-6 rounded-2xl border border-zinc-300/80 bg-gradient-to-br from-[#eee2db]/75 to-[#eee2db]/40 p-10 sm:p-14">
+    <div className="mt-16 flex flex-col items-start gap-6 rounded-2xl border border-zinc-300/80 bg-gradient-to-br from-[#EEE5DB]/75 to-[#EEE5DB]/40 p-10 sm:p-14">
       <h2 className="max-w-2xl font-[NeueHaasDisplayRoman,Arial,sans-serif] text-3xl font-medium leading-[1.1] tracking-tight sm:text-4xl">
         {t.heading}
       </h2>

@@ -217,7 +217,7 @@ export function BlogPost({ post, related }: { post: BlogPostData; related: BlogP
         )}
 
         {post.toc && post.toc.length > 0 && (
-          <nav aria-label={tocLabel[post.lang]} className="mt-10 border-l-4 border-[#c9a87d] px-6 py-5 sm:px-8 sm:py-6">
+          <nav aria-label={tocLabel[post.lang]} className="mt-10 border-l-4 border-[#C9A67D] px-6 py-5 sm:px-8 sm:py-6">
             <h2 className="mt-0 font-[Roboto,Arial,sans-serif] text-sm font-medium uppercase tracking-[0.18em] text-[#74382f]">
               {tocLabel[post.lang]}
             </h2>

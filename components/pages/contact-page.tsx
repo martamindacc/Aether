@@ -84,14 +84,14 @@ export default function ContactPage({ language }: { language: LanguageCode }) {
         {state.status === "sent" ? (
           <div
             role="status"
-            className="mt-20 flex max-w-xl flex-col gap-5 rounded-2xl border border-zinc-300/80 bg-[#eee2db]/80 p-8 sm:p-10"
+            className="mt-20 flex max-w-xl flex-col gap-5 rounded-2xl border border-zinc-300/80 bg-[#EEE5DB]/80 p-8 sm:p-10"
           >
             <p className="font-[Roboto,Arial,sans-serif] text-base leading-[1.5] text-zinc-900">{f.sent}</p>
           </div>
         ) : (
           <form
             action={formAction}
-            className="mt-20 flex max-w-xl flex-col gap-5 rounded-2xl border border-zinc-300/80 bg-[#eee2db]/80 p-8 sm:p-10"
+            className="mt-20 flex max-w-xl flex-col gap-5 rounded-2xl border border-zinc-300/80 bg-[#EEE5DB]/80 p-8 sm:p-10"
           >
             <input type="hidden" name="language" value={language} />
             {/* Honeypot: hidden from people, filled by bots. */}

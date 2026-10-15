@@ -42,7 +42,7 @@ function PostCard({ post, featured = false }: { post: BlogPostMeta; featured?: b
   return (
     <Link
       href={postPath(post)}
-      className={`group overflow-hidden rounded-2xl border border-zinc-300/80 bg-gradient-to-br from-[#eee2db]/40 to-[#eee2db]/20 transition-colors hover:from-[#eee2db]/60 hover:to-[#eee2db]/30 ${featured ? "md:col-span-3 md:grid md:grid-cols-2" : ""}`}
+      className={`group overflow-hidden rounded-2xl border border-zinc-300/80 bg-gradient-to-br from-[#EEE5DB]/40 to-[#EEE5DB]/20 transition-colors hover:from-[#EEE5DB]/60 hover:to-[#EEE5DB]/30 ${featured ? "md:col-span-3 md:grid md:grid-cols-2" : ""}`}
     >
       {post.image && (
         <div className={`relative w-full overflow-hidden ${featured ? "aspect-[16/9] md:aspect-auto md:min-h-[320px]" : "aspect-[16/9]"}`}>
@@ -122,7 +122,7 @@ export function BlogIndexContent({ posts, hubs, language }: { posts: BlogPostMet
           <SectionHeading id="hubs">{t.hubs}</SectionHeading>
           <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
             {hubs.map((hub) => (
-              <Link key={hub.path} href={hub.path} className="group rounded-2xl border border-[#c9a87d] bg-[#eee2db]/30 p-8 transition-colors hover:bg-[#eee2db]/60 sm:p-10">
+              <Link key={hub.path} href={hub.path} className="group rounded-2xl border border-[#C9A67D] bg-[#EEE5DB]/30 p-8 transition-colors hover:bg-[#EEE5DB]/60 sm:p-10">
                 <h3 className="font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out group-hover:translate-x-2 sm:text-3xl">{hub.title}</h3>
                 <p className="mt-4 font-[Roboto,Arial,sans-serif] text-[14.5px] leading-[1.45] text-[#383838]">{hub.description}</p>
               </Link>

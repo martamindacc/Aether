@@ -39,7 +39,7 @@ export function RelatedPosts({ posts, language }: { posts: BlogPostMeta[]; langu
           <Link
             key={post.slug}
             href={postPath(post)}
-            className="group overflow-hidden rounded-2xl border border-zinc-300/80 bg-gradient-to-br from-[#eee2db]/40 to-[#eee2db]/20 transition-colors hover:from-[#eee2db]/60 hover:to-[#eee2db]/30"
+            className="group overflow-hidden rounded-2xl border border-zinc-300/80 bg-gradient-to-br from-[#EEE5DB]/40 to-[#EEE5DB]/20 transition-colors hover:from-[#EEE5DB]/60 hover:to-[#EEE5DB]/30"
           >
             {post.image && (
               <div className="relative aspect-[16/9] w-full overflow-hidden">

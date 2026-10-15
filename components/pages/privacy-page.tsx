@@ -145,7 +145,7 @@ export default function PrivacyPage({ language }: { language: LanguageCode }) {
         </p>
 
         <div className="mt-20 grid gap-6 sm:grid-cols-2">
-          <div className="rounded-2xl border border-zinc-300/80 bg-gradient-to-br from-[#eee2db]/40 to-[#eee2db]/20 p-8 sm:p-10">
+          <div className="rounded-2xl border border-zinc-300/80 bg-gradient-to-br from-[#EEE5DB]/40 to-[#EEE5DB]/20 p-8 sm:p-10">
             <h2 className="font-[NeueHaasDisplayRoman,Arial,sans-serif] text-3xl font-medium">
               {t.collectHeading}
             </h2>
@@ -158,7 +158,7 @@ export default function PrivacyPage({ language }: { language: LanguageCode }) {
               ))}
             </ul>
           </div>
-          <div className="rounded-2xl border border-zinc-300/80 bg-gradient-to-br from-[#eee2db]/40 to-[#eee2db]/20 p-8 sm:p-10">
+          <div className="rounded-2xl border border-zinc-300/80 bg-gradient-to-br from-[#EEE5DB]/40 to-[#EEE5DB]/20 p-8 sm:p-10">
             <h2 className="font-[NeueHaasDisplayRoman,Arial,sans-serif] text-3xl font-medium">
               {t.useHeading}
             </h2>
@@ -179,7 +179,7 @@ export default function PrivacyPage({ language }: { language: LanguageCode }) {
             {t.cookiesTopics.map((topic) => (
               <div
                 key={topic.heading}
-                className="rounded-2xl border border-zinc-300/80 bg-gradient-to-br from-[#eee2db]/40 to-[#eee2db]/20 p-8 sm:p-10"
+                className="rounded-2xl border border-zinc-300/80 bg-gradient-to-br from-[#EEE5DB]/40 to-[#EEE5DB]/20 p-8 sm:p-10"
               >
                 <h3 className="font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-medium">
                   {topic.heading}
