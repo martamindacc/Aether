@@ -54,7 +54,7 @@ const session = [
   { label: "Account", value: "none" },
 ]
 
-const label = "font-[Roboto,Arial,sans-serif] text-sm uppercase tracking-wide text-[#6A635A]"
+const label = "font-[Roboto,Arial,sans-serif] text-sm uppercase tracking-wide text-[#93857B]"
 const sectionHeading =
   "font-[NeueHaasDisplayRoman,Arial,sans-serif] text-4xl font-medium tracking-tight text-[#F3EBDD] sm:text-5xl"
 const bodyText = "font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-[#A39A8C]"
@@ -62,15 +62,27 @@ const bodyText = "font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-
 export default function Page() {
   return (
     <div className="pb-24 pt-48">
-      <InstrumentMark className="w-20 sm:w-24" />
-      <p className={`mt-10 ${label}`}>AET01</p>
-      <h1 className="mt-5 max-w-5xl font-[NeueHaasDisplayRoman,Arial,sans-serif] text-6xl font-medium leading-[0.95] tracking-tight text-[#F3EBDD] sm:text-8xl">
-        Conflict
-      </h1>
-      <p className="mt-12 max-w-4xl font-[Roboto,Arial,sans-serif] text-xl leading-[1.5] text-[#A39A8C] sm:text-2xl">
+      {/*
+        A product masthead: the mark reads as the app's icon and sits beside the
+        number and name rather than floating above them, with the line that says
+        what it does, and the line that says where to get it, directly under.
+      */}
+      <div className="flex flex-col gap-8 sm:flex-row sm:items-center sm:gap-10">
+        <InstrumentMark className="w-24 rounded-[22%] sm:w-28" />
+        <div>
+          <p className={label}>AET01</p>
+          <h1 className="mt-3 font-[NeueHaasDisplayRoman,Arial,sans-serif] text-6xl font-medium leading-[0.95] tracking-tight text-[#F3EBDD] sm:text-8xl">
+            Conflict
+          </h1>
+        </div>
+      </div>
+      <p className="mt-10 max-w-4xl font-[Roboto,Arial,sans-serif] text-xl leading-[1.5] text-[#A39A8C] sm:text-2xl">
         Rehearse the argument before you have it.
       </p>
-      <div className="mt-6 max-w-4xl space-y-6">
+      <p className="mt-5 font-[Roboto,Arial,sans-serif] text-sm text-[#93857B]">
+        Coming to the App Store and Google Play.
+      </p>
+      <div className="mt-10 max-w-4xl space-y-6">
         {intro.map((paragraph) => (
           <p key={paragraph} className={bodyText}>
             {paragraph}
@@ -82,7 +94,7 @@ export default function Page() {
         <h2 className={sectionHeading}>Three protocols</h2>
         <div className="mt-10 grid gap-6 sm:grid-cols-3">
           {protocols.map((protocol) => (
-            <div key={protocol.name} className="rounded-2xl border border-[#2E2A24] bg-[#28251F] p-8 sm:p-10">
+            <div key={protocol.name} className="rounded-2xl border border-[#2E2824] bg-[#28231F] p-8 sm:p-10">
               <p className={label}>{protocol.number}</p>
               <h3 className="mt-4 font-[NeueHaasDisplayRoman,Arial,sans-serif] text-3xl font-medium text-[#F3EBDD]">
                 {protocol.name}
@@ -113,16 +125,12 @@ export default function Page() {
         </div>
       </section>
 
-      <p className={`mt-20 max-w-4xl ${bodyText}`}>
-        Coming to the App Store and Google Play.
-      </p>
-
-      <p className="mt-20 max-w-4xl font-[Roboto,Arial,sans-serif] text-sm leading-[1.5] text-[#6A635A]">
+      <p className="mt-20 max-w-4xl font-[Roboto,Arial,sans-serif] text-sm leading-[1.5] text-[#93857B]">
         AET01 Conflict is a communication practice tool. Not psychotherapy, medical care or crisis
         support. Model feedback can be wrong.
       </p>
 
-      <div className="mt-10 flex gap-6 font-[Roboto,Arial,sans-serif] text-sm text-[#6A635A]">
+      <div className="mt-10 flex gap-6 font-[Roboto,Arial,sans-serif] text-sm text-[#93857B]">
         <Link href="/instruments/conflict/privacy" className="transition-colors hover:text-[#A39A8C]">
           Privacy
         </Link>
