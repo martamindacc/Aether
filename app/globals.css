@@ -25,6 +25,16 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/*
+ * zinc is Tailwind's blue-grey: hue 240. Its only use here is border-zinc-300,
+ * the edge on every slab and card, and those edges now sit on warm cream. This
+ * re-cuts that one step at the hero video's hue at the same lightness (L* 85),
+ * so the edges stop reading cold without becoming a colour of their own.
+ */
+@theme {
+  --color-zinc-300: #DBD4CF;
+}
+
 @theme inline {
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
