@@ -75,6 +75,7 @@ const content: Record<
           { label: "Couples Intensive", href: "/intensive-couples-therapy" },
           { label: "Individual Session", href: "/individual-therapy" },
           { label: "Family Session", href: "/family-support" },
+          { label: "Co-Founder Session", href: "/co-founder-therapy" },
           { label: "Executive & Founder Work", href: "/executive-founder-work" },
         ],
       },
@@ -119,11 +120,11 @@ const content: Record<
         color: "text-[#7b4037]",
       },
       {
-        eyebrow: "Family support",
-        title: "Family Session",
+        eyebrow: "Founding team",
+        title: "Co-Founder Session",
         description:
-          "Create a steadier family rhythm — with clearer communication, stronger connection, and practical support for the moments that shape life together.",
-        href: "/family-support",
+          "Work on the founding relationship itself — how the two of you decide, disagree, and divide the weight, before the company starts routing around it.",
+        href: "/co-founder-therapy",
         color: "text-[#8a6558]",
       },
       {
