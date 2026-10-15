@@ -16,15 +16,39 @@ export interface Product {
   locales?: ("en" | "no")[]
 }
 
-/** The sessions bookable in a given language. */
+/**
+ * The Norwegian home page lists its service slabs in a different order than the
+ * English one — individual and family work come before leadership work — so the
+ * booking flow follows whichever page the reader arrived from.
+ */
+const NORWEGIAN_ORDER = [
+  "couples-session",
+  "couples-intensive",
+  "individual-session",
+  "family-session",
+  "founder-session",
+  "initial-consultation",
+]
+
+/** The sessions bookable in a given language, ordered as that home page lists them. */
 export function productsFor(lang: "en" | "no"): Product[] {
-  return PRODUCTS.filter((product) => !product.locales || product.locales.includes(lang))
+  const offered = PRODUCTS.filter((product) => !product.locales || product.locales.includes(lang))
+  // PRODUCTS is already in English slab order, so only Norwegian needs resorting.
+  if (lang === "en") return offered
+  // A session missing from the list sorts to the end rather than the front, so
+  // adding one to PRODUCTS can never silently push it above Couples Session.
+  const rank = (id: string) => {
+    const index = NORWEGIAN_ORDER.indexOf(id)
+    return index === -1 ? NORWEGIAN_ORDER.length : index
+  }
+  return [...offered].sort((a, b) => rank(a.id) - rank(b.id))
 }
 
 // This is the source of truth for all bookable sessions.
 // All UI to display sessions should pull from this array.
 // Stable ids; the booking modal and analytics events refer to products by these.
-// Ordered for display in the booking flow (Couples Session first).
+// Ordered for display in the booking flow, matching the service slabs on the
+// English home page: couples first, individual last, free consultation after.
 
 /** Price label for the booking flow: "$170" on English pages, "1 700 kr" on Norwegian ones. */
 export function formatPrice(product: Product, lang: "en" | "no"): string | null {
@@ -43,23 +67,13 @@ export const PRODUCTS: Product[] = [
     calendlyUrl: "https://cal.com/aetherpractice/couples-session",
   },
   {
-    id: "individual-session",
-    name: "Individual Session",
-    description: "A 50 minute one-on-one session.",
-    duration: "50 min",
-    priceInCents: 13000,
-    priceInNok: 1300,
-    calendlyUrl: "https://cal.com/aetherpractice/individual-session",
-  },
-  {
-    id: "family-session",
-    name: "Family Session",
-    description: "A 60 minute session for families.",
-    duration: "60 min",
-    priceInCents: 20000,
-    priceInNok: 2000,
-    calendlyUrl: "https://cal.com/aetherpractice/family-session",
-    locales: ["no"],
+    id: "couples-intensive",
+    name: "Couples Intensive",
+    description: "A two-day online intensive for couples: twelve hours of focused work across two consecutive days.",
+    duration: "2 days",
+    priceInCents: 350000,
+    priceInNok: 35000,
+    calendlyUrl: "https://cal.com/aetherpractice/couples-intensive-inquiry",
   },
   {
     id: "cofounder-session",
@@ -81,13 +95,23 @@ export const PRODUCTS: Product[] = [
     calendlyUrl: "https://cal.com/aetherpractice/exec-founder-session",
   },
   {
-    id: "couples-intensive",
-    name: "Couples Intensive",
-    description: "A two-day online intensive for couples: twelve hours of focused work across two consecutive days.",
-    duration: "2 days",
-    priceInCents: 350000,
-    priceInNok: 35000,
-    calendlyUrl: "https://cal.com/aetherpractice/couples-intensive-inquiry",
+    id: "individual-session",
+    name: "Individual Session",
+    description: "A 50 minute one-on-one session.",
+    duration: "50 min",
+    priceInCents: 13000,
+    priceInNok: 1300,
+    calendlyUrl: "https://cal.com/aetherpractice/individual-session",
+  },
+  {
+    id: "family-session",
+    name: "Family Session",
+    description: "A 60 minute session for families.",
+    duration: "60 min",
+    priceInCents: 20000,
+    priceInNok: 2000,
+    calendlyUrl: "https://cal.com/aetherpractice/family-session",
+    locales: ["no"],
   },
   {
     id: "initial-consultation",
