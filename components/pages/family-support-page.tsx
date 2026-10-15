@@ -80,7 +80,7 @@ export default function FamilySupportPage({ language }: { language: LanguageCode
   const t = content[language];
 
   return (
-    <main className="min-h-screen bg-[#FBF7F5] font-[NeueHaasDisplayRoman,Arial,sans-serif] text-zinc-900">
+    <main className="min-h-screen bg-[#FBF8F5] font-[NeueHaasDisplayRoman,Arial,sans-serif] text-zinc-900">
       <FloatingNav language={language} languageLinks={languageLinks} isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen} isLangOpen={isLangOpen} onLangOpenChange={setIsLangOpen} />
       <section id="main-content" className="mx-auto flex max-w-6xl flex-col px-6 pb-24 pt-48">
         <h1 className="max-w-5xl font-[NeueHaasDisplayRoman,Arial,sans-serif] text-6xl font-medium leading-[0.95] tracking-tight text-[#74382f] sm:text-8xl">{t.title}</h1>

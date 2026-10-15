@@ -343,8 +343,8 @@ export default function HomeClient({
     .slice(0, 3);
 
   return (
-    <main className="min-h-screen bg-[#FBF7F5] font-[NeueHaasDisplayRoman,Arial,sans-serif] text-zinc-900">
-      <div className="relative h-screen w-full overflow-hidden bg-[#FBF7F5]">
+    <main className="min-h-screen bg-[#FBF8F5] font-[NeueHaasDisplayRoman,Arial,sans-serif] text-zinc-900">
+      <div className="relative h-screen w-full overflow-hidden bg-[#FBF8F5]">
         {/* Poster paints immediately (the LCP element); the video streams in behind it. Reduced-motion users get the still only. */}
         <video
           className="absolute inset-0 h-full w-full object-cover motion-reduce:hidden"
@@ -471,7 +471,7 @@ export default function HomeClient({
               aria-modal="true"
               aria-label={t.menuSections[0]?.heading}
               tabIndex={-1}
-              className="relative flex h-full w-full max-w-md flex-col gap-12 overflow-y-auto bg-[#FBF7F5] px-8 pb-24 pt-9 shadow-2xl outline-none animate-in slide-in-from-right duration-300 ease-out sm:px-12"
+              className="relative flex h-full w-full max-w-md flex-col gap-12 overflow-y-auto bg-[#FBF8F5] px-8 pb-24 pt-9 shadow-2xl outline-none animate-in slide-in-from-right duration-300 ease-out sm:px-12"
             >
               <button
                 onClick={() => setIsMenuOpen(false)}
@@ -534,7 +534,7 @@ export default function HomeClient({
           {t.pills.map((pill) => (
             <span
               key={pill}
-              className="rounded-xl border border-[#EEE0D8] bg-[#F4EAE4] px-5 py-3 text-base text-zinc-700"
+              className="rounded-xl border border-[#EEE4D8] bg-[#F4EDE4] px-5 py-3 text-base text-zinc-700"
             >
               {pill}
             </span>
@@ -545,7 +545,7 @@ export default function HomeClient({
             <Link
               key={section.href}
               href={section.href}
-              className="group rounded-2xl border border-zinc-300/80 bg-[#F7F0EC] bg-[url('/sand-texture.png')] bg-cover bg-center bg-blend-multiply p-8 transition-colors duration-200 hover:border-[#C4B5AB] hover:bg-[#F4EBE6] sm:p-14"
+              className="group rounded-2xl border border-zinc-300/80 bg-[#F7F2EC] bg-[url('/sand-texture.png')] bg-cover bg-center bg-blend-multiply p-8 transition-colors duration-200 hover:border-[#C4B5AB] hover:bg-[#F4EDE6] sm:p-14"
             >
               <h2 className="inline-block origin-left font-[NeueHaasDisplayRoman,Arial,sans-serif] text-5xl font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out group-hover:translate-x-2 group-hover:scale-x-105 sm:text-7xl">
                 {section.title}
@@ -572,7 +572,7 @@ export default function HomeClient({
           {t.testimonials.map((item) => (
             <div
               key={item.name}
-              className="flex flex-col gap-8 rounded-2xl border border-zinc-300/80 bg-[#F7EFEB] p-8 sm:p-10"
+              className="flex flex-col gap-8 rounded-2xl border border-zinc-300/80 bg-[#F7F1EB] p-8 sm:p-10"
             >
               <span aria-hidden="true" className="-mb-3 flex justify-center gap-2">
 <span className="h-7 w-3 bg-[#bfa27f] [clip-path:polygon(0_0,100%_0,80%_100%,20%_100%)]" />
@@ -605,7 +605,7 @@ export default function HomeClient({
       </section>
 
       {blogPosts.length > 0 && (
-        <section className="w-full bg-[#F6EEE9] py-28 sm:py-32">
+        <section className="w-full bg-[#F6F0E9] py-28 sm:py-32">
           <div className="mx-auto flex max-w-6xl flex-col px-6 sm:px-12">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-5">

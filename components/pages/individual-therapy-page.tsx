@@ -17,7 +17,7 @@ export default function IndividualTherapyPage({ language }: { language: Language
   const t = individualTherapyContent[language];
 
   return (
-    <main className="min-h-screen bg-[#FBF7F5] font-[NeueHaasDisplayRoman,Arial,sans-serif] text-zinc-900">
+    <main className="min-h-screen bg-[#FBF8F5] font-[NeueHaasDisplayRoman,Arial,sans-serif] text-zinc-900">
       <FloatingNav
         language={language}
         languageLinks={languageLinks}

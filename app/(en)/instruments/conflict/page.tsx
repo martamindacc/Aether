@@ -69,12 +69,10 @@ export default function Page() {
       */}
       <div className="flex flex-col gap-8 sm:flex-row sm:items-center sm:gap-10">
         <InstrumentMark className="w-24 rounded-[22%] sm:w-28" />
-        <div>
-          <p className={label}>AET01</p>
-          <h1 className="mt-3 font-[NeueHaasDisplayRoman,Arial,sans-serif] text-6xl font-medium leading-[0.95] tracking-tight text-[#F3E6DD] sm:text-8xl">
-            Conflict
-          </h1>
-        </div>
+        <h1 className="flex flex-wrap items-baseline gap-x-5 font-[NeueHaasDisplayRoman,Arial,sans-serif] text-6xl font-medium leading-[0.95] tracking-tight text-[#F3E6DD] sm:text-8xl">
+          <span className={label}>AET01</span>
+          <span>Conflict</span>
+        </h1>
       </div>
       <p className="mt-10 max-w-4xl font-[Roboto,Arial,sans-serif] text-xl leading-[1.5] text-[#A3968C] sm:text-2xl">
         Rehearse the argument before you have it.

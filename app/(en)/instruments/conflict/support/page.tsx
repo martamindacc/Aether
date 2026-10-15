@@ -42,10 +42,6 @@ export default function Page() {
         </a>
       </div>
 
-      <p className="mt-6 font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-[#A3968C]">
-        Replies within a few business days.
-      </p>
-
       <div className="mt-16 font-[Roboto,Arial,sans-serif] text-sm text-[#93857B]">
         <Link href="/instruments/conflict" className="transition-colors hover:text-[#A3968C]">
           ← AET01 Conflict

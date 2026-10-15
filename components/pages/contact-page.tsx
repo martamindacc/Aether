@@ -64,7 +64,7 @@ export default function ContactPage({ language }: { language: LanguageCode }) {
   }, [state]);
 
   return (
-    <main className="min-h-screen bg-[#FBF7F5] font-[NeueHaasDisplayRoman,Arial,sans-serif] text-zinc-900">
+    <main className="min-h-screen bg-[#FBF8F5] font-[NeueHaasDisplayRoman,Arial,sans-serif] text-zinc-900">
       <FloatingNav
         language={language}
         languageLinks={languageLinks}

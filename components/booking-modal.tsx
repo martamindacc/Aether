@@ -96,7 +96,7 @@ export function BookingModal({
           aria-modal="true"
           aria-label={labels.scheduleTitle}
           tabIndex={-1}
-          className="relative my-auto flex max-h-[90vh] w-full max-w-md flex-col gap-6 overflow-y-auto rounded-3xl bg-[#FBF7F5] p-6 shadow-2xl outline-none animate-in fade-in zoom-in-95 duration-300 ease-out sm:p-10"
+          className="relative my-auto flex max-h-[90vh] w-full max-w-md flex-col gap-6 overflow-y-auto rounded-3xl bg-[#FBF8F5] p-6 shadow-2xl outline-none animate-in fade-in zoom-in-95 duration-300 ease-out sm:p-10"
         >
           <button
             onClick={handleClose}
