@@ -67,9 +67,9 @@ export default function Page() {
         number and name rather than floating above them, with the line that says
         what it does, and the line that says where to get it, directly under.
       */}
-      <div className="flex flex-col gap-8 sm:flex-row sm:items-center sm:gap-10">
+      <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:gap-8">
         <InstrumentMark className="w-24 rounded-[22%] sm:w-28" />
-        <h1 className="flex flex-wrap items-baseline gap-x-5 font-[NeueHaasDisplayRoman,Arial,sans-serif] text-6xl font-medium leading-[0.95] tracking-tight text-[#F3E6DD] sm:text-8xl">
+        <h1 className="flex flex-wrap items-baseline gap-x-4 font-[NeueHaasDisplayRoman,Arial,sans-serif] text-5xl font-medium leading-[0.95] tracking-tight text-[#F3E6DD] sm:text-7xl">
           <span className="text-[#93857B]">AET01</span>
           <span>Conflict</span>
         </h1>
