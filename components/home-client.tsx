@@ -55,7 +55,7 @@ const content: Record<
     videoOverlay: "Your Future is Yours to Shape",
     heroTitle: "Better life starts with better understanding",
     heroSubtitle:
-      "Private online sessions for couples, individuals, families, executives, and founders in New York City, California, and Norway.",
+      "Private online sessions for couples, individuals, co-founders, executives, and founders in New York City, California, and Norway.",
     bookNow: "Book Now",
     supportSections: [
       {
@@ -303,14 +303,14 @@ export default function HomeClient({
         <h1 className="max-w-6xl text-balance font-[Roboto,Arial,sans-serif] text-[44px] font-medium leading-[0.95] tracking-tight text-zinc-900 sm:text-[64px] lg:text-[90px]">
           {t.heroTitle}
         </h1>
-        <p className="mt-5 max-w-2xl text-base leading-[1.5] text-zinc-700">
+        <p className="mt-8 max-w-3xl text-balance text-[19px] leading-[1.6] text-[#383838] sm:text-[21px]">
           {language.code === "en" ? (
             <>
-              Private online sessions for couples, individuals, families, executives, and founders in New York City, California, and <Link href="/online-therapy-norway" className="underline underline-offset-4">Norway</Link>.
+              Private online sessions for couples, individuals, co-founders, executives, and founders in New York City, California, and <Link href="/online-therapy-norway" className="underline underline-offset-4 decoration-[#C9A67D] hover:text-zinc-900">Norway</Link>.
             </>
           ) : language.code === "no" ? (
             <>
-              Private online samtaler for par, enkeltpersoner, familier, ledere og grunnleggere i Oslo og hele <Link href="/online-therapy-norway" className="underline underline-offset-4">Norge</Link>.
+              Private online samtaler for par, enkeltpersoner, familier, ledere og grunnleggere i Oslo og hele <Link href="/online-therapy-norway" className="underline underline-offset-4 decoration-[#C9A67D] hover:text-zinc-900">Norge</Link>.
             </>
           ) : (
             t.heroSubtitle
