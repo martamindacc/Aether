@@ -23,8 +23,6 @@ const body = [
   "Instruments are rehearsal tools for those.",
 ]
 
-const label = "font-[Roboto,Arial,sans-serif] text-sm uppercase tracking-wide text-[#93857B]"
-
 export default function Page() {
   return (
     <div className="pb-24 pt-48">
@@ -60,7 +58,7 @@ export default function Page() {
         <InstrumentMark className="w-20 rounded-[22%] sm:w-24" />
         <div className="md:flex-1">
           <h2 className="flex flex-wrap items-baseline gap-x-4 font-[NeueHaasDisplayRoman,Arial,sans-serif] text-4xl font-medium tracking-tight text-[#F3E6DD] sm:text-5xl">
-            <span className={label}>AET01</span>
+            <span className="text-[#93857B]">AET01</span>
             <span>Conflict</span>
           </h2>
           <p className="mt-5 max-w-4xl font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-[#A3968C]">

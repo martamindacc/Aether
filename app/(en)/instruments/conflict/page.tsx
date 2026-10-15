@@ -70,7 +70,7 @@ export default function Page() {
       <div className="flex flex-col gap-8 sm:flex-row sm:items-center sm:gap-10">
         <InstrumentMark className="w-24 rounded-[22%] sm:w-28" />
         <h1 className="flex flex-wrap items-baseline gap-x-5 font-[NeueHaasDisplayRoman,Arial,sans-serif] text-6xl font-medium leading-[0.95] tracking-tight text-[#F3E6DD] sm:text-8xl">
-          <span className={label}>AET01</span>
+          <span className="text-[#93857B]">AET01</span>
           <span>Conflict</span>
         </h1>
       </div>

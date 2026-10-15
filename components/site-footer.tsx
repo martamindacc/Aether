@@ -85,6 +85,12 @@ export function SiteFooter({
                 {item.label}
               </Link>
             ))}
+            {/* English dropped Family from Services when Co-Founder took its slot; it keeps a home here. */}
+            {language === "en" && (
+              <Link href="/family-support" className={link}>
+                Family Session
+              </Link>
+            )}
             <Link href="/instruments" className={link}>
               Instruments
             </Link>

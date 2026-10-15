@@ -73,9 +73,9 @@ const content: Record<
         links: [
           { label: "Couples Session", href: "/couples-therapy" },
           { label: "Couples Intensive", href: "/intensive-couples-therapy" },
-          { label: "Individual Session", href: "/individual-therapy" },
           { label: "Co-Founder Session", href: "/co-founder-coaching" },
           { label: "Executive & Founder Work", href: "/executive-founder-work" },
+          { label: "Individual Session", href: "/individual-therapy" },
         ],
       },
       {
@@ -111,14 +111,6 @@ const content: Record<
         color: "text-[#66755c]",
       },
       {
-        eyebrow: "Individual support",
-        title: "Individual Session",
-        description:
-          "Support in your own life situations — anxiety, grief, identity, transitions, and the weight you carry alone.",
-        href: "/individual-therapy",
-        color: "text-[#7b4037]",
-      },
-      {
         eyebrow: "Founding team",
         title: "Co-Founder Session",
         description:
@@ -133,6 +125,14 @@ const content: Record<
           "Support at the level decisions and isolation actually happen — for founders and executives carrying weight the role doesn't make space for.",
         href: "/executive-founder-work",
         color: "text-[#496171]",
+      },
+      {
+        eyebrow: "Individual support",
+        title: "Individual Session",
+        description:
+          "Support in your own life situations — anxiety, grief, identity, transitions, and the weight you carry alone.",
+        href: "/individual-therapy",
+        color: "text-[#7b4037]",
       },
     ],
     learnMore: "Learn more →",
@@ -626,7 +626,7 @@ export default function HomeClient({
                 <Link
                   key={post.slug}
                   href={postPath(post)}
-                  className="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_2px_12px_rgba(0,0,0,0.06)] transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_8px_28px_rgba(0,0,0,0.10)]"
+                  className="group flex flex-col overflow-hidden rounded-2xl bg-[#FBF8F5] shadow-[0_2px_12px_rgba(0,0,0,0.06)] transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_8px_28px_rgba(0,0,0,0.10)]"
                 >
                   {post.image ? (
                     <div className="relative aspect-[3/2] w-full overflow-hidden">
