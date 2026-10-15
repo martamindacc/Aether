@@ -36,6 +36,8 @@ export type AboutContent = {
 export type ContactContent = {
   title: string;
   intro: string;
+  /** Standing facts beside the form. No response-time promise lives here. */
+  details: { label: string; value: string }[];
 };
 
 export const navContent: Record<
@@ -689,10 +691,20 @@ export const contactContent: Record<LanguageCode, ContactContent> = {
     title: "Contact",
     intro:
       "Have a question before booking, or want to talk through which service is the right fit? Reach out.",
+    details: [
+      { label: "Where", value: "Online, for clients in New York City, California and Norway." },
+      { label: "Languages", value: "Sessions are held in English or Norwegian." },
+      { label: "Booking", value: "Any service page books directly, without going through this form." },
+    ],
   },
   no: {
     title: "Kontakt",
     intro:
       "Har du et spørsmål før du bestiller, eller vil du snakke om hvilken tjeneste som passer best? Ta kontakt.",
+    details: [
+      { label: "Hvor", value: "På nett, for klienter i Norge, New York City og California." },
+      { label: "Språk", value: "Samtalene holdes på norsk eller engelsk." },
+      { label: "Bestilling", value: "Alle tjenestesider kan bestilles direkte, uten å gå via skjemaet." },
+    ],
   },
 };

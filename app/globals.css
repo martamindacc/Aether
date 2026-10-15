@@ -35,6 +35,15 @@
   --color-zinc-100: #F8F5F1;
   --color-zinc-200: #EDE6DE;
   --color-zinc-300: #DBD4CF;
+  /*
+   * The dark end too, so the blacks on the light pages are the same family as
+   * the Instruments field (#141210 to #28231F) rather than a cooler black
+   * sitting beside it. Lightness is unchanged on every step.
+   */
+  --color-zinc-600: #60574D;
+  --color-zinc-700: #4A433B;
+  --color-zinc-800: #2E2923;
+  --color-zinc-900: #1D1A16;
 }
 
 @theme inline {

@@ -534,7 +534,7 @@ export default function HomeClient({
           {t.pills.map((pill) => (
             <span
               key={pill}
-              className="rounded-xl border border-[#EEE4D8] bg-[#F4EDE4] px-5 py-3 text-base text-zinc-700"
+              className="rounded-xl border border-zinc-300/80 bg-[#F7F2EC] px-5 py-3 text-base text-zinc-700"
             >
               {pill}
             </span>
@@ -605,7 +605,7 @@ export default function HomeClient({
       </section>
 
       {blogPosts.length > 0 && (
-        <section className="w-full bg-[#F7F2EC] py-28 sm:py-32">
+        <section className="w-full bg-[#F7F2EC] bg-[url('/sand-texture.png')] bg-cover bg-center bg-blend-multiply py-28 sm:py-32">
           <div className="mx-auto flex max-w-6xl flex-col px-6 sm:px-12">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-5">
