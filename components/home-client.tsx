@@ -545,7 +545,7 @@ export default function HomeClient({
             <Link
               key={section.href}
               href={section.href}
-              className="group relative isolate overflow-hidden rounded-2xl border border-zinc-300/80 bg-[#FBF7F5] p-8 transition-colors duration-300 before:pointer-events-none before:absolute before:inset-x-0 before:bottom-0 before:-z-10 before:h-40 before:bg-[linear-gradient(to_top,rgba(217,145,72,0.18)_0%,rgba(217,145,72,0.06)_45%,transparent_100%)] before:opacity-0 before:transition-opacity before:duration-500 before:ease-out before:content-[''] hover:border-[#D99148]/35 hover:bg-[#F7F1ED] hover:before:opacity-100 sm:p-14"
+              className="group rounded-2xl border border-zinc-300/80 bg-[#FBF7F5] p-8 transition-colors duration-200 hover:border-[#C4B5AB] hover:bg-[#F4EDE9] sm:p-14"
             >
               <h2 className="inline-block origin-left font-[NeueHaasDisplayRoman,Arial,sans-serif] text-5xl font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out group-hover:translate-x-2 group-hover:scale-x-105 sm:text-7xl">
                 {section.title}
