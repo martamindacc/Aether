@@ -74,6 +74,13 @@ export function SiteFooter({
                 {item.label}
               </Link>
             ))}
+            {/* English dropped Family from the Services menu when Co-Founder took
+                its slot. It is still a service, so it keeps its place in this column. */}
+            {language === "en" && (
+              <Link href="/family-support" className={link}>
+                Family Session
+              </Link>
+            )}
         </nav>
         <nav
           aria-label={t.companyHeading}
@@ -85,12 +92,6 @@ export function SiteFooter({
                 {item.label}
               </Link>
             ))}
-            {/* English dropped Family from Services when Co-Founder took its slot; it keeps a home here. */}
-            {language === "en" && (
-              <Link href="/family-support" className={link}>
-                Family Session
-              </Link>
-            )}
             <Link href="/instruments" className={link}>
               Instruments
             </Link>
