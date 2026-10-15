@@ -17,7 +17,7 @@ const routes: { path: string; lastModified: string }[] = [
   { path: "/individual-therapy", lastModified: "2026-09-08" },
   { path: "/couples-therapy", lastModified: "2026-09-08" },
   { path: "/family-support", lastModified: "2026-09-08" },
-  { path: "/co-founder-therapy", lastModified: "2026-10-15" },
+  { path: "/co-founder-coaching", lastModified: "2026-10-15" },
   { path: "/executive-founder-work", lastModified: "2026-09-08" },
   { path: "/online-therapy-norway", lastModified: "2026-09-11" },
   { path: "/instruments", lastModified: "2026-10-14" },

@@ -74,7 +74,7 @@ const content: Record<
           { label: "Couples Session", href: "/couples-therapy" },
           { label: "Couples Intensive", href: "/intensive-couples-therapy" },
           { label: "Individual Session", href: "/individual-therapy" },
-          { label: "Co-Founder Session", href: "/co-founder-therapy" },
+          { label: "Co-Founder Session", href: "/co-founder-coaching" },
           { label: "Executive & Founder Work", href: "/executive-founder-work" },
         ],
       },
@@ -123,7 +123,7 @@ const content: Record<
         title: "Co-Founder Session",
         description:
           "Work on the founding relationship itself — how the two of you decide, disagree, and divide the weight, before the company starts routing around it.",
-        href: "/co-founder-therapy",
+        href: "/co-founder-coaching",
         color: "text-[#8a6558]",
       },
       {

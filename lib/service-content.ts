@@ -57,7 +57,7 @@ export const navContent: Record<
       { label: "Couples Session", href: "/couples-therapy" },
       { label: "Couples Intensive", href: "/intensive-couples-therapy" },
       { label: "Individual Session", href: "/individual-therapy" },
-      { label: "Co-Founder Session", href: "/co-founder-therapy" },
+      { label: "Co-Founder Session", href: "/co-founder-coaching" },
       { label: "Executive & Founder Work", href: "/executive-founder-work" },
     ],
     instrumentsHeading: "Instruments",

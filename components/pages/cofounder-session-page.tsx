@@ -9,7 +9,7 @@ import { navContent, relatedServicesHeading } from "@/lib/service-content";
 import type { LanguageLink } from "@/lib/locale-routes";
 
 /** The English path this page lives at; also used to hide itself from the related-service chips. */
-export const COFOUNDER_PATH = "/co-founder-therapy";
+export const COFOUNDER_PATH = "/co-founder-coaching";
 
 /**
  * English only, so it stays out of localizedPaths rather than forcing a
@@ -74,6 +74,8 @@ const t = {
       description: "Put words to what the two of you have so far only assumed about each other.",
     },
   ],
+  naming:
+    "Sometimes called co-founder therapy, this is coaching for founding partners — both of you in the room, working on the relationship the company depends on.",
   ctaHeading: "The founding relationship deserves the attention the company gets.",
   ctaSubtext:
     "Book an initial co-founder session and start with the conversation you have both been postponing.",
@@ -102,6 +104,14 @@ export default function CofounderSessionPage() {
         <p className="mt-5 max-w-2xl text-base leading-[1.5] text-zinc-700">{t.subtitle}</p>
         <p className="mt-12 max-w-4xl font-[Roboto,Arial,sans-serif] text-xl leading-[1.5] text-[#383838] sm:text-2xl">
           {t.intro}
+        </p>
+        {/*
+          People search "co-founder therapy", so the phrase appears once, as a
+          thing other people say. The service is coaching and the page never
+          claims otherwise.
+        */}
+        <p className="mt-8 max-w-4xl font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-[#383838]">
+          {t.naming}
         </p>
 
         <div className="mt-20 grid gap-6 sm:grid-cols-2">

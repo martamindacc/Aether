@@ -54,7 +54,12 @@ function blogRedirects() {
     { source: "/images/founder-marriage-couple-dock-lake-sunset.jpg", destination: "/images/couple-dock-lake-sunset.jpg", permanent: true },
   ]
 
-  return [...moved, ...removedPolish, ...intensiveHub, ...renamedImages]
+  // The co-founder service is coaching, not therapy; its first URL said therapy.
+  const cofounder = [
+    { source: "/co-founder-therapy", destination: "/co-founder-coaching", permanent: true },
+  ]
+
+  return [...moved, ...removedPolish, ...intensiveHub, ...renamedImages, ...cofounder]
 }
 
 /** @type {import('next').NextConfig} */
