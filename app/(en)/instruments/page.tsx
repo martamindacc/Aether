@@ -48,23 +48,28 @@ export default function Page() {
 
       <div className="mt-20 h-px w-full bg-[#2E2824]" />
 
+      {/*
+        The range entry, built like the instrument's own masthead: the mark as a
+        rounded app icon beside the number and name, so the card and the page it
+        opens read as the same object.
+      */}
       <Link
         href="/instruments/conflict"
-        className="group flex flex-col gap-10 py-20 md:flex-row-reverse md:items-start md:justify-between md:gap-16"
+        className="group my-14 flex flex-col gap-8 rounded-2xl border border-[#2E2824] bg-[#28231F] p-8 transition-colors hover:border-[#D99148]/40 sm:p-12 md:flex-row md:items-center md:gap-12"
       >
-        <InstrumentMark className="w-24 md:w-40" />
+        <InstrumentMark className="w-20 rounded-[22%] sm:w-24" />
         <div className="md:flex-1">
-          <p className={label}>AET01 / 001</p>
-          <h2 className="mt-4 font-[NeueHaasDisplayRoman,Arial,sans-serif] text-4xl font-medium tracking-tight text-[#F3E6DD] sm:text-5xl">
-            Conflict
+          <h2 className="flex flex-wrap items-baseline gap-x-4 font-[NeueHaasDisplayRoman,Arial,sans-serif] text-4xl font-medium tracking-tight text-[#F3E6DD] sm:text-5xl">
+            <span className={label}>AET01</span>
+            <span>Conflict</span>
           </h2>
-          <p className="mt-6 max-w-4xl font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-[#A3968C]">
+          <p className="mt-5 max-w-4xl font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-[#A3968C]">
             Rehearse the argument before you have it.
           </p>
-          <p className="mt-10 font-[Roboto,Arial,sans-serif] text-[19px] font-medium text-[#D99148] underline underline-offset-4 transition-colors group-hover:text-[#F3E6DD]">
-            Open instrument ↗
-          </p>
         </div>
+        <p className="shrink-0 font-[Roboto,Arial,sans-serif] text-[19px] font-medium text-[#D99148] transition-colors group-hover:text-[#F3E6DD]">
+          Open instrument ↗
+        </p>
       </Link>
 
       <div className="h-px w-full bg-[#2E2824]" />
