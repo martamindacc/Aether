@@ -22,13 +22,15 @@ export const viewport: Viewport = {
  * same colour the element is filled with, so there is no seam where the band
  * stops. #141210 itself is unchanged. The hues are the hero video's family
  * (~25) rather than the ember's 30, so Instruments reads as the same desert as
- * the rest of the site.
+ * the rest of the site. The washes are sampled video sand rather than the ember:
+ * the ember sits at saturation 0.66 against the video's 0.15-0.31, which is what
+ * made the band read amber even after its hue was right.
  */
 const field = {
   backgroundImage: [
-    "radial-gradient(ellipse 90% 60% at 22% 10%, rgba(217, 145, 72, 0.11) 0%, transparent 60%)",
-    "radial-gradient(ellipse 80% 55% at 80% 32%, rgba(191, 162, 127, 0.07) 0%, transparent 58%)",
-    "linear-gradient(to bottom, #251B13 0%, #1A1511 50%, #141210 100%)",
+    "radial-gradient(ellipse 90% 60% at 22% 10%, rgba(209, 184, 168, 0.13) 0%, transparent 60%)",
+    "radial-gradient(ellipse 80% 55% at 80% 32%, rgba(220, 195, 177, 0.06) 0%, transparent 58%)",
+    "linear-gradient(to bottom, #221B16 0%, #1D1815 50%, #141210 100%)",
   ].join(", "),
   backgroundRepeat: "no-repeat",
   backgroundPosition: "top center",
