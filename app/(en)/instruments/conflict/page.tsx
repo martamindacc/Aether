@@ -56,8 +56,8 @@ const session = [
 
 const label = "font-[Roboto,Arial,sans-serif] text-sm uppercase tracking-wide text-[#93857B]"
 const sectionHeading =
-  "font-[NeueHaasDisplayRoman,Arial,sans-serif] text-4xl font-medium tracking-tight text-[#F3EBDD] sm:text-5xl"
-const bodyText = "font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-[#A39A8C]"
+  "font-[NeueHaasDisplayRoman,Arial,sans-serif] text-4xl font-medium tracking-tight text-[#F3E6DD] sm:text-5xl"
+const bodyText = "font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-[#A3968C]"
 
 export default function Page() {
   return (
@@ -71,12 +71,12 @@ export default function Page() {
         <InstrumentMark className="w-24 rounded-[22%] sm:w-28" />
         <div>
           <p className={label}>AET01</p>
-          <h1 className="mt-3 font-[NeueHaasDisplayRoman,Arial,sans-serif] text-6xl font-medium leading-[0.95] tracking-tight text-[#F3EBDD] sm:text-8xl">
+          <h1 className="mt-3 font-[NeueHaasDisplayRoman,Arial,sans-serif] text-6xl font-medium leading-[0.95] tracking-tight text-[#F3E6DD] sm:text-8xl">
             Conflict
           </h1>
         </div>
       </div>
-      <p className="mt-10 max-w-4xl font-[Roboto,Arial,sans-serif] text-xl leading-[1.5] text-[#A39A8C] sm:text-2xl">
+      <p className="mt-10 max-w-4xl font-[Roboto,Arial,sans-serif] text-xl leading-[1.5] text-[#A3968C] sm:text-2xl">
         Rehearse the argument before you have it.
       </p>
       <p className="mt-5 font-[Roboto,Arial,sans-serif] text-sm text-[#93857B]">
@@ -96,7 +96,7 @@ export default function Page() {
           {protocols.map((protocol) => (
             <div key={protocol.name} className="rounded-2xl border border-[#2E2824] bg-[#28231F] p-8 sm:p-10">
               <p className={label}>{protocol.number}</p>
-              <h3 className="mt-4 font-[NeueHaasDisplayRoman,Arial,sans-serif] text-3xl font-medium text-[#F3EBDD]">
+              <h3 className="mt-4 font-[NeueHaasDisplayRoman,Arial,sans-serif] text-3xl font-medium text-[#F3E6DD]">
                 {protocol.name}
               </h3>
               <p className={`mt-4 ${bodyText}`}>
@@ -131,8 +131,11 @@ export default function Page() {
       </p>
 
       <div className="mt-10 flex gap-6 font-[Roboto,Arial,sans-serif] text-sm text-[#93857B]">
-        <Link href="/instruments/conflict/privacy" className="transition-colors hover:text-[#A39A8C]">
+        <Link href="/instruments/conflict/privacy" className="transition-colors hover:text-[#A3968C]">
           Privacy
+        </Link>
+        <Link href="/instruments/conflict/support" className="transition-colors hover:text-[#A3968C]">
+          Support
         </Link>
       </div>
     </div>
