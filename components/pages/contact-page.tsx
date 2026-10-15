@@ -102,14 +102,14 @@ export default function ContactPage({ language }: { language: LanguageCode }) {
         {state.status === "sent" ? (
           <div
             role="status"
-            className="flex h-fit flex-col gap-5 rounded-2xl border border-zinc-300/80 bg-[#F7F2EC] bg-[url('/sand-texture.png')] bg-[length:300px_300px] bg-repeat bg-blend-multiply p-8 sm:p-10"
+            className="flex h-fit flex-col gap-5 rounded-2xl border border-zinc-300/80 bg-[#F7F2EC] bg-[url('/sand-texture.png')] bg-cover bg-center bg-blend-multiply p-8 sm:p-10"
           >
             <p className="font-[Roboto,Arial,sans-serif] text-base leading-[1.5] text-zinc-900">{f.sent}</p>
           </div>
         ) : (
           <form
             action={formAction}
-            className="flex h-fit flex-col gap-6 rounded-2xl border border-zinc-300/80 bg-[#F7F2EC] bg-[url('/sand-texture.png')] bg-[length:300px_300px] bg-repeat bg-blend-multiply p-8 sm:p-10"
+            className="flex h-fit flex-col gap-6 rounded-2xl border border-zinc-300/80 bg-[#F7F2EC] bg-[url('/sand-texture.png')] bg-cover bg-center bg-blend-multiply p-8 sm:p-10"
           >
             <input type="hidden" name="language" value={language} />
             {/* Honeypot: hidden from people, filled by bots. */}
