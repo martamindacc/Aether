@@ -14,7 +14,7 @@ export function InstrumentMark({
   discColor = "#D99148",
 }: {
   className?: string
-  /** The disc color for this instrument. The horizon stays #F3EBDD. */
+  /** The disc color for this instrument. The horizon stays #F3E6DD. */
   discColor?: string
 }) {
   return (
@@ -23,7 +23,7 @@ export function InstrumentMark({
     >
       <svg viewBox="0 0 100 100" className="h-[62%] w-[62%]" aria-hidden="true">
         <circle cx="50" cy="50" r="26.5" fill={discColor} />
-        <rect x="20.5" y="62.25" width="59" height="2" rx="1" fill="#F3EBDD" />
+        <rect x="20.5" y="62.25" width="59" height="2" rx="1" fill="#F3E6DD" />
       </svg>
     </div>
   )
@@ -38,7 +38,7 @@ export function SpecList({ items }: { items: { label: string; value: string }[] 
           <dt className="font-[Roboto,Arial,sans-serif] text-sm uppercase tracking-wide text-[#93857B]">
             {item.label}
           </dt>
-          <dd className="mt-2 font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-[#A39A8C]">
+          <dd className="mt-2 font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-[#A3968C]">
             {item.value}
           </dd>
         </div>

@@ -45,7 +45,7 @@ export default function InstrumentsLayout({
   return (
     <div
       style={field}
-      className="flex min-h-screen flex-col bg-[#141210] font-[NeueHaasDisplayRoman,Arial,sans-serif] text-[#F3EBDD]"
+      className="flex min-h-screen flex-col bg-[#141210] font-[NeueHaasDisplayRoman,Arial,sans-serif] text-[#F3E6DD]"
     >
       <InstrumentsNav />
       <main id="main-content" className="mx-auto w-full max-w-6xl flex-1 px-6">

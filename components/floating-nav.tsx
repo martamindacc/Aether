@@ -65,7 +65,7 @@ export function FloatingNav({
       <nav
         className={
           isDark
-            ? "fixed inset-x-4 top-4 z-20 flex items-center justify-between rounded-[1.5rem] border border-[#F3EBDD]/10 bg-[#141210]/30 px-2.5 py-2.5 backdrop-blur-md sm:inset-x-6 sm:top-6 sm:px-6 sm:py-3"
+            ? "fixed inset-x-4 top-4 z-20 flex items-center justify-between rounded-[1.5rem] border border-[#F3E6DD]/10 bg-[#141210]/30 px-2.5 py-2.5 backdrop-blur-md sm:inset-x-6 sm:top-6 sm:px-6 sm:py-3"
             : "fixed inset-x-4 top-4 z-20 flex items-center justify-between rounded-[1.5rem] border border-white/50 bg-white/50 px-2.5 py-2.5 shadow-lg shadow-zinc-900/5 backdrop-blur-xl sm:inset-x-6 sm:top-6 sm:px-6 sm:py-3"
         }
       >
@@ -170,15 +170,15 @@ export function FloatingNav({
             onClick={() => onMenuOpenChange(true)}
             className={
               isDark
-                ? "flex h-9 w-9 items-center justify-center border border-[#F3EBDD]/25 bg-[#F3EBDD]/5 transition-colors hover:bg-[#F3EBDD]/15 sm:h-11 sm:w-11"
+                ? "flex h-9 w-9 items-center justify-center border border-[#F3E6DD]/25 bg-[#F3E6DD]/5 transition-colors hover:bg-[#F3E6DD]/15 sm:h-11 sm:w-11"
                 : "flex h-9 w-9 items-center justify-center border border-zinc-900/20 bg-white/30 transition-colors hover:bg-white/65 sm:h-11 sm:w-11"
             }
             aria-label={language === "no" ? "Åpne meny" : "Open menu"}
           >
             <span className="flex w-4 flex-col gap-1 sm:w-5 sm:gap-1.5">
-              <span className={isDark ? "h-px w-full bg-[#F3EBDD]" : "h-px w-full bg-zinc-900"} />
-              <span className={isDark ? "h-px w-full bg-[#F3EBDD]" : "h-px w-full bg-zinc-900"} />
-              <span className={isDark ? "h-px w-full bg-[#F3EBDD]" : "h-px w-full bg-zinc-900"} />
+              <span className={isDark ? "h-px w-full bg-[#F3E6DD]" : "h-px w-full bg-zinc-900"} />
+              <span className={isDark ? "h-px w-full bg-[#F3E6DD]" : "h-px w-full bg-zinc-900"} />
+              <span className={isDark ? "h-px w-full bg-[#F3E6DD]" : "h-px w-full bg-zinc-900"} />
             </span>
           </button>
         </div>

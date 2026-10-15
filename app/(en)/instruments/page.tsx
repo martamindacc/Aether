@@ -40,17 +40,17 @@ export default function Page() {
   return (
     <div className="pb-24 pt-48">
       <div className="h-[3px] w-[72px] bg-[#D99148]" />
-      <h1 className="mt-10 max-w-5xl font-[NeueHaasDisplayRoman,Arial,sans-serif] text-6xl font-medium leading-[0.95] tracking-tight text-[#F3EBDD] sm:text-8xl">
+      <h1 className="mt-10 max-w-5xl font-[NeueHaasDisplayRoman,Arial,sans-serif] text-6xl font-medium leading-[0.95] tracking-tight text-[#F3E6DD] sm:text-8xl">
         Tools for the human condition.
       </h1>
-      <p className="mt-6 max-w-4xl font-[Roboto,Arial,sans-serif] text-xl leading-[1.5] text-[#A39A8C] sm:text-2xl">
+      <p className="mt-6 max-w-4xl font-[Roboto,Arial,sans-serif] text-xl leading-[1.5] text-[#A3968C] sm:text-2xl">
         Purpose-built instruments for practicing the moments that matter.
       </p>
       <div className="mt-12 max-w-4xl space-y-6">
         {body.map((paragraph) => (
           <p
             key={paragraph}
-            className="font-[Roboto,Arial,sans-serif] text-xl leading-[1.5] text-[#A39A8C] sm:text-2xl"
+            className="font-[Roboto,Arial,sans-serif] text-xl leading-[1.5] text-[#A3968C] sm:text-2xl"
           >
             {paragraph}
           </p>
@@ -66,13 +66,13 @@ export default function Page() {
         <InstrumentMark className="w-24 md:w-40" />
         <div className="md:flex-1">
           <p className={label}>AET01 / 001</p>
-          <h2 className="mt-4 font-[NeueHaasDisplayRoman,Arial,sans-serif] text-4xl font-medium tracking-tight text-[#F3EBDD] sm:text-5xl">
+          <h2 className="mt-4 font-[NeueHaasDisplayRoman,Arial,sans-serif] text-4xl font-medium tracking-tight text-[#F3E6DD] sm:text-5xl">
             Conflict
           </h2>
-          <p className="mt-6 max-w-4xl font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-[#A39A8C]">
+          <p className="mt-6 max-w-4xl font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-[#A3968C]">
             Rehearse the argument before you have it.
           </p>
-          <p className="mt-10 font-[Roboto,Arial,sans-serif] text-[19px] font-medium text-[#D99148] underline underline-offset-4 transition-colors group-hover:text-[#F3EBDD]">
+          <p className="mt-10 font-[Roboto,Arial,sans-serif] text-[19px] font-medium text-[#D99148] underline underline-offset-4 transition-colors group-hover:text-[#F3E6DD]">
             Open instrument ↗
           </p>
         </div>
@@ -84,7 +84,7 @@ export default function Page() {
         {colophon.map((item) => (
           <div key={item.label}>
             <p className={label}>{item.label}</p>
-            <p className="mt-4 max-w-4xl font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-[#A39A8C]">
+            <p className="mt-4 max-w-4xl font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-[#A3968C]">
               {item.note}
             </p>
           </div>

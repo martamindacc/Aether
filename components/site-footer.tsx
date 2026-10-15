@@ -30,7 +30,7 @@ export function SiteFooter({
     ? "text-xs uppercase tracking-wide text-[#93857B]"
     : "text-xs uppercase tracking-wide text-zinc-500";
   const link = isDark
-    ? "text-[#A39A8C] hover:text-[#F3EBDD]"
+    ? "text-[#A3968C] hover:text-[#F3E6DD]"
     : "text-zinc-700 hover:text-zinc-900";
 
   return (
@@ -47,7 +47,7 @@ export function SiteFooter({
             href={homePath(language)}
             className={
               isDark
-                ? "flex items-center gap-2 text-lg font-medium tracking-tight text-[#F3EBDD]"
+                ? "flex items-center gap-2 text-lg font-medium tracking-tight text-[#F3E6DD]"
                 : "flex items-center gap-2 text-lg font-medium tracking-tight text-zinc-900"
             }
           >
