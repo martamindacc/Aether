@@ -6,6 +6,7 @@ import { useState } from "react";
 import { FloatingNav } from "@/components/floating-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { BookingModal } from "@/components/booking-modal";
+import { InstrumentMark } from "@/components/instruments/instrument-ui";
 import type { BlogPostMeta } from "@/lib/blog";
 import { defaultMarketFor } from "@/lib/blog-market";
 import type { LanguageCode } from "@/lib/service-content";
@@ -17,6 +18,19 @@ const languages: { code: LanguageCode; label: string }[] = [
 ];
 
 const languageLinks = languageLinksFor("home");
+
+/**
+ * The Instruments band's surface. Same construction as the Instruments
+ * masthead — sampled video sand over a ramp that ends on #141210 — sized to a
+ * section rather than a page, so the band is lit from its top edge.
+ */
+const instrumentsField = {
+  backgroundImage: [
+    "radial-gradient(ellipse 90% 80% at 20% 0%, rgba(209, 184, 168, 0.12) 0%, transparent 62%)",
+    "radial-gradient(ellipse 70% 60% at 85% 100%, rgba(220, 195, 177, 0.05) 0%, transparent 58%)",
+    "linear-gradient(168deg, #221B16 0%, #1A1613 48%, #141210 100%)",
+  ].join(", "),
+};
 
 const content: Record<
   LanguageCode,
@@ -49,13 +63,18 @@ const content: Record<
     finalCtaHeading: string;
     finalCtaSubtext: string;
     finalCtaButton: string;
+    instrumentsEyebrow: string;
+    instrumentsHeading: string;
+    instrumentsBody: string;
+    instrumentsTagline: string;
+    instrumentsCta: string;
   }
 > = {
   en: {
     videoOverlay: "Your Future is Yours to Shape",
     heroTitle: "Better life starts with better understanding",
     heroSubtitle:
-      "Private online sessions for couples, individuals, co-founders, executives, and founders in New York City, California, and Norway.",
+      "Private online sessions for couples, co-founders, executives, founders, and individuals in New York City, California, and Norway.",
     bookNow: "Book Now",
     supportSections: [
       {
@@ -138,6 +157,12 @@ const content: Record<
     finalCtaSubtext:
       "A practice built for those who expect the same rigor from their inner life as they do from their work.",
     finalCtaButton: "Book Your Session",
+    instrumentsEyebrow: "Aether Instruments",
+    instrumentsHeading: "Tools for the human condition.",
+    instrumentsBody:
+      "Purpose-built instruments for practicing the moments that matter. Rehearsal tools, not therapy.",
+    instrumentsTagline: "Rehearse the argument before you have it.",
+    instrumentsCta: "See all instruments",
   },
   no: {
     videoOverlay: "Din Fremtid Er Din Å Forme",
@@ -226,6 +251,12 @@ const content: Record<
     finalCtaSubtext:
       "En praksis bygget for dem som forventer samme presisjon i sitt innerliv som i arbeidet sitt.",
     finalCtaButton: "Bestill Din Økt",
+    instrumentsEyebrow: "Aether Instruments",
+    instrumentsHeading: "Verktøy for det menneskelige.",
+    instrumentsBody:
+      "Instrumenter laget for å øve på øyeblikkene som betyr noe. Øvingsverktøy, ikke terapi.",
+    instrumentsTagline: "Øv på krangelen før du tar den.",
+    instrumentsCta: "Se alle instrumenter",
   },
 };
 
@@ -306,7 +337,7 @@ export default function HomeClient({
         <p className="mt-8 max-w-3xl text-balance text-[19px] leading-[1.6] text-[#383838] sm:text-[21px]">
           {language.code === "en" ? (
             <>
-              Private online sessions for couples, individuals, co-founders, executives, and founders in New York City, California, and <Link href="/online-therapy-norway" className="underline underline-offset-4 decoration-[#C9A67D] hover:text-zinc-900">Norway</Link>.
+              Private online sessions for couples, co-founders, executives, founders, and individuals in New York City, California, and <Link href="/online-therapy-norway" className="underline underline-offset-4 decoration-[#C9A67D] hover:text-zinc-900">Norway</Link>.
             </>
           ) : language.code === "no" ? (
             <>
@@ -430,6 +461,49 @@ export default function HomeClient({
           </div>
         </section>
       )}
+
+      <section style={instrumentsField} className="w-full bg-[#141210] py-24 sm:py-28">
+        <div className="mx-auto flex max-w-6xl flex-col px-6 sm:px-12">
+          <div className="flex items-center gap-5">
+            <div className="h-px w-8 bg-[#D99148]" />
+            <p className="text-xs uppercase tracking-[0.18em] text-[#93857B]">
+              {t.instrumentsEyebrow}
+            </p>
+          </div>
+          <h2 className="mt-7 max-w-3xl font-[NeueHaasDisplayRoman,Arial,sans-serif] text-4xl font-medium leading-[1.05] tracking-tight text-[#F3E6DD] sm:text-5xl">
+            {t.instrumentsHeading}
+          </h2>
+          <p className="mt-5 max-w-2xl font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.6] text-[#A3968C]">
+            {t.instrumentsBody}
+          </p>
+
+          <Link
+            href="/instruments/conflict"
+            className="group mt-12 flex flex-col gap-6 rounded-2xl border border-[#2E2824] bg-[#28231F] p-7 transition-colors hover:border-[#D99148]/40 sm:flex-row sm:items-center sm:gap-10 sm:p-9"
+          >
+            <InstrumentMark className="w-16 rounded-[22%] sm:w-20" />
+            <div className="sm:flex-1">
+              <h3 className="flex flex-wrap items-baseline gap-x-3 font-[NeueHaasDisplayRoman,Arial,sans-serif] text-3xl font-medium tracking-tight text-[#F3E6DD] sm:text-4xl">
+                <span className="text-[#93857B]">AET01</span>
+                <span>Conflict</span>
+              </h3>
+              <p className="mt-3 font-[Roboto,Arial,sans-serif] text-[17px] leading-[1.5] text-[#A3968C]">
+                {t.instrumentsTagline}
+              </p>
+            </div>
+            <p className="shrink-0 font-[Roboto,Arial,sans-serif] text-[17px] font-medium text-[#D99148] transition-colors group-hover:text-[#F3E6DD]">
+              Open instrument ↗
+            </p>
+          </Link>
+
+          <Link
+            href="/instruments"
+            className="mt-10 self-start font-[Roboto,Arial,sans-serif] text-sm uppercase tracking-[0.18em] text-[#93857B] transition-colors hover:text-[#F3E6DD]"
+          >
+            {t.instrumentsCta} →
+          </Link>
+        </div>
+      </section>
 
       <SiteFooter language={language.code} />
     </main>
