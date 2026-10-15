@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { InstrumentDisclosure, InstrumentMark } from "@/components/instruments/instrument-ui"
-import { pageMetadata } from "@/lib/seo"
+import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo"
+import { JsonLd } from "@/components/json-ld"
 
 export const metadata = pageMetadata({
   title: "Instruments",
@@ -23,8 +24,15 @@ const body = [
   "Instruments are rehearsal tools for those.",
 ]
 
+const breadcrumbLd = breadcrumbJsonLd([
+  { name: "Home", path: "/" },
+  { name: "Instruments", path: "/instruments" },
+])
+
 export default function Page() {
   return (
+    <>
+      <JsonLd data={breadcrumbLd} />
     <div className="pb-24 pt-48">
       <div className="h-[3px] w-[72px] bg-[#D99148]" />
       <h1 className="mt-10 max-w-5xl font-[NeueHaasDisplayRoman,Arial,sans-serif] text-6xl font-medium leading-[0.95] tracking-tight text-[#F3E6DD] sm:text-8xl">
@@ -76,5 +84,6 @@ export default function Page() {
         <InstrumentDisclosure />
       </div>
     </div>
+    </>
   )
 }

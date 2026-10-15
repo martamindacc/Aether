@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { InstrumentMark, SpecList } from "@/components/instruments/instrument-ui"
-import { pageMetadata } from "@/lib/seo"
+import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo"
+import { JsonLd } from "@/components/json-ld"
 
 export const metadata = pageMetadata({
   title: "AET01 / Conflict",
@@ -59,8 +60,16 @@ const sectionHeading =
   "font-[NeueHaasDisplayRoman,Arial,sans-serif] text-4xl font-medium tracking-tight text-[#F3E6DD] sm:text-5xl"
 const bodyText = "font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-[#A3968C]"
 
+const breadcrumbLd = breadcrumbJsonLd([
+  { name: "Home", path: "/" },
+  { name: "Instruments", path: "/instruments" },
+  { name: "AET01 Conflict", path: "/instruments/conflict" },
+])
+
 export default function Page() {
   return (
+    <>
+      <JsonLd data={breadcrumbLd} />
     <div className="pb-24 pt-48">
       {/*
         A product masthead: the mark reads as the app's icon and sits beside the
@@ -137,5 +146,6 @@ export default function Page() {
         </Link>
       </div>
     </div>
+    </>
   )
 }
