@@ -68,7 +68,6 @@ export const PRODUCTS: Product[] = [
     duration: "60 min",
     priceInCents: 17000,
     priceInNok: 1700,
-    // TODO: the cal.com event for this one does not exist yet.
     calendlyUrl: "https://cal.com/aetherpractice/co-founder-session",
     locales: ["en"],
   },
@@ -88,7 +87,7 @@ export const PRODUCTS: Product[] = [
     duration: "2 days",
     priceInCents: 350000,
     priceInNok: 35000,
-    calendlyUrl: "https://cal.com/aetherpractice/couples-intensive",
+    calendlyUrl: "https://cal.com/aetherpractice/couples-intensive-inquiry",
   },
   {
     id: "initial-consultation",
