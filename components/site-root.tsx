@@ -51,7 +51,7 @@ export const rootMetadata: Metadata = {
 export const rootViewport: Viewport = {
   // The design is light only; native controls and the browser chrome should match.
   colorScheme: 'light',
-  themeColor: '#fafafb',
+  themeColor: '#FBF7F5',
 }
 
 /** Organization + WebSite schema. Offers are priced in USD for the English site and NOK for the Norwegian one. */

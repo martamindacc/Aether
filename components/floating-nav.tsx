@@ -206,7 +206,7 @@ export function FloatingNav({
             aria-modal="true"
             aria-label={t.menuHeading}
             tabIndex={-1}
-            className="relative flex h-full w-full max-w-[508px] flex-col justify-center gap-[clamp(1rem,3.5vh,2.5rem)] overflow-hidden bg-[#fafafb] px-8 pb-6 pt-20 shadow-2xl outline-none animate-in slide-in-from-right duration-300 ease-out sm:px-12"
+            className="relative flex h-full w-full max-w-[508px] flex-col justify-center gap-[clamp(1rem,3.5vh,2.5rem)] overflow-hidden bg-[#FBF7F5] px-8 pb-6 pt-20 shadow-2xl outline-none animate-in slide-in-from-right duration-300 ease-out sm:px-12"
           >
             <button
               onClick={() => onMenuOpenChange(false)}
