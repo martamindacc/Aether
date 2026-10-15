@@ -32,6 +32,8 @@
  * so the edges stop reading cold without becoming a colour of their own.
  */
 @theme {
+  --color-zinc-100: #F8F5F1;
+  --color-zinc-200: #EDE6DE;
   --color-zinc-300: #DBD4CF;
 }
 

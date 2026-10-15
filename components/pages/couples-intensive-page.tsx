@@ -101,7 +101,7 @@ export default function CouplesIntensivePage({ language }: { language: LanguageC
           </p>
           <button
             onClick={() => setIsBookingOpen(true)}
-            className="border border-zinc-900/20 bg-white px-8 py-4 text-base font-medium text-zinc-900 transition-colors hover:bg-zinc-100"
+            className="bg-zinc-900 px-10 py-5 text-sm font-medium uppercase tracking-[0.2em] text-white transition-colors duration-300 hover:bg-zinc-800"
           >
             {t.ctaButton}
           </button>
