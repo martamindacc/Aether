@@ -545,7 +545,7 @@ export default function HomeClient({
             <Link
               key={section.href}
               href={section.href}
-              className="group rounded-2xl border border-zinc-300/80 bg-[#FBF7F5] p-8 transition-colors duration-200 hover:border-[#C4B5AB] hover:bg-[#F4EDE9] sm:p-14"
+              className="group rounded-2xl border border-zinc-300/80 bg-[#FBF7F5] bg-[url('/sand-texture.png')] bg-cover bg-center bg-blend-multiply p-8 transition-colors duration-200 hover:border-[#C4B5AB] hover:bg-[#F4EDE9] sm:p-14"
             >
               <h2 className="inline-block origin-left font-[NeueHaasDisplayRoman,Arial,sans-serif] text-5xl font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out group-hover:translate-x-2 group-hover:scale-x-105 sm:text-7xl">
                 {section.title}
