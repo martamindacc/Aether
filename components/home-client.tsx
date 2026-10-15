@@ -534,7 +534,7 @@ export default function HomeClient({
           {t.pills.map((pill) => (
             <span
               key={pill}
-              className="rounded-xl border border-[#EEE6E1] bg-gradient-to-r from-[#EEE6E1] to-[#F7F3F0] px-5 py-3 text-base text-zinc-700"
+              className="rounded-xl border border-[#EEE0D8] bg-[#F4EAE4] px-5 py-3 text-base text-zinc-700"
             >
               {pill}
             </span>
@@ -545,7 +545,7 @@ export default function HomeClient({
             <Link
               key={section.href}
               href={section.href}
-              className="group rounded-2xl border border-zinc-300/80 bg-[#FBF7F5] bg-[url('/sand-texture.png')] bg-cover bg-center bg-blend-multiply p-8 transition-colors duration-200 hover:border-[#C4B5AB] hover:bg-[#F4EDE9] sm:p-14"
+              className="group rounded-2xl border border-zinc-300/80 bg-[#F7F0EC] bg-[url('/sand-texture.png')] bg-cover bg-center bg-blend-multiply p-8 transition-colors duration-200 hover:border-[#C4B5AB] hover:bg-[#F4EBE6] sm:p-14"
             >
               <h2 className="inline-block origin-left font-[NeueHaasDisplayRoman,Arial,sans-serif] text-5xl font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out group-hover:translate-x-2 group-hover:scale-x-105 sm:text-7xl">
                 {section.title}
@@ -572,7 +572,7 @@ export default function HomeClient({
           {t.testimonials.map((item) => (
             <div
               key={item.name}
-              className="flex flex-col gap-8 rounded-2xl border border-zinc-300/80 bg-[#F3EEEB] p-8 sm:p-10"
+              className="flex flex-col gap-8 rounded-2xl border border-zinc-300/80 bg-[#F7EFEB] p-8 sm:p-10"
             >
               <span aria-hidden="true" className="-mb-3 flex justify-center gap-2">
 <span className="h-7 w-3 bg-[#bfa27f] [clip-path:polygon(0_0,100%_0,80%_100%,20%_100%)]" />
@@ -605,7 +605,7 @@ export default function HomeClient({
       </section>
 
       {blogPosts.length > 0 && (
-        <section className="w-full bg-[#F1EAE6] py-28 sm:py-32">
+        <section className="w-full bg-[#F6EEE9] py-28 sm:py-32">
           <div className="mx-auto flex max-w-6xl flex-col px-6 sm:px-12">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-5">
