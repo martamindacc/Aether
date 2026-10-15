@@ -6,7 +6,7 @@ import { ConsentBanner } from '@/components/consent-banner'
 import { GoogleAnalytics } from '@/components/google-analytics'
 import { JsonLd } from '@/components/json-ld'
 import { ANALYTICS_REQUIRE_CONSENT } from '@/lib/analytics-config'
-import { PRODUCTS } from '@/lib/products'
+import { productsFor } from '@/lib/products'
 import { TITLE_TEMPLATE } from '@/lib/seo'
 import '../app/globals.css'
 
@@ -57,7 +57,8 @@ export const rootViewport: Viewport = {
 /** Organization + WebSite schema. Offers are priced in USD for the English site and NOK for the Norwegian one. */
 function organizationJsonLd(lang: 'en' | 'nb') {
   const nok = lang === 'nb'
-  const prices = PRODUCTS.map((product) => (nok ? product.priceInNok : product.priceInCents / 100))
+  const offered = productsFor(nok ? 'no' : 'en')
+  const prices = offered.map((product) => (nok ? product.priceInNok : product.priceInCents / 100))
   const paid = prices.filter((price) => price > 0)
   const priceRange = nok ? `${Math.min(...paid)}-${Math.max(...paid)} NOK` : `\$${Math.min(...paid)}-\$${Math.max(...paid)}`
   return {
@@ -79,7 +80,7 @@ function organizationJsonLd(lang: 'en' | 'nb') {
         { '@type': 'Country', name: 'Norway' },
       ],
       priceRange,
-      makesOffer: PRODUCTS.map((product) => ({
+      makesOffer: offered.map((product) => ({
         '@type': 'Offer',
         price: nok ? product.priceInNok.toFixed(2) : (product.priceInCents / 100).toFixed(2),
         priceCurrency: nok ? 'NOK' : 'USD',

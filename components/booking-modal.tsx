@@ -5,7 +5,7 @@ import { useDialog } from "@/lib/use-dialog"
 import { track } from "@vercel/analytics"
 import { sendGAEvent } from "@/components/google-analytics"
 import { buildCalendlyBookingUrl } from "@/lib/booking-url"
-import { PRODUCTS, formatPrice } from "@/lib/products"
+import { PRODUCTS, formatPrice, productsFor } from "@/lib/products"
 import type { LanguageCode } from "@/lib/service-content"
 
 export function BookingModal({
@@ -34,7 +34,7 @@ export function BookingModal({
 
   const selectedProduct = PRODUCTS.find((product) => product.id === selectedId)
   const productLabels: Record<string, string> = language === "no"
-    ? { "Individual Session": "Individuell terapi", "Couples Session": "Parterapi", "Couples Intensive": "Parintensiv", "Family Session": "Familieterapi", "Exec&Founder Session": "Leder- og gründercoaching", "Initial Consultation": "Innledende konsultasjon" }
+    ? { "Individual Session": "Individuell terapi", "Couples Session": "Parterapi", "Couples Intensive": "Parintensiv", "Family Session": "Familieterapi", "Co-Founder Session": "Medgründersesjon", "Exec&Founder Session": "Leder- og gründercoaching", "Initial Consultation": "Innledende konsultasjon" }
     : {}
   const productLabel = (name: string) => productLabels[name] ?? name
   const durationLabel = (duration: string) => (language === "no" ? duration.replace("days", "dager") : duration)
@@ -117,7 +117,7 @@ export function BookingModal({
             <>
               <p className="pr-12 text-xs uppercase tracking-wide text-zinc-500 sm:text-sm">{labels.chooseSession}</p>
               <div className="flex flex-col gap-3">
-                {PRODUCTS.map((product) => (
+                {productsFor(language).map((product) => (
                   <button
                     key={product.id}
                     onClick={() => handleSelect(product.id)}

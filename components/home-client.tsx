@@ -25,7 +25,6 @@ const content: Record<
     heroTitle: string;
     heroSubtitle: string;
     bookNow: string;
-    pills: string[];
     supportSections: {
       eyebrow: string;
       title: string;
@@ -58,12 +57,6 @@ const content: Record<
     heroSubtitle:
       "Private online sessions for couples, individuals, families, executives, and founders in New York City, California, and Norway.",
     bookNow: "Book Now",
-    pills: [
-      "Emotional Wellness",
-      "Stress Support",
-      "Personal Growth",
-      "Mindful Living",
-    ],
     supportSections: [
       {
         eyebrow: "Relationship support",
@@ -152,12 +145,6 @@ const content: Record<
     heroSubtitle:
       "Private online samtaler for par, enkeltpersoner, familier, ledere og grunnleggere i Oslo og hele Norge.",
     bookNow: "Bestill Nå",
-    pills: [
-      "Emosjonell Velvære",
-      "Stressstøtte",
-      "Personlig Vekst",
-      "Bevisst Liv",
-    ],
     supportSections: [
       {
         eyebrow: "Relasjonsstøtte",
@@ -329,17 +316,7 @@ export default function HomeClient({
             t.heroSubtitle
           )}
         </p>
-        <div className="mt-[70px] flex max-w-7xl flex-wrap items-center justify-center gap-3">
-          {t.pills.map((pill) => (
-            <span
-              key={pill}
-              className="rounded-xl border border-zinc-300/80 bg-[#F7F2EC] px-5 py-3 text-base text-zinc-700"
-            >
-              {pill}
-            </span>
-          ))}
-        </div>
-        <div className="mt-[136px] flex w-full max-w-6xl flex-col gap-6 text-left">
+        <div className="mt-24 flex w-full max-w-6xl flex-col gap-6 text-left sm:mt-32">
           {t.supportSections.map((section) => (
             <Link
               key={section.href}

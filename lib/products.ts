@@ -8,6 +8,17 @@ export interface Product {
   /** Price in whole Norwegian kroner, shown on Norwegian pages and in the Norwegian schema. */
   priceInNok: number
   calendlyUrl: string
+  /**
+   * Which language's booking flow and schema this session appears in.
+   * Omitted means both. Family is Norwegian-only and Co-Founder English-only,
+   * because each is offered in one market.
+   */
+  locales?: ("en" | "no")[]
+}
+
+/** The sessions bookable in a given language. */
+export function productsFor(lang: "en" | "no"): Product[] {
+  return PRODUCTS.filter((product) => !product.locales || product.locales.includes(lang))
 }
 
 // This is the source of truth for all bookable sessions.
@@ -48,6 +59,18 @@ export const PRODUCTS: Product[] = [
     priceInCents: 20000,
     priceInNok: 2000,
     calendlyUrl: "https://cal.com/aetherpractice/family-session",
+    locales: ["no"],
+  },
+  {
+    id: "cofounder-session",
+    name: "Co-Founder Session",
+    description: "A 60 minute session for two co-founders.",
+    duration: "60 min",
+    priceInCents: 17000,
+    priceInNok: 1700,
+    // TODO: the cal.com event for this one does not exist yet.
+    calendlyUrl: "https://cal.com/aetherpractice/co-founder-session",
+    locales: ["en"],
   },
   {
     id: "founder-session",
