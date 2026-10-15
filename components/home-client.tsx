@@ -343,8 +343,8 @@ export default function HomeClient({
     .slice(0, 3);
 
   return (
-    <main className="min-h-screen bg-[#fafafb] font-[NeueHaasDisplayRoman,Arial,sans-serif] text-zinc-900">
-      <div className="relative h-screen w-full overflow-hidden bg-[#fafafb]">
+    <main className="min-h-screen bg-[#FBF7F5] font-[NeueHaasDisplayRoman,Arial,sans-serif] text-zinc-900">
+      <div className="relative h-screen w-full overflow-hidden bg-[#FBF7F5]">
         {/* Poster paints immediately (the LCP element); the video streams in behind it. Reduced-motion users get the still only. */}
         <video
           className="absolute inset-0 h-full w-full object-cover motion-reduce:hidden"
@@ -471,7 +471,7 @@ export default function HomeClient({
               aria-modal="true"
               aria-label={t.menuSections[0]?.heading}
               tabIndex={-1}
-              className="relative flex h-full w-full max-w-md flex-col gap-12 overflow-y-auto bg-[#fafafb] px-8 pb-24 pt-9 shadow-2xl outline-none animate-in slide-in-from-right duration-300 ease-out sm:px-12"
+              className="relative flex h-full w-full max-w-md flex-col gap-12 overflow-y-auto bg-[#FBF7F5] px-8 pb-24 pt-9 shadow-2xl outline-none animate-in slide-in-from-right duration-300 ease-out sm:px-12"
             >
               <button
                 onClick={() => setIsMenuOpen(false)}
@@ -545,7 +545,7 @@ export default function HomeClient({
             <Link
               key={section.href}
               href={section.href}
-              className="group rounded-2xl border border-zinc-300/80 bg-[#fafafb] p-8 transition-colors duration-300 hover:bg-[#F3EBE4] sm:p-14"
+              className="group relative isolate overflow-hidden rounded-2xl border border-zinc-300/80 bg-[#FBF7F5] p-8 transition-colors duration-300 before:pointer-events-none before:absolute before:inset-x-0 before:bottom-0 before:-z-10 before:h-40 before:bg-[linear-gradient(to_top,rgba(217,145,72,0.18)_0%,rgba(217,145,72,0.06)_45%,transparent_100%)] before:opacity-0 before:transition-opacity before:duration-500 before:ease-out before:content-[''] hover:border-[#D99148]/35 hover:bg-[#F7F1ED] hover:before:opacity-100 sm:p-14"
             >
               <h2 className="inline-block origin-left font-[NeueHaasDisplayRoman,Arial,sans-serif] text-5xl font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out group-hover:translate-x-2 group-hover:scale-x-105 sm:text-7xl">
                 {section.title}
