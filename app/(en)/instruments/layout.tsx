@@ -14,20 +14,25 @@ export const viewport: Viewport = {
 }
 
 /**
- * The lit field the Instruments pages sit on. #141210 stays the background
- * colour and the middle stop of the ramp, so the section reads as the same
- * dark it always was — the gradient only lifts one corner and deepens the
- * opposite one, and two very low ember washes pool light into it. Every layer
- * is attached to the viewport rather than the document, so the light stays put
- * while the page scrolls instead of stretching over the length of the page.
+ * The light over the masthead. It sits at the top of the page and scrolls away
+ * with it, rather than following the viewport — the page is lit where the
+ * header and the headline are, and settles into flat #141210 below.
+ *
+ * The band is sized and anchored to the top, and its ramp ends on #141210, the
+ * same colour the element is filled with, so there is no seam where the band
+ * stops. #141210 itself is unchanged. The hues are the hero video's family
+ * (~25) rather than the ember's 30, so Instruments reads as the same desert as
+ * the rest of the site.
  */
 const field = {
   backgroundImage: [
-    "radial-gradient(ellipse 80% 55% at 22% 12%, rgba(217, 145, 72, 0.10) 0%, transparent 62%)",
-    "radial-gradient(ellipse 70% 50% at 82% 72%, rgba(191, 162, 127, 0.07) 0%, transparent 58%)",
-    "linear-gradient(160deg, #251C13 0%, #141210 46%, #0A0806 100%)",
+    "radial-gradient(ellipse 90% 60% at 22% 10%, rgba(217, 145, 72, 0.11) 0%, transparent 60%)",
+    "radial-gradient(ellipse 80% 55% at 80% 32%, rgba(191, 162, 127, 0.07) 0%, transparent 58%)",
+    "linear-gradient(to bottom, #251B13 0%, #1A1511 50%, #141210 100%)",
   ].join(", "),
-  backgroundAttachment: "fixed, fixed, fixed",
+  backgroundRepeat: "no-repeat",
+  backgroundPosition: "top center",
+  backgroundSize: "100% 760px, 100% 760px, 100% 820px",
 }
 
 export default function InstrumentsLayout({
