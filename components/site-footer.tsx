@@ -27,7 +27,7 @@ export function SiteFooter({
   const t = navContent[language];
   const isDark = tone === "dark";
   const heading = isDark
-    ? "text-xs uppercase tracking-wide text-[#6A635A]"
+    ? "text-xs uppercase tracking-wide text-[#93857B]"
     : "text-xs uppercase tracking-wide text-zinc-500";
   const link = isDark
     ? "text-[#A39A8C] hover:text-[#F3EBDD]"
@@ -37,7 +37,7 @@ export function SiteFooter({
     <footer
       className={
         isDark
-          ? "px-6 py-[99px] font-[Roboto,Arial,sans-serif] text-sm text-[#6A635A]"
+          ? "px-6 py-[99px] font-[Roboto,Arial,sans-serif] text-sm text-[#93857B]"
           : "px-6 py-[99px] font-[Roboto,Arial,sans-serif] text-sm text-[#383838]"
       }
     >

@@ -34,7 +34,7 @@ const colophon = [
   },
 ]
 
-const label = "font-[Roboto,Arial,sans-serif] text-sm uppercase tracking-wide text-[#6A635A]"
+const label = "font-[Roboto,Arial,sans-serif] text-sm uppercase tracking-wide text-[#93857B]"
 
 export default function Page() {
   return (
@@ -57,7 +57,7 @@ export default function Page() {
         ))}
       </div>
 
-      <div className="mt-20 h-px w-full bg-[#2E2A24]" />
+      <div className="mt-20 h-px w-full bg-[#2E2824]" />
 
       <Link
         href="/instruments/conflict"
@@ -78,7 +78,7 @@ export default function Page() {
         </div>
       </Link>
 
-      <div className="h-px w-full bg-[#2E2A24]" />
+      <div className="h-px w-full bg-[#2E2824]" />
 
       <div className="mt-20 grid gap-10 sm:grid-cols-2 sm:gap-12">
         {colophon.map((item) => (

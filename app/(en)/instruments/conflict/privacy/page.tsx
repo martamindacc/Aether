@@ -42,7 +42,7 @@ export default function Page() {
       <h1 className="max-w-5xl font-[NeueHaasDisplayRoman,Arial,sans-serif] text-6xl font-medium leading-[0.95] tracking-tight text-[#F3EBDD] sm:text-8xl">
         Privacy Policy
       </h1>
-      <p className="mt-8 font-[Roboto,Arial,sans-serif] text-sm uppercase tracking-wide text-[#6A635A]">
+      <p className="mt-8 font-[Roboto,Arial,sans-serif] text-sm uppercase tracking-wide text-[#93857B]">
         AET01 Conflict
       </p>
 
@@ -52,7 +52,7 @@ export default function Page() {
         </p>
       </div>
 
-      <div className="mt-16 font-[Roboto,Arial,sans-serif] text-sm text-[#6A635A]">
+      <div className="mt-16 font-[Roboto,Arial,sans-serif] text-sm text-[#93857B]">
         <Link href="/instruments/conflict" className="transition-colors hover:text-[#A39A8C]">
           ← AET01 Conflict
         </Link>

@@ -19,7 +19,7 @@ export function InstrumentMark({
 }) {
   return (
     <div
-      className={`flex aspect-square shrink-0 items-center justify-center border border-[#2E2A24] bg-[#28251F] ${className}`}
+      className={`flex aspect-square shrink-0 items-center justify-center border border-[#2E2824] bg-[#28231F] ${className}`}
     >
       <svg viewBox="0 0 100 100" className="h-[62%] w-[62%]" aria-hidden="true">
         <circle cx="50" cy="50" r="26.5" fill={discColor} />
@@ -35,7 +35,7 @@ export function SpecList({ items }: { items: { label: string; value: string }[] 
     <dl className="grid grid-cols-2 gap-x-8 gap-y-6 sm:grid-cols-4">
       {items.map((item) => (
         <div key={item.label}>
-          <dt className="font-[Roboto,Arial,sans-serif] text-sm uppercase tracking-wide text-[#6A635A]">
+          <dt className="font-[Roboto,Arial,sans-serif] text-sm uppercase tracking-wide text-[#93857B]">
             {item.label}
           </dt>
           <dd className="mt-2 font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-[#A39A8C]">
@@ -50,7 +50,7 @@ export function SpecList({ items }: { items: { label: string; value: string }[] 
 /** The same line on every Instruments page. */
 export function InstrumentDisclosure() {
   return (
-    <p className="max-w-4xl font-[Roboto,Arial,sans-serif] text-sm leading-[1.5] text-[#6A635A]">
+    <p className="max-w-4xl font-[Roboto,Arial,sans-serif] text-sm leading-[1.5] text-[#93857B]">
       Instruments are communication practice tools. They are not therapy, treatment or diagnosis,
       and they do not replace care from a qualified professional.
     </p>

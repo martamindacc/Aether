@@ -33,7 +33,7 @@ export default function Page() {
         For AET01 Conflict.
       </p>
 
-      <div className="mt-12 rounded-2xl border border-[#2E2A24] bg-[#28251F] p-8 sm:p-10">
+      <div className="mt-12 rounded-2xl border border-[#2E2824] bg-[#28231F] p-8 sm:p-10">
         <a
           href={`mailto:${SUPPORT_EMAIL}`}
           className="font-[Roboto,Arial,sans-serif] text-[19px] font-medium text-[#D99148] transition-colors hover:text-[#F3EBDD]"
@@ -46,7 +46,7 @@ export default function Page() {
         Replies within a few business days.
       </p>
 
-      <div className="mt-16 font-[Roboto,Arial,sans-serif] text-sm text-[#6A635A]">
+      <div className="mt-16 font-[Roboto,Arial,sans-serif] text-sm text-[#93857B]">
         <Link href="/instruments/conflict" className="transition-colors hover:text-[#A39A8C]">
           ← AET01 Conflict
         </Link>
