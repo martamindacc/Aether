@@ -206,7 +206,7 @@ export function FloatingNav({
             aria-modal="true"
             aria-label={t.menuHeading}
             tabIndex={-1}
-            className="relative flex h-full w-full max-w-[508px] flex-col justify-center gap-[clamp(1rem,3.5vh,2.5rem)] overflow-hidden bg-[#FBF8F5] px-8 pb-6 pt-20 shadow-2xl outline-none animate-in slide-in-from-right duration-300 ease-out sm:px-12"
+            className="relative flex h-full w-full max-w-[508px] flex-col overflow-y-auto overscroll-contain bg-[#FBF8F5] px-8 pb-7 pt-[4.5rem] shadow-2xl outline-none animate-in slide-in-from-right duration-300 ease-out sm:px-12"
           >
             <button
               onClick={() => onMenuOpenChange(false)}
@@ -222,50 +222,57 @@ export function FloatingNav({
                 />
               </svg>
             </button>
-            <div className="flex flex-col gap-[clamp(0.5rem,2vh,1rem)]">
+            {/*
+              my-auto centres the groups while they fit and collapses to zero
+              when they do not, so a short viewport scrolls instead of clipping
+              the last link off the bottom.
+            */}
+            <div className="my-auto flex flex-col gap-[clamp(0.75rem,2.6vh,1.875rem)]">
+            <div className="flex flex-col gap-[clamp(0.4375rem,1.7vh,0.875rem)]">
               <p className="text-sm uppercase tracking-wide text-zinc-500">{t.menuHeading}</p>
-              <div className="flex flex-col gap-[clamp(0.5rem,2.2vh,1.25rem)]">
+              <div className="flex flex-col gap-[clamp(0.4375rem,1.9vh,1.0625rem)]">
                 {t.menuLinks.map((link) => (
                   <Link
                     key={link.label}
                     href={link.href}
                     onClick={() => onMenuOpenChange(false)}
-                    className="inline-block origin-left font-[Roboto,Arial,sans-serif] text-[clamp(1.125rem,3.6vh,1.5rem)] font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out hover:translate-x-2 hover:scale-x-105"
+                    className="inline-block origin-left font-[Roboto,Arial,sans-serif] text-[clamp(1.0625rem,3.1vh,1.375rem)] font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out hover:translate-x-2 hover:scale-x-105"
                   >
                     {link.label}
                   </Link>
                 ))}
               </div>
             </div>
-            <div className="flex flex-col gap-[clamp(0.5rem,2vh,1rem)]">
+            <div className="flex flex-col gap-[clamp(0.4375rem,1.7vh,0.875rem)]">
               <p className="text-sm uppercase tracking-wide text-zinc-500">{t.instrumentsHeading}</p>
-              <div className="flex flex-col gap-[clamp(0.5rem,2.2vh,1.25rem)]">
+              <div className="flex flex-col gap-[clamp(0.4375rem,1.9vh,1.0625rem)]">
                 {t.instrumentsLinks.map((link) => (
                   <Link
                     key={link.label}
                     href={link.href}
                     onClick={() => onMenuOpenChange(false)}
-                    className="inline-block origin-left font-[Roboto,Arial,sans-serif] text-[clamp(1.125rem,3.6vh,1.5rem)] font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out hover:translate-x-2 hover:scale-x-105"
+                    className="inline-block origin-left font-[Roboto,Arial,sans-serif] text-[clamp(1.0625rem,3.1vh,1.375rem)] font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out hover:translate-x-2 hover:scale-x-105"
                   >
                     {link.label}
                   </Link>
                 ))}
               </div>
             </div>
-            <div className="flex flex-col gap-[clamp(0.5rem,2vh,1rem)]">
+            <div className="flex flex-col gap-[clamp(0.4375rem,1.7vh,0.875rem)]">
               <p className="text-sm uppercase tracking-wide text-zinc-500">{t.companyHeading}</p>
-              <div className="flex flex-col gap-[clamp(0.5rem,2.2vh,1.25rem)]">
+              <div className="flex flex-col gap-[clamp(0.4375rem,1.9vh,1.0625rem)]">
                 {t.companyLinks.map((link) => (
                   <Link
                     key={link.label}
                     href={link.href}
                     onClick={() => onMenuOpenChange(false)}
-                    className="inline-block origin-left font-[Roboto,Arial,sans-serif] text-[clamp(1.125rem,3.6vh,1.5rem)] font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out hover:translate-x-2 hover:scale-x-105"
+                    className="inline-block origin-left font-[Roboto,Arial,sans-serif] text-[clamp(1.0625rem,3.1vh,1.375rem)] font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out hover:translate-x-2 hover:scale-x-105"
                   >
                     {link.label}
                   </Link>
                 ))}
               </div>
+            </div>
             </div>
           </div>
         </div>

@@ -471,7 +471,7 @@ export default function HomeClient({
               aria-modal="true"
               aria-label={t.menuSections[0]?.heading}
               tabIndex={-1}
-              className="relative flex h-full w-full max-w-md flex-col gap-12 overflow-y-auto bg-[#FBF8F5] px-8 pb-24 pt-9 shadow-2xl outline-none animate-in slide-in-from-right duration-300 ease-out sm:px-12"
+              className="relative flex h-full w-full max-w-md flex-col overflow-y-auto overscroll-contain bg-[#FBF8F5] px-8 pb-7 pt-[4.5rem] shadow-2xl outline-none animate-in slide-in-from-right duration-300 ease-out sm:px-12"
             >
               <button
                 onClick={() => setIsMenuOpen(false)}
@@ -487,18 +487,19 @@ export default function HomeClient({
                   />
                 </svg>
               </button>
+              <div className="my-auto flex flex-col gap-[clamp(0.75rem,2.6vh,1.875rem)]">
               {t.menuSections.map((section) => (
-                <div key={section.heading} className="flex flex-col gap-6">
+                <div key={section.heading} className="flex flex-col gap-[clamp(0.4375rem,1.7vh,0.875rem)]">
                   <p className="text-sm uppercase tracking-wide text-zinc-500">
                     {section.heading}
                   </p>
-                  <div className="flex flex-col gap-6">
+                  <div className="flex flex-col gap-[clamp(0.4375rem,1.9vh,1.0625rem)]">
                     {section.links.map((link) => (
                       <Link
                         key={link.label}
                         href={link.href}
                         onClick={() => setIsMenuOpen(false)}
-                        className="inline-block origin-left font-[Roboto,Arial,sans-serif] text-2xl font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out hover:translate-x-2 hover:scale-x-105"
+                        className="inline-block origin-left font-[Roboto,Arial,sans-serif] text-[clamp(1.0625rem,3.1vh,1.375rem)] font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out hover:translate-x-2 hover:scale-x-105"
                       >
                         {link.label}
                       </Link>
@@ -506,6 +507,7 @@ export default function HomeClient({
                   </div>
                 </div>
               ))}
+              </div>
             </div>
           </div>
         )}
