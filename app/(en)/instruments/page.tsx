@@ -51,50 +51,11 @@ const whoTheyAreFor = [
   "A founder before the equity conversation. A partner before the one about money. A manager before the review they have rewritten four times. Anyone who has drafted the message and sent none of them.",
 ]
 
-const whatTheyAreNot = [
-  "Not therapy, treatment or diagnosis. Not a companion. Not a chatbot built to agree with you.",
-  "The feedback comes from a model and can be wrong. The standard it measures against does not change between sessions, which is the point.",
-]
-
 const range = [
   { label: "Format", value: "mobile apps, iOS and Android" },
   { label: "Session", value: "two minutes" },
   { label: "Account", value: "none" },
   { label: "Made by", value: "Aether Practice" },
-]
-
-/** Visible FAQ and the FAQPage schema are built from this one list, so they cannot drift apart. */
-const faq = [
-  {
-    question: "What are Aether Instruments?",
-    answer:
-      "Aether Instruments are single-purpose mobile apps from Aether Practice for rehearsing one high-stakes human moment at a time. Each gives you a realistic AI counterpart, a fixed standard and a verdict on how you did, in a two-minute session with no account. The first, AET01 Conflict, is for rehearsing an argument before you have it.",
-  },
-  {
-    question: "Are Instruments therapy?",
-    answer:
-      "No. Instruments are communication practice tools. They are not therapy, treatment, diagnosis or crisis support, and they do not replace care from a qualified professional. Aether Practice offers therapy and coaching separately, with a person in the room.",
-  },
-  {
-    question: "Does rehearsing a difficult conversation actually help?",
-    answer:
-      "The evidence points that way. In a 2023 Stanford study of a conflict-rehearsal system, participants who practised against a simulated counterpart used escalating competitive tactics about two-thirds less in a later conflict than a control group who had only read about conflict resolution, and used cooperative tactics roughly twice as often. Rehearsal is also how pilots, litigators and surgeons prepare for the moments that matter; Instruments apply the same logic to conversations.",
-  },
-  {
-    question: "How is this different from asking ChatGPT to role-play?",
-    answer:
-      "A general assistant is built to be agreeable and will fold when you push. An Instrument's counterpart is built to hold a position, and it scores you against a standard that stays fixed from one session to the next, so you can tell whether you are improving. It also marks both ways of losing: escalating, and quietly giving in.",
-  },
-  {
-    question: "Which instruments exist?",
-    answer:
-      "One so far: AET01 Conflict, for rehearsing an argument before you have it. Further instruments in the range will each take one kind of conversation and do the same thing for it.",
-  },
-  {
-    question: "Where do I get them?",
-    answer:
-      "AET01 Conflict is coming to the App Store and Google Play. Each instrument's page on this site carries its store links when it is released.",
-  },
 ]
 
 const breadcrumbLd = breadcrumbJsonLd([
@@ -150,15 +111,6 @@ const collectionLd = {
           },
         })),
       },
-    },
-    {
-      "@type": "FAQPage",
-      "@id": `${BASE_URL}/instruments#faq`,
-      mainEntity: faq.map(({ question, answer }) => ({
-        "@type": "Question",
-        name: question,
-        acceptedAnswer: { "@type": "Answer", text: answer },
-      })),
     },
   ],
 }
@@ -249,13 +201,12 @@ export default function Page() {
       </section>
 
       <section className="mt-20">
-        <h2 className={sectionHeading}>What they are not</h2>
+        <h2 className={sectionHeading}>Where do I get them?</h2>
         <div className="mt-6 max-w-4xl space-y-6">
-          {whatTheyAreNot.map((paragraph) => (
-            <p key={paragraph} className={bodyText}>
-              {paragraph}
-            </p>
-          ))}
+          <p className={bodyText}>
+            AET01 Conflict is coming to the App Store and Google Play. Each instrument&apos;s page on this site carries
+            its store links when it is released.
+          </p>
         </div>
       </section>
 
@@ -263,20 +214,6 @@ export default function Page() {
         <h2 className={sectionHeading}>The range</h2>
         <div className="mt-10 max-w-4xl">
           <SpecList items={range} />
-        </div>
-      </section>
-
-      <section className="mt-20">
-        <h2 className={sectionHeading}>Questions</h2>
-        <div className="mt-6 max-w-4xl">
-          {faq.map((item) => (
-            <div key={item.question} className="border-t border-[#2E2824] py-8">
-              <h3 className="font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-medium text-[#F3E6DD]">
-                {item.question}
-              </h3>
-              <p className={`mt-4 ${bodyText}`}>{item.answer}</p>
-            </div>
-          ))}
         </div>
       </section>
 
