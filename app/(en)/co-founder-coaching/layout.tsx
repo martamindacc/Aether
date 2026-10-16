@@ -6,18 +6,19 @@ import { JsonLd } from "@/components/json-ld"
  * counterpart to point an hreflang pair at.
  */
 export const metadata = pageMetadata({
-  title: "Co-Founder Coaching for Founding Teams",
+  title: "Co-Founder Coaching for Founding Teams in San Francisco, New York and Online",
   description:
-    "Online co-founder coaching for founding teams in New York City, California and Norway — on how the two of you decide, disagree and divide the weight.",
+    "Online co-founder coaching for founding teams in San Francisco, New York City, California and Norway. Sometimes called co-founder therapy: both founders in the room, working on how you decide, disagree and divide the weight. $170 per 60-minute session, free consultation first.",
   path: "/co-founder-coaching",
 })
 
 const serviceLd = serviceJsonLd({
   name: "Co-Founder Session",
+  serviceType: "Co-founder coaching",
   description:
-    "Online coaching sessions for co-founders in New York City, California, and Norway, focused on how founding partners decide, disagree and divide responsibility.",
+    "Online co-founder coaching sessions for founding teams in San Francisco, New York City, California and Norway, focused on how founding partners decide, disagree and divide responsibility. Sometimes called co-founder therapy; delivered as coaching for a working partnership.",
   path: "/co-founder-coaching",
-  areaServed: ["New York City", "California", "Norway"],
+  areaServed: ["San Francisco Bay Area", "New York City", "California", "Norway"],
 })
 
 const breadcrumbLd = breadcrumbJsonLd([

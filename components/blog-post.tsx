@@ -157,6 +157,23 @@ export function BlogPost({ post, related }: { post: BlogPostData; related: BlogP
       }
     : null;
 
+  const definedTermSetJsonLd = post.definedTerms?.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "DefinedTermSet",
+        "@id": `${canonicalUrl}#terms`,
+        name: post.title,
+        url: canonicalUrl,
+        inLanguage: schemaLangByLang[post.lang],
+        hasDefinedTerm: post.definedTerms.map((term) => ({
+          "@type": "DefinedTerm",
+          name: term.name,
+          description: term.description,
+          inDefinedTermSet: `${canonicalUrl}#terms`,
+        })),
+      }
+    : null;
+
   const blogIndexPath = blogIndexPathFor(post);
   const blogIndexLabel = post.lang === "no" ? "Blogg" : "Blog";
 
@@ -173,6 +190,7 @@ export function BlogPost({ post, related }: { post: BlogPostData; related: BlogP
         <JsonLd data={faqJsonLd} />
       )}
       {howToJsonLd && <JsonLd data={howToJsonLd} />}
+      {definedTermSetJsonLd && <JsonLd data={definedTermSetJsonLd} />}
       <JsonLd data={breadcrumbLd} />
       <BlogViewTracker path={postPath(post)} title={post.title} />
       <article id="main-content" lang={htmlLangFor(post.lang)} className="mx-auto flex max-w-3xl flex-col px-6 pb-24 pt-48">

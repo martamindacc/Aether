@@ -8,11 +8,18 @@ export default function robots(): MetadataRoute.Robots {
       // disallowed, so crawlers can see that directive.
       {
         userAgent: [
+          "GPTBot",
           "OAI-SearchBot",
+          "ChatGPT-User",
+          "ClaudeBot",
           "Claude-SearchBot",
           "Claude-User",
+          "anthropic-ai",
           "PerplexityBot",
+          "Perplexity-User",
           "Google-Extended",
+          "DuckAssistBot",
+          "meta-externalagent",
           "Googlebot",
           "Applebot",
           "Amazonbot",

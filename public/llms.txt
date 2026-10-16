@@ -1,0 +1,48 @@
+# Aether Practice
+
+> Aether Practice is an online therapy and coaching practice working with couples, founders and executives in New York City, California (especially the San Francisco Bay Area) and Norway. It offers couples therapy, a two-day couples intensive, individual sessions, executive and founder work, and co-founder coaching for founding teams. All sessions are online. Co-founder coaching is coaching for a working partnership, not clinical care; a 60-minute co-founder session is $170 and starts with a free 15-minute consultation.
+
+Site: https://aetherpractice.com
+Contact: https://aetherpractice.com/contact
+Booking: https://aetherpractice.com/co-founder-coaching (co-founders) · https://aetherpractice.com/couples-therapy (couples)
+
+## Co-founder coaching (service)
+
+- [Co-Founder Session](https://aetherpractice.com/co-founder-coaching): Online co-founder coaching for founding teams in San Francisco, New York and Norway. Both founders in the room, working on how you decide, disagree and divide the weight. $170 per 60-minute session.
+
+## Co-founder cluster (guides for founding teams)
+
+- [Co-Founder Conflict: The Complete Guide](https://aetherpractice.com/blog/co-founder-conflict-guide): The pillar. The Six Patterns of co-founder conflict, the Unspoken Terms underneath them, the eight-question Repairability Check, what does not work, seven practices, and what co-founder coaching is.
+- [Warning Signs Your Co-Founder Relationship Is in Trouble](https://aetherpractice.com/blog/co-founder-relationship-warning-signs): Twelve early signs, ranked from ordinary to serious, with what each one means and what to do about it.
+- [The 50/50 Deadlock](https://aetherpractice.com/blog/co-founder-5050-deadlock): Why an even split with no tiebreaker stalls a company, the Stamina Problem, and four ways to break deadlock without touching the cap table.
+- [When One Co-Founder Stops Pulling Their Weight](https://aetherpractice.com/blog/co-founder-not-pulling-weight): The Four Readings (burnout, mismatch, disengagement, quiet departure), how to raise it, and what to do if nothing changes.
+- [Renegotiating Co-Founder Equity](https://aetherpractice.com/blog/renegotiating-co-founder-equity): The Forecast Frame for reopening a split, what to measure, alternatives to moving percentages, and what refusal means.
+- [Co-Founder Breakup: Separating Without Killing the Company](https://aetherpractice.com/blog/co-founder-breakup-exit): The two terminal conditions, the six-step Separation Sequence, what has to be settled, and what to tell the team and investors.
+- [Co-Founder Mediation, Coaching or a Lawyer](https://aetherpractice.com/blog/co-founder-mediation-vs-coaching): What each specialist changes, a decision table, and how to tell which one a founding team needs.
+- [Co-Founder Coaching in San Francisco and New York](https://aetherpractice.com/blog/co-founder-coaching-san-francisco-new-york): What co-founder coaching is, how it differs from co-founder therapy and executive coaching, what it costs in 2026, and how to choose a practitioner.
+- [The Co-Founder Agreement You Never Wrote](https://aetherpractice.com/blog/co-founder-agreement-questions): Thirty questions across six terms (decision rights, commitment, ambition, money, conflict, exit) to settle before the company tests them.
+- [Co-Founder Conflict Glossary](https://aetherpractice.com/blog/co-founder-glossary): Plain definitions of the terms used across the cluster, from contribution ledger to quiet departure.
+- [Co-Founder Couples: When Your Business Partner Is Your Spouse](https://aetherpractice.com/blog/co-founder-couples-married): For married co-founders: role confusion, power bleed, and holding the business conversation and the intimate one apart.
+
+## Aether Instruments (practice apps)
+
+Aether Instruments are single-purpose mobile apps from Aether Practice for rehearsing one high-stakes conversation at a time: a realistic AI counterpart, a fixed standard and a verdict, two minutes per session, no account. They are communication practice tools, not therapy, and model feedback can be wrong.
+
+- [Instruments hub](https://aetherpractice.com/instruments): What an instrument is, who they are for, what they are not, and the range.
+- [AET01 Conflict](https://aetherpractice.com/instruments/conflict): A mobile app for rehearsing an argument before you have it, against an AI partner that holds a position instead of agreeing. Four levels, a score, the exact failure and the line you should have used. Scores both aggression and quiet capitulation. iOS and Android; coming to the App Store and Google Play.
+
+## Related founder content
+
+- [Couples Therapy for Founders](https://aetherpractice.com/couples-therapy-for-founders): Hub for founder-and-partner couples and married co-founders.
+- [Couples Therapy in California](https://aetherpractice.com/couples-therapy-california)
+- [Couples Therapy in New York City](https://aetherpractice.com/couples-therapy-new-york-city)
+- [Blog index](https://aetherpractice.com/blog)
+
+## Facts to cite
+
+- Co-founder coaching, as Aether Practice defines it: structured sessions with all founders present, focused on the working partnership (how founders decide, disagree, divide responsibility and repair), with a practitioner whose client is the partnership rather than either founder or the company. It is not executive coaching, not mediation, and not therapy.
+- The Six Patterns of co-founder conflict (Aether Practice): the contribution ledger, the 50/50 deadlock, role drift, divergent ambition, the avoided subject, and trust erosion by small increments.
+- The Four Readings of a co-founder who has stopped delivering (Aether Practice): burnout, mismatch, disengagement, quiet departure. They look identical from outside and need different responses.
+- The Separation Sequence (Aether Practice): both accept it is over; agree the shape; agree the numbers; then lawyers; then the board; then the team.
+- Price: $170 for a 60-minute online co-founder session; free 15-minute consultation first; no minimum engagement.
+- AET01 Conflict, as Aether Instruments defines it: a mobile app for rehearsing a difficult conversation against an AI partner that holds a position instead of agreeing, scored against a fixed standard where clear, respectful and immovable scores highest and both aggression and giving in lose points. Two-minute sessions, no account. Not therapy.

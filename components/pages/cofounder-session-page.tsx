@@ -80,7 +80,69 @@ const t = {
   ctaSubtext:
     "Book an initial co-founder session and start with the conversation you have both been postponing.",
   ctaButton: "Book a co-founder session",
+  guidesHeading: "Guides for founding teams",
+  guidesIntro:
+    "What we have written about the founding partnership — start with the complete guide, or go straight to the situation you are in.",
 };
+
+/** The co-founder cluster on the blog, in reading order. The pillar first, then the situations, then the how-to-choose pieces. */
+const guides: { title: string; description: string; href: string }[] = [
+  {
+    title: "Co-founder conflict: the complete guide",
+    description: "The six patterns behind most founding-team breakdowns, and what actually repairs a partnership.",
+    href: "/blog/co-founder-conflict-guide",
+  },
+  {
+    title: "Twelve warning signs your co-founder relationship is in trouble",
+    description: "The observable symptoms, ranked from ordinary to serious, with what each one means and what to do.",
+    href: "/blog/co-founder-relationship-warning-signs",
+  },
+  {
+    title: "The 50/50 deadlock",
+    description: "Why an even split with no tiebreaker stalls a company, and four ways to break it without touching the cap table.",
+    href: "/blog/co-founder-5050-deadlock",
+  },
+  {
+    title: "When one co-founder stops pulling their weight",
+    description: "Burnout, mismatch, disengagement or quiet departure: how to tell them apart and raise it before resentment decides for you.",
+    href: "/blog/co-founder-not-pulling-weight",
+  },
+  {
+    title: "Renegotiating co-founder equity",
+    description: "How to reopen a split that no longer matches reality, framed as correcting a forecast rather than settling a score.",
+    href: "/blog/renegotiating-co-founder-equity",
+  },
+  {
+    title: "Co-founder breakup: separating without killing the company",
+    description: "How to tell a finished partnership from a long bad stretch, and the sequence that protects the company if it is over.",
+    href: "/blog/co-founder-breakup-exit",
+  },
+  {
+    title: "Mediation, coaching or a lawyer: what each one fixes",
+    description: "What each specialist changes, what each costs, and how to tell which one your founding team needs.",
+    href: "/blog/co-founder-mediation-vs-coaching",
+  },
+  {
+    title: "Co-founder coaching in San Francisco and New York",
+    description: "What it is, how it differs from co-founder therapy and executive coaching, what it costs, and how to choose.",
+    href: "/blog/co-founder-coaching-san-francisco-new-york",
+  },
+  {
+    title: "The co-founder agreement you never wrote",
+    description: "Thirty questions to settle with your co-founder before the company tests them.",
+    href: "/blog/co-founder-agreement-questions",
+  },
+  {
+    title: "Co-founder conflict glossary",
+    description: "Twenty-five terms founding teams use for conflict and its repair, defined in a sentence or two each.",
+    href: "/blog/co-founder-glossary",
+  },
+  {
+    title: "Co-founder couples: when your business partner is your spouse",
+    description: "For married co-founders, where the business conversation and the intimate one have to be held apart.",
+    href: "/blog/co-founder-couples-married",
+  },
+];
 
 export default function CofounderSessionPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -187,6 +249,31 @@ export default function CofounderSessionPage() {
           >
             {t.ctaButton}
           </button>
+        </div>
+
+        <div className="mt-24">
+          <h2 className="font-[NeueHaasDisplayRoman,Arial,sans-serif] text-4xl font-medium tracking-tight sm:text-5xl">
+            {t.guidesHeading}
+          </h2>
+          <p className="mt-6 max-w-3xl font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-[#383838]">
+            {t.guidesIntro}
+          </p>
+          <div className="mt-12 grid gap-6 sm:grid-cols-3">
+            {guides.map((guide) => (
+              <Link
+                key={guide.href}
+                href={guide.href}
+                className="group rounded-2xl border border-zinc-300/80 bg-gradient-to-br from-[#EEE5DB]/40 to-[#EEE5DB]/20 p-8 transition-colors hover:from-[#EEE5DB]/60 hover:to-[#EEE5DB]/30"
+              >
+                <h3 className="font-[NeueHaasDisplayRoman,Arial,sans-serif] text-xl font-medium leading-[1.25] tracking-tight text-zinc-900 transition-transform duration-300 ease-out group-hover:translate-x-2">
+                  {guide.title}
+                </h3>
+                <p className="mt-4 font-[Roboto,Arial,sans-serif] text-[15px] leading-[1.5] text-[#383838]">
+                  {guide.description}
+                </p>
+              </Link>
+            ))}
+          </div>
         </div>
 
         <div className="mt-24">

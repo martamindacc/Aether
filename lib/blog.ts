@@ -67,6 +67,12 @@ export type BlogPostMeta = {
    * Steps are written by hand so the schema states each step plainly.
    */
   howTo?: { name: string; description?: string; steps: { name: string; text: string }[] };
+  /**
+   * Optional DefinedTermSet schema for a glossary post: each term with a
+   * one- or two-sentence definition, written by hand so the schema states the
+   * definition plainly rather than lifting a whole section.
+   */
+  definedTerms?: { name: string; description: string }[];
 };
 
 export type BlogPost = BlogPostMeta & {
@@ -117,6 +123,7 @@ function readPostFile(fileName: string): BlogPost {
     toc: data.toc as { label: string; heading: string }[] | undefined,
     faq: data.faq as { question: string; answer: string }[] | undefined,
     howTo: data.howTo as BlogPostMeta["howTo"],
+    definedTerms: data.definedTerms as BlogPostMeta["definedTerms"],
     content,
   };
 }

@@ -17,13 +17,14 @@ const routes: { path: string; lastModified: string }[] = [
   { path: "/individual-therapy", lastModified: "2026-09-08" },
   { path: "/couples-therapy", lastModified: "2026-09-08" },
   { path: "/family-support", lastModified: "2026-09-08" },
-  { path: "/co-founder-coaching", lastModified: "2026-10-15" },
+  { path: "/co-founder-coaching", lastModified: "2026-10-16" },
   { path: "/executive-founder-work", lastModified: "2026-09-08" },
   { path: "/online-therapy-norway", lastModified: "2026-09-11" },
-  { path: "/instruments", lastModified: "2026-10-14" },
-  { path: "/instruments/conflict", lastModified: "2026-10-14" },
-  { path: "/instruments/conflict/privacy", lastModified: "2026-10-15" },
-  { path: "/instruments/conflict/support", lastModified: "2026-10-15" },
+  { path: "/instruments", lastModified: "2026-10-16" },
+  { path: "/instruments/conflict", lastModified: "2026-10-16" },
+  // /instruments/conflict/privacy and /support are noindex placeholders until
+  // the policy and support address exist; a noindex page does not belong in the
+  // sitemap. Add them back when they go live.
   // Norwegian versions of the home, service, about and contact pages.
   { path: "/no", lastModified: "2026-10-03" },
   { path: "/no/parterapi", lastModified: "2026-10-03" },
