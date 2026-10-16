@@ -48,18 +48,27 @@ const protocols = [
   {
     number: "01",
     name: "Practice",
-    description:
-      "Choose the fight. Four partners, from someone having a reasonable day to someone who decided they were right before you walked in. The rubric never moves; only they do. You get a score, the exact failure, and the line you should have used.",
+    description: [
+      "Start with an easy challenge or face a partner who pushes hard. Practise the fight before it happens, see where it breaks down, and try again.",
+      "The goal isn't to win. It's to find words you can stand behind when the pressure rises.",
+    ],
   },
   {
     number: "02",
     name: "Spiral",
-    description: "For the middle of it. No model, no score. Nobody needs feedback at eleven at night.",
+    description: [
+      "Already in the argument? Step out of the loop.",
+      "A guided pause to slow things down and decide what you want to say next.",
+    ],
   },
   {
     number: "03",
     name: "Debrief",
-    description: "After. Where you held. Where you escalated. Where you bought quiet with something you wanted.",
+    description: [
+      "The conflict is over. Look at what happened.",
+      "Where did you hold your position? Where did you escalate? Where did you trade something important for temporary peace?",
+      "Turn the pattern into practice for next time.",
+    ],
   },
 ]
 
@@ -69,11 +78,6 @@ const firmIsNotAFail = [
   "Peace at any price is still a price.",
   "So this scores both failures. Aggression is marked. So is the quiet trade — the apology that was not yours, the request withdrawn because the volume went up. Clear, respectful and immovable scores highest, which is a thing almost nothing else will tell you.",
   "Discomfort is not evidence of error.",
-]
-
-const whatItIsNot = [
-  "Not therapy, treatment, diagnosis or crisis support. Not a companion. Not a place to have the real argument; the person you are rehearsing for is not in it.",
-  "The partner is a model and the feedback is a model's. It can be wrong. The standard it scores against does not change, so a wrong call stands out against the sessions around it.",
 ]
 
 const session = [
@@ -89,11 +93,6 @@ const faq = [
     question: "What is AET01 Conflict?",
     answer:
       "AET01 Conflict is a mobile app from Aether Instruments for rehearsing a difficult conversation before you have it. You pick the fight and a partner at one of four levels; an AI takes the other side and holds it; afterwards you get a score, the exact sentence where it went wrong, and the line that would have held. Sessions are two minutes and need no account.",
-  },
-  {
-    question: "Is AET01 Conflict therapy?",
-    answer:
-      "No. It is a communication practice tool, not psychotherapy, medical care or crisis support, and it does not replace a qualified professional. Aether Practice offers therapy and coaching separately, with a person in the room.",
   },
   {
     question: "How is it different from role-playing with ChatGPT or another assistant?",
@@ -113,21 +112,6 @@ const faq = [
   {
     question: "How long is a session, and do I need an account?",
     answer: "Two minutes, at one of four levels: warm-up, easy, medium or hard. No account is required.",
-  },
-  {
-    question: "Can the feedback be wrong?",
-    answer:
-      "Yes. The partner and the verdict come from a model, and model feedback can be wrong. Treat a single verdict as one read, not a ruling; the standard is fixed, so patterns across sessions are more reliable than any one score.",
-  },
-  {
-    question: "When is it available, and what does it cost?",
-    answer:
-      "AET01 Conflict is coming to the App Store and Google Play. Pricing is published on the store listing at release, and this page carries the store links when it is live.",
-  },
-  {
-    question: "What are the three protocols?",
-    answer:
-      "Practice, for before: a scored two-minute rehearsal against one of four partners. Spiral, for the middle of it: no model, no score. Debrief, for after: where you held, where you escalated, and where you bought quiet with something you wanted.",
   },
 ]
 
@@ -263,9 +247,13 @@ export default function Page() {
               <h3 className="mt-4 font-[NeueHaasDisplayRoman,Arial,sans-serif] text-3xl font-medium text-[#F3E6DD]">
                 {protocol.name}
               </h3>
-              <p className={`mt-4 ${bodyText}`}>
-                {protocol.description}
-              </p>
+              <div className="mt-4 space-y-4">
+                {protocol.description.map((paragraph) => (
+                  <p key={paragraph} className={bodyText}>
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
             </div>
           ))}
         </div>
@@ -290,26 +278,23 @@ export default function Page() {
       </section>
 
       <section className="mt-20">
-        <h2 className={sectionHeading}>What it is not</h2>
-        <div className="mt-6 max-w-4xl space-y-6">
-          {whatItIsNot.map((paragraph) => (
-            <p key={paragraph} className={bodyText}>
-              {paragraph}
-            </p>
-          ))}
-        </div>
-      </section>
-
-      <section className="mt-20">
         <h2 className={sectionHeading}>Questions</h2>
         <div className="mt-6 max-w-4xl">
           {faq.map((item) => (
-            <div key={item.question} className="border-t border-[#2E2824] py-8">
-              <h3 className="font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-medium text-[#F3E6DD]">
-                {item.question}
-              </h3>
+            <details key={item.question} className="group border-t border-[#2E2824] py-8">
+              <summary className="flex cursor-pointer list-none items-baseline justify-between gap-6 [&::-webkit-details-marker]:hidden">
+                <h3 className="font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-medium text-[#F3E6DD]">
+                  {item.question}
+                </h3>
+                <span
+                  aria-hidden="true"
+                  className="font-[Roboto,Arial,sans-serif] text-2xl text-[#93857B] transition-transform group-open:rotate-45"
+                >
+                  +
+                </span>
+              </summary>
               <p className={`mt-4 ${bodyText}`}>{item.answer}</p>
-            </div>
+            </details>
           ))}
         </div>
       </section>
