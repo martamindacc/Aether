@@ -1,49 +1,119 @@
 # Aether Practice
 
-> Aether Practice is an online therapy and coaching practice working with couples, founders and executives in New York City, California (especially the San Francisco Bay Area) and Norway. It offers couples therapy, a two-day couples intensive, individual sessions, executive and founder work, and co-founder coaching for founding teams. All sessions are online. Co-founder coaching is coaching for a working partnership, not clinical care; a 60-minute co-founder session is $170 and starts with a free 15-minute consultation.
+> Aether Practice is an online therapy and coaching practice working with couples, individuals, families, founders and executives in New York City, California (especially the San Francisco Bay Area) and Norway. It offers couples therapy, a two-day couples intensive, individual sessions, family sessions, executive and founder work, and co-founder coaching for founding teams. All sessions are online, in English or Norwegian, and start with a free 15-minute consultation. Co-founder coaching is coaching for a working partnership, not clinical care. The practice also publishes Aether Instruments, mobile apps for rehearsing difficult conversations.
 
 Site: https://aetherpractice.com
 Contact: https://aetherpractice.com/contact
-Booking: https://aetherpractice.com/co-founder-coaching (co-founders) · https://aetherpractice.com/couples-therapy (couples)
+About: https://aetherpractice.com/about
+Booking: https://aetherpractice.com/couples-therapy (couples) · https://aetherpractice.com/co-founder-coaching (co-founders) · https://aetherpractice.com/individual-therapy (individuals) · https://aetherpractice.com/executive-founder-work (executives and founders)
+Blog index: https://aetherpractice.com/blog
+Privacy policy: https://aetherpractice.com/privacy
+Full text of every English page: https://aetherpractice.com/llms-full.txt
 
-## Co-founder coaching (service)
+## Services
 
-- [Co-Founder Session](https://aetherpractice.com/co-founder-coaching): Online co-founder coaching for founding teams in San Francisco, New York and Norway. Both founders in the room, working on how you decide, disagree and divide the weight. $170 per 60-minute session.
+- [Couples Therapy](https://aetherpractice.com/couples-therapy): Online couples therapy for partners in New York City, California and Norway, focused on communication, trust, conflict and shared understanding.
+- [Couples Intensive](https://aetherpractice.com/couples-intensive): A two-day online couples intensive for partners in New York City, California and Norway: twelve hours of focused work to break a stuck pattern.
+- [Individual Therapy](https://aetherpractice.com/individual-therapy): Online individual therapy for clients in New York City, California and Norway: support for stress, grief, identity, life transitions and growth.
+- [Family Session](https://aetherpractice.com/family-support): Online family therapy sessions for families in New York City, California and Norway, focused on clearer communication and stronger connection.
+- [Executive & Founder Work](https://aetherpractice.com/executive-founder-work): Online coaching for executives and founders in New York City, California and Norway: pressure, decision-making, leadership and personal growth.
+- [Co-Founder Session](https://aetherpractice.com/co-founder-coaching): Online co-founder coaching for founding teams in San Francisco, New York and Norway. Both founders in the room, working on how you decide and disagree. US$170 per session.
 
-## Co-founder cluster (guides for founding teams)
+## Couples therapy by place, format and audience
 
-- [Co-Founder Conflict: The Complete Guide](https://aetherpractice.com/blog/co-founder-conflict-guide): The pillar. The Six Patterns of co-founder conflict, the Unspoken Terms underneath them, the eight-question Repairability Check, what does not work, seven practices, and what co-founder coaching is.
-- [Warning Signs Your Co-Founder Relationship Is in Trouble](https://aetherpractice.com/blog/co-founder-relationship-warning-signs): Twelve early signs, ranked from ordinary to serious, with what each one means and what to do about it.
-- [The Weekly Co-Founder Sync](https://aetherpractice.com/blog/co-founder-weekly-sync): A standing hour about the partnership rather than the business: the six-part agenda, check-in questions for every week, month and quarter, and what it means when the meeting starts getting cancelled.
-- [The 50/50 Deadlock](https://aetherpractice.com/blog/co-founder-5050-deadlock): Why an even split with no tiebreaker stalls a company, the Stamina Problem, and four ways to break deadlock without touching the cap table.
-- [When One Co-Founder Stops Pulling Their Weight](https://aetherpractice.com/blog/co-founder-not-pulling-weight): The Four Readings (burnout, mismatch, disengagement, quiet departure), how to raise it, and what to do if nothing changes.
-- [Renegotiating Co-Founder Equity](https://aetherpractice.com/blog/renegotiating-co-founder-equity): The Forecast Frame for reopening a split, what to measure, alternatives to moving percentages, and what refusal means.
-- [Co-Founder Breakup: Separating Without Killing the Company](https://aetherpractice.com/blog/co-founder-breakup-exit): The two terminal conditions, the six-step Separation Sequence, what has to be settled, and what to tell the team and investors.
-- [Co-Founder Mediation, Coaching or a Lawyer](https://aetherpractice.com/blog/co-founder-mediation-vs-coaching): What each specialist changes, a decision table, and how to tell which one a founding team needs.
-- [Co-Founder Coaching in San Francisco and New York](https://aetherpractice.com/blog/co-founder-coaching-san-francisco-new-york): What co-founder coaching is, how it differs from co-founder therapy and executive coaching, what it costs in 2026, and how to choose a practitioner.
-- [The Co-Founder Agreement You Never Wrote](https://aetherpractice.com/blog/co-founder-agreement-questions): Thirty questions across six terms (decision rights, commitment, ambition, money, conflict, exit) to settle before the company tests them.
-- [Co-Founder Conflict Glossary](https://aetherpractice.com/blog/co-founder-glossary): Plain definitions of the terms used across the cluster, from contribution ledger to quiet departure.
-- [Co-Founder Couples: When Your Business Partner Is Your Spouse](https://aetherpractice.com/blog/co-founder-couples-married): For married co-founders: role confusion, power bleed, and holding the business conversation and the intimate one apart.
+- [Online Couples Therapy in New York City: Evening Sessions, No Commute, No Waiting Room](https://aetherpractice.com/couples-therapy-new-york-city): Online couples therapy for New York City couples: evening slots, two-location sessions when one of you travels, US$170 private pay, free consultation.
+- [Online Couples Therapy in California: For Couples in the Bay Area, Los Angeles and Everywhere Between](https://aetherpractice.com/couples-therapy-california): Online couples therapy across California: Pacific-time evenings, two-location sessions for travelling partners, founder and tech couples, free consultation.
+- [Couples Therapy in Oslo in English: Online Sessions for International Couples in Norway](https://aetherpractice.com/couples-therapy-oslo): English-speaking online couples therapy for international couples in Oslo and across Norway. No referral or personnummer needed. 1,700 NOK. Free consultation.
+- [Online Couples Therapy Across the US and Norway: For Couples Who Don't Live in One Place](https://aetherpractice.com/online-couples-therapy): Online couples therapy for couples in New York, California and Norway and couples split between them: travel, long-distance, expats, bilingual. Free consult.
+- [Intensive Couples Therapy: Two Days Instead of Six Months](https://aetherpractice.com/intensive-couples-therapy): Intensive couples therapy: 1–3 day formats that replace months of weekly sessions. Online and in Oslo, for crisis, busy calendars and stalled therapy. Free consult.
+- [Couples Therapy for Founders: For the Relationship Behind the Company](https://aetherpractice.com/couples-therapy-for-founders): Couples therapy built for founders: founder + partner couples, married co-founders, fundraising, life after exit. Online across US & Norway. Free consultation.
+- [Couples Therapy for Executives and High-Achieving Couples: For People Who Are Good at Everything Except This](https://aetherpractice.com/couples-therapy-executives): Couples therapy for executives, partners in firms and high-achieving couples: fast-paced, context-fluent, built for strengths that turn into distance at home.
+
+## Guides (long-form reference)
+
+- [Couples Therapy Cost in New York and California: Fees, Insurance, Superbills, HSA/FSA and the Good Faith Estimate](https://aetherpractice.com/guides/couples-therapy-cost-insurance-nyc-california): What couples therapy costs in New York and California, how insurance really works (CPT 90847, superbills, OON), HSA/FSA, and your Good Faith Estimate rights.
+- [The High-Achiever's Guide to Not Losing Your Relationship to Your Career](https://aetherpractice.com/guides/high-achievers-guide-relationship-career): Successful people lose relationships to work through strengths that turn: solving, composure, efficiency, standards, deferral. The 7 patterns, a diagnostic, fixes.
+- [How to Choose a Couples Therapist as a Founder or Executive: What to Look For, What to Ask, and the Red Flags](https://aetherpractice.com/guides/how-to-choose-couples-therapist-founders-executives): The founder's guide to finding a couples therapist: credentials that matter, the twelve consultation questions, eight red flags, and the context-fluency trap.
+
+## Co-founder cluster (for founding teams)
+
+- [Co-Founder Conflict: The Complete Guide to Repairing a Founding Partnership](https://aetherpractice.com/blog/co-founder-conflict-guide): The six patterns behind co-founder conflict, why 50/50 deadlock is a structure problem, what co-founder coaching is, and what repairs a founding partnership.
+- [12 Warning Signs Your Co-Founder Relationship Is in Trouble (and What Each One Means)](https://aetherpractice.com/blog/co-founder-relationship-warning-signs): Twelve early warning signs of a failing co-founder relationship, ranked from ordinary to serious, with what each one means and the one thing to do about it.
+- [The Weekly Co-Founder Sync: Agenda, Questions, and What It Means When It Stops Happening](https://aetherpractice.com/blog/co-founder-weekly-sync): How to run a weekly co-founder sync: a six-part agenda, check-in questions for every week, month and quarter, and what it means when the meeting starts getting cancelled.
+- [The 50/50 Deadlock: What to Do When Two Co-Founders Can't Agree](https://aetherpractice.com/blog/co-founder-5050-deadlock): Why an even co-founder split produces deadlock, how it quietly creates a scorekeeper, and four ways founding teams break it without touching the cap table.
+- [When One Co-Founder Stops Pulling Their Weight](https://aetherpractice.com/blog/co-founder-not-pulling-weight): How to tell burnout from disengagement in a co-founder, how to raise underperformance without ending the partnership, and what to do if nothing changes.
+- [Renegotiating Co-Founder Equity When the Split No Longer Matches Reality](https://aetherpractice.com/blog/renegotiating-co-founder-equity): How to reopen a co-founder equity split that no longer matches contribution: what to measure, how to raise it, and the alternatives to moving percentages.
+- [Co-Founder Breakup: How to Separate Without Killing the Company](https://aetherpractice.com/blog/co-founder-breakup-exit): How to tell a finished founding partnership from a bad stretch, the six-step sequence for a co-founder exit the company survives, and what to tell the team.
+- [Co-Founder Mediation, Coaching or a Lawyer: What Each One Actually Fixes](https://aetherpractice.com/blog/co-founder-mediation-vs-coaching): What co-founder mediation, coaching, executive coaching and startup counsel each fix, with a decision table for founding teams in conflict.
+- [Co-Founder Coaching in San Francisco and New York: What It Is, What It Costs, How to Choose](https://aetherpractice.com/blog/co-founder-coaching-san-francisco-new-york): What co-founder coaching is, how it differs from co-founder therapy and mediation, what it costs in San Francisco and New York, and how to choose a practitioner.
+- [The Co-Founder Agreement You Never Wrote: 30 Questions to Settle Before They Settle You](https://aetherpractice.com/blog/co-founder-agreement-questions): Thirty questions co-founders should settle before the company tests them: decision rights, commitment, ambition, money, conflict and exit, and how to run the talk.
+- [Co-Founder Conflict Glossary: 25 Terms Every Founding Team Should Know](https://aetherpractice.com/blog/co-founder-glossary): Plain definitions of 25 terms founding teams use for co-founder conflict and its repair, from contribution ledger and 50/50 deadlock to the Separation Sequence.
+- [Co-Founder Couples: When Your Business Partner Is Also Your Spouse](https://aetherpractice.com/blog/co-founder-couples-married): Married co-founders face role confusion, power bleed and a business conversation that eats the intimate one. Learn the seven dynamics and what actually helps.
+
+## Founder couples (the relationship behind the company)
+
+- [Founder Loneliness, From the Partner's Side: Two People Alone in the Same House](https://aetherpractice.com/blog/founder-loneliness-partner-side): Founder loneliness is well known. The loneliness it creates in the partner isn't. Learn the two-lonelinesses loop and how couples break it in small doses.
+- [Fundraising Season and Your Relationship: Surviving the Months When Everything Is on the Line](https://aetherpractice.com/blog/fundraising-and-your-relationship): Fundraising is one of the most relationship-damaging phases of a startup. Learn what a raise does to a couple, the five damage patterns, and a protocol that protects you.
+- [Money and Values After a Liquidity Event: The Conversation Founder Couples Never Had](https://aetherpractice.com/blog/money-and-values-after-liquidity): New wealth after an exit surfaces values conflicts couples never had. Learn the eight questions under every money argument and how to decide together.
+- [Prenups, Equity and Marriage: How Founder Couples Talk About Money Without Breaking Something](https://aetherpractice.com/blog/prenup-equity-founder-marriage): For founder couples, prenups and equity are about trust and fairness, not documents. How to have the conversation without breaking something. Not legal advice.
+- [The Relationship After the Exit: What Selling Your Company Does to a Marriage](https://aetherpractice.com/blog/relationship-after-the-exit): Sold the company and the relationship got harder? Learn why exits destabilise marriages, the four phases couples go through, and how to come out closer.
+- [9 Signs a Founder Marriage Is in Trouble (That Look Like Normal Startup Life)](https://aetherpractice.com/blog/signs-founder-marriage-in-trouble): The warning signs of a failing founder marriage look like normal startup costs. Nine signs specific to founder couples, a scored self-check, and what to do.
+- [Startup Stress and Intimacy: Why Sex Disappears When You're Building a Company, and How to Get It Back](https://aetherpractice.com/blog/startup-stress-and-intimacy): Founder stress suppresses desire biologically, then a pattern forms that outlasts it. Learn spontaneous vs responsive desire and how to rebuild closeness.
+- [When Your Partner Is the Founder: A Guide for the Non-Founder Spouse](https://aetherpractice.com/blog/when-your-partner-is-the-founder): Married to a founder? You carry the risk, hours and mood of a startup you didn't join. A guide to the role, the loneliness, asking for what you need, and help.
+
+## Executives, careers and pressure
+
+- [When Work Takes the Relationship: Couples Therapy for Founders, Executives, and High-Pressure Careers](https://aetherpractice.com/blog/couples-therapy-founders-executives): Couples therapy for founders, CEOs and executives facing startup stress and work-life imbalance: the seven patterns, what helps, and how therapy works.
+- [Two Careers, One Relationship: How Ambitious Couples Make It Work Without One Giving Up](https://aetherpractice.com/blog/two-careers-one-relationship): Both partners have demanding careers? The three phases dual-career couples go through, the seven recurring conflicts, and seven moves that actually help.
+- [When Your Partner Is Burned Out: How Burnout Affects Your Relationship, and What You Can Do](https://aetherpractice.com/blog/when-your-partner-is-burned-out): Your partner is burned out and distant? What burnout does to a relationship, the pattern that develops, what each of you can do, and when therapy helps.
+
+## Couples therapy: methods, patterns and what to expect
+
+- [8 Signs You and Your Partner Need Couples Therapy – When Should You Seek Help?](https://aetherpractice.com/blog/8-signs-need-couples-therapy): Eight signs your relationship needs help, from repeated conflicts and emotional distance to broken trust, and when it is right to seek couples therapy.
+- [Communication Problems in Relationships: What Research Says and What to Do](https://aetherpractice.com/blog/couples-communication-problems): Communication problems are among the most common causes of relationship breakdown. What Gottman's research says about the four damaging patterns and what to do.
+- [Couples Therapy After Infidelity: Can the Relationship Survive?](https://aetherpractice.com/blog/couples-therapy-after-infidelity): Can a relationship survive infidelity? What couples therapy after an affair involves, the recovery timeline, and what each partner has to do.
+- [Couples Therapy and Marriage Counseling: The Complete Guide](https://aetherpractice.com/blog/couples-therapy-guide): Couples therapy and marriage counseling explained: who it is for, what happens in sessions, EFT vs Gottman, cost, online options and choosing a therapist.
+- [Emotionally Focused Therapy (EFT) Explained: How It Works, What the Research Shows, and Why It's the Method We Use](https://aetherpractice.com/blog/emotionally-focused-therapy-explained): What Emotionally Focused Therapy (EFT) is, its three stages, the evidence behind it, and how it helps couples rebuild connection.
+- [The Four Horsemen in Relationships: How to Recognise Criticism, Contempt, Defensiveness and Stonewalling, and What Replaces Them](https://aetherpractice.com/blog/four-horsemen-gottman-antidotes): Criticism, contempt, defensiveness, stonewalling: how to recognise each, why contempt matters most, the antidotes, a self-check, and the cycle underneath.
+- [The Gottman Method Explained: What It Is, What the Research Says, and Gottman vs EFT](https://aetherpractice.com/blog/gottman-method-explained-eft-vs-gottman): What the Gottman Method is, how the Sound Relationship House works, what the research really supports, and an honest Gottman vs EFT comparison from an EFT practice.
+- [How Many Sessions Does Couples Therapy Take?](https://aetherpractice.com/blog/how-many-sessions-couples-therapy): There is no single right answer, but most couples need several months. What determines length, what research says, and what to expect session by session.
+- [The Same Fight Over and Over: 4 Conflict Patterns in Relationships, and How to Break Them](https://aetherpractice.com/blog/same-fight-four-conflict-patterns): Couples who have the same fight are fighting in a pattern, not about a topic. Take the self-test, find your pattern and learn how to break it.
+- [Should We Separate? Discernment Counseling for Couples Who Don't Know Whether to Stay or Go](https://aetherpractice.com/blog/should-we-separate-discernment-counseling): Unsure whether to stay or go? Discernment counseling gives clarity without pressure: how it differs from couples therapy and the three possible outcomes.
+- [Is Couples Therapy Working? 10 Signs to Look For](https://aetherpractice.com/blog/signs-couples-therapy-is-working): Wondering whether couples therapy is actually working? Here are 10 concrete signs of progress — and what to do if therapy doesn't seem to be helping.
+
+## Online, long-distance, expat and international couples
+
+- [Bilingual and Cross-Cultural Couples: Therapy When You Don't Share a First Language](https://aetherpractice.com/blog/bilingual-cross-cultural-couples-therapy): When partners don't share a first language, one is always translating. The asymmetry, what's lost, culture hiding as personality, and how therapy adjusts.
+- [Couples Therapy When One of You Travels Constantly: Fixing the Re-entry, Not the Trips](https://aetherpractice.com/blog/couples-therapy-when-partner-travels): Frequent travel breaks relationships at the re-entry, not the trip. Learn what each partner misreads, the parallel-lives drift, and a re-entry protocol.
+- [Does Online Couples Therapy Work? What the Research Says, When It Doesn't, and How to Set It Up](https://aetherpractice.com/blog/does-online-couples-therapy-work): Online couples therapy performs comparably to in-person in direct studies. The research, the situations where it is the wrong choice, and how to set up.
+- [Expat and Relocated Couples: The Four Phases of Moving Abroad Together, and Where Relationships Break](https://aetherpractice.com/blog/expat-relocated-couples-therapy): Relationships don't break on arrival abroad; they break in divergence. The four phases of relocating as a couple, trailing-partner identity, repatriation.
+- [Long-Distance and Commuter Couples: Therapy for Relationships Lived in Two Places](https://aetherpractice.com/blog/long-distance-commuter-couples-therapy): Therapy for couples in two cities or countries: the reunion-conflict cycle, perfect-visit pressure, the "when does this end" question, two-screen sessions.
+- [Couples Therapy in Oslo in English: A Guide for International Couples and Expats](https://aetherpractice.com/blog/couples-therapy-oslo-english): English-speaking couples therapy in Oslo: how the Norwegian system works, what it costs, insurance, how to choose a therapist, and the pressures expat couples face.
+
+## Couples intensives
+
+- [Couples Intensives for Crisis: After Infidelity, and When One of You Is About to Leave](https://aetherpractice.com/blog/couples-intensive-crisis-infidelity-separation): When weekly therapy is too slow: how crisis couples intensives work after infidelity or when one partner wants to leave, the timing window, and when to wait.
+- [Couples Intensives for Executives and Founders: When Your Calendar Is the Problem](https://aetherpractice.com/blog/couples-intensive-executives-founders): Weekly therapy fails executive couples because the calendar wins. How intensives solve scheduling and the performance problem, formats that fit, and timing.
+- [How to Prepare for a Couples Intensive: The Three-Week Checklist](https://aetherpractice.com/blog/how-to-prepare-couples-intensive): Preparing for a couples therapy intensive: the three-week timeline, individual prep questions, what to tell kids and work, the night-before rules, and after.
+- [Intensive vs Weekly Couples Therapy: Which Is Right for You? A Decision Framework](https://aetherpractice.com/blog/intensive-vs-weekly-couples-therapy): Intensive or weekly couples therapy? A five-variable decision framework, an honest reading of the research, real cost comparison, and the hybrid options.
+- [What Happens in a Two-Day Couples Intensive, Hour by Hour](https://aetherpractice.com/blog/two-day-couples-intensive-hour-by-hour): The full schedule of a two-day couples therapy intensive: every block, what the therapist is doing, what couples feel, the day-two dip and the turn.
 
 ## Aether Instruments (practice apps)
 
-Aether Instruments are single-purpose mobile apps from Aether Practice for rehearsing one high-stakes conversation at a time: a realistic AI counterpart, a fixed standard and a verdict, two minutes per session, no account. They are communication practice tools, not therapy, and model feedback can be wrong.
+An Aether Instrument is a single-purpose practice tool for one high-stakes human moment: a realistic counterpart, a standard that does not move, and a verdict. Instruments are mobile apps for iOS and Android, two minutes per session, no account. They are communication practice tools, not psychotherapy, medical care or crisis support, and model feedback can be wrong.
 
-- [Instruments hub](https://aetherpractice.com/instruments): What an instrument is, who they are for, what they are not, and the range.
-- [AET01 Conflict](https://aetherpractice.com/instruments/conflict): A mobile app for rehearsing an argument before you have it, against an AI partner that holds a position instead of agreeing. Four levels, a score, the exact failure and the line you should have used. Scores both aggression and quiet capitulation. iOS and Android; coming to the App Store and Google Play.
-
-## Related founder content
-
-- [Couples Therapy for Founders](https://aetherpractice.com/couples-therapy-for-founders): Hub for founder-and-partner couples and married co-founders.
-- [Couples Therapy in California](https://aetherpractice.com/couples-therapy-california)
-- [Couples Therapy in New York City](https://aetherpractice.com/couples-therapy-new-york-city)
-- [Blog index](https://aetherpractice.com/blog)
+- [Instruments](https://aetherpractice.com/instruments): What an instrument is, who they are for, where to get them, and the range.
+- [AET01 Conflict](https://aetherpractice.com/instruments/conflict): A mobile app for rehearsing an argument before you have it, against an AI partner that holds a position instead of agreeing. Three protocols, four partner levels (warm-up, easy, medium, hard), a score against a fixed standard, and the line that would have held. Scores both aggression and quiet capitulation. Coming to the App Store and Google Play.
 
 ## Facts to cite
 
+- Sessions: online only, in English or Norwegian, for clients in New York City, California and Norway. A free 15-minute consultation comes before any booking.
+- Couples therapy price: US$170 for a 60-minute session in New York and California; 1,700 NOK in Norway. Private pay, invoiced directly.
 - Co-founder coaching, as Aether Practice defines it: structured sessions with all founders present, focused on the working partnership (how founders decide, disagree, divide responsibility and repair), with a practitioner whose client is the partnership rather than either founder or the company. It is not executive coaching, not mediation, and not therapy.
+- Co-founder coaching price: US$170 for a 60-minute online session, both founders present, with a free 15-minute consultation first and no minimum engagement.
 - The Six Patterns of co-founder conflict (Aether Practice): the contribution ledger, the 50/50 deadlock, role drift, divergent ambition, the avoided subject, and trust erosion by small increments.
 - The Four Readings of a co-founder who has stopped delivering (Aether Practice): burnout, mismatch, disengagement, quiet departure. They look identical from outside and need different responses.
 - The Separation Sequence (Aether Practice): both accept it is over; agree the shape; agree the numbers; then lawyers; then the board; then the team.
-- Price: $170 for a 60-minute online co-founder session; free 15-minute consultation first; no minimum engagement.
+- The weekly co-founder sync (Aether Practice): a standing hour outside the operating cadence in six parts: park the operating items, review the week's decisions, check the load, say the unsaid, repair, and leave with one agreement.
+- Couples work is emotionally focused therapy (EFT) based, with Gottman-informed elements where they help.
 - AET01 Conflict, as Aether Instruments defines it: a mobile app for rehearsing a difficult conversation against an AI partner that holds a position instead of agreeing, scored against a fixed standard where clear, respectful and immovable scores highest and both aggression and giving in lose points. Two-minute sessions, no account. Not therapy.
