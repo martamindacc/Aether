@@ -27,7 +27,7 @@ const copy = {
 
 /** Display order of clusters on each index; anything not listed follows alphabetically. */
 const clusterOrder: Record<LanguageCode, string[]> = {
-  en: ["When to Seek Help", "Communication", "Infidelity & Trust", "Separation", "What to Expect", "Methods", "Careers & Pressure", "Founder Couples", "Co-Founders", "Couples Intensive", "Online Couples Therapy", "Oslo", "Guides"],
+  en: ["Communication", "What to Expect", "When to Seek Help", "Infidelity & Trust", "Separation", "Methods", "Careers & Pressure", "Founder Couples", "Co-Founders", "Couples Intensive", "Online Couples Therapy", "Oslo", "Guides"],
   no: ["Veileder", "Når søke hjelp", "Kommunikasjon", "Nærhet", "Utroskap og tillit", "Samlivsbrudd", "Hva du kan forvente", "Metoder", "Livsfaser", "Karriere og press", "Gründerpar", "Formater", "Pris"],
 };
 
@@ -123,7 +123,7 @@ export function BlogIndexContent({ posts, hubs, language }: { posts: BlogPostMet
           <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
             {hubs.map((hub) => (
               <Link key={hub.path} href={hub.path} className="group rounded-2xl border border-[#C9A67D] bg-[#EEE5DB]/30 p-8 transition-colors hover:bg-[#EEE5DB]/60 sm:p-10">
-                <h3 className="font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out group-hover:translate-x-2 sm:text-3xl">{hub.title}</h3>
+                <h3 className="break-words font-[NeueHaasDisplayRoman,Arial,sans-serif] text-xl font-medium tracking-tight text-zinc-900 transition-transform duration-300 ease-out group-hover:translate-x-2 sm:text-2xl">{hub.title}</h3>
                 <p className="mt-4 font-[Roboto,Arial,sans-serif] text-[14.5px] leading-[1.45] text-[#383838]">{hub.description}</p>
               </Link>
             ))}
