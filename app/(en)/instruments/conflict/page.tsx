@@ -39,11 +39,6 @@ const intro = [
 const definition =
   "AET01 Conflict is a mobile app for rehearsing a difficult conversation against an AI partner that holds a position instead of agreeing with you, and then scores the exchange against a fixed standard. Clear, respectful and immovable scores highest. Aggression loses points. So does giving in to make it stop."
 
-const whoItIsFor = [
-  "The co-founder before the equity conversation. The partner before the one about money, or the in-laws, or the dishwasher. The manager before the review. The person who has to tell a parent no.",
-  "Anyone who knows what they should say and watches themselves not say it.",
-]
-
 const protocols = [
   {
     number: "01",
@@ -87,12 +82,25 @@ const session = [
   { label: "Platforms", value: "iOS and Android" },
 ]
 
-/** Visible FAQ and FAQPage schema come from this one list. */
-const faq = [
+/** A run of answer text, or a linked phrase within it. */
+type AnswerPart = string | { text: string; href: string }
+
+/**
+ * Visible FAQ and FAQPage schema come from this one list. An answer with links
+ * is written as parts; the schema gets the same words as plain text.
+ */
+const faq: { question: string; answer: string | AnswerPart[] }[] = [
   {
     question: "What is AET01 Conflict?",
-    answer:
-      "AET01 Conflict is a mobile app from Aether Instruments for rehearsing a difficult conversation before you have it. You pick the fight and a partner at one of four levels; an AI takes the other side and holds it; afterwards you get a score, the exact sentence where it went wrong, and the line that would have held. Sessions are two minutes and need no account.",
+    answer: [
+      "AET01 Conflict is a mobile app for rehearsing a difficult conversation before you have it. You pick the fight and a partner at one of four levels; an AI takes the other side and holds its position instead of agreeing with you. Afterwards it scores the exchange against a fixed standard and shows you the sentence where it went wrong, and the line that would have held. It is an ",
+      { text: "Aether Instrument", href: "/instruments" },
+      ": one conversation, one standard, two minutes. Made by Aether Practice, which also works with the people on the other side of these conversations — ",
+      { text: "co-founders", href: "/co-founder-coaching" },
+      " and ",
+      { text: "couples", href: "/couples-therapy" },
+      ".",
+    ],
   },
   {
     question: "How is it different from role-playing with ChatGPT or another assistant?",
@@ -105,7 +113,7 @@ const faq = [
       "Whether you held your position, kept it respectful, and avoided both failures. Aggression is marked down. So is the quiet trade: the apology that was not yours, the request withdrawn because the volume went up. Clear, respectful and immovable scores highest. The score comes with the exact failure and the line you should have used.",
   },
   {
-    question: "Who is AET01 Conflict for?",
+    question: "Who it is for",
     answer:
       "Anyone preparing for a conversation they expect to lose: co-founders before an equity or performance conversation, partners before the recurring argument about money or housework, managers before a hard review, anyone who has to hold a line with family. It is not limited to workplace scenarios.",
   },
@@ -114,6 +122,9 @@ const faq = [
     answer: "Two minutes, at one of four levels: warm-up, easy, medium or hard. No account is required.",
   },
 ]
+
+const answerText = (answer: string | AnswerPart[]) =>
+  typeof answer === "string" ? answer : answer.map((part) => (typeof part === "string" ? part : part.text)).join("")
 
 const label = "font-[Roboto,Arial,sans-serif] text-sm uppercase tracking-wide text-[#93857B]"
 const sectionHeading =
@@ -167,7 +178,7 @@ const appLd = {
       mainEntity: faq.map(({ question, answer }) => ({
         "@type": "Question",
         name: question,
-        acceptedAnswer: { "@type": "Answer", text: answer },
+        acceptedAnswer: { "@type": "Answer", text: answerText(answer) },
       })),
     },
   ],
@@ -216,29 +227,6 @@ export default function Page() {
       </div>
 
       <section className="mt-20">
-        <h2 className={sectionHeading}>What it is</h2>
-        <div className="mt-6 max-w-4xl space-y-6">
-          <p className={`${bodyText} text-[#F3E6DD]`}>{definition}</p>
-          <p className={bodyText}>
-            An <Link href="/instruments" className="text-[#D99148] underline underline-offset-4 transition-colors hover:text-[#F3E6DD]">Aether Instrument</Link>: one
-            conversation, one standard, two minutes. Made by Aether Practice, which also works with the people on the
-            other side of these conversations — <Link href="/co-founder-coaching" className="text-[#D99148] underline underline-offset-4 transition-colors hover:text-[#F3E6DD]">co-founders</Link> and <Link href="/couples-therapy" className="text-[#D99148] underline underline-offset-4 transition-colors hover:text-[#F3E6DD]">couples</Link> — with a person in the room.
-          </p>
-        </div>
-      </section>
-
-      <section className="mt-20">
-        <h2 className={sectionHeading}>Who it is for</h2>
-        <div className="mt-6 max-w-4xl space-y-6">
-          {whoItIsFor.map((paragraph) => (
-            <p key={paragraph} className={bodyText}>
-              {paragraph}
-            </p>
-          ))}
-        </div>
-      </section>
-
-      <section className="mt-20">
         <h2 className={sectionHeading}>Three protocols</h2>
         <div className="mt-10 grid gap-6 sm:grid-cols-3">
           {protocols.map((protocol) => (
@@ -281,19 +269,29 @@ export default function Page() {
         <h2 className={sectionHeading}>Questions</h2>
         <div className="mt-6 max-w-4xl">
           {faq.map((item) => (
-            <details key={item.question} className="group border-t border-[#2E2824] py-8">
-              <summary className="flex cursor-pointer list-none items-baseline justify-between gap-6 [&::-webkit-details-marker]:hidden">
-                <h3 className="font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-medium text-[#F3E6DD]">
+            <details key={item.question} className="border-t border-[#2E2824] py-8">
+              <summary className="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                <h3 className="font-[NeueHaasDisplayRoman,Arial,sans-serif] text-xl font-medium text-[#A3968C]">
                   {item.question}
                 </h3>
-                <span
-                  aria-hidden="true"
-                  className="font-[Roboto,Arial,sans-serif] text-2xl text-[#93857B] transition-transform group-open:rotate-45"
-                >
-                  +
-                </span>
               </summary>
-              <p className={`mt-4 ${bodyText}`}>{item.answer}</p>
+              <p className={`mt-4 ${bodyText}`}>
+                {typeof item.answer === "string"
+                  ? item.answer
+                  : item.answer.map((part) =>
+                      typeof part === "string" ? (
+                        part
+                      ) : (
+                        <Link
+                          key={part.href}
+                          href={part.href}
+                          className="text-[#D99148] underline underline-offset-4 transition-colors hover:text-[#F3E6DD]"
+                        >
+                          {part.text}
+                        </Link>
+                      ),
+                    )}
+              </p>
             </details>
           ))}
         </div>

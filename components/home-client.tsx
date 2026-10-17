@@ -160,7 +160,7 @@ const content: Record<
     instrumentsEyebrow: "Aether Instruments",
     instrumentsHeading: "Tools for the human condition.",
     instrumentsBody:
-      "Purpose-built instruments for practicing the moments that matter. Rehearsal tools, not therapy.",
+      "Purpose-built instruments for practicing the moments that matter.",
     instrumentsTagline: "Rehearse the argument before you have it.",
     instrumentsCta: "See all instruments",
   },
@@ -254,7 +254,7 @@ const content: Record<
     instrumentsEyebrow: "Aether Instruments",
     instrumentsHeading: "Verktøy for det menneskelige.",
     instrumentsBody:
-      "Instrumenter laget for å øve på øyeblikkene som betyr noe. Øvingsverktøy, ikke terapi.",
+      "Instrumenter laget for å øve på øyeblikkene som betyr noe.",
     instrumentsTagline: "Øv på krangelen før du tar den.",
     instrumentsCta: "Se alle instrumenter",
   },
