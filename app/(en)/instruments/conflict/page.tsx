@@ -118,11 +118,6 @@ const faq: { question: string; answer: string | AnswerPart[] }[] = [
       "The evidence points that way. In a 2023 Stanford study of a conflict-rehearsal system, participants who practiced against a simulated counterpart used escalating competitive tactics about two-thirds less in a later conflict than a control group who had only read about conflict resolution, and used cooperative tactics roughly twice as often. Rehearsal is also how pilots, litigators and surgeons prepare for the moments that matter; AET01 applies the same logic to conflict.",
   },
   {
-    question: "What does the score measure?",
-    answer:
-      "Whether you held your position, kept it respectful, and avoided both failures. Aggression is marked down. So is the quiet trade: the apology that was not yours, the request withdrawn because the volume went up. Clear, respectful and immovable scores highest. The score comes with the exact failure and the line you should have used.",
-  },
-  {
     question: "How long is a session, and do I need an account?",
     answer: "Two minutes, at one of four levels: warm-up, easy, medium or hard. No account is required.",
   },

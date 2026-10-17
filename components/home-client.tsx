@@ -90,7 +90,7 @@ const content: Record<
         title: "Couples Intensive",
         description:
           "Two days of focused work for couples who need more than an hour a week — break the stuck pattern and leave with a clear way forward.",
-        href: "/intensive-couples-therapy",
+        href: "/couples-intensive",
         color: "text-[#66755c]",
       },
       {

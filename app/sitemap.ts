@@ -16,6 +16,7 @@ const routes: { path: string; lastModified: string }[] = [
   { path: "/privacy", lastModified: "2026-09-11" },
   { path: "/individual-therapy", lastModified: "2026-09-08" },
   { path: "/couples-therapy", lastModified: "2026-09-08" },
+  { path: "/couples-intensive", lastModified: "2026-10-17" },
   { path: "/family-support", lastModified: "2026-09-08" },
   { path: "/co-founder-coaching", lastModified: "2026-10-16" },
   { path: "/executive-founder-work", lastModified: "2026-09-08" },

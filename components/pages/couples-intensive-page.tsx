@@ -74,6 +74,16 @@ export default function CouplesIntensivePage({ language }: { language: LanguageC
           </div>
         </div>
 
+        {language === "en" && (
+          <p className="mt-10 font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-[#383838]">
+            Not sure an intensive is right for you?{" "}
+            <Link href="/intensive-couples-therapy" className="text-[#74382f] underline underline-offset-2 hover:no-underline">
+              Read the complete guide
+            </Link>{" "}
+            to intensive couples therapy: when it helps, how the two days run, and what it costs.
+          </p>
+        )}
+
         <div className="mt-24">
           <h2 className="font-[NeueHaasDisplayRoman,Arial,sans-serif] text-4xl font-medium tracking-tight sm:text-5xl">
             {t.outcomesHeading}
