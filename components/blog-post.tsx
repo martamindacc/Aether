@@ -7,6 +7,7 @@ import { BlogCta } from "@/components/blog-cta";
 import { BlogViewTracker } from "@/components/blog-view-tracker";
 import { getTranslationsForPost, htmlLangFor, type BlogPost as BlogPostData, type BlogPostMeta } from "@/lib/blog";
 import { extractFaq } from "@/lib/blog-faq";
+import { extractCitations } from "@/lib/blog-citations";
 import { formatReadingTime } from "@/lib/reading-time";
 import { RelatedPosts } from "@/components/related-posts";
 import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
@@ -79,6 +80,7 @@ export function BlogPost({ post, related }: { post: BlogPostData; related: BlogP
     return { code, href: translation ? postPath(translation) : localizedPaths.blog[code] };
   });
   const canonicalUrl = `https://aetherpractice.com${postPath(post)}`;
+  const citations = extractCitations(post);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -103,6 +105,10 @@ export function BlogPost({ post, related }: { post: BlogPostData; related: BlogP
       : `https://aetherpractice.com/opengraph-image`,
     ...(post.tags.length ? { articleSection: post.tags[0] } : {}),
     keywords: post.keywords,
+    ...(citations.length ? { citation: citations } : {}),
+    ...(post.about?.length
+      ? { about: post.about.map((topic) => ({ "@type": "Thing", name: topic.name, sameAs: topic.sameAs })) }
+      : {}),
     author: {
       "@type": "Organization",
       name: "Aether Practice",

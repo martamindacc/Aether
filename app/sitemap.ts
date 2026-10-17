@@ -3,40 +3,49 @@ import { getAllPosts, getTranslationsForPost } from "@/lib/blog"
 import { getAllHubs } from "@/lib/hubs"
 import { hubLanguages } from "@/components/hub-page"
 import { localizedPaths, postPath } from "@/lib/locale-routes"
+import routeDates from "@/lib/route-dates.json"
 
 const baseUrl = "https://aetherpractice.com"
 
-// Update a route's date here when that page's content is materially edited.
-const routes: { path: string; lastModified: string }[] = [
-  { path: "", lastModified: "2026-09-11" },
-  { path: "/about", lastModified: "2026-09-06" },
-  { path: "/blog", lastModified: "2026-09-11" },
-  { path: "/no/blog", lastModified: "2026-09-11" },
-  { path: "/contact", lastModified: "2026-09-07" },
-  { path: "/privacy", lastModified: "2026-09-11" },
-  { path: "/individual-therapy", lastModified: "2026-09-08" },
-  { path: "/couples-therapy", lastModified: "2026-09-08" },
-  { path: "/couples-intensive", lastModified: "2026-10-17" },
-  { path: "/family-support", lastModified: "2026-09-08" },
-  { path: "/co-founder-coaching", lastModified: "2026-10-16" },
-  { path: "/executive-founder-work", lastModified: "2026-09-08" },
-  { path: "/online-therapy-norway", lastModified: "2026-09-11" },
-  { path: "/instruments", lastModified: "2026-10-16" },
-  { path: "/instruments/conflict", lastModified: "2026-10-16" },
+// Dates come from git (scripts/route-dates.mjs writes lib/route-dates.json
+// before each local build): the last commit that touched the files behind each
+// page. Add a route here and in that script's map together.
+const routePaths = [
+  "",
+  "/about",
+  "/blog",
+  "/no/blog",
+  "/contact",
+  "/privacy",
+  "/individual-therapy",
+  "/couples-therapy",
+  "/couples-intensive",
+  "/family-support",
+  "/co-founder-coaching",
+  "/executive-founder-work",
+  "/online-therapy-norway",
+  "/instruments",
+  "/instruments/conflict",
   // /instruments/conflict/privacy and /support are noindex placeholders until
   // the policy and support address exist; a noindex page does not belong in the
   // sitemap. Add them back when they go live.
   // Norwegian versions of the home, service, about and contact pages.
-  { path: "/no", lastModified: "2026-10-03" },
-  { path: "/no/parterapi", lastModified: "2026-10-03" },
-  { path: "/no/parintensiv", lastModified: "2026-10-03" },
-  { path: "/no/individuell-terapi", lastModified: "2026-10-03" },
-  { path: "/no/familieterapi", lastModified: "2026-10-03" },
-  { path: "/no/ledere-og-grundere", lastModified: "2026-10-03" },
-  { path: "/no/om-oss", lastModified: "2026-10-03" },
-  { path: "/no/kontakt", lastModified: "2026-10-03" },
-  { path: "/no/personvern", lastModified: "2026-10-03" },
-]
+  "/no",
+  "/no/parterapi",
+  "/no/parintensiv",
+  "/no/individuell-terapi",
+  "/no/familieterapi",
+  "/no/ledere-og-grundere",
+  "/no/om-oss",
+  "/no/kontakt",
+  "/no/personvern",
+] as const
+
+const routes = routePaths.map((path) => {
+  const lastModified = (routeDates as Record<string, string>)[path]
+  if (!lastModified) throw new Error(`sitemap: no date for ${path || "/"} in lib/route-dates.json; run npm run routes:dates`)
+  return { path, lastModified }
+})
 
 /** hreflang alternates for a static route that exists in both languages. */
 function routeAlternates(path: string) {

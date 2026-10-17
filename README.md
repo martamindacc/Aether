@@ -14,6 +14,12 @@ Marketing site and blog for Aether Practice, an online therapy and coaching prac
 
 Norwegian posts live under `/no/blog`; their former `/blog` URLs redirect (see `next.config.mjs`).
 
+## Sitemap dates and AI files
+
+- `app/sitemap.ts` takes each static route's `lastModified` from `lib/route-dates.json`, which `scripts/route-dates.mjs` derives from git (the last commit touching that page's files). It runs automatically before a local `pnpm build` and is skipped on a shallow clone, so commit the JSON when it changes. Posts and hubs use their frontmatter `modifiedDate`.
+- `public/llms.txt` is the hand-kept index of the English site for AI systems; `app/llms-full.txt/route.ts` serves the full text of every English page, generated from the same content at build time.
+- Blog posts emit `citation` schema from their "Research and further reading" section (`lib/blog-citations.ts`) and `about` entities from an optional `about` frontmatter list of `{ name, sameAs }`.
+
 ## Development
 
 ```bash

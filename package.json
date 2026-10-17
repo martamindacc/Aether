@@ -4,10 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/route-dates.mjs",
     "build": "next build",
     "start": "next start",
     "typecheck": "tsc --noEmit",
-    "check:booking": "node scripts/check-booking-links.mjs"
+    "check:booking": "node scripts/check-booking-links.mjs",
+    "routes:dates": "node scripts/route-dates.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "1.6.1",

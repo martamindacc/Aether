@@ -63,6 +63,11 @@ export type BlogPostMeta = {
    */
   faq?: { question: string; answer: string }[];
   /**
+   * Topics the post is about, as schema.org Thing entities with Wikipedia and
+   * Wikidata `sameAs` links, so search and AI systems resolve the subject.
+   */
+  about?: { name: string; sameAs: string[] }[];
+  /**
    * Optional HowTo schema for a post whose core is a step-by-step protocol.
    * Steps are written by hand so the schema states each step plainly.
    */
@@ -122,6 +127,7 @@ function readPostFile(fileName: string): BlogPost {
     intro: data.intro as string[] | undefined,
     toc: data.toc as { label: string; heading: string }[] | undefined,
     faq: data.faq as { question: string; answer: string }[] | undefined,
+    about: data.about as BlogPostMeta["about"],
     howTo: data.howTo as BlogPostMeta["howTo"],
     definedTerms: data.definedTerms as BlogPostMeta["definedTerms"],
     content,
