@@ -73,7 +73,8 @@ const nextConfig = {
   images: {
     // Serve AVIF where supported, WebP otherwise; the JPEG originals stay as the social-preview source.
     formats: ["image/avif", "image/webp"],
-    qualities: [75],
+    // 85 rather than the default 75: most heroes carry film grain, which turns to speckle at 75.
+    qualities: [85],
     // Only blog images and the hero poster go through the optimizer.
     localPatterns: [{ pathname: "/images/**" }, { pathname: "/hero-poster.webp" }],
   },
