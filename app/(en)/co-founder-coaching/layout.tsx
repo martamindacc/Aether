@@ -6,9 +6,9 @@ import { JsonLd } from "@/components/json-ld"
  * counterpart to point an hreflang pair at.
  */
 export const metadata = pageMetadata({
-  title: "Co-Founder Coaching for Founding Teams in San Francisco, New York and Online",
+  title: "Co-Founder Coaching: San Francisco, New York, Online",
   description:
-    "Online co-founder coaching for founding teams in San Francisco, New York City, California and Norway. Sometimes called co-founder therapy: both founders in the room, working on how you decide, disagree and divide the weight. $170 per 60-minute session, free consultation first.",
+    "Online co-founder coaching for founding teams in San Francisco, New York and Norway. Both founders in the room, working on how you decide and disagree. US$170 per session.",
   path: "/co-founder-coaching",
 })
 

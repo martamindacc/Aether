@@ -18,9 +18,9 @@ const storeLinks = [
 ].filter((link) => link.href)
 
 export const metadata = pageMetadata({
-  title: "AET01 Conflict: Rehearse an Argument With an AI That Pushes Back",
+  title: "AET01 Conflict: Rehearse an Argument With an AI",
   description:
-    "AET01 Conflict is a mobile app for practicing difficult conversations against an AI partner that holds a position instead of agreeing with you. Two-minute sessions, four difficulty levels, a score and the line you should have used. No account. Not therapy.",
+    "AET01 Conflict: practice difficult conversations against an AI partner that holds a position. Two-minute sessions, four levels, a score and the line you should have used.",
   path: "/instruments/conflict",
   // The app's own dark social image (./og/route.tsx), not the practice's site image.
   image: {
