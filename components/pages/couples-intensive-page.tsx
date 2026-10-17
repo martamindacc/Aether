@@ -6,11 +6,13 @@ import Link from "next/link";
 import { FloatingNav } from "@/components/floating-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { BookingModal } from "@/components/booking-modal";
+import { BlogBand } from "@/components/blog-band";
+import type { BlogPostMeta } from "@/lib/blog";
 import { couplesIntensiveContent, navContent, relatedServicesHeading, type LanguageCode } from "@/lib/service-content";
 
 const languageLinks = languageLinksFor("intensive");
 
-export default function CouplesIntensivePage({ language }: { language: LanguageCode }) {
+export default function CouplesIntensivePage({ language, blogPosts = [] }: { language: LanguageCode; blogPosts?: BlogPostMeta[] }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
   const [isBookingOpen, setIsBookingOpen] = useState(false);
@@ -136,6 +138,7 @@ export default function CouplesIntensivePage({ language }: { language: LanguageC
           </div>
         </div>
       </section>
+      <BlogBand posts={blogPosts} language={language} />
       <SiteFooter language={language} />
       <BookingModal language={language} isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
     </main>
