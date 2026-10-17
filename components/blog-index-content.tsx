@@ -27,7 +27,7 @@ const copy = {
 
 /** Display order of clusters on each index; anything not listed follows alphabetically. */
 const clusterOrder: Record<LanguageCode, string[]> = {
-  en: ["Communication & Conflict", "Starting Sessions", "Careers & Pressure", "Founder Couples", "Co-Founders", "Couples Intensive", "Online Couples Therapy", "Oslo", "Guides"],
+  en: ["Starting Couples Therapy", "Conflict, Trust & Repair", "Careers & Pressure", "Founder Couples", "Co-Founders", "Couples Intensive", "Online Couples Therapy"],
   no: ["Veileder", "Når søke hjelp", "Kommunikasjon", "Nærhet", "Utroskap og tillit", "Samlivsbrudd", "Hva du kan forvente", "Metoder", "Livsfaser", "Karriere og press", "Gründerpar", "Formater", "Pris"],
 };
 
@@ -37,10 +37,7 @@ const clusterOrder: Record<LanguageCode, string[]> = {
  * section, posts follow the order of their tags in this list.
  */
 const mergedSections: Record<LanguageCode, Record<string, string[]>> = {
-  en: {
-    "Communication & Conflict": ["Communication", "Infidelity & Trust", "Separation"],
-    "Starting Sessions": ["When to Seek Help", "What to Expect", "Methods"],
-  },
+  en: {},
   no: {},
 };
 
@@ -95,7 +92,8 @@ const slugify = (s: string) => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]
 /**
  * Blog index organised as a content hub: the pillar first, then the
  * specialised hub pages, then every article grouped by its cluster tag
- * (tags[1]). Guides are their own group at the end.
+ * (tags[1]). On the English index guides sit in their subject's cluster; on
+ * the Norwegian index they are their own group at the end.
  */
 export function BlogIndexContent({ posts, hubs, language }: { posts: BlogPostMeta[]; hubs: HubPage[]; language: LanguageCode }) {
   const t = copy[language] ?? copy.en;
@@ -105,7 +103,7 @@ export function BlogIndexContent({ posts, hubs, language }: { posts: BlogPostMet
   const merged = Object.entries(mergedSections[language] ?? {});
   for (const post of rest) {
     const tag = post.tags[1] ?? "";
-    const key = post.kind === "guide" ? t.guides : merged.find(([, tags]) => tags.includes(tag))?.[0] ?? tag;
+    const key = post.kind === "guide" && language === "no" ? t.guides : merged.find(([, tags]) => tags.includes(tag))?.[0] ?? tag;
     groups.set(key, [...(groups.get(key) ?? []), post]);
   }
   for (const [name, tags] of merged) {
