@@ -93,33 +93,34 @@ const faq: { question: string; answer: string | AnswerPart[] }[] = [
   {
     question: "What is AET01 Conflict?",
     answer: [
-      "AET01 Conflict is a mobile app for rehearsing a difficult conversation before you have it. You pick the fight and a partner at one of four levels; an AI takes the other side and holds its position instead of agreeing with you. Afterwards it scores the exchange against a fixed standard and shows you the sentence where it went wrong, and the line that would have held. It is an ",
+      "AET01 Conflict is a mobile app for rehearsing a difficult conversation before you have it for real. You pick the conversation and a partner at one of four levels; an AI takes the other side and holds its position. After two minutes it scores the exchange against a fixed standard and shows the sentence where it went wrong and the line that would have held. It is an ",
       { text: "Aether Instrument", href: "/instruments" },
-      ": one conversation, one standard, two minutes. It is made by Aether Practice, which also works with the people on the other side of these conversations — ",
+      ": one conversation, one standard, two minutes, no account. Made by Aether Practice, which also works with the people on the other side of these conversations: ",
       { text: "co-founders", href: "/co-founder-coaching" },
       " and ",
       { text: "couples", href: "/couples-therapy" },
-      ".",
+      ". A practice tool, not therapy.",
     ],
   },
   {
     question: "Who is it for?",
     answer:
-      "Anyone preparing for a conversation they expect to lose: co-founders before an equity or performance conversation, partners before the recurring argument about money or housework, managers before a hard review, anyone who has to hold a line with family. It is not limited to workplace scenarios.",
+      "AET01 Conflict is for anyone preparing for a conversation they expect to lose: co-founders before an equity or performance conversation, partners before the recurring argument about money or housework, managers before a hard review, anyone holding a line with family. Not only workplace scenarios, and not for crisis: it practises how you hold a position, not whether you should.",
   },
   {
     question: "How is it different from role-playing with ChatGPT or another assistant?",
     answer:
-      "Assistants are built to be agreeable; push and they fold, which teaches you nothing. The partner in AET01 Conflict is built to hold a position through deflection and pressure. It also scores against a standard that stays fixed between sessions, and it marks both ways of losing: escalating, and quietly giving in.",
+      "Assistants are built to agree: push and they fold, which teaches you nothing. The partner in AET01 Conflict holds its position through deflection and pressure at the level you chose. It scores against a standard that stays fixed between sessions, and it marks both ways of losing: escalating, and quietly giving in. Clear, respectful and immovable scores highest.",
   },
   {
     question: "Does rehearsing a difficult conversation help?",
     answer:
-      "The evidence points that way. In a 2023 Stanford study of a conflict-rehearsal system, participants who practiced against a simulated counterpart used escalating competitive tactics about two-thirds less in a later conflict than a control group who had only read about conflict resolution, and used cooperative tactics roughly twice as often. Rehearsal is also how pilots, litigators and surgeons prepare for the moments that matter; AET01 applies the same logic to conflict.",
+      "Yes. A Stanford study shows it. Participants who practised against a simulated counterpart used escalating, competitive tactics about two-thirds less in a later real conflict than a control group who had only read about conflict resolution, and used cooperative tactics roughly twice as often. The study, by Shaikh and colleagues with forty participants, was published at CHI 2024. Pilots, litigators and surgeons prepare the same way; AET01 Conflict applies it to conflict.",
   },
   {
     question: "How long is a session, and do I need an account?",
-    answer: "Two minutes, at one of four levels: warm-up, easy, medium or hard. No account is required.",
+    answer:
+      "A session of AET01 Conflict is two minutes, at one of four levels: warm-up, easy, medium or hard. No account, nothing to set up. iOS and Android, coming to the App Store and Google Play.",
   },
 ]
 
