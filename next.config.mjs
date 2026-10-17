@@ -44,8 +44,6 @@ function blogRedirects() {
     { source: "/images/couple-separate-rooms-eft.jpg", destination: "/images/woman-dark-room-window-night.jpg", permanent: true },
     { source: "/images/couple-separate-rooms-two-careers.jpg", destination: "/images/two-women-overlooking-san-francisco-bay.jpg", permanent: true },
     { source: "/images/startup-stress-intimacy-night-city.jpg", destination: "/images/couple-walking-apart-street.jpg", permanent: true },
-    { source: "/images/startup-stress-two-people-desert-plain.jpg", destination: "/images/two-people-desert-plain-horizon.jpg", permanent: true },
-    { source: "/images/founder-partner-two-people-desert-plain.jpg", destination: "/images/two-people-desert-plain-horizon.jpg", permanent: true },
     { source: "/images/relationship-after-exit-woman-window-city.jpg", destination: "/images/woman-alone-window-city-skyline.jpg", permanent: true },
     { source: "/images/founder-partner-opposite-ends-long-table.jpg", destination: "/images/couple-opposite-ends-long-table.jpg", permanent: true },
     { source: "/images/startup-stress-couple-walking-apart-street.jpg", destination: "/images/couple-walking-apart-street.jpg", permanent: true },
