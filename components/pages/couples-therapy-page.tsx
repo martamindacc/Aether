@@ -6,6 +6,8 @@ import Link from "next/link";
 import { FloatingNav } from "@/components/floating-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { BookingModal } from "@/components/booking-modal";
+import { BlogBand } from "@/components/blog-band";
+import type { BlogPostMeta } from "@/lib/blog";
 import { couplesTherapyContent, navContent, relatedServicesHeading, type LanguageCode } from "@/lib/service-content";
 
 const testimonialsContent: Record<
@@ -59,7 +61,7 @@ const testimonialsContent: Record<
 
 const languageLinks = languageLinksFor("couples");
 
-export default function CouplesTherapyPage({ language }: { language: LanguageCode }) {
+export default function CouplesTherapyPage({ language, blogPosts = [] }: { language: LanguageCode; blogPosts?: BlogPostMeta[] }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
   const [isBookingOpen, setIsBookingOpen] = useState(false);
@@ -86,7 +88,7 @@ export default function CouplesTherapyPage({ language }: { language: LanguageCod
                 Online couples sessions for partners in{" "}
                 <Link
                   href="/couples-therapy-new-york-city"
-                  className="underline underline-offset-4 hover:text-zinc-600"
+                  className="underline underline-offset-4 decoration-[#C9A67D] hover:text-zinc-900"
                 >
                   New York City
                 </Link>{" "}
@@ -230,6 +232,7 @@ export default function CouplesTherapyPage({ language }: { language: LanguageCod
           </div>
         </div>
       </section>
+      <BlogBand posts={blogPosts} language={language} />
       <SiteFooter language={language} />
       <BookingModal language={language} isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
     </main>
