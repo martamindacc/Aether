@@ -55,7 +55,7 @@ const range = [
   { label: "Format", value: "mobile apps, iOS and Android" },
   { label: "Session", value: "two minutes" },
   { label: "Account", value: "none" },
-  { label: "Made by", value: "Aether Practice" },
+  { label: "Made by", value: "Marta Morawska" },
 ]
 
 const breadcrumbLd = breadcrumbJsonLd([
@@ -204,8 +204,8 @@ export default function Page() {
         <h2 className={sectionHeading}>Where do I get them?</h2>
         <div className="mt-6 max-w-4xl space-y-6">
           <p className={bodyText}>
-            AET01 Conflict is coming to the App Store and Google Play. Each instrument&apos;s page on this site carries
-            its store links when it is released.
+            AET01 Conflict is coming to the App Store and Google Play. Each instrument&apos;s page on this site will carry
+            its store links once it is released.
           </p>
         </div>
       </section>

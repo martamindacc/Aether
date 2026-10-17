@@ -44,7 +44,7 @@ const protocols = [
     number: "01",
     name: "Practice",
     description: [
-      "Start with an easy challenge or face a partner who pushes hard. Practise the fight before it happens, see where it breaks down, and try again.",
+      "Start with an easy challenge or face a partner who pushes hard. Practice the fight before it happens, see where it breaks down, and try again.",
       "The goal isn't to win. It's to find words you can stand behind when the pressure rises.",
     ],
   },
@@ -95,7 +95,7 @@ const faq: { question: string; answer: string | AnswerPart[] }[] = [
     answer: [
       "AET01 Conflict is a mobile app for rehearsing a difficult conversation before you have it. You pick the fight and a partner at one of four levels; an AI takes the other side and holds its position instead of agreeing with you. Afterwards it scores the exchange against a fixed standard and shows you the sentence where it went wrong, and the line that would have held. It is an ",
       { text: "Aether Instrument", href: "/instruments" },
-      ": one conversation, one standard, two minutes. Made by Aether Practice, which also works with the people on the other side of these conversations — ",
+      ": one conversation, one standard, two minutes. It is made by Aether Practice, which also works with the people on the other side of these conversations — ",
       { text: "co-founders", href: "/co-founder-coaching" },
       " and ",
       { text: "couples", href: "/couples-therapy" },
@@ -103,19 +103,24 @@ const faq: { question: string; answer: string | AnswerPart[] }[] = [
     ],
   },
   {
+    question: "Who is it for?",
+    answer:
+      "Anyone preparing for a conversation they expect to lose: co-founders before an equity or performance conversation, partners before the recurring argument about money or housework, managers before a hard review, anyone who has to hold a line with family. It is not limited to workplace scenarios.",
+  },
+  {
     question: "How is it different from role-playing with ChatGPT or another assistant?",
     answer:
       "Assistants are built to be agreeable; push and they fold, which teaches you nothing. The partner in AET01 Conflict is built to hold a position through deflection and pressure. It also scores against a standard that stays fixed between sessions, and it marks both ways of losing: escalating, and quietly giving in.",
   },
   {
+    question: "Does rehearsing a difficult conversation help?",
+    answer:
+      "The evidence points that way. In a 2023 Stanford study of a conflict-rehearsal system, participants who practiced against a simulated counterpart used escalating competitive tactics about two-thirds less in a later conflict than a control group who had only read about conflict resolution, and used cooperative tactics roughly twice as often. Rehearsal is also how pilots, litigators and surgeons prepare for the moments that matter; AET01 applies the same logic to conflict.",
+  },
+  {
     question: "What does the score measure?",
     answer:
       "Whether you held your position, kept it respectful, and avoided both failures. Aggression is marked down. So is the quiet trade: the apology that was not yours, the request withdrawn because the volume went up. Clear, respectful and immovable scores highest. The score comes with the exact failure and the line you should have used.",
-  },
-  {
-    question: "Who it is for",
-    answer:
-      "Anyone preparing for a conversation they expect to lose: co-founders before an equity or performance conversation, partners before the recurring argument about money or housework, managers before a hard review, anyone who has to hold a line with family. It is not limited to workplace scenarios.",
   },
   {
     question: "How long is a session, and do I need an account?",
