@@ -53,8 +53,9 @@ function blogRedirects() {
     { source: "/images/founder-marriage-couple-dock-lake-sunset.jpg", destination: "/images/couple-dock-lake-sunset.jpg", permanent: true },
     { source: "/images/emotionally-focused-therapy-woman-window-dusk.jpg", destination: "/images/woman-dark-room-window-night.jpg", permanent: true },
     { source: "/images/discernment-counseling-should-we-separate.jpg", destination: "/images/man-alone-chair-empty-room-bright-window.jpg", permanent: true },
-    { source: "/images/angular-sculpture-desert-lakebed-dusk.jpg", destination: "/images/concrete-sculpture-desert-lakebed-dusk.jpg", permanent: true },
+    { source: "/images/angular-sculpture-desert-lakebed-dusk.jpg", destination: "/images/concrete-sculpture-desert-lakebed-sunset.jpg", permanent: true },
     { source: "/images/couples-therapy-conversation-city-view.jpg", destination: "/images/couple-coffee-table-window-san-francisco-bay.jpg", permanent: true },
+    { source: "/images/concrete-sculpture-desert-lakebed-dusk.jpg", destination: "/images/concrete-sculpture-desert-lakebed-sunset.jpg", permanent: true },
   ]
 
   // The co-founder service is coaching, not therapy; its first URL said therapy.
