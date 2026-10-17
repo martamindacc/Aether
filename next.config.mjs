@@ -41,7 +41,7 @@ function blogRedirects() {
 
   // Blog images renamed to descriptive, language-consistent filenames; old URLs may be indexed in image search.
   const renamedImages = [
-    { source: "/images/couple-separate-rooms-eft.jpg", destination: "/images/emotionally-focused-therapy-woman-window-dusk.jpg", permanent: true },
+    { source: "/images/couple-separate-rooms-eft.jpg", destination: "/images/woman-dark-room-window-night.jpg", permanent: true },
     { source: "/images/couple-separate-rooms-two-careers.jpg", destination: "/images/two-women-overlooking-san-francisco-bay.jpg", permanent: true },
     { source: "/images/startup-stress-intimacy-night-city.jpg", destination: "/images/couple-walking-apart-street.jpg", permanent: true },
     { source: "/images/startup-stress-two-people-desert-plain.jpg", destination: "/images/two-people-desert-plain-horizon.jpg", permanent: true },
@@ -51,6 +51,7 @@ function blogRedirects() {
     { source: "/images/startup-stress-couple-walking-apart-street.jpg", destination: "/images/couple-walking-apart-street.jpg", permanent: true },
     { source: "/images/two-careers-couple-overlooking-san-francisco-bay.jpg", destination: "/images/two-women-overlooking-san-francisco-bay.jpg", permanent: true },
     { source: "/images/founder-marriage-couple-dock-lake-sunset.jpg", destination: "/images/couple-dock-lake-sunset.jpg", permanent: true },
+    { source: "/images/emotionally-focused-therapy-woman-window-dusk.jpg", destination: "/images/woman-dark-room-window-night.jpg", permanent: true },
   ]
 
   // The co-founder service is coaching, not therapy; its first URL said therapy.
