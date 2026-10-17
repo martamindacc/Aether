@@ -27,8 +27,21 @@ const copy = {
 
 /** Display order of clusters on each index; anything not listed follows alphabetically. */
 const clusterOrder: Record<LanguageCode, string[]> = {
-  en: ["Communication", "What to Expect", "When to Seek Help", "Infidelity & Trust", "Separation", "Methods", "Careers & Pressure", "Founder Couples", "Co-Founders", "Couples Intensive", "Online Couples Therapy", "Oslo", "Guides"],
+  en: ["Communication & Conflict", "Starting Sessions", "Careers & Pressure", "Founder Couples", "Co-Founders", "Couples Intensive", "Online Couples Therapy", "Oslo", "Guides"],
   no: ["Veileder", "Når søke hjelp", "Kommunikasjon", "Nærhet", "Utroskap og tillit", "Samlivsbrudd", "Hva du kan forvente", "Metoder", "Livsfaser", "Karriere og press", "Gründerpar", "Formater", "Pris"],
+};
+
+/**
+ * Sections on this page that gather several cluster tags. Only the grouping
+ * here changes: posts keep their own tags, which drive related posts. Within a
+ * section, posts follow the order of their tags in this list.
+ */
+const mergedSections: Record<LanguageCode, Record<string, string[]>> = {
+  en: {
+    "Communication & Conflict": ["Communication", "Infidelity & Trust", "Separation"],
+    "Starting Sessions": ["When to Seek Help", "What to Expect", "Methods"],
+  },
+  no: {},
 };
 
 const pillarSlugs = new Set(["couples-therapy-guide", "parterapi-i-oslo"]);
@@ -89,9 +102,14 @@ export function BlogIndexContent({ posts, hubs, language }: { posts: BlogPostMet
   const pillar = posts.find((p) => pillarSlugs.has(p.slug));
   const rest = posts.filter((p) => p !== pillar);
   const groups = new Map<string, BlogPostMeta[]>();
+  const merged = Object.entries(mergedSections[language] ?? {});
   for (const post of rest) {
-    const key = post.kind === "guide" ? t.guides : post.tags[1] ?? "";
+    const tag = post.tags[1] ?? "";
+    const key = post.kind === "guide" ? t.guides : merged.find(([, tags]) => tags.includes(tag))?.[0] ?? tag;
     groups.set(key, [...(groups.get(key) ?? []), post]);
+  }
+  for (const [name, tags] of merged) {
+    groups.get(name)?.sort((a, b) => tags.indexOf(a.tags[1] ?? "") - tags.indexOf(b.tags[1] ?? ""));
   }
   const order = clusterOrder[language];
   const sortedGroups = [...groups.entries()].sort(([a], [b]) => {
