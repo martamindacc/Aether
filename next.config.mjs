@@ -63,8 +63,9 @@ function blogRedirects() {
     { source: "/images/woman-alone-window-city-skyline.jpg", destination: "/images/woman-phone-table-window-shadows-city-skyline.jpg", permanent: true },
     { source: "/images/woman-alone-table-phone-city-skyline.jpg", destination: "/images/woman-phone-table-window-shadows-city-skyline.jpg", permanent: true },
     { source: "/images/woman-table-phone-sunlit-skyline-window.jpg", destination: "/images/woman-phone-table-window-shadows-city-skyline.jpg", permanent: true },
-    { source: "/images/man-alone-dinner-table-set-for-two-evening.jpg", destination: "/images/man-alone-dinner-table-wine-glasses-evening.jpg", permanent: true },
-    { source: "/images/man-alone-dinner-table-empty-chair-evening.jpg", destination: "/images/man-alone-dinner-table-wine-glasses-evening.jpg", permanent: true },
+    { source: "/images/man-alone-dinner-table-set-for-two-evening.jpg", destination: "/images/man-alone-table-for-two-empty-chair-sunlit-wall.jpg", permanent: true },
+    { source: "/images/man-alone-dinner-table-empty-chair-evening.jpg", destination: "/images/man-alone-table-for-two-empty-chair-sunlit-wall.jpg", permanent: true },
+    { source: "/images/man-alone-dinner-table-wine-glasses-evening.jpg", destination: "/images/man-alone-table-for-two-empty-chair-sunlit-wall.jpg", permanent: true },
   ]
 
   // The co-founder service is coaching, not therapy; its first URL said therapy.
