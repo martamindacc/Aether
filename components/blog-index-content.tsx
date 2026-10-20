@@ -28,7 +28,7 @@ const copy = {
 /** Display order of clusters on each index; anything not listed follows alphabetically. */
 const clusterOrder: Record<LanguageCode, string[]> = {
   en: ["Starting Couples Therapy", "Conflict, Trust & Repair", "Careers & Pressure", "Founder Couples", "Co-Founders", "Couples Intensive", "Online Couples Therapy"],
-  no: ["Veileder", "Når søke hjelp", "Kommunikasjon", "Nærhet", "Utroskap og tillit", "Samlivsbrudd", "Hva du kan forvente", "Metoder", "Livsfaser", "Karriere og press", "Gründerpar", "Formater", "Pris"],
+  no: ["Veileder", "Komme i gang med parterapi", "Konflikt, tillit og reparasjon", "Karriere og press", "Gründerpar", "Parintensiv og parterapi på nett"],
 };
 
 /**
@@ -38,7 +38,12 @@ const clusterOrder: Record<LanguageCode, string[]> = {
  */
 const mergedSections: Record<LanguageCode, Record<string, string[]>> = {
   en: {},
-  no: {},
+  // Mirrors the English clusters, so both indexes read the same way.
+  no: {
+    "Komme i gang med parterapi": ["Når søke hjelp", "Hva du kan forvente", "Metoder", "Pris"],
+    "Konflikt, tillit og reparasjon": ["Kommunikasjon", "Utroskap og tillit", "Samlivsbrudd", "Nærhet", "Livsfaser"],
+    "Parintensiv og parterapi på nett": ["Formater"],
+  },
 };
 
 const pillarSlugs = new Set(["couples-therapy-guide", "parterapi-i-oslo"]);
