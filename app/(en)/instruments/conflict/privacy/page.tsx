@@ -31,8 +31,8 @@ export const metadata = {
 const prose = [
   "max-w-4xl font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-[#A3968C]",
   "[&>*:first-child]:mt-0",
-  "[&_h2]:mt-14 [&_h2]:font-[NeueHaasDisplayRoman,Arial,sans-serif] [&_h2]:text-4xl [&_h2]:font-medium [&_h2]:leading-[1.2] [&_h2]:tracking-tight sm:[&_h2]:text-5xl [&_h2]:text-[#F3E6DD]",
-  "[&_h3]:mt-10 [&_h3]:font-[NeueHaasDisplayRoman,Arial,sans-serif] [&_h3]:text-2xl [&_h3]:font-medium [&_h3]:text-[#F3E6DD]",
+  "[&_h2]:mt-20 [&_h2]:font-[NeueHaasDisplayRoman,Arial,sans-serif] [&_h2]:text-4xl [&_h2]:font-medium [&_h2]:tracking-tight sm:[&_h2]:text-5xl [&_h2]:text-[#F3E6DD]",
+  "[&_h3]:mt-12 [&_h3]:font-[NeueHaasDisplayRoman,Arial,sans-serif] [&_h3]:text-3xl [&_h3]:font-medium [&_h3]:text-[#F3E6DD]",
   "[&_p]:mt-5",
   "[&_ul]:mt-5 [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:mt-5 [&_ol]:list-decimal [&_ol]:pl-6",
   "[&_li]:mt-2 [&_li]:pl-1",
@@ -47,7 +47,7 @@ function Email() {
 export default function Page() {
   return (
     <div className="pb-24 pt-48">
-      <h1 className="max-w-5xl font-[NeueHaasDisplayRoman,Arial,sans-serif] text-6xl font-medium leading-[0.95] tracking-tight text-[#F3E6DD] sm:text-8xl">
+      <h1 className="max-w-5xl font-[NeueHaasDisplayRoman,Arial,sans-serif] text-5xl font-medium leading-[0.95] tracking-tight text-[#F3E6DD] sm:text-7xl">
         Privacy Policy
       </h1>
       <p className="mt-8 font-[Roboto,Arial,sans-serif] text-sm uppercase tracking-wide text-[#93857B]">
