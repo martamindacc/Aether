@@ -59,7 +59,7 @@ export const navContent: Record<
       { label: "Couples Session", href: "/couples-therapy" },
       { label: "Couples Intensive", href: "/couples-intensive" },
       { label: "Co-Founder Session", href: "/co-founder-coaching" },
-      { label: "Executive & Founder Work", href: "/executive-founder-work" },
+      { label: "Founder & Executive Work", href: "/executive-founder-work" },
       { label: "Individual Session", href: "/individual-therapy" },
     ],
     instrumentsHeading: "Instruments",
@@ -81,7 +81,7 @@ export const navContent: Record<
       { label: "Parintensiv", href: "/no/parintensiv" },
       { label: "Individuell terapi", href: "/no/individuell-terapi" },
       { label: "Familieterapi", href: "/no/familieterapi" },
-      { label: "Leder- og Grunnleggerarbeid", href: "/no/ledere-og-grundere" },
+      { label: "Grunnlegger- og Lederarbeid", href: "/no/ledere-og-grundere" },
     ],
     instrumentsHeading: "Instruments",
     instrumentsLinks: [
@@ -476,8 +476,8 @@ export const couplesIntensiveContent: Record<LanguageCode, ServicePageContent> =
 
 export const executiveFounderContent: Record<LanguageCode, ServicePageContent> = {
   en: {
-    title: "Executive & Founder Work",
-    subtitle: "Online executive and founder coaching sessions for clients in New York City and California.",
+    title: "Founder & Executive Work",
+    subtitle: "Online founder and executive coaching sessions for clients in New York City and California.",
     intro:
       "Confidential, high-caliber support at the level where decisions and isolation actually happen — built for founders and executives carrying weight the role was never designed to make space for.",
     panels: [
@@ -543,7 +543,7 @@ export const executiveFounderContent: Record<LanguageCode, ServicePageContent> =
     ctaButton: "Book your first session",
   },
   no: {
-    title: "Leder- og Grunnleggerarbeid",
+    title: "Grunnlegger- og Lederarbeid",
     subtitle: "Coaching på nett for ledere og gründere i Norge.",
     intro:
       "Konfidensiell støtte av høy kaliber på nivået der beslutninger og isolasjon faktisk skjer — bygget for gründere og ledere som bærer en vekt rollen aldri var designet for å gi plass til.",

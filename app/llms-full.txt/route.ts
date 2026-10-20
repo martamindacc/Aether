@@ -103,7 +103,7 @@ export function GET() {
     servicePage("/couples-therapy", "Couples Therapy", couplesTherapyContent.en),
     servicePage("/couples-intensive", "Couples Intensive", couplesIntensiveContent.en),
     servicePage("/individual-therapy", "Individual Therapy", individualTherapyContent.en),
-    servicePage("/executive-founder-work", "Executive & Founder Work", executiveFounderContent.en),
+    servicePage("/executive-founder-work", "Founder & Executive Work", executiveFounderContent.en),
     aboutPage(),
   ]
 

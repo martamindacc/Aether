@@ -34,7 +34,7 @@ export function BookingModal({
 
   const selectedProduct = PRODUCTS.find((product) => product.id === selectedId)
   const productLabels: Record<string, string> = language === "no"
-    ? { "Individual Session": "Individuell terapi", "Couples Session": "Parterapi", "Couples Intensive": "Parintensiv", "Family Session": "Familieterapi", "Co-Founder Session": "Medgründersesjon", "Exec&Founder Session": "Leder- og gründercoaching", "Initial Consultation": "Innledende konsultasjon" }
+    ? { "Individual Session": "Individuell terapi", "Couples Session": "Parterapi", "Couples Intensive": "Parintensiv", "Family Session": "Familieterapi", "Co-Founder Session": "Medgründersesjon", "Founder&Exec Session": "Gründer- og ledercoaching", "Initial Consultation": "Innledende konsultasjon" }
     : {}
   const productLabel = (name: string) => productLabels[name] ?? name
   const durationLabel = (duration: string) => (language === "no" ? duration.replace("days", "dager") : duration)

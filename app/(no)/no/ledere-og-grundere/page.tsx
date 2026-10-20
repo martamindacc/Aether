@@ -8,7 +8,7 @@ const description =
   "Coaching på nett for ledere og gründere i Norge, med støtte ved press, beslutninger, lederskap og personlig utvikling."
 
 export const metadata = pageMetadata({
-  title: "Coaching for ledere og gründere i Norge",
+  title: "Coaching for gründere og ledere i Norge",
   description,
   path,
   locale: "nb_NO",
@@ -16,7 +16,7 @@ export const metadata = pageMetadata({
 })
 
 const serviceLd = serviceJsonLd({
-  name: "Leder- og gründercoaching",
+  name: "Gründer- og ledercoaching",
   description,
   path,
   areaServed: ["Norge"],
@@ -25,7 +25,7 @@ const serviceLd = serviceJsonLd({
 
 const breadcrumbLd = breadcrumbJsonLd([
   { name: "Hjem", path: localizedPaths.home.no },
-  { name: "Leder- og Grunnleggerarbeid", path },
+  { name: "Grunnlegger- og Lederarbeid", path },
 ])
 
 export default function Page() {

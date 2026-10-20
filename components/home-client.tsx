@@ -103,7 +103,7 @@ const content: Record<
       },
       {
         eyebrow: "Leadership support",
-        title: "Executive & Founder Work",
+        title: "Founder & Executive Work",
         description:
           "Support at the level decisions and isolation actually happen — for founders and executives carrying weight the role doesn't make space for.",
         href: "/executive-founder-work",
@@ -205,7 +205,7 @@ const content: Record<
       },
       {
         eyebrow: "Ledelsesstøtte",
-        title: "Leder- og Grunnleggerarbeid",
+        title: "Grunnlegger- og Lederarbeid",
         description:
           "Støtte på nivået der beslutninger og isolasjon faktisk skjer — for gründere og ledere som bærer vekten rollen ikke gir plass til.",
         href: "/no/ledere-og-grundere",

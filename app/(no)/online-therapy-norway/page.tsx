@@ -38,7 +38,7 @@ const content: Record<
       { label: "Parterapi", href: "/no/parterapi" },
       { label: "Individuell terapi", href: "/no/individuell-terapi" },
       { label: "Familieterapi og familiestøtte", href: "/no/familieterapi" },
-      { label: "Coaching for ledere og gründere", href: "/no/ledere-og-grundere" },
+      { label: "Coaching for gründere og ledere", href: "/no/ledere-og-grundere" },
     ],
     whoTitle: "Hvem dette er for",
     whoBody:
