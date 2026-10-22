@@ -65,11 +65,11 @@ export const mdxComponents = {
   ),
   // FAQ questions (see lib/remark-faq-details.ts), styled like the Conflict page's FAQ.
   details: (props: React.ComponentProps<"details">) => (
-    <details className="group mt-6 border-t border-zinc-300/80 py-6 [&+details]:mt-0 [&>summary+*]:mt-4" {...props} />
+    <details className="group mt-6 border-t border-zinc-300/80 py-8 [&+details]:mt-0 [&>summary+*]:mt-4" {...props} />
   ),
   summary: ({ children, ...props }: React.ComponentProps<"summary">) => (
     <summary
-      className="flex cursor-pointer list-none items-start justify-between gap-4 [&::-webkit-details-marker]:hidden [&>h3]:mt-0"
+      className="flex cursor-pointer list-none items-start justify-between gap-4 [&::-webkit-details-marker]:hidden [&>h3]:mt-0 [&>h3]:font-[NeueHaasDisplayRoman,Arial,sans-serif] [&>h3]:text-xl [&>h3]:leading-[1.35] [&>h3]:text-[#383838]"
       {...props}
     >
       {children}
@@ -77,7 +77,7 @@ export const mdxComponents = {
       <svg
         aria-hidden="true"
         viewBox="0 0 20 20"
-        className="mt-1.5 h-5 w-5 shrink-0 text-[#74382f] transition-transform duration-200 group-open:rotate-180"
+        className="mt-0.5 h-5 w-5 shrink-0 text-[#74382f] transition-transform duration-200 group-open:rotate-180"
         fill="none"
         stroke="currentColor"
         strokeWidth="1.5"
