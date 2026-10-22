@@ -7,6 +7,7 @@ import { BlogCta } from "@/components/blog-cta";
 import { BlogViewTracker } from "@/components/blog-view-tracker";
 import { getTranslationsForPost, htmlLangFor, type BlogPost as BlogPostData, type BlogPostMeta } from "@/lib/blog";
 import { extractFaq } from "@/lib/blog-faq";
+import { remarkFaqDetails } from "@/lib/remark-faq-details";
 import { extractCitations } from "@/lib/blog-citations";
 import { formatReadingTime } from "@/lib/reading-time";
 import { RelatedPosts } from "@/components/related-posts";
@@ -266,7 +267,7 @@ export function BlogPost({ post, related }: { post: BlogPostData; related: BlogP
         )}
 
         <div className="mt-4">
-          <MDXRemote source={post.content} components={mdxComponents} options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }} />
+          <MDXRemote source={post.content} components={mdxComponents} options={{ mdxOptions: { remarkPlugins: [remarkGfm, remarkFaqDetails] } }} />
         </div>
 
         {post.relatedService && <BlogCta relatedService={post.relatedService} language={post.lang} />}

@@ -2,7 +2,9 @@ import type { BlogPost } from "@/lib/blog";
 
 export type FaqItem = { question: string; answer: string };
 
-const FAQ_HEADING = /^## .*(FAQ|frequently asked|common questions|vanlige spørsmål|ofte stilte spørsmål)/i;
+/** Words that mark an H2 as a post's FAQ section, in either language. */
+export const FAQ_TITLE = /(FAQ|frequently asked|common questions|vanlige spørsmål|ofte stilte spørsmål)/i;
+const FAQ_HEADING = new RegExp(`^## .*${FAQ_TITLE.source}`, "i");
 /** Lines that end the FAQ body: a horizontal rule, a bold-only label such as "**References:**", or an italic "Last updated" note. */
 const FAQ_END = /^(---\s*|\*\*[^*]+\*\*\s*|\*[^*]+\*\s*)$/;
 

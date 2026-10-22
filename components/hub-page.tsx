@@ -5,6 +5,7 @@ import { BlogShell } from "@/components/blog-shell";
 import { JsonLd } from "@/components/json-ld";
 import { mdxComponents } from "@/components/mdx-components";
 import { extractFaq } from "@/lib/blog-faq";
+import { remarkFaqDetails } from "@/lib/remark-faq-details";
 import { getHubTranslations, type HubPage as HubPageData } from "@/lib/hubs";
 import { localizedPaths } from "@/lib/locale-routes";
 import { breadcrumbJsonLd, pageMetadata, serviceJsonLd } from "@/lib/seo";
@@ -83,7 +84,7 @@ export function HubPage({ hub }: { hub: HubPageData }) {
           <p className="mt-8 font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.6] text-[#383838]">{hub.lede}</p>
         )}
         <div className="mt-4">
-          <MDXRemote source={hub.content} components={mdxComponents} options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }} />
+          <MDXRemote source={hub.content} components={mdxComponents} options={{ mdxOptions: { remarkPlugins: [remarkGfm, remarkFaqDetails] } }} />
         </div>
       </article>
     </BlogShell>

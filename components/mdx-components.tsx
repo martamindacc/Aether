@@ -63,6 +63,31 @@ export const mdxComponents = {
       {...props}
     />
   ),
+  // FAQ questions (see lib/remark-faq-details.ts), styled like the Conflict page's FAQ.
+  details: (props: React.ComponentProps<"details">) => (
+    <details className="group mt-6 border-t border-zinc-300/80 py-6 [&+details]:mt-0 [&>summary+*]:mt-4" {...props} />
+  ),
+  summary: ({ children, ...props }: React.ComponentProps<"summary">) => (
+    <summary
+      className="flex cursor-pointer list-none items-start justify-between gap-4 [&::-webkit-details-marker]:hidden [&>h3]:mt-0"
+      {...props}
+    >
+      {children}
+      {/* Chevron flips when the answer is open, so readers can tell the question expands. */}
+      <svg
+        aria-hidden="true"
+        viewBox="0 0 20 20"
+        className="mt-1.5 h-5 w-5 shrink-0 text-[#74382f] transition-transform duration-200 group-open:rotate-180"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M5 7.5l5 5 5-5" />
+      </svg>
+    </summary>
+  ),
   p: (props: React.ComponentProps<"p">) => {
     // A paragraph holding only an image renders as the <figure> itself: <figure> inside <p> is invalid HTML.
     const only = props.children as React.ReactElement<{ src?: string }> | undefined;
