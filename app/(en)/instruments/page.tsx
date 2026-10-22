@@ -6,9 +6,9 @@ import { JsonLd } from "@/components/json-ld"
 const BASE_URL = "https://aetherpractice.com"
 
 export const metadata = pageMetadata({
-  title: "Instruments: Practice Tools for Difficult Conversations",
+  title: "Practice Tools for Difficult Conversations",
   description:
-    "Aether Instruments: single-purpose mobile apps for rehearsing the conversations that decide how your life goes. AET01 Conflict practices an argument against an AI that pushes back.",
+    "Aether Instruments: single-purpose apps for rehearsing the conversations that decide how your life goes. AET01 Conflict practices an argument with an AI.",
   path: "/instruments",
   // The section's own dark social image (app/(en)/instruments/og/route.tsx),
   // not the practice's light site image.

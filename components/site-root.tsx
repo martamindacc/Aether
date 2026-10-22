@@ -7,7 +7,7 @@ import { GoogleAnalytics } from '@/components/google-analytics'
 import { JsonLd } from '@/components/json-ld'
 import { ANALYTICS_REQUIRE_CONSENT } from '@/lib/analytics-config'
 import { productsFor } from '@/lib/products'
-import { TITLE_TEMPLATE } from '@/lib/seo'
+import { OG_IMAGE_ALT, TITLE_TEMPLATE } from '@/lib/seo'
 import '../app/globals.css'
 
 /**
@@ -15,6 +15,10 @@ import '../app/globals.css'
  * Norwegian root layout sets its own; every page overrides title and
  * description through pageMetadata().
  */
+const HOME_TITLE = TITLE_TEMPLATE.replace('%s', 'Online Couples & Individual Therapy')
+// Set explicitly: the English home page has no pageMetadata() call, so without it the page shares with no image.
+const HOME_IMAGE = { url: '/opengraph-image', width: 1200, height: 630, alt: OG_IMAGE_ALT }
+
 export const rootMetadata: Metadata = {
   metadataBase: new URL('https://aetherpractice.com'),
   alternates: {
@@ -26,7 +30,7 @@ export const rootMetadata: Metadata = {
     },
   },
   title: {
-    default: 'Aether Practice | Online Couples & Individual Therapy',
+    default: HOME_TITLE,
     template: TITLE_TEMPLATE,
   },
   description:
@@ -36,15 +40,17 @@ export const rootMetadata: Metadata = {
     siteName: 'Aether Practice',
     locale: 'en_US',
     url: 'https://aetherpractice.com/',
-    title: 'Aether Practice | Online Couples & Individual Therapy',
+    title: HOME_TITLE,
     description:
       'Online counseling & coaching for couples, individuals, families, executives, and founders in New York City, California, and Norway.',
+    images: [HOME_IMAGE],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Aether Practice | Online Couples & Individual Therapy',
+    title: HOME_TITLE,
     description:
       'Online counseling & coaching for couples, individuals, families, executives, and founders in New York City, California, and Norway.',
+    images: [{ url: HOME_IMAGE.url, alt: HOME_IMAGE.alt }],
   },
 }
 

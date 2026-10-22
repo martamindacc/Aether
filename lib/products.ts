@@ -107,3 +107,27 @@ export const PRODUCTS: Product[] = [
     calendlyUrl: "https://cal.com/aetherpractice/initial-consultation",
   },
 ]
+
+const priceFormats: Record<string, (product: Product) => number> = {
+  usd: (product) => product.priceInCents / 100,
+  nok: (product) => product.priceInNok,
+  kr: (product) => product.priceInNok,
+}
+
+/**
+ * Fills price tokens in hand-written copy (articles, hubs, llms.txt) from
+ * PRODUCTS, so a price change here reaches every page that quotes it.
+ * `{{price:couples-session:usd}}` → "170", `:nok` → "1,700" (English
+ * grouping), `:kr` → "1 700" (Norwegian grouping). `{{price:couples-session*6:kr}}`
+ * multiplies, for worked totals. The currency word stays in the copy, so the
+ * wording reads exactly as written. Unknown ids or formats fail the build.
+ */
+export function fillPrices(text: string): string {
+  return text.replace(/\{\{price:([a-z-]+)(?:\*(\d+))?:([a-z]+)\}\}/g, (token, id: string, times: string | undefined, format: string) => {
+    const product = PRODUCTS.find((p) => p.id === id)
+    const amount = priceFormats[format]
+    if (!product || !amount) throw new Error(`fillPrices: unknown price token ${token}`)
+    const value = amount(product) * Number(times ?? 1)
+    return format === "kr" ? value.toLocaleString("en-US").replace(/,/g, " ") : value.toLocaleString("en-US")
+  })
+}

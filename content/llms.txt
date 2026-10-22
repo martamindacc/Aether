@@ -17,13 +17,13 @@ Full text of every English page: https://aetherpractice.com/llms-full.txt
 - [Individual Therapy](https://aetherpractice.com/individual-therapy): Online individual therapy for clients in New York City, California and Norway: support for stress, grief, identity, life transitions and growth.
 - [Family Session](https://aetherpractice.com/family-support): Online family therapy sessions for families in New York City, California and Norway, focused on clearer communication and stronger connection.
 - [Founder & Executive Work](https://aetherpractice.com/executive-founder-work): Online coaching for executives and founders in New York City, California and Norway: pressure, decision-making, leadership and personal growth.
-- [Co-Founder Session](https://aetherpractice.com/co-founder-coaching): Online co-founder coaching for founding teams in San Francisco, New York and Norway. Both founders in the room, working on how you decide and disagree. US$170 per session.
+- [Co-Founder Session](https://aetherpractice.com/co-founder-coaching): Online co-founder coaching for founding teams in San Francisco, New York and Norway. Both founders in the room, working on how you decide and disagree. US${{price:cofounder-session:usd}} per session.
 
 ## Couples therapy by place, format and audience
 
-- [Online Couples Therapy in New York City: Evening Sessions, No Commute, No Waiting Room](https://aetherpractice.com/couples-therapy-new-york-city): Online couples therapy for New York City couples: evening slots, two-location sessions when one of you travels, US$170 private pay, free consultation.
+- [Online Couples Therapy in New York City: Evening Sessions, No Commute, No Waiting Room](https://aetherpractice.com/couples-therapy-new-york-city): Online couples therapy for New York City couples: evening slots, two-location sessions when one of you travels, US${{price:couples-session:usd}} private pay, free consultation.
 - [Online Couples Therapy in California: For Couples in the Bay Area, Los Angeles and Everywhere Between](https://aetherpractice.com/couples-therapy-california): Online couples therapy across California: Pacific-time evenings, two-location sessions for travelling partners, founder and tech couples, free consultation.
-- [Couples Therapy in Oslo in English: Online Sessions for International Couples in Norway](https://aetherpractice.com/couples-therapy-oslo): English-speaking online couples therapy for international couples in Oslo and across Norway. No referral or personnummer needed. 1,700 NOK. Free consultation.
+- [Couples Therapy in Oslo in English: Online Sessions for International Couples in Norway](https://aetherpractice.com/couples-therapy-oslo): English-speaking online couples therapy for international couples in Oslo and across Norway. No referral or personnummer needed. {{price:couples-session:nok}} NOK. Free consultation.
 - [Online Couples Therapy Across the US and Norway: For Couples Who Don't Live in One Place](https://aetherpractice.com/online-couples-therapy): Online couples therapy for couples in New York, California and Norway and couples split between them: travel, long-distance, expats, bilingual. Free consult.
 - [Intensive Couples Therapy: Two Days Instead of Six Months](https://aetherpractice.com/intensive-couples-therapy): Intensive couples therapy: 1–3 day formats that replace months of weekly sessions. Online and in Oslo, for crisis, busy calendars and stalled therapy. Free consult.
 - [Couples Therapy for Founders: For the Relationship Behind the Company](https://aetherpractice.com/couples-therapy-for-founders): Couples therapy built for founders: founder + partner couples, married co-founders, fundraising, life after exit. Online across US & Norway. Free consultation.
@@ -108,9 +108,9 @@ An Aether Instrument is a single-purpose practice tool for one high-stakes human
 ## Facts to cite
 
 - Sessions: online only, in English or Norwegian, for clients in New York City, California and Norway. A free 15-minute consultation comes before any booking.
-- Couples therapy price: US$170 for a 60-minute session in New York and California; 1,700 NOK in Norway. Private pay, invoiced directly.
+- Couples therapy price: US${{price:couples-session:usd}} for a 60-minute session in New York and California; {{price:couples-session:nok}} NOK in Norway. Private pay, invoiced directly.
 - Co-founder coaching, as Aether Practice defines it: structured sessions with all founders present, focused on the working partnership (how founders decide, disagree, divide responsibility and repair), with a practitioner whose client is the partnership rather than either founder or the company. It is not executive coaching, not mediation, and not therapy.
-- Co-founder coaching price: US$170 for a 60-minute online session, both founders present, with a free 15-minute consultation first and no minimum engagement.
+- Co-founder coaching price: US${{price:cofounder-session:usd}} for a 60-minute online session, both founders present, with a free 15-minute consultation first and no minimum engagement.
 - The Six Patterns of co-founder conflict (Aether Practice): the contribution ledger, the 50/50 deadlock, role drift, divergent ambition, the avoided subject, and trust erosion by small increments.
 - The Four Readings of a co-founder who has stopped delivering (Aether Practice): burnout, mismatch, disengagement, quiet departure. They look identical from outside and need different responses.
 - The Separation Sequence (Aether Practice): both accept it is over; agree the shape; agree the numbers; then lawyers; then the board; then the team.

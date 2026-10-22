@@ -9,7 +9,7 @@ const baseUrl = "https://aetherpractice.com"
 
 // Dates come from git (scripts/route-dates.mjs writes lib/route-dates.json
 // before each local build): the last commit that touched the files behind each
-// page. Add a route here and in that script's map together.
+// page. Add a route here and in scripts/route-files.mjs together.
 const routePaths = [
   "",
   "/about",

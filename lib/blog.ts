@@ -3,6 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import { cache } from "react";
 import { defaultMarketFor, type BlogMarket } from "@/lib/blog-market";
+import { fillPrices } from "@/lib/products";
 
 export type { BlogMarket } from "@/lib/blog-market";
 
@@ -98,7 +99,7 @@ function countWords(content: string): number {
 
 function readPostFile(fileName: string): BlogPost {
   const filePath = path.join(BLOG_DIR, fileName);
-  const raw = fs.readFileSync(filePath, "utf8");
+  const raw = fillPrices(fs.readFileSync(filePath, "utf8"));
   const { data, content } = matter(raw);
   const slug = (data.slug as string) ?? fileName.replace(/\.mdx$/, "");
   const lang = (data.lang as "en" | "no") ?? "en";

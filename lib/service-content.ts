@@ -166,7 +166,7 @@ export const individualTherapyContent: Record<LanguageCode, ServicePageContent> 
     ],
     ctaHeading: "The first session is where clarity begins.",
     ctaSubtext:
-      "Start with a short, unhurried conversation to see if this is the right fit — no pressure, no commitment beyond that first hour.",
+      "Start with a free 15-minute conversation to see if this is the right fit — no pressure, no commitment.",
     ctaButton: "Book your first session",
   },
   no: {
@@ -233,7 +233,7 @@ export const individualTherapyContent: Record<LanguageCode, ServicePageContent> 
     ],
     ctaHeading: "Den første timen er der klarheten begynner.",
     ctaSubtext:
-      "Start med en kort, avslappet samtale for å se om dette er riktig for deg — ingen press, ingen forpliktelse utover den første timen.",
+      "Start med en gratis 15-minutters samtale for å se om dette er riktig for deg — ingen press, ingen forpliktelse.",
     ctaButton: "Book din første time",
   },
 };
@@ -303,7 +303,7 @@ export const couplesTherapyContent: Record<LanguageCode, ServicePageContent> = {
     ],
     ctaHeading: "The strongest relationships are the ones that get worked on.",
     ctaSubtext:
-      "Start with a joint discovery conversation to see if this is the right fit for you both — no pressure, no commitment beyond that first hour.",
+      "Start with a free 15-minute consultation together to see if this is the right fit for you both — no pressure, no commitment.",
     ctaButton: "Book your first session",
   },
   no: {
@@ -370,7 +370,7 @@ export const couplesTherapyContent: Record<LanguageCode, ServicePageContent> = {
     ],
     ctaHeading: "De sterkeste relasjonene er de det jobbes med.",
     ctaSubtext:
-      "Start med en felles oppstartssamtale for å se om dette er riktig for dere begge — ingen press, ingen forpliktelse utover den første timen.",
+      "Start med en gratis 15-minutters samtale sammen for å se om dette er riktig for dere begge — ingen press, ingen forpliktelse.",
     ctaButton: "Book din første time",
   },
 };
@@ -539,7 +539,7 @@ export const executiveFounderContent: Record<LanguageCode, ServicePageContent> =
     ],
     ctaHeading: "The best leaders build in a thinking partner. Start here.",
     ctaSubtext:
-      "Start with a confidential context session to see if this is the right fit — no pressure, no commitment beyond that first hour.",
+      "Start with a free, confidential 15-minute consultation to see if this is the right fit — no pressure, no commitment.",
     ctaButton: "Book your first session",
   },
   no: {
@@ -606,7 +606,7 @@ export const executiveFounderContent: Record<LanguageCode, ServicePageContent> =
     ],
     ctaHeading: "De beste lederne bygger inn en tenkepartner. Start her.",
     ctaSubtext:
-      "Start med en konfidensiell kontekstsamtale for å se om dette er riktig for deg — ingen press, ingen forpliktelse utover den første timen.",
+      "Start med en gratis, konfidensiell 15-minutters samtale for å se om dette er riktig for deg — ingen press, ingen forpliktelse.",
     ctaButton: "Book din første time",
   },
 };
@@ -645,7 +645,7 @@ export const aboutContent: Record<LanguageCode, AboutContent> = {
     ],
     ctaHeading: "Ready to start the conversation?",
     ctaSubtext:
-      "Book an initial session and see if it's the right fit — no pressure, no commitment beyond that first hour.",
+      "Start with a free 15-minute consultation and see if it's the right fit — no pressure, no commitment.",
     ctaButton: "Book a session",
   },
   no: {
@@ -681,7 +681,7 @@ export const aboutContent: Record<LanguageCode, AboutContent> = {
     ],
     ctaHeading: "Klar til å starte samtalen?",
     ctaSubtext:
-      "Bestill en innledende sesjon og se om det er riktig for deg — uten press, uten forpliktelse utover den første timen.",
+      "Start med en gratis 15-minutters samtale og se om det er riktig for deg — uten press, uten forpliktelse.",
     ctaButton: "Bestill en sesjon",
   },
 };

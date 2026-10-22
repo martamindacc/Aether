@@ -70,7 +70,7 @@ const content: Record<
     ],
     ctaTitle: "De sterkeste relasjonene er de man arbeider med.",
     ctaBody:
-      "Start med en avklaringssamtale for å se om dette er riktig for deg — uten press, uten forpliktelser utover den første timen.",
+      "Start med en gratis 15-minutters avklaringssamtale for å se om dette er riktig for deg — uten press, uten forpliktelser.",
     ctaButton: "Book din første sesjon",
   },
 };

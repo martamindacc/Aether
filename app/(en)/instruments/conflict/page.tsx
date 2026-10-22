@@ -18,9 +18,9 @@ const storeLinks = [
 ].filter((link) => link.href)
 
 export const metadata = pageMetadata({
-  title: "AET01 Conflict: Rehearse an Argument With an AI",
+  title: "AET01 Conflict: Argument Rehearsal With AI",
   description:
-    "AET01 Conflict: practice difficult conversations against an AI partner that holds a position. Two-minute sessions, four levels, a score and the line you should have used.",
+    "AET01 Conflict: practice difficult conversations against an AI partner that holds a position. Two-minute sessions, four levels, a score, a better line.",
   path: "/instruments/conflict",
   // The app's own dark social image (./og/route.tsx), not the practice's site image.
   image: {

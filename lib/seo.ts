@@ -1,8 +1,8 @@
 import type { Metadata } from "next"
 
 const SITE_NAME = "Aether Practice"
-/** Brand-first title pattern applied by both root layouts; pages pass only the topic. */
-export const TITLE_TEMPLATE = `${SITE_NAME} | %s`
+/** Keyword-first title pattern applied by both root layouts; pages pass only the topic. */
+export const TITLE_TEMPLATE = `%s | ${SITE_NAME}`
 const BASE_URL = "https://aetherpractice.com"
 export const OG_IMAGE_ALT = "Aether Practice — Cognitive wellbeing and online counseling"
 

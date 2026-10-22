@@ -10,7 +10,7 @@ import "./globals.css"
  */
 export const metadata: Metadata = {
   metadataBase: new URL("https://aetherpractice.com"),
-  title: "Aether Practice | Page not found",
+  title: "Page not found | Aether Practice",
   robots: { index: false, follow: true },
 }
 

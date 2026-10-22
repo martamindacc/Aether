@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { cache } from "react";
+import { fillPrices } from "@/lib/products";
 
 const HUBS_DIR = path.join(process.cwd(), "content/hubs");
 
@@ -34,7 +35,7 @@ export type HubPage = {
 
 function readHubFile(fileName: string): HubPage {
   const slug = fileName.replace(/\.mdx$/, "");
-  const { data, content } = matter(fs.readFileSync(path.join(HUBS_DIR, fileName), "utf8"));
+  const { data, content } = matter(fillPrices(fs.readFileSync(path.join(HUBS_DIR, fileName), "utf8")));
   return {
     slug,
     path: (data.path as string) ?? `/${slug}`,

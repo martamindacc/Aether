@@ -6,6 +6,8 @@ import Link from "next/link";
 import { FloatingNav } from "@/components/floating-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { BookingModal } from "@/components/booking-modal";
+import { ServiceFaq } from "@/components/service-faq";
+import { serviceFaq } from "@/lib/service-faq";
 import { BlogBand } from "@/components/blog-band";
 import type { BlogPostMeta } from "@/lib/blog";
 import { couplesIntensiveContent, navContent, relatedServicesHeading, type LanguageCode } from "@/lib/service-content";
@@ -103,6 +105,8 @@ export default function CouplesIntensivePage({ language, blogPosts = [] }: { lan
             ))}
           </div>
         </div>
+
+        <ServiceFaq items={serviceFaq("intensive", language)} language={language} />
 
         <div className="mt-24 flex flex-col items-start gap-8 rounded-2xl border border-zinc-300/80 bg-gradient-to-br from-[#EEE5DB]/75 to-[#EEE5DB]/40 p-10 sm:p-14">
           <h2 className="max-w-2xl font-[NeueHaasDisplayRoman,Arial,sans-serif] text-3xl font-medium leading-[1.1] tracking-tight sm:text-4xl">
