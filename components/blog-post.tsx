@@ -60,17 +60,6 @@ export function postMetadata(post: BlogPostData): Metadata {
 
 const tocLabel: Record<LanguageCode, string> = { en: "Table of Contents", no: "Innhold" };
 
-/** Crisis articles (infidelity, separation, a burned-out partner) end without the Instruments band. */
-const noInstrumentsBand = new Set([
-  "couples-therapy-after-infidelity",
-  "couples-intensive-crisis-infidelity-separation",
-  "should-we-separate-discernment-counseling",
-  "when-your-partner-is-burned-out",
-  "bor-vi-skilles-avklaringsterapi",
-  "parterapi-etter-utroskap",
-  "nar-partneren-er-utbrent",
-]);
-
 const backToBlogLabel: Record<LanguageCode, string> = {
   en: "← Back to Blog",
   no: "← Tilbake til bloggen",
@@ -286,7 +275,7 @@ export function BlogPost({ post, related }: { post: BlogPostData; related: BlogP
 
         <RelatedPosts posts={related} language={post.lang} />
       </article>
-      {!noInstrumentsBand.has(post.slug) && <InstrumentsBand language={post.lang} />}
+      <InstrumentsBand language={post.lang} />
     </BlogShell>
   );
 }
