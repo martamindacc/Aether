@@ -11,6 +11,7 @@ import { remarkFaqDetails } from "@/lib/remark-faq-details";
 import { extractCitations } from "@/lib/blog-citations";
 import { formatReadingTime } from "@/lib/reading-time";
 import { RelatedPosts } from "@/components/related-posts";
+import { InstrumentsBand } from "@/components/instruments-band";
 import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 import { blogIndexPathFor, localizedPaths, postPath } from "@/lib/locale-routes";
 import { languages, type LanguageCode } from "@/lib/service-content";
@@ -58,6 +59,17 @@ export function postMetadata(post: BlogPostData): Metadata {
 }
 
 const tocLabel: Record<LanguageCode, string> = { en: "Table of Contents", no: "Innhold" };
+
+/** Crisis articles (infidelity, separation, a burned-out partner) end without the Instruments band. */
+const noInstrumentsBand = new Set([
+  "couples-therapy-after-infidelity",
+  "couples-intensive-crisis-infidelity-separation",
+  "should-we-separate-discernment-counseling",
+  "when-your-partner-is-burned-out",
+  "bor-vi-skilles-avklaringsterapi",
+  "parterapi-etter-utroskap",
+  "nar-partneren-er-utbrent",
+]);
 
 const backToBlogLabel: Record<LanguageCode, string> = {
   en: "← Back to Blog",
@@ -274,6 +286,7 @@ export function BlogPost({ post, related }: { post: BlogPostData; related: BlogP
 
         <RelatedPosts posts={related} language={post.lang} />
       </article>
+      {!noInstrumentsBand.has(post.slug) && <InstrumentsBand language={post.lang} />}
     </BlogShell>
   );
 }
