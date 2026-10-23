@@ -6,6 +6,7 @@
 
 import Image from "next/image";
 import { getImageDimensions } from "@/lib/image-meta";
+import { InstrumentBanner } from "@/components/instrument-banner";
 
 /** Slug for an H2 so tables of contents and in-page anchors can link to it. */
 export function headingId(children: React.ReactNode) {
@@ -50,6 +51,7 @@ function MdxImage({ src, alt, title }: React.ComponentProps<"img">) {
 }
 
 export const mdxComponents = {
+  InstrumentBanner,
   h2: (props: React.ComponentProps<"h2">) => (
     <h2
       id={headingId(props.children)}
