@@ -94,7 +94,14 @@ export default function CouplesTherapyPage({ language, blogPosts = [] }: { langu
                 >
                   New York City
                 </Link>{" "}
-                and California.
+                and the{" "}
+                <Link
+                  href="/couples-therapy-san-francisco"
+                  className="underline underline-offset-4 decoration-[#C9A67D] hover:text-zinc-900"
+                >
+                  San Francisco Bay Area
+                </Link>
+                .
               </>
             ) : (
               t.subtitle

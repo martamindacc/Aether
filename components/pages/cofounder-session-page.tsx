@@ -25,7 +25,7 @@ const languageLinks: LanguageLink[] = [
 
 const t = {
   title: "Co-Founder Session",
-  subtitle: "Online sessions for co-founders in New York City, California, and Norway.",
+  subtitle: "Online sessions for co-founders in the San Francisco Bay Area, New York City, and Norway.",
   intro:
     "The founding relationship is the one nobody schedules time for. A co-founder session makes room to work on how the two of you decide, disagree, and divide the weight — before the company starts routing around it.",
   panels: [
