@@ -8,9 +8,10 @@ import { InstrumentMark } from "@/components/instruments/instrument-ui";
 import type { LanguageCode } from "@/lib/service-content";
 
 /**
- * The home page's Instruments band, closing every article before the footer.
+ * The home page's Instruments band, closing every article and both blog
+ * indexes before the footer.
  * The home page keeps its own copy inline (components/home-client.tsx has
- * frozen parts); keep the two in step. Clicks are tracked per article,
+ * frozen parts); keep the two in step. Clicks are tracked per page,
  * separately from the in-article banner.
  */
 const instrumentsField = {

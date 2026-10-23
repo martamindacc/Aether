@@ -5,6 +5,7 @@ import { getAllHubs } from "@/lib/hubs";
 import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 import { hreflangFor, languageLinksFor, localizedPaths, postPath } from "@/lib/locale-routes";
 import { BlogIndexContent } from "@/components/blog-index-content";
+import { InstrumentsBand } from "@/components/instruments-band";
 import { JsonLd } from "@/components/json-ld"
 
 export const metadata: Metadata = pageMetadata({
@@ -41,6 +42,7 @@ export default function NorwegianBlogIndexPage() {
       <JsonLd data={itemListJsonLd} />
       <JsonLd data={breadcrumbLd} />
       <BlogIndexContent posts={posts} hubs={getAllHubs().filter((hub) => hub.lang === "no")} language="no" />
+      <InstrumentsBand language="no" />
     </BlogShell>
   );
 }
