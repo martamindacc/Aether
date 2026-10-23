@@ -25,7 +25,7 @@ const content: Record<LanguageCode, {
 }> = {
   en: {
     title: "Family Session",
-    subtitle: "Online family support sessions for families in New York City and California.",
+    subtitle: "Online family support sessions for families in New York City and the San Francisco Bay Area.",
     intro: "Family work creates a steadier way of being together — making room for honest conversations, clearer boundaries, and connection that can hold through change.",
     panels: [
       { title: "For the family you are", description: "Whether you are moving through conflict, a transition, grief, or a new chapter, we begin with the patterns your family is actually living with." },

@@ -14,7 +14,7 @@ export const metadata = {
       "How AET01 Conflict handles your data: no account, nothing you type is stored by us, optional history kept only on your phone, and the service providers involved.",
     path: "/instruments/conflict/privacy",
     image: {
-      url: "/opengraph-image",
+      url: "/opengraph-image?v=2",
       width: 1200,
       height: 630,
       alt: "AET01 Conflict — privacy policy",

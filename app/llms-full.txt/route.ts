@@ -121,7 +121,7 @@ export function GET() {
     "# Aether Practice: full text of the English site",
     "",
     `Index and facts to cite: ${BASE}/llms.txt`,
-    "Aether Practice is an online therapy and coaching practice working with couples, individuals, families, founders and executives in New York City, California and Norway. Everything below is the published text of the English pages, in this order: service pages and about, couples therapy hubs, guides, then articles by cluster.",
+    "Aether Practice is an online therapy and coaching practice working with couples, individuals, families, founders and executives in New York City, the San Francisco Bay Area and Norway. Everything below is the published text of the English pages, in this order: service pages and about, couples therapy hubs, guides, then articles by cluster.",
   ].join("\n")
 
   const text = [header, "# Section: Services", ...services, "# Section: Couples therapy by place, format and audience", ...hubText, "# Section: Guides", ...guides, ...articles].join(divider) + "\n"

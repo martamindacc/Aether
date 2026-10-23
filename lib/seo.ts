@@ -55,7 +55,7 @@ export function pageMetadata({
   const fullTitle = TITLE_TEMPLATE.replace("%s", title)
   const socialImage = image
     ? { ...image, alt: image.alt || title }
-    : { url: "/opengraph-image", width: 1200, height: 630, alt: OG_IMAGE_ALT }
+    : { url: "/opengraph-image?v=2", width: 1200, height: 630, alt: OG_IMAGE_ALT }
 
   return {
     title,

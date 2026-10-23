@@ -5,7 +5,7 @@ import { JsonLd } from "@/components/json-ld"
 export const metadata = pageMetadata({
   title: "Couples Intensive: Two-Day Online Program",
   description:
-    "A two-day online couples intensive for partners in New York City, California and Norway: twelve hours of focused work to break a stuck pattern.",
+    "A two-day online couples intensive for partners in New York City, San Francisco and Norway: twelve hours of focused work to break a stuck pattern.",
   path: "/couples-intensive",
   languages: hreflangFor("intensive"),
 })
@@ -16,7 +16,7 @@ const serviceLd = serviceJsonLd({
   description:
     "A two-day online couples intensive: twelve hours of focused work across two consecutive days, with preparation and a follow-up session.",
   path: "/couples-intensive",
-  areaServed: ["New York City", "California", "Norway"],
+  areaServed: ["New York City", "San Francisco Bay Area", "Norway"],
 })
 
 const breadcrumbLd = breadcrumbJsonLd([

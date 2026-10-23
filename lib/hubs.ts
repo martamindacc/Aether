@@ -49,7 +49,7 @@ function readHubFile(fileName: string): HubPage {
     date: data.date as string,
     modifiedDate: (data.modifiedDate as string) ?? (data.date as string),
     keywords: (data.keywords as string[]) ?? [],
-    areaServed: (data.areaServed as string[]) ?? ["New York City", "California", "Norway"],
+    areaServed: (data.areaServed as string[]) ?? ["New York City", "San Francisco Bay Area", "Norway"],
     content,
   };
 }

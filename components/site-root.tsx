@@ -17,7 +17,7 @@ import '../app/globals.css'
  */
 const HOME_TITLE = TITLE_TEMPLATE.replace('%s', 'Online Couples & Individual Therapy')
 // Set explicitly: the English home page has no pageMetadata() call, so without it the page shares with no image.
-const HOME_IMAGE = { url: '/opengraph-image', width: 1200, height: 630, alt: OG_IMAGE_ALT }
+const HOME_IMAGE = { url: '/opengraph-image?v=2', width: 1200, height: 630, alt: OG_IMAGE_ALT }
 
 export const rootMetadata: Metadata = {
   metadataBase: new URL('https://aetherpractice.com'),
@@ -34,7 +34,7 @@ export const rootMetadata: Metadata = {
     template: TITLE_TEMPLATE,
   },
   description:
-    'Online counseling & coaching for couples, individuals, families, executives, and founders in New York City, California, and Norway.',
+    'Online counseling & coaching for couples, individuals, families, executives, and founders in New York City, the San Francisco Bay Area, and Norway.',
   openGraph: {
     type: 'website',
     siteName: 'Aether Practice',
@@ -42,14 +42,14 @@ export const rootMetadata: Metadata = {
     url: 'https://aetherpractice.com/',
     title: HOME_TITLE,
     description:
-      'Online counseling & coaching for couples, individuals, families, executives, and founders in New York City, California, and Norway.',
+      'Online counseling & coaching for couples, individuals, families, executives, and founders in New York City, the San Francisco Bay Area, and Norway.',
     images: [HOME_IMAGE],
   },
   twitter: {
     card: 'summary_large_image',
     title: HOME_TITLE,
     description:
-      'Online counseling & coaching for couples, individuals, families, executives, and founders in New York City, California, and Norway.',
+      'Online counseling & coaching for couples, individuals, families, executives, and founders in New York City, the San Francisco Bay Area, and Norway.',
     images: [{ url: HOME_IMAGE.url, alt: HOME_IMAGE.alt }],
   },
 }
@@ -79,10 +79,10 @@ function organizationJsonLd(lang: 'en' | 'nb') {
       image: 'https://aetherpractice.com/logo-a.svg',
       sameAs: ['https://www.instagram.com/aetherpractice/'],
       description:
-        'Online counseling & coaching for couples, individuals, families, executives, and founders in New York City, California, and Norway.',
+        'Online counseling & coaching for couples, individuals, families, executives, and founders in New York City, the San Francisco Bay Area, and Norway.',
       areaServed: [
         { '@type': 'City', name: 'New York City' },
-        { '@type': 'State', name: 'California' },
+        { '@type': 'Place', name: 'San Francisco Bay Area' },
         { '@type': 'Country', name: 'Norway' },
       ],
       priceRange,

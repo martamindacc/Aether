@@ -3,9 +3,9 @@ import { hreflangFor } from "@/lib/locale-routes"
 import { JsonLd } from "@/components/json-ld"
 
 export const metadata = pageMetadata({
-  title: "Online Family Therapy in NYC & California",
+  title: "Online Family Therapy in NYC & San Francisco",
   description:
-    "Online family therapy sessions for families in New York City, California and Norway, focused on clearer communication and stronger connection.",
+    "Online family therapy sessions for families in New York City, San Francisco and Norway, focused on clearer communication and stronger connection.",
   path: "/family-support",
   languages: hreflangFor("family"),
 })
@@ -13,9 +13,9 @@ export const metadata = pageMetadata({
 const serviceLd = serviceJsonLd({
   name: "Family Support",
   description:
-    "Online family support sessions for clients in New York City, California, and Norway, focused on clearer communication, stronger connection, and practical support.",
+    "Online family support sessions for clients in New York City, the San Francisco Bay Area, and Norway, focused on clearer communication, stronger connection, and practical support.",
   path: "/family-support",
-  areaServed: ["New York City", "California", "Norway"],
+  areaServed: ["New York City", "San Francisco Bay Area", "Norway"],
 })
 
 const breadcrumbLd = breadcrumbJsonLd([

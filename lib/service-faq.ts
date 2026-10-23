@@ -22,8 +22,8 @@ const faqs: Record<"couples" | "intensive" | "individual" | "leadership" | "cofo
       {
         question: "How much does couples therapy cost?",
         answer:
-          "A 60-minute couples session at Aether Practice is US${{price:couples-session:usd}} in New York and California and {{price:couples-session:nok}} NOK in Norway. Specialist couples therapists in both states typically charge US$200–450. Every booking starts with a free 15-minute consultation.",
-        link: { text: "Couples therapy cost and insurance in NYC and California", href: "/guides/couples-therapy-cost-insurance-nyc-california" },
+          "A 60-minute couples session at Aether Practice is US${{price:couples-session:usd}} in the US and {{price:couples-session:nok}} NOK in Norway. Specialist couples therapists in both states typically charge US$200–450. Every booking starts with a free 15-minute consultation.",
+        link: { text: "Couples therapy cost and insurance in NYC and San Francisco", href: "/guides/couples-therapy-cost-insurance-nyc-california" },
       },
       {
         question: "Does insurance cover couples therapy?",
@@ -98,7 +98,7 @@ const faqs: Record<"couples" | "intensive" | "individual" | "leadership" | "cofo
       {
         question: "How much does online therapy cost?",
         answer:
-          "A 50-minute individual session at Aether Practice is US${{price:individual-session:usd}} in New York and California and {{price:individual-session:nok}} NOK in Norway. We are private pay, and you can start with a free 15-minute consultation.",
+          "A 50-minute individual session at Aether Practice is US${{price:individual-session:usd}} in the US and {{price:individual-session:nok}} NOK in Norway. We are private pay, and you can start with a free 15-minute consultation.",
       },
       {
         question: "What can I talk about in therapy?",
@@ -134,7 +134,7 @@ const faqs: Record<"couples" | "intensive" | "individual" | "leadership" | "cofo
       {
         question: "How much does executive coaching cost?",
         answer:
-          "A 50-minute founder or executive session at Aether Practice is US${{price:founder-session:usd}} in New York and California and {{price:founder-session:nok}} NOK in Norway. Private pay, with a free 15-minute consultation first.",
+          "A 50-minute founder or executive session at Aether Practice is US${{price:founder-session:usd}} in the US and {{price:founder-session:nok}} NOK in Norway. Private pay, with a free 15-minute consultation first.",
       },
       {
         question: "What is the difference between coaching and therapy?",

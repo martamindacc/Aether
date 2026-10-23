@@ -19,7 +19,7 @@ export type BlogPostMeta = {
   lang: "en" | "no";
   /**
    * Which hub lists the post: the Norwegian/Oslo hub or the US (New York and
-   * California) hub. Defaults from `lang`. Set it explicitly for a post whose
+   * San Francisco) hub. Defaults from `lang`. Set it explicitly for a post whose
    * language and audience differ, such as an English guide for expats in Oslo,
    * which keeps its English URL but is listed in the Norwegian hub.
    */

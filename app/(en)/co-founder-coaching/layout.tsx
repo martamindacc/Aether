@@ -18,9 +18,9 @@ const serviceLd = serviceJsonLd({
   name: "Co-Founder Session",
   serviceType: "Co-founder coaching",
   description:
-    "Online co-founder coaching sessions for founding teams in San Francisco, New York City, California and Norway, focused on how founding partners decide, disagree and divide responsibility. Sometimes called co-founder therapy; delivered as coaching for a working partnership.",
+    "Online co-founder coaching sessions for founding teams in San Francisco, New York City and Norway, focused on how founding partners decide, disagree and divide responsibility. Sometimes called co-founder therapy; delivered as coaching for a working partnership.",
   path: "/co-founder-coaching",
-  areaServed: ["San Francisco Bay Area", "New York City", "California", "Norway"],
+  areaServed: ["San Francisco Bay Area", "New York City", "Norway"],
 })
 
 const breadcrumbLd = breadcrumbJsonLd([

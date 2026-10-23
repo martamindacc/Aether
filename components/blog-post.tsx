@@ -103,7 +103,7 @@ export function BlogPost({ post, related }: { post: BlogPostData; related: BlogP
           ...(post.imageAlt ? { caption: post.imageAlt, description: post.imageAlt } : {}),
           inLanguage: schemaLangByLang[post.lang],
         }
-      : `https://aetherpractice.com/opengraph-image`,
+      : `https://aetherpractice.com/opengraph-image?v=2`,
     ...(post.tags.length ? { articleSection: post.tags[0] } : {}),
     keywords: post.keywords,
     ...(citations.length ? { citation: citations } : {}),

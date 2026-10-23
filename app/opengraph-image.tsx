@@ -36,7 +36,7 @@ export default function OpenGraphImage() {
           executives, and founders
         </div>
         <div style={{ fontSize: 30, opacity: 0.85 }}>
-          New York City · California · Norway
+          New York City · San Francisco · Norway
         </div>
       </div>
     ),

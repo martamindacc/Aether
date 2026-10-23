@@ -13,7 +13,7 @@ export const metadata = {
     description: "How to reach the Aether Instruments team about AET01 Conflict.",
     path: "/instruments/conflict/support",
     image: {
-      url: "/opengraph-image",
+      url: "/opengraph-image?v=2",
       width: 1200,
       height: 630,
       alt: "AET01 Conflict — support",

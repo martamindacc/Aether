@@ -3,9 +3,9 @@ import { hreflangFor } from "@/lib/locale-routes"
 import { JsonLd } from "@/components/json-ld"
 
 export const metadata = pageMetadata({
-  title: "Online Couples Therapy in NYC & California",
+  title: "Online Couples Therapy in NYC & San Francisco",
   description:
-    "Online couples therapy for partners in New York City, California and Norway, focused on communication, trust, conflict and shared understanding.",
+    "Online couples therapy for partners in New York City, San Francisco and Norway, focused on communication, trust, conflict and shared understanding.",
   path: "/couples-therapy",
   languages: hreflangFor("couples"),
 })
@@ -13,9 +13,9 @@ export const metadata = pageMetadata({
 const serviceLd = serviceJsonLd({
   name: "Couples Therapy",
   description:
-    "Online couples counseling for partners in New York City, California, and Norway, focused on communication, trust, conflict, and shared understanding.",
+    "Online couples counseling for partners in New York City, the San Francisco Bay Area, and Norway, focused on communication, trust, conflict, and shared understanding.",
   path: "/couples-therapy",
-  areaServed: ["New York City", "California", "Norway"],
+  areaServed: ["New York City", "San Francisco Bay Area", "Norway"],
 })
 
 const breadcrumbLd = breadcrumbJsonLd([

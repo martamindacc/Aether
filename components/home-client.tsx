@@ -74,7 +74,7 @@ const content: Record<
     videoOverlay: "Your Future is Yours to Shape",
     heroTitle: "Better life starts with better understanding",
     heroSubtitle:
-      "Private online sessions for couples, co-founders, executives, founders, and individuals in New York City, California, and Norway.",
+      "Private online sessions for couples, co-founders, executives, founders, and individuals in New York City, the San Francisco Bay Area, and Norway.",
     bookNow: "Book Now",
     supportSections: [
       {
@@ -337,7 +337,7 @@ export default function HomeClient({
         <p className="mt-8 max-w-3xl text-balance text-[19px] leading-[1.6] text-[#383838] sm:text-[21px]">
           {language.code === "en" ? (
             <>
-              Private online sessions for couples, co-founders, executives, founders, and individuals in New York City, California, and <Link href="/online-therapy-norway" className="underline underline-offset-4 decoration-[#C9A67D] hover:text-zinc-900">Norway</Link>.
+              Private online sessions for couples, co-founders, executives, founders, and individuals in New York City, the San Francisco Bay Area, and <Link href="/online-therapy-norway" className="underline underline-offset-4 decoration-[#C9A67D] hover:text-zinc-900">Norway</Link>.
             </>
           ) : language.code === "no" ? (
             <>

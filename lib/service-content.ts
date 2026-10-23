@@ -104,7 +104,7 @@ export const relatedServicesHeading: Record<LanguageCode, string> = {
 export const individualTherapyContent: Record<LanguageCode, ServicePageContent> = {
   en: {
     title: "Individual Session",
-    subtitle: "Online individual sessions for clients in New York City and California.",
+    subtitle: "Online individual sessions for clients in New York City and the San Francisco Bay Area.",
     intro:
       "A dedicated one-on-one session to think clearly, map your own patterns, and set a deliberate direction forward. Built for people who are already capable — and want a sharper, more intentional version of the life they're building.",
     panels: [
@@ -241,7 +241,7 @@ export const individualTherapyContent: Record<LanguageCode, ServicePageContent> 
 export const couplesTherapyContent: Record<LanguageCode, ServicePageContent> = {
   en: {
     title: "Couples Session",
-    subtitle: "Online couples sessions for partners in New York City and California.",
+    subtitle: "Online couples sessions for partners in New York City and the San Francisco Bay Area.",
     intro:
       "A dedicated space for two people to understand how they truly work together — repair the pattern underneath the conflict, and rebuild a partnership that feels steady, honest, and shared.",
     panels: [
@@ -378,7 +378,7 @@ export const couplesTherapyContent: Record<LanguageCode, ServicePageContent> = {
 export const couplesIntensiveContent: Record<LanguageCode, ServicePageContent> = {
   en: {
     title: "Couples Intensive",
-    subtitle: "Two-day online intensives for partners in New York City and California.",
+    subtitle: "Two-day online intensives for partners in New York City and the San Francisco Bay Area.",
     intro:
       "A concentrated format for couples who need more than an hour a week. Twelve hours of focused work across two consecutive days, online, built to interrupt a stuck pattern and leave you with a clear way forward.",
     panels: [
@@ -477,7 +477,7 @@ export const couplesIntensiveContent: Record<LanguageCode, ServicePageContent> =
 export const executiveFounderContent: Record<LanguageCode, ServicePageContent> = {
   en: {
     title: "Founder & Executive Work",
-    subtitle: "Online founder and executive coaching sessions for clients in New York City and California.",
+    subtitle: "Online founder and executive coaching sessions for clients in New York City and the San Francisco Bay Area.",
     intro:
       "Confidential, high-caliber support at the level where decisions and isolation actually happen — built for founders and executives carrying weight the role was never designed to make space for.",
     panels: [
@@ -692,7 +692,7 @@ export const contactContent: Record<LanguageCode, ContactContent> = {
     intro:
       "Have a question before booking, or want to talk through which service is the right fit? Reach out.",
     details: [
-      { label: "Where", value: "Online, for clients in New York City, California and Norway." },
+      { label: "Where", value: "Online, for clients in New York City, the San Francisco Bay Area and Norway." },
       { label: "Languages", value: "Sessions are held in English or Norwegian." },
       { label: "Booking", value: "Any service page books directly, without going through this form." },
     ],
@@ -702,7 +702,7 @@ export const contactContent: Record<LanguageCode, ContactContent> = {
     intro:
       "Har du et spørsmål før du bestiller, eller vil du snakke om hvilken tjeneste som passer best? Ta kontakt.",
     details: [
-      { label: "Hvor", value: "På nett, for klienter i Norge, New York City og California." },
+      { label: "Hvor", value: "På nett, for klienter i Norge, New York City og San Francisco Bay Area." },
       { label: "Språk", value: "Samtalene holdes på norsk eller engelsk." },
       { label: "Bestilling", value: "Alle tjenestesider kan bestilles direkte, uten å gå via skjemaet." },
     ],
