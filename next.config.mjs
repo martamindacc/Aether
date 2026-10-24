@@ -77,6 +77,7 @@ function blogRedirects() {
     { source: "/images/two-people-apart-rooftop-pool-city-view.jpg", destination: "/images/couple-side-by-side-rooftop-terrace-pool-bay-bridge.jpg", permanent: true },
     { source: "/images/woman-dark-room-window-night.jpg", destination: "/images/man-alone-left-window-golden-hills-two-empty-chairs.jpg", permanent: true },
     { source: "/images/man-alone-window-golden-hills-two-empty-chairs.jpg", destination: "/images/man-alone-left-window-golden-hills-two-empty-chairs.jpg", permanent: true },
+    { source: "/images/three-armchairs-low-table-open-notebook-sunlit-wall.jpg", destination: "/images/three-armchairs-coffee-table-open-book-window-light.jpg", permanent: true },
   ]
 
   // The co-founder service is coaching, not therapy; its first URL said therapy.
