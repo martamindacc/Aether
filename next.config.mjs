@@ -82,6 +82,16 @@ function blogRedirects() {
   // US targeting is city-level: the statewide California page competed with the San Francisco page.
   const cityFocus = [
     { source: "/couples-therapy-california", destination: "/couples-therapy-san-francisco", permanent: true },
+    {
+      source: "/guides/couples-therapy-cost-insurance-nyc-california",
+      destination: "/guides/couples-therapy-cost-insurance-nyc-san-francisco",
+      permanent: true,
+    },
+    {
+      source: "/blog/couples-therapy-cost-insurance-nyc-california",
+      destination: "/guides/couples-therapy-cost-insurance-nyc-san-francisco",
+      permanent: true,
+    },
   ]
 
   return [...moved, ...removedPolish, ...intensiveHub, ...renamedImages, ...cofounder, ...cityFocus]

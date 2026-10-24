@@ -23,7 +23,7 @@ const faqs: Record<"couples" | "intensive" | "individual" | "leadership" | "cofo
         question: "How much does couples therapy cost?",
         answer:
           "A 60-minute couples session at Aether Practice is US${{price:couples-session:usd}} in the US and {{price:couples-session:nok}} NOK in Norway. Specialist couples therapists in both states typically charge US$200–450. Every booking starts with a free 15-minute consultation.",
-        link: { text: "Couples therapy cost and insurance in NYC and San Francisco", href: "/guides/couples-therapy-cost-insurance-nyc-california" },
+        link: { text: "Couples therapy cost and insurance in NYC and San Francisco", href: "/guides/couples-therapy-cost-insurance-nyc-san-francisco" },
       },
       {
         question: "Does insurance cover couples therapy?",
