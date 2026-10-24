@@ -73,6 +73,7 @@ function blogRedirects() {
     { source: "/images/woman-sun-hat-alone-pool-white-wall-shadows.jpg", destination: "/images/figure-sun-hat-linen-suit-sunlit-wall-reflecting-pool.jpg", permanent: true },
     { source: "/images/woman-sun-hat-walking-alone-pool-pale-wall.jpg", destination: "/images/figure-sun-hat-linen-suit-sunlit-wall-reflecting-pool.jpg", permanent: true },
     { source: "/images/woman-sun-hat-linen-dress-alone-pool-edge.jpg", destination: "/images/figure-sun-hat-linen-suit-sunlit-wall-reflecting-pool.jpg", permanent: true },
+    { source: "/images/couple-unpacking-boxes-empty-loft-san-francisco-bay.jpg", destination: "/images/couple-unpacking-boxes-tall-windows-san-francisco-bay.jpg", permanent: true },
   ]
 
   // The co-founder service is coaching, not therapy; its first URL said therapy.
