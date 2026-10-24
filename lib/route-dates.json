@@ -1,5 +1,5 @@
 {
-  "": "2026-10-23",
+  "": "2026-10-24",
   "/about": "2026-10-23",
   "/blog": "2026-10-24",
   "/no/blog": "2026-10-21",
@@ -14,7 +14,9 @@
   "/online-therapy-norway": "2026-10-23",
   "/instruments": "2026-10-23",
   "/instruments/conflict": "2026-10-23",
-  "/no": "2026-10-23",
+  "/instruments/conflict/privacy": "2026-10-24",
+  "/instruments/conflict/support": "2026-10-24",
+  "/no": "2026-10-24",
   "/no/parterapi": "2026-10-23",
   "/no/parintensiv": "2026-10-23",
   "/no/individuell-terapi": "2026-10-23",

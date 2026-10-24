@@ -49,7 +49,7 @@ export default function Page() {
         Privacy Policy
       </h1>
       <p className="mt-8 font-[Roboto,Arial,sans-serif] text-sm uppercase tracking-wide text-[#93857B]">
-        AET01 Conflict · Effective 16 October 2026
+        AET01 Conflict · Effective 24 October 2026
       </p>
 
       <div className={`mt-12 ${prose}`}>
@@ -89,10 +89,9 @@ export default function Page() {
 
         <h2>3. Who may use it</h2>
         <p>
-          The app is for adults. It asks whether you are 18 or older before anything else and does
-          not continue if you say no. We do not knowingly collect anything from anyone under 18. If
-          you believe someone under 18 has used the app, write to us and we will delete whatever we
-          can find.
+          The app is for adults and is rated 18+ in the app stores. We do not knowingly collect
+          anything from anyone under 18. If you believe someone under 18 has used the app, write to
+          us and we will delete whatever we can find.
         </p>
 
         <h2>4. No account, no sign-in</h2>
@@ -195,15 +194,7 @@ export default function Page() {
           to be no more than 30 days.
         </p>
 
-        <h3>5.6 &ldquo;Report this response&rdquo;</h3>
-        <p>
-          Every piece of AI output has a report button. When you tap it, our server writes one log
-          line naming the type of response, never the content, so we can see which parts of the
-          app draw reports. It is kept as long as the server log, which we understand to be no more
-          than 30 days.
-        </p>
-
-        <h3>5.7 Server and connection records</h3>
+        <h3>5.6 Server and connection records</h3>
         <p>
           Any request to our server exposes your IP address and the request&rsquo;s time, path and
           size. Our hosting provider, Fly.io, Inc., records these at its edge and keeps them for a
@@ -212,7 +203,7 @@ export default function Page() {
           you.
         </p>
 
-        <h3>5.8 App updates</h3>
+        <h3>5.7 App updates</h3>
         <p>
           When the app launches, it checks for a newer version of its code with Expo&rsquo;s update
           service (Expo, Inc., United States). That request carries the app&rsquo;s runtime
@@ -220,7 +211,7 @@ export default function Page() {
           app data and nothing you wrote is included.
         </p>
 
-        <h3>5.9 Purchases</h3>
+        <h3>5.8 Purchases</h3>
         <p>
           If you buy a Plus subscription, the purchase is handled by Apple (App Store) or Google
           (Google Play). We never see your card or bank details. Our subscription management
@@ -232,13 +223,13 @@ export default function Page() {
           are not linked to anything you do inside the app.
         </p>
 
-        <h3>5.10 Support and correspondence</h3>
+        <h3>5.9 Support and correspondence</h3>
         <p>
           If you write to us, we keep your message and our reply for up to 24 months so we can help
           you and answer follow-up questions. We use your email address only to reply.
         </p>
 
-        <h3>5.11 Website</h3>
+        <h3>5.10 Website</h3>
         <p>
           The product pages at aetherpractice.com are covered by the{" "}
           <Link href="/privacy">Aether Practice website privacy policy</Link> for things like page
@@ -248,9 +239,9 @@ export default function Page() {
         <h2>6. Why we are allowed to do this</h2>
         <p>
           For users in the European Economic Area, the United Kingdom, Norway and Switzerland, the
-          legal bases are: performance of the service you asked for (5.1, 5.2, 5.8, 5.9); our
+          legal bases are: performance of the service you asked for (5.1, 5.2, 5.7, 5.8); our
           legitimate interests in running a secure, working service and understanding how it is
-          used (5.4, 5.5, 5.6, 5.7, 5.10); legal obligation (bookkeeping in 5.9); and your consent
+          used (5.4, 5.5, 5.6, 5.9); legal obligation (bookkeeping in 5.8); and your consent
           (5.3, which stays on your phone). Where we rely on consent, you can withdraw it in
           Settings at any time, and withdrawing it does not affect what was done before. Anthropic,
           Fly.io, Expo and RevenueCat are in the United States; transfers to them rest on the EU
@@ -303,8 +294,8 @@ export default function Page() {
           This section is for residents of US states with consumer privacy laws, including
           California, Colorado, Connecticut, Virginia and others. In the past 12 months we have
           collected the categories described in section 5: user content processed transiently
-          (5.1), usage and diagnostic information (5.4, 5.5, 5.6), network identifiers held by our
-          host (5.7), purchase records (5.9) and correspondence (5.10). The sources are you and
+          (5.1), usage and diagnostic information (5.4, 5.5), network identifiers held by our host
+          (5.6), purchase records (5.8) and correspondence (5.9). The sources are you and
           your device. The purposes are those stated in each subsection. We disclose these
           categories only to the service providers in section 7. We do not sell personal
           information, we do not share it for cross-context behavioural advertising, we do not use

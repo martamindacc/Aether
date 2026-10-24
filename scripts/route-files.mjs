@@ -19,6 +19,8 @@ export const routes = {
   "/online-therapy-norway": ["app/(no)/online-therapy-norway"],
   "/instruments": ["app/(en)/instruments/page.tsx", "app/(en)/instruments/og", "components/instruments"],
   "/instruments/conflict": ["app/(en)/instruments/conflict/page.tsx", "app/(en)/instruments/conflict/og", "components/instruments"],
+  "/instruments/conflict/privacy": ["app/(en)/instruments/conflict/privacy/page.tsx"],
+  "/instruments/conflict/support": ["app/(en)/instruments/conflict/support/page.tsx"],
   "/no": ["app/(no)/page.tsx", "app/(no)/layout.tsx", "components/home-client.tsx"],
   "/no/parterapi": ["app/(no)/parterapi", "components/pages/couples-therapy-page.tsx", SERVICE_CONTENT],
   "/no/parintensiv": ["app/(no)/parintensiv", "components/pages/couples-intensive-page.tsx", SERVICE_CONTENT],
