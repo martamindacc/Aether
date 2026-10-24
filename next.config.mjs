@@ -41,7 +41,7 @@ function blogRedirects() {
 
   // Blog images renamed to descriptive, language-consistent filenames; old URLs may be indexed in image search.
   const renamedImages = [
-    { source: "/images/couple-separate-rooms-eft.jpg", destination: "/images/woman-dark-room-window-night.jpg", permanent: true },
+    { source: "/images/couple-separate-rooms-eft.jpg", destination: "/images/man-alone-window-golden-hills-two-empty-chairs.jpg", permanent: true },
     { source: "/images/couple-separate-rooms-two-careers.jpg", destination: "/images/two-women-hilltop-san-francisco-bay-bridge.jpg", permanent: true },
     { source: "/images/startup-stress-intimacy-night-city.jpg", destination: "/images/couple-walking-apart-street.jpg", permanent: true },
     { source: "/images/relationship-after-exit-woman-window-city.jpg", destination: "/images/woman-phone-table-window-shadows-city-skyline.jpg", permanent: true },
@@ -49,7 +49,7 @@ function blogRedirects() {
     { source: "/images/startup-stress-couple-walking-apart-street.jpg", destination: "/images/couple-walking-apart-street.jpg", permanent: true },
     { source: "/images/two-careers-couple-overlooking-san-francisco-bay.jpg", destination: "/images/two-women-hilltop-san-francisco-bay-bridge.jpg", permanent: true },
     { source: "/images/founder-marriage-couple-dock-lake-sunset.jpg", destination: "/images/couple-wooden-dock-mountain-lake-dusk.jpg", permanent: true },
-    { source: "/images/emotionally-focused-therapy-woman-window-dusk.jpg", destination: "/images/woman-dark-room-window-night.jpg", permanent: true },
+    { source: "/images/emotionally-focused-therapy-woman-window-dusk.jpg", destination: "/images/man-alone-window-golden-hills-two-empty-chairs.jpg", permanent: true },
     { source: "/images/discernment-counseling-should-we-separate.jpg", destination: "/images/man-alone-chair-empty-room-bright-window.jpg", permanent: true },
     { source: "/images/angular-sculpture-desert-lakebed-dusk.jpg", destination: "/images/concrete-sculpture-desert-lakebed-sunset.jpg", permanent: true },
     { source: "/images/couples-therapy-conversation-city-view.jpg", destination: "/images/couple-coffee-table-window-san-francisco-bay.jpg", permanent: true },
@@ -75,6 +75,7 @@ function blogRedirects() {
     { source: "/images/woman-sun-hat-linen-dress-alone-pool-edge.jpg", destination: "/images/figure-sun-hat-linen-suit-sunlit-wall-reflecting-pool.jpg", permanent: true },
     { source: "/images/couple-unpacking-boxes-empty-loft-san-francisco-bay.jpg", destination: "/images/couple-unpacking-boxes-tall-windows-san-francisco-bay.jpg", permanent: true },
     { source: "/images/two-people-apart-rooftop-pool-city-view.jpg", destination: "/images/couple-side-by-side-rooftop-terrace-pool-bay-bridge.jpg", permanent: true },
+    { source: "/images/woman-dark-room-window-night.jpg", destination: "/images/man-alone-window-golden-hills-two-empty-chairs.jpg", permanent: true },
   ]
 
   // The co-founder service is coaching, not therapy; its first URL said therapy.
