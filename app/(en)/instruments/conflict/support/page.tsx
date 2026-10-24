@@ -1,11 +1,8 @@
 import Link from "next/link"
 import { pageMetadata } from "@/lib/seo"
 
-/**
- * Placeholder until the real support address exists. Swap this one constant and
- * both the visible text and the mailto link follow.
- */
-const SUPPORT_EMAIL = "[SUPPORT EMAIL]"
+/** Swap this one constant and both the visible text and the mailto link follow. */
+const SUPPORT_EMAIL = "aet01support@gmail.com"
 
 export const metadata = {
   ...pageMetadata({
@@ -19,8 +16,6 @@ export const metadata = {
       alt: "AET01 Conflict — support",
     },
   }),
-  // Placeholder address until the real one exists; keep it out of the index.
-  robots: { index: false },
 }
 
 export default function Page() {

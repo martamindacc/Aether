@@ -26,9 +26,8 @@ const routePaths = [
   "/online-therapy-norway",
   "/instruments",
   "/instruments/conflict",
-  // /instruments/conflict/privacy and /support are noindex placeholders until
-  // the policy and support address exist; a noindex page does not belong in the
-  // sitemap. Add them back when they go live.
+  "/instruments/conflict/privacy",
+  "/instruments/conflict/support",
   // Norwegian versions of the home, service, about and contact pages.
   "/no",
   "/no/parterapi",

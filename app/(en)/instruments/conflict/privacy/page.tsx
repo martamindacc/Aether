@@ -2,10 +2,10 @@ import Link from "next/link"
 import { pageMetadata } from "@/lib/seo"
 
 /**
- * Placeholder until the real contact address exists. Swap this one constant and
- * every mention in the policy, visible text and mailto link alike, follows.
+ * Swap this one constant and every mention in the policy, visible text and
+ * mailto link alike, follows.
  */
-const CONTACT_EMAIL = "[CONTACT EMAIL]"
+const CONTACT_EMAIL = "aet01support@gmail.com"
 
 export const metadata = {
   ...pageMetadata({
@@ -20,8 +20,6 @@ export const metadata = {
       alt: "AET01 Conflict — privacy policy",
     },
   }),
-  // Placeholder contact address until the real one exists; keep it out of the index.
-  robots: { index: false },
 }
 
 /**
