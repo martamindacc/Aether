@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import type { BlogPostMeta } from "@/lib/blog";
 import { postPath } from "@/lib/locale-routes";
@@ -41,18 +40,6 @@ export function RelatedPosts({ posts, language }: { posts: BlogPostMeta[]; langu
             href={postPath(post)}
             className="group overflow-hidden rounded-2xl border border-zinc-300/80 bg-gradient-to-br from-[#EEE5DB]/40 to-[#EEE5DB]/20 transition-colors hover:from-[#EEE5DB]/60 hover:to-[#EEE5DB]/30"
           >
-            {post.image && (
-              <div className="relative aspect-[16/9] w-full overflow-hidden">
-                <Image
-                  src={post.image}
-                  alt={post.imageAlt ?? ""}
-                  fill
-                  sizes="(min-width: 640px) 240px, 100vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  style={post.imagePosition ? { objectPosition: post.imagePosition } : undefined}
-                />
-              </div>
-            )}
             <div className="p-6">
               <p className="font-[Roboto,Arial,sans-serif] text-xs uppercase tracking-wide text-zinc-600">
                 {formatReadingTime(post.wordCount, language)}

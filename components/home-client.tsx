@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { FloatingNav } from "@/components/floating-nav";
@@ -435,23 +434,11 @@ export default function HomeClient({
                   href={postPath(post)}
                   className="group flex flex-col overflow-hidden rounded-2xl bg-[#FBF8F5] shadow-[0_2px_12px_rgba(0,0,0,0.06)] transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_8px_28px_rgba(0,0,0,0.10)]"
                 >
-                  {post.image ? (
-                    <div className="relative aspect-[3/2] w-full overflow-hidden">
-                      <Image
-                        src={post.image}
-                        alt={post.imageAlt ?? ""}
-                        fill
-                        sizes="(min-width: 1024px) 384px, (min-width: 640px) 50vw, 100vw"
-                        className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-                        style={post.imagePosition ? { objectPosition: post.imagePosition } : undefined}
-                      />
-                    </div>
-                  ) : null}
-                  <div className={`flex flex-col px-6 pb-8 ${post.image ? "pt-5" : "pt-8"}`}>
+                  <div className="flex flex-col px-6 pb-8 pt-8">
                     <p className="text-[11px] uppercase tracking-[0.14em] text-zinc-600">
                       {post.tags[0] ? `${post.tags[0]} · ` : ""}{formatBlogDate(post.date, language.code)}
                     </p>
-                    <h3 className="mt-3 line-clamp-2 font-[NeueHaasDisplayRoman,Arial,sans-serif] text-[20px] font-medium leading-[1.25] tracking-tight text-zinc-900">
+                    <h3 className="mt-3 font-[NeueHaasDisplayRoman,Arial,sans-serif] text-[20px] font-medium leading-[1.25] tracking-tight text-zinc-900">
                       {post.title}
                     </h3>
                   </div>
