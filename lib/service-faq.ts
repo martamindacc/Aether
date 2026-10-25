@@ -220,6 +220,7 @@ const faqs: Record<"couples" | "intensive" | "individual" | "leadership" | "cofo
         question: "Hva koster familieterapi?",
         answer:
           "En familiesesjon på 60 minutter hos Aether Practice koster {{price:family-session:kr}} kroner. Dere betaler privat og kan starte med en gratis 15-minutters samtale.",
+        link: { text: "Familieterapi: pris og gratis hjelp", href: "/no/blog/familieterapi-pris-pa-nett" },
       },
       {
         question: "Trenger man henvisning til familieterapi?",
