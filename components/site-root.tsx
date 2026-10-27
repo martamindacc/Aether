@@ -6,7 +6,7 @@ import { ConsentBanner } from '@/components/consent-banner'
 import { GoogleAnalytics } from '@/components/google-analytics'
 import { JsonLd } from '@/components/json-ld'
 import { ANALYTICS_REQUIRE_CONSENT } from '@/lib/analytics-config'
-import { EN_PRICE_RANGE, productsFor } from '@/lib/products'
+import { productsFor } from '@/lib/products'
 import { OG_IMAGE_ALT, TITLE_TEMPLATE } from '@/lib/seo'
 import '../app/globals.css'
 
@@ -60,12 +60,13 @@ export const rootViewport: Viewport = {
   themeColor: '#FBF8F5',
 }
 
-/** Organization + WebSite schema. Offers carry NOK prices on the Norwegian site; the English site gives only EN_PRICE_RANGE. */
+/** Organization + WebSite schema. Offers are priced in USD for the English site and NOK for the Norwegian one. */
 function organizationJsonLd(lang: 'en' | 'nb') {
   const nok = lang === 'nb'
   const offered = productsFor(nok ? 'no' : 'en')
-  const paid = offered.map((product) => product.priceInNok).filter((price) => price > 0)
-  const priceRange = nok ? `${Math.min(...paid)}-${Math.max(...paid)} NOK` : `\$${EN_PRICE_RANGE.min}-\$${EN_PRICE_RANGE.max}`
+  const prices = offered.map((product) => (nok ? product.priceInNok : product.priceInCents / 100))
+  const paid = prices.filter((price) => price > 0)
+  const priceRange = nok ? `${Math.min(...paid)}-${Math.max(...paid)} NOK` : `\$${Math.min(...paid)}-\$${Math.max(...paid)}`
   return {
   '@context': 'https://schema.org',
   '@graph': [
@@ -87,7 +88,8 @@ function organizationJsonLd(lang: 'en' | 'nb') {
       priceRange,
       makesOffer: offered.map((product) => ({
         '@type': 'Offer',
-        ...(nok ? { price: product.priceInNok.toFixed(2), priceCurrency: 'NOK' } : {}),
+        price: nok ? product.priceInNok.toFixed(2) : (product.priceInCents / 100).toFixed(2),
+        priceCurrency: nok ? 'NOK' : 'USD',
         itemOffered: {
           '@type': 'Service',
           name: product.name,

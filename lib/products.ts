@@ -34,25 +34,19 @@ export function productsFor(lang: "en" | "no"): Product[] {
 // Ordered for display in the booking flow: work with more than one person in
 // the room first, leadership work next, individual last, free call after.
 
-/**
- * Price label for the booking flow: "1 700 kr" on Norwegian pages. English
- * pages show no per-session prices, only EN_PRICE_RANGE in the copy, so this
- * returns null there.
- */
+/** Price label for the booking flow: "$200" on English pages, "1 700 kr" on Norwegian ones. */
 export function formatPrice(product: Product, lang: "en" | "no"): string | null {
-  if (lang === "en" || product.priceInNok <= 0) return null
-  return new Intl.NumberFormat("nb-NO", { style: "currency", currency: "NOK", maximumFractionDigits: 0 }).format(product.priceInNok)
+  if (product.priceInCents <= 0) return null
+  if (lang === "no") return new Intl.NumberFormat("nb-NO", { style: "currency", currency: "NOK", maximumFractionDigits: 0 }).format(product.priceInNok)
+  return `$${(product.priceInCents / 100).toFixed(0)}`
 }
-
-/** The range English pages quote instead of per-session prices, in US dollars. */
-export const EN_PRICE_RANGE = { min: 150, max: 3500 }
 export const PRODUCTS: Product[] = [
   {
     id: "couples-session",
     name: "Couples Session",
     description: "A 60 minute session for two.",
     duration: "60 min",
-    priceInCents: 17000,
+    priceInCents: 20000,
     priceInNok: 1700,
     calendlyUrl: "https://cal.com/aetherpractice/couples-session",
   },
@@ -70,7 +64,7 @@ export const PRODUCTS: Product[] = [
     name: "Co-Founder Session",
     description: "A 60 minute session for two co-founders.",
     duration: "60 min",
-    priceInCents: 17000,
+    priceInCents: 25000,
     priceInNok: 1700,
     calendlyUrl: "https://cal.com/aetherpractice/co-founder-session",
     locales: ["en"],
@@ -90,7 +84,7 @@ export const PRODUCTS: Product[] = [
     name: "Founder&Exec Session",
     description: "A 50 minute session for founders and executives.",
     duration: "50 min",
-    priceInCents: 13000,
+    priceInCents: 15000,
     priceInNok: 1300,
     calendlyUrl: "https://cal.com/aetherpractice/exec-founder-session",
   },
@@ -99,7 +93,7 @@ export const PRODUCTS: Product[] = [
     name: "Individual Session",
     description: "A 50 minute one-on-one session.",
     duration: "50 min",
-    priceInCents: 13000,
+    priceInCents: 15000,
     priceInNok: 1300,
     calendlyUrl: "https://cal.com/aetherpractice/individual-session",
   },
@@ -123,7 +117,7 @@ const priceFormats: Record<string, (product: Product) => number> = {
 /**
  * Fills price tokens in hand-written copy (articles, hubs, llms.txt) from
  * PRODUCTS, so a price change here reaches every page that quotes it.
- * `{{price:couples-session:usd}}` → "170", `:nok` → "1,700" (English
+ * `{{price:couples-session:usd}}` → "200", `:nok` → "1,700" (English
  * grouping), `:kr` → "1 700" (Norwegian grouping). `{{price:couples-session*6:kr}}`
  * multiplies, for worked totals. The currency word stays in the copy, so the
  * wording reads exactly as written. Unknown ids or formats fail the build.

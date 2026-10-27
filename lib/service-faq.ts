@@ -13,8 +13,7 @@ type ServiceFaqs = Partial<Record<LanguageCode, ServiceFaqItem[]>>;
 
 /**
  * The FAQ on each service page, rendered by components/service-faq.tsx with
- * FAQPage schema. Norwegian prices are tokens filled from lib/products.ts;
- * English answers quote the US$150–3,500 range instead. Answers only
+ * FAQPage schema. Prices are tokens filled from lib/products.ts. Answers only
  * state what the rest of the site already says about how Aether works.
  */
 const faqs: Record<"couples" | "intensive" | "individual" | "leadership" | "cofounder" | "family", ServiceFaqs> = {
@@ -23,7 +22,7 @@ const faqs: Record<"couples" | "intensive" | "individual" | "leadership" | "cofo
       {
         question: "How much does couples therapy cost?",
         answer:
-          "Aether Practice sessions range from US$150 to US$3,500, depending on the format, from a single couples session to the two-day intensive. Specialist couples therapists in New York and the San Francisco Bay Area typically charge US$200–450 per session. Every booking starts with a free 15-minute consultation.",
+          "A 60-minute couples session at Aether Practice is US${{price:couples-session:usd}} in the US and {{price:couples-session:nok}} NOK in Norway. Specialist couples therapists in both states typically charge US$200–450. Every booking starts with a free 15-minute consultation.",
         link: { text: "Couples therapy cost and insurance in NYC and San Francisco", href: "/guides/couples-therapy-cost-insurance-nyc-san-francisco" },
       },
       {
@@ -61,7 +60,7 @@ const faqs: Record<"couples" | "intensive" | "individual" | "leadership" | "cofo
       {
         question: "How much does a couples intensive cost?",
         answer:
-          "Aether Practice sessions range from US$150 to US$3,500, depending on the format. The intensive is priced as one package that includes the consultation and preparation, both days, a written summary and a follow-up session a few weeks later.",
+          "US${{price:couples-intensive:usd}} for couples in the US and {{price:couples-intensive:nok}} NOK in Norway. That includes the consultation and preparation, both days, a written summary and a follow-up session a few weeks later.",
       },
       {
         question: "How long is a couples intensive?",
@@ -99,7 +98,7 @@ const faqs: Record<"couples" | "intensive" | "individual" | "leadership" | "cofo
       {
         question: "How much does online therapy cost?",
         answer:
-          "Aether Practice sessions range from US$150 to US$3,500, depending on the format. We are private pay, and you can start with a free 15-minute consultation.",
+          "A 50-minute individual session at Aether Practice is US${{price:individual-session:usd}} in the US and {{price:individual-session:nok}} NOK in Norway. We are private pay, and you can start with a free 15-minute consultation.",
       },
       {
         question: "What can I talk about in therapy?",
@@ -135,7 +134,7 @@ const faqs: Record<"couples" | "intensive" | "individual" | "leadership" | "cofo
       {
         question: "How much does executive coaching cost?",
         answer:
-          "Aether Practice sessions range from US$150 to US$3,500, depending on the format. Private pay, with a free 15-minute consultation first.",
+          "A 50-minute founder or executive session at Aether Practice is US${{price:founder-session:usd}} in the US and {{price:founder-session:nok}} NOK in Norway. Private pay, with a free 15-minute consultation first.",
       },
       {
         question: "What is the difference between coaching and therapy?",
@@ -173,18 +172,18 @@ const faqs: Record<"couples" | "intensive" | "individual" | "leadership" | "cofo
       {
         question: "How much does co-founder coaching cost?",
         answer:
-          "Aether Practice sessions range from US$150 to US$3,500, depending on the format. Co-founder sessions are 60 minutes, online, with both founders present. There is a free 15-minute consultation first and no minimum engagement.",
+          "US${{price:cofounder-session:usd}} for a 60-minute online session with both founders present. There is a free 15-minute consultation first and no minimum engagement.",
         link: { text: "Co-founder coaching in San Francisco and New York", href: "/blog/co-founder-coaching-san-francisco-new-york" },
       },
       {
         question: "Do you offer co-founder coaching in San Francisco?",
         answer:
-          "Yes. Aether Practice works online with founding teams across the San Francisco Bay Area, scheduled in Pacific time, with both founders in the session. Sessions are 60 minutes, with a free 15-minute consultation first.",
+          "Yes. Aether Practice works online with founding teams across the San Francisco Bay Area, scheduled in Pacific time, with both founders in the session. A 60-minute session is US${{price:cofounder-session:usd}}, with a free 15-minute consultation first.",
       },
       {
         question: "Do you work with founding teams in New York?",
         answer:
-          "Yes. Aether Practice works online with founding teams across New York City, scheduled in Eastern time, with both founders in the session. Sessions are 60 minutes, with a free 15-minute consultation first.",
+          "Yes. Aether Practice works online with founding teams across New York City, scheduled in Eastern time, with both founders in the session. A 60-minute session is US${{price:cofounder-session:usd}}, with a free 15-minute consultation first.",
       },
       {
         question: "Is co-founder coaching the same as co-founder therapy?",
