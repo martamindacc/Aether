@@ -1,6 +1,5 @@
 import { breadcrumbJsonLd, pageMetadata, serviceJsonLd } from "@/lib/seo"
 import { JsonLd } from "@/components/json-ld"
-import { fillPrices } from "@/lib/products"
 
 /**
  * English only for now, so no `languages` here: the page has no Norwegian
@@ -8,9 +7,8 @@ import { fillPrices } from "@/lib/products"
  */
 export const metadata = pageMetadata({
   title: "Co-Founder Coaching in San Francisco & NYC",
-  description: fillPrices(
-    "Online co-founder coaching for founding teams in San Francisco, New York and Norway: both founders in the room, on how you decide and disagree. US${{price:cofounder-session:usd}}.",
-  ),
+  description:
+    "Online co-founder coaching for founding teams in San Francisco, New York and Norway: both founders in the room, on how you decide and disagree. US$150–3,500.",
   path: "/co-founder-coaching",
 })
 

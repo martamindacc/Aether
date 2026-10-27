@@ -34,12 +34,18 @@ export function productsFor(lang: "en" | "no"): Product[] {
 // Ordered for display in the booking flow: work with more than one person in
 // the room first, leadership work next, individual last, free call after.
 
-/** Price label for the booking flow: "$170" on English pages, "1 700 kr" on Norwegian ones. */
+/**
+ * Price label for the booking flow: "1 700 kr" on Norwegian pages. English
+ * pages show no per-session prices, only EN_PRICE_RANGE in the copy, so this
+ * returns null there.
+ */
 export function formatPrice(product: Product, lang: "en" | "no"): string | null {
-  if (product.priceInCents <= 0) return null
-  if (lang === "no") return new Intl.NumberFormat("nb-NO", { style: "currency", currency: "NOK", maximumFractionDigits: 0 }).format(product.priceInNok)
-  return `$${(product.priceInCents / 100).toFixed(0)}`
+  if (lang === "en" || product.priceInNok <= 0) return null
+  return new Intl.NumberFormat("nb-NO", { style: "currency", currency: "NOK", maximumFractionDigits: 0 }).format(product.priceInNok)
 }
+
+/** The range English pages quote instead of per-session prices, in US dollars. */
+export const EN_PRICE_RANGE = { min: 150, max: 3500 }
 export const PRODUCTS: Product[] = [
   {
     id: "couples-session",
