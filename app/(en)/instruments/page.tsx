@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { InstrumentDisclosure, InstrumentMark, SpecList } from "@/components/instruments/instrument-ui"
-import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo"
+import { MARTA_ID, breadcrumbJsonLd, pageMetadata } from "@/lib/seo"
 import { JsonLd } from "@/components/json-ld"
 
 const BASE_URL = "https://aetherpractice.com"
@@ -79,6 +79,7 @@ const collectionLd = {
       description:
         "Single-purpose mobile apps from Aether Practice for rehearsing high-stakes conversations: a realistic AI counterpart, a fixed standard and a verdict, two minutes at a time.",
       parentOrganization: { "@id": `${BASE_URL}/#organization` },
+      founder: { "@id": MARTA_ID },
       logo: `${BASE_URL}/instruments/og`,
     },
     {

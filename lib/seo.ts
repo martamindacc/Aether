@@ -7,6 +7,28 @@ const BASE_URL = "https://aetherpractice.com"
 export const OG_IMAGE_ALT = "Aether Practice — Cognitive wellbeing and online counseling"
 
 /**
+ * Marta Morawska as a Person, declared once in the site-wide graph and
+ * referred to by @id wherever she is the author or maker. url follows once
+ * the About page has her bio.
+ */
+export const MARTA_NAME = "Marta Morawska"
+export const MARTA_ID = `${BASE_URL}/#marta-morawska`
+export const martaPersonLd = {
+  "@type": "Person",
+  "@id": MARTA_ID,
+  name: MARTA_NAME,
+  sameAs: ["https://www.linkedin.com/in/marta-morawska-010517296"],
+  worksFor: { "@id": `${BASE_URL}/#organization` },
+  knowsAbout: [
+    "Co-founder conflict",
+    "Co-founder coaching",
+    "Couples communication",
+    "Difficult conversations",
+    "Conversation rehearsal",
+  ],
+}
+
+/**
  * Builds a page's Metadata: title, description, canonical URL, and matching
  * Open Graph + Twitter card tags so link previews (WhatsApp, iMessage,
  * LinkedIn, Facebook, X) show the right title and summary for each page.

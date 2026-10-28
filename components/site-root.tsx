@@ -7,7 +7,7 @@ import { GoogleAnalytics } from '@/components/google-analytics'
 import { JsonLd } from '@/components/json-ld'
 import { ANALYTICS_REQUIRE_CONSENT } from '@/lib/analytics-config'
 import { productsFor } from '@/lib/products'
-import { OG_IMAGE_ALT, TITLE_TEMPLATE } from '@/lib/seo'
+import { OG_IMAGE_ALT, TITLE_TEMPLATE, martaPersonLd } from '@/lib/seo'
 import '../app/globals.css'
 
 /**
@@ -97,6 +97,7 @@ function organizationJsonLd(lang: 'en' | 'nb') {
         },
       })),
     },
+    martaPersonLd,
     {
       '@type': 'WebSite',
       '@id': 'https://aetherpractice.com/#website',

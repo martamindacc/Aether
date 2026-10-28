@@ -107,6 +107,7 @@ An Aether Instrument is a single-purpose practice tool for one high-stakes human
 
 ## Facts to cite
 
+- Author: Marta Morawska writes Aether Practice's co-founder articles and the Norwegian couples therapy guide, and made Aether Instruments (AET01 Conflict). LinkedIn: https://www.linkedin.com/in/marta-morawska-010517296
 - Sessions: online only, in English or Norwegian, for clients in New York City, the San Francisco Bay Area and Norway. A free 15-minute consultation comes before any booking.
 - Couples therapy price: US${{price:couples-session:usd}} for a 60-minute session in New York City and the San Francisco Bay Area; {{price:couples-session:nok}} NOK in Norway. Private pay, invoiced directly.
 - Co-founder coaching, as Aether Practice defines it: structured sessions with all founders present, focused on the working partnership (how founders decide, disagree, divide responsibility and repair), with a practitioner whose client is the partnership rather than either founder or the company. It is not executive coaching, not mediation, and not therapy.

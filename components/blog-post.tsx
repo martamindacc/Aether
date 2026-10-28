@@ -12,7 +12,7 @@ import { extractCitations } from "@/lib/blog-citations";
 import { formatReadingTime } from "@/lib/reading-time";
 import { RelatedPosts } from "@/components/related-posts";
 import { InstrumentsBand } from "@/components/instruments-band";
-import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
+import { MARTA_ID, MARTA_NAME, breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 import { blogIndexPathFor, localizedPaths, postPath } from "@/lib/locale-routes";
 import { languages, type LanguageCode } from "@/lib/service-content";
 import { headingId, mdxComponents } from "@/components/mdx-components";
@@ -111,12 +111,15 @@ export function BlogPost({ post, related }: { post: BlogPostData; related: BlogP
     ...(post.about?.length
       ? { about: post.about.map((topic) => ({ "@type": "Thing", name: topic.name, sameAs: topic.sameAs })) }
       : {}),
-    author: {
-      "@type": "Organization",
-      name: "Aether Practice",
-      url: "https://aetherpractice.com/",
-      "@id": "https://aetherpractice.com/#organization",
-    },
+    author:
+      post.author === MARTA_NAME
+        ? { "@type": "Person", name: MARTA_NAME, "@id": MARTA_ID }
+        : {
+            "@type": "Organization",
+            name: "Aether Practice",
+            url: "https://aetherpractice.com/",
+            "@id": "https://aetherpractice.com/#organization",
+          },
     publisher: {
       "@type": "Organization",
       name: "Aether Practice",
@@ -208,7 +211,15 @@ export function BlogPost({ post, related }: { post: BlogPostData; related: BlogP
         >
           {backToBlogLabel[post.lang]}
         </Link>
-        <div className="mt-6 flex items-center gap-2 font-[Roboto,Arial,sans-serif] text-sm uppercase tracking-wide text-zinc-600">
+        <div className="mt-6 flex flex-wrap items-center gap-2 font-[Roboto,Arial,sans-serif] text-sm uppercase tracking-wide text-zinc-600">
+          {post.author === MARTA_NAME && (
+            <>
+              <span>
+                {post.lang === "no" ? "Av" : "By"} {MARTA_NAME}
+              </span>
+              <span aria-hidden="true">·</span>
+            </>
+          )}
           <time dateTime={post.date}>{formatDate(post.date, post.lang)}</time>
           {post.modifiedDate && post.modifiedDate !== post.date && (
             <>

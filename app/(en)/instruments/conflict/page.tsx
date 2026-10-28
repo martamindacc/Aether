@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { InstrumentMark, SpecList } from "@/components/instruments/instrument-ui"
-import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo"
+import { MARTA_ID, breadcrumbJsonLd, pageMetadata } from "@/lib/seo"
 import { JsonLd } from "@/components/json-ld"
 
 const BASE_URL = "https://aetherpractice.com"
@@ -80,6 +80,7 @@ const session = [
   { label: "Levels", value: "warm-up, easy, medium, hard" },
   { label: "Account", value: "none" },
   { label: "Platforms", value: "iOS and Android" },
+  { label: "Made by", value: "Marta Morawska" },
 ]
 
 /** A run of answer text, or a linked phrase within it. */
@@ -95,7 +96,7 @@ const faq: { question: string; answer: string | AnswerPart[] }[] = [
     answer: [
       "AET01 Conflict is a mobile app for rehearsing a difficult conversation before you have it for real. You pick the conversation and a partner at one of four levels; an AI takes the other side and holds its position. After two minutes it scores the exchange against a fixed standard and shows the sentence where it went wrong and the line that would have held. It is an ",
       { text: "Aether Instrument", href: "/instruments" },
-      ": one conversation, one standard, two minutes, no account. Made by Aether Practice, which also works with the people on the other side of these conversations: ",
+      ": one conversation, one standard, two minutes, no account. Made by Marta Morawska at Aether Practice, which also works with the people on the other side of these conversations: ",
       { text: "co-founders", href: "/co-founder-coaching" },
       " and ",
       { text: "couples", href: "/couples-therapy" },
@@ -168,7 +169,7 @@ const appLd = {
         "No account required",
       ],
       ...(storeLinks.length ? { installUrl: storeLinks.map((link) => link.href) } : {}),
-      author: { "@id": `${BASE_URL}/#organization` },
+      author: { "@id": MARTA_ID },
       publisher: { "@id": `${BASE_URL}/#organization` },
       brand: { "@id": `${BASE_URL}/instruments#instruments` },
       isPartOf: { "@id": `${BASE_URL}/instruments` },
