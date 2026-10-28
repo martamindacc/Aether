@@ -49,7 +49,7 @@ export default function Page() {
         Privacy Policy
       </h1>
       <p className="mt-8 font-[Roboto,Arial,sans-serif] text-sm uppercase tracking-wide text-[#93857B]">
-        AET01 Conflict · Effective 24 October 2026
+        AET01 Conflict · Effective 28 October 2026
       </p>
 
       <div className={`mt-12 ${prose}`}>
@@ -123,8 +123,9 @@ export default function Page() {
           To stop any one installation or automated script from overloading the service, the app
           sends a random token it made up on first launch with each request; the server counts how
           many sessions each token starts per day, and how many are started from each network
-          address, and forgets both counts at midnight UTC. The token is tied to nothing about you,
-          is never logged, and is replaced when you use &ldquo;Delete everything&rdquo;.
+          address, and forgets both counts at midnight UTC. The same token travels with the usage
+          counts in section 5.4, if they are on. The token is tied to nothing about you, is never
+          logged, and is replaced when you use &ldquo;Delete everything&rdquo;.
         </p>
         <p>
           Spiral, the in-the-moment routine, sends nothing anywhere. It works with no connection,
@@ -173,14 +174,22 @@ export default function Page() {
 
         <h3>5.4 Usage counts</h3>
         <p>
-          To know whether the app is used and which tools people reach for, the app sends our
-          server simple event counts. There are six: a practice session started, a practice session
-          finished, Spiral opened, Debrief used, the Plus screen seen, and a purchase completed.
-          Each event carries only its name. There is no user, device or install identifier, and the
-          counts are added up per hour on arrival; the individual events are not kept. The hourly
-          totals are written to our server log, which our hosting provider keeps for a short
-          period, which we understand to be no more than 30 days, and which we may copy into our
-          own records as totals. You can switch usage counts off in Settings.
+          To know whether the app is used, which tools people reach for and whether they come back,
+          the app sends our server simple events. There are fourteen: a practice session started, a
+          practice session finished, a daily rep finished, a conversation ended early, Spiral opened,
+          Debrief used, the Plus screen seen, the company story&rsquo;s Plus screen seen, a purchase
+          completed, a free trial started, Plus restored, and in the company story a scene finished,
+          a call made and a chapter finished. Each event carries its name and the random install
+          token described in 5.1, nothing else: no text, no scenario, no result. The token lets us
+          count how many installations were active on a day and how many of them had been active in
+          the week before. On arrival the server replaces the token with a one-way hash that lives
+          in the server&rsquo;s memory for eight days and is never written anywhere; the events are
+          added up per hour and per day and the individual events are not kept. What reaches our
+          server log is totals: events per hour, and per day the number of active and returning
+          installations and the number of installations per event. The hosting provider keeps the
+          log for a short period, which we understand to be no more than 30 days, and we may copy
+          the totals into our own records. The token is tied to nothing about you and cannot be
+          matched to you by us. You can switch usage counts off in Settings; nothing is sent then.
         </p>
 
         <h3>5.5 Crash and error reports</h3>
