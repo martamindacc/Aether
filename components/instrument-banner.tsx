@@ -10,16 +10,9 @@ import { InstrumentMark } from "@/components/instruments/instrument-ui"
  * The AET01 banner placed inside an article, at the point where the text
  * tells the reader to rehearse a hard conversation. Write `<InstrumentBanner />`
  * on its own line in the MDX. Same dark tile as the home page's Instruments
- * band, so readers recognise it. Clicks are tracked per article. A page can
- * pass its own heading and body; articles use the defaults.
+ * band, so readers recognise it. Clicks are tracked per article.
  */
-export function InstrumentBanner({
-  heading = "Fix the fight before you have it.",
-  body = "Rehearse it against an AI partner who doesn't back down. Two minutes, a score, and the line that would have held.",
-}: {
-  heading?: string
-  body?: string
-}) {
+export function InstrumentBanner() {
   const pathname = usePathname()
 
   function onClick() {
@@ -45,9 +38,12 @@ export function InstrumentBanner({
           AET01 Conflict
         </p>
         <p className="mt-2 font-[NeueHaasDisplayRoman,Arial,sans-serif] text-2xl font-medium leading-[1.15] tracking-tight text-[#F3E6DD] sm:text-3xl">
-          {heading}
+          Fix the fight before you have it.
         </p>
-        <p className="mt-3 font-[Roboto,Arial,sans-serif] text-[17px] leading-[1.5] text-[#A3968C]">{body}</p>
+        <p className="mt-3 font-[Roboto,Arial,sans-serif] text-[17px] leading-[1.5] text-[#A3968C]">
+          Rehearse it against an AI partner who doesn&apos;t back down. Two minutes, a score, and the line that would
+          have held.
+        </p>
         <p className="mt-4 font-[Roboto,Arial,sans-serif] text-[17px] font-medium text-[#D99148] transition-colors group-hover:text-[#F3E6DD]">
           Open AET01 ↗
           {/* Remove this once the store links are set in app/(en)/instruments/conflict/page.tsx. */}

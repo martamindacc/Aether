@@ -6,7 +6,6 @@ import { FloatingNav } from "@/components/floating-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { BookingModal } from "@/components/booking-modal";
 import { ServiceFaq } from "@/components/service-faq";
-import { InstrumentBanner } from "@/components/instrument-banner";
 import { serviceFaq } from "@/lib/service-faq";
 import { navContent, relatedServicesHeading } from "@/lib/service-content";
 import type { LanguageLink } from "@/lib/locale-routes";
@@ -87,8 +86,9 @@ const t = {
   guidesIntro:
     "What we have written about the founding partnership — start with the complete guide, or go straight to the situation you are in.",
   betweenSessions: {
-    heading: "Walk in having already had the fight.",
-    body: "Built by Aether for our founders. Every AI you have used was built to agree with you; this one takes the other side and holds it. Take the conversation you're dreading in there first: two minutes, a verdict, and the line that would have held.",
+    before: "Between sessions, some founders practise the opening lines of the real conversation against",
+    link: "AET01 Conflict",
+    after: ", our app built to hold a position rather than agree.",
   },
   testimonialsEyebrow: "Client Stories",
   testimonialsHeading: "What founding teams say",
@@ -247,7 +247,15 @@ export default function CofounderSessionPage() {
               </div>
             ))}
           </div>
-          <InstrumentBanner heading={t.betweenSessions.heading} body={t.betweenSessions.body} />
+          <div className="border-t border-zinc-300/80 pt-10">
+            <p className="max-w-3xl font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-[#383838]">
+              {t.betweenSessions.before}{" "}
+              <Link href="/instruments/conflict" className="text-[#74382f] underline underline-offset-2 hover:no-underline">
+                {t.betweenSessions.link}
+              </Link>
+              {t.betweenSessions.after}
+            </p>
+          </div>
         </div>
 
         <div className="mt-24">
