@@ -7,7 +7,7 @@ import { fillPrices } from "@/lib/products"
  * counterpart to point an hreflang pair at.
  */
 export const metadata = pageMetadata({
-  title: "Co-Founder Coaching in San Francisco & NYC",
+  title: "Co-Founder Coaching for Founding Teams",
   description: fillPrices(
     "Online co-founder coaching for founding teams in San Francisco, New York and Norway: both founders in the room, on how you decide and disagree. US${{price:cofounder-session:usd}}.",
   ),

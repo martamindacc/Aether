@@ -44,11 +44,13 @@ export function hubMetadata(hub: HubPageData): Metadata {
 export function HubPage({ hub }: { hub: HubPageData }) {
   const serviceLd = serviceJsonLd({
     name: hub.title,
-    serviceType: serviceType[hub.lang],
+    serviceType: hub.serviceType ?? serviceType[hub.lang],
     description: hub.description,
     path: hub.path,
     areaServed: hub.areaServed,
     inLanguage: hub.lang === "no" ? "nb" : "en",
+    productId: hub.productId,
+    withMarta: hub.withMarta,
   });
   const faqItems = extractFaq(hub);
   const faqLd = faqItems.length

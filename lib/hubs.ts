@@ -30,6 +30,12 @@ export type HubPage = {
   keywords: string[];
   /** Places named in the Service schema. */
   areaServed: string[];
+  /** Service category for the schema; defaults to couples therapy in the hub's language. */
+  serviceType?: string;
+  /** Product id from lib/products, for the Offer in the Service schema. */
+  productId?: string;
+  /** Names Marta as a provider in the Service schema. */
+  withMarta?: boolean;
   content: string;
 };
 
@@ -50,6 +56,9 @@ function readHubFile(fileName: string): HubPage {
     modifiedDate: (data.modifiedDate as string) ?? (data.date as string),
     keywords: (data.keywords as string[]) ?? [],
     areaServed: (data.areaServed as string[]) ?? ["New York City", "San Francisco Bay Area", "Norway"],
+    serviceType: data.serviceType as string | undefined,
+    productId: data.productId as string | undefined,
+    withMarta: data.withMarta === true,
     content,
   };
 }
