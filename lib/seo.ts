@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { PRODUCTS } from "@/lib/products"
 
 const SITE_NAME = "Aether Practice"
 /** Keyword-first title pattern applied by both root layouts; pages pass only the topic. */
@@ -129,6 +130,8 @@ export function serviceJsonLd({
   areaServed,
   serviceType,
   inLanguage = "en",
+  productId,
+  withMarta = false,
 }: {
   name: string
   description: string
@@ -139,8 +142,15 @@ export function serviceJsonLd({
   serviceType?: string
   /** BCP 47 language of the page, "en" or "nb". */
   inLanguage?: "en" | "nb"
+  /** Product id from lib/products; adds an Offer with that product's price (USD for "en", NOK for "nb"). */
+  productId?: string
+  /** Names Marta as a provider alongside the Organization. Schema only, nothing visible. */
+  withMarta?: boolean
 }) {
   const url = `${BASE_URL}${path}`
+  const product = productId ? PRODUCTS.find((p) => p.id === productId) : undefined
+  if (productId && !product) throw new Error(`serviceJsonLd: unknown product ${productId}`)
+  const organization = { "@id": `${BASE_URL}/#organization` }
   return {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -149,8 +159,16 @@ export function serviceJsonLd({
     description,
     url,
     inLanguage,
-    provider: { "@id": `${BASE_URL}/#organization` },
+    provider: withMarta ? [organization, { "@id": MARTA_ID }] : organization,
     areaServed: areaServed.map((place) => ({ "@type": "AdministrativeArea", name: place })),
+    ...(product && {
+      offers: {
+        "@type": "Offer",
+        price: inLanguage === "nb" ? product.priceInNok.toFixed(2) : (product.priceInCents / 100).toFixed(2),
+        priceCurrency: inLanguage === "nb" ? "NOK" : "USD",
+        url,
+      },
+    }),
     // Sessions are delivered online only.
     availableChannel: {
       "@type": "ServiceChannel",

@@ -21,6 +21,8 @@ const serviceLd = serviceJsonLd({
     "Online co-founder coaching sessions for founding teams in San Francisco, New York City and Norway, focused on how founding partners decide, disagree and divide responsibility. Sometimes called co-founder therapy; delivered as coaching for a working partnership.",
   path: "/co-founder-coaching",
   areaServed: ["San Francisco Bay Area", "New York City", "Norway"],
+  productId: "cofounder-session",
+  withMarta: true,
 })
 
 const breadcrumbLd = breadcrumbJsonLd([

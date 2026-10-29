@@ -85,6 +85,11 @@ const t = {
   guidesHeading: "Guides for founding teams",
   guidesIntro:
     "What we have written about the founding partnership — start with the complete guide, or go straight to the situation you are in.",
+  betweenSessions: {
+    before: "Between sessions, some founders practise the opening lines of the real conversation against",
+    link: "AET01 Conflict",
+    after: ", our app built to hold a position rather than agree.",
+  },
   testimonialsEyebrow: "Client Stories",
   testimonialsHeading: "What founding teams say",
 };
@@ -93,19 +98,19 @@ const t = {
 const testimonials: { quote: string; name: string; context: string }[] = [
   {
     quote:
-      "The sessions helped us step back from a difficult co-founder dynamic and approach the situation more objectively. Rather than going in circles, we left with a clearer understanding of the problem and a practical plan for moving forward.",
+      "The sessions helped us step back from a difficult co-founder dynamic. Rather than going in circles, we left with a practical plan for moving forward.",
     name: "G.W. & P.T.",
     context: "Co-founders",
   },
   {
     quote:
-      "As a CEO, I constantly balance strategy, speed, and team dynamics. The insights I got gave me an internal edge — sharpening how I make decisions and how I lead. It helped me catch blind spots that would've quietly affected my team.",
+      "As a CEO, I constantly balance strategy, speed, and team dynamics. It helped me catch blind spots that would've quietly affected my team.",
     name: "R.S.",
     context: "CEO",
   },
   {
     quote:
-      "Before, I used to feel overwhelmed — now I navigate challenges with clarity and confidence. It's clear how much faster I've been able to grow, personally and professionally, because of this process.",
+      "Before, I used to feel overwhelmed — now I navigate challenges with clarity and confidence.",
     name: "T.K.",
     context: "Co-founder",
   },
@@ -241,6 +246,15 @@ export default function CofounderSessionPage() {
                 </div>
               </div>
             ))}
+          </div>
+          <div className="border-t border-zinc-300/80 pt-10">
+            <p className="max-w-3xl font-[Roboto,Arial,sans-serif] text-[19px] leading-[1.5] text-[#383838]">
+              {t.betweenSessions.before}{" "}
+              <Link href="/instruments/conflict" className="text-[#74382f] underline underline-offset-2 hover:no-underline">
+                {t.betweenSessions.link}
+              </Link>
+              {t.betweenSessions.after}
+            </p>
           </div>
         </div>
 
