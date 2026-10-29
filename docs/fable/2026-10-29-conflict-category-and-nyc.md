@@ -49,7 +49,11 @@ How the pages split today, so they don't compete for the same search:
 
 If your research says a better split wins, change it and say why. The AI-search baseline from 2026-10-29 is in `docs/research/aeo-baseline-2026-10-29.md` (0 of 14 queries cite Aether).
 
-## For both tasks
+## Task 3: internal linking
+
+Make the site's pages link to each other the way a reader would want to move between them: from the article they're reading to the page that answers their next question, the service, the city page or AET01. Natural links inside the text, not link lists bolted on. Strengthen the pages we most want to rank (the service pages, the city pages, the AET01 page and whatever you build in Task 1) without pulling them into competing for the same search. Your call on where and how many; report what you changed.
+
+## For all three tasks
 
 Keep the brains in the repo: record your research in `docs/research/conflict-category/` on the branch. Include what you found, your sources, the term options, what you chose and why, and ideas you didn't build yet. Sort it however works best for you, as long as the next person (or you, next time) can pick it up cold. Earlier research lives in `docs/co-founder-cluster-seo-research.md` and `AEO-REPORT.md` if useful.
 
@@ -64,6 +68,6 @@ Keep the brains in the repo: record your research in `docs/research/conflict-cat
 
 ### When you're done
 Send Marta a short report in her clean format:
-- Done: what you built and where (branch, pages, URLs, timestamp proof location)
+- Done: what you built and where (branch, pages, URLs, timestamp proof location, the internal links you added)
 - Your call: the angle you chose and why, the 3 term options and your pick, what you changed on the NYC page and why
 - Needs Marta's go: anything to decide before it goes live, the Zenodo note and Substack draft to publish, and the URLs to archive after launch

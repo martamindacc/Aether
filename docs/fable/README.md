@@ -8,7 +8,7 @@ This repo is public. Private AET01 plans stay in the aet01 repo.
 
 | Added | Item | Brief | Status |
 |---|---|---|---|
-| 2026-10-29 | The conflict category (pillar, coined term, proof Marta was first) and making the NYC co-founder page win | [2026-10-29-conflict-category-and-nyc.md](2026-10-29-conflict-category-and-nyc.md) | Waiting for Fable (back Monday 2026-11-02) |
+| 2026-10-29 | The conflict category (pillar, coined term, proof Marta was first), making the NYC co-founder page win, and natural internal linking across the site | [2026-10-29-conflict-category-and-nyc.md](2026-10-29-conflict-category-and-nyc.md) | Waiting for Fable (back Monday 2026-11-02) |
 
 ## Done
 

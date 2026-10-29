@@ -86,9 +86,9 @@ const t = {
   guidesIntro:
     "What we have written about the founding partnership — start with the complete guide, or go straight to the situation you are in.",
   betweenSessions: {
-    before: "Between sessions, some founders practise the opening lines of the real conversation against",
+    before: "Our founders don't walk into the hard conversation cold. Between sessions, take the one you're dreading to",
     link: "AET01 Conflict",
-    after: ", our app built to hold a position rather than agree.",
+    after: ", Aether's own app built to take the other side and hold it, and walk in having already had the fight.",
   },
   testimonialsEyebrow: "Client Stories",
   testimonialsHeading: "What founding teams say",
