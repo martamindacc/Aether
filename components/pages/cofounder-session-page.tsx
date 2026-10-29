@@ -85,7 +85,31 @@ const t = {
   guidesHeading: "Guides for founding teams",
   guidesIntro:
     "What we have written about the founding partnership — start with the complete guide, or go straight to the situation you are in.",
+  testimonialsEyebrow: "Client Stories",
+  testimonialsHeading: "What founding teams say",
 };
+
+/** Real client quotes, trimmed to their strongest lines; nothing added. */
+const testimonials: { quote: string; name: string; context: string }[] = [
+  {
+    quote:
+      "The sessions helped us step back from a difficult co-founder dynamic and approach the situation more objectively. Rather than going in circles, we left with a clearer understanding of the problem and a practical plan for moving forward.",
+    name: "G.W. & P.T.",
+    context: "Co-founders",
+  },
+  {
+    quote:
+      "As a CEO, I constantly balance strategy, speed, and team dynamics. The insights I got gave me an internal edge — sharpening how I make decisions and how I lead. It helped me catch blind spots that would've quietly affected my team.",
+    name: "R.S.",
+    context: "CEO",
+  },
+  {
+    quote:
+      "Before, I used to feel overwhelmed — now I navigate challenges with clarity and confidence. It's clear how much faster I've been able to grow, personally and professionally, because of this process.",
+    name: "T.K.",
+    context: "Co-founder",
+  },
+];
 
 /** The co-founder cluster on the blog, in reading order. The pillar first, then the situations, then the how-to-choose pieces. */
 const guides: { title: string; description: string; href: string }[] = [
@@ -236,6 +260,34 @@ export default function CofounderSessionPage() {
               </div>
             ))}
           </div>
+        </div>
+
+        <div className="mt-24 flex w-full flex-col items-center gap-4">
+          <p className="text-sm uppercase tracking-wide text-zinc-500">{t.testimonialsEyebrow}</p>
+          <h2 className="max-w-3xl text-balance text-center font-[NeueHaasDisplayRoman,Arial,sans-serif] text-5xl font-medium tracking-tight text-zinc-900 sm:text-6xl">
+            {t.testimonialsHeading}
+          </h2>
+        </div>
+        <div className="mt-16 grid w-full gap-6 sm:grid-cols-3">
+          {testimonials.map((item) => (
+            <div
+              key={item.name}
+              className="flex flex-col gap-8 rounded-2xl border border-zinc-300/80 bg-[#F7F1EB] p-8 sm:p-10"
+            >
+              <span aria-hidden="true" className="-mb-3 flex justify-center gap-2">
+                <span className="h-7 w-3 bg-[#BFA17F] [clip-path:polygon(0_0,100%_0,80%_100%,20%_100%)]" />
+                <span className="h-7 w-3 bg-[#BFA17F] [clip-path:polygon(0_0,100%_0,80%_100%,20%_100%)]" />
+              </span>
+              <p className="flex-1 text-balance text-center font-[Roboto,Arial,sans-serif] text-lg leading-[1.6] text-[#383838]">
+                {item.quote}
+              </p>
+              <div className="flex items-center justify-center gap-3">
+                <span className="text-center text-[11px] font-medium uppercase tracking-[0.16em] text-[#7a6347]">
+                  {item.name} &middot; {item.context}
+                </span>
+              </div>
+            </div>
+          ))}
         </div>
 
         <ServiceFaq items={serviceFaq("cofounder", "en")} language={"en"} />
