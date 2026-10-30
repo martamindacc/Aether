@@ -16,6 +16,6 @@ This repo is public. Private AET01 plans stay in the aet01 repo.
 
 ## How this folder works
 
-- A new item: a dated brief in this folder and a row under Open.
+- A new item: a dated brief in this folder and a row under Open. Briefs say what Marta wants and why, plus the hard lines; Fable decides how.
 - Fable works on a branch and reports to Marta in her clean format (Done / Your call / Needs Marta's go).
 - When Marta approves and it ships, the row moves to Done with the commit or PR.
