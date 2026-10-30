@@ -336,7 +336,7 @@ export default function HomeClient({
         <p className="mt-8 max-w-3xl text-balance text-[19px] leading-[1.6] text-[#383838] sm:text-[21px]">
           {language.code === "en" ? (
             <>
-              Private online sessions for couples, co-founders, executives, founders, and individuals in New York City, the San Francisco Bay Area, and <Link href="/online-therapy-norway" className="underline underline-offset-4 decoration-[#C9A67D] hover:text-zinc-900">Norway</Link>.
+              Private online sessions for couples, co-founders, executives, founders, and individuals in <Link href="/couples-therapy-new-york-city" className="underline underline-offset-4 decoration-[#C9A67D] hover:text-zinc-900">New York City</Link>, the <Link href="/couples-therapy-san-francisco" className="underline underline-offset-4 decoration-[#C9A67D] hover:text-zinc-900">San Francisco Bay Area</Link>, and <Link href="/online-therapy-norway" className="underline underline-offset-4 decoration-[#C9A67D] hover:text-zinc-900">Norway</Link>.
             </>
           ) : language.code === "no" ? (
             <>
