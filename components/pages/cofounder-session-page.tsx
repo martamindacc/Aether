@@ -26,7 +26,8 @@ const languageLinks: LanguageLink[] = [
 const t = {
   title: "Co-Founder Session",
   subtitle: {
-    before: "Online sessions for co-founders in the San Francisco Bay Area,",
+    before: "Online sessions for co-founders in the",
+    sfLink: "San Francisco Bay Area",
     link: "New York City",
     after: ", and Norway.",
   },
@@ -200,6 +201,10 @@ export default function CofounderSessionPage() {
         </h1>
         <p className="mt-5 max-w-2xl text-base leading-[1.5] text-zinc-700">
           {t.subtitle.before}{" "}
+          <Link href="/co-founder-coaching-san-francisco" className="underline underline-offset-2 hover:no-underline">
+            {t.subtitle.sfLink}
+          </Link>
+          ,{" "}
           <Link href="/co-founder-coaching-new-york-city" className="underline underline-offset-2 hover:no-underline">
             {t.subtitle.link}
           </Link>

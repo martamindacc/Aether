@@ -18,6 +18,8 @@ Full text of every English page: https://aetherpractice.com/llms-full.txt
 - [Family Session](https://aetherpractice.com/family-support): Online family therapy sessions for families in New York City, the San Francisco Bay Area and Norway, focused on clearer communication and stronger connection.
 - [Founder & Executive Work](https://aetherpractice.com/executive-founder-work): Online coaching for executives and founders in New York City, the San Francisco Bay Area and Norway: pressure, decision-making, leadership and personal growth.
 - [Co-Founder Session](https://aetherpractice.com/co-founder-coaching): Online co-founder coaching for founding teams in San Francisco, New York and Norway. Both founders in the room, working on how you decide and disagree. US${{price:cofounder-session:usd}} per session.
+- [Co-Founder Coaching in New York City](https://aetherpractice.com/co-founder-coaching-new-york-city): Co-founder coaching for New York founding teams: both founders in the session, online in Eastern time, New York and Delaware deadlock law explained. US${{price:cofounder-session:usd}} per session.
+- [Co-Founder Coaching in San Francisco](https://aetherpractice.com/co-founder-coaching-san-francisco): Co-founder coaching for San Francisco and Bay Area founding teams: both founders in the session, online in Pacific time, California deadlock and non-compete law explained. US${{price:cofounder-session:usd}} per session.
 
 ## Couples therapy by place, format and audience
 

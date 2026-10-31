@@ -179,11 +179,13 @@ const faqs: Record<"couples" | "intensive" | "individual" | "leadership" | "cofo
         question: "Do you offer co-founder coaching in San Francisco?",
         answer:
           "Yes. Aether Practice works online with founding teams across the San Francisco Bay Area, scheduled in Pacific time, with both founders in the session. A 60-minute session is US${{price:cofounder-session:usd}}, with a free 15-minute consultation first.",
+        link: { text: "Co-founder coaching in San Francisco", href: "/co-founder-coaching-san-francisco" },
       },
       {
         question: "Do you work with founding teams in New York?",
         answer:
           "Yes. Aether Practice works online with founding teams across New York City, scheduled in Eastern time, with both founders in the session. A 60-minute session is US${{price:cofounder-session:usd}}, with a free 15-minute consultation first.",
+        link: { text: "Co-founder coaching in New York City", href: "/co-founder-coaching-new-york-city" },
       },
       {
         question: "Is co-founder coaching the same as co-founder therapy?",
